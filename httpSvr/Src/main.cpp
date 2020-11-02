@@ -1,12 +1,21 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "log.h"
 #include "httpserver.h"
 
 int main(int argc, char **argv)
 {
-	Http::HttpServer httpserver("0.0.0.0", 8080);
+	if(argc < 3)
+	{
+		errorf("Usage: ./%s ip port\n", argv[0]);
+		return -1;
+	}
+	std::string ip(argv[1]);
+	int port = atoi(argv[2]);
+	Http::HttpServer httpserver(ip, port);
+
 	if(httpserver.start(1024) < 0)
 	{
 		errsys("server create failed\n");
