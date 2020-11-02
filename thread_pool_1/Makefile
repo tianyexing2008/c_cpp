@@ -3,7 +3,7 @@ CFLAGS = -Werror -g
 LIB = -lpthread
 
 SRC = $(shell ls -c | grep \.cpp | head -1)
-OJB = $(SRC:.c=.o)
+OJB = $(SRC:.cpp=.o)
 
 TARGET = a.out
 
