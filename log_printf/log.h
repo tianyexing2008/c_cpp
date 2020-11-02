@@ -26,10 +26,12 @@ enum CONSOLE_COLOR
 //等级分为1，2, 3, 4，各等级打印颜色不同
 static const int s_color[] = {0, COLOR_INFO, COLOR_WARN, COLOR_ERROR, COLOR_FATAL, COLOR_ERROR};
 
+//打印标题、颜色、线程号
 #define PRINT(title, level, file, func, line, fmt, ...) \
 	fprintf(stdout, "\033[%d;40m", s_color[level]); \
 	printf("[%s]tid_%ld - %s:%s:%d, " fmt, title, syscall(SYS_gettid), file, func, line, ##__VA_ARGS__); \
 	printf("\033[0m");
+
 #define PRINT_INFO(title, level, fmt, ...) \
 	PRINT(title, level, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
 
