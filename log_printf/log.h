@@ -20,7 +20,7 @@ enum CONSOLE_COLOR
 	COLOR_FATAL = 35,
 	COLOR_ERROR = 31,
 	COLOR_INFO = 32, 
-	COLOR_WARN = 33
+	COLOR_WARN = 33,
 };
 
 //等级分为1，2, 3, 4，各等级打印颜色不同
