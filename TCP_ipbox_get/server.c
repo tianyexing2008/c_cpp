@@ -1,3 +1,8 @@
+/**********************************************
+** 服务端，ARM版本，在arm板上运行，用于给客户端进行
+** 连接，并下载arm板上的文件
+** 编译器：arm-linux-gnueabihf-g++
+**********************************************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -12,45 +17,48 @@
 #include "log.h"
 
 #define READ_BUF_SIZE 512
-#define DROP_TRIGGER_SIZE 1024 * 1024 * 100 //100M时触发一次缓存清空
-#define MODE_MAX_NUM 32
+#define DROP_TRIGGER_SIZE 1024 * 1024 * 100 //100M 时触发一次缓存清空
+#define TYPE_OPT_NUM 3
 
 #define E_OK 0
 #define E_ERR 1
 
-#define BLOCK_SIZE 1024 * 1024 * 400  //分块大小
 typedef struct sockaddr sockaddr;
 typedef struct sockaddr_in sockaddr_in;
 
 enum OPERATION
 {
-    OPE_GET,
-    OPE_MOD,
+    OPT_GET = 0,
+    OPT_POST,
+    OPT_NULL
 };
 
-struct REQUEST_MODE
+struct OPT_INFO
 {
+    char *typeOpt;
     enum OPERATION opt;
-    char optStr[32];
-    char buf[32];
 };
 
-struct REQUEST_MODE requestMode[MODE_MAX_NUM] = {
-    {OPE_GET, "GET", 0},
-    {OPE_MOD, "UPLOAD", 0}
+struct OPT_INFO optInfo[OPT_NULL] = {
+    {"GET", OPT_GET},
+    {"POST", OPT_POST}
 };
 
-int HandleRequest(const int socket, const char *request);
-void *ProcessConnect(void *arg);
-enum OPERATION GetOptMode(const char *opt, int len);
-int DealOperate(int sock, enum OPERATION mode, const char *fileName);
+
+int socketStart(const char *ip, int port);
+int handelRequest(const int socket, const char *request);
+void *processConnect(void *arg);
+enum OPERATION getOperate(const char *opt);
+int dealOperate(int sock, enum OPERATION mode, const char *fileName);
 void getFile(int sockfd, const char *fileName);
 void dropCache(int drop);
 
-int g_isSameFile = 0;
-int g_totalSize = 0;
-int g_readSize = 0;
-char g_fileName[32] = {0};
+// const char *typeOpt[TYPE_OPT_NUM] = {
+//     "GET",
+//     "POST",
+//     NULL
+// };
+
 
 int main(int argc, char* argv[])
 {
@@ -60,19 +68,47 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    int server_sock = socketStart(argv[1], atoi(argv[2]));
+    if(server_sock < 0)
+    {
+        return 1;
+    }
+
+    printf("Server Init ok!\n");
+    pthread_t pthread_fd;
+    sockaddr_in client;
+    socklen_t len = sizeof(client);
+    while(1)
+    {
+        int new_sock = accept(server_sock, (sockaddr*)&client, &len);
+        if(new_sock < 0)
+        {
+            perror("accept");
+            continue;
+        }
+        printf("new connect socket %d from %s\n", new_sock, inet_ntoa(client.sin_addr));
+        pthread_create(&pthread_fd, NULL, processConnect, (void *)&new_sock);
+        pthread_join(pthread_fd, NULL);
+    }
+
+    return 0;
+}
+
+int socketStart(const char *ip, int port)
+{
     //1.创建 socket
     int server_sock = socket(AF_INET, SOCK_STREAM, 0);
     if(server_sock < 0)
     {
         perror("socket");
-        return 1;
+        return -1;
     }
 
     //2.绑定端口号
     sockaddr_in server;
     server.sin_family = AF_INET;
-    server.sin_addr.s_addr = inet_addr(argv[1]);
-    server.sin_port = htons(atoi(argv[2]));
+    server.sin_addr.s_addr = inet_addr(ip);
+    server.sin_port = htons(port);
 
     //设置地址复用
     int on = 1;
@@ -81,7 +117,7 @@ int main(int argc, char* argv[])
     if(ret < 0)
     {
         perror("bind");
-        return 1;
+        return -1;
     }
 
     //3.使用listen允许服务器被客户端连接
@@ -89,39 +125,18 @@ int main(int argc, char* argv[])
     if(ret < 0)
     {
         perror("listen");
-        return 1;
+        return -1;
     }
 
-    //4.服务器初始化完成，进入事件循环
-    printf("Server Init ok!\n");
-    pthread_t pthread_fd;
-    while(1)
-    {
-        sockaddr_in client;
-        socklen_t len = sizeof(client);
-        int new_sock = accept(server_sock, (sockaddr*)&client, &len);
-        if(new_sock < 0)
-        {
-            perror("accept");
-            continue;
-        }
-        printf("new connect socket %d from %s\n", new_sock, inet_ntoa(client.sin_addr));
-        pthread_create(&pthread_fd, NULL, ProcessConnect, (void *)&new_sock);
-        pthread_join(pthread_fd, NULL);
-
-        // printf("drop all cache: 3\n");
-        // system("sync");
-        // dropCache(3);
-    }
-
-    return 0;
+    return server_sock;
 }
 
-void *ProcessConnect(void *arg)
+void *processConnect(void *arg)
 { 
+    //获取入参，sock
     int new_sock = *((int*)arg);
 
-    //a)从客户端读取数据
+    //从客户端读取数据
     char buf[128] = {0};
     ssize_t read_size = read(new_sock, buf, sizeof(buf) - 1);
     if(read_size < 0)
@@ -139,12 +154,13 @@ void *ProcessConnect(void *arg)
     }
     buf[read_size] = '\0';
     
-    char operation[4] = {0};
+    //客户端发过来的信息，需要固定格式，形如：GET filename
+    char operation[8] = {0};
     char fileName[32] = {0};
     const char *p = buf;
     int i = 0;
     
-    /* 获取操作类型 */
+    /* 获取操作类型字符串 */
     while(*p != ' ')
     {
         operation[i++] = *p++;
@@ -155,21 +171,42 @@ void *ProcessConnect(void *arg)
     snprintf(fileName, sizeof(fileName), "%s", p + 1);
     tracef("operation: %s, filename: %s\n", operation, fileName);
 
-    if(DealOperate(new_sock, OPE_GET, fileName))
+    /* 匹配操作类型 */
+    enum OPERATION opt = getOperate(operation);
+    if(dealOperate(new_sock, opt, fileName))
     {
-        printf("DealOperate error !\n");
+        printf("dealOperate error !\n");
         return NULL;
     }
     close(new_sock);
     return NULL;
 }
 
+enum OPERATION getOperate(const char *opt)
+{
+    if(opt == NULL)
+    {
+        return OPT_GET;
+    }
 
-int DealOperate(int sock, enum OPERATION mode, const char *fileName)
+    int i;
+    for(i = 0; i < OPT_NULL; i++)
+    {
+        if(strcmp(optInfo[i].typeOpt, opt) == 0)
+        {
+            return optInfo[i].opt;
+        }
+    }
+
+    //如果无匹配，默认GET
+    return OPT_GET;
+}
+
+int dealOperate(int sock, enum OPERATION mode, const char *fileName)
 {
     switch (mode)
     {
-        case OPE_GET:
+        case OPT_GET:
             getFile(sock, fileName);
             break;
         default:
@@ -185,7 +222,7 @@ void getFile(int sockfd, const char *fileName)
     fp = fopen(fileName, "rb");
     if(fp == NULL)
     {
-        printf("no such file of %s\n", fileName);
+        perror("fopen");
         return;
     }
     
@@ -228,12 +265,17 @@ void getFile(int sockfd, const char *fileName)
     fclose(fp);
 }
 
+
+// param[in] :  
+// 1: 释放页面缓存
+// 2: 释放目录文件和inodes 
+// 3: 释放所有缓存(页面缓存，目录文件和inodes)
 void dropCache(int drop)
 {
     int ret = 0;
     int fd = open("/proc/sys/vm/drop_caches", O_RDWR);
 
-    char dropData[8] = {0};
+    char dropData[4] = {0};
     int dropSize = snprintf(dropData, sizeof(dropData), "%d", drop);
     ret = write(fd, dropData, dropSize);
     close(fd);
