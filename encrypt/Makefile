@@ -8,9 +8,9 @@ DEP = $(OJB:.o=.cpp.d)
 #LIB = -L/usr/local/openssl/lib -lssl -lcrypto -ldl -lpthread
 TARGET = a.out
 
-LIB = -L/usr/local/openssl/lib -lssl -lcrypto -ldl -lpthread -ljsoncpp
-INCLUDE = -I ../include
-LIB_PATH = -L ../lib
+LIB = -L/usr/local/openssl/lib -lssl -lcrypto -ldl -lpthread -ljson
+INCLUDE = -I /home/tianyexing/Documents/code/include
+LIB_PATH = -L /home/tianyexing/Documents/code/lib
 
 All: $(TARGET) $(DEP)
 
