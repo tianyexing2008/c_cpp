@@ -1,0 +1,56 @@
+.TH "DBusCounter" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusCounter \- Internals of \fBDBusCounter\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIreference count \fP"
+.ti -1c
+.RI "long \fBsize_value\fP"
+.br
+.RI "\fIcurrent size counter value \fP"
+.ti -1c
+.RI "long \fBunix_fd_value\fP"
+.br
+.RI "\fIcurrent unix fd counter value \fP"
+.ti -1c
+.RI "long \fBnotify_size_guard_value\fP"
+.br
+.RI "\fIcall notify function when crossing this size value \fP"
+.ti -1c
+.RI "long \fBnotify_unix_fd_guard_value\fP"
+.br
+.RI "\fIcall notify function when crossing this unix fd value \fP"
+.ti -1c
+.RI "DBusCounterNotifyFunction \fBnotify_function\fP"
+.br
+.RI "\fInotify function \fP"
+.ti -1c
+.RI "void * \fBnotify_data\fP"
+.br
+.RI "\fIdata for notify function \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBnotify_pending\fP: 1"
+.br
+.RI "\fITRUE if the guard value has been crossed\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusCounter\fP\&. 
+
+\fBDBusCounter\fP internals\&. \fBDBusCounter\fP is an opaque object, it must be used via accessor functions\&. 
+.PP
+Definition at line 54 of file dbus\-resources\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

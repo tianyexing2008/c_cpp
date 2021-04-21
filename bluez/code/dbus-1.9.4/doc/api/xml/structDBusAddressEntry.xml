@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusAddressEntry" kind="struct" language="C++" prot="public">
+    <compoundname>DBusAddressEntry</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusAddressEntry_1a2d88ca4208738ec7024655013373505f" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusAddressEntry::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <briefdescription>
+<para>The address type (unix, tcp, etc.) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="45" column="1" bodyfile="dbus/dbus-address.c" bodystart="45" bodyend="-1"/>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusAddress_1ga37a7009b07cf991ff07f3e86d71bf352" compoundref="dbus-address_8c" startline="189" endline="196">dbus_address_entries_free</referencedby>
+        <referencedby refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAddressEntry_1a62999fb785b591efa6356b7d97729846" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusAddressEntry::keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+<para>List of keys. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="47" column="1" bodyfile="dbus/dbus-address.c" bodystart="47" bodyend="-1"/>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAddressEntry_1a504d8c6e3d3b6f94a9be32a1d6ab54e8" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusAddressEntry::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+<para>List of values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="48" column="1" bodyfile="dbus/dbus-address.c" bodystart="48" bodyend="-1"/>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of <ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="38">
+        <label>DBusAddressEntry</label>
+        <link refid="structDBusAddressEntry"/>
+        <childnode refid="39" relation="usage">
+          <edgelabel>method</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>values</edgelabel>
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="40" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-address.c" line="44" column="1" bodyfile="dbus/dbus-address.c" bodystart="43" bodyend="49"/>
+    <listofallmembers>
+      <member refid="structDBusAddressEntry_1a62999fb785b591efa6356b7d97729846" prot="public" virt="non-virtual"><scope>DBusAddressEntry</scope><name>keys</name></member>
+      <member refid="structDBusAddressEntry_1a2d88ca4208738ec7024655013373505f" prot="public" virt="non-virtual"><scope>DBusAddressEntry</scope><name>method</name></member>
+      <member refid="structDBusAddressEntry_1a504d8c6e3d3b6f94a9be32a1d6ab54e8" prot="public" virt="non-virtual"><scope>DBusAddressEntry</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,715 @@
+.TH "DBusConnectionInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusConnectionInternals \- DBusConnection implementation details
+.PP
+Implementation details of \fBDBusConnection\fP\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusMessageFilter\fP"
+.br
+.RI "\fIInternal struct representing a message filter function\&. \fP"
+.ti -1c
+.RI "struct \fBDBusPreallocatedSend\fP"
+.br
+.RI "\fIInternals of \fBDBusPreallocatedSend\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusConnection\fP"
+.br
+.RI "\fIImplementation details of \fBDBusConnection\fP\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusMessageFilter\fP \fBDBusMessageFilter\fP"
+.br
+.RI "\fIInternal struct representing a message filter function\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusWatchAddFunction\fP) (\fBDBusWatchList\fP *list, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIFunction to be called in protected_change_watch() with refcount held\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusWatchRemoveFunction\fP) (\fBDBusWatchList\fP *list, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIFunction to be called in protected_change_watch() with refcount held\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusWatchToggleFunction\fP) (\fBDBusWatchList\fP *list, \fBDBusWatch\fP *watch, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fIFunction to be called in protected_change_watch() with refcount held\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusTimeoutAddFunction\fP) (\fBDBusTimeoutList\fP *list, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIFunction to be called in protected_change_timeout() with refcount held\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusTimeoutRemoveFunction\fP) (\fBDBusTimeoutList\fP *list, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIFunction to be called in protected_change_timeout() with refcount held\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusTimeoutToggleFunction\fP) (\fBDBusTimeoutList\fP *list, \fBDBusTimeout\fP *timeout, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fIFunction to be called in protected_change_timeout() with refcount held\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_connection_lock\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIAcquires the connection lock\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_unlock\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIReleases the connection lock\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_queue_received_message_link\fP (\fBDBusConnection\fP *connection, \fBDBusList\fP *link)"
+.br
+.RI "\fIAdds a message-containing list link to the incoming message queue, taking ownership of the link and the message's current refcount\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_queue_synthesized_message_link\fP (\fBDBusConnection\fP *connection, \fBDBusList\fP *link)"
+.br
+.RI "\fIAdds a link + message to the incoming message queue\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_connection_has_messages_to_send_unlocked\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIChecks whether there are messages in the outgoing message queue\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_connection_has_messages_to_send\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIChecks whether there are messages in the outgoing message queue\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fB_dbus_connection_get_message_to_send\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIGets the next outgoing message\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_message_sent_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusMessage\fP *message)"
+.br
+.RI "\fINotifies the connection that a message has been sent, so the message can be removed from the outgoing queue\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_connection_add_watch_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIAdds a watch using the connection's DBusAddWatchFunction if available\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_remove_watch_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIRemoves a watch using the connection's DBusRemoveWatchFunction if available\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_toggle_watch_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusWatch\fP *watch, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fIToggles a watch and notifies app via connection's DBusWatchToggledFunction if available\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_connection_add_timeout_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIAdds a timeout using the connection's DBusAddTimeoutFunction if available\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_remove_timeout_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIRemoves a timeout using the connection's DBusRemoveTimeoutFunction if available\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_toggle_timeout_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusTimeout\fP *timeout, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fIToggles a timeout and notifies app via connection's DBusTimeoutToggledFunction if available\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_remove_pending_call\fP (\fBDBusConnection\fP *connection, \fBDBusPendingCall\fP *pending)"
+.br
+.RI "\fIRemoves a pending call from the connection, such that the pending reply will be ignored\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_do_iteration_unlocked\fP (\fBDBusConnection\fP *connection, \fBDBusPendingCall\fP *pending, unsigned int flags, int timeout_milliseconds)"
+.br
+.RI "\fIQueues incoming messages and sends outgoing messages for this connection, optionally blocking in the process\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP * \fB_dbus_connection_new_for_transport\fP (\fBDBusTransport\fP *transport)"
+.br
+.RI "\fICreates a new connection for the given transport\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP * \fB_dbus_connection_ref_unlocked\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIIncrements the reference count of a \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_unref_unlocked\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIDecrements the reference count of a \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_connection_handle_watch\fP (\fBDBusWatch\fP *watch, unsigned int condition, void *data)"
+.br
+.RI "\fIA callback for use with dbus_watch_new() to create a \fBDBusWatch\fP\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_close_possibly_shared\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fICloses a shared OR private connection, while \fBdbus_connection_close()\fP can only be used on private connections\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_connection_send_and_unlock\fP (\fBDBusConnection\fP *connection, \fBDBusMessage\fP *message, \fBdbus_uint32_t\fP *client_serial)"
+.br
+.RI "\fILike \fBdbus_connection_send()\fP, but assumes the connection is already locked on function entry, and unlocks before returning\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_close_if_only_one_ref\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIUsed internally to handle the semantics of \fBdbus_server_set_new_connection_function()\fP\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_block_pending_call\fP (\fBDBusPendingCall\fP *pending)"
+.br
+.RI "\fIBlocks until a pending call times out or gets a reply\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_connection_get_pending_fds_count\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIReturn how many file descriptors are pending in the loader\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_connection_set_pending_fds_function\fP (\fBDBusConnection\fP *connection, DBusPendingFdsChangeFunction callback, void *data)"
+.br
+.RI "\fIRegister a function to be called whenever the number of pending file descriptors in the loader change\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusConnection\fP\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_connection_add_timeout_unlocked (\fBDBusConnection\fP * connection, \fBDBusTimeout\fP * timeout)"
+
+.PP
+Adds a timeout using the connection's DBusAddTimeoutFunction if available\&. Otherwise records the timeout to be added when said function is available\&. Also re-adds the timeout if the DBusAddTimeoutFunction changes\&. May fail due to lack of memory\&. The timeout will fire repeatedly until removed\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fItimeout\fP the timeout to add\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success\&. 
+.RE
+.PP
+
+.PP
+Definition at line 867 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_timeout_list_add_timeout(), FALSE, and NULL\&.
+.PP
+Referenced by _dbus_connection_toggle_timeout_unlocked()\&.
+.SS "\fBdbus_bool_t\fP _dbus_connection_add_watch_unlocked (\fBDBusConnection\fP * connection, \fBDBusWatch\fP * watch)"
+
+.PP
+Adds a watch using the connection's DBusAddWatchFunction if available\&. Otherwise records the watch to be added when said function is available\&. Also re-adds the watch if the DBusAddWatchFunction changes\&. May fail due to lack of memory\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIwatch\fP the watch to add\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success\&. 
+.RE
+.PP
+
+.PP
+Definition at line 743 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_watch_list_add_watch(), FALSE, and NULL\&.
+.SS "void _dbus_connection_block_pending_call (\fBDBusPendingCall\fP * pending)"
+
+.PP
+Blocks until a pending call times out or gets a reply\&. Does not re-enter the main loop or run filter/path-registered callbacks\&. The reply to the message will not be seen by filter callbacks\&.
+.PP
+Returns immediately if pending call already got a reply\&.
+.PP
+\fBTodo\fP
+.RS 4
+could use performance improvements (it keeps scanning the whole message queue for example)
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpending\fP the pending call we block for a reply on 
+.RE
+.PP
+
+.PP
+Definition at line 2379 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_connection_do_iteration_unlocked(), _dbus_get_monotonic_time(), _dbus_pending_call_get_completed_unlocked(), _dbus_pending_call_get_connection_and_lock(), _dbus_pending_call_get_reply_serial_unlocked(), _dbus_pending_call_get_timeout_unlocked(), CONNECTION_LOCK, DBUS_DISPATCH_DATA_REMAINS, DBUS_DISPATCH_NEED_MEMORY, DBUS_ERROR_DISCONNECTED, dbus_pending_call_get_completed(), dbus_pending_call_ref(), dbus_pending_call_unref(), dbus_timeout_get_interval(), DBusConnection::disconnect_message_link, and NULL\&.
+.PP
+Referenced by dbus_pending_call_block()\&.
+.SS "void _dbus_connection_close_if_only_one_ref (\fBDBusConnection\fP * connection)"
+
+.PP
+Used internally to handle the semantics of \fBdbus_server_set_new_connection_function()\fP\&. If the new connection function does not ref the connection, we want to close it\&.
+.PP
+A bit of a hack, probably the new connection function should have returned a value for whether to close, or should have had to close the connection itself if it didn't want it\&.
+.PP
+But, this works OK as long as the new connection function doesn't do anything crazy like keep the connection around without ref'ing it\&.
+.PP
+We have to lock the connection across refcount check and close in case the new connection function spawns a thread that closes and unrefs\&. In that case, if the app thread closes and unrefs first, we'll harmlessly close again; if the app thread still has the ref, we'll close and then the app will close harmlessly\&. If the app unrefs without closing, the app is broken since if the app refs from the new connection function it is supposed to also close\&.
+.PP
+If we didn't atomically check the refcount and close with the lock held though, we could screw this up\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.RE
+.PP
+
+.PP
+Definition at line 2146 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_atomic_get(), _dbus_connection_remove_timeout_unlocked(), _dbus_hash_iter_get_value(), _dbus_hash_iter_init(), _dbus_hash_iter_next(), _dbus_hash_iter_remove_entry(), _dbus_hash_table_get_n_entries(), _dbus_list_get_first_link(), _dbus_list_get_next_link, _dbus_list_remove_link(), _dbus_pending_call_complete(), _dbus_pending_call_get_reply_serial_unlocked(), _dbus_pending_call_get_timeout_unlocked(), _dbus_pending_call_is_timeout_added_unlocked(), _dbus_pending_call_queue_timeout_error_unlocked(), _dbus_pending_call_ref_unlocked(), _dbus_pending_call_set_reply_unlocked(), _dbus_pending_call_set_timeout_added_unlocked(), _dbus_pending_call_unref_and_unlock(), _dbus_sleep_milliseconds(), CONNECTION_LOCK, CONNECTION_UNLOCK, DBusList::data, dbus_message_get_reply_serial(), dbus_message_iter_append_basic(), dbus_message_iter_init_append(), dbus_message_new(), dbus_message_set_error_name(), dbus_message_set_no_reply(), dbus_message_set_reply_serial(), DBUS_MESSAGE_TYPE_ERROR, dbus_message_unref(), dbus_pending_call_unref(), DBUS_TYPE_STRING, FALSE, DBusConnection::incoming_messages, DBusConnection::n_incoming, NULL, DBusConnection::pending_replies, DBusMessageFilter::refcount, DBusConnection::refcount, and TRUE\&.
+.SS "void _dbus_connection_close_possibly_shared (\fBDBusConnection\fP * connection)"
+
+.PP
+Closes a shared OR private connection, while \fBdbus_connection_close()\fP can only be used on private connections\&. Should only be called by the dbus code that owns the connection - an owner must be known, the open/close state is like malloc/free, not like ref/unref\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.RE
+.PP
+
+.PP
+Definition at line 1948 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_connection_do_iteration_unlocked(), _dbus_counter_ref(), _dbus_current_generation, _dbus_list_alloc_link(), _dbus_list_free_link(), _dbus_list_prepend_link(), _dbus_message_add_counter_link(), DBusPreallocatedSend::connection, CONNECTION_LOCK, DBusPreallocatedSend::counter_link, DBusList::data, dbus_free(), dbus_message_get_destination(), dbus_message_get_interface(), dbus_message_get_member(), dbus_message_get_path(), dbus_message_get_serial(), dbus_message_get_signature(), dbus_message_get_type(), dbus_message_lock(), dbus_message_ref(), dbus_message_set_serial(), dbus_message_type_to_string(), dbus_new, DBusConnection::n_outgoing, NULL, DBusConnection::outgoing_counter, DBusConnection::outgoing_messages, and DBusPreallocatedSend::queue_link\&.
+.PP
+Referenced by _dbus_bus_notify_shared_connection_disconnected_unlocked(), and _dbus_connection_handle_watch()\&.
+.SS "void _dbus_connection_do_iteration_unlocked (\fBDBusConnection\fP * connection, \fBDBusPendingCall\fP * pending, unsigned int flags, int timeout_milliseconds)"
+
+.PP
+Queues incoming messages and sends outgoing messages for this connection, optionally blocking in the process\&. Each call to \fB_dbus_connection_do_iteration_unlocked()\fP will call select() or poll() one time and then read or write data if possible\&.
+.PP
+The purpose of this function is to be able to flush outgoing messages or queue up incoming messages without returning control to the application and causing reentrancy weirdness\&.
+.PP
+The flags parameter allows you to specify whether to read incoming messages, write outgoing messages, or both, and whether to block if no immediate action is possible\&.
+.PP
+The timeout_milliseconds parameter does nothing unless the iteration is blocking\&.
+.PP
+If there are no outgoing messages and DBUS_ITERATION_DO_READING wasn't specified, then it's impossible to block, even if you specify DBUS_ITERATION_BLOCK; in that case the function returns immediately\&.
+.PP
+If pending is not NULL then a check is made if the pending call is completed after the io path has been required\&. If the call has been completed nothing is done\&. This must be done since the _dbus_connection_acquire_io_path releases the connection lock for a while\&.
+.PP
+Called with connection lock held\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIpending\fP the pending call that should be checked or NULL 
+.br
+\fIflags\fP iteration flags\&. 
+.br
+\fItimeout_milliseconds\fP maximum blocking time, or -1 for no limit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1198 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_pending_call_get_completed_unlocked(), _dbus_pending_call_get_reply_serial_unlocked(), _dbus_transport_do_iteration(), DBusConnection::n_outgoing, NULL, and DBusConnection::transport\&.
+.PP
+Referenced by _dbus_connection_block_pending_call(), _dbus_connection_close_possibly_shared(), dbus_connection_flush(), and dbus_connection_send_with_reply_and_block()\&.
+.SS "\fBDBusMessage\fP* _dbus_connection_get_message_to_send (\fBDBusConnection\fP * connection)"
+
+.PP
+Gets the next outgoing message\&. The message remains in the queue, and the caller does not own a reference to it\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the message to be sent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 609 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_list_get_last(), and DBusConnection::outgoing_messages\&.
+.SS "int _dbus_connection_get_pending_fds_count (\fBDBusConnection\fP * connection)"
+
+.PP
+Return how many file descriptors are pending in the loader\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.RE
+.PP
+
+.PP
+Definition at line 2558 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_transport_get_pending_fds_count(), and DBusConnection::transport\&.
+.SS "\fBdbus_bool_t\fP _dbus_connection_handle_watch (\fBDBusWatch\fP * watch, unsigned int condition, void * data)"
+
+.PP
+A callback for use with dbus_watch_new() to create a \fBDBusWatch\fP\&. 
+.PP
+\fBTodo\fP
+.RS 4
+This is basically a hack - we could delete \fB_dbus_transport_handle_watch()\fP and the virtual handle_watch in \fBDBusTransport\fP if we got rid of it\&. The reason this is some work is threading, see the \fB_dbus_connection_handle_watch()\fP implementation\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch\&. 
+.br
+\fIcondition\fP the current condition of the file descriptors being watched\&. 
+.br
+\fIdata\fP must be a pointer to a \fBDBusConnection\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the IO condition may not have been fully handled due to lack of memory 
+.RE
+.PP
+
+.PP
+Definition at line 1486 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_connection_close_possibly_shared(), _dbus_connection_new_for_transport(), _dbus_connection_ref_unlocked(), _dbus_connection_unref_unlocked(), _dbus_hash_iter_get_value(), _dbus_hash_iter_init(), _dbus_hash_iter_next(), _dbus_hash_table_get_n_entries(), _dbus_hash_table_insert_string(), _dbus_hash_table_lookup_string(), _dbus_hash_table_new(), _dbus_hash_table_remove_string(), _dbus_hash_table_unref(), _dbus_list_pop_first(), _dbus_list_prepend(), _dbus_list_remove(), _DBUS_LOCK, _dbus_register_shutdown_func(), _dbus_strdup(), _dbus_transport_handle_watch(), _dbus_transport_open(), _dbus_transport_unref(), _DBUS_UNLOCK, CONNECTION_LOCK, CONNECTION_UNLOCK, dbus_address_entries_free(), dbus_address_entry_get_value(), dbus_connection_pop_message(), dbus_connection_ref(), dbus_connection_unref(), dbus_error_free(), DBUS_ERROR_INIT, dbus_free(), DBUS_HASH_STRING, dbus_message_unref(), dbus_move_error(), dbus_parse_address(), FALSE, DBusConnection::have_connection_lock, NULL, DBusConnection::server_guid, DBusConnection::shareable, DBusConnection::transport, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_connection_has_messages_to_send_unlocked (\fBDBusConnection\fP * connection)"
+
+.PP
+Checks whether there are messages in the outgoing message queue\&. Called with connection lock held\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the outgoing queue is non-empty\&. 
+.RE
+.PP
+
+.PP
+Definition at line 572 of file dbus\-connection\&.c\&.
+.PP
+References NULL, and DBusConnection::outgoing_messages\&.
+.PP
+Referenced by dbus_connection_has_messages_to_send()\&.
+.SS "void _dbus_connection_lock (\fBDBusConnection\fP * connection)"
+
+.PP
+Acquires the connection lock\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+
+.PP
+Definition at line 388 of file dbus\-connection\&.c\&.
+.PP
+References CONNECTION_LOCK\&.
+.PP
+Referenced by _dbus_object_tree_dispatch_and_unlock(), and _dbus_transport_get_is_connected()\&.
+.SS "void _dbus_connection_message_sent_unlocked (\fBDBusConnection\fP * connection, \fBDBusMessage\fP * message)"
+
+.PP
+Notifies the connection that a message has been sent, so the message can be removed from the outgoing queue\&. Called with the connection lock held\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fImessage\fP the message that was sent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 625 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_list_get_last_link(), _dbus_list_prepend_link(), _dbus_list_unlink(), _dbus_message_remove_counter(), DBusList::data, dbus_message_get_interface(), dbus_message_get_member(), dbus_message_get_path(), dbus_message_get_signature(), dbus_message_get_type(), dbus_message_type_to_string(), DBusConnection::expired_messages, DBusConnection::n_outgoing, NULL, DBusConnection::outgoing_counter, and DBusConnection::outgoing_messages\&.
+.PP
+Referenced by dbus_connection_pop_message()\&.
+.SS "\fBDBusConnection\fP* _dbus_connection_new_for_transport (\fBDBusTransport\fP * transport)"
+
+.PP
+Creates a new connection for the given transport\&. A transport represents a message stream that uses some concrete mechanism, such as UNIX domain sockets\&. May return \fBNULL\fP if insufficient memory exists to create the connection\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItransport\fP the transport\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new connection, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1249 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_atomic_inc(), _dbus_cmutex_free_at_location(), _dbus_cmutex_new_at_location(), _dbus_condvar_free_at_location(), _dbus_condvar_new_at_location(), _dbus_counter_new(), _dbus_counter_unref(), _dbus_current_generation, _dbus_data_slot_list_init(), _dbus_disable_sigpipe(), _dbus_hash_table_new(), _dbus_hash_table_unref(), _dbus_list_alloc_link(), _dbus_list_free_link(), _dbus_object_tree_new(), _dbus_object_tree_unref(), _dbus_rmutex_free_at_location(), _dbus_rmutex_new_at_location(), _dbus_timeout_list_free(), _dbus_timeout_list_new(), _dbus_transport_ref(), _dbus_transport_set_connection(), _dbus_watch_list_free(), _dbus_watch_list_new(), DBusConnection::client_serial, CONNECTION_LOCK, CONNECTION_UNLOCK, DBUS_DISPATCH_COMPLETE, dbus_free(), DBUS_HASH_INT, DBUS_INTERFACE_LOCAL, dbus_message_new_signal(), dbus_message_unref(), dbus_new0, DBUS_PATH_LOCAL, DBusConnection::disconnect_message_link, DBusConnection::disconnected_message_arrived, DBusConnection::disconnected_message_processed, DBusConnection::dispatch_cond, DBusConnection::dispatch_mutex, DBusConnection::exit_on_disconnect, FALSE, DBusConnection::filter_list, DBusConnection::io_path_cond, DBusConnection::io_path_mutex, DBusConnection::last_dispatch_status, DBusConnection::mutex, NULL, DBusConnection::objects, DBusConnection::outgoing_counter, DBusConnection::pending_replies, DBusConnection::refcount, DBusConnection::route_peer_messages, DBusConnection::shareable, DBusConnection::slot_list, DBusConnection::slot_mutex, DBusConnection::timeouts, DBusConnection::transport, and DBusConnection::watches\&.
+.PP
+Referenced by _dbus_connection_handle_watch()\&.
+.SS "void _dbus_connection_queue_received_message_link (\fBDBusConnection\fP * connection, \fBDBusList\fP * link)"
+
+.PP
+Adds a message-containing list link to the incoming message queue, taking ownership of the link and the message's current refcount\&. Cannot fail due to lack of memory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIlink\fP the message link to queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line 480 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_connection_remove_timeout_unlocked(), _dbus_hash_table_lookup_int(), _dbus_list_append_link(), _dbus_pending_call_get_timeout_unlocked(), _dbus_pending_call_is_timeout_added_unlocked(), _dbus_pending_call_set_timeout_added_unlocked(), _dbus_transport_peek_is_authenticated(), DBusList::data, dbus_message_get_interface(), dbus_message_get_member(), dbus_message_get_path(), dbus_message_get_reply_serial(), dbus_message_get_signature(), dbus_message_get_type(), dbus_message_type_to_string(), FALSE, DBusConnection::incoming_messages, DBusConnection::n_incoming, NULL, DBusConnection::pending_replies, and DBusConnection::transport\&.
+.PP
+Referenced by _dbus_transport_queue_messages()\&.
+.SS "void _dbus_connection_queue_synthesized_message_link (\fBDBusConnection\fP * connection, \fBDBusList\fP * link)"
+
+.PP
+Adds a link + message to the incoming message queue\&. Can't fail\&. Takes ownership of both link and message\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIlink\fP the list node and message to queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line 545 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_list_append_link(), DBusList::data, DBusConnection::incoming_messages, and DBusConnection::n_incoming\&.
+.PP
+Referenced by _dbus_pending_call_queue_timeout_error_unlocked(), and dbus_connection_pop_message()\&.
+.SS "\fBDBusConnection\fP* _dbus_connection_ref_unlocked (\fBDBusConnection\fP * connection)"
+
+.PP
+Increments the reference count of a \fBDBusConnection\fP\&. Requires that the caller already holds the connection lock\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the connection\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1419 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_atomic_inc(), _dbus_current_generation, NULL, and DBusConnection::refcount\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_connection_remove_pending_call(), _dbus_connection_toggle_timeout_unlocked(), _dbus_object_tree_unregister_and_unlock(), _dbus_pending_call_new_unlocked(), _dbus_transport_try_to_authenticate(), dbus_connection_dispatch(), dbus_connection_pop_message(), dbus_connection_send(), and dbus_connection_unref()\&.
+.SS "void _dbus_connection_remove_pending_call (\fBDBusConnection\fP * connection, \fBDBusPendingCall\fP * pending)"
+
+.PP
+Removes a pending call from the connection, such that the pending reply will be ignored\&. May drop the last reference to the pending call\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIpending\fP the pending call 
+.RE
+.PP
+
+.PP
+Definition at line 1044 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_cmutex_lock(), _dbus_cmutex_unlock(), _dbus_condvar_wait(), _dbus_condvar_wait_timeout(), _dbus_condvar_wake_one(), _dbus_connection_ref_unlocked(), _dbus_connection_unref_unlocked(), CONNECTION_LOCK, CONNECTION_UNLOCK, FALSE, DBusConnection::io_path_acquired, DBusConnection::io_path_cond, DBusConnection::io_path_mutex, and TRUE\&.
+.PP
+Referenced by dbus_pending_call_cancel()\&.
+.SS "void _dbus_connection_remove_timeout_unlocked (\fBDBusConnection\fP * connection, \fBDBusTimeout\fP * timeout)"
+
+.PP
+Removes a timeout using the connection's DBusRemoveTimeoutFunction if available\&. It's an error to call this function on a timeout that was not previously added\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fItimeout\fP the timeout to remove\&. 
+.RE
+.PP
+
+.PP
+Definition at line 885 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_timeout_list_remove_timeout(), FALSE, and NULL\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), _dbus_connection_queue_received_message_link(), _dbus_connection_toggle_timeout_unlocked(), and dbus_connection_send()\&.
+.SS "void _dbus_connection_remove_watch_unlocked (\fBDBusConnection\fP * connection, \fBDBusWatch\fP * watch)"
+
+.PP
+Removes a watch using the connection's DBusRemoveWatchFunction if available\&. It's an error to call this function on a watch that was not previously added\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIwatch\fP the watch to remove\&. 
+.RE
+.PP
+
+.PP
+Definition at line 761 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_watch_list_remove_watch(), FALSE, and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_connection_send_and_unlock (\fBDBusConnection\fP * connection, \fBDBusMessage\fP * message, \fBdbus_uint32_t\fP * client_serial)"
+
+.PP
+Like \fBdbus_connection_send()\fP, but assumes the connection is already locked on function entry, and unlocks before returning\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fImessage\fP the message to send 
+.br
+\fIclient_serial\fP return location for client serial of sent message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on out-of-memory 
+.RE
+.PP
+
+.PP
+Definition at line 2098 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, CONNECTION_UNLOCK, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_object_tree_free_all_unlocked(), and dbus_connection_send()\&.
+.SS "void _dbus_connection_set_pending_fds_function (\fBDBusConnection\fP * connection, DBusPendingFdsChangeFunction callback, void * data)"
+
+.PP
+Register a function to be called whenever the number of pending file descriptors in the loader change\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIcallback\fP the callback 
+.RE
+.PP
+
+.PP
+Definition at line 2571 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_transport_set_pending_fds_function(), and DBusConnection::transport\&.
+.SS "void _dbus_connection_toggle_timeout_unlocked (\fBDBusConnection\fP * connection, \fBDBusTimeout\fP * timeout, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Toggles a timeout and notifies app via connection's DBusTimeoutToggledFunction if available\&. It's an error to call this function on a timeout that was not previously added\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fItimeout\fP the timeout to toggle\&. 
+.br
+\fIenabled\fP whether to enable or disable 
+.RE
+.PP
+
+.PP
+Definition at line 905 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_connection_add_timeout_unlocked(), _dbus_connection_ref_unlocked(), _dbus_connection_remove_timeout_unlocked(), _dbus_connection_unref_unlocked(), _dbus_hash_table_insert_int(), _dbus_hash_table_remove_int(), _dbus_pending_call_get_connection_unlocked(), _dbus_pending_call_get_reply_serial_unlocked(), _dbus_pending_call_get_timeout_unlocked(), _dbus_pending_call_is_timeout_added_unlocked(), _dbus_pending_call_ref_unlocked(), _dbus_pending_call_set_timeout_added_unlocked(), _dbus_pending_call_unref_and_unlock(), _dbus_timeout_list_toggle_timeout(), CONNECTION_LOCK, FALSE, NULL, DBusConnection::pending_replies, and TRUE\&.
+.SS "void _dbus_connection_toggle_watch_unlocked (\fBDBusConnection\fP * connection, \fBDBusWatch\fP * watch, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Toggles a watch and notifies app via connection's DBusWatchToggledFunction if available\&. It's an error to call this function on a watch that was not previously added\&. Connection lock should be held when calling this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.br
+\fIwatch\fP the watch to toggle\&. 
+.br
+\fIenabled\fP whether to enable or disable 
+.RE
+.PP
+
+.PP
+Definition at line 781 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_watch_list_toggle_watch(), and NULL\&.
+.SS "void _dbus_connection_unlock (\fBDBusConnection\fP * connection)"
+
+.PP
+Releases the connection lock\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+
+.PP
+Definition at line 399 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_list_free_link(), _dbus_list_pop_first_link(), _dbus_rmutex_unlock(), DBusList::data, dbus_message_unref(), DBusConnection::dispatch_cond, DBusConnection::dispatch_mutex, DBusConnection::expired_messages, DBusConnection::io_path_cond, DBusConnection::io_path_mutex, DBusConnection::mutex, NULL, DBusConnection::wakeup_main_data, and DBusConnection::wakeup_main_function\&.
+.PP
+Referenced by _dbus_object_tree_dispatch_and_unlock(), _dbus_object_tree_free_all_unlocked(), _dbus_object_tree_list_registered_and_unlock(), _dbus_object_tree_unregister_and_unlock(), and _dbus_transport_get_is_connected()\&.
+.SS "void _dbus_connection_unref_unlocked (\fBDBusConnection\fP * connection)"
+
+.PP
+Decrements the reference count of a \fBDBusConnection\fP\&. Requires that the caller already holds the connection lock\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1442 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_assert, _dbus_atomic_dec(), DBusConnection::client_serial, NULL, and DBusConnection::refcount\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_connection_remove_pending_call(), _dbus_connection_toggle_timeout_unlocked(), _dbus_transport_try_to_authenticate(), and dbus_connection_pop_message()\&.
+.SS "\fBdbus_bool_t\fP dbus_connection_has_messages_to_send (\fBDBusConnection\fP * connection)"
+
+.PP
+Checks whether there are messages in the outgoing message queue\&. Use \fBdbus_connection_flush()\fP to block until all outgoing messages have been written to the underlying transport (such as a socket)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the outgoing queue is non-empty\&. 
+.RE
+.PP
+
+.PP
+Definition at line 588 of file dbus\-connection\&.c\&.
+.PP
+References _dbus_connection_has_messages_to_send_unlocked(), CONNECTION_LOCK, CONNECTION_UNLOCK, FALSE, and NULL\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,2465 @@
+.TH "DBusMarshal" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMarshal \- marshaling and unmarshaling
+.PP
+functions to marshal/unmarshal data from the wire  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBHeaderFieldType\fP"
+.br
+.ti -1c
+.RI "struct \fBDBusTypeReaderClass\fP"
+.br
+.RI "\fIVirtual table for a type reader\&. \fP"
+.ti -1c
+.RI "struct \fBReplacementBlock\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFIELDS_ARRAY_SIGNATURE_OFFSET\fP   6"
+.br
+.RI "\fIOffset from start of _dbus_header_signature_str to the signature of the fields array\&. \fP"
+.ti -1c
+.RI "#define \fBFIELDS_ARRAY_ELEMENT_SIGNATURE_OFFSET\fP   7"
+.br
+.RI "\fIOffset from start of _dbus_header_signature_str to the signature of an element of the fields array\&. \fP"
+.ti -1c
+.RI "#define \fBBYTE_ORDER_OFFSET\fP   0"
+.br
+.RI "\fIOffset to byte order from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBTYPE_OFFSET\fP   1"
+.br
+.RI "\fIOffset to type from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBFLAGS_OFFSET\fP   2"
+.br
+.RI "\fIOffset to flags from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBVERSION_OFFSET\fP   3"
+.br
+.RI "\fIOffset to version from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBBODY_LENGTH_OFFSET\fP   4"
+.br
+.RI "\fIOffset to body length from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBSERIAL_OFFSET\fP   8"
+.br
+.RI "\fIOffset to client serial from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBFIELDS_ARRAY_LENGTH_OFFSET\fP   12"
+.br
+.RI "\fIOffset to fields array length from start of header\&. \fP"
+.ti -1c
+.RI "#define \fBFIRST_FIELD_OFFSET\fP   16"
+.br
+.RI "\fIOffset to first field in header\&. \fP"
+.ti -1c
+.RI "#define \fBEXPECTED_TYPE_OF_FIELD\fP(field)   (_dbus_header_field_types[field]\&.type)"
+.br
+.RI "\fIMacro to look up the correct type for a field\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_POSSIBLE_HEADER_PADDING\fP   7"
+.br
+.RI "\fIThe most padding we could ever need for a header\&. \fP"
+.ti -1c
+.RI "#define \fBHEADER_END_BEFORE_PADDING\fP(header)   (_dbus_string_get_length (&(header)\->data) \- (header)\->padding)"
+.br
+.RI "\fICompute the end of the header, ignoring padding\&. \fP"
+.ti -1c
+.RI "#define \fBRECURSIVE_MARSHAL_READ_TRACE\fP   0"
+.br
+.RI "\fIturn this on to get deluged in TypeReader verbose spam \fP"
+.ti -1c
+.RI "#define \fBRECURSIVE_MARSHAL_WRITE_TRACE\fP   0"
+.br
+.RI "\fIturn this on to get deluged in TypeWriter verbose spam \fP"
+.ti -1c
+.RI "#define \fBARRAY_READER_LEN_POS\fP(reader)   ((reader)\->u\&.array\&.start_pos \- ((int)(reader)\->array_len_offset) \- 4)"
+.br
+.RI "\fIcompute position of array length given array_len_offset, which is the offset back from start_pos to end of the len \fP"
+.ti -1c
+.RI "#define \fBVALID_INITIAL_NAME_CHARACTER\fP(c)"
+.br
+.RI "\fIDetermine wether the given character is valid as the first character in a name\&. \fP"
+.ti -1c
+.RI "#define \fBVALID_NAME_CHARACTER\fP(c)"
+.br
+.RI "\fIDetermine wether the given character is valid as a second or later character in a name\&. \fP"
+.ti -1c
+.RI "#define \fBVALID_INITIAL_BUS_NAME_CHARACTER\fP(c)"
+.br
+.RI "\fIDetermine wether the given character is valid as the first character in a bus name\&. \fP"
+.ti -1c
+.RI "#define \fBVALID_BUS_NAME_CHARACTER\fP(c)"
+.br
+.RI "\fIDetermine wether the given character is valid as a second or later character in a bus name\&. \fP"
+.ti -1c
+.RI "#define \fB_dbus_validate_utf8\fP(s,  b,  e)   \fB_dbus_string_validate_utf8\fP (s, b, e)"
+.br
+.ti -1c
+.RI "#define \fBDECLARE_DBUS_NAME_CHECK\fP(what)   \fBdbus_bool_t\fP _dbus_check_is_valid_##what (const char *name)"
+.br
+.RI "\fIA name check is used in _dbus_return_if_fail(), it's not suitable for validating untrusted data\&. \fP"
+.ti -1c
+.RI "#define \fBDEFINE_DBUS_NAME_CHECK\fP(what)"
+.br
+.RI "\fIDefine a name check to be used in _dbus_return_if_fail() statements\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBMARSHAL_AS_STRING\fP, \fBMARSHAL_AS_SIGNATURE\fP, \fBMARSHAL_AS_BYTE_ARRAY\fP }"
+.br
+.ti -1c
+.RI "enum \fBDBusValidationMode\fP { \fBDBUS_VALIDATION_MODE_WE_TRUST_THIS_DATA_ABSOLUTELY\fP, \fBDBUS_VALIDATION_MODE_DATA_IS_UNTRUSTED\fP }
+.RI "\fIThis is used rather than a bool for high visibility\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBDBusValidity\fP { \fBDBUS_VALIDITY_UNKNOWN_OOM_ERROR\fP = -4, \fBDBUS_INVALID_FOR_UNKNOWN_REASON\fP = -3, \fBDBUS_VALID_BUT_INCOMPLETE\fP = -2, \fBDBUS_VALIDITY_UNKNOWN\fP = -1, \fBDBUS_VALID\fP = 0, \fBDBUS_INVALID_UNKNOWN_TYPECODE\fP = 1, \fBDBUS_INVALID_MISSING_ARRAY_ELEMENT_TYPE\fP = 2, \fBDBUS_INVALID_SIGNATURE_TOO_LONG\fP = 3, \fBDBUS_INVALID_EXCEEDED_MAXIMUM_ARRAY_RECURSION\fP = 4, \fBDBUS_INVALID_EXCEEDED_MAXIMUM_STRUCT_RECURSION\fP = 5, \fBDBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED\fP = 6, \fBDBUS_INVALID_STRUCT_STARTED_BUT_NOT_ENDED\fP = 7, \fBDBUS_INVALID_STRUCT_HAS_NO_FIELDS\fP = 8, \fBDBUS_INVALID_ALIGNMENT_PADDING_NOT_NUL\fP = 9, \fBDBUS_INVALID_BOOLEAN_NOT_ZERO_OR_ONE\fP = 10, \fBDBUS_INVALID_NOT_ENOUGH_DATA\fP = 11, \fBDBUS_INVALID_TOO_MUCH_DATA\fP = 12, \fBDBUS_INVALID_BAD_BYTE_ORDER\fP = 13, \fBDBUS_INVALID_BAD_PROTOCOL_VERSION\fP = 14, \fBDBUS_INVALID_BAD_MESSAGE_TYPE\fP = 15, \fBDBUS_INVALID_BAD_SERIAL\fP = 16, \fBDBUS_INVALID_INSANE_FIELDS_ARRAY_LENGTH\fP = 17, \fBDBUS_INVALID_INSANE_BODY_LENGTH\fP = 18, \fBDBUS_INVALID_MESSAGE_TOO_LONG\fP = 19, \fBDBUS_INVALID_HEADER_FIELD_CODE\fP = 20, \fBDBUS_INVALID_HEADER_FIELD_HAS_WRONG_TYPE\fP = 21, \fBDBUS_INVALID_USES_LOCAL_INTERFACE\fP = 22, \fBDBUS_INVALID_USES_LOCAL_PATH\fP = 23, \fBDBUS_INVALID_HEADER_FIELD_APPEARS_TWICE\fP = 24, \fBDBUS_INVALID_BAD_DESTINATION\fP = 25, \fBDBUS_INVALID_BAD_INTERFACE\fP = 26, \fBDBUS_INVALID_BAD_MEMBER\fP = 27, \fBDBUS_INVALID_BAD_ERROR_NAME\fP = 28, \fBDBUS_INVALID_BAD_SENDER\fP = 29, \fBDBUS_INVALID_MISSING_PATH\fP = 30, \fBDBUS_INVALID_MISSING_INTERFACE\fP = 31, \fBDBUS_INVALID_MISSING_MEMBER\fP = 32, \fBDBUS_INVALID_MISSING_ERROR_NAME\fP = 33, \fBDBUS_INVALID_MISSING_REPLY_SERIAL\fP = 34, \fBDBUS_INVALID_LENGTH_OUT_OF_BOUNDS\fP = 35, \fBDBUS_INVALID_ARRAY_LENGTH_EXCEEDS_MAXIMUM\fP = 36, \fBDBUS_INVALID_BAD_PATH\fP = 37, \fBDBUS_INVALID_SIGNATURE_LENGTH_OUT_OF_BOUNDS\fP = 38, \fBDBUS_INVALID_BAD_UTF8_IN_STRING\fP = 39, \fBDBUS_INVALID_ARRAY_LENGTH_INCORRECT\fP = 40, \fBDBUS_INVALID_VARIANT_SIGNATURE_LENGTH_OUT_OF_BOUNDS\fP = 41, \fBDBUS_INVALID_VARIANT_SIGNATURE_BAD\fP = 42, \fBDBUS_INVALID_VARIANT_SIGNATURE_EMPTY\fP = 43, \fBDBUS_INVALID_VARIANT_SIGNATURE_SPECIFIES_MULTIPLE_VALUES\fP = 44, \fBDBUS_INVALID_VARIANT_SIGNATURE_MISSING_NUL\fP = 45, \fBDBUS_INVALID_STRING_MISSING_NUL\fP = 46, \fBDBUS_INVALID_SIGNATURE_MISSING_NUL\fP = 47, \fBDBUS_INVALID_EXCEEDED_MAXIMUM_DICT_ENTRY_RECURSION\fP = 48, \fBDBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED\fP = 49, \fBDBUS_INVALID_DICT_ENTRY_STARTED_BUT_NOT_ENDED\fP = 50, \fBDBUS_INVALID_DICT_ENTRY_HAS_NO_FIELDS\fP = 51, \fBDBUS_INVALID_DICT_ENTRY_HAS_ONLY_ONE_FIELD\fP = 52, \fBDBUS_INVALID_DICT_ENTRY_HAS_TOO_MANY_FIELDS\fP = 53, \fBDBUS_INVALID_DICT_ENTRY_NOT_INSIDE_ARRAY\fP = 54, \fBDBUS_INVALID_DICT_KEY_MUST_BE_BASIC_TYPE\fP = 55, \fBDBUS_INVALID_MISSING_UNIX_FDS\fP = 56, \fBDBUS_INVALID_NESTED_TOO_DEEPLY\fP = 57, \fBDBUS_VALIDITY_LAST\fP }
+.RI "\fIThis is primarily used in unit testing, so we can verify that each invalid message is invalid for the expected reasons\&. \fP""
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_pack_uint32\fP (\fBdbus_uint32_t\fP value, int byte_order, unsigned char *data)"
+.br
+.RI "\fIPacks a 32 bit unsigned integer into a data pointer\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint16_t\fP \fB_dbus_unpack_uint16\fP (int byte_order, const unsigned char *data)"
+.br
+.RI "\fIUnpacks a 16 bit unsigned integer from a data pointer\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fB_dbus_unpack_uint32\fP (int byte_order, const unsigned char *data)"
+.br
+.RI "\fIUnpacks a 32 bit unsigned integer from a data pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_marshal_set_uint32\fP (\fBDBusString\fP *str, int pos, \fBdbus_uint32_t\fP value, int byte_order)"
+.br
+.RI "\fISets the 4 bytes at the given offset to a marshaled unsigned integer, replacing anything found there previously\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_marshal_set_basic\fP (\fBDBusString\fP *str, int pos, int type, const void *value, int byte_order, int *old_end_pos, int *new_end_pos)"
+.br
+.RI "\fISets an existing basic type value to a new value\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fB_dbus_marshal_read_uint32\fP (const \fBDBusString\fP *str, int pos, int byte_order, int *new_pos)"
+.br
+.RI "\fIConvenience function to demarshal a 32 bit unsigned integer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_marshal_read_basic\fP (const \fBDBusString\fP *str, int pos, int type, void *value, int byte_order, int *new_pos)"
+.br
+.RI "\fIDemarshals a basic-typed value\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_marshal_write_basic\fP (\fBDBusString\fP *str, int insert_at, int type, const void *value, int byte_order, int *pos_after)"
+.br
+.RI "\fIMarshals a basic-typed value\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_swap_array\fP (unsigned char *data, int n_elements, int alignment)"
+.br
+.RI "\fISwaps the elements of an array to the opposite byte order\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_marshal_write_fixed_multi\fP (\fBDBusString\fP *str, int insert_at, int element_type, const void *value, int n_elements, int byte_order, int *pos_after)"
+.br
+.RI "\fIMarshals a block of values of fixed-length type all at once, as an optimization\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_marshal_skip_basic\fP (const \fBDBusString\fP *str, int type, int byte_order, int *pos)"
+.br
+.RI "\fISkips over a basic-typed value, reporting the following position\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_marshal_skip_array\fP (const \fBDBusString\fP *str, int element_type, int byte_order, int *pos)"
+.br
+.RI "\fISkips an array, returning the next position\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_type_get_alignment\fP (int typecode)"
+.br
+.RI "\fIGets the alignment requirement for the given type; will be 1, 4, or 8\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_type_to_string\fP (int typecode)"
+.br
+.RI "\fIReturns a string describing the given type\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_verbose_bytes\fP (const unsigned char *data, int len, int offset)"
+.br
+.RI "\fIIf in verbose mode, print a block of binary data\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_verbose_bytes_of_string\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIDump the given part of the string to verbose log\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_first_type_in_signature\fP (const \fBDBusString\fP *str, int pos)"
+.br
+.RI "\fIGet the first type in the signature\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_first_type_in_signature_c_str\fP (const char *str, int pos)"
+.br
+.RI "\fISimilar to \fB_dbus_first_type_in_signature\fP, but operates on a C string buffer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_marshal_byteswap\fP (const \fBDBusString\fP *signature, int signature_start, int old_byte_order, int new_byte_order, \fBDBusString\fP *value_str, int value_pos)"
+.br
+.RI "\fIByteswaps the marshaled data in the given value_str\&. \fP"
+.ti -1c
+.RI "\fB_DBUS_STRING_DEFINE_STATIC\fP (_dbus_header_signature_str, \fBDBUS_HEADER_SIGNATURE\fP)"
+.br
+.RI "\fIStatic \fBDBusString\fP containing the signature of a message header\&. \fP"
+.ti -1c
+.RI "\fB_DBUS_STRING_DEFINE_STATIC\fP (_dbus_local_interface_str, \fBDBUS_INTERFACE_LOCAL\fP)"
+.br
+.RI "\fIStatic \fBDBusString\fP containing the local interface\&. \fP"
+.ti -1c
+.RI "\fB_DBUS_STRING_DEFINE_STATIC\fP (_dbus_local_path_str, \fBDBUS_PATH_LOCAL\fP)"
+.br
+.RI "\fIStatic \fBDBusString\fP containing the local path\&. \fP"
+.ti -1c
+.RI "char \fB_dbus_header_get_byte_order\fP (const \fBDBusHeader\fP *header)"
+.br
+.RI "\fIReturns the header's byte order\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_header_get_message_type\fP (\fBDBusHeader\fP *header)"
+.br
+.RI "\fIGets the type of the message\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_header_set_serial\fP (\fBDBusHeader\fP *header, \fBdbus_uint32_t\fP serial)"
+.br
+.RI "\fISets the serial number of a header\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fB_dbus_header_get_serial\fP (\fBDBusHeader\fP *header)"
+.br
+.RI "\fISee \fBdbus_message_get_serial()\fP \fP"
+.ti -1c
+.RI "void \fB_dbus_header_reinit\fP (\fBDBusHeader\fP *header)"
+.br
+.RI "\fIRe-initializes a header that was previously initialized and never freed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_init\fP (\fBDBusHeader\fP *header)"
+.br
+.RI "\fIInitializes a header, but doesn't prepare it for use; to make the header valid, you have to call \fB_dbus_header_create()\fP\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_header_free\fP (\fBDBusHeader\fP *header)"
+.br
+.RI "\fIFrees a header\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_copy\fP (const \fBDBusHeader\fP *header, \fBDBusHeader\fP *dest)"
+.br
+.RI "\fIInitializes dest with a copy of the given header\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_create\fP (\fBDBusHeader\fP *header, int byte_order, int message_type, const char *destination, const char *path, const char *interface, const char *member, const char *error_name)"
+.br
+.RI "\fIFills in the primary fields of the header, so the header is ready for use\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_have_message_untrusted\fP (int max_message_length, \fBDBusValidity\fP *validity, int *byte_order, int *fields_array_len, int *header_len, int *body_len, const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIGiven data long enough to contain the length of the message body and the fields array, check whether the data is long enough to contain the entire message (assuming the claimed lengths are accurate)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_load\fP (\fBDBusHeader\fP *header, \fBDBusValidationMode\fP mode, \fBDBusValidity\fP *validity, int byte_order, int fields_array_len, int header_len, int body_len, const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fICreates a message header from potentially-untrusted data\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_header_update_lengths\fP (\fBDBusHeader\fP *header, int body_len)"
+.br
+.RI "\fIFills in the correct body length\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_set_field_basic\fP (\fBDBusHeader\fP *header, int field, int type, const void *value)"
+.br
+.RI "\fISets the value of a field with basic type\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_get_field_basic\fP (\fBDBusHeader\fP *header, int field, int type, void *value)"
+.br
+.RI "\fIGets the value of a field with basic type\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_get_field_raw\fP (\fBDBusHeader\fP *header, int field, const \fBDBusString\fP **str, int *pos)"
+.br
+.RI "\fIGets the raw marshaled data for a field\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_delete_field\fP (\fBDBusHeader\fP *header, int field)"
+.br
+.RI "\fIDeletes a field, if it exists\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_header_toggle_flag\fP (\fBDBusHeader\fP *header, \fBdbus_uint32_t\fP flag, \fBdbus_bool_t\fP value)"
+.br
+.RI "\fIToggles a message flag bit, turning on the bit if value = TRUE and flipping it off if value = FALSE\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_header_get_flag\fP (\fBDBusHeader\fP *header, \fBdbus_uint32_t\fP flag)"
+.br
+.RI "\fIGets a message flag bit, returning TRUE if the bit is set\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_header_byteswap\fP (\fBDBusHeader\fP *header, int new_order)"
+.br
+.RI "\fISwaps the header into the given order if required\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_signature_next\fP (const char *type_str, int *type_pos)"
+.br
+.RI "\fISkips to the next 'complete' type inside a type signature\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_init\fP (\fBDBusTypeReader\fP *reader, int byte_order, const \fBDBusString\fP *type_str, int type_pos, const \fBDBusString\fP *value_str, int value_pos)"
+.br
+.RI "\fIInitializes a type reader\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_init_types_only\fP (\fBDBusTypeReader\fP *reader, const \fBDBusString\fP *type_str, int type_pos)"
+.br
+.RI "\fILike \fB_dbus_type_reader_init()\fP but the iteration is over the signature, not over values\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_type_reader_get_current_type\fP (const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIGets the type of the value the reader is currently pointing to; or for a types-only reader gets the type it's currently pointing to\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_type_reader_get_element_type\fP (const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIGets the type of an element of the array the reader is currently pointing to\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_type_reader_get_value_pos\fP (const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIGets the current position in the value block\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_read_raw\fP (const \fBDBusTypeReader\fP *reader, const unsigned char **value_location)"
+.br
+.RI "\fIGet the address of the marshaled value in the data being read\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_read_basic\fP (const \fBDBusTypeReader\fP *reader, void *value)"
+.br
+.RI "\fIReads a basic-typed value, as with \fB_dbus_marshal_read_basic()\fP\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_type_reader_get_array_length\fP (const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIReturns the number of bytes in the array\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_read_fixed_multi\fP (const \fBDBusTypeReader\fP *reader, void *value, int *n_elements)"
+.br
+.RI "\fIReads a block of fixed-length basic values, from the current point in an array to the end of the array\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_recurse\fP (\fBDBusTypeReader\fP *reader, \fBDBusTypeReader\fP *sub)"
+.br
+.RI "\fIInitialize a new reader pointing to the first type and corresponding value that's a child of the current container\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_reader_next\fP (\fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fISkip to the next value on this 'level'\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_reader_has_next\fP (const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fICheck whether there's another value on this 'level'\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_reader_get_signature\fP (const \fBDBusTypeReader\fP *reader, const \fBDBusString\fP **str_p, int *start_p, int *len_p)"
+.br
+.RI "\fIGets the string and range of said string containing the signature of the current value\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_reader_set_basic\fP (\fBDBusTypeReader\fP *reader, const void *value, const \fBDBusTypeReader\fP *realign_root)"
+.br
+.RI "\fISets a new value for the basic type value pointed to by the reader, leaving the reader valid to continue reading\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_reader_delete\fP (\fBDBusTypeReader\fP *reader, const \fBDBusTypeReader\fP *realign_root)"
+.br
+.RI "\fIRecursively deletes any value pointed to by the reader, leaving the reader valid to continue reading\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_writer_init\fP (\fBDBusTypeWriter\fP *writer, int byte_order, \fBDBusString\fP *type_str, int type_pos, \fBDBusString\fP *value_str, int value_pos)"
+.br
+.RI "\fIInitialize a write iterator, which is used to write out values in serialized D-Bus format\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_writer_init_types_delayed\fP (\fBDBusTypeWriter\fP *writer, int byte_order, \fBDBusString\fP *value_str, int value_pos)"
+.br
+.RI "\fIInitialize a write iterator, with the signature to be provided later\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_writer_add_types\fP (\fBDBusTypeWriter\fP *writer, \fBDBusString\fP *type_str, int type_pos)"
+.br
+.RI "\fIAdds type string to the writer, if it had none\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_writer_remove_types\fP (\fBDBusTypeWriter\fP *writer)"
+.br
+.RI "\fIRemoves type string from the writer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_type_writer_init_values_only\fP (\fBDBusTypeWriter\fP *writer, int byte_order, const \fBDBusString\fP *type_str, int type_pos, \fBDBusString\fP *value_str, int value_pos)"
+.br
+.RI "\fILike \fB_dbus_type_writer_init()\fP, except the type string passed in should correspond to an existing signature that matches what you're going to write out\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_recurse\fP (\fBDBusTypeWriter\fP *writer, int container_type, const \fBDBusString\fP *contained_type, int contained_type_start, \fBDBusTypeWriter\fP *sub)"
+.br
+.RI "\fIOpens a new container and writes out the initial information for that container\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_append_array\fP (\fBDBusTypeWriter\fP *writer, const \fBDBusString\fP *contained_type, int contained_type_start, \fBDBusTypeWriter\fP *sub)"
+.br
+.RI "\fIAppend to an existing array\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_unrecurse\fP (\fBDBusTypeWriter\fP *writer, \fBDBusTypeWriter\fP *sub)"
+.br
+.RI "\fICloses a container created by \fB_dbus_type_writer_recurse()\fP and writes any additional information to the values block\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_write_basic\fP (\fBDBusTypeWriter\fP *writer, int type, const void *value)"
+.br
+.RI "\fIWrites out a basic type\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_write_fixed_multi\fP (\fBDBusTypeWriter\fP *writer, int element_type, const void *value, int n_elements)"
+.br
+.RI "\fIWrites a block of fixed-length basic values, i\&.e\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_type_writer_write_reader\fP (\fBDBusTypeWriter\fP *writer, \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIIterate through all values in the given reader, writing a copy of each value to the writer\&. \fP"
+.ti -1c
+.RI "\fBDBusValidity\fP \fB_dbus_validate_signature_with_reason\fP (const \fBDBusString\fP *type_str, int type_pos, int len)"
+.br
+.RI "\fIVerifies that the range of type_str from type_pos to type_end is a valid signature\&. \fP"
+.ti -1c
+.RI "\fBDBusValidity\fP \fB_dbus_validate_body_with_reason\fP (const \fBDBusString\fP *expected_signature, int expected_signature_start, int byte_order, int *bytes_remaining, const \fBDBusString\fP *value_str, int value_pos, int len)"
+.br
+.RI "\fIVerifies that the range of value_str from value_pos to value_end is a legitimate value of type expected_signature\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_path\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid object path name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_validity_to_error_message\fP (\fBDBusValidity\fP validity)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_interface\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid interface name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_member\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid member name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_error_name\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid error name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_bus_name\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid bus name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_bus_namespace\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a prefix of a valid bus name in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_validate_signature\fP (const \fBDBusString\fP *str, int start, int len)"
+.br
+.RI "\fIChecks that the given range of the string is a valid message type signature in the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (path)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_path() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (interface)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_interface() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (member)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_member() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (error_name)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_error_name() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (bus_name)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_bus_name() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (signature)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_signature() \fP"
+.ti -1c
+.RI "\fBDECLARE_DBUS_NAME_CHECK\fP (utf8)"
+.br
+.RI "\fIdefines _dbus_check_is_valid_utf8() \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+functions to marshal/unmarshal data from the wire 
+
+Types and functions related to converting primitive data types from wire format to native machine format, and vice versa\&.
+.PP
+A signature is just a string with multiple types one after the other\&. for example a type is 'i' or '(ii)', a signature is 'i(ii)' where i is int and (ii) is struct { int; int; } 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DECLARE_DBUS_NAME_CHECK(what)   \fBdbus_bool_t\fP _dbus_check_is_valid_##what (const char *name)"
+
+.PP
+A name check is used in _dbus_return_if_fail(), it's not suitable for validating untrusted data\&. use _dbus_validate_whatever for that\&. 
+.PP
+Definition at line 169 of file dbus\-marshal\-validate\&.h\&.
+.SS "#define DEFINE_DBUS_NAME_CHECK(what)"
+\fBValue:\fP
+.PP
+.nf
+dbus_bool_t                                                             \
+_dbus_check_is_valid_##what (const char *name)                          \
+{                                                                       \
+  DBusString str;                                                       \
+                                                                        \
+  if (name == NULL)                                                     \
+    return FALSE;                                                       \\
+                                                                        \\
+  _dbus_string_init_const (&str, name);                                 \
+  return _dbus_validate_##what (&str, 0,                                \
+                                _dbus_string_get_length (&str));        \
+}
+.fi
+.PP
+Define a name check to be used in _dbus_return_if_fail() statements\&. 
+.PP
+Definition at line 174 of file dbus\-marshal\-validate\&.h\&.
+.PP
+Referenced by _dbus_validate_signature()\&.
+.SS "#define VALID_BUS_NAME_CHARACTER(c)"
+\fBValue:\fP
+.PP
+.nf
+( ((c) >= '0' && (c) <= '9') ||               \
+    ((c) >= 'A' && (c) <= 'Z') ||               \
+    ((c) >= 'a' && (c) <= 'z') ||               \
+    ((c) == '_') || ((c) == '-'))
+.fi
+.PP
+Determine wether the given character is valid as a second or later character in a bus name\&. 
+.PP
+Definition at line 1079 of file dbus\-marshal\-validate\&.c\&.
+.SS "#define VALID_INITIAL_BUS_NAME_CHARACTER(c)"
+\fBValue:\fP
+.PP
+.nf
+( ((c) >= 'A' && (c) <= 'Z') ||               \
+    ((c) >= 'a' && (c) <= 'z') ||               \
+    ((c) == '_') || ((c) == '-'))
+.fi
+.PP
+Determine wether the given character is valid as the first character in a bus name\&. 
+.PP
+Definition at line 1070 of file dbus\-marshal\-validate\&.c\&.
+.SS "#define VALID_INITIAL_NAME_CHARACTER(c)"
+\fBValue:\fP
+.PP
+.nf
+( ((c) >= 'A' && (c) <= 'Z') ||               \
+    ((c) >= 'a' && (c) <= 'z') ||               \
+    ((c) == '_') )
+.fi
+.PP
+Determine wether the given character is valid as the first character in a name\&. 
+.PP
+Definition at line 753 of file dbus\-marshal\-validate\&.c\&.
+.PP
+Referenced by _dbus_validate_interface(), and _dbus_validate_member()\&.
+.SS "#define VALID_NAME_CHARACTER(c)"
+\fBValue:\fP
+.PP
+.nf
+( ((c) >= '0' && (c) <= '9') ||               \
+    ((c) >= 'A' && (c) <= 'Z') ||               \
+    ((c) >= 'a' && (c) <= 'z') ||               \
+    ((c) == '_') )
+.fi
+.PP
+Determine wether the given character is valid as a second or later character in a name\&. 
+.PP
+Definition at line 762 of file dbus\-marshal\-validate\&.c\&.
+.PP
+Referenced by _dbus_validate_interface(), _dbus_validate_member(), and _dbus_validate_path()\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDBusValidity\fP"
+
+.PP
+This is primarily used in unit testing, so we can verify that each invalid message is invalid for the expected reasons\&. Thus we really want a distinct enum value for every codepath leaving the validator functions\&. Enum values are specified manually for ease of debugging (so you can see the enum value given a printf) 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDBUS_VALIDITY_UNKNOWN_OOM_ERROR \fP\fP
+can't determine validity due to OOM 
+.TP
+\fB\fIDBUS_VALID \fP\fP
+the data is valid 
+.TP
+\fB\fIDBUS_INVALID_TOO_MUCH_DATA \fP\fP
+trailing junk makes it invalid 
+.PP
+Definition at line 49 of file dbus\-marshal\-validate\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int _dbus_first_type_in_signature (const \fBDBusString\fP * str, int pos)"
+
+.PP
+Get the first type in the signature\&. The difference between this and just getting the first byte of the signature is that you won't get DBUS_STRUCT_BEGIN_CHAR, you'll get DBUS_TYPE_STRUCT instead\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string containing signature 
+.br
+\fIpos\fP where the signature starts 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the first type in the signature 
+.RE
+.PP
+
+.PP
+Definition at line 1416 of file dbus\-marshal\-basic\&.c\&.
+.PP
+Referenced by _dbus_type_reader_get_current_type(), _dbus_type_reader_get_element_type(), _dbus_type_reader_read_fixed_multi(), _dbus_type_reader_recurse(), _dbus_type_signature_next(), _dbus_type_writer_init_values_only(), and _dbus_validate_signature_with_reason()\&.
+.SS "int _dbus_first_type_in_signature_c_str (const char * str, int pos)"
+
+.PP
+Similar to \fB_dbus_first_type_in_signature\fP, but operates on a C string buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP a C string buffer 
+.br
+\fIpos\fP where the signature starts 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the first type in the signature 
+.RE
+.PP
+
+.PP
+Definition at line 1431 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _DBUS_DOUBLES_BITWISE_EQUAL, _dbus_marshal_read_basic(), _dbus_marshal_set_basic(), _dbus_marshal_set_uint32(), _dbus_pack_uint32(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_init_const_len(), _dbus_string_set_length(), _dbus_type_get_alignment(), _dbus_type_to_string(), _dbus_unpack_uint32(), DBUS_BIG_ENDIAN, DBUS_INT64_CONSTANT, dbus_int64_t, DBUS_LITTLE_ENDIAN, dbus_type_is_basic(), dbus_type_is_fixed(), DBUS_TYPE_STRING, DBUS_UINT64_CONSTANT, dbus_uint64_t, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by dbus_signature_iter_get_current_type(), and dbus_signature_iter_get_element_type()\&.
+.SS "void _dbus_header_byteswap (\fBDBusHeader\fP * header, int new_order)"
+
+.PP
+Swaps the header into the given order if required\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fInew_order\fP the new byte order 
+.RE
+.PP
+
+.PP
+Definition at line 1496 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_header_get_byte_order(), _dbus_marshal_byteswap(), BYTE_ORDER_OFFSET, and DBusHeader::data\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_copy (const \fBDBusHeader\fP * header, \fBDBusHeader\fP * dest)"
+
+.PP
+Initializes dest with a copy of the given header\&. Resets the message serial to 0 on the copy\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP header to copy 
+.br
+\fIdest\fP destination for copy 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 490 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_header_set_serial(), _dbus_string_copy(), _dbus_string_free(), _dbus_string_init_preallocated(), DBusHeader::data, FALSE, and TRUE\&.
+.PP
+Referenced by dbus_message_copy()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_create (\fBDBusHeader\fP * header, int byte_order, int message_type, const char * destination, const char * path, const char * interface, const char * member, const char * error_name)"
+
+.PP
+Fills in the primary fields of the header, so the header is ready for use\&. \fBNULL\fP may be specified for some or all of the fields to avoid adding those fields\&. Some combinations of fields don't make sense, and passing them in will trigger an assertion failure\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIbyte_order\fP byte order of the header 
+.br
+\fImessage_type\fP the message type 
+.br
+\fIdestination\fP destination field or \fBNULL\fP 
+.br
+\fIpath\fP path field or \fBNULL\fP 
+.br
+\fIinterface\fP interface field or \fBNULL\fP 
+.br
+\fImember\fP member field or \fBNULL\fP 
+.br
+\fIerror_name\fP error name or \fBNULL\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 528 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_delete(), _dbus_type_writer_init_values_only(), _dbus_type_writer_recurse(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_basic(), DBusHeader::data, DBUS_BIG_ENDIAN, DBUS_HEADER_FIELD_DESTINATION, DBUS_HEADER_FIELD_ERROR_NAME, DBUS_HEADER_FIELD_INTERFACE, DBUS_HEADER_FIELD_MEMBER, DBUS_HEADER_FIELD_PATH, DBUS_LITTLE_ENDIAN, DBUS_MAJOR_PROTOCOL_VERSION, DBUS_MESSAGE_TYPE_SIGNAL, DBUS_TYPE_ARRAY, DBUS_TYPE_BYTE, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, FALSE, FIELDS_ARRAY_SIGNATURE_OFFSET, HEADER_END_BEFORE_PADDING, NULL, DBusHeader::padding, and TRUE\&.
+.PP
+Referenced by dbus_message_new(), dbus_message_new_error(), dbus_message_new_method_call(), dbus_message_new_method_return(), and dbus_message_new_signal()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_delete_field (\fBDBusHeader\fP * header, int field)"
+
+.PP
+Deletes a field, if it exists\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIfield\fP the field to delete 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 1416 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_type_reader_delete(), FALSE, and TRUE\&.
+.PP
+Referenced by dbus_message_lock()\&.
+.SS "void _dbus_header_free (\fBDBusHeader\fP * header)"
+
+.PP
+Frees a header\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.RE
+.PP
+
+.PP
+Definition at line 476 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_string_free(), and DBusHeader::data\&.
+.PP
+Referenced by dbus_message_copy(), and dbus_message_get_reply_serial()\&.
+.SS "char _dbus_header_get_byte_order (const \fBDBusHeader\fP * header)"
+
+.PP
+Returns the header's byte order\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the byte order 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_header_get_byte_order(), _dbus_string_delete(), _dbus_string_init_const_len(), _dbus_type_reader_get_current_type(), _dbus_type_reader_init(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_recurse(), _dbus_type_reader_set_basic(), _dbus_type_writer_recurse(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_basic(), BYTE_ORDER_OFFSET, DBusHeader::data, DBUS_HEADER_FIELD_LAST, DBUS_TYPE_BYTE, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, DBUS_TYPE_VARIANT, FALSE, DBusHeader::fields, FIELDS_ARRAY_LENGTH_OFFSET, FIELDS_ARRAY_SIGNATURE_OFFSET, NULL, TRUE, DBusHeaderField::value_pos, DBusTypeWriter::value_pos, and DBusTypeWriter::value_str\&.
+.PP
+Referenced by _dbus_header_byteswap(), _dbus_header_get_byte_order(), _dbus_header_get_field_basic(), _dbus_header_get_serial(), _dbus_header_have_message_untrusted(), _dbus_header_set_field_basic(), _dbus_header_set_serial(), _dbus_header_update_lengths(), dbus_message_iter_init(), and dbus_message_iter_init_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_get_field_basic (\fBDBusHeader\fP * header, int field, int type, void * value)"
+
+.PP
+Gets the value of a field with basic type\&. If the field doesn't exist, returns \fBFALSE\fP, otherwise returns \fBTRUE\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIfield\fP the field to get 
+.br
+\fItype\fP the type of the value 
+.br
+\fIvalue\fP the value as for \fB_dbus_marshal_read_basic()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the field doesn't exist 
+.RE
+.PP
+
+.PP
+Definition at line 1351 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_get_byte_order(), _dbus_marshal_read_basic(), DBusHeader::data, DBUS_HEADER_FIELD_INVALID, DBUS_HEADER_FIELD_LAST, EXPECTED_TYPE_OF_FIELD, FALSE, DBusHeader::fields, NULL, TRUE, and DBusHeaderField::value_pos\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), _dbus_message_loader_return_unix_fds(), dbus_message_get_destination(), dbus_message_get_error_name(), dbus_message_get_interface(), dbus_message_get_member(), dbus_message_get_path(), dbus_message_get_reply_serial(), and dbus_message_get_sender()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_get_field_raw (\fBDBusHeader\fP * header, int field, const \fBDBusString\fP ** str, int * pos)"
+
+.PP
+Gets the raw marshaled data for a field\&. If the field doesn't exist, returns \fBFALSE\fP, otherwise returns \fBTRUE\fP\&. Returns the start of the marshaled data, i\&.e\&. usually the byte where the length starts (for strings and arrays) or for basic types just the value itself\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIfield\fP the field to get 
+.br
+\fIstr\fP return location for the data string 
+.br
+\fIpos\fP return location for start of field value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the field doesn't exist 
+.RE
+.PP
+
+.PP
+Definition at line 1392 of file dbus\-marshal\-header\&.c\&.
+.PP
+References DBusHeader::data, FALSE, DBusHeader::fields, TRUE, and DBusHeaderField::value_pos\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), and dbus_message_iter_init_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_get_flag (\fBDBusHeader\fP * header, \fBdbus_uint32_t\fP flag)"
+
+.PP
+Gets a message flag bit, returning TRUE if the bit is set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIflag\fP the message flag to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the flag is set 
+.RE
+.PP
+
+.PP
+Definition at line 1479 of file dbus\-marshal\-header\&.c\&.
+.PP
+References DBusHeader::data, and FLAGS_OFFSET\&.
+.PP
+Referenced by dbus_message_get_allow_interactive_authorization(), dbus_message_get_auto_start(), and dbus_message_get_no_reply()\&.
+.SS "int _dbus_header_get_message_type (\fBDBusHeader\fP * header)"
+
+.PP
+Gets the type of the message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the type 
+.RE
+.PP
+
+.PP
+Definition at line 386 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, DBusHeader::data, DBUS_MESSAGE_TYPE_INVALID, and TYPE_OFFSET\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), and dbus_message_get_type()\&.
+.SS "\fBdbus_uint32_t\fP _dbus_header_get_serial (\fBDBusHeader\fP * header)"
+
+.PP
+See \fBdbus_message_get_serial()\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the client serial 
+.RE
+.PP
+
+.PP
+Definition at line 427 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_header_get_byte_order(), _dbus_marshal_read_uint32(), DBusHeader::data, NULL, and SERIAL_OFFSET\&.
+.PP
+Referenced by _dbus_header_set_serial(), and dbus_message_get_serial()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_have_message_untrusted (int max_message_length, \fBDBusValidity\fP * validity, int * byte_order, int * fields_array_len, int * header_len, int * body_len, const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Given data long enough to contain the length of the message body and the fields array, check whether the data is long enough to contain the entire message (assuming the claimed lengths are accurate)\&. Also checks that the lengths are in sanity parameters\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImax_message_length\fP maximum length of a valid message 
+.br
+\fIvalidity\fP return location for why the data is invalid if it is 
+.br
+\fIbyte_order\fP return location for byte order 
+.br
+\fIfields_array_len\fP return location for claimed fields array length 
+.br
+\fIheader_len\fP return location for claimed header length 
+.br
+\fIbody_len\fP return location for claimed body length 
+.br
+\fIstr\fP the data 
+.br
+\fIstart\fP start of data, 8-aligned 
+.br
+\fIlen\fP length of data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the data is long enough for the claimed length, and the lengths were valid 
+.RE
+.PP
+
+.PP
+Definition at line 673 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_header_get_byte_order(), _dbus_header_get_field_basic(), _dbus_header_get_field_raw(), _dbus_header_get_message_type(), _DBUS_INT32_MAX, _dbus_marshal_read_uint32(), _dbus_string_equal_substring(), _dbus_type_reader_get_current_type(), _dbus_validate_bus_name(), _dbus_validate_error_name(), _dbus_validate_interface(), _dbus_validate_member(), BODY_LENGTH_OFFSET, BYTE_ORDER_OFFSET, DBUS_BIG_ENDIAN, DBUS_HEADER_FIELD_DESTINATION, DBUS_HEADER_FIELD_ERROR_NAME, DBUS_HEADER_FIELD_INTERFACE, DBUS_HEADER_FIELD_INVALID, DBUS_HEADER_FIELD_LAST, DBUS_HEADER_FIELD_MEMBER, DBUS_HEADER_FIELD_PATH, DBUS_HEADER_FIELD_REPLY_SERIAL, DBUS_HEADER_FIELD_SENDER, DBUS_HEADER_FIELD_SIGNATURE, DBUS_HEADER_FIELD_UNIX_FDS, DBUS_LITTLE_ENDIAN, DBUS_MESSAGE_TYPE_ERROR, DBUS_MESSAGE_TYPE_METHOD_CALL, DBUS_MESSAGE_TYPE_METHOD_RETURN, DBUS_MESSAGE_TYPE_SIGNAL, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, DBUS_VALID, EXPECTED_TYPE_OF_FIELD, FALSE, DBusHeader::fields, FIELDS_ARRAY_LENGTH_OFFSET, FIRST_FIELD_OFFSET, NULL, and DBusHeaderField::value_pos\&.
+.PP
+Referenced by _dbus_message_loader_queue_messages(), and dbus_message_demarshal_bytes_needed()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_init (\fBDBusHeader\fP * header)"
+
+.PP
+Initializes a header, but doesn't prepare it for use; to make the header valid, you have to call \fB_dbus_header_create()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP header to initialize 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 460 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_header_reinit(), _dbus_string_init_preallocated(), DBusHeader::data, FALSE, and TRUE\&.
+.PP
+Referenced by dbus_message_get_reply_serial()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_load (\fBDBusHeader\fP * header, \fBDBusValidationMode\fP mode, \fBDBusValidity\fP * validity, int byte_order, int fields_array_len, int header_len, int body_len, const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Creates a message header from potentially-untrusted data\&. The return value is \fBTRUE\fP if there was enough memory and the data was valid\&. If it returns \fBTRUE\fP, the header will be created\&. If it returns \fBFALSE\fP and *validity == \fBDBUS_VALIDITY_UNKNOWN_OOM_ERROR\fP, then there wasn't enough memory\&. If it returns \fBFALSE\fP and *validity != \fBDBUS_VALIDITY_UNKNOWN_OOM_ERROR\fP then the data was invalid\&.
+.PP
+The byte_order, fields_array_len, and body_len args should be from \fB_dbus_header_have_message_untrusted()\fP\&. Validation performed in \fB_dbus_header_have_message_untrusted()\fP is assumed to have been already done\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header (must be initialized) 
+.br
+\fImode\fP whether to do validation 
+.br
+\fIvalidity\fP return location for invalidity reason 
+.br
+\fIbyte_order\fP byte order from header 
+.br
+\fIfields_array_len\fP claimed length of fields array 
+.br
+\fIbody_len\fP claimed length of body 
+.br
+\fIheader_len\fP claimed length of header 
+.br
+\fIstr\fP a string 
+.br
+\fIstart\fP start of header, 8-aligned 
+.br
+\fIlen\fP length of string to look at 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory or data was invalid, \fBTRUE\fP otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 970 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_copy_len(), _dbus_string_set_length(), _dbus_string_validate_nul(), _dbus_type_reader_get_current_type(), _dbus_type_reader_get_value_pos(), _dbus_type_reader_init(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_recurse(), _dbus_validate_body_with_reason(), BODY_LENGTH_OFFSET, BYTE_ORDER_OFFSET, DBusHeader::data, DBUS_HEADER_FIELD_INVALID, DBUS_HEADER_FIELD_LAST, DBUS_MAJOR_PROTOCOL_VERSION, DBUS_MESSAGE_TYPE_INVALID, DBUS_TYPE_ARRAY, DBUS_TYPE_BYTE, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT32, DBUS_TYPE_VARIANT, DBUS_VALID, DBUS_VALIDITY_UNKNOWN_OOM_ERROR, FALSE, DBusHeader::fields, FIELDS_ARRAY_LENGTH_OFFSET, FIRST_FIELD_OFFSET, FLAGS_OFFSET, DBusHeader::padding, SERIAL_OFFSET, TRUE, TYPE_OFFSET, DBusHeaderField::value_pos, and VERSION_OFFSET\&.
+.PP
+Referenced by _dbus_message_loader_return_unix_fds()\&.
+.SS "void _dbus_header_reinit (\fBDBusHeader\fP * header)"
+
+.PP
+Re-initializes a header that was previously initialized and never freed\&. After this, to make the header valid you have to call \fB_dbus_header_create()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP header to re-initialize 
+.RE
+.PP
+
+.PP
+Definition at line 443 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_string_set_length(), DBusHeader::data, and DBusHeader::padding\&.
+.PP
+Referenced by _dbus_header_init(), and dbus_message_get_reply_serial()\&.
+.SS "\fBdbus_bool_t\fP _dbus_header_set_field_basic (\fBDBusHeader\fP * header, int field, int type, const void * value)"
+
+.PP
+Sets the value of a field with basic type\&. If the value is a string value, it isn't allowed to be \fBNULL\fP\&. If the field doesn't exist, it will be created\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIfield\fP the field to set 
+.br
+\fItype\fP the type of the value 
+.br
+\fIvalue\fP the value as for \fB_dbus_marshal_set_basic()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 1273 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_header_get_byte_order(), _dbus_type_writer_append_array(), _dbus_type_writer_init_values_only(), _dbus_type_writer_unrecurse(), DBusHeader::data, DBUS_HEADER_FIELD_LAST, FALSE, FIELDS_ARRAY_ELEMENT_SIGNATURE_OFFSET, FIELDS_ARRAY_LENGTH_OFFSET, FIELDS_ARRAY_SIGNATURE_OFFSET, FIRST_FIELD_OFFSET, HEADER_END_BEFORE_PADDING, TRUE, DBusTypeWriter::u, and DBusTypeWriter::value_pos\&.
+.PP
+Referenced by dbus_message_iter_append_basic(), dbus_message_iter_init_append(), dbus_message_lock(), and dbus_message_set_reply_serial()\&.
+.SS "void _dbus_header_set_serial (\fBDBusHeader\fP * header, \fBdbus_uint32_t\fP serial)"
+
+.PP
+Sets the serial number of a header\&. This can only be done once on a header\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIserial\fP the serial 
+.RE
+.PP
+
+.PP
+Definition at line 404 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_get_byte_order(), _dbus_header_get_serial(), _dbus_marshal_set_uint32(), DBusHeader::data, and SERIAL_OFFSET\&.
+.PP
+Referenced by _dbus_header_copy(), and dbus_message_set_serial()\&.
+.SS "void _dbus_header_toggle_flag (\fBDBusHeader\fP * header, \fBdbus_uint32_t\fP flag, \fBdbus_bool_t\fP value)"
+
+.PP
+Toggles a message flag bit, turning on the bit if value = TRUE and flipping it off if value = FALSE\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIflag\fP the message flag to toggle 
+.br
+\fIvalue\fP toggle on or off 
+.RE
+.PP
+
+.PP
+Definition at line 1457 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_string_get_data_len(), DBusHeader::data, and FLAGS_OFFSET\&.
+.PP
+Referenced by dbus_message_set_allow_interactive_authorization(), dbus_message_set_auto_start(), and dbus_message_set_no_reply()\&.
+.SS "void _dbus_header_update_lengths (\fBDBusHeader\fP * header, int body_len)"
+
+.PP
+Fills in the correct body length\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIheader\fP the header 
+.br
+\fIbody_len\fP the length of the body 
+.RE
+.PP
+
+.PP
+Definition at line 1196 of file dbus\-marshal\-header\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_get_byte_order(), _dbus_marshal_set_uint32(), _dbus_type_reader_get_current_type(), _dbus_type_reader_init(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_recurse(), BODY_LENGTH_OFFSET, DBusHeader::data, DBUS_TYPE_BYTE, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, FALSE, FIELDS_ARRAY_LENGTH_OFFSET, FIELDS_ARRAY_SIGNATURE_OFFSET, and TRUE\&.
+.PP
+Referenced by dbus_message_lock()\&.
+.SS "void _dbus_marshal_byteswap (const \fBDBusString\fP * signature, int signature_start, int old_byte_order, int new_byte_order, \fBDBusString\fP * value_str, int value_pos)"
+
+.PP
+Byteswaps the marshaled data in the given value_str\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsignature\fP the types in the value_str 
+.br
+\fIsignature_start\fP where in signature is the signature 
+.br
+\fIold_byte_order\fP the old byte order 
+.br
+\fInew_byte_order\fP the new byte order 
+.br
+\fIvalue_str\fP the string containing the body 
+.br
+\fIvalue_pos\fP where the values start 
+.RE
+.PP
+
+.PP
+Definition at line 222 of file dbus\-marshal\-byteswap\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_get_data_len(), _dbus_type_reader_init_types_only(), NULL, and TRUE\&.
+.PP
+Referenced by _dbus_header_byteswap()\&.
+.SS "void _dbus_marshal_read_basic (const \fBDBusString\fP * str, int pos, int type, void * value, int byte_order, int * new_pos)"
+
+.PP
+Demarshals a basic-typed value\&. The 'value' pointer is always the address of a variable of the basic type\&. So e\&.g\&. if the basic type is 'double' then the pointer is a double*, and if it's 'char*' then the pointer is a 'char**'\&.
+.PP
+A value of type \fBDBusBasicValue\fP is guaranteed to be large enough to hold any of the types that may be returned, which is handy if you are trying to do things generically\&. For example you can pass a DBusBasicValue* in to this function, and then pass the same DBusBasicValue* in to _dbus_marshal_basic_type() in order to move a value from one place to another\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string containing the data 
+.br
+\fIpos\fP position in the string 
+.br
+\fItype\fP type of value to demarshal 
+.br
+\fIvalue\fP pointer to return value data 
+.br
+\fIbyte_order\fP the byte order 
+.br
+\fInew_pos\fP pointer to update with new position, or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 492 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_marshal_read_uint32(), _dbus_string_copy_len(), _dbus_string_delete(), _dbus_string_equal_substring(), _dbus_string_init_const_len(), _dbus_string_insert_2_aligned(), _dbus_string_insert_4_aligned(), _dbus_string_insert_8_aligned(), _dbus_string_insert_byte(), _dbus_type_to_string(), _dbus_verbose_bytes_of_string(), _dbus_warn(), _dbus_warn_check_failed(), DBUS_BIG_ENDIAN, DBUS_LITTLE_ENDIAN, DBUS_MAXIMUM_SIGNATURE_LENGTH, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, dbus_type_is_basic(), DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, dbus_uint64_t, FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_header_get_field_basic(), and _dbus_type_reader_read_basic()\&.
+.SS "\fBdbus_uint32_t\fP _dbus_marshal_read_uint32 (const \fBDBusString\fP * str, int pos, int byte_order, int * new_pos)"
+
+.PP
+Convenience function to demarshal a 32 bit unsigned integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string containing the data 
+.br
+\fIbyte_order\fP the byte order 
+.br
+\fIpos\fP the position in the string 
+.br
+\fInew_pos\fP the new position of the string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the demarshaled integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 454 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, and _dbus_unpack_uint32()\&.
+.PP
+Referenced by _dbus_header_get_serial(), _dbus_header_have_message_untrusted(), _dbus_marshal_read_basic(), _dbus_marshal_skip_array(), and _dbus_marshal_skip_basic()\&.
+.SS "\fBdbus_bool_t\fP _dbus_marshal_set_basic (\fBDBusString\fP * str, int pos, int type, const void * value, int byte_order, int * old_end_pos, int * new_end_pos)"
+
+.PP
+Sets an existing basic type value to a new value\&. Arguments work the same way as _dbus_marshal_basic_type()\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIpos\fP location of the current value 
+.br
+\fItype\fP the type of the current and new values 
+.br
+\fIvalue\fP the address of the new value 
+.br
+\fIbyte_order\fP byte order for marshaling 
+.br
+\fIold_end_pos\fP location to store end position of the old value, or \fBNULL\fP 
+.br
+\fInew_end_pos\fP location to store end position of the new value, or \fBNULL\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 370 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, DBusBasicValue::byt, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, FALSE, NULL, DBusBasicValue::str, TRUE, DBusBasicValue::u16, and DBusBasicValue::u32\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str()\&.
+.SS "void _dbus_marshal_set_uint32 (\fBDBusString\fP * str, int pos, \fBdbus_uint32_t\fP value, int byte_order)"
+
+.PP
+Sets the 4 bytes at the given offset to a marshaled unsigned integer, replacing anything found there previously\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to write the marshalled int to 
+.br
+\fIpos\fP the byte offset where int should be written 
+.br
+\fIvalue\fP the value 
+.br
+\fIbyte_order\fP the byte order to use 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_marshal_set_uint32(), _dbus_string_init_const(), _dbus_string_replace_len(), _dbus_unpack_uint32(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_header_set_serial(), _dbus_header_update_lengths(), _dbus_marshal_set_uint32(), and _dbus_type_writer_unrecurse()\&.
+.SS "void _dbus_marshal_skip_array (const \fBDBusString\fP * str, int element_type, int byte_order, int * pos)"
+
+.PP
+Skips an array, returning the next position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string containing the data 
+.br
+\fIelement_type\fP the type of array elements 
+.br
+\fIbyte_order\fP the byte order 
+.br
+\fIpos\fP pointer to position in the string, updated on return to new position 
+.RE
+.PP
+
+.PP
+Definition at line 1145 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_marshal_read_uint32(), and _dbus_type_get_alignment()\&.
+.PP
+Referenced by _dbus_type_signature_next()\&.
+.SS "void _dbus_marshal_skip_basic (const \fBDBusString\fP * str, int type, int byte_order, int * pos)"
+
+.PP
+Skips over a basic-typed value, reporting the following position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string containing the data 
+.br
+\fItype\fP type of value to read 
+.br
+\fIbyte_order\fP the byte order 
+.br
+\fIpos\fP pointer to position in the string, updated on return to new position 
+.RE
+.PP
+
+.PP
+Definition at line 1077 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_marshal_read_uint32(), _dbus_type_to_string(), _dbus_warn(), DBUS_BIG_ENDIAN, DBUS_LITTLE_ENDIAN, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, and DBUS_TYPE_UNIX_FD\&.
+.PP
+Referenced by _dbus_type_signature_next()\&.
+.SS "\fBdbus_bool_t\fP _dbus_marshal_write_basic (\fBDBusString\fP * str, int insert_at, int type, const void * value, int byte_order, int * pos_after)"
+
+.PP
+Marshals a basic-typed value\&. The 'value' pointer is always the address of a variable containing the basic type value\&. So for example for int32 it will be dbus_int32_t*, and for string it will be const char**\&. This is for symmetry with \fB_dbus_marshal_read_basic()\fP and to have a simple consistent rule\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to marshal to 
+.br
+\fIinsert_at\fP where to insert the value 
+.br
+\fItype\fP type of value 
+.br
+\fIvalue\fP pointer to a variable containing the value 
+.br
+\fIbyte_order\fP byte order 
+.br
+\fIpos_after\fP \fBNULL\fP or the position after the type 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 794 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_string_copy_len(), _dbus_string_init_const_len(), _dbus_string_insert_byte(), DBusBasicValue::byt, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, dbus_type_is_basic(), DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, FALSE, NULL, DBusBasicValue::str, TRUE, DBusBasicValue::u16, and DBusBasicValue::u32\&.
+.PP
+Referenced by _dbus_type_writer_init_values_only()\&.
+.SS "\fBdbus_bool_t\fP _dbus_marshal_write_fixed_multi (\fBDBusString\fP * str, int insert_at, int element_type, const void * value, int n_elements, int byte_order, int * pos_after)"
+
+.PP
+Marshals a block of values of fixed-length type all at once, as an optimization\&. \fBdbus_type_is_fixed()\fP returns \fBTRUE\fP for fixed-length types, which are the basic types minus the string-like types\&.
+.PP
+The value argument should be the adddress of an array, so e\&.g\&. 'const dbus_uint32_t**'
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to marshal to 
+.br
+\fIinsert_at\fP where to insert the value 
+.br
+\fIelement_type\fP type of array elements 
+.br
+\fIvalue\fP address of an array to marshal 
+.br
+\fIn_elements\fP number of elements in the array 
+.br
+\fIbyte_order\fP byte order 
+.br
+\fIpos_after\fP \fBNULL\fP or the position after the type 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1020 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_type_to_string(), DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, dbus_type_is_fixed(), DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, and FALSE\&.
+.PP
+Referenced by _dbus_type_writer_write_fixed_multi()\&.
+.SS "void _dbus_pack_uint32 (\fBdbus_uint32_t\fP value, int byte_order, unsigned char * data)"
+
+.PP
+Packs a 32 bit unsigned integer into a data pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP the value 
+.br
+\fIbyte_order\fP the byte order to use 
+.br
+\fIdata\fP the data pointer 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References DBusBasicValue::u64\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str()\&.
+.SS "void _dbus_swap_array (unsigned char * data, int n_elements, int alignment)"
+
+.PP
+Swaps the elements of an array to the opposite byte order\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP start of array 
+.br
+\fIn_elements\fP number of elements 
+.br
+\fIalignment\fP size of each element 
+.RE
+.PP
+
+.PP
+Definition at line 888 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_copy(), _dbus_string_delete(), _dbus_string_init_const_len(), _dbus_string_insert_alignment(), _dbus_swap_array(), DBUS_MAXIMUM_ARRAY_LENGTH, dbus_uint64_t, FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_swap_array()\&.
+.SS "int _dbus_type_get_alignment (int typecode)"
+
+.PP
+Gets the alignment requirement for the given type; will be 1, 4, or 8\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP the type 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+alignment of 1, 4, or 8 
+.RE
+.PP
+
+.PP
+Definition at line 1173 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert_not_reached, DBUS_TYPE_ARRAY, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, and DBUS_TYPE_VARIANT\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_marshal_skip_array(), _dbus_type_reader_read_fixed_multi(), _dbus_type_writer_init_values_only(), _dbus_validate_signature_with_reason(), and dbus_message_iter_append_fixed_array()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_reader_delete (\fBDBusTypeReader\fP * reader, const \fBDBusTypeReader\fP * realign_root)"
+
+.PP
+Recursively deletes any value pointed to by the reader, leaving the reader valid to continue reading\&. Any other readers will be invalidated\&.
+.PP
+The provided realign_root is the reader to start from when realigning the data that follows the newly-set value\&. See \fB_dbus_type_reader_set_basic()\fP for more details on the realign_root paramter\&.
+.PP
+\fBTodo\fP
+.RS 4
+for now this does not delete the typecodes associated with the value, so this function should only be used for array elements\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP reader indicating where to delete a value 
+.br
+\fIrealign_root\fP realign from here 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 1417 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, FALSE, DBusTypeReader::klass, NULL, TRUE, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.PP
+Referenced by _dbus_header_delete_field()\&.
+.SS "int _dbus_type_reader_get_array_length (const \fBDBusTypeReader\fP * reader)"
+
+.PP
+Returns the number of bytes in the array\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader to read from 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes in the array 
+.RE
+.PP
+
+.PP
+Definition at line 899 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, DBusTypeReader::klass, and DBusTypeReaderClass::types_only\&.
+.PP
+Referenced by dbus_message_iter_get_array_len()\&.
+.SS "int _dbus_type_reader_get_current_type (const \fBDBusTypeReader\fP * reader)"
+
+.PP
+Gets the type of the value the reader is currently pointing to; or for a types-only reader gets the type it's currently pointing to\&. If the reader is at the end of a block or end of a container such as an array, returns \fBDBUS_TYPE_INVALID\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.RE
+.PP
+
+.PP
+Definition at line 785 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_first_type_in_signature(), _dbus_type_to_string(), DBusTypeReaderClass::check_finished, DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_BEGIN_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_INVALID, DBusTypeReader::finished, DBusTypeReader::klass, DBusTypeReader::type_pos, and DBusTypeReader::type_str\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_have_message_untrusted(), _dbus_header_load(), _dbus_header_update_lengths(), _dbus_message_iter_get_args_valist(), _dbus_type_reader_get_element_type(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_set_basic(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), dbus_message_iter_get_arg_type(), dbus_message_iter_get_fixed_array(), and dbus_message_iter_init()\&.
+.SS "int _dbus_type_reader_get_element_type (const \fBDBusTypeReader\fP * reader)"
+
+.PP
+Gets the type of an element of the array the reader is currently pointing to\&. It's an error to call this if \fB_dbus_type_reader_get_current_type()\fP doesn't return \fBDBUS_TYPE_ARRAY\fP for this reader\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.RE
+.PP
+
+.PP
+Definition at line 820 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_first_type_in_signature(), _dbus_type_reader_get_current_type(), DBUS_TYPE_ARRAY, DBusTypeReader::type_pos, and DBusTypeReader::type_str\&.
+.PP
+Referenced by _dbus_message_iter_get_args_valist(), _dbus_validate_signature_with_reason(), and dbus_message_iter_get_element_type()\&.
+.SS "void _dbus_type_reader_get_signature (const \fBDBusTypeReader\fP * reader, const \fBDBusString\fP ** str_p, int * start_p, int * len_p)"
+
+.PP
+Gets the string and range of said string containing the signature of the current value\&. Essentially a more complete version of \fB_dbus_type_reader_get_current_type()\fP (returns the full type rather than only the outside of the onion)\&.
+.PP
+Note though that the first byte in a struct signature is \fBDBUS_STRUCT_BEGIN_CHAR\fP while the current type will be \fBDBUS_TYPE_STRUCT\fP so it isn't true that the first byte of the signature is always the same as the current type\&. Another difference is that this function will still return a signature when inside an empty array; say you recurse into empty array of int32, the signature is 'i' but the current type will always be \fBDBUS_TYPE_INVALID\fP since there are no elements to be currently pointing to\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fIstr_p\fP place to return the string with the type in it 
+.br
+\fIstart_p\fP place to return start of the type 
+.br
+\fIlen_p\fP place to return the length of the type 
+.RE
+.PP
+
+.PP
+Definition at line 1122 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References DBusTypeReader::type_pos, and DBusTypeReader::type_str\&.
+.PP
+Referenced by _dbus_type_writer_write_fixed_multi(), and dbus_message_iter_get_signature()\&.
+.SS "int _dbus_type_reader_get_value_pos (const \fBDBusTypeReader\fP * reader)"
+
+.PP
+Gets the current position in the value block\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.RE
+.PP
+
+.PP
+Definition at line 837 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References DBusTypeReader::value_pos\&.
+.PP
+Referenced by _dbus_header_load()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_reader_has_next (const \fBDBusTypeReader\fP * reader)"
+
+.PP
+Check whether there's another value on this 'level'\&. e\&.g\&. the next field in a struct, the next value in an array\&. Returns FALSE at the end of the current container\&.
+.PP
+You probably don't want to use this; it makes for an awkward for/while loop\&. A nicer one is 'while ((current_type = get_current_type()) != INVALID)'
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if nothing more to read at or below this level 
+.RE
+.PP
+
+.PP
+Definition at line 1091 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_type_reader_next()\&.
+.PP
+Referenced by dbus_message_iter_has_next()\&.
+.SS "void _dbus_type_reader_init (\fBDBusTypeReader\fP * reader, int byte_order, const \fBDBusString\fP * type_str, int type_pos, const \fBDBusString\fP * value_str, int value_pos)"
+
+.PP
+Initializes a type reader\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fIbyte_order\fP the byte order of the block to read 
+.br
+\fItype_str\fP the signature of the block to read 
+.br
+\fItype_pos\fP location of signature 
+.br
+\fIvalue_str\fP the string containing values block 
+.br
+\fIvalue_pos\fP start of values block 
+.RE
+.PP
+
+.PP
+Definition at line 732 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References DBusTypeReader::klass, DBusTypeReader::type_pos, DBusTypeReader::type_str, and DBusTypeReader::value_pos\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_load(), _dbus_header_update_lengths(), and dbus_message_iter_init()\&.
+.SS "void _dbus_type_reader_init_types_only (\fBDBusTypeReader\fP * reader, const \fBDBusString\fP * type_str, int type_pos)"
+
+.PP
+Like \fB_dbus_type_reader_init()\fP but the iteration is over the signature, not over values\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fItype_str\fP the signature string 
+.br
+\fItype_pos\fP location in the signature string 
+.RE
+.PP
+
+.PP
+Definition at line 760 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _DBUS_INT_MAX, DBusTypeReader::klass, NULL, DBusTypeReader::type_pos, and DBusTypeReader::type_str\&.
+.PP
+Referenced by _dbus_marshal_byteswap(), _dbus_validate_body_with_reason(), and _dbus_validate_signature_with_reason()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_reader_next (\fBDBusTypeReader\fP * reader)"
+
+.PP
+Skip to the next value on this 'level'\&. e\&.g\&. the next field in a struct, the next value in an array\&. Returns FALSE at the end of the current container\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if nothing more to read at or below this level 
+.RE
+.PP
+
+.PP
+Definition at line 1051 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_type_reader_get_current_type(), _dbus_type_to_string(), DBUS_TYPE_INVALID, FALSE, DBusTypeReader::klass, DBusTypeReaderClass::next, DBusTypeReader::type_pos, DBusTypeReader::type_str, and DBusTypeReader::value_pos\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_load(), _dbus_header_update_lengths(), _dbus_message_iter_get_args_valist(), _dbus_type_reader_has_next(), _dbus_type_signature_next(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), and dbus_message_iter_next()\&.
+.SS "void _dbus_type_reader_read_basic (const \fBDBusTypeReader\fP * reader, void * value)"
+
+.PP
+Reads a basic-typed value, as with \fB_dbus_marshal_read_basic()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fIvalue\fP the address of the value 
+.RE
+.PP
+
+.PP
+Definition at line 869 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_marshal_read_basic(), _dbus_type_reader_get_current_type(), DBusTypeReader::byte_order, DBusTypeReader::klass, NULL, DBusTypeReader::type_pos, DBusTypeReader::type_str, DBusTypeReaderClass::types_only, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_load(), _dbus_header_update_lengths(), _dbus_message_iter_get_args_valist(), _dbus_type_writer_write_fixed_multi(), and dbus_message_iter_get_basic()\&.
+.SS "void _dbus_type_reader_read_fixed_multi (const \fBDBusTypeReader\fP * reader, void * value, int * n_elements)"
+
+.PP
+Reads a block of fixed-length basic values, from the current point in an array to the end of the array\&. Does not work for arrays of string or container types\&.
+.PP
+This function returns the array in-place; it does not make a copy, and it does not swap the bytes\&.
+.PP
+If you ask for \fBDBUS_TYPE_DOUBLE\fP you will get a 'const double*' back and the 'value' argument should be a 'const double**' and so on\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader to read from 
+.br
+\fIvalue\fP place to return the array values 
+.br
+\fIn_elements\fP place to return number of array elements 
+.RE
+.PP
+
+.PP
+Definition at line 923 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_first_type_in_signature(), _dbus_type_get_alignment(), DBUS_TYPE_INVALID, dbus_type_is_fixed(), DBusTypeReader::klass, NULL, DBusTypeReader::type_pos, DBusTypeReader::type_str, DBusTypeReaderClass::types_only, DBusTypeReader::u, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.PP
+Referenced by _dbus_message_iter_get_args_valist(), and dbus_message_iter_get_fixed_array()\&.
+.SS "void _dbus_type_reader_read_raw (const \fBDBusTypeReader\fP * reader, const unsigned char ** value_location)"
+
+.PP
+Get the address of the marshaled value in the data being read\&. The address may not be aligned; you have to align it to the type of the value you want to read\&. Most of the demarshal routines do this for you\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fIvalue_location\fP the address of the marshaled value 
+.RE
+.PP
+
+.PP
+Definition at line 852 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, DBusTypeReader::klass, DBusTypeReaderClass::types_only, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.SS "void _dbus_type_reader_recurse (\fBDBusTypeReader\fP * reader, \fBDBusTypeReader\fP * sub)"
+
+.PP
+Initialize a new reader pointing to the first type and corresponding value that's a child of the current container\&. It's an error to call this if the current type is a non-container\&.
+.PP
+Note that \fBDBusTypeReader\fP traverses values, not types\&. So if you have an empty array of array of int, you can't recurse into it\&. You can only recurse into each element\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP the reader 
+.br
+\fIsub\fP a reader to init pointing to the first child 
+.RE
+.PP
+
+.PP
+Definition at line 988 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_first_type_in_signature(), _dbus_type_to_string(), _dbus_warn_check_failed(), DBUS_TYPE_ARRAY, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, DBUS_TYPE_VARIANT, DBusTypeReaderClass::id, DBusTypeReader::klass, DBusTypeReaderClass::recurse, DBusTypeReader::type_pos, DBusTypeReader::type_str, DBusTypeReaderClass::types_only, and DBusTypeReader::value_pos\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_load(), _dbus_header_update_lengths(), _dbus_message_iter_get_args_valist(), _dbus_type_signature_next(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), and dbus_message_iter_recurse()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_reader_set_basic (\fBDBusTypeReader\fP * reader, const void * value, const \fBDBusTypeReader\fP * realign_root)"
+
+.PP
+Sets a new value for the basic type value pointed to by the reader, leaving the reader valid to continue reading\&. Any other readers will be invalidated if you set a variable-length type such as a string\&.
+.PP
+The provided realign_root is the reader to start from when realigning the data that follows the newly-set value\&. The reader parameter must point to a value below the realign_root parameter\&. If the type being set is fixed-length, then realign_root may be \fBNULL\fP\&. Only values reachable from realign_root will be realigned, so if your string contains other values you will need to deal with those somehow yourself\&. It is OK if realign_root is the same reader as the reader parameter, though if you aren't setting the root it may not be such a good idea\&.
+.PP
+\fBTodo\fP
+.RS 4
+\fBDBusTypeReader\fP currently takes 'const' versions of the type and value strings, and this function modifies those strings by casting away the const, which is of course bad if we want to get picky\&. (To be truly clean you'd have an object which contained the type and value strings and set_basic would be a method on that object\&.\&.\&. this would also make \fBDBusTypeReader\fP the same thing as DBusTypeMark\&. But since \fBDBusMessage\fP is effectively that object for D-Bus it doesn't seem worth creating some random object\&.)
+.RE
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+optimize this by only rewriting until the old and new values are at the same alignment\&. Frequently this should result in only replacing the value that's immediately at hand\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP reader indicating where to set a new value 
+.br
+\fIvalue\fP address of the value to set 
+.br
+\fIrealign_root\fP realign from here 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 1360 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_type_reader_get_current_type(), _dbus_type_to_string(), _dbus_verbose_bytes_of_string(), dbus_type_is_basic(), dbus_type_is_fixed(), DBusTypeReader::klass, NULL, TRUE, DBusTypeReader::type_pos, DBusTypeReader::type_str, DBusTypeReaderClass::types_only, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.PP
+Referenced by _dbus_header_get_byte_order()\&.
+.SS "void _dbus_type_signature_next (const char * type_str, int * type_pos)"
+
+.PP
+Skips to the next 'complete' type inside a type signature\&. The signature is read starting at type_pos, and the next type position is stored in the same variable\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype_str\fP a type signature (must be valid) 
+.br
+\fItype_pos\fP an integer position in the type signature (in and out) 
+.RE
+.PP
+
+.PP
+Definition at line 340 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_first_type_in_signature(), _dbus_marshal_skip_array(), _dbus_marshal_skip_basic(), _dbus_type_reader_next(), _dbus_type_reader_recurse(), _dbus_type_to_string(), DBusTypeReader::byte_order, DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_BEGIN_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_ARRAY, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, DBUS_TYPE_VARIANT, FALSE, DBusTypeReader::finished, DBusTypeReader::klass, NULL, TRUE, DBusTypeReader::type_pos, DBusTypeReader::type_str, DBusTypeReaderClass::types_only, DBusTypeReader::u, DBusTypeReader::value_pos, and DBusTypeReader::value_str\&.
+.PP
+Referenced by dbus_signature_iter_get_signature(), and dbus_signature_iter_next()\&.
+.SS "const char* _dbus_type_to_string (int typecode)"
+
+.PP
+Returns a string describing the given type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP the type to describe 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a constant string describing the type 
+.RE
+.PP
+
+.PP
+Definition at line 1219 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_BEGIN_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_ARRAY, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_INVALID, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, and DBUS_TYPE_VARIANT\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_marshal_read_basic(), _dbus_marshal_skip_basic(), _dbus_marshal_write_fixed_multi(), _dbus_message_iter_get_args_valist(), _dbus_type_reader_get_current_type(), _dbus_type_reader_next(), _dbus_type_reader_recurse(), _dbus_type_reader_set_basic(), _dbus_type_signature_next(), _dbus_type_writer_init_values_only(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), and dbus_message_append_args_valist()\&.
+.SS "void _dbus_type_writer_add_types (\fBDBusTypeWriter\fP * writer, \fBDBusString\fP * type_str, int type_pos)"
+
+.PP
+Adds type string to the writer, if it had none\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to init 
+.br
+\fItype_str\fP type string to add 
+.br
+\fItype_pos\fP type position 
+.RE
+.PP
+
+.PP
+Definition at line 1543 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References NULL, DBusTypeWriter::type_pos, and DBusTypeWriter::type_str\&.
+.PP
+Referenced by dbus_message_iter_init_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_append_array (\fBDBusTypeWriter\fP * writer, const \fBDBusString\fP * contained_type, int contained_type_start, \fBDBusTypeWriter\fP * sub)"
+
+.PP
+Append to an existing array\&. Essentially, the writer will read an existing length at the write location; jump over that length; and write new fields\&. On unrecurse(), the existing length will be updated\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer 
+.br
+\fIcontained_type\fP element type 
+.br
+\fIcontained_type_start\fP position of element type 
+.br
+\fIsub\fP the subwriter to init 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2140 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, DBusTypeWriter::container_type, DBUS_TYPE_ARRAY, TRUE, DBusTypeWriter::u, and DBusTypeWriter::value_pos\&.
+.PP
+Referenced by _dbus_header_set_field_basic()\&.
+.SS "void _dbus_type_writer_init (\fBDBusTypeWriter\fP * writer, int byte_order, \fBDBusString\fP * type_str, int type_pos, \fBDBusString\fP * value_str, int value_pos)"
+
+.PP
+Initialize a write iterator, which is used to write out values in serialized D-Bus format\&. The type_pos passed in is expected to be inside an already-valid, though potentially empty, type signature\&. This means that the byte after type_pos must be either \fBDBUS_TYPE_INVALID\fP (aka nul) or some other valid type\&. \fBDBusTypeWriter\fP won't enforce that the signature is already valid (you can append the nul byte at the end if you like), but just be aware that you need the nul byte eventually and \fBDBusTypeWriter\fP isn't going to write it for you\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to init 
+.br
+\fIbyte_order\fP the byte order to marshal into 
+.br
+\fItype_str\fP the string to write typecodes into 
+.br
+\fItype_pos\fP where to insert typecodes 
+.br
+\fIvalue_str\fP the string to write values into 
+.br
+\fIvalue_pos\fP where to insert values 
+.RE
+.PP
+
+.PP
+Definition at line 1490 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References DBusTypeWriter::byte_order, DBusTypeWriter::container_type, DBUS_TYPE_INVALID, DBusTypeWriter::enabled, FALSE, TRUE, DBusTypeWriter::type_pos, DBusTypeWriter::type_pos_is_expectation, DBusTypeWriter::type_str, DBusTypeWriter::value_pos, and DBusTypeWriter::value_str\&.
+.PP
+Referenced by _dbus_type_writer_init_types_delayed(), and _dbus_type_writer_init_values_only()\&.
+.SS "void _dbus_type_writer_init_types_delayed (\fBDBusTypeWriter\fP * writer, int byte_order, \fBDBusString\fP * value_str, int value_pos)"
+
+.PP
+Initialize a write iterator, with the signature to be provided later\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to init 
+.br
+\fIbyte_order\fP the byte order to marshal into 
+.br
+\fIvalue_str\fP the string to write values into 
+.br
+\fIvalue_pos\fP where to insert values 
+.RE
+.PP
+
+.PP
+Definition at line 1525 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_type_writer_init(), and NULL\&.
+.PP
+Referenced by dbus_message_iter_init_append()\&.
+.SS "void _dbus_type_writer_init_values_only (\fBDBusTypeWriter\fP * writer, int byte_order, const \fBDBusString\fP * type_str, int type_pos, \fBDBusString\fP * value_str, int value_pos)"
+
+.PP
+Like \fB_dbus_type_writer_init()\fP, except the type string passed in should correspond to an existing signature that matches what you're going to write out\&. The writer will check what you write vs\&. this existing signature\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to init 
+.br
+\fIbyte_order\fP the byte order to marshal into 
+.br
+\fItype_str\fP the string with signature 
+.br
+\fItype_pos\fP start of signature 
+.br
+\fIvalue_str\fP the string to write values into 
+.br
+\fIvalue_pos\fP where to insert values 
+.RE
+.PP
+
+.PP
+Definition at line 1581 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_first_type_in_signature(), _dbus_marshal_write_basic(), _dbus_string_alloc_space(), _dbus_string_copy_len(), _dbus_string_equal_substring(), _dbus_string_insert_byte(), _dbus_string_insert_bytes(), _dbus_type_get_alignment(), _dbus_type_to_string(), _dbus_type_writer_init(), _dbus_unpack_uint32(), _dbus_warn_check_failed(), DBusTypeWriter::byte_order, DBusTypeWriter::container_type, DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_STRUCT_BEGIN_CHAR, DBUS_TYPE_ARRAY, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT32, DBUS_TYPE_VARIANT, DBusTypeWriter::enabled, FALSE, NULL, TRUE, DBusTypeWriter::type_pos, DBusTypeWriter::type_pos_is_expectation, DBusTypeWriter::type_str, DBusTypeWriter::u, DBusTypeWriter::value_pos, and DBusTypeWriter::value_str\&.
+.PP
+Referenced by _dbus_header_create(), and _dbus_header_set_field_basic()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_recurse (\fBDBusTypeWriter\fP * writer, int container_type, const \fBDBusString\fP * contained_type, int contained_type_start, \fBDBusTypeWriter\fP * sub)"
+
+.PP
+Opens a new container and writes out the initial information for that container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer 
+.br
+\fIcontainer_type\fP the type of the container to open 
+.br
+\fIcontained_type\fP the array element type or variant content type 
+.br
+\fIcontained_type_start\fP position to look for the type 
+.br
+\fIsub\fP the new sub-writer to write container contents 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2106 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References FALSE\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_get_byte_order(), and dbus_message_iter_open_container()\&.
+.SS "void _dbus_type_writer_remove_types (\fBDBusTypeWriter\fP * writer)"
+
+.PP
+Removes type string from the writer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to remove from 
+.RE
+.PP
+
+.PP
+Definition at line 1560 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References NULL, DBusTypeWriter::type_pos, and DBusTypeWriter::type_str\&.
+.PP
+Referenced by dbus_message_iter_init_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_unrecurse (\fBDBusTypeWriter\fP * writer, \fBDBusTypeWriter\fP * sub)"
+
+.PP
+Closes a container created by \fB_dbus_type_writer_recurse()\fP and writes any additional information to the values block\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer 
+.br
+\fIsub\fP the sub-writer created by \fB_dbus_type_writer_recurse()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2176 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_marshal_set_uint32(), _dbus_type_to_string(), DBusTypeWriter::byte_order, DBusTypeWriter::container_type, DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_ARRAY, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_INVALID, DBUS_TYPE_STRUCT, FALSE, NULL, TRUE, DBusTypeWriter::type_pos, DBusTypeWriter::type_pos_is_expectation, DBusTypeWriter::type_str, DBusTypeWriter::u, DBusTypeWriter::value_pos, and DBusTypeWriter::value_str\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_get_byte_order(), _dbus_header_set_field_basic(), _dbus_type_writer_write_fixed_multi(), and dbus_message_iter_close_container()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_write_basic (\fBDBusTypeWriter\fP * writer, int type, const void * value)"
+
+.PP
+Writes out a basic type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer 
+.br
+\fItype\fP the type to write 
+.br
+\fIvalue\fP the address of the value to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2308 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_string_alloc_space(), DBusTypeWriter::enabled, FALSE, NULL, TRUE, DBusTypeWriter::type_pos, DBusTypeWriter::type_pos_is_expectation, DBusTypeWriter::type_str, and DBusTypeWriter::value_pos\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_get_byte_order(), _dbus_type_writer_write_fixed_multi(), and dbus_message_iter_append_basic()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_write_fixed_multi (\fBDBusTypeWriter\fP * writer, int element_type, const void * value, int n_elements)"
+
+.PP
+Writes a block of fixed-length basic values, i\&.e\&. those that are both \fBdbus_type_is_fixed()\fP and _dbus_type_is_basic()\&. The block must be written inside an array\&.
+.PP
+The value parameter should be the address of said array of values, so e\&.g\&. if it's an array of double, pass in 'const double**'
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer 
+.br
+\fIelement_type\fP type of stuff in the array 
+.br
+\fIvalue\fP address of the array 
+.br
+\fIn_elements\fP number of elements in the array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2356 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_list_append(), _dbus_marshal_write_fixed_multi(), _dbus_string_delete(), _dbus_type_reader_get_current_type(), _dbus_type_reader_get_signature(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_recurse(), _dbus_type_to_string(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_basic(), _dbus_unpack_uint32(), ARRAY_READER_LEN_POS, DBusTypeReader::byte_order, DBusTypeWriter::byte_order, DBusTypeWriter::container_type, dbus_free(), dbus_new, DBUS_TYPE_ARRAY, DBUS_TYPE_INVALID, dbus_type_is_basic(), dbus_type_is_container(), dbus_type_is_fixed(), DBusTypeWriter::enabled, FALSE, DBusArrayLenFixup::len_pos_in_reader, DBusArrayLenFixup::new_len, NULL, TRUE, DBusTypeReader::type_pos, DBusTypeWriter::type_pos, DBusTypeWriter::type_pos_is_expectation, DBusTypeReader::type_str, DBusTypeWriter::type_str, DBusTypeReader::u, DBusTypeReader::value_pos, DBusTypeWriter::value_pos, DBusTypeReader::value_str, and DBusTypeWriter::value_str\&.
+.PP
+Referenced by dbus_message_iter_append_fixed_array()\&.
+.SS "\fBdbus_bool_t\fP _dbus_type_writer_write_reader (\fBDBusTypeWriter\fP * writer, \fBDBusTypeReader\fP * reader)"
+
+.PP
+Iterate through all values in the given reader, writing a copy of each value to the writer\&. The reader will be moved forward to its end position\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP the writer to copy to 
+.br
+\fIreader\fP the reader to copy from 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2728 of file dbus\-marshal\-recursive\&.c\&.
+.PP
+References DBusTypeWriter::enabled, FALSE, and NULL\&.
+.SS "\fBdbus_uint16_t\fP _dbus_unpack_uint16 (int byte_order, const unsigned char * data)"
+
+.PP
+Unpacks a 16 bit unsigned integer from a data pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbyte_order\fP The byte order to use 
+.br
+\fIdata\fP the data pointer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the integer 
+.RE
+.PP
+
+.PP
+Definition at line 161 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, and DBUS_LITTLE_ENDIAN\&.
+.SS "\fBdbus_uint32_t\fP _dbus_unpack_uint32 (int byte_order, const unsigned char * data)"
+
+.PP
+Unpacks a 32 bit unsigned integer from a data pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbyte_order\fP The byte order to use 
+.br
+\fIdata\fP the data pointer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the integer 
+.RE
+.PP
+
+.PP
+Definition at line 182 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_get_data_len(), DBUS_BIG_ENDIAN, and DBUS_LITTLE_ENDIAN\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_marshal_read_uint32(), _dbus_marshal_set_uint32(), _dbus_type_writer_init_values_only(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), and _dbus_verbose_bytes()\&.
+.SS "\fBDBusValidity\fP _dbus_validate_body_with_reason (const \fBDBusString\fP * expected_signature, int expected_signature_start, int byte_order, int * bytes_remaining, const \fBDBusString\fP * value_str, int value_pos, int len)"
+
+.PP
+Verifies that the range of value_str from value_pos to value_end is a legitimate value of type expected_signature\&. If this function returns \fBTRUE\fP, it will be safe to iterate over the values with \fBDBusTypeReader\fP\&. The signature is assumed to be already valid\&.
+.PP
+If bytes_remaining is not \fBNULL\fP, then leftover bytes will be stored there and \fBDBUS_VALID\fP returned\&. If it is \fBNULL\fP, then \fBDBUS_INVALID_TOO_MUCH_DATA\fP will be returned if bytes are left over\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexpected_signature\fP the expected types in the value_str 
+.br
+\fIexpected_signature_start\fP where in expected_signature is the signature 
+.br
+\fIbyte_order\fP the byte order 
+.br
+\fIbytes_remaining\fP place to store leftover bytes 
+.br
+\fIvalue_str\fP the string containing the body 
+.br
+\fIvalue_pos\fP where the values start 
+.br
+\fIlen\fP length of values after value_pos 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDBUS_VALID\fP if valid, reason why invalid otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 703 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, _dbus_type_reader_init_types_only(), DBUS_INVALID_TOO_MUCH_DATA, DBUS_VALID, and TRUE\&.
+.PP
+Referenced by _dbus_header_load(), and _dbus_message_loader_return_unix_fds()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_bus_name (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid bus name in the D-Bus protocol\&. This includes a length restriction, etc\&., see the specification\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 1187 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References FALSE\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), and dbus_validate_bus_name()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_bus_namespace (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a prefix of a valid bus name in the D-Bus protocol\&. Unlike \fB_dbus_validate_bus_name()\fP, this accepts strings with only one period-separated component\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 1208 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_error_name (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid error name in the D-Bus protocol\&. This includes a length restriction, etc\&., see the specification\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 1058 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_validate_interface()\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), and dbus_validate_error_name()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_interface (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid interface name in the D-Bus protocol\&. This includes a length restriction and an ASCII subset, see the specification\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 921 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, DBUS_MAXIMUM_NAME_LENGTH, FALSE, NULL, TRUE, VALID_INITIAL_NAME_CHARACTER, and VALID_NAME_CHARACTER\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), _dbus_validate_error_name(), and dbus_validate_interface()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_member (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid member name in the D-Bus protocol\&. This includes a length restriction, etc\&., see the specification\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 997 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, DBUS_MAXIMUM_NAME_LENGTH, FALSE, TRUE, VALID_INITIAL_NAME_CHARACTER, and VALID_NAME_CHARACTER\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), and dbus_validate_member()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_path (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid object path name in the D-Bus protocol\&. Part of the validation ensures that the object path contains only ASCII\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+change spec to disallow more things, such as spaces in the path name
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid name 
+.RE
+.PP
+
+.PP
+Definition at line 785 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, DBUS_INVALID_TOO_MUCH_DATA, DBUS_VALID, DBUS_VALIDITY_UNKNOWN_OOM_ERROR, FALSE, TRUE, and VALID_NAME_CHARACTER\&.
+.PP
+Referenced by _dbus_validate_signature_with_reason(), and dbus_validate_path()\&.
+.SS "\fBdbus_bool_t\fP _dbus_validate_signature (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Checks that the given range of the string is a valid message type signature in the D-Bus protocol\&. 
+.PP
+\fBTodo\fP
+.RS 4
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP first byte index to check 
+.br
+\fIlen\fP number of bytes to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte range exists and is a valid signature 
+.RE
+.PP
+
+.PP
+Definition at line 1228 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, _dbus_validate_signature_with_reason(), DBUS_VALID, DEFINE_DBUS_NAME_CHECK, and FALSE\&.
+.SS "\fBDBusValidity\fP _dbus_validate_signature_with_reason (const \fBDBusString\fP * type_str, int type_pos, int len)"
+
+.PP
+Verifies that the range of type_str from type_pos to type_end is a valid signature\&. If this function returns \fBTRUE\fP, it will be safe to iterate over the signature with a types-only \fBDBusTypeReader\fP\&. The range passed in should NOT include the terminating nul/DBUS_TYPE_INVALID\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype_str\fP the string 
+.br
+\fItype_pos\fP where the typecodes start 
+.br
+\fIlen\fP length of typecodes 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDBUS_VALID\fP if valid, reason why invalid otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file dbus\-marshal\-validate\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_first_type_in_signature(), _DBUS_INT32_MAX, _DBUS_INT_TO_POINTER, _dbus_list_append(), _dbus_list_clear(), _dbus_list_pop_last(), _DBUS_POINTER_TO_INT, _dbus_string_init_const_len(), _dbus_string_validate_utf8(), _dbus_type_get_alignment(), _dbus_type_reader_get_current_type(), _dbus_type_reader_get_element_type(), _dbus_type_reader_init_types_only(), _dbus_type_reader_next(), _dbus_type_reader_recurse(), _dbus_type_to_string(), _dbus_unpack_uint32(), _dbus_validate_path(), DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_DICT_ENTRY_END_CHAR, DBUS_MAXIMUM_ARRAY_LENGTH, DBUS_MAXIMUM_SIGNATURE_LENGTH, DBUS_MAXIMUM_TYPE_RECURSION_DEPTH, DBUS_STRUCT_BEGIN_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_ARRAY, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_INVALID, dbus_type_is_basic(), dbus_type_is_fixed(), dbus_type_is_valid(), DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, DBUS_TYPE_VARIANT, DBUS_VALID, DBUS_VALIDITY_UNKNOWN_OOM_ERROR, FALSE, NULL, TRUE, and DBusTypeReader::type_pos\&.
+.PP
+Referenced by _dbus_validate_signature(), and dbus_signature_validate()\&.
+.SS "void _dbus_verbose_bytes (const unsigned char * data, int len, int offset)"
+
+.PP
+If in verbose mode, print a block of binary data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the data 
+.br
+\fIlen\fP the length of the data 
+.br
+\fIoffset\fP where to start counting for byte indexes 
+.RE
+.PP
+
+.PP
+Definition at line 1280 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_unpack_uint32(), DBUS_BIG_ENDIAN, DBUS_LITTLE_ENDIAN, and dbus_uint64_t\&.
+.PP
+Referenced by _dbus_verbose_bytes_of_string()\&.
+.SS "void _dbus_verbose_bytes_of_string (const \fBDBusString\fP * str, int start, int len)"
+
+.PP
+Dump the given part of the string to verbose log\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIstart\fP the start of range to dump 
+.br
+\fIlen\fP length of range 
+.RE
+.PP
+
+.PP
+Definition at line 1360 of file dbus\-marshal\-basic\&.c\&.
+.PP
+References _dbus_assert, _dbus_verbose_bytes(), DBUS_DICT_ENTRY_BEGIN_CHAR, DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_BEGIN_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_DICT_ENTRY, and DBUS_TYPE_STRUCT\&.
+.PP
+Referenced by _dbus_marshal_read_basic(), _dbus_message_loader_return_unix_fds(), _dbus_read(), _dbus_read_socket(), _dbus_read_socket_with_unix_fds(), _dbus_type_reader_set_basic(), _dbus_write(), and _dbus_write_socket()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

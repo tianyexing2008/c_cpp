@@ -1,0 +1,62 @@
+.TH "DBusAuthMechanismHandler" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusAuthMechanismHandler \- Virtual table representing a particular auth mechanism\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBmechanism\fP"
+.br
+.RI "\fIName of the mechanism\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthDataFunction\fP \fBserver_data_func\fP"
+.br
+.RI "\fIFunction on server side for DATA\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthEncodeFunction\fP \fBserver_encode_func\fP"
+.br
+.RI "\fIFunction on server side to encode\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthDecodeFunction\fP \fBserver_decode_func\fP"
+.br
+.RI "\fIFunction on server side to decode\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthShutdownFunction\fP \fBserver_shutdown_func\fP"
+.br
+.RI "\fIFunction on server side to shut down\&. \fP"
+.ti -1c
+.RI "\fBDBusInitialResponseFunction\fP \fBclient_initial_response_func\fP"
+.br
+.RI "\fIFunction on client side to handle initial response\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthDataFunction\fP \fBclient_data_func\fP"
+.br
+.RI "\fIFunction on client side for DATA\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthEncodeFunction\fP \fBclient_encode_func\fP"
+.br
+.RI "\fIFunction on client side for encode\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthDecodeFunction\fP \fBclient_decode_func\fP"
+.br
+.RI "\fIFunction on client side for decode\&. \fP"
+.ti -1c
+.RI "\fBDBusAuthShutdownFunction\fP \fBclient_shutdown_func\fP"
+.br
+.RI "\fIFunction on client side for shutdown\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Virtual table representing a particular auth mechanism\&. 
+.PP
+Definition at line 102 of file dbus\-auth\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

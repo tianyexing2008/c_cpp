@@ -1,0 +1,44 @@
+.TH "DBusKey" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusKey \- A single key from the cookie file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_int32_t\fP \fBid\fP"
+.br
+.RI "\fIidentifier used to refer to the key \fP"
+.ti -1c
+.RI "long \fBcreation_time\fP"
+.br
+.RI "\fIwhen the key was generated, as unix timestamp\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBsecret\fP"
+.br
+.RI "\fIthe actual key \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A single key from the cookie file\&. 
+.PP
+Definition at line 92 of file dbus\-keyring\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "long DBusKey::creation_time"
+
+.PP
+when the key was generated, as unix timestamp\&. signed long matches struct timeval\&. 
+.PP
+Definition at line 96 of file dbus\-keyring\&.c\&.
+.PP
+Referenced by _dbus_keyring_get_hex_key(), and _dbus_keyring_validate_context()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

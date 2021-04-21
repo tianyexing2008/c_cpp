@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusKeyring" kind="group">
+    <compoundname>DBusKeyring</compoundname>
+    <title>keyring class</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusKeyring_1gacbe59117a5f042a680991461e6d2e20f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+        <definition>DBusKeyring* _dbus_keyring_ref</definition>
+        <argsstring>(DBusKeyring *keyring)</argsstring>
+        <name>_dbus_keyring_ref</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <briefdescription>
+<para>Increments reference count of the keyring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the keyring </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="667" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="667" bodyend="672"/>
+        <references refid="structDBusKeyring_1abd3bb1b915d602c6d8b6c582f55d1590" compoundref="dbus-keyring_8c" startline="113">refcount</references>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_keyring_unref</definition>
+        <argsstring>(DBusKeyring *keyring)</argsstring>
+        <name>_dbus_keyring_unref</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <briefdescription>
+<para>Decrements refcount and finalizes if it reaches zero. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="681" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="681" bodyend="696"/>
+        <references refid="group__DBusCredentials_1ga89913c830c3627cd006a50ca693af580" compoundref="dbus-credentials_8c" startline="128" endline="139">_dbus_credentials_unref</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="structDBusKeyring_1a5fce1fd5f4255b922caeda643ecb69cc" compoundref="dbus-keyring_8c" startline="119">credentials</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusKeyring_1ac7274d864db3f2239b2c4ec734da94da" compoundref="dbus-keyring_8c" startline="114">directory</references>
+        <references refid="structDBusKeyring_1a38b402331379977ffd151d327b66dc1f" compoundref="dbus-keyring_8c" startline="115">filename</references>
+        <references refid="structDBusKeyring_1ad4ac7b540d393d588c44aaa2c2f79056" compoundref="dbus-keyring_8c" startline="116">filename_lock</references>
+        <references refid="structDBusKeyring_1a2f415a81a41f5827df7ecffbfdbd13cf" compoundref="dbus-keyring_8c" startline="117">keys</references>
+        <references refid="structDBusKeyring_1a82dbc0da13a4f11d831f448a1d2ada1f" compoundref="dbus-keyring_8c" startline="118">n_keys</references>
+        <references refid="structDBusKeyring_1abd3bb1b915d602c6d8b6c582f55d1590" compoundref="dbus-keyring_8c" startline="113">refcount</references>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+        <definition>DBusKeyring* _dbus_keyring_new_for_credentials</definition>
+        <argsstring>(DBusCredentials *credentials, const DBusString *context, DBusError *error)</argsstring>
+        <name>_dbus_keyring_new_for_credentials</name>
+        <param>
+          <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+          <declname>credentials</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new keyring that lives in the ~/.dbus-keyrings directory of the user represented by <computeroutput>credentials</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the <computeroutput>credentials</computeroutput> are <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> or empty, uses those of the current process.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>credentials</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a set of credentials representing a user or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which keyring to get </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the keyring or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="709" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="709" bodyend="838"/>
+        <references refid="group__DBusSysdeps_1ga3cc5a5734416858fa58f3166ed181a64" compoundref="dbus-sysdeps-unix_8c" startline="3900" endline="3963">_dbus_append_keyring_directory_for_credentials</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1ga6c14c6bf4dd98b3fe3a114e9f5630148" compoundref="dbus-sysdeps-unix_8c" startline="4127" endline="4170">_dbus_check_setuid</references>
+        <references refid="group__DBusSysdeps_1gae3a3fdc0c6001e367584bb016aca495d" compoundref="dbus-sysdeps-unix_8c" startline="2825" endline="2852">_dbus_concat_dir_and_file</references>
+        <references refid="group__DBusSysdeps_1gaa47156dedbe573ee9b213d1fd3f7bb79" compoundref="dbus-sysdeps-unix_8c" startline="2791" endline="2812">_dbus_create_directory</references>
+        <references refid="group__DBusSysdeps_1ga9d5493f8bd1c5577060c8c6dce44d09f" compoundref="dbus-sysdeps-unix_8c" startline="2430" endline="2446">_dbus_credentials_add_from_current_process</references>
+        <references refid="group__DBusCredentials_1gabfd7a1f681a91b45ba2f4e7461131827" compoundref="dbus-credentials_8c" startline="361" endline="366">_dbus_credentials_are_anonymous</references>
+        <references refid="group__DBusCredentials_1ga416f5b9d174e672b63fdd2c11d567eb2" compoundref="dbus-credentials_8c" startline="464" endline="479">_dbus_credentials_copy</references>
+        <references refid="group__DBusCredentials_1ga63b2f88e91962510ed947bae98270818" compoundref="dbus-credentials_8c" startline="93" endline="108">_dbus_credentials_new_from_current_process</references>
+        <references refid="group__DBusCredentials_1ga89913c830c3627cd006a50ca693af580" compoundref="dbus-credentials_8c" startline="128" endline="139">_dbus_credentials_unref</references>
+        <references refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</references>
+        <references refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="structDBusKeyring_1a5fce1fd5f4255b922caeda643ecb69cc" compoundref="dbus-keyring_8c" startline="119">credentials</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" compoundref="dbus-errors_8c" startline="243" endline="266">dbus_set_error_const</references>
+        <references refid="structDBusKeyring_1ac7274d864db3f2239b2c4ec734da94da" compoundref="dbus-keyring_8c" startline="114">directory</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusKeyring_1a38b402331379977ffd151d327b66dc1f" compoundref="dbus-keyring_8c" startline="115">filename</references>
+        <references refid="structDBusKeyring_1ad4ac7b540d393d588c44aaa2c2f79056" compoundref="dbus-keyring_8c" startline="116">filename_lock</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_keyring_validate_context</definition>
+        <argsstring>(const DBusString *context)</argsstring>
+        <name>_dbus_keyring_validate_context</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the context is a valid context. </para>        </briefdescription>
+        <detaileddescription>
+<para>Contexts that might cause confusion when used in filenames are not allowed (contexts can&apos;t start with a dot or contain dir separators).</para><para><xrefsect id="todo_1_todo000013"><xreftitle>Todo</xreftitle><xrefdescription><para>this is the most inefficient implementation imaginable.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the context </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="853" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="853" bodyend="910"/>
+        <references refid="group__DBusSysdeps_1gae10ee21ab353beadbe2493728065f600" compoundref="dbus-sysdeps-unix_8c" startline="2769" endline="2780">_dbus_get_real_time</references>
+        <references refid="group__DBusString_1ga5fe47873b2838339107c3e1f03d1a703" compoundref="dbus-string_8c" startline="1603" endline="1611">_dbus_string_find</references>
+        <references refid="group__DBusString_1ga677ddb4246c7e7f67ed3145dc3c1c96b" compoundref="dbus-string_8c" startline="1764" endline="1791">_dbus_string_find_blank</references>
+        <references refid="group__DBusString_1gaa4324cd667e21beb31a5481cb0c12b6d" compoundref="dbus-string_8c" startline="2449" endline="2474">_dbus_string_validate_ascii</references>
+        <references refid="structDBusKey_1ab8a80dc4ac5497885cfb4795f6bc857e" compoundref="dbus-keyring_8c" startline="96">DBusKey::creation_time</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusKeyring_1a2f415a81a41f5827df7ecffbfdbd13cf" compoundref="dbus-keyring_8c" startline="117">keys</references>
+        <references refid="structDBusKeyring_1a82dbc0da13a4f11d831f448a1d2ada1f" compoundref="dbus-keyring_8c" startline="118">n_keys</references>
+        <references refid="group__DBusKeyringInternals_1ga73544ee0e71ac5224d339bcc87b4b559" compoundref="dbus-keyring_8c" startline="67">NEW_KEY_TIMEOUT_SECONDS</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1gac65f38253619fc386a8a6c9adbb81613" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> *</type>
+        <definition>static DBusKey* find_recent_key</definition>
+        <argsstring>(DBusKeyring *keyring)</argsstring>
+        <name>find_recent_key</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="913" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="913" bodyend="935"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1ga0daf16cfb75ab28d67d5dfa881f457a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_keyring_get_best_key</definition>
+        <argsstring>(DBusKeyring *keyring, DBusError *error)</argsstring>
+        <name>_dbus_keyring_get_best_key</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Gets a recent key to use for authentication. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no recent key exists, creates one. Returns the key ID. If a key can&apos;t be written to the keyring file so no recent key can be created, returns -1. All valid keys are &gt; 0.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error on failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>key ID to use for auth, or -1 on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="949" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="949" bodyend="977"/>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" compoundref="dbus-errors_8c" startline="243" endline="266">dbus_set_error_const</references>
+        <references refid="structDBusKey_1ac9fd0e664b5e21c63c97f3ade3349c70" compoundref="dbus-keyring_8c" startline="94">DBusKey::id</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1ga5ef8c7224182f27ff56b3105c6963cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_keyring_is_for_credentials</definition>
+        <argsstring>(DBusKeyring *keyring, DBusCredentials *credentials)</argsstring>
+        <name>_dbus_keyring_is_for_credentials</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+          <declname>credentials</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the keyring is for the same user as the given credentials. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credentials</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the credentials to check</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the keyring belongs to the given user </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="988" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="988" bodyend="993"/>
+        <references refid="group__DBusCredentials_1ga2f10263b80ff6611c15a78e8f6823dfa" compoundref="dbus-credentials_8c" startline="493" endline="503">_dbus_credentials_same_user</references>
+        <references refid="structDBusKeyring_1a5fce1fd5f4255b922caeda643ecb69cc" compoundref="dbus-keyring_8c" startline="119">credentials</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_keyring_get_hex_key</definition>
+        <argsstring>(DBusKeyring *keyring, int key_id, DBusString *hex_key)</argsstring>
+        <name>_dbus_keyring_get_hex_key</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key_id</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>hex_key</declname>
+        </param>
+        <briefdescription>
+<para>Gets the hex-encoded secret key for the given ID. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory. Returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> but empty key on any other error such as unknown key ID.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the key ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hex_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to append hex-encoded key to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we had enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="1007" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="1007" bodyend="1022"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusKeyring_1ga0daf16cfb75ab28d67d5dfa881f457a6" compoundref="dbus-keyring_8c" startline="949" endline="977">_dbus_keyring_get_best_key</references>
+        <references refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</references>
+        <references refid="group__DBusKeyring_1gacbe59117a5f042a680991461e6d2e20f" compoundref="dbus-keyring_8c" startline="667" endline="672">_dbus_keyring_ref</references>
+        <references refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</references>
+        <references refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</references>
+        <references refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</references>
+        <references refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" compoundref="dbus-string_8c" startline="2012" endline="2039">_dbus_string_equal</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1gaabb4873f436e015944a33cd1e3815cc9" compoundref="dbus-string_8c" startline="2258" endline="2295">_dbus_string_hex_encode</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="structDBusKey_1ab8a80dc4ac5497885cfb4795f6bc857e" compoundref="dbus-keyring_8c" startline="96">DBusKey::creation_time</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusKey_1ac9fd0e664b5e21c63c97f3ade3349c70" compoundref="dbus-keyring_8c" startline="94">DBusKey::id</references>
+        <references refid="structDBusKeyring_1a2f415a81a41f5827df7ecffbfdbd13cf" compoundref="dbus-keyring_8c" startline="117">keys</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusKeyring_1a82dbc0da13a4f11d831f448a1d2ada1f" compoundref="dbus-keyring_8c" startline="118">n_keys</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusKey_1a444e3f33c387af833dc78ba96b6a9ea6" compoundref="dbus-keyring_8c" startline="101">DBusKey::secret</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> data structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to <ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref>. <ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> is intended to manage cookies used to authenticate clients to servers. This is essentially the &quot;verify that client can read the user&apos;s homedir&quot; authentication mechanism. Both client and server must have access to the homedir.</para><para>The secret keys are not kept in locked memory, and are written to a file in the user&apos;s homedir. However they are transient (only used by a single server instance for a fixed period of time, then discarded). Also, the keys are not sent over the wire.</para><para><xrefsect id="todo_1_todo000012"><xreftitle>Todo</xreftitle><xrefdescription><para>there&apos;s a memory leak on some codepath in here, I saw it once when running make check - probably some specific initial cookies present in the cookie file, then depending on what we do with them. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+  </compounddef>
+</doxygen>

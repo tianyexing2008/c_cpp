@@ -1,0 +1,190 @@
+.TH "DBusSyntax" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSyntax \- Utility functions for strings with special syntax
+.PP
+Parsing D-Bus type signatures\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_path\fP (const char *path, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck an object path for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_interface\fP (const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck an interface name for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_member\fP (const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck a member (method/signal) name for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_error_name\fP (const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck an error name for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_bus_name\fP (const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck a bus name for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_validate_utf8\fP (const char *alleged_utf8, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck a string for validity\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Parsing D-Bus type signatures\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP dbus_validate_bus_name (const char * name, \fBDBusError\fP * error)"
+
+.PP
+Check a bus name for validity\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP a potentially invalid bus name, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if name is valid 
+.RE
+.PP
+
+.PP
+Definition at line 242 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), _dbus_validate_bus_name(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP dbus_validate_error_name (const char * name, \fBDBusError\fP * error)"
+
+.PP
+Check an error name for validity\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP a potentially invalid error name, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if name is valid 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), _dbus_validate_error_name(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP dbus_validate_interface (const char * name, \fBDBusError\fP * error)"
+
+.PP
+Check an interface name for validity\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP a potentially invalid interface name, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if name is valid 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), _dbus_validate_interface(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP dbus_validate_member (const char * name, \fBDBusError\fP * error)"
+
+.PP
+Check a member (method/signal) name for validity\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP a potentially invalid member name, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if name is valid 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), _dbus_validate_member(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP dbus_validate_path (const char * path, \fBDBusError\fP * error)"
+
+.PP
+Check an object path for validity\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP a potentially invalid object path, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if path is valid 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), _dbus_validate_path(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP dbus_validate_utf8 (const char * alleged_utf8, \fBDBusError\fP * error)"
+
+.PP
+Check a string for validity\&. Strings on D-Bus must be valid UTF-8\&. Remember that \fBNULL\fP can always be passed instead of a \fBDBusError\fP *, if you don't care about having an error name and message\&.
+.PP
+This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string's length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIalleged_utf8\fP a string to be checked, which must not be \fBNULL\fP 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if alleged_utf8 is valid UTF-8 
+.RE
+.PP
+
+.PP
+Definition at line 289 of file dbus\-syntax\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), DBUS_ERROR_INVALID_ARGS, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

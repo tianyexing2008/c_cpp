@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusServerLaunchd" kind="group">
+    <compoundname>DBusServerLaunchd</compoundname>
+    <title>DBusServer implementations for Launchd</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+        <definition>DBusServer* _dbus_server_new_for_launchd</definition>
+        <argsstring>(const char *launchd_env_var, DBusError *error)</argsstring>
+        <name>_dbus_server_new_for_launchd</name>
+        <param>
+          <type>const char *</type>
+          <declname>launchd_env_var</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new server from launchd. </para>        </briefdescription>
+        <detaileddescription>
+<para>launchd has allocaed a socket for us. We now query launchd for the file descriptor of this socket and create a server on it. In addition we inherit launchd&apos;s environment which holds a variable containing the path to the socket. This is used to init the server&apos;s address which is passed to autolaunched services.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>launchd_env_var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the environment variable which holds the unix path to the socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store reason for failure. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new server, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-launchd.c" line="66" column="1" bodyfile="dbus/dbus-server-launchd.c" bodystart="66" bodyend="209"/>
+        <references refid="group__DBusSysdepsUnix_1ga000b1d83b0188e2db82d766b6665bb83" compoundref="dbus-sysdeps-unix_8c" startline="3003" endline="3015">_dbus_fd_set_close_on_exec</references>
+        <references refid="group__DBusSysdeps_1gab846071a4de54cb7e518654f9375313a" compoundref="dbus-sysdeps_8c" startline="185" endline="193">_dbus_getenv</references>
+        <references refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusProtocol_1ga445d7ad73da94c796ef441df2dcc3cc8" compoundref="dbus-protocol_8h" startline="365">DBUS_ERROR_IO_ERROR</references>
+        <references refid="group__DBusProtocol_1ga7c96d165c4ebee51e939969934d18027" compoundref="dbus-protocol_8h" startline="371">DBUS_ERROR_LIMITS_EXCEEDED</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusProtocol_1ga72b375fab2486ee165e1cca2bd145695" compoundref="dbus-protocol_8h" startline="377">DBUS_ERROR_NO_SERVER</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMisc_1gac02f6b021decd9fa35697a36ea581f86" compoundref="dbus-sysdeps_8c" startline="114" endline="176">dbus_setenv</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusServer" kindref="compound">DBusServer</ref> with Launchd support. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

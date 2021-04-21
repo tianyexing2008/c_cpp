@@ -1,0 +1,85 @@
+.TH "DBusHashTableInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusHashTableInternals \- Hash table implementation details
+.PP
+\fBDBusHashTable\fP implementation details\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusHashEntry\fP"
+.br
+.RI "\fIInternal representation of a hash entry\&. \fP"
+.ti -1c
+.RI "struct \fBDBusHashTable\fP"
+.br
+.RI "\fIInternals of \fBDBusHashTable\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusRealHashIter\fP"
+.br
+.RI "\fIInternals of \fBDBusHashIter\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBREBUILD_MULTIPLIER\fP   3"
+.br
+.RI "\fIWhen there are this many entries per bucket, on average, rebuild the hash table to make it larger\&. \fP"
+.ti -1c
+.RI "#define \fBRANDOM_INDEX\fP(table,  i)   (((((intptr_t) (i))*1103515245) >> (table)\->down_shift) & (table)\->mask)"
+.br
+.RI "\fITakes a preliminary integer hash value and produces an index into a hash tables bucket list\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_SMALL_HASH_TABLE\fP   4"
+.br
+.RI "\fIInitial number of buckets in hash table (hash table statically allocates its buckets for this size and below)\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusHashEntry\fP \fBDBusHashEntry\fP"
+.br
+.RI "\fITypedef for \fBDBusHashEntry\fP\&. \fP"
+.ti -1c
+.RI "typedef \fBDBusHashEntry\fP *(* \fBDBusFindEntryFunction\fP) (\fBDBusHashTable\fP *table, void *key, \fBdbus_bool_t\fP create_if_not_found, \fBDBusHashEntry\fP ***bucket, \fBDBusPreallocatedHash\fP *preallocated)"
+.br
+.RI "\fIFunction used to find and optionally create a hash entry\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_DBUS_STATIC_ASSERT\fP (sizeof(\fBDBusRealHashIter\fP)==sizeof(\fBDBusHashIter\fP))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusHashTable\fP implementation details\&. 
+
+The guts of \fBDBusHashTable\fP\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_SMALL_HASH_TABLE   4"
+
+.PP
+Initial number of buckets in hash table (hash table statically allocates its buckets for this size and below)\&. The initial mask has to be synced to this\&. 
+.PP
+Definition at line 130 of file dbus\-hash\&.c\&.
+.PP
+Referenced by _dbus_hash_table_new()\&.
+.SS "#define RANDOM_INDEX(table, i)   (((((intptr_t) (i))*1103515245) >> (table)\->down_shift) & (table)\->mask)"
+
+.PP
+Takes a preliminary integer hash value and produces an index into a hash tables bucket list\&. The idea is to make it so that preliminary values that are arbitrarily similar will end up in different buckets\&. The hash function was taken from a random-number generator\&. (This is used to hash integers\&.)
+.PP
+The down_shift drops off the high bits of the hash index, and decreases as we increase the number of hash buckets (to keep more range in the hash index)\&. The mask also strips high bits and strips fewer high bits as the number of hash buckets increases\&. I don't understand two things: why is the initial downshift 28 to keep 4 bits when the initial mask is 011 to keep 2 bits, and why do we have both a mask and a downshift? 
+.PP
+Definition at line 122 of file dbus\-hash\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

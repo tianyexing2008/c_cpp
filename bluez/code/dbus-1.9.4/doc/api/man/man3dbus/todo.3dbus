@@ -1,0 +1,145 @@
+.TH "todo" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+todo \- Todo List 
+
+.IP "\fBGlobal \fB_dbus_append_user_from_current_process\fP (\fBDBusString\fP *str)\fP" 1c
+to which class belongs this  
+.IP "\fBGlobal \fB_dbus_auth_decode_data\fP (\fBDBusAuth\fP *auth, const \fBDBusString\fP *encoded, \fBDBusString\fP *plaintext)\fP" 1c
+1\&.0? We need to be able to distinguish 'out of memory' error from 'the data is hosed' error\&. 
+.IP "\fBGlobal \fB_dbus_close_socket\fP (int fd, \fBDBusError\fP *error)\fP" 1c
+Use for the file descriptors a struct
+.IP "\(bu" 2
+struct DBusSocket{ int d; }; - instead of int to get type-safety which will be checked by the compiler\&. 
+.PP
+.IP "\fBGlobal \fB_dbus_concat_dir_and_file\fP (\fBDBusString\fP *dir, const \fBDBusString\fP *next_component)\fP" 1c
+it might be cute to collapse multiple '/' such as 'foo//' concat '//bar' 
+.IP "\fBGlobal \fB_dbus_connection_block_pending_call\fP (\fBDBusPendingCall\fP *pending)\fP" 1c
+could use performance improvements (it keeps scanning the whole message queue for example) 
+.IP "\fBGlobal \fB_dbus_connection_handle_watch\fP (\fBDBusWatch\fP *watch, unsigned int condition, void *data)\fP" 1c
+This is basically a hack - we could delete \fB_dbus_transport_handle_watch()\fP and the virtual handle_watch in \fBDBusTransport\fP if we got rid of it\&. The reason this is some work is threading, see the \fB_dbus_connection_handle_watch()\fP implementation\&. 
+.IP "\fBGlobal \fB_dbus_credentials_add_from_user\fP (\fBDBusCredentials\fP *credentials, const \fBDBusString\fP *username)\fP" 1c
+this is broken because it treats OOM and parse error the same way\&. Needs a \fBDBusError\fP\&. 
+.IP "\fBGlobal \fB_dbus_error_from_errno\fP (int error_number)\fP" 1c
+should cover more errnos, specifically those from open()\&. 
+.IP "\fBGlobal \fB_dbus_keyring_validate_context\fP (const \fBDBusString\fP *context)\fP" 1c
+this is the most inefficient implementation imaginable\&. 
+.IP "\fBGlobal \fB_dbus_message_loader_get_buffer\fP (\fBDBusMessageLoader\fP *loader, \fBDBusString\fP **buffer)\fP" 1c
+this function can be a lot more clever\&. For example it can probably always return a buffer size to read exactly the body of the next message, thus avoiding any memory wastage or reallocs\&.
+.PP
+we need to enforce a max length on strings in header fields\&. 
+.IP "\fBGlobal \fB_dbus_message_loader_queue_messages\fP (\fBDBusMessageLoader\fP *loader)\fP" 1c
+we need to check that the proper named header fields exist for each message type\&.
+.PP
+If a message has unknown type, we should probably eat it right here rather than passing it out to applications\&. However it's not an error to see messages of unknown type\&. 
+.IP "\fBGlobal \fB_dbus_object_tree_dispatch_and_unlock\fP (\fBDBusObjectTree\fP *tree, \fBDBusMessage\fP *message, dbus_bool_t *found_object)\fP" 1c
+thread problems 
+.IP "\fBGlobal \fB_dbus_string_ends_with_c_str\fP (const \fBDBusString\fP *a, const char *c_str)\fP" 1c
+memcmp might make this faster\&. 
+.IP "\fBGlobal \fB_dbus_string_equal\fP (const \fBDBusString\fP *a, const \fBDBusString\fP *b)\fP" 1c
+memcmp is probably faster 
+.IP "\fBGlobal \fB_dbus_string_equal_len\fP (const \fBDBusString\fP *a, const \fBDBusString\fP *b, int len)\fP" 1c
+write a unit test
+.PP
+memcmp is probably faster 
+.IP "\fBGlobal \fB_dbus_string_equal_substring\fP (const \fBDBusString\fP *a, int a_start, int a_len, const \fBDBusString\fP *b, int b_start)\fP" 1c
+write a unit test
+.PP
+memcmp is probably faster 
+.IP "\fBGlobal \fB_dbus_string_pop_line\fP (\fBDBusString\fP *source, \fBDBusString\fP *dest)\fP" 1c
+owen correctly notes that this is a stupid function (it was written purely for test code, e\&.g\&. dbus-message-builder\&.c)\&. Probably should be enforced as test code only with ifdef DBUS_ENABLE_EMBEDDED_TESTS 
+.IP "\fBGlobal \fB_dbus_string_validate_ascii\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_string_validate_nul\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_string_validate_utf8\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_transport_new_for_domain_socket\fP (const char *path, dbus_bool_t abstract, \fBDBusError\fP *error)\fP" 1c
+once we add a way to escape paths in a dbus address, this function needs to do escaping\&. 
+.IP "\fBGlobal \fB_dbus_transport_try_to_authenticate\fP (\fBDBusTransport\fP *transport)\fP" 1c
+we drop connection->mutex when calling the unix_user_function, and windows_user_function, which may not be safe really\&. 
+.IP "\fBGlobal \fB_dbus_type_reader_delete\fP (\fBDBusTypeReader\fP *reader, const \fBDBusTypeReader\fP *realign_root)\fP" 1c
+for now this does not delete the typecodes associated with the value, so this function should only be used for array elements\&. 
+.IP "\fBGlobal \fB_dbus_type_reader_set_basic\fP (\fBDBusTypeReader\fP *reader, const void *value, const \fBDBusTypeReader\fP *realign_root)\fP" 1c
+\fBDBusTypeReader\fP currently takes 'const' versions of the type and value strings, and this function modifies those strings by casting away the const, which is of course bad if we want to get picky\&. (To be truly clean you'd have an object which contained the type and value strings and set_basic would be a method on that object\&.\&.\&. this would also make \fBDBusTypeReader\fP the same thing as DBusTypeMark\&. But since \fBDBusMessage\fP is effectively that object for D-Bus it doesn't seem worth creating some random object\&.)
+.PP
+optimize this by only rewriting until the old and new values are at the same alignment\&. Frequently this should result in only replacing the value that's immediately at hand\&. 
+.IP "\fBGlobal \fB_dbus_validate_bus_name\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_validate_bus_namespace\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_validate_error_name\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_validate_interface\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_validate_member\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_validate_path\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&.
+.PP
+change spec to disallow more things, such as spaces in the path name 
+.IP "\fBGlobal \fB_dbus_validate_signature\fP (const \fBDBusString\fP *str, int start, int len)\fP" 1c
+this is inconsistent with most of \fBDBusString\fP in that it allows a start,len range that extends past the string end\&. 
+.IP "\fBGlobal \fB_dbus_watch_set_handler\fP (\fBDBusWatch\fP *watch, DBusWatchHandler handler, void *data, DBusFreeFunction free_data_function)\fP" 1c
+this function only exists because of the weird way connection watches are done, see the note in docs for \fB_dbus_connection_handle_watch()\fP\&. 
+.IP "\fBGlobal \fBdbus_connection_add_filter\fP (\fBDBusConnection\fP *connection, DBusHandleMessageFunction function, void *user_data, DBusFreeFunction free_data_function)\fP" 1c
+we don't run filters on messages while blocking without entering the main loop, since filters are run as part of \fBdbus_connection_dispatch()\fP\&. This is probably a feature, as filters could create arbitrary reentrancy\&. But kind of sucks if you're trying to filter METHOD_RETURN for some reason\&. 
+.IP "\fBGlobal \fBdbus_connection_dispatch\fP (\fBDBusConnection\fP *connection)\fP" 1c
+some FIXME in here about handling DBUS_HANDLER_RESULT_NEED_MEMORY 
+.IP "\fBGlobal \fBdbus_connection_get_windows_user\fP (\fBDBusConnection\fP *connection, char **windows_sid_p)\fP" 1c
+We would like to be able to say "You can ask the bus to tell you the user of another connection though if you like; this is done with dbus_bus_get_windows_user()\&." But this has to be implemented in bus/driver\&.c and \fBdbus/dbus-bus\&.c\fP, and is pointless anyway since on Windows we only use the session bus for now\&. 
+.IP "\fBGlobal \fBdbus_message_append_args\fP (\fBDBusMessage\fP *message, int first_arg_type,\&.\&.\&.)\fP" 1c
+support DBUS_TYPE_STRUCT and DBUS_TYPE_VARIANT and complex arrays
+.PP
+If this fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_append_args_valist\fP (\fBDBusMessage\fP *message, int first_arg_type, va_list var_args)\fP" 1c
+for now, if this function fails due to OOM it will leave the message half-written and you have to discard the message and start over\&. 
+.IP "\fBGlobal \fBdbus_message_copy\fP (const \fBDBusMessage\fP *message)\fP" 1c
+This function can't be used in programs that try to recover from OOM errors\&. 
+.IP "\fBGlobal \fBdbus_message_get_args\fP (\fBDBusMessage\fP *message, \fBDBusError\fP *error, int first_arg_type,\&.\&.\&.)\fP" 1c
+support DBUS_TYPE_STRUCT and DBUS_TYPE_VARIANT and complex arrays 
+.IP "\fBGlobal \fBdbus_message_get_path_decomposed\fP (\fBDBusMessage\fP *message, char ***path)\fP" 1c
+this could be optimized by using the len from the message instead of calling strlen() again 
+.IP "\fBGlobal \fBdbus_message_iter_append_basic\fP (\fBDBusMessageIter\fP *iter, int type, const void *value)\fP" 1c
+If this fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_iter_append_fixed_array\fP (\fBDBusMessageIter\fP *iter, int element_type, const void *value, int n_elements)\fP" 1c
+If this fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_iter_close_container\fP (\fBDBusMessageIter\fP *iter, \fBDBusMessageIter\fP *sub)\fP" 1c
+If this fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_iter_get_array_len\fP (\fBDBusMessageIter\fP *iter)\fP" 1c
+introduce a variant of this get_n_elements that returns the number of elements, though with a non-fixed array it will not be very efficient, so maybe it's not good\&. 
+.IP "\fBGlobal \fBdbus_message_iter_init_append\fP (\fBDBusMessage\fP *message, \fBDBusMessageIter\fP *iter)\fP" 1c
+If appending any of the arguments fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_iter_open_container\fP (\fBDBusMessageIter\fP *iter, int type, const char *contained_signature, \fBDBusMessageIter\fP *sub)\fP" 1c
+If this fails due to lack of memory, the message is hosed and you have to start over building the whole message\&. 
+.IP "\fBGlobal \fBdbus_message_new_error_printf\fP (\fBDBusMessage\fP *reply_to, const char *error_name, const char *error_format,\&.\&.\&.)\fP" 1c
+add _DBUS_GNUC_PRINTF to this (requires moving _DBUS_GNUC_PRINTF to public header, see DBUS_DEPRECATED for an example) 
+.IP "\fBGlobal \fBdbus_pending_call_block\fP (\fBDBusPendingCall\fP *pending)\fP" 1c
+when you start blocking, the timeout is reset, but it should really only use time remaining since the pending call was created\&. This requires storing timestamps instead of intervals in the timeout 
+.IP "\fBModule \fBDBusAuth\fP \fP" 1c
+some SASL profiles require sending the empty string as a challenge/response, but we don't currently allow that in our protocol\&.
+.PP
+right now sometimes both ends will block waiting for input from the other end, e\&.g\&. if there's an error during DBUS_COOKIE_SHA1\&.
+.PP
+the cookie keyring needs to be cached globally not just per-auth (which raises threadsafety issues too)
+.PP
+grep FIXME in \fBdbus-auth\&.c\fP  
+.IP "\fBModule \fBDBusBus\fP \fP" 1c
+right now the default address of the system bus is hardcoded, so if you change it in the global config file suddenly you have to set DBUS_SYSTEM_BUS_ADDRESS env variable\&. Might be nice if the client lib somehow read the config file, or if the bus on startup somehow wrote out its address to a well-known spot, but might also not be worth it\&.  
+.IP "\fBGlobal \fBDBusGUID\fP \fP" 1c
+rename to UUID instead of GUID  
+.IP "\fBModule \fBDBusKeyring\fP \fP" 1c
+there's a memory leak on some codepath in here, I saw it once when running make check - probably some specific initial cookies present in the cookie file, then depending on what we do with them\&.  
+.IP "\fBGlobal \fBDBusMessageLoader\fP \fP" 1c
+write tests for break-loader that a) randomly delete header fields and b) set string fields to zero-length and other funky values\&. 
+.IP "\fBModule \fBDBusServer\fP \fP" 1c
+Thread safety hasn't been tested much for \fBDBusServer\fP 
+.PP
+Need notification to apps of disconnection, may matter for some transports  
+.IP "\fBModule \fBDBusString\fP \fP" 1c
+\fBDBusString\fP needs a lot of cleaning up; some of the API is no longer used, and the API is pretty inconsistent\&. In particular all the 'append' APIs, especially those involving alignment but probably lots of them, are no longer used by the marshaling code which always does 'inserts' now\&.  
+.IP "\fBGlobal \fBINITIAL_LOADER_DATA_LEN\fP \fP" 1c
+this should be based on min header size plus some average body size, or something\&. Or rather, the min header size only, if we want to try to read only the header, store that in a \fBDBusMessage\fP, then read only the body and store that, etc\&., depends on how we optimize \fB_dbus_message_loader_get_buffer()\fP and what the exact message format is\&. 
+.PP
+

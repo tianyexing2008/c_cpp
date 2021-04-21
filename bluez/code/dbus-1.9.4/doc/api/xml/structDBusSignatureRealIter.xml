@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusSignatureRealIter" kind="struct" language="C++" prot="public">
+    <compoundname>DBusSignatureRealIter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* DBusSignatureRealIter::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+<para>current position in the signature string </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-signature.c" line="37" column="1" bodyfile="dbus/dbus-signature.c" bodystart="37" bodyend="-1"/>
+        <referencedby refid="group__DBusSignature_1gaba53b1756fe7f665d0657cc50253e3c8" compoundref="dbus-signature_8c" startline="67" endline="75">dbus_signature_iter_init</referencedby>
+        <referencedby refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" compoundref="dbus-signature_8c" startline="92" endline="97">dbus_signature_iter_get_current_type</referencedby>
+        <referencedby refid="group__DBusSignature_1ga898bbc14392cbedc087ce0be68d35c98" compoundref="dbus-signature_8c" startline="112" endline="132">dbus_signature_iter_get_signature</referencedby>
+        <referencedby refid="group__DBusSignature_1gaebb26dbc79dae5e11629f38b2c8277fd" compoundref="dbus-signature_8c" startline="146" endline="153">dbus_signature_iter_get_element_type</referencedby>
+        <referencedby refid="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" compoundref="dbus-signature_8c" startline="164" endline="193">dbus_signature_iter_next</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" compoundref="dbus-signature_8c" startline="207" endline="221">dbus_signature_iter_recurse</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusSignatureRealIter_1a54aa77a50490febee5d9b1cbce690639" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusSignatureRealIter::finished</definition>
+        <argsstring></argsstring>
+        <name>finished</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>true if we are at the end iter </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-signature.c" line="38" column="1" bodyfile="dbus/dbus-signature.c" bodystart="38" bodyend="-1"/>
+        <referencedby refid="group__DBusSignature_1gaba53b1756fe7f665d0657cc50253e3c8" compoundref="dbus-signature_8c" startline="67" endline="75">dbus_signature_iter_init</referencedby>
+        <referencedby refid="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" compoundref="dbus-signature_8c" startline="164" endline="193">dbus_signature_iter_next</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusSignatureRealIter_1a575114ffd9f42eb84909ea6c5d912c75" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusSignatureRealIter::in_array</definition>
+        <argsstring></argsstring>
+        <name>in_array</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>true if we are a subiterator pointing to an array&apos;s element type </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-signature.c" line="39" column="1" bodyfile="dbus/dbus-signature.c" bodystart="39" bodyend="-1"/>
+        <referencedby refid="group__DBusSignature_1gaba53b1756fe7f665d0657cc50253e3c8" compoundref="dbus-signature_8c" startline="67" endline="75">dbus_signature_iter_init</referencedby>
+        <referencedby refid="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" compoundref="dbus-signature_8c" startline="164" endline="193">dbus_signature_iter_next</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" compoundref="dbus-signature_8c" startline="207" endline="221">dbus_signature_iter_recurse</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref>, all fields are private. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dbus/dbus-signature.c" line="36" column="1" bodyfile="dbus/dbus-signature.c" bodystart="35" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structDBusSignatureRealIter_1a54aa77a50490febee5d9b1cbce690639" prot="public" virt="non-virtual"><scope>DBusSignatureRealIter</scope><name>finished</name></member>
+      <member refid="structDBusSignatureRealIter_1a575114ffd9f42eb84909ea6c5d912c75" prot="public" virt="non-virtual"><scope>DBusSignatureRealIter</scope><name>in_array</name></member>
+      <member refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" prot="public" virt="non-virtual"><scope>DBusSignatureRealIter</scope><name>pos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusMessage" kind="struct" language="C++" prot="public">
+    <compoundname>DBusMessage</compoundname>
+    <includes refid="dbus-message-private_8h" local="no">dbus-message-private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusMessage_1a324c5377e0be18dd84ac519ab2d23f0d" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAtomic" kindref="compound">DBusAtomic</ref></type>
+        <definition>DBusAtomic DBusMessage::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="101" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga834035e4817acd64adc8ca584bdf3982" compoundref="dbus-message_8c" startline="1667" endline="1680">dbus_message_ref</referencedby>
+        <referencedby refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref></type>
+        <definition>DBusHeader DBusMessage::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <briefdescription>
+<para>Header network data and associated cache. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="103" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga617811b117ac5eb31151ffb7dabea7a8" compoundref="dbus-message_8c" startline="208" endline="216">_dbus_message_get_network_data</referencedby>
+        <referencedby refid="group__DBusMessage_1gaa35c17742d8fe091aa039cbd29961c52" compoundref="dbus-message_8c" startline="254" endline="261">dbus_message_set_serial</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+        <referencedby refid="group__DBusMessage_1ga390710c25564c80025a006c376da2030" compoundref="dbus-message_8c" startline="1127" endline="1132">dbus_message_get_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1gaec08603ff3d49bbcded67d25188a23f1" compoundref="dbus-message_8c" startline="1143" endline="1154">dbus_message_set_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1gab9e5bf8d87a95c5ca7026a791148ebd4" compoundref="dbus-message_8c" startline="1289" endline="1309">dbus_message_new</referencedby>
+        <referencedby refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</referencedby>
+        <referencedby refid="group__DBusMessage_1ga95142bd8288f397194ee0eefb1d27125" compoundref="dbus-message_8c" startline="1373" endline="1407">dbus_message_new_method_return</referencedby>
+        <referencedby refid="group__DBusMessage_1ga6ce3213dfb17be7956affba40207a5a0" compoundref="dbus-message_8c" startline="1424" endline="1453">dbus_message_new_signal</referencedby>
+        <referencedby refid="group__DBusMessage_1ga2ab896965aec97fb21293affeed36232" compoundref="dbus-message_8c" startline="1470" endline="1523">dbus_message_new_error</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga41cace31999105137772b6257ea540f9" compoundref="dbus-message_8c" startline="1722" endline="1727">dbus_message_get_type</referencedby>
+        <referencedby refid="group__DBusMessage_1ga9f98b47c84f0e401ea985e681de4e963" compoundref="dbus-message_8c" startline="2064" endline="2086">dbus_message_iter_init</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</referencedby>
+        <referencedby refid="group__DBusMessage_1ga0e86aeb2dc6831ccc9a21fcbf8cc16f7" compoundref="dbus-message_8c" startline="2984" endline="2993">dbus_message_set_no_reply</referencedby>
+        <referencedby refid="group__DBusMessage_1ga622d051a2e5f578814116a958b240aa4" compoundref="dbus-message_8c" startline="3003" endline="3009">dbus_message_get_no_reply</referencedby>
+        <referencedby refid="group__DBusMessage_1ga1596d92a8d604f954b48c7410263d2f0" compoundref="dbus-message_8c" startline="3026" endline="3035">dbus_message_set_auto_start</referencedby>
+        <referencedby refid="group__DBusMessage_1ga85d396a3a774e15c3dbb7704aa173384" compoundref="dbus-message_8c" startline="3045" endline="3051">dbus_message_get_auto_start</referencedby>
+        <referencedby refid="group__DBusMessage_1ga18adf731bb42d324fe2624407319e4af" compoundref="dbus-message_8c" startline="3096" endline="3108">dbus_message_get_path</referencedby>
+        <referencedby refid="group__DBusMessage_1ga1ad192bd4538cae556121a71b4e09d42" compoundref="dbus-message_8c" startline="3227" endline="3239">dbus_message_get_interface</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf5c6b705c53db07a5ae2c6b76f230cf9" compoundref="dbus-message_8c" startline="3313" endline="3325">dbus_message_get_member</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4e98b2283707a8e0313fc7c6fe3b1b5f" compoundref="dbus-message_8c" startline="3397" endline="3409">dbus_message_get_error_name</referencedby>
+        <referencedby refid="group__DBusMessage_1gaac65c926e6253e49aa689b4f032fad45" compoundref="dbus-message_8c" startline="3450" endline="3462">dbus_message_get_destination</referencedby>
+        <referencedby refid="group__DBusMessage_1ga13ce514ceb2d1598751f3a7760cf1375" compoundref="dbus-message_8c" startline="3510" endline="3522">dbus_message_get_sender</referencedby>
+        <referencedby refid="group__DBusMessage_1gaed63e4c2baaa50d782e8ebb7643def19" compoundref="dbus-message_8c" startline="3543" endline="3553">dbus_message_get_signature</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3f90a918ada328450fcfe9ac403b8807" compoundref="dbus-message_8c" startline="4721" endline="4768">dbus_message_marshal</referencedby>
+        <referencedby refid="group__DBusMessage_1gae734e7f4079375a0256d9e7f855ec4e4" compoundref="dbus-message_8c" startline="4901" endline="4910">dbus_message_set_allow_interactive_authorization</referencedby>
+        <referencedby refid="group__DBusMessage_1gae9daa615b732c27d690399cc32e1f5b9" compoundref="dbus-message_8c" startline="4919" endline="4925">dbus_message_get_allow_interactive_authorization</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusMessage::body</definition>
+        <argsstring></argsstring>
+        <name>body</name>
+        <briefdescription>
+<para>Body network data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="105" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga617811b117ac5eb31151ffb7dabea7a8" compoundref="dbus-message_8c" startline="208" endline="216">_dbus_message_get_network_data</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga9f98b47c84f0e401ea985e681de4e963" compoundref="dbus-message_8c" startline="2064" endline="2086">dbus_message_iter_init</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3f90a918ada328450fcfe9ac403b8807" compoundref="dbus-message_8c" startline="4721" endline="4768">dbus_message_marshal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusMessage::locked</definition>
+        <argsstring></argsstring>
+        <name>locked</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Message being sent, no modifications allowed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="107" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga617811b117ac5eb31151ffb7dabea7a8" compoundref="dbus-message_8c" startline="208" endline="216">_dbus_message_get_network_data</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga577e9d5224c56b9cf2ca2691be2e838c" compoundref="dbus-message_8c" startline="227" endline="240">_dbus_message_get_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3f90a918ada328450fcfe9ac403b8807" compoundref="dbus-message_8c" startline="4721" endline="4768">dbus_message_marshal</referencedby>
+        <referencedby refid="group__DBusMessage_1gae734e7f4079375a0256d9e7f855ec4e4" compoundref="dbus-message_8c" startline="4901" endline="4910">dbus_message_set_allow_interactive_authorization</referencedby>
+        <referencedby refid="group__DBusMessage_1ga1596d92a8d604f954b48c7410263d2f0" compoundref="dbus-message_8c" startline="3026" endline="3035">dbus_message_set_auto_start</referencedby>
+        <referencedby refid="group__DBusMessage_1gacc47c1af23addfc4198b70084ba068fc" compoundref="dbus-message_8c" startline="3425" endline="3438">dbus_message_set_destination</referencedby>
+        <referencedby refid="group__DBusMessage_1ga892f9857707371c2a53cec6b54c843c7" compoundref="dbus-message_8c" startline="3371" endline="3384">dbus_message_set_error_name</referencedby>
+        <referencedby refid="group__DBusMessage_1ga02b754855e4d9a1cade8e4fc17a3f5c7" compoundref="dbus-message_8c" startline="3198" endline="3211">dbus_message_set_interface</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3afdda6016816cc70b451d8657065208" compoundref="dbus-message_8c" startline="3286" endline="3299">dbus_message_set_member</referencedby>
+        <referencedby refid="group__DBusMessage_1ga0e86aeb2dc6831ccc9a21fcbf8cc16f7" compoundref="dbus-message_8c" startline="2984" endline="2993">dbus_message_set_no_reply</referencedby>
+        <referencedby refid="group__DBusMessage_1gaaf25da0ba1482266293d329314c21786" compoundref="dbus-message_8c" startline="3067" endline="3080">dbus_message_set_path</referencedby>
+        <referencedby refid="group__DBusMessage_1gaec08603ff3d49bbcded67d25188a23f1" compoundref="dbus-message_8c" startline="1143" endline="1154">dbus_message_set_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1gaa2170744c2c19217d9df02551f16bc92" compoundref="dbus-message_8c" startline="3479" endline="3492">dbus_message_set_sender</referencedby>
+        <referencedby refid="group__DBusMessage_1gaa35c17742d8fe091aa039cbd29961c52" compoundref="dbus-message_8c" startline="254" endline="261">dbus_message_set_serial</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1ac71fa5534264093e6af8bc41f15237c8" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusMessage::in_cache</definition>
+        <argsstring></argsstring>
+        <name>in_cache</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Has been &quot;freed&quot; since it&apos;s in the cache (this is a debug feature) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="110" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga834035e4817acd64adc8ca584bdf3982" compoundref="dbus-message_8c" startline="1667" endline="1680">dbus_message_ref</referencedby>
+        <referencedby refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusMessage::counters</definition>
+        <argsstring></argsstring>
+        <name>counters</name>
+        <briefdescription>
+<para>0-N <ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> used to track message size/unix fds. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="113" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusMessage::size_counter_delta</definition>
+        <argsstring></argsstring>
+        <name>size_counter_delta</name>
+        <briefdescription>
+<para>Size we incremented the size counters by. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="114" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1a5d102e908f6ff96a5a0aa6a39b4963a8" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusMessage::changed_stamp</definition>
+        <argsstring></argsstring>
+        <name>changed_stamp</name>
+        <bitfield> CHANGED_STAMP_BITS</bitfield>
+        <briefdescription>
+<para>Incremented when iterators are invalidated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="116" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1gab0f9bbe4f3d26bc9b5cf4f243c268aaa" compoundref="dbus-message_8c" startline="2009" endline="2021">dbus_message_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1a179c446523c6321e04f88a671363be19" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref></type>
+        <definition>DBusDataSlotList DBusMessage::slot_list</definition>
+        <argsstring></argsstring>
+        <name>slot_list</name>
+        <briefdescription>
+<para>Data stored by allocated integer ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="118" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga29331c4e9c2d53cbe60382056f6495a1" compoundref="dbus-message_8c" startline="4599" endline="4624">dbus_message_set_data</referencedby>
+        <referencedby refid="group__DBusMessage_1gabbde522fe2321618ee39df1a028a2ec6" compoundref="dbus-message_8c" startline="4635" endline="4647">dbus_message_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessage_1a96263aa8a777c8c661d2596911c7d592" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusMessage::generation</definition>
+        <argsstring></argsstring>
+        <name>generation</name>
+        <briefdescription>
+<para>_dbus_current_generation when message was created </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="121" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga834035e4817acd64adc8ca584bdf3982" compoundref="dbus-message_8c" startline="1667" endline="1680">dbus_message_ref</referencedby>
+        <referencedby refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Object representing a message received from or to be sent to another application. This is an opaque object, all members are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="200">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="195" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="201" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="194">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="195" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="196" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="198" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="199" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="200" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="201">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="199">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="197">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="198">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="198" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="196">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="197" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="195">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-message-private.h" line="100" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="99" bodyend="134"/>
+    <listofallmembers>
+      <member refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>body</name></member>
+      <member refid="structDBusMessage_1a5d102e908f6ff96a5a0aa6a39b4963a8" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>changed_stamp</name></member>
+      <member refid="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>counters</name></member>
+      <member refid="structDBusMessage_1a96263aa8a777c8c661d2596911c7d592" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>generation</name></member>
+      <member refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>header</name></member>
+      <member refid="structDBusMessage_1ac71fa5534264093e6af8bc41f15237c8" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>in_cache</name></member>
+      <member refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>locked</name></member>
+      <member refid="structDBusMessage_1a324c5377e0be18dd84ac519ab2d23f0d" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>refcount</name></member>
+      <member refid="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>size_counter_delta</name></member>
+      <member refid="structDBusMessage_1a179c446523c6321e04f88a671363be19" prot="public" virt="non-virtual"><scope>DBusMessage</scope><name>slot_list</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

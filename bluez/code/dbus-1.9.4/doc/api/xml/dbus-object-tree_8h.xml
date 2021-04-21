@@ -1,0 +1,788 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-object-tree_8h" kind="file" language="C++">
+    <compoundname>dbus-object-tree.h</compoundname>
+    <includes refid="dbus-connection_8h" local="no">dbus/dbus-connection.h</includes>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-message_8c" local="yes">dbus-message.c</includedby>
+    <includedby refid="dbus-object-tree_8c" local="yes">dbus-object-tree.c</includedby>
+    <incdepgraph>
+      <node id="2279">
+        <label>stdarg.h</label>
+      </node>
+      <node id="2270">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="2271" relation="include">
+        </childnode>
+        <childnode refid="2277" relation="include">
+        </childnode>
+        <childnode refid="2278" relation="include">
+        </childnode>
+        <childnode refid="2280" relation="include">
+        </childnode>
+      </node>
+      <node id="2276">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="2272">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="2280">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="2274">
+        <label>stddef.h</label>
+      </node>
+      <node id="2275">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="2272" relation="include">
+        </childnode>
+      </node>
+      <node id="2269">
+        <label>dbus-object-tree.h</label>
+        <link refid="dbus-object-tree.h"/>
+        <childnode refid="2270" relation="include">
+        </childnode>
+      </node>
+      <node id="2278">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="2272" relation="include">
+        </childnode>
+        <childnode refid="2273" relation="include">
+        </childnode>
+        <childnode refid="2275" relation="include">
+        </childnode>
+        <childnode refid="2277" relation="include">
+        </childnode>
+        <childnode refid="2271" relation="include">
+        </childnode>
+        <childnode refid="2279" relation="include">
+        </childnode>
+      </node>
+      <node id="2271">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="2272" relation="include">
+        </childnode>
+        <childnode refid="2273" relation="include">
+        </childnode>
+        <childnode refid="2276" relation="include">
+        </childnode>
+      </node>
+      <node id="2273">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="2274" relation="include">
+        </childnode>
+        <childnode refid="2275" relation="include">
+        </childnode>
+      </node>
+      <node id="2277">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="2272" relation="include">
+        </childnode>
+        <childnode refid="2274" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2282">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="2284">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="2281">
+        <label>dbus-object-tree.h</label>
+        <link refid="dbus-object-tree.h"/>
+        <childnode refid="2282" relation="include">
+        </childnode>
+        <childnode refid="2283" relation="include">
+        </childnode>
+        <childnode refid="2284" relation="include">
+        </childnode>
+      </node>
+      <node id="2283">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-object-tree_8h_1aa4dd033cae0cfbbca5f9d951ba956e9f" prot="public" static="no">
+        <type>struct <ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref></type>
+        <definition>typedef struct DBusObjectTree DBusObjectTree</definition>
+        <argsstring></argsstring>
+        <name>DBusObjectTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="81" column="1" bodyfile="dbus/dbus-object-tree.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusObjectTree_1ga5920f14b487122f13a3d439952d5ed2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+        <definition>DBusObjectTree* _dbus_object_tree_new</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_object_tree_new</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new object tree, representing a mapping from paths to handler vtables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection this tree belongs to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new tree or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="32" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="92" bodyend="121"/>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusObjectTree_1a7d7a4cd85c747b162723a121029d9580" compoundref="dbus-object-tree_8c" startline="59">DBusObjectTree::refcount</references>
+        <references refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" compoundref="dbus-object-tree_8c" startline="60">DBusObjectTree::connection</references>
+        <references refid="structDBusObjectTree_1a8d8b8d9801bb51c1f178074881249c26" compoundref="dbus-object-tree_8c" startline="62">DBusObjectTree::root</references>
+        <references refid="structDBusObjectSubtree_1ab29370bdbfa87f8e6f718a3f4a20b652" compoundref="dbus-object-tree_8c" startline="80">DBusObjectSubtree::invoke_as_fallback</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1ga144a3920922e8badf1018ce22b27d9c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+        <definition>DBusObjectTree* _dbus_object_tree_ref</definition>
+        <argsstring>(DBusObjectTree *tree)</argsstring>
+        <name>_dbus_object_tree_ref</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <briefdescription>
+<para>Increment the reference count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the object tree </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the object tree </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="33" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="129" bodyend="136"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusObjectTree_1a7d7a4cd85c747b162723a121029d9580" compoundref="dbus-object-tree_8c" startline="59">DBusObjectTree::refcount</references>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1ga7639e273ab160c422a7cef0cda60ded5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_object_tree_unref</definition>
+        <argsstring>(DBusObjectTree *tree)</argsstring>
+        <name>_dbus_object_tree_unref</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <briefdescription>
+<para>Decrement the reference count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the object tree </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="34" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="143" bodyend="155"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusObjectTree_1a7d7a4cd85c747b162723a121029d9580" compoundref="dbus-object-tree_8c" startline="59">DBusObjectTree::refcount</references>
+        <references refid="group__DBusObjectTree_1ga1c51e43233ce0f3855c128f2555317eb" compoundref="dbus-object-tree_8c" startline="718" endline="724">_dbus_object_tree_free_all_unlocked</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_object_tree_register</definition>
+        <argsstring>(DBusObjectTree *tree, dbus_bool_t fallback, const char **path, const DBusObjectPathVTable *vtable, void *user_data, DBusError *error)</argsstring>
+        <name>_dbus_object_tree_register</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>fallback</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusObjectPathVTable" kindref="compound">DBusObjectPathVTable</ref> *</type>
+          <declname>vtable</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Registers a new subtree in the global object tree. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the global object tree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to handle messages to children of this path </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NULL-terminated array of path elements giving path to subtree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vtable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vtable used to traverse this subtree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user data to pass to methods in the vtable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if an error (<ref refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" kindref="member">DBUS_ERROR_NO_MEMORY</ref> or <ref refid="group__DBusProtocol_1ga6a4358a62f0cd68d637532772475e576" kindref="member">DBUS_ERROR_OBJECT_PATH_IN_USE</ref>) is reported </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="36" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="391" bodyend="434"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusObjectPathVTable_1a83464b6b8b66fb7adebd8e3bf8ff1b70" compoundref="dbus-connection_8h" startline="387">DBusObjectPathVTable::message_function</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusObjectSubtree_1a6be63f07c500936dde058024ccbd30d4" compoundref="dbus-object-tree_8c" startline="75">DBusObjectSubtree::message_function</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusProtocol_1ga6a4358a62f0cd68d637532772475e576" compoundref="dbus-protocol_8h" startline="450">DBUS_ERROR_OBJECT_PATH_IN_USE</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusObjectSubtree_1a7038595dfd005eeb9a9e2dad07cdc9c6" compoundref="dbus-object-tree_8c" startline="74">DBusObjectSubtree::unregister_function</references>
+        <references refid="structDBusObjectPathVTable_1abb6c084f345051b9649615b91ec654d4" compoundref="dbus-connection_8h" startline="386">DBusObjectPathVTable::unregister_function</references>
+        <references refid="structDBusObjectSubtree_1ac879ddd02ff982b7ba6d014562b85807" compoundref="dbus-object-tree_8c" startline="76">DBusObjectSubtree::user_data</references>
+        <references refid="structDBusObjectSubtree_1ab29370bdbfa87f8e6f718a3f4a20b652" compoundref="dbus-object-tree_8c" startline="80">DBusObjectSubtree::invoke_as_fallback</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusObjectSubtree_1a352044a5ca8e29df149b248b0d988d96" compoundref="dbus-object-tree_8c" startline="73">DBusObjectSubtree::parent</references>
+        <references refid="structDBusObjectSubtree_1a9972c279dd920fc5b69fc63886c880ed" compoundref="dbus-object-tree_8c" startline="78">DBusObjectSubtree::n_subtrees</references>
+        <references refid="structDBusObjectSubtree_1ade77f6089c08d212eda0b4223ab66915" compoundref="dbus-object-tree_8c" startline="77">DBusObjectSubtree::subtrees</references>
+        <references refid="structDBusObjectSubtree_1add05785d7c8572e28254c47d50a3c914" compoundref="dbus-object-tree_8c" startline="81">DBusObjectSubtree::name</references>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1ga3babe73ed342b6963997ef2efd73ef75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_object_tree_unregister_and_unlock</definition>
+        <argsstring>(DBusObjectTree *tree, const char **path)</argsstring>
+        <name>_dbus_object_tree_unregister_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Unregisters an object subtree that was registered with the same path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the global object tree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to the subtree (same as the one passed to <ref refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" kindref="member">_dbus_object_tree_register()</ref>) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="42" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="623" bodyend="677"/>
+        <references refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" compoundref="dbus-object-tree_8c" startline="60">DBusObjectTree::connection</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusObjectTree_1a8d8b8d9801bb51c1f178074881249c26" compoundref="dbus-object-tree_8c" startline="62">DBusObjectTree::root</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</references>
+        <references refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</references>
+        <references refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</references>
+        <references refid="structDBusObjectSubtree_1a9972c279dd920fc5b69fc63886c880ed" compoundref="dbus-object-tree_8c" startline="78">DBusObjectSubtree::n_subtrees</references>
+        <references refid="structDBusObjectSubtree_1ade77f6089c08d212eda0b4223ab66915" compoundref="dbus-object-tree_8c" startline="77">DBusObjectSubtree::subtrees</references>
+        <references refid="structDBusObjectSubtree_1a352044a5ca8e29df149b248b0d988d96" compoundref="dbus-object-tree_8c" startline="73">DBusObjectSubtree::parent</references>
+        <references refid="structDBusObjectSubtree_1a7038595dfd005eeb9a9e2dad07cdc9c6" compoundref="dbus-object-tree_8c" startline="74">DBusObjectSubtree::unregister_function</references>
+        <references refid="structDBusObjectSubtree_1ac879ddd02ff982b7ba6d014562b85807" compoundref="dbus-object-tree_8c" startline="76">DBusObjectSubtree::user_data</references>
+        <references refid="structDBusObjectSubtree_1a6be63f07c500936dde058024ccbd30d4" compoundref="dbus-object-tree_8c" startline="75">DBusObjectSubtree::message_function</references>
+        <referencedby refid="group__DBusConnection_1ga6ae8f005dedf24c5f2df1768795392fb" compoundref="dbus-connection_8c" startline="5809" endline="5828">dbus_connection_unregister_object_path</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusShared_1ga8244b29230187624c24986c24edab1de" kindref="member">DBusHandlerResult</ref></type>
+        <definition>DBusHandlerResult _dbus_object_tree_dispatch_and_unlock</definition>
+        <argsstring>(DBusObjectTree *tree, DBusMessage *message, dbus_bool_t *found_object)</argsstring>
+        <name>_dbus_object_tree_dispatch_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref> *</type>
+          <declname>found_object</declname>
+        </param>
+        <briefdescription>
+<para>Tries to dispatch a message by directing it to handler for the object path listed in the message header, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Messages are dispatched first to the registered handler that matches the largest number of path elements; that is, message to /foo/bar/baz would go to the handler for /foo/bar before the one for /foo.</para><para><xrefsect id="todo_1_todo000044"><xreftitle>Todo</xreftitle><xrefdescription><para>thread problems</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the global object tree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to dispatch </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>found_object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether message was handled successfully </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="44" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="903" bodyend="1064"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMessage_1gaf2b5b3319da838b1f1b360c04a33f153" compoundref="dbus-message_8c" startline="3164" endline="3182">dbus_message_get_path_decomposed</references>
+        <references refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" compoundref="dbus-object-tree_8c" startline="60">DBusObjectTree::connection</references>
+        <references refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1dea01f00ce4578559c7b14b91256bfede7d" compoundref="dbus-shared_8h" startline="70">DBUS_HANDLER_RESULT_NEED_MEMORY</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1deacb84b64c92055f2585fe9c29f1e5df68" compoundref="dbus-shared_8h" startline="69">DBUS_HANDLER_RESULT_NOT_YET_HANDLED</references>
+        <references refid="structDBusObjectSubtree_1a6be63f07c500936dde058024ccbd30d4" compoundref="dbus-object-tree_8c" startline="75">DBusObjectSubtree::message_function</references>
+        <references refid="structDBusObjectSubtree_1ab29370bdbfa87f8e6f718a3f4a20b652" compoundref="dbus-object-tree_8c" startline="80">DBusObjectSubtree::invoke_as_fallback</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusObjectSubtree_1a352044a5ca8e29df149b248b0d988d96" compoundref="dbus-object-tree_8c" startline="73">DBusObjectSubtree::parent</references>
+        <references refid="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" compoundref="dbus-list_8c" startline="730" endline="746">_dbus_list_get_length</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="structDBusObjectSubtree_1ac879ddd02ff982b7ba6d014562b85807" compoundref="dbus-object-tree_8c" startline="76">DBusObjectSubtree::user_data</references>
+        <references refid="group__DBusConnectionInternals_1ga4fe0c8f7b72dc89b9e1a3110db2f778e" compoundref="dbus-connection_8c" startline="388" endline="391">_dbus_connection_lock</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1ga4cf5a5f35d2bd18b6fa8aa58ba6b5de4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_object_tree_get_user_data_unlocked</definition>
+        <argsstring>(DBusObjectTree *tree, const char **path)</argsstring>
+        <name>_dbus_object_tree_get_user_data_unlocked</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the data passed to <ref refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" kindref="member">_dbus_object_tree_register()</ref> for a handler at the given path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the global object tree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NULL-terminated array of path elements giving path to subtree </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the object&apos;s user_data or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="47" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="1075" bodyend="1094"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusObjectSubtree_1ac879ddd02ff982b7ba6d014562b85807" compoundref="dbus-object-tree_8c" startline="76">DBusObjectSubtree::user_data</references>
+        <references refid="group__DBusMemory_1gaa02722b030a091f6c14c4cb11a593623" compoundref="dbus-memory_8c" startline="531" endline="588">dbus_malloc0</references>
+        <references refid="structDBusObjectSubtree_1add05785d7c8572e28254c47d50a3c914" compoundref="dbus-object-tree_8c" startline="81">DBusObjectSubtree::name</references>
+        <references refid="structDBusObjectSubtree_1a352044a5ca8e29df149b248b0d988d96" compoundref="dbus-object-tree_8c" startline="73">DBusObjectSubtree::parent</references>
+        <references refid="structDBusObjectSubtree_1a6be63f07c500936dde058024ccbd30d4" compoundref="dbus-object-tree_8c" startline="75">DBusObjectSubtree::message_function</references>
+        <references refid="structDBusObjectPathVTable_1a83464b6b8b66fb7adebd8e3bf8ff1b70" compoundref="dbus-connection_8h" startline="387">DBusObjectPathVTable::message_function</references>
+        <references refid="structDBusObjectSubtree_1a7038595dfd005eeb9a9e2dad07cdc9c6" compoundref="dbus-object-tree_8c" startline="74">DBusObjectSubtree::unregister_function</references>
+        <references refid="structDBusObjectPathVTable_1abb6c084f345051b9649615b91ec654d4" compoundref="dbus-connection_8h" startline="386">DBusObjectPathVTable::unregister_function</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="structDBusObjectSubtree_1a45c6566f866ca45d48817f64f7f08fa6" compoundref="dbus-object-tree_8c" startline="72">DBusObjectSubtree::refcount</references>
+        <references refid="structDBusObjectSubtree_1ade77f6089c08d212eda0b4223ab66915" compoundref="dbus-object-tree_8c" startline="77">DBusObjectSubtree::subtrees</references>
+        <references refid="structDBusObjectSubtree_1a9972c279dd920fc5b69fc63886c880ed" compoundref="dbus-object-tree_8c" startline="78">DBusObjectSubtree::n_subtrees</references>
+        <references refid="structDBusObjectSubtree_1ac5be3a80fa3547cea2ac7535865123c7" compoundref="dbus-object-tree_8c" startline="79">DBusObjectSubtree::max_subtrees</references>
+        <references refid="structDBusObjectSubtree_1ab29370bdbfa87f8e6f718a3f4a20b652" compoundref="dbus-object-tree_8c" startline="80">DBusObjectSubtree::invoke_as_fallback</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusSysdeps_1ga3c50a069f795dceeb9172fe2b517bbdc" compoundref="dbus-sysdeps-unix_8c" startline="2585" endline="2599">_dbus_atomic_dec</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusConnection_1ga08ee6e70b74c294fe24d0f391f16db24" compoundref="dbus-connection_8c" startline="5841" endline="5865">dbus_connection_get_object_path_data</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1ga1c51e43233ce0f3855c128f2555317eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_object_tree_free_all_unlocked</definition>
+        <argsstring>(DBusObjectTree *tree)</argsstring>
+        <name>_dbus_object_tree_free_all_unlocked</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <briefdescription>
+<para>Free all the handlers in the tree. </para>        </briefdescription>
+        <detaileddescription>
+<para>Lock on tree&apos;s connection must not be held.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the object tree </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="49" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="718" bodyend="724"/>
+        <references refid="structDBusObjectTree_1a8d8b8d9801bb51c1f178074881249c26" compoundref="dbus-object-tree_8c" startline="62">DBusObjectTree::root</references>
+        <references refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" compoundref="dbus-object-tree_8c" startline="60">DBusObjectTree::connection</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="structDBusObjectSubtree_1a9972c279dd920fc5b69fc63886c880ed" compoundref="dbus-object-tree_8c" startline="78">DBusObjectSubtree::n_subtrees</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="structDBusObjectSubtree_1ade77f6089c08d212eda0b4223ab66915" compoundref="dbus-object-tree_8c" startline="77">DBusObjectSubtree::subtrees</references>
+        <references refid="structDBusObjectSubtree_1add05785d7c8572e28254c47d50a3c914" compoundref="dbus-object-tree_8c" startline="81">DBusObjectSubtree::name</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMessage_1gad8bd4730941af47d8d0f9c9b00562a44" compoundref="dbus-message_8c" startline="3602" endline="3616">dbus_message_is_method_call</references>
+        <references refid="group__DBusShared_1gafe8861886c0b53c1000fb322fd84641b" compoundref="dbus-shared_8h" startline="90">DBUS_INTERFACE_INTROSPECTABLE</references>
+        <references refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1deacb84b64c92055f2585fe9c29f1e5df68" compoundref="dbus-shared_8h" startline="69">DBUS_HANDLER_RESULT_NOT_YET_HANDLED</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1dea01f00ce4578559c7b14b91256bfede7d" compoundref="dbus-shared_8h" startline="70">DBUS_HANDLER_RESULT_NEED_MEMORY</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusProtocol_1ga5e7de0ccf222f5fa69241e517824b712" compoundref="dbus-protocol_8h" startline="468">DBUS_INTROSPECT_1_0_XML_DOCTYPE_DECL_NODE</references>
+        <references refid="group__DBusString_1gab0078cf7e0e5bd784ec6d6e0cc3923a2" compoundref="dbus-string_8c" startline="1113" endline="1125">_dbus_string_append_printf</references>
+        <references refid="group__DBusMessage_1ga95142bd8288f397194ee0eefb1d27125" compoundref="dbus-message_8c" startline="1373" endline="1407">dbus_message_new_method_return</references>
+        <references refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</references>
+        <references refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusConnectionInternals_1ga2974eb1c261305fafc635e14fc575d03" compoundref="dbus-connection_8c" startline="2098" endline="2119">_dbus_connection_send_and_unlock</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1deab6df40880a8f322694f14cd2804d3f76" compoundref="dbus-shared_8h" startline="68">DBUS_HANDLER_RESULT_HANDLED</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusObjectTree_1ga7639e273ab160c422a7cef0cda60ded5" compoundref="dbus-object-tree_8c" startline="143" endline="155">_dbus_object_tree_unref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1gaab7040bd1bf037d99e9bbb75d0869a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_object_tree_list_registered_and_unlock</definition>
+        <argsstring>(DBusObjectTree *tree, const char **parent_path, char ***child_entries)</argsstring>
+        <name>_dbus_object_tree_list_registered_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>parent_path</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>child_entries</declname>
+        </param>
+        <briefdescription>
+<para>Lists the registered fallback handlers and object path handlers at the given parent_path. </para>        </briefdescription>
+        <detaileddescription>
+<para>The returned array should be freed with <ref refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" kindref="member">dbus_free_string_array()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the object tree </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to list the child handlers of </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>child_entries</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated array of children </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory to allocate the child entries </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="52" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="1206" bodyend="1225"/>
+        <references refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" compoundref="dbus-object-tree_8c" startline="60">DBusObjectTree::connection</references>
+        <references refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</references>
+        <referencedby refid="group__DBusConnection_1ga3e9de2067d0eed66ef73230fae8d8be2" compoundref="dbus-connection_8c" startline="5878" endline="5900">dbus_connection_list_registered</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_decompose_path</definition>
+        <argsstring>(const char *data, int len, char ***path, int *path_len)</argsstring>
+        <name>_dbus_decompose_path</name>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>path_len</declname>
+        </param>
+        <briefdescription>
+<para>Decompose an object path. </para>        </briefdescription>
+        <detaileddescription>
+<para>A path of just &quot;/&quot; is represented as an empty vector of strings. The path need not be nul terminated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the path string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address to store new object path </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of stored path </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-object-tree.h" line="56" column="1" bodyfile="dbus/dbus-object-tree.c" bodystart="1242" bodyend="1325"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1gaad95864dca5140b730bc143cb2d1b024" compoundref="dbus-internals_8c" startline="555" endline="567">_dbus_memdup</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="structDBusObjectSubtree_1add05785d7c8572e28254c47d50a3c914" compoundref="dbus-object-tree_8c" startline="81">DBusObjectSubtree::name</references>
+        <references refid="structDBusObjectSubtree_1a9972c279dd920fc5b69fc63886c880ed" compoundref="dbus-object-tree_8c" startline="78">DBusObjectSubtree::n_subtrees</references>
+        <references refid="structDBusObjectSubtree_1ade77f6089c08d212eda0b4223ab66915" compoundref="dbus-object-tree_8c" startline="77">DBusObjectSubtree::subtrees</references>
+        <references refid="structDBusObjectTree_1a8d8b8d9801bb51c1f178074881249c26" compoundref="dbus-object-tree_8c" startline="62">DBusObjectTree::root</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1deacb84b64c92055f2585fe9c29f1e5df68" compoundref="dbus-shared_8h" startline="69">DBUS_HANDLER_RESULT_NOT_YET_HANDLED</references>
+        <references refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" compoundref="dbus-object-tree_8c" startline="391" endline="434">_dbus_object_tree_register</references>
+        <references refid="group__DBusObjectTree_1ga4cf5a5f35d2bd18b6fa8aa58ba6b5de4" compoundref="dbus-object-tree_8c" startline="1075" endline="1094">_dbus_object_tree_get_user_data_unlocked</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</references>
+        <references refid="group__DBusShared_1gga8244b29230187624c24986c24edab1dea01f00ce4578559c7b14b91256bfede7d" compoundref="dbus-shared_8h" startline="70">DBUS_HANDLER_RESULT_NEED_MEMORY</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusObjectTree_1ga5920f14b487122f13a3d439952d5ed2e" compoundref="dbus-object-tree_8c" startline="92" endline="121">_dbus_object_tree_new</references>
+        <references refid="group__DBusObjectTree_1ga7639e273ab160c422a7cef0cda60ded5" compoundref="dbus-object-tree_8c" startline="143" endline="155">_dbus_object_tree_unref</references>
+        <references refid="group__DBusObjectTree_1ga3babe73ed342b6963997ef2efd73ef75" compoundref="dbus-object-tree_8c" startline="623" endline="677">_dbus_object_tree_unregister_and_unlock</references>
+        <references refid="group__DBusObjectTree_1ga144a3920922e8badf1018ce22b27d9c4" compoundref="dbus-object-tree_8c" startline="129" endline="136">_dbus_object_tree_ref</references>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6ae8f005dedf24c5f2df1768795392fb" compoundref="dbus-connection_8c" startline="5809" endline="5828">dbus_connection_unregister_object_path</referencedby>
+        <referencedby refid="group__DBusConnection_1ga08ee6e70b74c294fe24d0f391f16db24" compoundref="dbus-connection_8c" startline="5841" endline="5865">dbus_connection_get_object_path_data</referencedby>
+        <referencedby refid="group__DBusConnection_1ga3e9de2067d0eed66ef73230fae8d8be2" compoundref="dbus-connection_8c" startline="5878" endline="5900">dbus_connection_list_registered</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf2b5b3319da838b1f1b360c04a33f153" compoundref="dbus-message_8c" startline="3164" endline="3182">dbus_message_get_path_decomposed</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" compoundref="dbus-object-tree_8c" startline="1242" endline="1325">_dbus_decompose_path</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-object-tree.h<sp/><sp/>DBusObjectTree<sp/>(internals<sp/>of<sp/>DBusConnection)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_OBJECT_TREE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_OBJECT_TREE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-connection.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref>*<sp/><ref refid="group__DBusObjectTree_1ga5920f14b487122f13a3d439952d5ed2e" kindref="member">_dbus_object_tree_new</ref><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*<ref refid="structDBusObjectTree_1a65b58bdaad2e5d09d8366d286e46b100" kindref="member">connection</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref>*<sp/><ref refid="group__DBusObjectTree_1ga144a3920922e8badf1018ce22b27d9c4" kindref="member">_dbus_object_tree_ref</ref><sp/><sp/><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/>*tree);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusObjectTree_1ga7639e273ab160c422a7cef0cda60ded5" kindref="member">_dbus_object_tree_unref</ref><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/>*tree);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" kindref="member">_dbus_object_tree_register</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*tree,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fallback,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**path,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusObjectPathVTable" kindref="compound">DBusObjectPathVTable</ref><sp/><sp/>*vtable,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*user_data,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusObjectTree_1ga3babe73ed342b6963997ef2efd73ef75" kindref="member">_dbus_object_tree_unregister_and_unlock</ref><sp/><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*tree,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**path);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group__DBusShared_1ga8244b29230187624c24986c24edab1de" kindref="member">DBusHandlerResult</ref><sp/><ref refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" kindref="member">_dbus_object_tree_dispatch_and_unlock</ref><sp/><sp/><sp/><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*tree,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*message,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*found_object);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusObjectTree_1ga4cf5a5f35d2bd18b6fa8aa58ba6b5de4" kindref="member">_dbus_object_tree_get_user_data_unlocked</ref><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*tree,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**path);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusObjectTree_1ga1c51e43233ce0f3855c128f2555317eb" kindref="member">_dbus_object_tree_free_all_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*tree);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusObjectTree_1gaab7040bd1bf037d99e9bbb75d0869a2f" kindref="member">_dbus_object_tree_list_registered_and_unlock</ref><sp/>(<ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref><sp/>*tree,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>**parent_path,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>***child_entries);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusObjectTree_1gab282b916368cd512842d3aaae31e65c7" kindref="member">_dbus_decompose_path</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>*data,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>***path,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*path_len);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_OBJECT_TREE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-object-tree.h"/>
+  </compounddef>
+</doxygen>

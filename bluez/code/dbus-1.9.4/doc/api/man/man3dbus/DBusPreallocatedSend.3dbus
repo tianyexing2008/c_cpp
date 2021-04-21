@@ -1,0 +1,34 @@
+.TH "DBusPreallocatedSend" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusPreallocatedSend \- Internals of \fBDBusPreallocatedSend\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusConnection\fP * \fBconnection\fP"
+.br
+.RI "\fIConnection we'd send the message to\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBqueue_link\fP"
+.br
+.RI "\fIPreallocated link in the queue\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBcounter_link\fP"
+.br
+.RI "\fIPreallocated link in the resource counter\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusPreallocatedSend\fP\&. 
+.PP
+Definition at line 240 of file dbus\-connection\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

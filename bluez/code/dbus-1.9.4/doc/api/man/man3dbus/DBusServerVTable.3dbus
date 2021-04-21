@@ -1,0 +1,50 @@
+.TH "DBusServerVTable" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServerVTable \- Virtual table to be implemented by all server 'subclasses'\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-server\-protected\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "void(* \fBfinalize\fP )(\fBDBusServer\fP *server)"
+.br
+.RI "\fIThe finalize method must free the server\&. \fP"
+.ti -1c
+.RI "void(* \fBdisconnect\fP )(\fBDBusServer\fP *server)"
+.br
+.RI "\fIDisconnect this server\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Virtual table to be implemented by all server 'subclasses'\&. 
+.PP
+Definition at line 43 of file dbus\-server\-protected\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "void(*  DBusServerVTable::disconnect) (\fBDBusServer\fP *server)"
+
+.PP
+Disconnect this server\&. 
+.PP
+Definition at line 48 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by dbus_server_disconnect()\&.
+.SS "void(*  DBusServerVTable::finalize) (\fBDBusServer\fP *server)"
+
+.PP
+The finalize method must free the server\&. 
+.PP
+Definition at line 45 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_unref_unlocked(), and dbus_server_unref()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

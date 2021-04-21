@@ -1,0 +1,407 @@
+.TH "DBusWatchInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusWatchInternals \- DBusWatch implementation details
+.PP
+implementation details for \fBDBusWatch\fP  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusWatch\fP"
+.br
+.RI "\fIImplementation of \fBDBusWatch\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusWatchList\fP"
+.br
+.RI "\fI\fBDBusWatchList\fP implementation details\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_DBUS_WATCH_NVAL\fP   (1<<4)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusWatchList\fP \fBDBusWatchList\fP"
+.br
+.RI "\fIOpaque data type representing a list of watches and a set of DBusAddWatchFunction/DBusRemoveWatchFunction\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusWatchHandler\fP) (\fBDBusWatch\fP *watch, unsigned int flags, void *data)"
+.br
+.RI "\fIfunction to run when the watch is handled \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_watch_get_enabled\fP (\fBDBusWatch\fP *watch)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_watch_get_oom_last_time\fP (\fBDBusWatch\fP *watch)"
+.br
+.ti -1c
+.RI "void \fB_dbus_watch_set_oom_last_time\fP (\fBDBusWatch\fP *watch, \fBdbus_bool_t\fP oom)"
+.br
+.ti -1c
+.RI "\fBDBusWatch\fP * \fB_dbus_watch_new\fP (int fd, unsigned int flags, \fBdbus_bool_t\fP enabled, \fBDBusWatchHandler\fP handler, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fICreates a new \fBDBusWatch\fP\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP * \fB_dbus_watch_ref\fP (\fBDBusWatch\fP *watch)"
+.br
+.RI "\fIIncrements the reference count of a \fBDBusWatch\fP object\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_unref\fP (\fBDBusWatch\fP *watch)"
+.br
+.RI "\fIDecrements the reference count of a \fBDBusWatch\fP object and finalizes the object if the count reaches zero\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_invalidate\fP (\fBDBusWatch\fP *watch)"
+.br
+.RI "\fIClears the file descriptor from a now-invalid watch object so that no one tries to use it\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_sanitize_condition\fP (\fBDBusWatch\fP *watch, unsigned int *condition)"
+.br
+.RI "\fISanitizes the given condition so that it only contains flags that the \fBDBusWatch\fP requested\&. \fP"
+.ti -1c
+.RI "\fBDBusWatchList\fP * \fB_dbus_watch_list_new\fP (void)"
+.br
+.RI "\fICreates a new watch list\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_list_free\fP (\fBDBusWatchList\fP *watch_list)"
+.br
+.RI "\fIFrees a \fBDBusWatchList\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_watch_list_set_functions\fP (\fBDBusWatchList\fP *watch_list, \fBDBusAddWatchFunction\fP add_function, \fBDBusRemoveWatchFunction\fP remove_function, \fBDBusWatchToggledFunction\fP toggled_function, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fISets the watch functions\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_watch_list_add_watch\fP (\fBDBusWatchList\fP *watch_list, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIAdds a new watch to the watch list, invoking the application DBusAddWatchFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_list_remove_watch\fP (\fBDBusWatchList\fP *watch_list, \fBDBusWatch\fP *watch)"
+.br
+.RI "\fIRemoves a watch from the watch list, invoking the application's DBusRemoveWatchFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_list_toggle_watch\fP (\fBDBusWatchList\fP *watch_list, \fBDBusWatch\fP *watch, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fISets a watch to the given enabled state, invoking the application's DBusWatchToggledFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_list_toggle_all_watches\fP (\fBDBusWatchList\fP *watch_list, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fISets all watches to the given enabled state, invoking the application's DBusWatchToggledFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_watch_set_handler\fP (\fBDBusWatch\fP *watch, \fBDBusWatchHandler\fP handler, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fISets the handler for the watch\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+implementation details for \fBDBusWatch\fP 
+
+
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBDBusWatchList\fP"
+
+.PP
+Opaque data type representing a list of watches and a set of DBusAddWatchFunction/DBusRemoveWatchFunction\&. Automatically handles removing/re-adding watches when the DBusAddWatchFunction is updated or changed\&. Holds a reference count to each watch\&.
+.PP
+Used in the implementation of both \fBDBusServer\fP and DBusClient\&. 
+.PP
+Definition at line 38 of file dbus\-watch\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void _dbus_watch_invalidate (\fBDBusWatch\fP * watch)"
+
+.PP
+Clears the file descriptor from a now-invalid watch object so that no one tries to use it\&. This is because a watch may stay alive due to reference counts after the file descriptor is closed\&. Invalidation makes it easier to catch bugs\&. It also keeps people from doing dorky things like assuming file descriptors are unique (never recycled)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 169 of file dbus\-watch\&.c\&.
+.PP
+References DBusWatch::fd, and DBusWatch::flags\&.
+.PP
+Referenced by _dbus_babysitter_ref(), _dbus_babysitter_unref(), _dbus_spawn_async_with_babysitter(), and _dbus_transport_new_for_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_watch_list_add_watch (\fBDBusWatchList\fP * watch_list, \fBDBusWatch\fP * watch)"
+
+.PP
+Adds a new watch to the watch list, invoking the application DBusAddWatchFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.br
+\fIwatch\fP the watch to add\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if no memory\&. 
+.RE
+.PP
+
+.PP
+Definition at line 376 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_list_append(), _dbus_list_remove_last(), _dbus_watch_ref(), _dbus_watch_unref(), DBusWatchList::add_watch_function, dbus_watch_get_socket(), FALSE, NULL, TRUE, DBusWatchList::watch_data, and DBusWatchList::watches\&.
+.PP
+Referenced by _dbus_connection_add_watch_unlocked(), _dbus_server_add_watch(), and _dbus_spawn_async_with_babysitter()\&.
+.SS "void _dbus_watch_list_free (\fBDBusWatchList\fP * watch_list)"
+
+.PP
+Frees a \fBDBusWatchList\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 249 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_list_clear(), _dbus_list_foreach(), _dbus_watch_list_set_functions(), _dbus_watch_unref(), dbus_free(), DBUS_WATCH_READABLE, DBUS_WATCH_WRITABLE, DBusWatch::flags, NULL, and DBusWatchList::watches\&.
+.PP
+Referenced by _dbus_babysitter_unref(), _dbus_connection_new_for_transport(), _dbus_server_finalize_base(), _dbus_server_init_base(), and dbus_connection_ref()\&.
+.SS "\fBDBusWatchList\fP * _dbus_watch_list_new (void)"
+
+.PP
+Creates a new watch list\&. Returns \fBNULL\fP if insufficient memory exists\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the new watch list, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 232 of file dbus\-watch\&.c\&.
+.PP
+References dbus_new0, and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_server_init_base()\&.
+.SS "void _dbus_watch_list_remove_watch (\fBDBusWatchList\fP * watch_list, \fBDBusWatch\fP * watch)"
+
+.PP
+Removes a watch from the watch list, invoking the application's DBusRemoveWatchFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.br
+\fIwatch\fP the watch to remove\&. 
+.RE
+.PP
+
+.PP
+Definition at line 409 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_list_remove(), _dbus_watch_unref(), dbus_watch_get_socket(), NULL, DBusWatchList::remove_watch_function, DBusWatchList::watch_data, and DBusWatchList::watches\&.
+.PP
+Referenced by _dbus_babysitter_ref(), _dbus_babysitter_unref(), _dbus_connection_remove_watch_unlocked(), and _dbus_server_remove_watch()\&.
+.SS "\fBdbus_bool_t\fP _dbus_watch_list_set_functions (\fBDBusWatchList\fP * watch_list, \fBDBusAddWatchFunction\fP add_function, \fBDBusRemoveWatchFunction\fP remove_function, \fBDBusWatchToggledFunction\fP toggled_function, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Sets the watch functions\&. This function is the 'backend' for \fBdbus_connection_set_watch_functions()\fP and \fBdbus_server_set_watch_functions()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.br
+\fIadd_function\fP the add watch function\&. 
+.br
+\fIremove_function\fP the remove watch function\&. 
+.br
+\fItoggled_function\fP function on toggling enabled flag, or \fBNULL\fP 
+.br
+\fIdata\fP the data for those functions\&. 
+.br
+\fIfree_data_function\fP the function to free the data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 296 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_list_foreach(), _dbus_list_get_first_link(), _dbus_list_get_next_link, DBusWatchList::add_watch_function, DBusList::data, DBusWatch::data, dbus_watch_get_flags(), dbus_watch_get_socket(), FALSE, DBusWatch::free_data_function, NULL, DBusWatchList::remove_watch_function, TRUE, DBusWatchList::watch_data, DBusWatchList::watch_free_data_function, DBusWatchList::watch_toggled_function, and DBusWatchList::watches\&.
+.PP
+Referenced by _dbus_babysitter_set_watch_functions(), _dbus_watch_list_free(), dbus_connection_set_watch_functions(), and dbus_server_set_watch_functions()\&.
+.SS "void _dbus_watch_list_toggle_all_watches (\fBDBusWatchList\fP * watch_list, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Sets all watches to the given enabled state, invoking the application's DBusWatchToggledFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.br
+\fIenabled\fP \fBTRUE\fP to enable 
+.RE
+.PP
+
+.PP
+Definition at line 465 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_list_get_first_link(), _dbus_list_get_next_link, _dbus_watch_list_toggle_watch(), DBusList::data, NULL, and DBusWatchList::watches\&.
+.PP
+Referenced by _dbus_server_toggle_all_watches()\&.
+.SS "void _dbus_watch_list_toggle_watch (\fBDBusWatchList\fP * watch_list, \fBDBusWatch\fP * watch, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Sets a watch to the given enabled state, invoking the application's DBusWatchToggledFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch_list\fP the watch list\&. 
+.br
+\fIwatch\fP the watch to toggle\&. 
+.br
+\fIenabled\fP \fBTRUE\fP to enable 
+.RE
+.PP
+
+.PP
+Definition at line 436 of file dbus\-watch\&.c\&.
+.PP
+References dbus_watch_get_socket(), DBusWatch::enabled, NULL, DBusWatchList::watch_data, and DBusWatchList::watch_toggled_function\&.
+.PP
+Referenced by _dbus_connection_toggle_watch_unlocked(), and _dbus_watch_list_toggle_all_watches()\&.
+.SS "\fBDBusWatch\fP * _dbus_watch_new (int fd, unsigned int flags, \fBdbus_bool_t\fP enabled, \fBDBusWatchHandler\fP handler, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Creates a new \fBDBusWatch\fP\&. Used to add a file descriptor to be polled by a main loop\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to be watched\&. 
+.br
+\fIflags\fP the conditions to watch for on the descriptor\&. 
+.br
+\fIenabled\fP the initial enabled state 
+.br
+\fIhandler\fP the handler function 
+.br
+\fIdata\fP data for handler function 
+.br
+\fIfree_data_function\fP function to free the data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new \fBDBusWatch\fP object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_assert, DBusWatch::data, dbus_new0, DBusWatch::enabled, DBusWatch::fd, DBusWatch::flags, DBusWatch::free_data_function, DBusWatch::free_handler_data_function, DBusWatch::handler, DBusWatch::handler_data, NULL, and DBusWatch::refcount\&.
+.PP
+Referenced by _dbus_server_new_for_socket(), _dbus_spawn_async_with_babysitter(), and _dbus_transport_new_for_socket()\&.
+.SS "\fBDBusWatch\fP * _dbus_watch_ref (\fBDBusWatch\fP * watch)"
+
+.PP
+Increments the reference count of a \fBDBusWatch\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the watch object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file dbus\-watch\&.c\&.
+.PP
+References DBusWatch::refcount\&.
+.PP
+Referenced by _dbus_transport_handle_watch(), and _dbus_watch_list_add_watch()\&.
+.SS "void _dbus_watch_sanitize_condition (\fBDBusWatch\fP * watch, unsigned int * condition)"
+
+.PP
+Sanitizes the given condition so that it only contains flags that the \fBDBusWatch\fP requested\&. e\&.g\&. if the watch is a DBUS_WATCH_READABLE watch then DBUS_WATCH_WRITABLE will be stripped from the condition\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch object\&. 
+.br
+\fIcondition\fP address of the condition to sanitize\&. 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file dbus\-watch\&.c\&.
+.PP
+References DBUS_WATCH_READABLE, DBUS_WATCH_WRITABLE, and DBusWatch::flags\&.
+.PP
+Referenced by _dbus_transport_handle_watch(), and dbus_watch_handle()\&.
+.SS "void _dbus_watch_set_handler (\fBDBusWatch\fP * watch, \fBDBusWatchHandler\fP handler, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Sets the handler for the watch\&. 
+.PP
+\fBTodo\fP
+.RS 4
+this function only exists because of the weird way connection watches are done, see the note in docs for \fB_dbus_connection_handle_watch()\fP\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch 
+.br
+\fIhandler\fP the new handler 
+.br
+\fIdata\fP the data 
+.br
+\fIfree_data_function\fP free data with this 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file dbus\-watch\&.c\&.
+.PP
+References DBusWatch::data, DBusWatch::free_data_function, DBusWatch::free_handler_data_function, DBusWatch::handler, and DBusWatch::handler_data\&.
+.SS "void _dbus_watch_unref (\fBDBusWatch\fP * watch)"
+
+.PP
+Decrements the reference count of a \fBDBusWatch\fP object and finalizes the object if the count reaches zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwatch\fP the watch object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file dbus\-watch\&.c\&.
+.PP
+References _dbus_assert, _dbus_warn(), dbus_free(), dbus_watch_set_data(), DBusWatch::fd, DBusWatch::free_handler_data_function, DBusWatch::handler_data, NULL, and DBusWatch::refcount\&.
+.PP
+Referenced by _dbus_babysitter_ref(), _dbus_babysitter_unref(), _dbus_server_new_for_socket(), _dbus_spawn_async_with_babysitter(), _dbus_transport_handle_watch(), _dbus_transport_new_for_socket(), _dbus_watch_list_add_watch(), _dbus_watch_list_free(), and _dbus_watch_list_remove_watch()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,825 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTransport" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTransport</compoundname>
+    <includes refid="dbus-transport-protected_8h" local="no">dbus-transport-protected.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTransport_1a1a6554a692a353f8402c1419cd94e904" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTransport::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="82" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga31d6dbc864c9ea643d72521bbb1b7c56" compoundref="dbus-transport_8c" startline="460" endline="467">_dbus_transport_ref</referencedby>
+        <referencedby refid="group__DBusTransport_1gab7c53c32a2320c81aae8ce4345762e73" compoundref="dbus-transport_8c" startline="477" endline="491">_dbus_transport_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a7350850a4e02a7eaa4036eb47d4778e5" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structDBusTransportVTable" kindref="compound">DBusTransportVTable</ref> *</type>
+        <definition>const DBusTransportVTable* DBusTransport::vtable</definition>
+        <argsstring></argsstring>
+        <name>vtable</name>
+        <briefdescription>
+<para>Virtual methods for this instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="84" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga78444dd8f6c6d6b429433ad81c3e318a" compoundref="dbus-transport_8c" startline="502" endline="516">_dbus_transport_disconnect</referencedby>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusTransport_1gac58d38eb19b39774f89271fc6472e087" compoundref="dbus-transport_8c" startline="951" endline="970">_dbus_transport_get_socket_fd</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" compoundref="dbus-transport_8c" startline="889" endline="915">_dbus_transport_handle_watch</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusTransport_1ga9aaa3f8bf429c94d4ed180dff36c503c" compoundref="dbus-transport_8c" startline="927" endline="941">_dbus_transport_set_connection</referencedby>
+        <referencedby refid="group__DBusTransport_1gab7c53c32a2320c81aae8ce4345762e73" compoundref="dbus-transport_8c" startline="477" endline="491">_dbus_transport_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a8abdfc9327aa30550982c83b45354651" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* DBusTransport::connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <briefdescription>
+<para>Connection owning this transport. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="86" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusTransport_1ga9aaa3f8bf429c94d4ed180dff36c503c" compoundref="dbus-transport_8c" startline="927" endline="941">_dbus_transport_set_connection</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1aaaba590c281236d176600016b7edab48" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+        <definition>DBusMessageLoader* DBusTransport::loader</definition>
+        <argsstring></argsstring>
+        <name>loader</name>
+        <briefdescription>
+<para>Message-loading buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="88" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gae36d2a90bad6ef13c0379fa9864ff68e" compoundref="dbus-transport_8c" startline="1225" endline="1228">_dbus_transport_get_max_message_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa28e8edd4d849108b158d95eb7da812d" compoundref="dbus-transport_8c" startline="1237" endline="1240">_dbus_transport_get_max_message_unix_fds</referencedby>
+        <referencedby refid="group__DBusTransport_1ga3545c064545957f73f583bf63d07c40c" compoundref="dbus-transport_8c" startline="1521" endline="1524">_dbus_transport_get_pending_fds_count</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusTransport_1ga03ea875260e71f59af708146cabf95ab" compoundref="dbus-transport_8c" startline="1199" endline="1203">_dbus_transport_set_max_message_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gad005fffd646202e74a789765ae82a40f" compoundref="dbus-transport_8c" startline="1212" endline="1216">_dbus_transport_set_max_message_unix_fds</referencedby>
+        <referencedby refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1acf71c91312f325be13ce6c09298b1eb8" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+        <definition>DBusAuth* DBusTransport::auth</definition>
+        <argsstring></argsstring>
+        <name>auth</name>
+        <briefdescription>
+<para>Authentication conversation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="90" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf0588dd4a6d1c556dd885d4c67622399" compoundref="dbus-transport_8c" startline="821" endline="834">_dbus_transport_get_is_anonymous</referencedby>
+        <referencedby refid="group__DBusTransport_1ga920abde00e77a970330fa3fc552fe7ea" compoundref="dbus-transport_8c" startline="869" endline="877">_dbus_transport_get_server_id</referencedby>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf3c4a47f73bd584a9fda1e5e7a825da9" compoundref="dbus-transport_8c" startline="1310" endline="1333">_dbus_transport_get_unix_user</referencedby>
+        <referencedby refid="group__DBusTransport_1gae66bc81abe904a4b3ab32d8920c8fe1e" compoundref="dbus-transport_8c" startline="1343" endline="1366">_dbus_transport_get_unix_process_id</referencedby>
+        <referencedby refid="group__DBusTransport_1ga36ccd8321491895ca632e744028eea42" compoundref="dbus-transport_8c" startline="1377" endline="1400">_dbus_transport_get_adt_audit_session_data</referencedby>
+        <referencedby refid="group__DBusTransport_1ga3f4f4ce9eaef18567fd21f5c6a1fde99" compoundref="dbus-transport_8c" startline="1436" endline="1458">_dbus_transport_get_windows_user</referencedby>
+        <referencedby refid="group__DBusTransport_1ga345827326824547201e8c517474af135" compoundref="dbus-transport_8c" startline="1496" endline="1500">_dbus_transport_set_auth_mechanisms</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1acb3d5fe913d4c281f3495e95cd450c57" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+        <definition>DBusCredentials* DBusTransport::credentials</definition>
+        <argsstring></argsstring>
+        <name>credentials</name>
+        <briefdescription>
+<para>Credentials of other end read from the socket. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="92" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a23e0925741fc1c4ba3a369bac4bca4b6" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusTransport::max_live_messages_size</definition>
+        <argsstring></argsstring>
+        <name>max_live_messages_size</name>
+        <briefdescription>
+<para>Max total size of received messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="94" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1ga8992b33d9060a103bd38705462a0ea96" compoundref="dbus-transport_8c" startline="1285" endline="1288">_dbus_transport_get_max_received_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga08e0368732df5f4e58a2c838fe4484f6" compoundref="dbus-transport_8c" startline="1249" endline="1258">_dbus_transport_set_max_received_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaae297c86eb0b79b6cef4a1f7e4b50356" compoundref="dbus-transport_8c" startline="1267" endline="1276">_dbus_transport_set_max_received_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a2d96972bbc56b78360cb0cfaa3f30266" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusTransport::max_live_messages_unix_fds</definition>
+        <argsstring></argsstring>
+        <name>max_live_messages_unix_fds</name>
+        <briefdescription>
+<para>Max total unix fds of received messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="95" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gacd0b2e68c65dc3b0c1cfdf3fb8358a44" compoundref="dbus-transport_8c" startline="1297" endline="1300">_dbus_transport_get_max_received_unix_fds</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga08e0368732df5f4e58a2c838fe4484f6" compoundref="dbus-transport_8c" startline="1249" endline="1258">_dbus_transport_set_max_received_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaae297c86eb0b79b6cef4a1f7e4b50356" compoundref="dbus-transport_8c" startline="1267" endline="1276">_dbus_transport_set_max_received_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1afb19bae6f7cfe595f3f1ae0ce53ccab0" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+        <definition>DBusCounter* DBusTransport::live_messages</definition>
+        <argsstring></argsstring>
+        <name>live_messages</name>
+        <briefdescription>
+<para>Counter for size/unix fds of all live messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="97" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusTransport_1ga08e0368732df5f4e58a2c838fe4484f6" compoundref="dbus-transport_8c" startline="1249" endline="1258">_dbus_transport_set_max_received_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaae297c86eb0b79b6cef4a1f7e4b50356" compoundref="dbus-transport_8c" startline="1267" endline="1276">_dbus_transport_set_max_received_unix_fds</referencedby>
+        <referencedby refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a586180e57d80c428fc81e579d9159cb2" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* DBusTransport::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+<para>Address of the server we are connecting to (<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for the server side of a transport) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="99" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gac7e53868392b5e550454f47a1bc0a737" compoundref="dbus-transport_8c" startline="856" endline="859">_dbus_transport_get_address</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1aaad7cb51a3e4ff2dd900ac971cc52b36" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* DBusTransport::expected_guid</definition>
+        <argsstring></argsstring>
+        <name>expected_guid</name>
+        <briefdescription>
+<para>GUID we expect the server to have, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on server side or if we don&apos;t have an expectation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="101" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1ga920abde00e77a970330fa3fc552fe7ea" compoundref="dbus-transport_8c" startline="869" endline="877">_dbus_transport_get_server_id</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1ac83be11f3497da6a21aed51782cd68d0" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga5ab581cb4854a82655188e7c243e34fd" kindref="member">DBusAllowUnixUserFunction</ref></type>
+        <definition>DBusAllowUnixUserFunction DBusTransport::unix_user_function</definition>
+        <argsstring></argsstring>
+        <name>unix_user_function</name>
+        <briefdescription>
+<para>Function for checking whether a user is authorized. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="103" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga9f0ab472678a107c2ebe7f1da0754c44" compoundref="dbus-transport_8c" startline="1413" endline="1426">_dbus_transport_set_unix_user_function</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a7df35abee6aeef69eff659d65dd430f4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusTransport::unix_user_data</definition>
+        <argsstring></argsstring>
+        <name>unix_user_data</name>
+        <briefdescription>
+<para>Data for unix_user_function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="104" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1ga9f0ab472678a107c2ebe7f1da0754c44" compoundref="dbus-transport_8c" startline="1413" endline="1426">_dbus_transport_set_unix_user_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a754f10d16c06f373464fe6bf88a15cdd" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusTransport::free_unix_user_data</definition>
+        <argsstring></argsstring>
+        <name>free_unix_user_data</name>
+        <briefdescription>
+<para>Function to free unix_user_data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="106" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga9f0ab472678a107c2ebe7f1da0754c44" compoundref="dbus-transport_8c" startline="1413" endline="1426">_dbus_transport_set_unix_user_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a17403591c2a1d936be5ed13a36e6416a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1gabbb2a3b00f680968683c7b1856811b60" kindref="member">DBusAllowWindowsUserFunction</ref></type>
+        <definition>DBusAllowWindowsUserFunction DBusTransport::windows_user_function</definition>
+        <argsstring></argsstring>
+        <name>windows_user_function</name>
+        <briefdescription>
+<para>Function for checking whether a user is authorized. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="108" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gadbf528ef41efde73d0bc386d10b7f5b1" compoundref="dbus-transport_8c" startline="1472" endline="1485">_dbus_transport_set_windows_user_function</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a333c4300fe345d25e9dcb828d20baff7" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusTransport::windows_user_data</definition>
+        <argsstring></argsstring>
+        <name>windows_user_data</name>
+        <briefdescription>
+<para>Data for windows_user_function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="109" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gadbf528ef41efde73d0bc386d10b7f5b1" compoundref="dbus-transport_8c" startline="1472" endline="1485">_dbus_transport_set_windows_user_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1aab0e5248bd01f31ac4dcdab3c3b7b570" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusTransport::free_windows_user_data</definition>
+        <argsstring></argsstring>
+        <name>free_windows_user_data</name>
+        <briefdescription>
+<para>Function to free windows_user_data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="111" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gadbf528ef41efde73d0bc386d10b7f5b1" compoundref="dbus-transport_8c" startline="1472" endline="1485">_dbus_transport_set_windows_user_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a487a7375e94efba850f8344a252cfa63" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::disconnected</definition>
+        <argsstring></argsstring>
+        <name>disconnected</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we are disconnected. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="113" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga78444dd8f6c6d6b429433ad81c3e318a" compoundref="dbus-transport_8c" startline="502" endline="516">_dbus_transport_disconnect</referencedby>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1gac58d38eb19b39774f89271fc6472e087" compoundref="dbus-transport_8c" startline="951" endline="970">_dbus_transport_get_socket_fd</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" compoundref="dbus-transport_8c" startline="889" endline="915">_dbus_transport_handle_watch</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a12d3052e51b2f0bf398d48e31e5f9da8" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::authenticated</definition>
+        <argsstring></argsstring>
+        <name>authenticated</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Cache of auth state; use <ref refid="group__DBusTransport_1ga59ed246ec0ef9c64bc4684fc17726c1d" kindref="member">_dbus_transport_peek_is_authenticated()</ref> to query value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="114" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga59ed246ec0ef9c64bc4684fc17726c1d" compoundref="dbus-transport_8c" startline="701" endline="704">_dbus_transport_peek_is_authenticated</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf0588dd4a6d1c556dd885d4c67622399" compoundref="dbus-transport_8c" startline="821" endline="834">_dbus_transport_get_is_anonymous</referencedby>
+        <referencedby refid="group__DBusTransport_1ga920abde00e77a970330fa3fc552fe7ea" compoundref="dbus-transport_8c" startline="869" endline="877">_dbus_transport_get_server_id</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf3c4a47f73bd584a9fda1e5e7a825da9" compoundref="dbus-transport_8c" startline="1310" endline="1333">_dbus_transport_get_unix_user</referencedby>
+        <referencedby refid="group__DBusTransport_1gae66bc81abe904a4b3ab32d8920c8fe1e" compoundref="dbus-transport_8c" startline="1343" endline="1366">_dbus_transport_get_unix_process_id</referencedby>
+        <referencedby refid="group__DBusTransport_1ga36ccd8321491895ca632e744028eea42" compoundref="dbus-transport_8c" startline="1377" endline="1400">_dbus_transport_get_adt_audit_session_data</referencedby>
+        <referencedby refid="group__DBusTransport_1ga3f4f4ce9eaef18567fd21f5c6a1fde99" compoundref="dbus-transport_8c" startline="1436" endline="1458">_dbus_transport_get_windows_user</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a7d91848b94203022be1090d93dd2cd04" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::send_credentials_pending</definition>
+        <argsstring></argsstring>
+        <name>send_credentials_pending</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we need to send credentials </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="115" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1aaa29089fbb1fbdb5b412b3ed18c84b2d" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::receive_credentials_pending</definition>
+        <argsstring></argsstring>
+        <name>receive_credentials_pending</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we need to receive credentials </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="116" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a38fa70b1473eb08a6c871c7791b46d6e" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::is_server</definition>
+        <argsstring></argsstring>
+        <name>is_server</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if on the server side </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="117" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1ga920abde00e77a970330fa3fc552fe7ea" compoundref="dbus-transport_8c" startline="869" endline="877">_dbus_transport_get_server_id</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a6a546ecc2f6467a51973681d0b816809" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::unused_bytes_recovered</definition>
+        <argsstring></argsstring>
+        <name>unused_bytes_recovered</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we&apos;ve recovered unused bytes from auth </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="118" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransport_1a30a82ca7826ef4735a5caa4c921ec014" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusTransport::allow_anonymous</definition>
+        <argsstring></argsstring>
+        <name>allow_anonymous</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if an anonymous client can connect </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="119" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1ga5f4bd7eb5621003595b75cb8033463cd" compoundref="dbus-transport_8c" startline="1509" endline="1513">_dbus_transport_set_allow_anonymous</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Object representing a transport such as a socket. </para>    </briefdescription>
+    <detaileddescription>
+<para>A transport can shuttle messages from point A to point B, and is the backend for a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="503">
+        <label>DBusConnection</label>
+        <link refid="structDBusConnection"/>
+        <childnode refid="504" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="507" relation="usage">
+          <edgelabel>pending_replies</edgelabel>
+        </childnode>
+        <childnode refid="512" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="503" relation="usage">
+          <edgelabel>dispatch_status_function</edgelabel>
+        </childnode>
+        <childnode refid="514" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="516" relation="usage">
+          <edgelabel>dispatch_mutex</edgelabel>
+          <edgelabel>io_path_mutex</edgelabel>
+        </childnode>
+        <childnode refid="517" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="520" relation="usage">
+          <edgelabel>io_path_cond</edgelabel>
+          <edgelabel>dispatch_cond</edgelabel>
+        </childnode>
+        <childnode refid="521" relation="usage">
+          <edgelabel>message_borrowed</edgelabel>
+        </childnode>
+        <childnode refid="505" relation="usage">
+          <edgelabel>incoming_messages</edgelabel>
+          <edgelabel>filter_list</edgelabel>
+          <edgelabel>outgoing_messages</edgelabel>
+          <edgelabel>disconnect_message_link</edgelabel>
+          <edgelabel>expired_messages</edgelabel>
+        </childnode>
+        <childnode refid="525" relation="usage">
+          <edgelabel>slot_mutex</edgelabel>
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="502" relation="usage">
+          <edgelabel>transport</edgelabel>
+        </childnode>
+        <childnode refid="519" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="526" relation="usage">
+          <edgelabel>outgoing_counter</edgelabel>
+        </childnode>
+      </node>
+      <node id="523">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="524" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="518">
+        <label>DBusObjectSubtree</label>
+        <link refid="structDBusObjectSubtree"/>
+        <childnode refid="503" relation="usage">
+          <edgelabel>message_function</edgelabel>
+          <edgelabel>unregister_function</edgelabel>
+        </childnode>
+        <childnode refid="518" relation="usage">
+          <edgelabel>parent</edgelabel>
+          <edgelabel>subtrees</edgelabel>
+        </childnode>
+        <childnode refid="519" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+      </node>
+      <node id="525">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="512">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="505" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="513" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="507">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="508" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="511" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="533">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="505" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="534">
+        <label>DBusTransportVTable</label>
+        <link refid="structDBusTransportVTable"/>
+      </node>
+      <node id="513">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="513" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="528">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="527" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="504">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="505" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="506" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="521">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="514" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="505" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="519" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="523" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="510">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="510" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="526">
+        <label>DBusCounter</label>
+        <link refid="structDBusCounter"/>
+        <childnode refid="526" relation="usage">
+          <edgelabel>notify_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="529">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="527" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="524">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="530">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="519">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="531">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="532" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="530" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="508">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="509" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="510" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="517">
+        <label>DBusObjectTree</label>
+        <link refid="structDBusObjectTree"/>
+        <childnode refid="503" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="518" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="506">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="515">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="505">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="505" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="502">
+        <label>DBusTransport</label>
+        <link refid="structDBusTransport"/>
+        <childnode refid="503" relation="usage">
+          <edgelabel>unix_user_function</edgelabel>
+          <edgelabel>windows_user_function</edgelabel>
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="527" relation="usage">
+          <edgelabel>auth</edgelabel>
+        </childnode>
+        <childnode refid="530" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="533" relation="usage">
+          <edgelabel>loader</edgelabel>
+        </childnode>
+        <childnode refid="534" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="526" relation="usage">
+          <edgelabel>live_messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="516">
+        <label>DBusCMutex</label>
+        <link refid="structDBusCMutex"/>
+      </node>
+      <node id="511">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="511" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="520">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="505" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="532">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="509">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="509" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="514">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="515" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="522">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="527">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="528" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="522" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="529" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="530" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="531" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-transport-protected.h" line="81" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="80" bodyend="120"/>
+    <listofallmembers>
+      <member refid="structDBusTransport_1a586180e57d80c428fc81e579d9159cb2" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>address</name></member>
+      <member refid="structDBusTransport_1a30a82ca7826ef4735a5caa4c921ec014" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>allow_anonymous</name></member>
+      <member refid="structDBusTransport_1acf71c91312f325be13ce6c09298b1eb8" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>auth</name></member>
+      <member refid="structDBusTransport_1a12d3052e51b2f0bf398d48e31e5f9da8" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>authenticated</name></member>
+      <member refid="structDBusTransport_1a8abdfc9327aa30550982c83b45354651" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>connection</name></member>
+      <member refid="structDBusTransport_1acb3d5fe913d4c281f3495e95cd450c57" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>credentials</name></member>
+      <member refid="structDBusTransport_1a487a7375e94efba850f8344a252cfa63" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>disconnected</name></member>
+      <member refid="structDBusTransport_1aaad7cb51a3e4ff2dd900ac971cc52b36" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>expected_guid</name></member>
+      <member refid="structDBusTransport_1a754f10d16c06f373464fe6bf88a15cdd" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>free_unix_user_data</name></member>
+      <member refid="structDBusTransport_1aab0e5248bd01f31ac4dcdab3c3b7b570" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>free_windows_user_data</name></member>
+      <member refid="structDBusTransport_1a38fa70b1473eb08a6c871c7791b46d6e" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>is_server</name></member>
+      <member refid="structDBusTransport_1afb19bae6f7cfe595f3f1ae0ce53ccab0" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>live_messages</name></member>
+      <member refid="structDBusTransport_1aaaba590c281236d176600016b7edab48" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>loader</name></member>
+      <member refid="structDBusTransport_1a23e0925741fc1c4ba3a369bac4bca4b6" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>max_live_messages_size</name></member>
+      <member refid="structDBusTransport_1a2d96972bbc56b78360cb0cfaa3f30266" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>max_live_messages_unix_fds</name></member>
+      <member refid="structDBusTransport_1aaa29089fbb1fbdb5b412b3ed18c84b2d" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>receive_credentials_pending</name></member>
+      <member refid="structDBusTransport_1a1a6554a692a353f8402c1419cd94e904" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>refcount</name></member>
+      <member refid="structDBusTransport_1a7d91848b94203022be1090d93dd2cd04" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>send_credentials_pending</name></member>
+      <member refid="structDBusTransport_1a7df35abee6aeef69eff659d65dd430f4" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>unix_user_data</name></member>
+      <member refid="structDBusTransport_1ac83be11f3497da6a21aed51782cd68d0" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>unix_user_function</name></member>
+      <member refid="structDBusTransport_1a6a546ecc2f6467a51973681d0b816809" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>unused_bytes_recovered</name></member>
+      <member refid="structDBusTransport_1a7350850a4e02a7eaa4036eb47d4778e5" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>vtable</name></member>
+      <member refid="structDBusTransport_1a333c4300fe345d25e9dcb828d20baff7" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>windows_user_data</name></member>
+      <member refid="structDBusTransport_1a17403591c2a1d936be5ed13a36e6416a" prot="public" virt="non-virtual"><scope>DBusTransport</scope><name>windows_user_function</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

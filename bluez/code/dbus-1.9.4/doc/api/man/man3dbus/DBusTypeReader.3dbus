@@ -1,0 +1,73 @@
+.TH "DBusTypeReader" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTypeReader \- The type reader is an iterator for reading values from a block of values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-marshal\-recursive\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBbyte_order\fP: 8"
+.br
+.RI "\fIbyte order of the block \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBfinished\fP: 1"
+.br
+.RI "\fImarks we're at end iterator for cases where we don't have another way to tell \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBarray_len_offset\fP: 3"
+.br
+.RI "\fIbytes back from start_pos that len ends \fP"
+.ti -1c
+.RI "const \fBDBusString\fP * \fBtype_str\fP"
+.br
+.RI "\fIstring containing signature of block \fP"
+.ti -1c
+.RI "int \fBtype_pos\fP"
+.br
+.RI "\fIcurrent position in signature \fP"
+.ti -1c
+.RI "const \fBDBusString\fP * \fBvalue_str\fP"
+.br
+.RI "\fIstring containing values of block \fP"
+.ti -1c
+.RI "int \fBvalue_pos\fP"
+.br
+.RI "\fIcurrent position in values \fP"
+.ti -1c
+.RI "const \fBDBusTypeReaderClass\fP * \fBklass\fP"
+.br
+.RI "\fIthe vtable for the reader \fP"
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      int \fBstart_pos\fP"
+.br
+.RI "\fIfor array readers, the start of the array values \fP"
+.ti -1c
+.RI "   } \fBarray\fP"
+.br
+.ti -1c
+.RI "} \fBu\fP"
+.br
+.RI "\fIclass-specific data \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The type reader is an iterator for reading values from a block of values\&. 
+.PP
+Definition at line 39 of file dbus\-marshal\-recursive\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

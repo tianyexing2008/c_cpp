@@ -1,0 +1,76 @@
+.TH "DBusInternalsUuidgen" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusInternalsUuidgen \- dbus-uuidgen implementation
+.PP
+Functions for dbus-uuidgen binary\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_internal_do_not_use_get_uuid\fP (const char *filename, char **uuid_p, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP *error)"
+.br
+.RI "\fIFor use by the dbus-uuidgen binary ONLY, do not call this\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_internal_do_not_use_create_uuid\fP (char **uuid_p)"
+.br
+.RI "\fIFor use by the dbus-uuidgen binary ONLY, do not call this\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions for dbus-uuidgen binary\&. 
+
+These are not considered part of the ABI, and if you call them you will get screwed by future changes\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP dbus_internal_do_not_use_create_uuid (char ** uuid_p)"
+
+.PP
+For use by the dbus-uuidgen binary ONLY, do not call this\&. We can and will change this function without modifying the libdbus soname\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuuid_p\fP out param to return the uuid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file dbus\-uuidgen\&.c\&.
+.PP
+References _dbus_generate_uuid(), and NULL\&.
+.SS "\fBdbus_bool_t\fP dbus_internal_do_not_use_get_uuid (const char * filename, char ** uuid_p, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP * error)"
+
+.PP
+For use by the dbus-uuidgen binary ONLY, do not call this\&. We can and will change this function without modifying the libdbus soname\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the file or \fBNULL\fP for the machine ID file 
+.br
+\fIuuid_p\fP out param to return the uuid 
+.br
+\fIcreate_if_not_found\fP whether to create it if not already there 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file dbus\-uuidgen\&.c\&.
+.PP
+References _dbus_read_local_machine_uuid(), _dbus_read_uuid_file(), _dbus_string_init_const(), FALSE, and TRUE\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

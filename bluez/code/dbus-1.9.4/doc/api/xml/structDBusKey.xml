@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusKey" kind="struct" language="C++" prot="public">
+    <compoundname>DBusKey</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusKey_1ac9fd0e664b5e21c63c97f3ade3349c70" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref></type>
+        <definition>dbus_int32_t DBusKey::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>identifier used to refer to the key </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="94" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="94" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1ga0daf16cfb75ab28d67d5dfa881f457a6" compoundref="dbus-keyring_8c" startline="949" endline="977">_dbus_keyring_get_best_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKey_1ab8a80dc4ac5497885cfb4795f6bc857e" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusKey::creation_time</definition>
+        <argsstring></argsstring>
+        <name>creation_time</name>
+        <briefdescription>
+<para>when the key was generated, as unix timestamp. </para>        </briefdescription>
+        <detaileddescription>
+<para>signed long matches struct timeval. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="96" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="96" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKey_1a444e3f33c387af833dc78ba96b6a9ea6" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusKey::secret</definition>
+        <argsstring></argsstring>
+        <name>secret</name>
+        <briefdescription>
+<para>the actual key </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="101" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="101" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A single key from the cookie file. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="178">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="179" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="179">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-keyring.c" line="93" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="92" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structDBusKey_1ab8a80dc4ac5497885cfb4795f6bc857e" prot="public" virt="non-virtual"><scope>DBusKey</scope><name>creation_time</name></member>
+      <member refid="structDBusKey_1ac9fd0e664b5e21c63c97f3ade3349c70" prot="public" virt="non-virtual"><scope>DBusKey</scope><name>id</name></member>
+      <member refid="structDBusKey_1a444e3f33c387af833dc78ba96b6a9ea6" prot="public" virt="non-virtual"><scope>DBusKey</scope><name>secret</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

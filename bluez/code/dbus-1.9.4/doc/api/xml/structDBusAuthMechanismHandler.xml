@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusAuthMechanismHandler" kind="struct" language="C++" prot="public">
+    <compoundname>DBusAuthMechanismHandler</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1a353c8effcb16bdc37c2f225b8dad9415" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* DBusAuthMechanismHandler::mechanism</definition>
+        <argsstring></argsstring>
+        <name>mechanism</name>
+        <briefdescription>
+<para>Name of the mechanism. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="104" column="1" bodyfile="dbus/dbus-auth.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1a6fb1fd485bf4f99f4d269cebe4625a8a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1ga48b33737b56c50aed5d10216e2cea928" kindref="member">DBusAuthDataFunction</ref></type>
+        <definition>DBusAuthDataFunction DBusAuthMechanismHandler::server_data_func</definition>
+        <argsstring></argsstring>
+        <name>server_data_func</name>
+        <briefdescription>
+<para>Function on server side for DATA. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="105" column="1" bodyfile="dbus/dbus-auth.c" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1a7aedf6828bf1f232edb2532616b9a1da" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1ga71db20fb63028c4e9ef7cde9406964ba" kindref="member">DBusAuthEncodeFunction</ref></type>
+        <definition>DBusAuthEncodeFunction DBusAuthMechanismHandler::server_encode_func</definition>
+        <argsstring></argsstring>
+        <name>server_encode_func</name>
+        <briefdescription>
+<para>Function on server side to encode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="106" column="1" bodyfile="dbus/dbus-auth.c" bodystart="106" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" compoundref="dbus-auth_8c" startline="2591" endline="2605">_dbus_auth_needs_encoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" compoundref="dbus-auth_8c" startline="2618" endline="2639">_dbus_auth_encode_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1ac6785768ff465be230d2f127d8099953" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1gaafda9129712732921ea83991e49a5a5a" kindref="member">DBusAuthDecodeFunction</ref></type>
+        <definition>DBusAuthDecodeFunction DBusAuthMechanismHandler::server_decode_func</definition>
+        <argsstring></argsstring>
+        <name>server_decode_func</name>
+        <briefdescription>
+<para>Function on server side to decode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="107" column="1" bodyfile="dbus/dbus-auth.c" bodystart="107" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" compoundref="dbus-auth_8c" startline="2650" endline="2664">_dbus_auth_needs_decoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" compoundref="dbus-auth_8c" startline="2681" endline="2702">_dbus_auth_decode_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1aa6e551c05863b85ee8c138a976497e8e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1gaf29551f7af65937d7e0952efa2c471be" kindref="member">DBusAuthShutdownFunction</ref></type>
+        <definition>DBusAuthShutdownFunction DBusAuthMechanismHandler::server_shutdown_func</definition>
+        <argsstring></argsstring>
+        <name>server_shutdown_func</name>
+        <briefdescription>
+<para>Function on server side to shut down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="108" column="1" bodyfile="dbus/dbus-auth.c" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1a7702073e4e001efcd921b413519646a1" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1ga9f1fd4d8b2a7c914ba3b99c8d744440a" kindref="member">DBusInitialResponseFunction</ref></type>
+        <definition>DBusInitialResponseFunction DBusAuthMechanismHandler::client_initial_response_func</definition>
+        <argsstring></argsstring>
+        <name>client_initial_response_func</name>
+        <briefdescription>
+<para>Function on client side to handle initial response. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="109" column="1" bodyfile="dbus/dbus-auth.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1a765bf360f3af4a7d418dd4f029cc4c26" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1ga48b33737b56c50aed5d10216e2cea928" kindref="member">DBusAuthDataFunction</ref></type>
+        <definition>DBusAuthDataFunction DBusAuthMechanismHandler::client_data_func</definition>
+        <argsstring></argsstring>
+        <name>client_data_func</name>
+        <briefdescription>
+<para>Function on client side for DATA. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="110" column="1" bodyfile="dbus/dbus-auth.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1ae72e69ef3b4513cbc5bdecae43dd380d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1ga71db20fb63028c4e9ef7cde9406964ba" kindref="member">DBusAuthEncodeFunction</ref></type>
+        <definition>DBusAuthEncodeFunction DBusAuthMechanismHandler::client_encode_func</definition>
+        <argsstring></argsstring>
+        <name>client_encode_func</name>
+        <briefdescription>
+<para>Function on client side for encode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="111" column="1" bodyfile="dbus/dbus-auth.c" bodystart="111" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" compoundref="dbus-auth_8c" startline="2591" endline="2605">_dbus_auth_needs_encoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" compoundref="dbus-auth_8c" startline="2618" endline="2639">_dbus_auth_encode_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1ab1d5c9a8cd146bb9f71f4237be1ca415" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1gaafda9129712732921ea83991e49a5a5a" kindref="member">DBusAuthDecodeFunction</ref></type>
+        <definition>DBusAuthDecodeFunction DBusAuthMechanismHandler::client_decode_func</definition>
+        <argsstring></argsstring>
+        <name>client_decode_func</name>
+        <briefdescription>
+<para>Function on client side for decode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="112" column="1" bodyfile="dbus/dbus-auth.c" bodystart="112" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" compoundref="dbus-auth_8c" startline="2650" endline="2664">_dbus_auth_needs_decoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" compoundref="dbus-auth_8c" startline="2681" endline="2702">_dbus_auth_decode_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthMechanismHandler_1aca0a9e37793ca20ed175b3c008c3494f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1gaf29551f7af65937d7e0952efa2c471be" kindref="member">DBusAuthShutdownFunction</ref></type>
+        <definition>DBusAuthShutdownFunction DBusAuthMechanismHandler::client_shutdown_func</definition>
+        <argsstring></argsstring>
+        <name>client_shutdown_func</name>
+        <briefdescription>
+<para>Function on client side for shutdown. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="113" column="1" bodyfile="dbus/dbus-auth.c" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Virtual table representing a particular auth mechanism. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="68">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="73">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="74">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="69">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="68" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-auth.c" line="103" column="1" bodyfile="dbus/dbus-auth.c" bodystart="102" bodyend="114"/>
+    <listofallmembers>
+      <member refid="structDBusAuthMechanismHandler_1a765bf360f3af4a7d418dd4f029cc4c26" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>client_data_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1ab1d5c9a8cd146bb9f71f4237be1ca415" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>client_decode_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1ae72e69ef3b4513cbc5bdecae43dd380d" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>client_encode_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1a7702073e4e001efcd921b413519646a1" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>client_initial_response_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1aca0a9e37793ca20ed175b3c008c3494f" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>client_shutdown_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1a353c8effcb16bdc37c2f225b8dad9415" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>mechanism</name></member>
+      <member refid="structDBusAuthMechanismHandler_1a6fb1fd485bf4f99f4d269cebe4625a8a" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>server_data_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1ac6785768ff465be230d2f127d8099953" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>server_decode_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1a7aedf6828bf1f232edb2532616b9a1da" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>server_encode_func</name></member>
+      <member refid="structDBusAuthMechanismHandler_1aa6e551c05863b85ee8c138a976497e8e" prot="public" virt="non-virtual"><scope>DBusAuthMechanismHandler</scope><name>server_shutdown_func</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

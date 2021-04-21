@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusHashTableInternals" kind="group">
+    <compoundname>DBusHashTableInternals</compoundname>
+    <title>Hash table implementation details</title>
+    <innerclass refid="structDBusHashEntry" prot="public">DBusHashEntry</innerclass>
+    <innerclass refid="structDBusHashTable" prot="public">DBusHashTable</innerclass>
+    <innerclass refid="structDBusRealHashIter" prot="public">DBusRealHashIter</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusHashTableInternals_1gad7d2d7c568541eeeb86104138d64a9f3" prot="public" static="no">
+        <type>struct <ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref></type>
+        <definition>typedef struct DBusHashEntry DBusHashEntry</definition>
+        <argsstring></argsstring>
+        <name>DBusHashEntry</name>
+        <briefdescription>
+<para>Typedef for <ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="56" column="1" bodyfile="dbus/dbus-hash.c" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusHashTableInternals_1gafd9dd7ab6565479a3980bba65f5b1c0e" prot="public" static="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *(*</type>
+        <definition>typedef DBusHashEntry*(*  DBusFindEntryFunction) (DBusHashTable *table, void *key, dbus_bool_t create_if_not_found, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</definition>
+        <argsstring>)(DBusHashTable *table, void *key, dbus_bool_t create_if_not_found, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>DBusFindEntryFunction</name>
+        <briefdescription>
+<para>Function used to find and optionally create a hash entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="156" column="1" bodyfile="dbus/dbus-hash.c" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusHashTableInternals_1gab7d4017620f34489bca6ab3117c13bfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_DBUS_STATIC_ASSERT</definition>
+        <argsstring>(sizeof(DBusRealHashIter)==sizeof(DBusHashIter))</argsstring>
+        <name>_DBUS_STATIC_ASSERT</name>
+        <param>
+          <type>sizeof(<ref refid="structDBusRealHashIter" kindref="compound">DBusRealHashIter</ref>)</type>
+          <defval>=sizeof(<ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref>)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="225" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1ga173f06c5a3812d651878f7d73b3809d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>static DBusHashEntry * find_direct_function</definition>
+        <argsstring>(DBusHashTable *table, void *key, dbus_bool_t create_if_not_found, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>find_direct_function</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>create_if_not_found</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> ***</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="227" column="1" bodyfile="dbus/dbus-hash.c" bodystart="904" bodyend="918"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1ga8e6995e0073ac8226fee61ca8406bba2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>static DBusHashEntry * find_string_function</definition>
+        <argsstring>(DBusHashTable *table, void *key, dbus_bool_t create_if_not_found, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>find_string_function</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>create_if_not_found</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> ***</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="232" column="1" bodyfile="dbus/dbus-hash.c" bodystart="888" bodyend="901"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1gae5947d089347384877fac3fba8f53bc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>static unsigned int string_hash</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>string_hash</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="237" column="1" bodyfile="dbus/dbus-hash.c" bodystart="831" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1ga7f2fba34e911a56279e87facf6bc79ad" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void rebuild_table</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>rebuild_table</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="238" column="1" bodyfile="dbus/dbus-hash.c" bodystart="921" bodyend="1037"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1ga3c6b4ff1d82797d28681170404d7c8bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>static DBusHashEntry * alloc_entry</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>alloc_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="239" column="1" bodyfile="dbus/dbus-hash.c" bodystart="429" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1ga648637f13c487c76cca9b9f46836392c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void remove_entry</definition>
+        <argsstring>(DBusHashTable *table, DBusHashEntry **bucket, DBusHashEntry *entry)</argsstring>
+        <name>remove_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> **</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="240" column="1" bodyfile="dbus/dbus-hash.c" bodystart="457" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1gaec4ad5adee7bbc846b28dcd93469f2ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void free_entry</definition>
+        <argsstring>(DBusHashTable *table, DBusHashEntry *entry)</argsstring>
+        <name>free_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="243" column="1" bodyfile="dbus/dbus-hash.c" bodystart="449" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTableInternals_1gad8ba2fc4e35b7aafa9d73c2243679401" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void free_entry_data</definition>
+        <argsstring>(DBusHashTable *table, DBusHashEntry *entry)</argsstring>
+        <name>free_entry_data</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="245" column="1" bodyfile="dbus/dbus-hash.c" bodystart="439" bodyend="446"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusHashTableInternals_1ga8c6d6296d450e37074dbd8c15638b499" prot="public" static="no">
+        <name>REBUILD_MULTIPLIER</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>When there are this many entries per bucket, on average, rebuild the hash table to make it larger. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="104" column="9" bodyfile="dbus/dbus-hash.c" bodystart="104" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusHashTableInternals_1ga9dc8fd5a9e25bd2b229366a683ff78f9" prot="public" static="no">
+        <name>RANDOM_INDEX</name>
+        <param><defname>table</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>(((((intptr_t) (i))*1103515245) &gt;&gt; (table)-&gt;down_shift) &amp; (table)-&gt;mask)</initializer>
+        <briefdescription>
+<para>Takes a preliminary integer hash value and produces an index into a hash tables bucket list. </para>        </briefdescription>
+        <detaileddescription>
+<para>The idea is to make it so that preliminary values that are arbitrarily similar will end up in different buckets. The hash function was taken from a random-number generator. (This is used to hash integers.)</para><para>The down_shift drops off the high bits of the hash index, and decreases as we increase the number of hash buckets (to keep more range in the hash index). The mask also strips high bits and strips fewer high bits as the number of hash buckets increases. I don&apos;t understand two things: why is the initial downshift 28 to keep 4 bits when the initial mask is 011 to keep 2 bits, and why do we have both a mask and a downshift? </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="122" column="9" bodyfile="dbus/dbus-hash.c" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusHashTableInternals_1ga4518324f3c3caacf5694065f4f6071d8" prot="public" static="no">
+        <name>DBUS_SMALL_HASH_TABLE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>Initial number of buckets in hash table (hash table statically allocates its buckets for this size and below). </para>        </briefdescription>
+        <detaileddescription>
+<para>The initial mask has to be synced to this. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="130" column="9" bodyfile="dbus/dbus-hash.c" bodystart="130" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>The guts of <ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

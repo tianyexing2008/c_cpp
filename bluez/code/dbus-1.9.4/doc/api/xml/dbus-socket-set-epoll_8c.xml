@@ -1,0 +1,565 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-socket-set-epoll_8c" kind="file" language="C++">
+    <compoundname>dbus-socket-set-epoll.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-socket-set_8h" local="yes">dbus-socket-set.h</includes>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includes refid="dbus-sysdeps_8h" local="no">dbus/dbus-sysdeps.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">sys/epoll.h</includes>
+    <includes local="no">unistd.h</includes>
+    <incdepgraph>
+      <node id="3287">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3281">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3276">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3283">
+        <label>stdint.h</label>
+      </node>
+      <node id="3271">
+        <label>dbus-socket-set-epoll.c</label>
+        <link refid="dbus-socket-set-epoll.c"/>
+        <childnode refid="3272" relation="include">
+        </childnode>
+        <childnode refid="3273" relation="include">
+        </childnode>
+        <childnode refid="3274" relation="include">
+        </childnode>
+        <childnode refid="3282" relation="include">
+        </childnode>
+        <childnode refid="3292" relation="include">
+        </childnode>
+        <childnode refid="3293" relation="include">
+        </childnode>
+        <childnode refid="3294" relation="include">
+        </childnode>
+        <childnode refid="3295" relation="include">
+        </childnode>
+      </node>
+      <node id="3289">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3292">
+        <label>errno.h</label>
+      </node>
+      <node id="3293">
+        <label>fcntl.h</label>
+      </node>
+      <node id="3282">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3272" relation="include">
+        </childnode>
+        <childnode refid="3283" relation="include">
+        </childnode>
+        <childnode refid="3284" relation="include">
+        </childnode>
+        <childnode refid="3280" relation="include">
+        </childnode>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3286" relation="include">
+        </childnode>
+        <childnode refid="3288" relation="include">
+        </childnode>
+        <childnode refid="3287" relation="include">
+        </childnode>
+        <childnode refid="3289" relation="include">
+        </childnode>
+      </node>
+      <node id="3274">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="3275" relation="include">
+        </childnode>
+        <childnode refid="3278" relation="include">
+        </childnode>
+        <childnode refid="3280" relation="include">
+        </childnode>
+        <childnode refid="3282" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+      </node>
+      <node id="3277">
+        <label>stddef.h</label>
+      </node>
+      <node id="3286">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+        <childnode refid="3278" relation="include">
+        </childnode>
+        <childnode refid="3275" relation="include">
+        </childnode>
+        <childnode refid="3287" relation="include">
+        </childnode>
+      </node>
+      <node id="3279">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+      </node>
+      <node id="3288">
+        <label>string.h</label>
+      </node>
+      <node id="3291">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+        <childnode refid="3278" relation="include">
+        </childnode>
+      </node>
+      <node id="3295">
+        <label>unistd.h</label>
+      </node>
+      <node id="3290">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+        <childnode refid="3278" relation="include">
+        </childnode>
+        <childnode refid="3291" relation="include">
+        </childnode>
+      </node>
+      <node id="3272">
+        <label>config.h</label>
+      </node>
+      <node id="3285">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3286" relation="include">
+        </childnode>
+        <childnode refid="3280" relation="include">
+        </childnode>
+      </node>
+      <node id="3294">
+        <label>sys/epoll.h</label>
+      </node>
+      <node id="3280">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+        <childnode refid="3278" relation="include">
+        </childnode>
+        <childnode refid="3281" relation="include">
+        </childnode>
+      </node>
+      <node id="3273">
+        <label>dbus-socket-set.h</label>
+        <link refid="dbus-socket-set_8h_source"/>
+      </node>
+      <node id="3278">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3277" relation="include">
+        </childnode>
+        <childnode refid="3279" relation="include">
+        </childnode>
+      </node>
+      <node id="3284">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3275">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3276" relation="include">
+        </childnode>
+        <childnode refid="3277" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-socket-set-epoll.c<sp/>-<sp/>a<sp/>socket<sp/>set<sp/>implemented<sp/>via<sp/>Linux<sp/>epoll(4)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2011<sp/>Nokia<sp/>Corporation</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-socket-set.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-sysdeps.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__linux__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>error<sp/>This<sp/>file<sp/>is<sp/>for<sp/>Linux<sp/>epoll(4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/epoll.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOXYGEN_SHOULD_SKIP_THIS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>DBusSocketSet<sp/>parent;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>epfd;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/>DBusSocketSetEpoll;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>DBusSocketSetEpoll<sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">socket_set_epoll_cast<sp/>(DBusSocketSet<sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(set-&gt;cls<sp/>==<sp/>&amp;_dbus_socket_set_epoll_class);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(DBusSocketSetEpoll<sp/>*)<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>is<sp/>safe<sp/>to<sp/>call<sp/>on<sp/>a<sp/>partially-allocated<sp/>socket<sp/>set<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">socket_set_epoll_free<sp/>(DBusSocketSet<sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;epfd<sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>close<sp/>(self-&gt;epfd);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(</highlight><highlight class="keyword">self</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">DBusSocketSet<sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">_dbus_socket_set_epoll_new<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/><ref refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" kindref="member">dbus_new0</ref><sp/>(DBusSocketSetEpoll,<sp/>1);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;parent.cls<sp/>=<sp/>&amp;_dbus_socket_set_epoll_class;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;epfd<sp/>=<sp/>epoll_create1<sp/>(EPOLL_CLOEXEC);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;epfd<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>size<sp/>hint<sp/>is<sp/>ignored<sp/>unless<sp/>you<sp/>have<sp/>a<sp/>rather<sp/>old<sp/>kernel,</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>but<sp/>must<sp/>be<sp/>positive<sp/>on<sp/>some<sp/>versions,<sp/>so<sp/>just<sp/>pick<sp/>something</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>arbitrary;<sp/>it&apos;s<sp/>a<sp/>hint,<sp/>not<sp/>a<sp/>limit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;epfd<sp/>=<sp/>epoll_create<sp/>(42);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>=<sp/>fcntl<sp/>(self-&gt;epfd,<sp/>F_GETFD,<sp/>0);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flags<sp/>!=<sp/>-1)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fcntl<sp/>(self-&gt;epfd,<sp/>F_SETFD,<sp/>flags<sp/>|<sp/>FD_CLOEXEC);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;epfd<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>socket_set_epoll_free<sp/>((DBusSocketSet<sp/>*)<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(DBusSocketSet<sp/>*)<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">watch_flags_to_epoll_events<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>uint32_t<sp/>events<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flags<sp/>&amp;<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" kindref="member">DBUS_WATCH_READABLE</ref>)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>events<sp/>|=<sp/>EPOLLIN;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flags<sp/>&amp;<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a62ddca29b06bfbbc08bb7f3dfd3d307f" kindref="member">DBUS_WATCH_WRITABLE</ref>)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>events<sp/>|=<sp/>EPOLLOUT;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>events;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">epoll_events_to_watch_flags<sp/>(uint32_t<sp/>events)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(events<sp/>&amp;<sp/>EPOLLIN)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" kindref="member">DBUS_WATCH_READABLE</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(events<sp/>&amp;<sp/>EPOLLOUT)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a62ddca29b06bfbbc08bb7f3dfd3d307f" kindref="member">DBUS_WATCH_WRITABLE</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(events<sp/>&amp;<sp/>EPOLLHUP)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a7a361a1a03f463c3c9e57f7368a0bfe4" kindref="member">DBUS_WATCH_HANGUP</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(events<sp/>&amp;<sp/>EPOLLERR)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98ab1474e26aa5be3d2876dd86bbe452156" kindref="member">DBUS_WATCH_ERROR</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">socket_set_epoll_add<sp/>(DBusSocketSet<sp/><sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>flags,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/>enabled)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>event;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.data.fd<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enabled)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.events<sp/>=<sp/>watch_flags_to_epoll_events<sp/>(flags);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>need<sp/>to<sp/>add<sp/>*something*<sp/>to<sp/>reserve<sp/>space<sp/>in<sp/>the<sp/>kernel&apos;s<sp/>data</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>structures:<sp/>see<sp/>socket_set_epoll_disable<sp/>for<sp/>more<sp/>details<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.events<sp/>=<sp/>EPOLLET;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(epoll_ctl<sp/>(self-&gt;epfd,<sp/>EPOLL_CTL_ADD,<sp/>fd,<sp/>&amp;event)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Anything<sp/>except<sp/>ENOMEM,<sp/>ENOSPC<sp/>means<sp/>we<sp/>have<sp/>an<sp/>internal<sp/>error.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>err<sp/>=<sp/>errno;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(err)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>ENOMEM:</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>ENOSPC:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>be<sp/>silent:<sp/>this<sp/>is<sp/>basically<sp/>OOM,<sp/>which<sp/>our<sp/>callers<sp/>are<sp/>expected</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>cope<sp/>with<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>EBADF:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Bad<sp/>fd<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>fd);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>EEXIST:</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;fd<sp/>%d<sp/>added<sp/>and<sp/>then<sp/>added<sp/>again\n&quot;</highlight><highlight class="normal">,<sp/>fd);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Misc<sp/>error<sp/>when<sp/>trying<sp/>to<sp/>watch<sp/>fd<sp/>%d:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>fd,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror<sp/>(err));</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">socket_set_epoll_enable<sp/>(DBusSocketSet<sp/><sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>flags)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>event;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.data.fd<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.events<sp/>=<sp/>watch_flags_to_epoll_events<sp/>(flags);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(epoll_ctl<sp/>(self-&gt;epfd,<sp/>EPOLL_CTL_MOD,<sp/>fd,<sp/>&amp;event)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>err<sp/>=<sp/>errno;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enabling<sp/>a<sp/>file<sp/>descriptor<sp/>isn&apos;t<sp/>allowed<sp/>to<sp/>fail,<sp/>even<sp/>for<sp/>OOM,<sp/>so<sp/>we</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/>*<sp/>do<sp/>our<sp/>best<sp/>to<sp/>avoid<sp/>all<sp/>of<sp/>these.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(err)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>EBADF:</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Bad<sp/>fd<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>fd);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>ENOENT:</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;fd<sp/>%d<sp/>enabled<sp/>before<sp/>it<sp/>was<sp/>added\n&quot;</highlight><highlight class="normal">,<sp/>fd);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>ENOMEM:</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Insufficient<sp/>memory<sp/>to<sp/>change<sp/>watch<sp/>for<sp/>fd<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>fd);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Misc<sp/>error<sp/>when<sp/>trying<sp/>to<sp/>watch<sp/>fd<sp/>%d:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>fd,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror<sp/>(err));</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">socket_set_epoll_disable<sp/>(DBusSocketSet<sp/><sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>event;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>naive<sp/>thing<sp/>to<sp/>do<sp/>would<sp/>be<sp/>EPOLL_CTL_DEL,<sp/>but<sp/>that&apos;ll<sp/>probably</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/>*<sp/>free<sp/>resources<sp/>in<sp/>the<sp/>kernel.<sp/>When<sp/>we<sp/>come<sp/>to<sp/>do<sp/>socket_set_epoll_enable,</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/>*<sp/>there<sp/>might<sp/>not<sp/>be<sp/>enough<sp/>resources<sp/>to<sp/>bring<sp/>it<sp/>back!</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/><sp/>*<sp/>The<sp/>next<sp/>idea<sp/>you<sp/>might<sp/>have<sp/>is<sp/>to<sp/>set<sp/>the<sp/>flags<sp/>to<sp/>0.<sp/>However,<sp/>events</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/><sp/><sp/>*<sp/>always<sp/>trigger<sp/>on<sp/>EPOLLERR<sp/>and<sp/>EPOLLHUP,<sp/>even<sp/>if<sp/>libdbus<sp/>isn&apos;t<sp/>actually</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/><sp/>*<sp/>delivering<sp/>them<sp/>to<sp/>a<sp/>DBusWatch.<sp/>Because<sp/>epoll<sp/>is<sp/>level-triggered<sp/>by</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/><sp/>*<sp/>default,<sp/>we&apos;ll<sp/>busy-loop<sp/>on<sp/>an<sp/>unhandled<sp/>error<sp/>or<sp/>hangup;<sp/>not<sp/>good.</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/><sp/><sp/>*<sp/>So,<sp/>let&apos;s<sp/>set<sp/>it<sp/>to<sp/>be<sp/>edge-triggered:<sp/>then<sp/>the<sp/>worst<sp/>case<sp/>is<sp/>that</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/><sp/><sp/>*<sp/>we<sp/>return<sp/>from<sp/>poll<sp/>immediately<sp/>on<sp/>one<sp/>iteration,<sp/>ignore<sp/>it<sp/>because<sp/>no</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/><sp/>*<sp/>watch<sp/>is<sp/>enabled,<sp/>then<sp/>go<sp/>back<sp/>to<sp/>normal.<sp/>When<sp/>we<sp/>re-enable<sp/>a<sp/>watch</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/><sp/><sp/>*<sp/>we&apos;ll<sp/>switch<sp/>back<sp/>to<sp/>level-triggered<sp/>and<sp/>be<sp/>notified<sp/>again<sp/>(verified<sp/>to</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/>*<sp/>work<sp/>on<sp/>2.6.32).<sp/>Compile<sp/>this<sp/>file<sp/>with<sp/>-DTEST_BEHAVIOUR_OF_EPOLLET<sp/>for</highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/><sp/><sp/>*<sp/>test<sp/>code.</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.data.fd<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.events<sp/>=<sp/>EPOLLET;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(epoll_ctl<sp/>(self-&gt;epfd,<sp/>EPOLL_CTL_MOD,<sp/>fd,<sp/>&amp;event)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>err<sp/>=<sp/>errno;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Error<sp/>when<sp/>trying<sp/>to<sp/>watch<sp/>fd<sp/>%d:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>fd,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror<sp/>(err));</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">socket_set_epoll_remove<sp/>(DBusSocketSet<sp/><sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Kernels<sp/>&lt;<sp/>2.6.9<sp/>require<sp/>a<sp/>non-NULL<sp/>struct<sp/>pointer,<sp/>even<sp/>though<sp/>its</highlight></codeline>
+<codeline lineno="272"><highlight class="comment"><sp/><sp/><sp/>*<sp/>contents<sp/>are<sp/>ignored<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>dummy<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(epoll_ctl<sp/>(self-&gt;epfd,<sp/>EPOLL_CTL_DEL,<sp/>fd,<sp/>&amp;dummy)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>err<sp/>=<sp/>errno;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;Error<sp/>when<sp/>trying<sp/>to<sp/>remove<sp/>fd<sp/>%d:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>fd,<sp/>strerror<sp/>(err));</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Optimally,<sp/>this<sp/>should<sp/>be<sp/>the<sp/>same<sp/>as<sp/>in<sp/>DBusLoop:<sp/>we<sp/>use<sp/>it<sp/>to<sp/>translate</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/>*<sp/>between<sp/>struct<sp/>epoll_event<sp/>and<sp/>DBusSocketEvent<sp/>without<sp/>allocating<sp/>heap</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/>*<sp/>memory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>N_STACK_DESCRIPTORS<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal">socket_set_epoll_poll<sp/>(DBusSocketSet<sp/><sp/><sp/>*</highlight><highlight class="keyword">set</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DBusSocketEvent<sp/>*revents,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_events,</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_ms)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>DBusSocketSetEpoll<sp/>*</highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>socket_set_epoll_cast<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>events[N_STACK_DESCRIPTORS];</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_ready;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(max_events<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/>n_ready<sp/>=<sp/>epoll_wait<sp/>(self-&gt;epfd,<sp/>events,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MIN<sp/>(<ref refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" kindref="member">_DBUS_N_ELEMENTS</ref><sp/>(events),<sp/>max_events),</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_ms);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n_ready<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>n_ready;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n_ready;<sp/>i++)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>revents[i].fd<sp/>=<sp/>events[i].data.fd;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>revents[i].flags<sp/>=<sp/>epoll_events_to_watch_flags<sp/>(events[i].events);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>n_ready;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal">DBusSocketSetClass<sp/>_dbus_socket_set_epoll_class<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_free,</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_add,</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_remove,</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_enable,</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_disable,</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_set_epoll_poll</highlight></codeline>
+<codeline lineno="323"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TEST_BEHAVIOUR_OF_EPOLLET</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>usage:<sp/>cat<sp/>/dev/null<sp/>|<sp/>./epoll</highlight></codeline>
+<codeline lineno="327"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/>*<sp/>desired<sp/>output:</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/>*<sp/>ctl<sp/>ADD:<sp/>0</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"><sp/>*<sp/>wait<sp/>for<sp/>HUP,<sp/>edge-triggered:<sp/>1</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/>*<sp/>wait<sp/>for<sp/>HUP<sp/>again:<sp/>0</highlight></codeline>
+<codeline lineno="332"><highlight class="comment"><sp/>*<sp/>ctl<sp/>MOD:<sp/>0</highlight></codeline>
+<codeline lineno="333"><highlight class="comment"><sp/>*<sp/>wait<sp/>for<sp/>HUP:<sp/>1</highlight></codeline>
+<codeline lineno="334"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/epoll.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal">main<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="342"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>input;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">epoll_event<sp/>output;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>epfd<sp/>=<sp/>epoll_create1<sp/>(EPOLL_CLOEXEC);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*<sp/>stdin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>input.events<sp/>=<sp/>EPOLLHUP<sp/>|<sp/>EPOLLET;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>epoll_ctl<sp/>(epfd,<sp/>EPOLL_CTL_ADD,<sp/>fd,<sp/>&amp;input);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;ctl<sp/>ADD:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>epoll_wait<sp/>(epfd,<sp/>&amp;output,<sp/>1,<sp/>-1);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;wait<sp/>for<sp/>HUP,<sp/>edge-triggered:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>epoll_wait<sp/>(epfd,<sp/>&amp;output,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;wait<sp/>for<sp/>HUP<sp/>again:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/>input.events<sp/>=<sp/>EPOLLHUP;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>epoll_ctl<sp/>(epfd,<sp/>EPOLL_CTL_MOD,<sp/>fd,<sp/>&amp;input);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;ctl<sp/>MOD:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>epoll_wait<sp/>(epfd,<sp/>&amp;output,<sp/>1,<sp/>-1);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;wait<sp/>for<sp/>HUP:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TEST_BEHAVIOUR_OF_EPOLLET<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!DOXYGEN_SHOULD_SKIP_THIS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-socket-set-epoll.c"/>
+  </compounddef>
+</doxygen>

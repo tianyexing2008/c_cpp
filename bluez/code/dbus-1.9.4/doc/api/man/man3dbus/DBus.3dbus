@@ -1,0 +1,92 @@
+.TH "DBus" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBus \- D-Bus low-level public API
+.PP
+The low-level public API of the D-Bus library\&.  
+
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBAddress parsing\fP"
+.br
+.RI "\fIParsing addresses of D-Bus servers\&. \fP"
+.ti -1c
+.RI "\fBMessage bus APIs\fP"
+.br
+.RI "\fIFunctions for communicating with the message bus\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP"
+.br
+.RI "\fIConnection to another application\&. \fP"
+.ti -1c
+.RI "\fBError reporting\fP"
+.br
+.RI "\fIError reporting\&. \fP"
+.ti -1c
+.RI "\fBUtility macros\fP"
+.br
+.RI "\fI\fBTRUE\fP, \fBFALSE\fP, \fBNULL\fP, and so on \fP"
+.ti -1c
+.RI "\fBMemory Allocation\fP"
+.br
+.RI "\fI\fBdbus_malloc()\fP, \fBdbus_free()\fP, etc\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP"
+.br
+.RI "\fIMessage to be sent or received over a \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "\fBMiscellaneous\fP"
+.br
+.RI "\fIMiscellaneous API that doesn't cleanly fit anywhere else\&. \fP"
+.ti -1c
+.RI "\fBDBusPendingCall\fP"
+.br
+.RI "\fIPending reply to a method call message\&. \fP"
+.ti -1c
+.RI "\fBProtocol constants\fP"
+.br
+.RI "\fIDefines constants which are part of the D-Bus protocol\&. \fP"
+.ti -1c
+.RI "\fBDBusServer\fP"
+.br
+.RI "\fIServer that listens for new connections\&. \fP"
+.ti -1c
+.RI "\fBShared constants\fP"
+.br
+.RI "\fIShared header included by both libdbus and C/C++ bindings such as the GLib bindings\&. \fP"
+.ti -1c
+.RI "\fBType signature parsing\fP"
+.br
+.RI "\fIParsing D-Bus type signatures\&. \fP"
+.ti -1c
+.RI "\fBUtility functions for strings with special syntax\fP"
+.br
+.RI "\fIParsing D-Bus type signatures\&. \fP"
+.ti -1c
+.RI "\fBThread functions\fP"
+.br
+.RI "\fI\fBdbus_threads_init()\fP and \fBdbus_threads_init_default()\fP \fP"
+.ti -1c
+.RI "\fBDBusTimeout\fP"
+.br
+.RI "\fIObject representing a timeout\&. \fP"
+.ti -1c
+.RI "\fBBasic types\fP"
+.br
+.RI "\fIdbus_bool_t, dbus_int32_t, etc\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP"
+.br
+.RI "\fIObject representing a file descriptor to be watched\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The low-level public API of the D-Bus library\&. 
+
+libdbus provides a low-level C API intended primarily for use by bindings to specific object systems and languages\&. D-Bus is most convenient when used with the GLib bindings, Python bindings, Qt bindings, Mono bindings, and so forth\&. This low-level API has a lot of complexity useful only for bindings\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

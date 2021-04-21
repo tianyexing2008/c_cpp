@@ -1,0 +1,199 @@
+.TH "DBusFile" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusFile \- DBusFile
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_file_exists\fP (const char *file)"
+.br
+.RI "\fIFile interface\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_file_get_contents\fP (\fBDBusString\fP *str, const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIAppends the contents of the given file to the string, returning error code\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_string_save_to_file\fP (const \fBDBusString\fP *str, const \fBDBusString\fP *filename, \fBdbus_bool_t\fP world_readable, \fBDBusError\fP *error)"
+.br
+.RI "\fIWrites a string out to a file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_make_file_world_readable\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIMakes the file readable by every user in the system\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_create_file_exclusively\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates the given file, failing if the file already exists\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_delete_file\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIDeletes the given file\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_create_file_exclusively (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Creates the given file, failing if the file already exists\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if we created the file and it didn't exist 
+.RE
+.PP
+
+.PP
+Definition at line 353 of file dbus\-file\-unix\&.c\&.
+.PP
+References _dbus_close(), DBUS_ERROR_FAILED, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_delete_file (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Deletes the given file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.br
+\fIerror\fP error location
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if unlink() succeeded 
+.RE
+.PP
+
+.PP
+Definition at line 399 of file dbus\-file\-unix\&.c\&.
+.PP
+References _dbus_strerror_from_errno(), _DBUS_ZERO, DBUS_ERROR_FAILED, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_file_exists (const char * file)"
+
+.PP
+File interface\&. File interface\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP full path to the file 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if file exists 
+.RE
+.PP
+
+.PP
+Definition at line 633 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_file_get_contents (\fBDBusString\fP * str, const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Appends the contents of the given file to the string, returning error code\&. At the moment, won't open a file more than a megabyte in size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to append to 
+.br
+\fIfilename\fP filename to load 
+.br
+\fIerror\fP place to set an error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error was set 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file dbus\-file\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_read(), _dbus_string_set_length(), DBUS_ERROR_FAILED, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_sha_compute(), and _dbus_uuid_encode()\&.
+.SS "\fBdbus_bool_t\fP _dbus_make_file_world_readable (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Makes the file readable by every user in the system\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the file's permissions could be changed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 326 of file dbus\-file\-unix\&.c\&.
+.PP
+References DBUS_ERROR_FAILED, dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_string_save_to_file()\&.
+.SS "\fBdbus_bool_t\fP _dbus_string_save_to_file (const \fBDBusString\fP * str, const \fBDBusString\fP * filename, \fBdbus_bool_t\fP world_readable, \fBDBusError\fP * error)"
+
+.PP
+Writes a string out to a file\&. If the file exists, it will be atomically overwritten by the new data\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to write out 
+.br
+\fIfilename\fP the file to save string to 
+.br
+\fIworld_readable\fP If set, ensure the file is world readable 
+.br
+\fIerror\fP error to be filled in on failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure
+.RE
+.PP
+If the file exists, it will be atomically overwritten by the new data\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to write out 
+.br
+\fIfilename\fP the file to save string to 
+.br
+\fIworld_readable\fP if true, ensure file is world readable 
+.br
+\fIerror\fP error to be filled in on failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file dbus\-file\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_generate_random_ascii(), _dbus_make_file_world_readable(), _dbus_string_append(), _dbus_string_copy(), _dbus_string_free(), _dbus_string_init(), _dbus_write(), DBUS_ERROR_NO_MEMORY, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_write_uuid_file()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

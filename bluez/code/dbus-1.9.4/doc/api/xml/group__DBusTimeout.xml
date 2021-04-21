@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusTimeout" kind="group">
+    <compoundname>DBusTimeout</compoundname>
+    <title>DBusTimeout</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusTimeout_1ga67ba21b6189438875c6007ee79da5e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT int</type>
+        <definition>int dbus_timeout_get_interval</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>dbus_timeout_get_interval</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Gets the timeout interval. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="group__DBusTimeout_1ga038b67c8d3db2624a1e4a8bc45f25d12" kindref="member">dbus_timeout_handle()</ref> should be called each time this interval elapses, starting after it elapses once.</para><para>The interval may change during the life of the timeout; if so, the timeout will be disabled and re-enabled (calling the &quot;timeout toggled function&quot;) to notify you of the change.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the interval in milliseconds. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="480" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="416" bodyend="419"/>
+        <references refid="structDBusTimeout_1a8772f07a4695be987e7d0fea1b80ba16" compoundref="dbus-timeout_8c" startline="43">interval</references>
+        <referencedby refid="group__DBusConnectionInternals_1gad5e725e66dc16a411544e25675fb9fba" compoundref="dbus-connection_8c" startline="2379" endline="2550">_dbus_connection_block_pending_call</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeout_1ga7c561ec66daa2f53a274485f10c827c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT void *</type>
+        <definition>void * dbus_timeout_get_data</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>dbus_timeout_get_data</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Gets data previously set with <ref refid="group__DBusTimeout_1ga88712006f7772174504a0fba0a0ddd60" kindref="member">dbus_timeout_set_data()</ref> or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>previously-set data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="482" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="429" bodyend="432"/>
+        <references refid="structDBusTimeout_1a16cb374453e70f3951d02bcba73c1845" compoundref="dbus-timeout_8c" startline="49">data</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeout_1ga88712006f7772174504a0fba0a0ddd60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT void</type>
+        <definition>void dbus_timeout_set_data</definition>
+        <argsstring>(DBusTimeout *timeout, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>dbus_timeout_set_data</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets data which can be retrieved with <ref refid="group__DBusTimeout_1ga7c561ec66daa2f53a274485f10c827c7" kindref="member">dbus_timeout_get_data()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Intended for use by the DBusAddTimeoutFunction and DBusRemoveTimeoutFunction to store their own data. For example with Qt you might store the QTimer for this timeout and with GLib you might store a g_timeout_add result id.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="484" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="446" bodyend="455"/>
+        <references refid="structDBusTimeout_1a16cb374453e70f3951d02bcba73c1845" compoundref="dbus-timeout_8c" startline="49">data</references>
+        <references refid="structDBusTimeout_1af7ff88e58a10f4ed49a0838e0c930be0" compoundref="dbus-timeout_8c" startline="50">free_data_function</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" compoundref="dbus-timeout_8c" startline="107" endline="122">_dbus_timeout_unref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeout_1ga038b67c8d3db2624a1e4a8bc45f25d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_timeout_handle</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>dbus_timeout_handle</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Calls the timeout handler for this timeout. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function should be called when the timeout occurs.</para><para>If this function returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>, then there wasn&apos;t enough memory to handle the timeout. Typically just letting the timeout fire again next time it naturally times out is an adequate response to that problem, but you could try to do more if you wanted.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if there wasn&apos;t enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="488" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="472" bodyend="475"/>
+        <references refid="structDBusTimeout_1a362a61722d3fae5c18c93654a57aa377" compoundref="dbus-timeout_8c" startline="45">handler</references>
+        <references refid="structDBusTimeout_1a58a22bfb2f7f0543745c2d56fa9f63a1" compoundref="dbus-timeout_8c" startline="46">handler_data</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeout_1ga58954b2edb45ec1632529d35525ea45c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_timeout_get_enabled</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>dbus_timeout_get_enabled</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether a timeout is enabled or not. </para>        </briefdescription>
+        <detaileddescription>
+<para>If not enabled, it should not be polled by the main loop.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the timeout is enabled </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="490" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="486" bodyend="489"/>
+        <references refid="structDBusTimeout_1a35ac546656105d0fe1929d4e3d224503" compoundref="dbus-timeout_8c" startline="51">enabled</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusTimeout_1ga6f0a4887747250a5fc9daeeb32b2d6af" prot="public" static="no">
+        <type>struct <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref></type>
+        <definition>DBusTimeout</definition>
+        <argsstring></argsstring>
+        <name>DBusTimeout</name>
+        <briefdescription>
+<para>Opaque object representing a timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="330" column="1" bodyfile="dbus/dbus-connection.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Object representing a timeout. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref>. A timeout represents a timeout that the main loop needs to monitor, as in Qt&apos;s QTimer or GLib&apos;s g_timeout_add().</para><para>Use <ref refid="group__DBusConnection_1gab3cbc68eec427e9ce1783b25d44fe93c" kindref="member">dbus_connection_set_timeout_functions()</ref> or <ref refid="group__DBusServer_1gacafa42ffc063a7386db40a975c32d530" kindref="member">dbus_server_set_timeout_functions()</ref> to be notified when libdbus needs to add or remove timeouts. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

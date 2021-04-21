@@ -1,0 +1,302 @@
+.TH "DBusConnection" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusConnection \- Implementation details of \fBDBusConnection\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusAtomic\fP \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "\fBDBusRMutex\fP * \fBmutex\fP"
+.br
+.RI "\fILock on the entire \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "\fBDBusCMutex\fP * \fBdispatch_mutex\fP"
+.br
+.RI "\fIProtects dispatch_acquired\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVar\fP * \fBdispatch_cond\fP"
+.br
+.RI "\fINotify when dispatch_acquired is available\&. \fP"
+.ti -1c
+.RI "\fBDBusCMutex\fP * \fBio_path_mutex\fP"
+.br
+.RI "\fIProtects io_path_acquired\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVar\fP * \fBio_path_cond\fP"
+.br
+.RI "\fINotify when io_path_acquired is available\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBoutgoing_messages\fP"
+.br
+.RI "\fIQueue of messages we need to send, send the end of the list first\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBincoming_messages\fP"
+.br
+.RI "\fIQueue of messages we have received, end of the list received most recently\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBexpired_messages\fP"
+.br
+.RI "\fIMessages that will be released when we next unlock\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fBmessage_borrowed\fP"
+.br
+.RI "\fIFilled in if the first incoming message has been borrowed; dispatch_acquired will be set by the borrower\&. \fP"
+.ti -1c
+.RI "int \fBn_outgoing\fP"
+.br
+.RI "\fILength of outgoing queue\&. \fP"
+.ti -1c
+.RI "int \fBn_incoming\fP"
+.br
+.RI "\fILength of incoming queue\&. \fP"
+.ti -1c
+.RI "\fBDBusCounter\fP * \fBoutgoing_counter\fP"
+.br
+.RI "\fICounts size of outgoing messages\&. \fP"
+.ti -1c
+.RI "\fBDBusTransport\fP * \fBtransport\fP"
+.br
+.RI "\fIObject that sends/receives messages over network\&. \fP"
+.ti -1c
+.RI "\fBDBusWatchList\fP * \fBwatches\fP"
+.br
+.RI "\fIStores active watches\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeoutList\fP * \fBtimeouts\fP"
+.br
+.RI "\fIStores active timeouts\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBfilter_list\fP"
+.br
+.RI "\fIList of filters\&. \fP"
+.ti -1c
+.RI "\fBDBusRMutex\fP * \fBslot_mutex\fP"
+.br
+.RI "\fILock on slot_list so overall connection lock need not be taken\&. \fP"
+.ti -1c
+.RI "\fBDBusDataSlotList\fP \fBslot_list\fP"
+.br
+.RI "\fIData stored by allocated integer ID\&. \fP"
+.ti -1c
+.RI "\fBDBusHashTable\fP * \fBpending_replies\fP"
+.br
+.RI "\fIHash of message serials to \fBDBusPendingCall\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBclient_serial\fP"
+.br
+.RI "\fIClient serial\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBdisconnect_message_link\fP"
+.br
+.RI "\fIPreallocated list node for queueing the disconnection message\&. \fP"
+.ti -1c
+.RI "\fBDBusWakeupMainFunction\fP \fBwakeup_main_function\fP"
+.br
+.RI "\fIFunction to wake up the mainloop\&. \fP"
+.ti -1c
+.RI "void * \fBwakeup_main_data\fP"
+.br
+.RI "\fIApplication data for wakeup_main_function\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_wakeup_main_data\fP"
+.br
+.RI "\fIfree wakeup_main_data \fP"
+.ti -1c
+.RI "\fBDBusDispatchStatusFunction\fP \fBdispatch_status_function\fP"
+.br
+.RI "\fIFunction on dispatch status changes\&. \fP"
+.ti -1c
+.RI "void * \fBdispatch_status_data\fP"
+.br
+.RI "\fIApplication data for dispatch_status_function\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_dispatch_status_data\fP"
+.br
+.RI "\fIfree dispatch_status_data \fP"
+.ti -1c
+.RI "\fBDBusDispatchStatus\fP \fBlast_dispatch_status\fP"
+.br
+.RI "\fIThe last dispatch status we reported to the application\&. \fP"
+.ti -1c
+.RI "\fBDBusObjectTree\fP * \fBobjects\fP"
+.br
+.RI "\fIObject path handlers registered with this connection\&. \fP"
+.ti -1c
+.RI "char * \fBserver_guid\fP"
+.br
+.RI "\fIGUID of server if we are in shared_connections, \fBNULL\fP if server GUID is unknown or connection is private\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdispatch_acquired\fP"
+.br
+.RI "\fISomeone has dispatch path (can drain incoming queue) \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBio_path_acquired\fP"
+.br
+.RI "\fISomeone has transport io path (can use the transport to read/write messages) \fP"
+.ti -1c
+.RI "unsigned int \fBshareable\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if libdbus owns a reference to the connection and can return it from \fBdbus_connection_open()\fP more than once \fP"
+.ti -1c
+.RI "unsigned int \fBexit_on_disconnect\fP: 1"
+.br
+.RI "\fIIf \fBTRUE\fP, exit after handling disconnect signal\&. \fP"
+.ti -1c
+.RI "unsigned int \fBroute_peer_messages\fP: 1"
+.br
+.RI "\fIIf \fBTRUE\fP, if org\&.freedesktop\&.DBus\&.Peer messages have a bus name, don't handle them automatically\&. \fP"
+.ti -1c
+.RI "unsigned int \fBdisconnected_message_arrived\fP: 1"
+.br
+.RI "\fIWe popped or are dispatching the disconnected message\&. \fP"
+.ti -1c
+.RI "unsigned int \fBdisconnected_message_processed\fP: 1"
+.br
+.RI "\fIWe did our default handling of the disconnected message, such as closing the connection\&. \fP"
+.ti -1c
+.RI "unsigned int \fBhave_connection_lock\fP: 1"
+.br
+.RI "\fIUsed to check locking\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusConnection\fP\&. 
+
+All fields are private\&. 
+.PP
+Definition at line 256 of file dbus\-connection\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBdbus_uint32_t\fP DBusConnection::client_serial"
+
+.PP
+Client serial\&. Increments each time a message is sent 
+.PP
+Definition at line 291 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_connection_unref_unlocked()\&.
+.SS "unsigned int DBusConnection::disconnected_message_arrived"
+
+.PP
+We popped or are dispatching the disconnected message\&. if the disconnect_message_link is NULL then we queued it, but this flag is whether it got to the head of the queue\&. 
+.PP
+Definition at line 321 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), dbus_connection_pop_message(), and dbus_connection_read_write()\&.
+.SS "\fBDBusList\fP* DBusConnection::expired_messages"
+
+.PP
+Messages that will be released when we next unlock\&. 
+.PP
+Definition at line 269 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_message_sent_unlocked(), _dbus_connection_unlock(), dbus_connection_dispatch(), and dbus_connection_get_dispatch_status()\&.
+.SS "\fBDBusList\fP* DBusConnection::filter_list"
+
+.PP
+List of filters\&. 
+.PP
+Definition at line 284 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), dbus_connection_add_filter(), dbus_connection_dispatch(), dbus_connection_ref(), and dbus_connection_remove_filter()\&.
+.SS "\fBDBusList\fP* DBusConnection::incoming_messages"
+
+.PP
+Queue of messages we have received, end of the list received most recently\&. 
+.PP
+Definition at line 268 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), _dbus_connection_queue_received_message_link(), _dbus_connection_queue_synthesized_message_link(), dbus_connection_borrow_message(), dbus_connection_pop_message(), dbus_connection_ref(), and dbus_connection_steal_borrowed_message()\&.
+.SS "\fBDBusDispatchStatus\fP DBusConnection::last_dispatch_status"
+
+.PP
+The last dispatch status we reported to the application\&. 
+.PP
+Definition at line 302 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and dbus_connection_pop_message()\&.
+.SS "int DBusConnection::n_incoming"
+
+.PP
+Length of incoming queue\&. 
+.PP
+Definition at line 276 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), _dbus_connection_queue_received_message_link(), _dbus_connection_queue_synthesized_message_link(), dbus_connection_flush(), dbus_connection_get_outgoing_size(), dbus_connection_pop_message(), and dbus_connection_steal_borrowed_message()\&.
+.SS "int DBusConnection::n_outgoing"
+
+.PP
+Length of outgoing queue\&. 
+.PP
+Definition at line 275 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), _dbus_connection_do_iteration_unlocked(), _dbus_connection_message_sent_unlocked(), dbus_connection_get_outgoing_size(), dbus_connection_pop_message(), and dbus_connection_send_with_reply_and_block()\&.
+.SS "\fBDBusCounter\fP* DBusConnection::outgoing_counter"
+
+.PP
+Counts size of outgoing messages\&. 
+.PP
+Definition at line 278 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), _dbus_connection_message_sent_unlocked(), _dbus_connection_new_for_transport(), dbus_connection_get_outgoing_size(), dbus_connection_get_outgoing_unix_fds(), and dbus_connection_ref()\&.
+.SS "\fBDBusList\fP* DBusConnection::outgoing_messages"
+
+.PP
+Queue of messages we need to send, send the end of the list first\&. 
+.PP
+Definition at line 267 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), _dbus_connection_get_message_to_send(), _dbus_connection_has_messages_to_send_unlocked(), _dbus_connection_message_sent_unlocked(), dbus_connection_pop_message(), and dbus_connection_ref()\&.
+.SS "\fBDBusHashTable\fP* DBusConnection::pending_replies"
+
+.PP
+Hash of message serials to \fBDBusPendingCall\fP\&. 
+.PP
+Definition at line 289 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), _dbus_connection_new_for_transport(), _dbus_connection_queue_received_message_link(), _dbus_connection_toggle_timeout_unlocked(), dbus_connection_dispatch(), and dbus_connection_ref()\&.
+.SS "\fBDBusAtomic\fP DBusConnection::refcount"
+
+.PP
+Reference count\&. 
+.PP
+Definition at line 258 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), _dbus_connection_new_for_transport(), _dbus_connection_ref_unlocked(), _dbus_connection_unref_unlocked(), dbus_connection_ref(), and dbus_connection_unref()\&.
+.SS "\fBDBusTimeoutList\fP* DBusConnection::timeouts"
+
+.PP
+Stores active timeouts\&. 
+.PP
+Definition at line 282 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), dbus_connection_ref(), and dbus_connection_set_timeout_functions()\&.
+.SS "\fBDBusTransport\fP* DBusConnection::transport"
+
+.PP
+Object that sends/receives messages over network\&. 
+.PP
+Definition at line 280 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_do_iteration_unlocked(), _dbus_connection_get_pending_fds_count(), _dbus_connection_handle_watch(), _dbus_connection_new_for_transport(), _dbus_connection_queue_received_message_link(), _dbus_connection_set_pending_fds_function(), dbus_connection_can_send_type(), dbus_connection_close(), dbus_connection_get_adt_audit_session_data(), dbus_connection_get_is_anonymous(), dbus_connection_get_is_authenticated(), dbus_connection_get_max_message_size(), dbus_connection_get_max_message_unix_fds(), dbus_connection_get_max_received_size(), dbus_connection_get_max_received_unix_fds(), dbus_connection_get_outgoing_size(), dbus_connection_get_outgoing_unix_fds(), dbus_connection_get_server_id(), dbus_connection_get_socket(), dbus_connection_get_unix_fd(), dbus_connection_get_unix_process_id(), dbus_connection_get_unix_user(), dbus_connection_get_windows_user(), dbus_connection_pop_message(), dbus_connection_ref(), dbus_connection_send(), dbus_connection_send_preallocated(), dbus_connection_send_with_reply(), dbus_connection_send_with_reply_and_block(), dbus_connection_set_allow_anonymous(), dbus_connection_set_max_message_size(), dbus_connection_set_max_message_unix_fds(), dbus_connection_set_max_received_size(), dbus_connection_set_max_received_unix_fds(), dbus_connection_set_unix_user_function(), dbus_connection_set_windows_user_function(), and dbus_connection_unref()\&.
+.SS "\fBDBusWatchList\fP* DBusConnection::watches"
+
+.PP
+Stores active watches\&. 
+.PP
+Definition at line 281 of file dbus\-connection\&.c\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), dbus_connection_ref(), and dbus_connection_set_watch_functions()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,1986 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-sysdeps-wince-glue_8h" kind="file" language="C++">
+    <compoundname>dbus-sysdeps-wince-glue.h</compoundname>
+    <includes local="no">time.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">windows.h</includes>
+    <incdepgraph>
+      <node id="4000">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4001">
+        <label>windows.h</label>
+      </node>
+      <node id="3998">
+        <label>dbus-sysdeps-wince-glue.h</label>
+        <link refid="dbus-sysdeps-wince-glue.h"/>
+        <childnode refid="3999" relation="include">
+        </childnode>
+        <childnode refid="4000" relation="include">
+        </childnode>
+        <childnode refid="4001" relation="include">
+        </childnode>
+      </node>
+      <node id="3999">
+        <label>time.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aeb3440d36874f85a2c4f6ca9f87d461c" prot="public" static="no">
+        <name>SHGetSpecialFolderPathW</name>
+        <initializer>SHGetSpecialFolderPath</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="39" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aa4f45ea385abfbe9c4be9a0c1aa62f31" prot="public" static="no">
+        <name>TLS_OUT_OF_INDEXES</name>
+        <initializer>0xffffffff</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="44" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ab03f640d90fbc5bcb75285d08a0f25ed" prot="public" static="no">
+        <name>errno</name>
+        <initializer>((int)GetLastError ())</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="50" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a03e689f378f643d16ea7537918528a48" prot="public" static="no">
+        <name>ENOENT</name>
+        <initializer>ERROR_FILE_NOT_FOUND</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="52" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a64a75c174882ddbfa726c7fd040f87a1" prot="public" static="no">
+        <name>EMFILE</name>
+        <initializer>ERROR_TOO_MANY_OPEN_FILES</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="53" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ac2a2e9fa555401f94478f74e01868032" prot="public" static="no">
+        <name>EACCES</name>
+        <initializer>ERROR_ACCESS_DENIED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="54" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ac54507d66b43ad12f9356257323c0018" prot="public" static="no">
+        <name>EBADF</name>
+        <initializer>ERROR_INVALID_HANDLE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="55" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a6a05c923dad0c1208043e9c20a58c8e5" prot="public" static="no">
+        <name>ENOMEM</name>
+        <initializer>ERROR_NOT_ENOUGH_MEMORY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="56" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a3396cf9fb0ff5af3a18dd2a2bbdb21e1" prot="public" static="no">
+        <name>EXDEV</name>
+        <initializer>ERROR_NOT_SAME_DEVICE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="57" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a5554094b3fb4bb6ebeb0157cb3f82a55" prot="public" static="no">
+        <name>ENFILE</name>
+        <initializer>ERROR_NO_MORE_FILES</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="58" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1acb02bb67dddd7ca8cf82634a0781d58d" prot="public" static="no">
+        <name>EROFS</name>
+        <initializer>ERROR_WRITE_PROTECT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="59" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a65e1a7bda392be276a701988d0604e63" prot="public" static="no">
+        <name>ENOLCK</name>
+        <initializer>ERROR_SHARING_BUFFER_EXCEEDED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="60" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a43785b9969e0bd1af532dbde06c5540b" prot="public" static="no">
+        <name>ENOSYS</name>
+        <initializer>ERROR_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="61" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a0a3bef9e5c47e42917692b5dae3b5498" prot="public" static="no">
+        <name>EEXIST</name>
+        <initializer>ERROR_FILE_EXISTS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="62" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1add669d31505a077f769cff8e66c780b3" prot="public" static="no">
+        <name>EPERM</name>
+        <initializer>ERROR_CANNOT_MAKE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="63" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a2d1678d5a7cc8ce499643f3b8957def4" prot="public" static="no">
+        <name>EINVAL</name>
+        <initializer>ERROR_INVALID_PARAMETER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="64" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a46b83d9f6c23b1b65a8cecfd775ddaed" prot="public" static="no">
+        <name>EINTR</name>
+        <initializer>ERROR_INVALID_AT_INTERRUPT_TIME</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="65" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a5f8d33deb08fa27c04897b278ac7f965" prot="public" static="no">
+        <name>EPIPE</name>
+        <initializer>ERROR_BROKEN_PIPE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="66" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a088abe8bad2df798edad3053d719b937" prot="public" static="no">
+        <name>ENOSPC</name>
+        <initializer>ERROR_DISK_FULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="67" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aa0f602f3fd369a6fede82190710b9c5c" prot="public" static="no">
+        <name>ENOTEMPTY</name>
+        <initializer>ERROR_DIR_NOT_EMPTY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="68" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a8368025077a0385849d6817b2007c095" prot="public" static="no">
+        <name>EBUSY</name>
+        <initializer>ERROR_BUSY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="69" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a41d5ab3a8a05f9c5eab536c9cfba305b" prot="public" static="no">
+        <name>ENAMETOOLONG</name>
+        <initializer>ERROR_FILENAME_EXCED_RANGE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="70" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1af0fac1cea1165b4debec7f686edf3313" prot="public" static="no">
+        <name>EAGAIN</name>
+        <initializer>ERROR_MORE_DATA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="71" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a9262fb92f7ef662d0bdd577912a5b101" prot="public" static="no">
+        <name>ENOTDIR</name>
+        <initializer>ERROR_DIRECTORY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="72" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aa1591a4f3a86360108de5b9ba34980ca" prot="public" static="no">
+        <name>ERANGE</name>
+        <initializer>ERROR_ARITHMETIC_OVERFLOW</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="73" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a2b3884b11e4932bd372bb6d899d6fbfe" prot="public" static="no">
+        <name>ENXIO</name>
+        <initializer>ERROR_FILE_INVALID</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="74" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a3f317946e043623f9d6b93dbf60e6316" prot="public" static="no">
+        <name>EFAULT</name>
+        <initializer>ERROR_PROCESS_ABORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="75" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a70979f50f9c83e5aebab3d6a1bd4cf35" prot="public" static="no">
+        <name>EIO</name>
+        <initializer>ERROR_IO_DEVICE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="76" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1acfea92d35e42dd807a7e9beb1e394e4c" prot="public" static="no">
+        <name>EDEADLOCK</name>
+        <initializer>ERROR_POSSIBLE_DEADLOCK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="77" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ab9b8cc17d1947160d13faaba7a18d6d1" prot="public" static="no">
+        <name>ENODEV</name>
+        <initializer>ERROR_BAD_DEVICE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="78" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a9254b089d435892385cf14d0ab4a7a2d" prot="public" static="no">
+        <name>strdup</name>
+        <initializer>_strdup</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="82" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a4e0be90a3757e352f42612d09a7d1aa5" prot="public" static="no">
+        <name>stricmp</name>
+        <initializer>_stricmp</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="83" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a16a19b1831112e876b010468ec15916f" prot="public" static="no">
+        <name>strnicmp</name>
+        <initializer>_strnicmp</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="84" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a73d140028db62075675e0578884fab3b" prot="public" static="no">
+        <name>environ</name>
+        <initializer>_dbus_wince_environ</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="86" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aafc8c101dfb6313ab0416a6c5903ce66" prot="public" static="no">
+        <name>getenv</name>
+        <initializer>_dbus_wince_getenv</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="89" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a7f3501cd06dda68c4b7d86da4a2ebf77" prot="public" static="no">
+        <name>putenv</name>
+        <initializer>_dbus_wince_putenv</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="92" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a362207a7d85ed7142c966f9a509d80f3" prot="public" static="no">
+        <name>clock</name>
+        <initializer>_dbus_wince_clock</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="95" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1acfbb276642cba4e2cf618f9a6d261e98" prot="public" static="no">
+        <name>abort</name>
+        <initializer>_dbus_wince_abort</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="98" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ab82b5a3b792deed5287d29d8593f2850" prot="public" static="no">
+        <name>_S_IFMT</name>
+        <initializer>0170000         /* file type mask */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="101" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a57b4d1dd9c2b252c2886140b9c6099e3" prot="public" static="no">
+        <name>_S_IFDIR</name>
+        <initializer>0040000         /* directory */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="102" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a239351b728b331316df1cf22969963f1" prot="public" static="no">
+        <name>_S_IFCHR</name>
+        <initializer>0020000         /* character special */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="103" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1afc840138d01509aabe9243814a70e37c" prot="public" static="no">
+        <name>_S_IFIFO</name>
+        <initializer>0010000         /* pipe */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="104" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a23bf68cb3794ad3745afc8735e27f70e" prot="public" static="no">
+        <name>_S_IFREG</name>
+        <initializer>0100000         /* regular */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="105" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1afb08a987a2331273d8a5d55b5ec0c7c7" prot="public" static="no">
+        <name>_S_IREAD</name>
+        <initializer>0000400         /* read permission, owner */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="106" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1af23041ceb18d78f6462b5181b15cc1f4" prot="public" static="no">
+        <name>_S_IWRITE</name>
+        <initializer>0000200         /* write permission, owner */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="107" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aac1fc97155b0d5842d139ad957b65f11" prot="public" static="no">
+        <name>_S_IEXEC</name>
+        <initializer>0000100         /* execute/search permission, owner */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="108" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a9f342086187c49e8747bcde6b50c18d2" prot="public" static="no">
+        <name>__OFF_T_DEFINED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="112" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a3ce96ec9d1fcd8dfccadb47145718f9d" prot="public" static="no">
+        <name>_INTPTR_T_DEFINED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="116" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a106239fcf6108905a1beb6837f7343c8" prot="public" static="no">
+        <name>_UINTPTR_T_DEFINED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="120" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a316442a61b2003f21a7b055ffb9ef48f" prot="public" static="no">
+        <name>_MAX_FNAME</name>
+        <initializer>256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="124" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1af7475971eb93ce0184379e71fe7626e9" prot="public" static="no">
+        <name>_IOFBF</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="128" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aca9e52813bd224e4519e0b1289abbce9" prot="public" static="no">
+        <name>_IOLBF</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="131" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a8661edb6b53e3104bef089bef02d0508" prot="public" static="no">
+        <name>_IONBF</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="134" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a7033130564fdb08d587ddbc32dfd5e04" prot="public" static="no">
+        <name>GetSystemTimeAsFileTime</name>
+        <initializer>_dbus_wince_GetSystemTimeAsFileTime</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="140" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a0d058ef3d3f3ee169026bd818542b2f6" prot="public" static="no">
+        <name>_mbsrchr</name>
+        <initializer>_dbus_wince_mbsrchr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="143" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aa12edc6ce8a4e71799aed9d505584550" prot="public" static="no">
+        <name>OpenFileMappingA</name>
+        <initializer>_dbus_wince_OpenFileMappingA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="146" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a69960829c2d83fc1757d351b05261974" prot="public" static="no">
+        <name>MoveFileExA</name>
+        <initializer>_dbus_wince_MoveFileExA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="149" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a7a75d6088d37b4e0d3adaa1bd2aa6f16" prot="public" static="no">
+        <name>MOVEFILE_REPLACE_EXISTING</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="152" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aa9a69de88988723139db1c36643b63db" prot="public" static="no">
+        <name>SetHandleInformation</name>
+        <initializer>_dbus_wince_SetHandleInformation</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="155" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a6e8d339c5a9af779af654cf5fb6d0a62" prot="public" static="no">
+        <name>HANDLE_FLAG_INHERIT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="158" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a5575f919aa66671ad5960f0730af9f64" prot="public" static="no">
+        <name>HANDLE_FLAG_PROTECT_FROM_CLOSE</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="161" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a710ee14a39d9f83ec77d35eea9fddf6c" prot="public" static="no">
+        <name>SearchPathA</name>
+        <initializer>_dbus_wince_SearchPathA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="164" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ac44a10ec040ceb7b0085791d210dccf7" prot="public" static="no">
+        <name>LookupAccountNameW</name>
+        <initializer>_dbus_wince_LookupAccountNameW</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="172" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a39df03c04d391d4e30d07513e73df878" prot="public" static="no">
+        <name>IsValidSid</name>
+        <initializer>_dbus_wince_IsValidSid</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="175" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1af125abbf4b7d308ba2311d2b109d3556" prot="public" static="no">
+        <name>CreateFileA</name>
+        <initializer>_dbus_wince_CreateFileA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="183" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1adf14d9d49a78580c6084b0202a82f1f4" prot="public" static="no">
+        <name>DeleteFileA</name>
+        <initializer>_dbus_wince_DeleteFileA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="186" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a204440265e11f2f4eab2125d9ab4d8dd" prot="public" static="no">
+        <name>GetFileAttributesA</name>
+        <initializer>_dbus_wince_GetFileAttributesA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="189" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a38a8837b59979fc36ca268e414a36160" prot="public" static="no">
+        <name>GetFileAttributesExA</name>
+        <initializer>_dbus_wince_GetFileAttributesExA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="192" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1abce5598afadaf76cc8696b19b95719c1" prot="public" static="no">
+        <name>CreateFileMappingA</name>
+        <initializer>_dbus_wince_CreateFileMappingA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="195" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1aeb04cdf67e90a7c2ebc60f17dada407a" prot="public" static="no">
+        <name>CreateDirectoryA</name>
+        <initializer>_dbus_wince_CreateDirectoryA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="198" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a80d7d24ccb22a673f70c45b574c7a613" prot="public" static="no">
+        <name>RemoveDirectoryA</name>
+        <initializer>_dbus_wince_RemoveDirectoryA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="201" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a754b5026c7d1cfcde5b41852f92e4f8c" prot="public" static="no">
+        <name>FindFirstFileA</name>
+        <initializer>_dbus_wince_FindFirstFileA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="204" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ae5097d7a12676de593d345306dd40e60" prot="public" static="no">
+        <name>FindNextFileA</name>
+        <initializer>_dbus_wince_FindNextFileA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="207" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a25da2d64fc888c7998bb950fa3c9b055" prot="public" static="no">
+        <name>CreateMutexA</name>
+        <initializer>_dbus_wince_CreateMutexA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="210" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a30ff9ca0f28cd5ca0702305dc0a07ea2" prot="public" static="no">
+        <name>CreateProcessA</name>
+        <initializer>_dbus_wince_CreateProcessA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="213" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a73cd6067d51c5264f360d95310ad59e7" prot="public" static="no">
+        <name>CREATE_NO_WINDOW</name>
+        <initializer>0x08000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="216" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1abc41273b0e44b32c798118c42233c8af" prot="public" static="no">
+        <name>RegOpenKeyExA</name>
+        <initializer>_dbus_wince_RegOpenKeyExA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="220" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1adaa482cebfc1be3c3c086608e8ba596a" prot="public" static="no">
+        <name>RegQueryValueExA</name>
+        <initializer>_dbus_wince_RegQueryValueExA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="223" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1ada14fba2965efc812dc9dd81bd8e008e" prot="public" static="no">
+        <name>FormatMessageA</name>
+        <initializer>_dbus_wince_FormatMessageA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="227" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a2b88d4a82262848cef593e53b99a7027" prot="public" static="no">
+        <name>GetModuleFileNameA</name>
+        <initializer>_dbus_wince_GetModuleFileNameA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="230" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a5089a63d3f61f0a6a619607757164535" prot="public" static="no">
+        <name>GetTempPathA</name>
+        <initializer>_dbus_wince_GetTempPathA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="233" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1af5b89bec3221fbf256de4c748146ea09" prot="public" static="no">
+        <name>SHGetSpecialFolderPathA</name>
+        <initializer>_dbus_wince_SHGetSpecialFolderPathA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="236" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-wince-glue_8h_1a3050c8839547c8a7863c5667b40859ac" prot="public" static="no">
+        <name>OutputDebugStringA</name>
+        <initializer>_dbus_wince_OutputDebugStringA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="240" column="9" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-sysdeps-wince-glue_8h_1af83497edef361523a95b06deda0b4c2d" prot="public" static="no">
+        <type>long</type>
+        <definition>typedef long off_t</definition>
+        <argsstring></argsstring>
+        <name>off_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="111" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-sysdeps-wince-glue_8h_1a0fbe4a4f8dd857ee04923a901f27465f" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int intptr_t</definition>
+        <argsstring></argsstring>
+        <name>intptr_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="115" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-sysdeps-wince-glue_8h_1a728e973c799f206f0151c8a3bd1e5699" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int uintptr_t</definition>
+        <argsstring></argsstring>
+        <name>uintptr_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="119" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dbus-sysdeps-wince-glue_8h_1a631de38822d3fe422dce124e7967edc3" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* environ[]</definition>
+        <argsstring>[]</argsstring>
+        <name>environ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="87" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a3511326026e55cc98cf2729d79605518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL WINAPI</type>
+        <definition>BOOL WINAPI SHGetSpecialFolderPathA</definition>
+        <argsstring>(HWND, LPSTR, int, BOOL)</argsstring>
+        <name>SHGetSpecialFolderPathA</name>
+        <param>
+          <type>HWND</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>BOOL</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="40" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="1126" bodyend="1146"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1ac8733d6bb902be005ec64d2f642c533a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL WINAPI</type>
+        <definition>BOOL WINAPI SHGetSpecialFolderPathW</definition>
+        <argsstring>(HWND, LPWSTR, int, BOOL)</argsstring>
+        <name>SHGetSpecialFolderPathW</name>
+        <param>
+          <type>HWND</type>
+        </param>
+        <param>
+          <type>LPWSTR</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>BOOL</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1abc6595dbf6880c71628fecf0dbb23d66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* getenv</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>getenv</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="90" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="288" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a62578df215c968b6b9af70424f1a4651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int putenv</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>putenv</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="93" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="328" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1ade863cfcca9ee19f20ca95796f8ddc1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>clock_t</type>
+        <definition>clock_t clock</definition>
+        <argsstring>(void)</argsstring>
+        <name>clock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="96" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="368" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a8dec7c95227ff149687066cf04029191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void abort</definition>
+        <argsstring>(void)</argsstring>
+        <name>abort</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="99" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="375" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1ae4cdcceaf9535d16cf9364dcae717e1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GetSystemTimeAsFileTime</definition>
+        <argsstring>(LPFILETIME ftp)</argsstring>
+        <name>GetSystemTimeAsFileTime</name>
+        <param>
+          <type>LPFILETIME</type>
+          <declname>ftp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="141" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="383" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a932f27b44b4f52ebf638692e30d9b444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* _mbsrchr</definition>
+        <argsstring>(const unsigned char *, unsigned int)</argsstring>
+        <name>_mbsrchr</name>
+        <param>
+          <type>const unsigned char *</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>int</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="144" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="392" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a19d196d1cf898a7c751094989c5e8974" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HANDLE</type>
+        <definition>HANDLE OpenFileMappingA</definition>
+        <argsstring>(DWORD, BOOL, LPCSTR)</argsstring>
+        <name>OpenFileMappingA</name>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>BOOL</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="147" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="399" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1af3ef1e75434f8acdca171e9f1dfb186e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL MoveFileExA</definition>
+        <argsstring>(LPCSTR, LPCSTR, DWORD)</argsstring>
+        <name>MoveFileExA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="150" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="430" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a1882cc70086a37038ef59ec871409b66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL SetHandleInformation</definition>
+        <argsstring>(HANDLE, DWORD, DWORD)</argsstring>
+        <name>SetHandleInformation</name>
+        <param>
+          <type>HANDLE</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="156" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="445" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1ab9320d69e7bb372d76363336c82cdaa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD SearchPathA</definition>
+        <argsstring>(LPCSTR, LPCSTR, LPCSTR, DWORD, LPSTR, LPSTR *)</argsstring>
+        <name>SearchPathA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <param>
+          <type>LPSTR *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="165" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="457" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1acb76f2c7d0567ffafbede5bd2ec02526" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_getsid</definition>
+        <argsstring>(char **sid)</argsstring>
+        <name>_dbus_getsid</name>
+        <param>
+          <type>char **</type>
+          <declname>sid</declname>
+        </param>
+        <briefdescription>
+<para>Gets our SID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>points to sid buffer, need to be freed with LocalFree() </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>process sid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="169" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="498" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1afb94ae7dc4950c4dd30ff9d4b79314f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL LookupAccountNameW</definition>
+        <argsstring>(LPCWSTR, LPCWSTR, PSID, PDWORD, LPWSTR, PDWORD, PSID_NAME_USE)</argsstring>
+        <name>LookupAccountNameW</name>
+        <param>
+          <type>LPCWSTR</type>
+        </param>
+        <param>
+          <type>LPCWSTR</type>
+        </param>
+        <param>
+          <type>PSID</type>
+        </param>
+        <param>
+          <type>PDWORD</type>
+        </param>
+        <param>
+          <type>LPWSTR</type>
+        </param>
+        <param>
+          <type>PDWORD</type>
+        </param>
+        <param>
+          <type>PSID_NAME_USE</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="173" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="516" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1aedaaf50289a94ab12ae5f7b96b26103d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL IsValidSid</definition>
+        <argsstring>(PSID)</argsstring>
+        <name>IsValidSid</name>
+        <param>
+          <type>PSID</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="176" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="525" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a6011ca8ff0a88f532b5df98b6e6b83f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HANDLE</type>
+        <definition>HANDLE CreateFileA</definition>
+        <argsstring>(LPCSTR, DWORD, DWORD, LPSECURITY_ATTRIBUTES, DWORD, DWORD, HANDLE)</argsstring>
+        <name>CreateFileA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>HANDLE</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="184" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="533" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a9b7577948138260a02f190124bd47ae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL DeleteFileA</definition>
+        <argsstring>(LPCSTR)</argsstring>
+        <name>DeleteFileA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="187" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="558" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a5c7f675cb2984e704ce2ed5d38579bc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD GetFileAttributesA</definition>
+        <argsstring>(LPCSTR)</argsstring>
+        <name>GetFileAttributesA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="190" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="607" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a7d0f7c55d97b720c1d3a1d3b833e9100" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL GetFileAttributesExA</definition>
+        <argsstring>(LPCSTR, GET_FILEEX_INFO_LEVELS, PVOID)</argsstring>
+        <name>GetFileAttributesExA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>GET_FILEEX_INFO_LEVELS</type>
+        </param>
+        <param>
+          <type>PVOID</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="193" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="627" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a0d009c00706cc046a6928b7c074d8f20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HANDLE</type>
+        <definition>HANDLE CreateFileMappingA</definition>
+        <argsstring>(HANDLE, LPSECURITY_ATTRIBUTES, DWORD, DWORD, DWORD, LPCSTR)</argsstring>
+        <name>CreateFileMappingA</name>
+        <param>
+          <type>HANDLE</type>
+        </param>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="196" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="648" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a6324f61a812257de281d70b9fccca434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL CreateDirectoryA</definition>
+        <argsstring>(LPCSTR, LPSECURITY_ATTRIBUTES)</argsstring>
+        <name>CreateDirectoryA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="199" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="677" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a92661081bc0d292fb26ce02bdc8319ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL RemoveDirectoryA</definition>
+        <argsstring>(LPCSTR)</argsstring>
+        <name>RemoveDirectoryA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="202" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="697" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1ab6d92b66b32d4844ff790309df00460b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HANDLE</type>
+        <definition>HANDLE FindFirstFileA</definition>
+        <argsstring>(LPCSTR, LPWIN32_FIND_DATAA)</argsstring>
+        <name>FindFirstFileA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPWIN32_FIND_DATAA</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="205" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="742" bodyend="770"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a2d9f6a02907096a13fe4f7d55a354906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL FindNextFileA</definition>
+        <argsstring>(HANDLE, LPWIN32_FIND_DATAA)</argsstring>
+        <name>FindNextFileA</name>
+        <param>
+          <type>HANDLE</type>
+        </param>
+        <param>
+          <type>LPWIN32_FIND_DATAA</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="208" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="774" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a43f431ee40737eab1632c3f22bd38811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HANDLE</type>
+        <definition>HANDLE CreateMutexA</definition>
+        <argsstring>(LPSECURITY_ATTRIBUTES, BOOL, LPCSTR)</argsstring>
+        <name>CreateMutexA</name>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <param>
+          <type>BOOL</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="211" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="789" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a4f27b88bb41c22f640ed752e2c0d8d2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOL</type>
+        <definition>BOOL CreateProcessA</definition>
+        <argsstring>(LPCSTR, LPSTR, LPSECURITY_ATTRIBUTES, LPSECURITY_ATTRIBUTES, BOOL, DWORD, PVOID, LPCSTR, LPSTARTUPINFOA, LPPROCESS_INFORMATION)</argsstring>
+        <name>CreateProcessA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <param>
+          <type>LPSECURITY_ATTRIBUTES</type>
+        </param>
+        <param>
+          <type>BOOL</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>PVOID</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPSTARTUPINFOA</type>
+        </param>
+        <param>
+          <type>LPPROCESS_INFORMATION</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="214" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="815" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a16bef75fc1c16fb9b7867396c43bbe13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LONG</type>
+        <definition>LONG RegOpenKeyExA</definition>
+        <argsstring>(HKEY, LPCSTR, DWORD, REGSAM, PHKEY)</argsstring>
+        <name>RegOpenKeyExA</name>
+        <param>
+          <type>HKEY</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>REGSAM</type>
+        </param>
+        <param>
+          <type>PHKEY</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="221" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="863" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a7b7266344086b78fb05b77a6814673d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LONG WINAPI</type>
+        <definition>LONG WINAPI RegQueryValueExA</definition>
+        <argsstring>(HKEY, LPCSTR, LPDWORD, LPDWORD, LPBYTE, LPDWORD)</argsstring>
+        <name>RegQueryValueExA</name>
+        <param>
+          <type>HKEY</type>
+        </param>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <param>
+          <type>LPDWORD</type>
+        </param>
+        <param>
+          <type>LPDWORD</type>
+        </param>
+        <param>
+          <type>LPBYTE</type>
+        </param>
+        <param>
+          <type>LPDWORD</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="224" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="889" bodyend="972"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a0be7e0f8cc2463caef6f892c09b1181c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD FormatMessageA</definition>
+        <argsstring>(DWORD, PCVOID, DWORD, DWORD, LPSTR, DWORD, va_list *)</argsstring>
+        <name>FormatMessageA</name>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>PCVOID</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>va_list *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="228" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="976" bodyend="1025"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a4555c4669b2f650ad8e0cd16c3d42a40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD GetModuleFileNameA</definition>
+        <argsstring>(HINSTANCE, LPSTR, DWORD)</argsstring>
+        <name>GetModuleFileNameA</name>
+        <param>
+          <type>HINSTANCE</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="231" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="1029" bodyend="1067"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a6d99d0501f226f610d60ca4badaa32b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD GetTempPathA</definition>
+        <argsstring>(DWORD, LPSTR)</argsstring>
+        <name>GetTempPathA</name>
+        <param>
+          <type>DWORD</type>
+        </param>
+        <param>
+          <type>LPSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="234" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="1071" bodyend="1122"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-wince-glue_8h_1a41e53236721a8dd4aef71b62d21ceabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputDebugStringA</definition>
+        <argsstring>(LPCSTR)</argsstring>
+        <name>OutputDebugStringA</name>
+        <param>
+          <type>LPCSTR</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-wince-glue.h" line="241" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="1150" bodyend="1165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-sysdeps-wince-glue.h<sp/>Emulation<sp/>of<sp/>system/libc<sp/>features<sp/>for<sp/>Windows<sp/>CE<sp/>(internal<sp/>to<sp/>D-Bus<sp/>implementation)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_SYSDEPS_WINCE_GLUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_SYSDEPS_WINCE_GLUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>For<sp/>getaddrinfo,<sp/>configure/cmake<sp/>defined<sp/>_WIN32_WCE<sp/>to<sp/>something<sp/>&gt;=<sp/>0x0401.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>shlobj.h<sp/>declares<sp/>these<sp/>only<sp/>for<sp/>_WIN32_IE<sp/>that<sp/>we<sp/>don&apos;t<sp/>want<sp/>to<sp/>define.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/>In<sp/>any<sp/>case,<sp/>with<sp/>mingw32ce<sp/>we<sp/>only<sp/>get<sp/>a<sp/>SHGetSpecialFolderPath.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHGetSpecialFolderPathW<sp/>SHGetSpecialFolderPath</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">BOOL<sp/>WINAPI<sp/>SHGetSpecialFolderPathA(HWND,LPSTR,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,BOOL);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">BOOL<sp/>WINAPI<sp/>SHGetSpecialFolderPathW(HWND,LPWSTR,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,BOOL);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TLS_OUT_OF_INDEXES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLS_OUT_OF_INDEXES<sp/>0xffffffff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Seriously.<sp/><sp/>Windows<sp/>CE<sp/>does<sp/>not<sp/>have<sp/>errno.<sp/><sp/>Don&apos;t<sp/>you<sp/>hate<sp/>it<sp/>when</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/>that<sp/>happens?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>errno<sp/>((int)GetLastError<sp/>())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOENT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_FILE_NOT_FOUND</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EMFILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_TOO_MANY_OPEN_FILES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EACCES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_ACCESS_DENIED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EBADF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_INVALID_HANDLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOMEM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_NOT_ENOUGH_MEMORY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EXDEV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_NOT_SAME_DEVICE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENFILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_NO_MORE_FILES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EROFS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_WRITE_PROTECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOLCK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_SHARING_BUFFER_EXCEEDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOSYS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EEXIST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_FILE_EXISTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPERM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_CANNOT_MAKE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EINVAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_INVALID_PARAMETER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EINTR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_INVALID_AT_INTERRUPT_TIME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPIPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_BROKEN_PIPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOSPC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_DISK_FULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOTEMPTY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_DIR_NOT_EMPTY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EBUSY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_BUSY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENAMETOOLONG<sp/><sp/><sp/><sp/>ERROR_FILENAME_EXCED_RANGE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EAGAIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_MORE_DATA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOTDIR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_DIRECTORY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERANGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_ARITHMETIC_OVERFLOW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENXIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_FILE_INVALID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EFAULT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_PROCESS_ABORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_IO_DEVICE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EDEADLOCK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_POSSIBLE_DEADLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENODEV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERROR_BAD_DEVICE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Windows<sp/>CE<sp/>is<sp/>missing<sp/>more<sp/>stuff<sp/>that<sp/>is<sp/>pretty<sp/>standard.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>strdup<sp/>_strdup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>stricmp<sp/>_stricmp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>strnicmp<sp/>_strnicmp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>environ<sp/>_dbus_wince_environ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*environ[];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>getenv<sp/>_dbus_wince_getenv</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*getenv<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>putenv<sp/>_dbus_wince_putenv</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>putenv<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>clock<sp/>_dbus_wince_clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">clock_t<sp/>clock<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>abort<sp/>_dbus_wince_abort</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>abort<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IFMT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0170000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>file<sp/>type<sp/>mask<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IFDIR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0040000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>directory<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IFCHR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0020000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>character<sp/>special<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IFIFO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0010000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>pipe<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IFREG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0100000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>regular<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IREAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0000400<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>read<sp/>permission,<sp/>owner<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IWRITE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0000200<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>write<sp/>permission,<sp/>owner<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_S_IEXEC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0000100<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>execute/search<sp/>permission,<sp/>owner<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OFF_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>off_t;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OFF_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_INTPTR_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intptr_t;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_INTPTR_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_UINTPTR_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uintptr_t;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_UINTPTR_T_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_MAX_FNAME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_MAX_FNAME<sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_IOFBF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_IOFBF<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_IOLBF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_IOLBF<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_IONBF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_IONBF<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Windows<sp/>CE<sp/>is<sp/>missing<sp/>some<sp/>Windows<sp/>functions<sp/>that<sp/>we<sp/>want.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GetSystemTimeAsFileTime<sp/>_dbus_wince_GetSystemTimeAsFileTime</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetSystemTimeAsFileTime<sp/>(LPFILETIME<sp/>ftp);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_mbsrchr<sp/>_dbus_wince_mbsrchr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>_mbsrchr<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OpenFileMappingA<sp/>_dbus_wince_OpenFileMappingA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">HANDLE<sp/>OpenFileMappingA(DWORD,BOOL,LPCSTR);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MoveFileExA<sp/>_dbus_wince_MoveFileExA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">BOOL<sp/>MoveFileExA(LPCSTR,LPCSTR,DWORD);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MOVEFILE_REPLACE_EXISTING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOVEFILE_REPLACE_EXISTING<sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SetHandleInformation<sp/>_dbus_wince_SetHandleInformation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">BOOL<sp/>SetHandleInformation(HANDLE,DWORD,DWORD);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HANDLE_FLAG_INHERIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HANDLE_FLAG_INHERIT<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HANDLE_FLAG_PROTECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HANDLE_FLAG_PROTECT_FROM_CLOSE<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SearchPathA<sp/>_dbus_wince_SearchPathA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">DWORD<sp/>SearchPathA(LPCSTR,LPCSTR,LPCSTR,DWORD,LPSTR,LPSTR*);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Instead<sp/>of<sp/>emulating<sp/>all<sp/>functions<sp/>needed<sp/>for<sp/>this,<sp/>we<sp/>replace<sp/>the</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/>whole<sp/>thing.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_getsid(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**sid);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LookupAccountNameW<sp/>_dbus_wince_LookupAccountNameW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">BOOL<sp/>LookupAccountNameW(LPCWSTR,LPCWSTR,PSID,PDWORD,LPWSTR,PDWORD,PSID_NAME_USE);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IsValidSid<sp/>_dbus_wince_IsValidSid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal">BOOL<sp/>IsValidSid(PSID);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Windows<sp/>CE<sp/>does<sp/>only<sp/>have<sp/>the<sp/>UNICODE<sp/>interfaces<sp/>(FooW),<sp/>but<sp/>we</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/>want<sp/>to<sp/>use<sp/>the<sp/>ASCII<sp/>interfaces<sp/>(FooA).<sp/><sp/>We<sp/>implement<sp/>them</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/>here.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CreateFileA<sp/>_dbus_wince_CreateFileA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">HANDLE<sp/>CreateFileA(LPCSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DeleteFileA<sp/>_dbus_wince_DeleteFileA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">BOOL<sp/>DeleteFileA(LPCSTR);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GetFileAttributesA<sp/>_dbus_wince_GetFileAttributesA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">DWORD<sp/>GetFileAttributesA(LPCSTR);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GetFileAttributesExA<sp/>_dbus_wince_GetFileAttributesExA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">BOOL<sp/>GetFileAttributesExA(LPCSTR,GET_FILEEX_INFO_LEVELS,PVOID);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CreateFileMappingA<sp/>_dbus_wince_CreateFileMappingA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">HANDLE<sp/>CreateFileMappingA(HANDLE,LPSECURITY_ATTRIBUTES,DWORD,DWORD,DWORD,LPCSTR);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CreateDirectoryA<sp/>_dbus_wince_CreateDirectoryA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">BOOL<sp/>CreateDirectoryA(LPCSTR,LPSECURITY_ATTRIBUTES);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RemoveDirectoryA<sp/>_dbus_wince_RemoveDirectoryA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">BOOL<sp/>RemoveDirectoryA(LPCSTR);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FindFirstFileA<sp/>_dbus_wince_FindFirstFileA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">HANDLE<sp/>FindFirstFileA(LPCSTR,LPWIN32_FIND_DATAA);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FindNextFileA<sp/>_dbus_wince_FindNextFileA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal">BOOL<sp/>FindNextFileA(HANDLE,LPWIN32_FIND_DATAA);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CreateMutexA<sp/>_dbus_wince_CreateMutexA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal">HANDLE<sp/>CreateMutexA(LPSECURITY_ATTRIBUTES,BOOL,LPCSTR);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CreateProcessA<sp/>_dbus_wince_CreateProcessA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">BOOL<sp/>CreateProcessA(LPCSTR,LPSTR,LPSECURITY_ATTRIBUTES,LPSECURITY_ATTRIBUTES,BOOL,DWORD,PVOID,LPCSTR,LPSTARTUPINFOA,LPPROCESS_INFORMATION);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CREATE_NO_WINDOW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CREATE_NO_WINDOW<sp/>0x08000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RegOpenKeyExA<sp/>_dbus_wince_RegOpenKeyExA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal">LONG<sp/>RegOpenKeyExA(HKEY,LPCSTR,DWORD,REGSAM,PHKEY);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RegQueryValueExA<sp/>_dbus_wince_RegQueryValueExA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">LONG<sp/>WINAPI<sp/>RegQueryValueExA(HKEY,LPCSTR,LPDWORD,LPDWORD,LPBYTE,LPDWORD);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FormatMessageA<sp/>_dbus_wince_FormatMessageA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">DWORD<sp/>FormatMessageA(DWORD,PCVOID,DWORD,DWORD,LPSTR,DWORD,va_list*);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GetModuleFileNameA<sp/>_dbus_wince_GetModuleFileNameA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">DWORD<sp/>GetModuleFileNameA(HINSTANCE,LPSTR,DWORD);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GetTempPathA<sp/>_dbus_wince_GetTempPathA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal">DWORD<sp/>GetTempPathA(DWORD,LPSTR);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHGetSpecialFolderPathA<sp/>_dbus_wince_SHGetSpecialFolderPathA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal">BOOL<sp/>SHGetSpecialFolderPathA(HWND,LPSTR,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,BOOL);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OutputDebugStringA<sp/>_dbus_wince_OutputDebugStringA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OutputDebugStringA(LPCSTR);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_SYSDEPS_WINCE_GLUE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-sysdeps-wince-glue.h"/>
+  </compounddef>
+</doxygen>

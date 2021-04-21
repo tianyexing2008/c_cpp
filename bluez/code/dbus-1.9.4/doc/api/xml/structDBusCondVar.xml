@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusCondVar" kind="struct" language="C++" prot="public">
+    <compoundname>DBusCondVar</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" prot="public" static="no" mutable="no">
+        <type>pthread_cond_t</type>
+        <definition>pthread_cond_t DBusCondVar::cond</definition>
+        <argsstring></argsstring>
+        <name>cond</name>
+        <briefdescription>
+<para>the condition </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="57" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusCondVar_1a44acb7f993730cf89d20b6e419f7a61b" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusCondVar::list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+<para>list thread-local-stored events waiting on the cond variable </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-thread-win.c" line="49" column="1" bodyfile="dbus/dbus-sysdeps-thread-win.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusCondVar_1a293695c1c540c1d98c2dbbb23ba53d58" prot="public" static="no" mutable="no">
+        <type>CRITICAL_SECTION</type>
+        <definition>CRITICAL_SECTION DBusCondVar::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>lock protecting the list </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-thread-win.c" line="50" column="1" bodyfile="dbus/dbus-sysdeps-thread-win.c" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="104">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="104" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="104" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-sysdeps-pthread.c" line="56" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="56" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" prot="public" virt="non-virtual"><scope>DBusCondVar</scope><name>cond</name></member>
+      <member refid="structDBusCondVar_1a44acb7f993730cf89d20b6e419f7a61b" prot="public" virt="non-virtual"><scope>DBusCondVar</scope><name>list</name></member>
+      <member refid="structDBusCondVar_1a293695c1c540c1d98c2dbbb23ba53d58" prot="public" virt="non-virtual"><scope>DBusCondVar</scope><name>lock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

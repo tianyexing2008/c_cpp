@@ -1,0 +1,52 @@
+.TH "DBusMemPoolInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMemPoolInternals \- Memory pool implementation details
+.PP
+\fBDBusMemPool\fP implementation details\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusFreedElement\fP"
+.br
+.RI "\fIstruct representing an element on the free list\&. \fP"
+.ti -1c
+.RI "struct \fBDBusMemBlock\fP"
+.br
+.RI "\fI\fBDBusMemBlock\fP object represents a single malloc()-returned block that gets chunked up into objects in the memory pool\&. \fP"
+.ti -1c
+.RI "struct \fBDBusMemPool\fP"
+.br
+.RI "\fIInternals fields of \fBDBusMemPool\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBELEMENT_PADDING\fP   4"
+.br
+.RI "\fIThe dummy size of the variable-length 'elements' field in \fBDBusMemBlock\fP\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusFreedElement\fP \fBDBusFreedElement\fP"
+.br
+.RI "\fItypedef so \fBDBusFreedElement\fP struct can refer to itself\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusMemBlock\fP \fBDBusMemBlock\fP"
+.br
+.RI "\fITypedef for \fBDBusMemBlock\fP so the struct can recursively point to itself\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusMemPool\fP implementation details\&. 
+
+The guts of \fBDBusMemPool\fP\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

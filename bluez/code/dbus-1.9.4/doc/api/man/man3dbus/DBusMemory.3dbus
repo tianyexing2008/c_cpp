@@ -1,0 +1,257 @@
+.TH "DBusMemory" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMemory \- Memory Allocation
+.PP
+\fBdbus_malloc()\fP, \fBdbus_free()\fP, etc\&.  
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBdbus_new\fP(type,  count)   ((type*)\fBdbus_malloc\fP (sizeof (type) * (count)))"
+.br
+.RI "\fISafe macro for using \fBdbus_malloc()\fP\&. \fP"
+.ti -1c
+.RI "#define \fBdbus_new0\fP(type,  count)   ((type*)\fBdbus_malloc0\fP (sizeof (type) * (count)))"
+.br
+.RI "\fISafe macro for using \fBdbus_malloc0()\fP\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBDBusFreeFunction\fP) (void *memory)"
+.br
+.RI "\fIThe type of a function which frees a block of memory\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBdbus_malloc\fP (size_t bytes)"
+.br
+.RI "\fIAllocates the given number of bytes, as with standard malloc()\&. \fP"
+.ti -1c
+.RI "void * \fBdbus_malloc0\fP (size_t bytes)"
+.br
+.RI "\fIAllocates the given number of bytes, as with standard malloc(), but all bytes are initialized to zero as with calloc()\&. \fP"
+.ti -1c
+.RI "void * \fBdbus_realloc\fP (void *memory, size_t bytes)"
+.br
+.RI "\fIResizes a block of memory previously allocated by \fBdbus_malloc()\fP or \fBdbus_malloc0()\fP\&. \fP"
+.ti -1c
+.RI "void \fBdbus_free\fP (void *memory)"
+.br
+.RI "\fIFrees a block of memory previously allocated by \fBdbus_malloc()\fP or \fBdbus_malloc0()\fP\&. \fP"
+.ti -1c
+.RI "void \fBdbus_free_string_array\fP (char **str_array)"
+.br
+.RI "\fIFrees a \fBNULL\fP-terminated array of strings\&. \fP"
+.ti -1c
+.RI "void \fBdbus_shutdown\fP (void)"
+.br
+.RI "\fIFrees all memory allocated internally by libdbus and reverses the effects of \fBdbus_threads_init()\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBdbus_malloc()\fP, \fBdbus_free()\fP, etc\&. 
+
+Functions and macros related to allocating and releasing blocks of memory\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define dbus_new(type, count)   ((type*)\fBdbus_malloc\fP (sizeof (type) * (count)))"
+
+.PP
+Safe macro for using \fBdbus_malloc()\fP\&. Accepts the type to allocate and the number of type instances to allocate as arguments, and returns a memory block cast to the desired type, instead of as a void*\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP type name to allocate 
+.br
+\fIcount\fP number of instances in the allocated array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new memory block or \fBNULL\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file dbus\-memory\&.h\&.
+.PP
+Referenced by _dbus_check_dir_is_private_to_user(), _dbus_connection_close_possibly_shared(), _dbus_credentials_new(), _dbus_groups_from_uid(), _dbus_hash_table_get_n_entries(), _dbus_listen_systemd_sockets(), _dbus_printf_string_upper_bound(), _dbus_register_shutdown_func(), _dbus_server_new_for_socket(), _dbus_type_writer_write_fixed_multi(), dbus_message_copy(), dbus_message_iter_init_append(), and dbus_parse_address()\&.
+.SS "#define dbus_new0(type, count)   ((type*)\fBdbus_malloc0\fP (sizeof (type) * (count)))"
+
+.PP
+Safe macro for using \fBdbus_malloc0()\fP\&. Accepts the type to allocate and the number of type instances to allocate as arguments, and returns a memory block cast to the desired type, instead of as a void*\&. The allocated array is initialized to all-bits-zero\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP type name to allocate 
+.br
+\fIcount\fP number of instances in the allocated array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new memory block or \fBNULL\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file dbus\-memory\&.h\&.
+.PP
+Referenced by _dbus_change_to_daemon_user(), _dbus_connection_new_for_transport(), _dbus_counter_new(), _dbus_decompose_path(), _dbus_directory_open(), _dbus_dup_string_array(), _dbus_get_environment(), _dbus_hash_table_new(), _dbus_mem_pool_new(), _dbus_message_iter_get_args_valist(), _dbus_message_loader_new(), _dbus_object_tree_free_all_unlocked(), _dbus_object_tree_new(), _dbus_pending_call_new_unlocked(), _dbus_server_new_for_socket(), _dbus_server_new_for_tcp_socket(), _dbus_timeout_list_new(), _dbus_timeout_new(), _dbus_transport_new_for_socket(), _dbus_transport_open_platform_specific(), _dbus_user_database_lookup(), _dbus_user_database_lookup_group(), _dbus_user_database_new(), _dbus_watch_list_new(), _dbus_watch_new(), dbus_address_entries_free(), dbus_connection_add_filter(), dbus_message_copy(), dbus_message_get_reply_serial(), and dbus_parse_address()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "DBusFreeFunction"
+
+.PP
+The type of a function which frees a block of memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP the memory to free 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file dbus\-memory\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT void dbus_free (void * memory)"
+
+.PP
+Frees a block of memory previously allocated by \fBdbus_malloc()\fP or \fBdbus_malloc0()\fP\&. If passed \fBNULL\fP, does nothing\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP block to be freed 
+.RE
+.PP
+
+.PP
+Definition at line 701 of file dbus\-memory\&.c\&.
+.PP
+References _dbus_assert, _dbus_atomic_dec(), and TRUE\&.
+.PP
+Referenced by _dbus_address_append_escaped(), _dbus_auth_unref(), _dbus_babysitter_unref(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_connection_close_possibly_shared(), _dbus_connection_handle_watch(), _dbus_connection_new_for_transport(), _dbus_counter_unref(), _dbus_credentials_add_adt_audit_data(), _dbus_credentials_add_windows_sid(), _dbus_credentials_clear(), _dbus_credentials_unref(), _dbus_data_slot_allocator_free(), _dbus_data_slot_list_free(), _dbus_decompose_path(), _dbus_directory_close(), _dbus_directory_open(), _dbus_group_info_free(), _dbus_group_info_free_allocated(), _dbus_groups_from_uid(), _dbus_hash_table_get_n_entries(), _dbus_hash_table_new(), _dbus_hash_table_unref(), _dbus_keyring_unref(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_mem_pool_dealloc(), _dbus_mem_pool_free(), _dbus_message_loader_new(), _dbus_message_loader_return_unix_fds(), _dbus_message_loader_unref(), _dbus_object_tree_get_user_data_unlocked(), _dbus_object_tree_new(), _dbus_object_tree_register(), _dbus_object_tree_unref(), _dbus_pending_call_new_unlocked(), _dbus_pending_call_ref_unlocked(), _dbus_printf_string_upper_bound(), _dbus_server_finalize_base(), _dbus_server_init_base(), _dbus_server_listen_platform_specific(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_socket(), _dbus_server_new_for_tcp_socket(), _dbus_split_paths_and_append(), _dbus_string_find_byte_backward(), _dbus_string_free(), _dbus_timeout_list_free(), _dbus_timeout_unref(), _dbus_transport_finalize_base(), _dbus_transport_new_for_domain_socket(), _dbus_transport_new_for_socket(), _dbus_transport_open(), _dbus_type_writer_write_fixed_multi(), _dbus_user_database_unref(), _dbus_user_info_free(), _dbus_user_info_free_allocated(), _dbus_watch_list_free(), _dbus_watch_unref(), dbus_address_entries_free(), dbus_address_unescape_value(), dbus_connection_free_preallocated_send(), dbus_connection_ref(), dbus_error_free(), dbus_free_string_array(), dbus_message_copy(), dbus_message_get_reply_serial(), dbus_message_iter_init_append(), dbus_parse_address(), dbus_realloc(), dbus_server_get_data(), dbus_set_error(), and dbus_shutdown()\&.
+.SS "DBUS_EXPORT void dbus_free_string_array (char ** str_array)"
+
+.PP
+Frees a \fBNULL\fP-terminated array of strings\&. If passed \fBNULL\fP, does nothing\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr_array\fP the array to be freed 
+.RE
+.PP
+
+.PP
+Definition at line 749 of file dbus\-memory\&.c\&.
+.PP
+References dbus_free()\&.
+.PP
+Referenced by _dbus_auth_set_mechanisms(), _dbus_auth_unref(), _dbus_decompose_path(), _dbus_dup_string_array(), _dbus_get_environment(), _dbus_message_iter_get_args_valist(), _dbus_object_tree_dispatch_and_unlock(), _dbus_object_tree_free_all_unlocked(), _dbus_server_finalize_base(), _dbus_spawn_async_with_babysitter(), _dbus_transport_open_platform_specific(), dbus_connection_get_object_path_data(), dbus_connection_list_registered(), dbus_connection_remove_filter(), dbus_connection_unregister_object_path(), and dbus_server_set_auth_mechanisms()\&.
+.SS "DBUS_EXPORT DBUS_MALLOC void * dbus_malloc (size_t bytes)"
+
+.PP
+Allocates the given number of bytes, as with standard malloc()\&. Guaranteed to return \fBNULL\fP if bytes is zero on all platforms\&. Returns \fBNULL\fP if the allocation fails\&. The memory must be released with \fBdbus_free()\fP\&.
+.PP
+\fBdbus_malloc()\fP memory is NOT safe to free with regular free() from the C library\&. Free it with \fBdbus_free()\fP only\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbytes\fP number of bytes to allocate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+allocated memory, or \fBNULL\fP if the allocation fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line 461 of file dbus\-memory\&.c\&.
+.PP
+References _dbus_abort(), _dbus_atomic_inc(), _dbus_warn(), and NULL\&.
+.PP
+Referenced by _dbus_babysitter_set_watch_functions(), _dbus_check_dir_is_private_to_user(), _dbus_directory_close(), _dbus_file_exists(), _dbus_hash_table_get_n_entries(), _dbus_mem_pool_alloc(), _dbus_mem_pool_dealloc(), _dbus_memdup(), _dbus_printf_string_upper_bound(), _dbus_strdup(), _dbus_string_copy_data(), _dbus_string_init_preallocated(), and dbus_shutdown()\&.
+.SS "DBUS_EXPORT DBUS_MALLOC void * dbus_malloc0 (size_t bytes)"
+
+.PP
+Allocates the given number of bytes, as with standard malloc(), but all bytes are initialized to zero as with calloc()\&. Guaranteed to return \fBNULL\fP if bytes is zero on all platforms\&. Returns \fBNULL\fP if the allocation fails\&. The memory must be released with \fBdbus_free()\fP\&.
+.PP
+\fBdbus_malloc0()\fP memory is NOT safe to free with regular free() from the C library\&. Free it with \fBdbus_free()\fP only\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbytes\fP number of bytes to allocate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+allocated memory, or \fBNULL\fP if the allocation fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line 531 of file dbus\-memory\&.c\&.
+.PP
+References _dbus_abort(), _dbus_atomic_inc(), _dbus_warn(), and NULL\&.
+.PP
+Referenced by _dbus_mem_pool_alloc(), _dbus_mem_pool_dealloc(), and _dbus_object_tree_get_user_data_unlocked()\&.
+.SS "DBUS_EXPORT DBUS_MALLOC void * dbus_realloc (void * memory, size_t bytes)"
+
+.PP
+Resizes a block of memory previously allocated by \fBdbus_malloc()\fP or \fBdbus_malloc0()\fP\&. Guaranteed to free the memory and return \fBNULL\fP if bytes is zero on all platforms\&. Returns \fBNULL\fP if the resize fails\&. If the resize fails, the memory is not freed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP block to be resized 
+.br
+\fIbytes\fP new size of the memory block 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+allocated memory, or \fBNULL\fP if the resize fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line 601 of file dbus\-memory\&.c\&.
+.PP
+References _dbus_abort(), _dbus_atomic_inc(), _dbus_warn(), dbus_free(), FALSE, and NULL\&.
+.PP
+Referenced by _dbus_check_dir_is_private_to_user(), _dbus_data_slot_allocator_alloc(), _dbus_data_slot_list_set(), _dbus_listen_tcp_socket(), _dbus_message_loader_get_unix_fds(), _dbus_string_free(), dbus_message_iter_init_append(), and dbus_shutdown()\&.
+.SS "DBUS_EXPORT void dbus_shutdown (void)"
+
+.PP
+Frees all memory allocated internally by libdbus and reverses the effects of \fBdbus_threads_init()\fP\&. libdbus keeps internal global variables, for example caches and thread locks, and it can be useful to free these internal data structures\&.
+.PP
+\fBdbus_shutdown()\fP does NOT free memory that was returned to the application\&. It only frees libdbus-internal data structures\&.
+.PP
+You MUST free all memory and release all reference counts returned to you by libdbus prior to calling \fBdbus_shutdown()\fP\&.
+.PP
+If a shared connection is open, calling \fBdbus_shutdown()\fP will drain its queue of messages and disconnect it\&. In particular, this will result in processing of the special Disconnected signal, which may result in a call to _exit(), unless you have used \fBdbus_connection_set_exit_on_disconnect()\fP to disable that behaviour\&.
+.PP
+You can't continue to use any D-Bus objects, such as connections, that were allocated prior to \fBdbus_shutdown()\fP\&. You can, however, start over; call \fBdbus_threads_init()\fP again, create new connections, and so forth\&.
+.PP
+WARNING: \fBdbus_shutdown()\fP is NOT thread safe, it must be called while NO other threads are using D-Bus\&. (Remember, you have to free all D-Bus objects and memory before you call \fBdbus_shutdown()\fP, so no thread can be using libdbus\&.)
+.PP
+The purpose of \fBdbus_shutdown()\fP is to allow applications to get clean output from memory leak checkers\&. \fBdbus_shutdown()\fP may also be useful if you want to dlopen() libdbus instead of linking to it, and want to be able to unload the library again\&.
+.PP
+There is absolutely no requirement to call \fBdbus_shutdown()\fP - in fact, most applications won't bother and should not feel guilty\&.
+.PP
+You have to know that nobody is using libdbus in your application's process before you can call \fBdbus_shutdown()\fP\&. One implication of this is that calling \fBdbus_shutdown()\fP from a library is almost certainly wrong, since you don't know what the rest of the app is up to\&. 
+.PP
+Definition at line 897 of file dbus\-memory\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_threads_lock_platform_specific(), _dbus_threads_unlock_platform_specific(), ShutdownClosure::data, dbus_free(), dbus_malloc(), dbus_realloc(), ShutdownClosure::func, ShutdownClosure::next, NULL, and TRUE\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

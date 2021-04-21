@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusServerSocket" kind="struct" language="C++" prot="public">
+    <compoundname>DBusServerSocket</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusServerSocket_1ad811bada4239e72eaf91efdb2de9b5e9" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref></type>
+        <definition>DBusServer DBusServerSocket::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <briefdescription>
+<para>Parent class members. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="52" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="52" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerSocket_1a0585f7f6633ec428ab4a0863cbf4ffb1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusServerSocket::n_fds</definition>
+        <argsstring></argsstring>
+        <name>n_fds</name>
+        <briefdescription>
+<para>Number of active file handles. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="53" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="53" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerSocket_1ab78b3c3d95035fa0428d89ce4acf375e" prot="public" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* DBusServerSocket::fds</definition>
+        <argsstring></argsstring>
+        <name>fds</name>
+        <briefdescription>
+<para>File descriptor or -1 if disconnected. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="54" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="54" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerSocket_1a9b0b7c50962dc70abf9f712369761522" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> **</type>
+        <definition>DBusWatch** DBusServerSocket::watch</definition>
+        <argsstring></argsstring>
+        <name>watch</name>
+        <briefdescription>
+<para>File descriptor watch. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="55" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="55" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerSocket_1ad9467f2872fbf623e72642650af7feb0" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* DBusServerSocket::socket_name</definition>
+        <argsstring></argsstring>
+        <name>socket_name</name>
+        <briefdescription>
+<para>Name of domain socket, to unlink if appropriate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="56" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="56" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1gaa9518c980672f1b8dba8f5a981b93fd9" compoundref="dbus-server-socket_8c" startline="582" endline="588">_dbus_server_socket_own_filename</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerSocket_1a6ea3eebf42eba2469bf64eb0f91e1f97" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusNonceFile" kindref="compound">DBusNonceFile</ref> *</type>
+        <definition>DBusNonceFile* DBusServerSocket::noncefile</definition>
+        <argsstring></argsstring>
+        <name>noncefile</name>
+        <briefdescription>
+<para>Nonce file used to authenticate clients. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="57" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="57" bodyend="-1"/>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="391" endline="514">_dbus_server_new_for_tcp_socket</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusServerSocket" kindref="compound">DBusServerSocket</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>All members are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="476">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="471">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="469" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="472" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="472">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="472" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="468">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="469" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="470" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="478">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="467">
+        <label>DBusServer</label>
+        <link refid="structDBusServer"/>
+        <childnode refid="468" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="466" relation="usage">
+          <edgelabel>guid_hex</edgelabel>
+        </childnode>
+        <childnode refid="471" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="473" relation="usage">
+          <edgelabel>guid</edgelabel>
+        </childnode>
+        <childnode refid="474" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="476" relation="usage">
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="477" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="478" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="467" relation="usage">
+          <edgelabel>new_connection_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="473">
+        <label>DBusGUID</label>
+        <link refid="unionDBusGUID"/>
+      </node>
+      <node id="470">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="475">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="465">
+        <label>DBusNonceFile</label>
+        <link refid="structDBusNonceFile"/>
+        <childnode refid="466" relation="usage">
+          <edgelabel>dir</edgelabel>
+          <edgelabel>path</edgelabel>
+        </childnode>
+      </node>
+      <node id="469">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="469" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="477">
+        <label>DBusServerVTable</label>
+        <link refid="structDBusServerVTable"/>
+      </node>
+      <node id="464">
+        <label>DBusServerSocket</label>
+        <link refid="structDBusServerSocket"/>
+        <childnode refid="465" relation="usage">
+          <edgelabel>noncefile</edgelabel>
+        </childnode>
+        <childnode refid="467" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+        <childnode refid="472" relation="usage">
+          <edgelabel>watch</edgelabel>
+        </childnode>
+      </node>
+      <node id="474">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="475" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="466">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-server-socket.c" line="51" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="50" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structDBusServerSocket_1ad811bada4239e72eaf91efdb2de9b5e9" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>base</name></member>
+      <member refid="structDBusServerSocket_1ab78b3c3d95035fa0428d89ce4acf375e" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>fds</name></member>
+      <member refid="structDBusServerSocket_1a0585f7f6633ec428ab4a0863cbf4ffb1" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>n_fds</name></member>
+      <member refid="structDBusServerSocket_1a6ea3eebf42eba2469bf64eb0f91e1f97" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>noncefile</name></member>
+      <member refid="structDBusServerSocket_1ad9467f2872fbf623e72642650af7feb0" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>socket_name</name></member>
+      <member refid="structDBusServerSocket_1a9b0b7c50962dc70abf9f712369761522" prot="public" virt="non-virtual"><scope>DBusServerSocket</scope><name>watch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusSyntax" kind="group">
+    <compoundname>DBusSyntax</compoundname>
+    <title>Utility functions for strings with special syntax</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSyntax_1ga16a33f0ef4a9efd8f5e8f231dcf13d37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_path</definition>
+        <argsstring>(const char *path, DBusError *error)</argsstring>
+        <name>dbus_validate_path</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an object path for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid object path, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if path is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="54" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="54" bodyend="84"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga616ba4a0280b10222930aedadb7ea8d9" compoundref="dbus-marshal-validate_8c" startline="785" endline="834">_dbus_validate_path</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1ga1023d9c1a44eb2fe05c2b82e23622f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_interface</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_interface</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an interface name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid interface name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="101" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="101" bodyend="131"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga0ad919783f887a9b6f428e262beaeed9" compoundref="dbus-marshal-validate_8c" startline="921" endline="981">_dbus_validate_interface</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gab8540880d62965990957f07630aba700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_member</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_member</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a member (method/signal) name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid member name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="148" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="148" bodyend="178"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1gaf647272768029cb23a4e0d3f493587da" compoundref="dbus-marshal-validate_8c" startline="997" endline="1042">_dbus_validate_member</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gad1c5b9b2dbdb9f9ade7e497b23cb835f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_error_name</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_error_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an error name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid error name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="195" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="195" bodyend="225"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga6d8075f3b60e2e71aad061aa44b120fe" compoundref="dbus-marshal-validate_8c" startline="1058" endline="1064">_dbus_validate_error_name</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gabedd6f4019fc30bc4bbcd144198f8444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_bus_name</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_bus_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a bus name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid bus name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="242" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="242" bodyend="272"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1gaab91a04fa2a96b8ce8843beae7327cd0" compoundref="dbus-marshal-validate_8c" startline="1187" endline="1192">_dbus_validate_bus_name</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1ga7d98d5d9af66ff78e74d5dd1d8cd3390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_utf8</definition>
+        <argsstring>(const char *alleged_utf8, DBusError *error)</argsstring>
+        <name>dbus_validate_utf8</name>
+        <param>
+          <type>const char *</type>
+          <declname>alleged_utf8</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a string for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Strings on D-Bus must be valid UTF-8. Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alleged_utf8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string to be checked, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if alleged_utf8 is valid UTF-8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="289" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="289" bodyend="307"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parsing D-Bus type signatures. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

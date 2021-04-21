@@ -1,0 +1,44 @@
+.TH "DBusMemBlock" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMemBlock \- \fBDBusMemBlock\fP object represents a single malloc()-returned block that gets chunked up into objects in the memory pool\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusMemBlock\fP * \fBnext\fP"
+.br
+.RI "\fInext block in the list, which is already used up; only saved so we can free all the blocks when we free the mem pool\&. \fP"
+.ti -1c
+.RI "long \fBused_so_far\fP"
+.br
+.RI "\fIbytes of this block already allocated as elements\&. \fP"
+.ti -1c
+.RI "unsigned char \fBelements\fP [\fBELEMENT_PADDING\fP]"
+.br
+.RI "\fIthe block data, actually allocated to required size \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusMemBlock\fP object represents a single malloc()-returned block that gets chunked up into objects in the memory pool\&. 
+.PP
+Definition at line 82 of file dbus\-mempool\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "long DBusMemBlock::used_so_far"
+
+.PP
+bytes of this block already allocated as elements\&. 
+.PP
+Definition at line 90 of file dbus\-mempool\&.c\&.
+.PP
+Referenced by _dbus_mem_pool_alloc(), and _dbus_mem_pool_dealloc()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

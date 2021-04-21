@@ -1,0 +1,1091 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusConnection" kind="struct" language="C++" prot="public">
+    <compoundname>DBusConnection</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAtomic" kindref="compound">DBusAtomic</ref></type>
+        <definition>DBusAtomic DBusConnection::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="258" column="1" bodyfile="dbus/dbus-connection.c" bodystart="258" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" compoundref="dbus-connection_8c" startline="1442" endline="1457">_dbus_connection_unref_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a98e26cfd09ddbf0238f90bf4965641bf" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+        <definition>DBusRMutex* DBusConnection::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+<para>Lock on the entire <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="260" column="1" bodyfile="dbus/dbus-connection.c" bodystart="260" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1ad9e7bf73a48f4951b24ce8eec7bb7ac5" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+        <definition>DBusCMutex* DBusConnection::dispatch_mutex</definition>
+        <argsstring></argsstring>
+        <name>dispatch_mutex</name>
+        <briefdescription>
+<para>Protects dispatch_acquired. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="262" column="1" bodyfile="dbus/dbus-connection.c" bodystart="262" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a201f92bbc0947b503a36eaff9ae0ede9" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+        <definition>DBusCondVar* DBusConnection::dispatch_cond</definition>
+        <argsstring></argsstring>
+        <name>dispatch_cond</name>
+        <briefdescription>
+<para>Notify when dispatch_acquired is available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="263" column="1" bodyfile="dbus/dbus-connection.c" bodystart="263" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1aaad1c7d6e6ba3e049ef790f4f9aa35cd" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+        <definition>DBusCMutex* DBusConnection::io_path_mutex</definition>
+        <argsstring></argsstring>
+        <name>io_path_mutex</name>
+        <briefdescription>
+<para>Protects io_path_acquired. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="264" column="1" bodyfile="dbus/dbus-connection.c" bodystart="264" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a6d87e03eea7aaff53f5574efcfb8c3e4" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+        <definition>DBusCondVar* DBusConnection::io_path_cond</definition>
+        <argsstring></argsstring>
+        <name>io_path_cond</name>
+        <briefdescription>
+<para>Notify when io_path_acquired is available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="265" column="1" bodyfile="dbus/dbus-connection.c" bodystart="265" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusConnection::outgoing_messages</definition>
+        <argsstring></argsstring>
+        <name>outgoing_messages</name>
+        <briefdescription>
+<para>Queue of messages we need to send, send the end of the list first. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="267" column="1" bodyfile="dbus/dbus-connection.c" bodystart="267" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga3955cd53ac4f671a5bb54019887389a7" compoundref="dbus-connection_8c" startline="609" endline="614">_dbus_connection_get_message_to_send</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga3d31a01751860b67f960dcaffb7bb4ef" compoundref="dbus-connection_8c" startline="572" endline="576">_dbus_connection_has_messages_to_send_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1aacb3a29956aa7712db37916194fde869" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusConnection::incoming_messages</definition>
+        <argsstring></argsstring>
+        <name>incoming_messages</name>
+        <briefdescription>
+<para>Queue of messages we have received, end of the list received most recently. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="268" column="1" bodyfile="dbus/dbus-connection.c" bodystart="268" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" compoundref="dbus-connection_8c" startline="545" endline="561">_dbus_connection_queue_synthesized_message_link</referencedby>
+        <referencedby refid="group__DBusConnection_1ga9d07083c520e291591a68adb78f64094" compoundref="dbus-connection_8c" startline="3850" endline="3890">dbus_connection_borrow_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1afc069c0dc7f29123d432650580aec036" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusConnection::expired_messages</definition>
+        <argsstring></argsstring>
+        <name>expired_messages</name>
+        <briefdescription>
+<para>Messages that will be released when we next unlock. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="269" column="1" bodyfile="dbus/dbus-connection.c" bodystart="269" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga893d18d8b36ffb371f16d13645071289" compoundref="dbus-connection_8c" startline="4378" endline="4393">dbus_connection_get_dispatch_status</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1aef492b411cd2ebd214f8e4dd15e154af" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* DBusConnection::message_borrowed</definition>
+        <argsstring></argsstring>
+        <name>message_borrowed</name>
+        <briefdescription>
+<para>Filled in if the first incoming message has been borrowed; dispatch_acquired will be set by the borrower. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="271" column="1" bodyfile="dbus/dbus-connection.c" bodystart="271" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga9d07083c520e291591a68adb78f64094" compoundref="dbus-connection_8c" startline="3850" endline="3890">dbus_connection_borrow_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga0586da03a01c9c6f332fbea900ef55e3" compoundref="dbus-connection_8c" startline="3901" endline="3923">dbus_connection_return_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a07025e177949c5e65d5f983ac5f5e878" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusConnection::n_outgoing</definition>
+        <argsstring></argsstring>
+        <name>n_outgoing</name>
+        <briefdescription>
+<para>Length of outgoing queue. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="275" column="1" bodyfile="dbus/dbus-connection.c" bodystart="275" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" compoundref="dbus-connection_8c" startline="1198" endline="1237">_dbus_connection_do_iteration_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a9bda45f2d5c9af5c187fc31d7c98b424" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusConnection::n_incoming</definition>
+        <argsstring></argsstring>
+        <name>n_incoming</name>
+        <briefdescription>
+<para>Length of incoming queue. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="276" column="1" bodyfile="dbus/dbus-connection.c" bodystart="276" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" compoundref="dbus-connection_8c" startline="545" endline="561">_dbus_connection_queue_synthesized_message_link</referencedby>
+        <referencedby refid="group__DBusConnection_1ga10e68d9d2f41d655a4151ddeb807ff54" compoundref="dbus-connection_8c" startline="3641" endline="3661">dbus_connection_flush</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a5dcb660883904035076579c6d2f46501" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+        <definition>DBusCounter* DBusConnection::outgoing_counter</definition>
+        <argsstring></argsstring>
+        <name>outgoing_counter</name>
+        <briefdescription>
+<para>Counts size of outgoing messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="278" column="1" bodyfile="dbus/dbus-connection.c" bodystart="278" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+        <referencedby refid="group__DBusConnection_1gad218838fdaa8d36c606723c63e96f453" compoundref="dbus-connection_8c" startline="6296" endline="6306">dbus_connection_get_outgoing_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+        <definition>DBusTransport* DBusConnection::transport</definition>
+        <argsstring></argsstring>
+        <name>transport</name>
+        <briefdescription>
+<para>Object that sends/receives messages over network. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="280" column="1" bodyfile="dbus/dbus-connection.c" bodystart="280" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" compoundref="dbus-connection_8c" startline="1198" endline="1237">_dbus_connection_do_iteration_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac6dba97d98f486b87468ae8076349a66" compoundref="dbus-connection_8c" startline="2558" endline="2561">_dbus_connection_get_pending_fds_count</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac84ff2ad1060326f8c1f94a171fefa98" compoundref="dbus-connection_8c" startline="2571" endline="2577">_dbus_connection_set_pending_fds_function</referencedby>
+        <referencedby refid="group__DBusConnection_1ga3e41509b3afdbc22872bacc5754e85c2" compoundref="dbus-connection_8c" startline="3105" endline="3129">dbus_connection_can_send_type</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" compoundref="dbus-connection_8c" startline="2932" endline="2950">dbus_connection_close</referencedby>
+        <referencedby refid="group__DBusConnection_1ga969b9dafe806c9fe0a54c9d8a565c2e1" compoundref="dbus-connection_8c" startline="5259" endline="5280">dbus_connection_get_adt_audit_session_data</referencedby>
+        <referencedby refid="group__DBusConnection_1gaa6c5d523e16d8a5b9316c92d9ff1ac17" compoundref="dbus-connection_8c" startline="3029" endline="3040">dbus_connection_get_is_anonymous</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2f1fa02c9897b6f07f4d33c862de4a1d" compoundref="dbus-connection_8c" startline="2995" endline="3006">dbus_connection_get_is_authenticated</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7a459e64d7dca7b592136cec0a73422c" compoundref="dbus-connection_8c" startline="6075" endline="6085">dbus_connection_get_max_message_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga18abaca9a512dbb7b6f921c3df6875d9" compoundref="dbus-connection_8c" startline="6114" endline="6124">dbus_connection_get_max_message_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1ga376529acf41d1d34b4f46c0d9d515c85" compoundref="dbus-connection_8c" startline="6170" endline="6180">dbus_connection_get_max_received_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga219f31132338616f82dc975c070ff418" compoundref="dbus-connection_8c" startline="6212" endline="6222">dbus_connection_get_max_received_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+        <referencedby refid="group__DBusConnection_1gad218838fdaa8d36c606723c63e96f453" compoundref="dbus-connection_8c" startline="6296" endline="6306">dbus_connection_get_outgoing_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1gae6c19e146a37f9de6a06c1617874bed9" compoundref="dbus-connection_8c" startline="3074" endline="3085">dbus_connection_get_server_id</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1c14590d77b148390bde9e82a7544434" compoundref="dbus-connection_8c" startline="5148" endline="5164">dbus_connection_get_socket</referencedby>
+        <referencedby refid="group__DBusConnection_1ga38297f511f4124accdfa68c321e081cc" compoundref="dbus-connection_8c" startline="5118" endline="5130">dbus_connection_get_unix_fd</referencedby>
+        <referencedby refid="group__DBusConnection_1gaeebeadcafa87e2d30eed4296f26fb73c" compoundref="dbus-connection_8c" startline="5226" endline="5245">dbus_connection_get_unix_process_id</referencedby>
+        <referencedby refid="group__DBusConnection_1gaef670c3a8170ab9c719ec955252459d0" compoundref="dbus-connection_8c" startline="5190" endline="5213">dbus_connection_get_unix_user</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2b3cb488f1922aeecdeafdcb110e91a8" compoundref="dbus-connection_8c" startline="5357" endline="5380">dbus_connection_get_windows_user</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" compoundref="dbus-connection_8c" startline="3302" endline="3328">dbus_connection_send</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2fea5f972d1bfe7bcde8c0ec65ca9e90" compoundref="dbus-connection_8c" startline="3217" endline="3251">dbus_connection_send_preallocated</referencedby>
+        <referencedby refid="group__DBusConnection_1gaa215df7ab7ca6dce7be153c6b9cc80ba" compoundref="dbus-connection_8c" startline="3399" endline="3500">dbus_connection_send_with_reply</referencedby>
+        <referencedby refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</referencedby>
+        <referencedby refid="group__DBusConnection_1gade349ff04ed548993a8054250e317c12" compoundref="dbus-connection_8c" startline="5451" endline="5459">dbus_connection_set_allow_anonymous</referencedby>
+        <referencedby refid="group__DBusConnection_1ga0d783462274a6c71d3767f5821c29ce9" compoundref="dbus-connection_8c" startline="6057" endline="6066">dbus_connection_set_max_message_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2aadce7d15c0e11983363912292b3fcd" compoundref="dbus-connection_8c" startline="6096" endline="6105">dbus_connection_set_max_message_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6565d75f16e6e803372b2ae3d94d991b" compoundref="dbus-connection_8c" startline="6152" endline="6161">dbus_connection_set_max_received_size</referencedby>
+        <referencedby refid="group__DBusConnection_1ga81e63dc6d9298e8a7f92c0d93d0e80b3" compoundref="dbus-connection_8c" startline="6194" endline="6203">dbus_connection_set_max_received_unix_fds</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6b78379badb4c5804344f4f3d87a958a" compoundref="dbus-connection_8c" startline="5305" endline="5323">dbus_connection_set_unix_user_function</referencedby>
+        <referencedby refid="group__DBusConnection_1gaa35ced9ccd29d3366749ae383b120f9c" compoundref="dbus-connection_8c" startline="5404" endline="5422">dbus_connection_set_windows_user_function</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1abdb6a32972d924531fb2cd80c7fd6d37" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusWatchList" kindref="compound">DBusWatchList</ref> *</type>
+        <definition>DBusWatchList* DBusConnection::watches</definition>
+        <argsstring></argsstring>
+        <name>watches</name>
+        <briefdescription>
+<para>Stores active watches. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="281" column="1" bodyfile="dbus/dbus-connection.c" bodystart="281" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gaebf031eb444b4f847606aa27daa3d8e6" compoundref="dbus-connection_8c" startline="4926" endline="4947">dbus_connection_set_watch_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1af3936ac5c968f2ac09bf05cf36025994" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+        <definition>DBusTimeoutList* DBusConnection::timeouts</definition>
+        <argsstring></argsstring>
+        <name>timeouts</name>
+        <briefdescription>
+<para>Stores active timeouts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="282" column="1" bodyfile="dbus/dbus-connection.c" bodystart="282" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gab3cbc68eec427e9ce1783b25d44fe93c" compoundref="dbus-connection_8c" startline="4989" endline="5010">dbus_connection_set_timeout_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a32d14cefcb4daea257544397755d45ed" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusConnection::filter_list</definition>
+        <argsstring></argsstring>
+        <name>filter_list</name>
+        <briefdescription>
+<para>List of filters. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="284" column="1" bodyfile="dbus/dbus-connection.c" bodystart="284" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae00f581e5487408cb294bf71826aff86" compoundref="dbus-connection_8c" startline="5511" endline="5548">dbus_connection_add_filter</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a773fb4ecd2738548dbbfbe6d1206da92" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+        <definition>DBusRMutex* DBusConnection::slot_mutex</definition>
+        <argsstring></argsstring>
+        <name>slot_mutex</name>
+        <briefdescription>
+<para>Lock on slot_list so overall connection lock need not be taken. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="286" column="1" bodyfile="dbus/dbus-connection.c" bodystart="286" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a0f805edcd9c09aaf45974510403dccbd" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref></type>
+        <definition>DBusDataSlotList DBusConnection::slot_list</definition>
+        <argsstring></argsstring>
+        <name>slot_list</name>
+        <briefdescription>
+<para>Data stored by allocated integer ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="287" column="1" bodyfile="dbus/dbus-connection.c" bodystart="287" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga845b4942399f43dd4ac644de7cb9e3ff" compoundref="dbus-connection_8c" startline="5968" endline="5997">dbus_connection_set_data</referencedby>
+        <referencedby refid="group__DBusConnection_1ga433fae9844a66d9d078d238e6c723b95" compoundref="dbus-connection_8c" startline="6017" endline="6034">dbus_connection_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+        <definition>DBusHashTable* DBusConnection::pending_replies</definition>
+        <argsstring></argsstring>
+        <name>pending_replies</name>
+        <briefdescription>
+<para>Hash of message serials to <ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="289" column="1" bodyfile="dbus/dbus-connection.c" bodystart="289" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a43d0bb9401103383e13ed3c99baf0daa" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusConnection::client_serial</definition>
+        <argsstring></argsstring>
+        <name>client_serial</name>
+        <briefdescription>
+<para>Client serial. </para>        </briefdescription>
+        <detaileddescription>
+<para>Increments each time a message is sent </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="291" column="1" bodyfile="dbus/dbus-connection.c" bodystart="291" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" compoundref="dbus-connection_8c" startline="1442" endline="1457">_dbus_connection_unref_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1aa70afc41f6184604c027e7f71a314d7f" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusConnection::disconnect_message_link</definition>
+        <argsstring></argsstring>
+        <name>disconnect_message_link</name>
+        <briefdescription>
+<para>Preallocated list node for queueing the disconnection message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="292" column="1" bodyfile="dbus/dbus-connection.c" bodystart="292" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gad5e725e66dc16a411544e25675fb9fba" compoundref="dbus-connection_8c" startline="2379" endline="2550">_dbus_connection_block_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga10e68d9d2f41d655a4151ddeb807ff54" compoundref="dbus-connection_8c" startline="3641" endline="3661">dbus_connection_flush</referencedby>
+        <referencedby refid="group__DBusConnection_1ga371163b4955a6e0bf0f1f70f38390c14" compoundref="dbus-connection_8c" startline="3801" endline="3807">dbus_connection_read_write</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a211104e37f65d45ab8fcb149e4bcc84e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga509465111feb37d60d5e37037266c296" kindref="member">DBusWakeupMainFunction</ref></type>
+        <definition>DBusWakeupMainFunction DBusConnection::wakeup_main_function</definition>
+        <argsstring></argsstring>
+        <name>wakeup_main_function</name>
+        <briefdescription>
+<para>Function to wake up the mainloop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="294" column="1" bodyfile="dbus/dbus-connection.c" bodystart="294" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2b1df13251c7ec348bcba39c0924e881" compoundref="dbus-connection_8c" startline="5027" endline="5050">dbus_connection_set_wakeup_main_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1ac8aff7bafd9ed046d835c5ed80bc218c" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusConnection::wakeup_main_data</definition>
+        <argsstring></argsstring>
+        <name>wakeup_main_data</name>
+        <briefdescription>
+<para>Application data for wakeup_main_function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="295" column="1" bodyfile="dbus/dbus-connection.c" bodystart="295" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2b1df13251c7ec348bcba39c0924e881" compoundref="dbus-connection_8c" startline="5027" endline="5050">dbus_connection_set_wakeup_main_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a8da896126df262503431acd73638c917" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusConnection::free_wakeup_main_data</definition>
+        <argsstring></argsstring>
+        <name>free_wakeup_main_data</name>
+        <briefdescription>
+<para>free wakeup_main_data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="296" column="1" bodyfile="dbus/dbus-connection.c" bodystart="296" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga2b1df13251c7ec348bcba39c0924e881" compoundref="dbus-connection_8c" startline="5027" endline="5050">dbus_connection_set_wakeup_main_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1af6cbafdf80cd474c654fc226581900a2" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga583ca2aff3cce66d68208abdfca5b547" kindref="member">DBusDispatchStatusFunction</ref></type>
+        <definition>DBusDispatchStatusFunction DBusConnection::dispatch_status_function</definition>
+        <argsstring></argsstring>
+        <name>dispatch_status_function</name>
+        <briefdescription>
+<para>Function on dispatch status changes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="298" column="1" bodyfile="dbus/dbus-connection.c" bodystart="298" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga55ff88cd22c0672441c7deffbfb68fbf" compoundref="dbus-connection_8c" startline="5073" endline="5096">dbus_connection_set_dispatch_status_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a0225f7934d1bd118ae2eeacf8a1c6f19" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusConnection::dispatch_status_data</definition>
+        <argsstring></argsstring>
+        <name>dispatch_status_data</name>
+        <briefdescription>
+<para>Application data for dispatch_status_function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="299" column="1" bodyfile="dbus/dbus-connection.c" bodystart="299" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga55ff88cd22c0672441c7deffbfb68fbf" compoundref="dbus-connection_8c" startline="5073" endline="5096">dbus_connection_set_dispatch_status_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a71f8b1e2078c4edb98c62de1886dfb2a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusConnection::free_dispatch_status_data</definition>
+        <argsstring></argsstring>
+        <name>free_dispatch_status_data</name>
+        <briefdescription>
+<para>free dispatch_status_data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="300" column="1" bodyfile="dbus/dbus-connection.c" bodystart="300" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga55ff88cd22c0672441c7deffbfb68fbf" compoundref="dbus-connection_8c" startline="5073" endline="5096">dbus_connection_set_dispatch_status_function</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1af3bbd2ecba171ebb8e952eaa030971d7" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1gabf250a32ff740b2a8c99136e0142d8d2" kindref="member">DBusDispatchStatus</ref></type>
+        <definition>DBusDispatchStatus DBusConnection::last_dispatch_status</definition>
+        <argsstring></argsstring>
+        <name>last_dispatch_status</name>
+        <briefdescription>
+<para>The last dispatch status we reported to the application. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="302" column="1" bodyfile="dbus/dbus-connection.c" bodystart="302" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1acd289771721a459f4f9cdeaca0fa87c2" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusObjectTree" kindref="compound">DBusObjectTree</ref> *</type>
+        <definition>DBusObjectTree* DBusConnection::objects</definition>
+        <argsstring></argsstring>
+        <name>objects</name>
+        <briefdescription>
+<para>Object path handlers registered with this connection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="304" column="1" bodyfile="dbus/dbus-connection.c" bodystart="304" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6ae8f005dedf24c5f2df1768795392fb" compoundref="dbus-connection_8c" startline="5809" endline="5828">dbus_connection_unregister_object_path</referencedby>
+        <referencedby refid="group__DBusConnection_1ga08ee6e70b74c294fe24d0f391f16db24" compoundref="dbus-connection_8c" startline="5841" endline="5865">dbus_connection_get_object_path_data</referencedby>
+        <referencedby refid="group__DBusConnection_1ga3e9de2067d0eed66ef73230fae8d8be2" compoundref="dbus-connection_8c" startline="5878" endline="5900">dbus_connection_list_registered</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1ad1abb7ad98db87f32b4abda22df075bd" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* DBusConnection::server_guid</definition>
+        <argsstring></argsstring>
+        <name>server_guid</name>
+        <briefdescription>
+<para>GUID of server if we are in shared_connections, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if server GUID is unknown or connection is private. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="306" column="1" bodyfile="dbus/dbus-connection.c" bodystart="306" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a11803a01d74d956ef37e6aa092f0cf17" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t DBusConnection::dispatch_acquired</definition>
+        <argsstring></argsstring>
+        <name>dispatch_acquired</name>
+        <briefdescription>
+<para>Someone has dispatch path (can drain incoming queue) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="312" column="1" bodyfile="dbus/dbus-connection.c" bodystart="312" bodyend="-1"/>
+        <referencedby refid="group__DBusConnection_1ga0586da03a01c9c6f332fbea900ef55e3" compoundref="dbus-connection_8c" startline="3901" endline="3923">dbus_connection_return_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a9f71e445534a4405075c33b5a075589f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t DBusConnection::io_path_acquired</definition>
+        <argsstring></argsstring>
+        <name>io_path_acquired</name>
+        <briefdescription>
+<para>Someone has transport io path (can use the transport to read/write messages) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="313" column="1" bodyfile="dbus/dbus-connection.c" bodystart="313" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1aae47138b9b2494b65072ff300d631aa8" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::shareable</definition>
+        <argsstring></argsstring>
+        <name>shareable</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if libdbus owns a reference to the connection and can return it from <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref> more than once </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="315" column="1" bodyfile="dbus/dbus-connection.c" bodystart="315" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" compoundref="dbus-connection_8c" startline="2932" endline="2950">dbus_connection_close</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a2a9f22339f90157f308a532462218404" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::exit_on_disconnect</definition>
+        <argsstring></argsstring>
+        <name>exit_on_disconnect</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>If <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, exit after handling disconnect signal. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="317" column="1" bodyfile="dbus/dbus-connection.c" bodystart="317" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" compoundref="dbus-connection_8c" startline="3145" endline="3153">dbus_connection_set_exit_on_disconnect</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1ab13bc36d7e6f91995768277ecbd5482c" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::route_peer_messages</definition>
+        <argsstring></argsstring>
+        <name>route_peer_messages</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>If <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, if org.freedesktop.DBus.Peer messages have a bus name, don&apos;t handle them automatically. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="319" column="1" bodyfile="dbus/dbus-connection.c" bodystart="319" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga893d18d8b36ffb371f16d13645071289" compoundref="dbus-connection_8c" startline="4378" endline="4393">dbus_connection_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusConnection_1gaf58e8cc7b8717db1581459c0c3d34b08" compoundref="dbus-connection_8c" startline="5479" endline="5487">dbus_connection_set_route_peer_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a48d141d4311211e921571043bdbaeefb" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::disconnected_message_arrived</definition>
+        <argsstring></argsstring>
+        <name>disconnected_message_arrived</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>We popped or are dispatching the disconnected message. </para>        </briefdescription>
+        <detaileddescription>
+<para>if the disconnect_message_link is NULL then we queued it, but this flag is whether it got to the head of the queue. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="321" column="1" bodyfile="dbus/dbus-connection.c" bodystart="321" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga371163b4955a6e0bf0f1f70f38390c14" compoundref="dbus-connection_8c" startline="3801" endline="3807">dbus_connection_read_write</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a3b2707b9d10d0643f91a8e027ae118b5" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::disconnected_message_processed</definition>
+        <argsstring></argsstring>
+        <name>disconnected_message_processed</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>We did our default handling of the disconnected message, such as closing the connection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="325" column="1" bodyfile="dbus/dbus-connection.c" bodystart="325" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusConnection_1a336a7953a4a28e55f6e6a07acfa11df3" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusConnection::have_connection_lock</definition>
+        <argsstring></argsstring>
+        <name>have_connection_lock</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Used to check locking. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.c" line="330" column="1" bodyfile="dbus/dbus-connection.c" bodystart="330" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>All fields are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="106">
+        <label>DBusConnection</label>
+        <link refid="structDBusConnection"/>
+        <childnode refid="107" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
+          <edgelabel>pending_replies</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="106" relation="usage">
+          <edgelabel>dispatch_status_function</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>dispatch_mutex</edgelabel>
+          <edgelabel>io_path_mutex</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="123" relation="usage">
+          <edgelabel>io_path_cond</edgelabel>
+          <edgelabel>dispatch_cond</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>message_borrowed</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>incoming_messages</edgelabel>
+          <edgelabel>filter_list</edgelabel>
+          <edgelabel>outgoing_messages</edgelabel>
+          <edgelabel>disconnect_message_link</edgelabel>
+          <edgelabel>expired_messages</edgelabel>
+        </childnode>
+        <childnode refid="128" relation="usage">
+          <edgelabel>slot_mutex</edgelabel>
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>transport</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>outgoing_counter</edgelabel>
+        </childnode>
+      </node>
+      <node id="126">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="127" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>DBusObjectSubtree</label>
+        <link refid="structDBusObjectSubtree"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>message_function</edgelabel>
+          <edgelabel>unregister_function</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
+          <edgelabel>parent</edgelabel>
+          <edgelabel>subtrees</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+      </node>
+      <node id="128">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="115">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="111" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="136">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
+        <label>DBusTransportVTable</label>
+        <link refid="structDBusTransportVTable"/>
+      </node>
+      <node id="116">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="116" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="131">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="130" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="113" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>DBusCounter</label>
+        <link refid="structDBusCounter"/>
+        <childnode refid="138" relation="usage">
+          <edgelabel>notify_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="130" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="133">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="122">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="134">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="135" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="133" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="112" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="113" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="120">
+        <label>DBusObjectTree</label>
+        <link refid="structDBusObjectTree"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="118">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="108">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="129">
+        <label>DBusTransport</label>
+        <link refid="structDBusTransport"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>unix_user_function</edgelabel>
+          <edgelabel>windows_user_function</edgelabel>
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="130" relation="usage">
+          <edgelabel>auth</edgelabel>
+        </childnode>
+        <childnode refid="133" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>loader</edgelabel>
+        </childnode>
+        <childnode refid="137" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>live_messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="119">
+        <label>DBusCMutex</label>
+        <link refid="structDBusCMutex"/>
+      </node>
+      <node id="114">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="114" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="123">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="112">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="112" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="118" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="130">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="131" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="125" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="132" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="133" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="134" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-connection.c" line="257" column="1" bodyfile="dbus/dbus-connection.c" bodystart="256" bodyend="336"/>
+    <listofallmembers>
+      <member refid="structDBusConnection_1a43d0bb9401103383e13ed3c99baf0daa" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>client_serial</name></member>
+      <member refid="structDBusConnection_1aa70afc41f6184604c027e7f71a314d7f" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>disconnect_message_link</name></member>
+      <member refid="structDBusConnection_1a48d141d4311211e921571043bdbaeefb" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>disconnected_message_arrived</name></member>
+      <member refid="structDBusConnection_1a3b2707b9d10d0643f91a8e027ae118b5" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>disconnected_message_processed</name></member>
+      <member refid="structDBusConnection_1a11803a01d74d956ef37e6aa092f0cf17" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>dispatch_acquired</name></member>
+      <member refid="structDBusConnection_1a201f92bbc0947b503a36eaff9ae0ede9" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>dispatch_cond</name></member>
+      <member refid="structDBusConnection_1ad9e7bf73a48f4951b24ce8eec7bb7ac5" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>dispatch_mutex</name></member>
+      <member refid="structDBusConnection_1a0225f7934d1bd118ae2eeacf8a1c6f19" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>dispatch_status_data</name></member>
+      <member refid="structDBusConnection_1af6cbafdf80cd474c654fc226581900a2" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>dispatch_status_function</name></member>
+      <member refid="structDBusConnection_1a2a9f22339f90157f308a532462218404" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>exit_on_disconnect</name></member>
+      <member refid="structDBusConnection_1afc069c0dc7f29123d432650580aec036" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>expired_messages</name></member>
+      <member refid="structDBusConnection_1a32d14cefcb4daea257544397755d45ed" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>filter_list</name></member>
+      <member refid="structDBusConnection_1a71f8b1e2078c4edb98c62de1886dfb2a" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>free_dispatch_status_data</name></member>
+      <member refid="structDBusConnection_1a8da896126df262503431acd73638c917" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>free_wakeup_main_data</name></member>
+      <member refid="structDBusConnection_1a336a7953a4a28e55f6e6a07acfa11df3" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>have_connection_lock</name></member>
+      <member refid="structDBusConnection_1aacb3a29956aa7712db37916194fde869" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>incoming_messages</name></member>
+      <member refid="structDBusConnection_1a9f71e445534a4405075c33b5a075589f" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>io_path_acquired</name></member>
+      <member refid="structDBusConnection_1a6d87e03eea7aaff53f5574efcfb8c3e4" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>io_path_cond</name></member>
+      <member refid="structDBusConnection_1aaad1c7d6e6ba3e049ef790f4f9aa35cd" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>io_path_mutex</name></member>
+      <member refid="structDBusConnection_1af3bbd2ecba171ebb8e952eaa030971d7" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>last_dispatch_status</name></member>
+      <member refid="structDBusConnection_1aef492b411cd2ebd214f8e4dd15e154af" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>message_borrowed</name></member>
+      <member refid="structDBusConnection_1a98e26cfd09ddbf0238f90bf4965641bf" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>mutex</name></member>
+      <member refid="structDBusConnection_1a9bda45f2d5c9af5c187fc31d7c98b424" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>n_incoming</name></member>
+      <member refid="structDBusConnection_1a07025e177949c5e65d5f983ac5f5e878" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>n_outgoing</name></member>
+      <member refid="structDBusConnection_1acd289771721a459f4f9cdeaca0fa87c2" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>objects</name></member>
+      <member refid="structDBusConnection_1a5dcb660883904035076579c6d2f46501" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>outgoing_counter</name></member>
+      <member refid="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>outgoing_messages</name></member>
+      <member refid="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>pending_replies</name></member>
+      <member refid="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>refcount</name></member>
+      <member refid="structDBusConnection_1ab13bc36d7e6f91995768277ecbd5482c" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>route_peer_messages</name></member>
+      <member refid="structDBusConnection_1ad1abb7ad98db87f32b4abda22df075bd" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>server_guid</name></member>
+      <member refid="structDBusConnection_1aae47138b9b2494b65072ff300d631aa8" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>shareable</name></member>
+      <member refid="structDBusConnection_1a0f805edcd9c09aaf45974510403dccbd" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>slot_list</name></member>
+      <member refid="structDBusConnection_1a773fb4ecd2738548dbbfbe6d1206da92" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>slot_mutex</name></member>
+      <member refid="structDBusConnection_1af3936ac5c968f2ac09bf05cf36025994" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>timeouts</name></member>
+      <member refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>transport</name></member>
+      <member refid="structDBusConnection_1ac8aff7bafd9ed046d835c5ed80bc218c" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>wakeup_main_data</name></member>
+      <member refid="structDBusConnection_1a211104e37f65d45ab8fcb149e4bcc84e" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>wakeup_main_function</name></member>
+      <member refid="structDBusConnection_1abdb6a32972d924531fb2cd80c7fd6d37" prot="public" virt="non-virtual"><scope>DBusConnection</scope><name>watches</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

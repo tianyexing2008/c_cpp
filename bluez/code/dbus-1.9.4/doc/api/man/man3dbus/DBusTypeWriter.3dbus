@@ -1,0 +1,91 @@
+.TH "DBusTypeWriter" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTypeWriter \- The type writer is an iterator for writing to a block of values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-marshal\-recursive\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBbyte_order\fP: 8"
+.br
+.RI "\fIbyte order to write values with \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBcontainer_type\fP: 8"
+.br
+.RI "\fIwhat are we inside? (e\&.g\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBtype_pos_is_expectation\fP: 1"
+.br
+.RI "\fItype_pos can be either an insertion point for or an expected next type \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBenabled\fP: 1"
+.br
+.RI "\fIwhether to write values \fP"
+.ti -1c
+.RI "\fBDBusString\fP * \fBtype_str\fP"
+.br
+.RI "\fIwhere to write typecodes (or read type expectations) \fP"
+.ti -1c
+.RI "int \fBtype_pos\fP"
+.br
+.RI "\fIcurrent pos in type_str \fP"
+.ti -1c
+.RI "\fBDBusString\fP * \fBvalue_str\fP"
+.br
+.RI "\fIwhere to write values \fP"
+.ti -1c
+.RI "int \fBvalue_pos\fP"
+.br
+.RI "\fInext position to write \fP"
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      int \fBstart_pos\fP"
+.br
+.RI "\fIposition of first element in the array \fP"
+.ti -1c
+.RI "      int \fBlen_pos\fP"
+.br
+.RI "\fIposition of length of the array \fP"
+.ti -1c
+.RI "      int \fBelement_type_pos\fP"
+.br
+.RI "\fIposition of array element type in type_str \fP"
+.ti -1c
+.RI "   } \fBarray\fP"
+.br
+.ti -1c
+.RI "} \fBu\fP"
+.br
+.RI "\fIclass-specific data \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The type writer is an iterator for writing to a block of values\&. 
+.PP
+Definition at line 64 of file dbus\-marshal\-recursive\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBdbus_uint32_t\fP DBusTypeWriter::container_type"
+
+.PP
+what are we inside? (e\&.g\&. struct, variant, array) 
+.PP
+Definition at line 68 of file dbus\-marshal\-recursive\&.h\&.
+.PP
+Referenced by _dbus_type_writer_append_array(), _dbus_type_writer_init(), _dbus_type_writer_init_values_only(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_fixed_multi(), and dbus_message_iter_append_fixed_array()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

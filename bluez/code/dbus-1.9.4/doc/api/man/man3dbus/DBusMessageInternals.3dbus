@@ -1,0 +1,1117 @@
+.TH "DBusMessageInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMessageInternals \- DBusMessage implementation details
+.PP
+\fBDBusMessage\fP private implementation details\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusMessageLoader\fP"
+.br
+.RI "\fIImplementation details of \fBDBusMessageLoader\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusMessage\fP"
+.br
+.RI "\fIInternals of \fBDBusMessage\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusMessageRealIter\fP"
+.br
+.RI "\fIInternals of \fBDBusMessageIter\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCHANGED_STAMP_BITS\fP   21"
+.br
+.RI "\fIHow many bits are in the changed_stamp used to validate iterators\&. \fP"
+.ti -1c
+.RI "#define \fB_dbus_enable_message_cache\fP()   (\fBTRUE\fP)"
+.br
+.ti -1c
+.RI "#define \fBensure_byte_order\fP(message)   _dbus_message_byteswap (message)"
+.br
+.RI "\fIbyte-swap the message if it doesn't match our byte order\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_MESSAGE_SIZE_TO_CACHE\fP   10 * _DBUS_ONE_KILOBYTE"
+.br
+.RI "\fIAvoid caching huge messages\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_MESSAGE_CACHE_SIZE\fP   5"
+.br
+.RI "\fIAvoid caching too many messages\&. \fP"
+.ti -1c
+.RI "#define \fBINITIAL_LOADER_DATA_LEN\fP   32"
+.br
+.RI "\fIThe initial buffer size of the message loader\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusMessageRealIter\fP \fBDBusMessageRealIter\fP"
+.br
+.RI "\fItypedef for internals of message iterator \fP"
+.ti -1c
+.RI "typedef struct \fBDBusMessageLoader\fP \fBDBusMessageLoader\fP"
+.br
+.RI "\fIThe \fBDBusMessageLoader\fP object encapsulates the process of converting a byte stream into a series of \fBDBusMessage\fP\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBDBUS_MESSAGE_ITER_TYPE_READER\fP = 3, \fBDBUS_MESSAGE_ITER_TYPE_WRITER\fP = 7 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_message_iter_get_args_valist\fP (\fBDBusMessageIter\fP *iter, \fBDBusError\fP *error, int first_arg_type, va_list var_args)"
+.br
+.RI "\fIImplementation of the varargs arg-getting functions\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_trace_ref\fP (\fBDBusMessage\fP *message, int old_refcount, int new_refcount, const char *why)"
+.br
+.ti -1c
+.RI "\fB_DBUS_STRING_DEFINE_STATIC\fP (_dbus_empty_signature_str,'')"
+.br
+.RI "\fIAn static string representing an empty signature\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_get_network_data\fP (\fBDBusMessage\fP *message, const \fBDBusString\fP **header, const \fBDBusString\fP **body)"
+.br
+.RI "\fIGets the data to be sent over the network for this message\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_get_unix_fds\fP (\fBDBusMessage\fP *message, const int **fds, unsigned *n_fds)"
+.br
+.RI "\fIGets the unix fds to be sent over the network for this message\&. \fP"
+.ti -1c
+.RI "void \fBdbus_message_set_serial\fP (\fBDBusMessage\fP *message, \fBdbus_uint32_t\fP serial)"
+.br
+.RI "\fISets the serial number of a message\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_add_counter_link\fP (\fBDBusMessage\fP *message, \fBDBusList\fP *link)"
+.br
+.RI "\fIAdds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_message_add_counter\fP (\fBDBusMessage\fP *message, \fBDBusCounter\fP *counter)"
+.br
+.RI "\fIAdds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_remove_counter\fP (\fBDBusMessage\fP *message, \fBDBusCounter\fP *counter)"
+.br
+.RI "\fIRemoves a counter tracking the size/unix fds of this message, and decrements the counter by the size/unix fds of this message\&. \fP"
+.ti -1c
+.RI "void \fBdbus_message_lock\fP (\fBDBusMessage\fP *message)"
+.br
+.RI "\fILocks a message\&. \fP"
+.ti -1c
+.RI "\fBDBusMessageLoader\fP * \fB_dbus_message_loader_new\fP (void)"
+.br
+.RI "\fICreates a new message loader\&. \fP"
+.ti -1c
+.RI "\fBDBusMessageLoader\fP * \fB_dbus_message_loader_ref\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIIncrements the reference count of the loader\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_unref\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIDecrements the reference count of the loader and finalizes the loader when the count reaches zero\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_get_buffer\fP (\fBDBusMessageLoader\fP *loader, \fBDBusString\fP **buffer)"
+.br
+.RI "\fIGets the buffer to use for reading data from the network\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_return_buffer\fP (\fBDBusMessageLoader\fP *loader, \fBDBusString\fP *buffer)"
+.br
+.RI "\fIReturns a buffer obtained from \fB_dbus_message_loader_get_buffer()\fP, indicating to the loader how many bytes of the buffer were filled in\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_message_loader_get_unix_fds\fP (\fBDBusMessageLoader\fP *loader, int **fds, unsigned *max_n_fds)"
+.br
+.RI "\fIGets the buffer to use for reading unix fds from the network\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_return_unix_fds\fP (\fBDBusMessageLoader\fP *loader, int *fds, unsigned n_fds)"
+.br
+.RI "\fIReturns a buffer obtained from \fB_dbus_message_loader_get_unix_fds()\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_message_loader_queue_messages\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIConverts buffered data into messages, if we have enough data\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fB_dbus_message_loader_peek_message\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIPeeks at first loaded message, returns \fBNULL\fP if no messages have been queued\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fB_dbus_message_loader_pop_message\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIPops a loaded message (passing ownership of the message to the caller)\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fB_dbus_message_loader_pop_message_link\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIPops a loaded message inside a list link (passing ownership of the message and link to the caller)\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_putback_message_link\fP (\fBDBusMessageLoader\fP *loader, \fBDBusList\fP *link)"
+.br
+.RI "\fIReturns a popped message link, used to undo a pop\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_message_loader_get_is_corrupted\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIChecks whether the loader is confused due to bad data\&. \fP"
+.ti -1c
+.RI "\fBDBusValidity\fP \fB_dbus_message_loader_get_corruption_reason\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIChecks what kind of bad data confused the loader\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_set_max_message_size\fP (\fBDBusMessageLoader\fP *loader, long size)"
+.br
+.RI "\fISets the maximum size message we allow\&. \fP"
+.ti -1c
+.RI "long \fB_dbus_message_loader_get_max_message_size\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIGets the maximum allowed message size in bytes\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_set_max_message_unix_fds\fP (\fBDBusMessageLoader\fP *loader, long n)"
+.br
+.RI "\fISets the maximum unix fds per message we allow\&. \fP"
+.ti -1c
+.RI "long \fB_dbus_message_loader_get_max_message_unix_fds\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIGets the maximum allowed number of unix fds per message\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_message_loader_get_pending_fds_count\fP (\fBDBusMessageLoader\fP *loader)"
+.br
+.RI "\fIReturn how many file descriptors are pending in the loader\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_message_loader_set_pending_fds_function\fP (\fBDBusMessageLoader\fP *loader, void(*callback)(void *), void *data)"
+.br
+.RI "\fIRegister a function to be called whenever the number of pending file descriptors in the loader change\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_message_allocate_data_slot\fP (\fBdbus_int32_t\fP *slot_p)"
+.br
+.RI "\fIAllocates an integer ID to be used for storing application-specific data on any \fBDBusMessage\fP\&. \fP"
+.ti -1c
+.RI "void \fBdbus_message_free_data_slot\fP (\fBdbus_int32_t\fP *slot_p)"
+.br
+.RI "\fIDeallocates a global ID for message data slots\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_message_set_data\fP (\fBDBusMessage\fP *message, \fBdbus_int32_t\fP slot, void *data, \fBDBusFreeFunction\fP free_data_func)"
+.br
+.RI "\fIStores a pointer on a \fBDBusMessage\fP, along with an optional function to be used for freeing the data when the data is set again, or when the message is finalized\&. \fP"
+.ti -1c
+.RI "void * \fBdbus_message_get_data\fP (\fBDBusMessage\fP *message, \fBdbus_int32_t\fP slot)"
+.br
+.RI "\fIRetrieves data previously set with \fBdbus_message_set_data()\fP\&. \fP"
+.ti -1c
+.RI "int \fBdbus_message_type_from_string\fP (const char *type_str)"
+.br
+.RI "\fIUtility function to convert a machine-readable (not translated) string into a D-Bus message type\&. \fP"
+.ti -1c
+.RI "const char * \fBdbus_message_type_to_string\fP (int type)"
+.br
+.RI "\fIUtility function to convert a D-Bus message type into a machine-readable string (not translated)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_message_marshal\fP (\fBDBusMessage\fP *msg, char **marshalled_data_p, int *len_p)"
+.br
+.RI "\fITurn a \fBDBusMessage\fP into the marshalled form as described in the D-Bus specification\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fBdbus_message_demarshal\fP (const char *str, int len, \fBDBusError\fP *error)"
+.br
+.RI "\fIDemarshal a D-Bus message from the format described in the D-Bus specification\&. \fP"
+.ti -1c
+.RI "int \fBdbus_message_demarshal_bytes_needed\fP (const char *buf, int len)"
+.br
+.RI "\fIReturns the number of bytes required to be in the buffer to demarshal a D-Bus message\&. \fP"
+.ti -1c
+.RI "void \fBdbus_message_set_allow_interactive_authorization\fP (\fBDBusMessage\fP *message, \fBdbus_bool_t\fP allow)"
+.br
+.RI "\fISets a flag indicating that the caller of the method is prepared to wait for interactive authorization to take place (for instance via Polkit) before the actual method is processed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_message_get_allow_interactive_authorization\fP (\fBDBusMessage\fP *message)"
+.br
+.RI "\fIReturns whether the flag controlled by \fBdbus_message_set_allow_interactive_authorization()\fP has been set\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusMessage\fP private implementation details\&. 
+
+The guts of \fBDBusMessage\fP and its methods\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ensure_byte_order(message)   _dbus_message_byteswap (message)"
+
+.PP
+byte-swap the message if it doesn't match our byte order\&. Called only when we need the message in our own byte order, normally when reading arrays of integers or doubles\&. Otherwise should not be called since it would do needless work\&. 
+.PP
+Definition at line 195 of file dbus\-message\&.c\&.
+.PP
+Referenced by dbus_message_get_args_valist()\&.
+.SS "#define INITIAL_LOADER_DATA_LEN   32"
+
+.PP
+The initial buffer size of the message loader\&. 
+.PP
+\fBTodo\fP
+.RS 4
+this should be based on min header size plus some average body size, or something\&. Or rather, the min header size only, if we want to try to read only the header, store that in a \fBDBusMessage\fP, then read only the body and store that, etc\&., depends on how we optimize \fB_dbus_message_loader_get_buffer()\fP and what the exact message format is\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3854 of file dbus\-message\&.c\&.
+.PP
+Referenced by _dbus_message_loader_new()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBDBusMessageLoader\fP"
+
+.PP
+The \fBDBusMessageLoader\fP object encapsulates the process of converting a byte stream into a series of \fBDBusMessage\fP\&. It buffers the incoming bytes as efficiently as possible, and generates a queue of messages\&. \fBDBusMessageLoader\fP is typically used as part of a \fBDBusTransport\fP implementation\&. The \fBDBusTransport\fP then hands off the loaded messages to a \fBDBusConnection\fP, making the messages visible to the application\&.
+.PP
+\fBTodo\fP
+.RS 4
+write tests for break-loader that a) randomly delete header fields and b) set string fields to zero-length and other funky values\&.
+.RE
+.PP
+
+.PP
+Definition at line 48 of file dbus\-message\-internal\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_message_add_counter (\fBDBusMessage\fP * message, \fBDBusCounter\fP * counter)"
+
+.PP
+Adds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized\&. This function may be called with locks held\&. As a result, the counter's notify function is not called; the caller is expected to either call \fB_dbus_counter_notify()\fP on the counter when they are no longer holding locks, or take the same action that would be taken by the notify function\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIcounter\fP the counter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file dbus\-message\&.c\&.
+.PP
+References _dbus_counter_ref(), _dbus_list_alloc_link(), _dbus_message_add_counter_link(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_transport_queue_messages()\&.
+.SS "void _dbus_message_add_counter_link (\fBDBusMessage\fP * message, \fBDBusList\fP * link)"
+
+.PP
+Adds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized\&. The link contains a counter with its refcount already incremented, but the counter itself not incremented\&. Ownership of link and counter refcount is passed to the message\&.
+.PP
+This function may be called with locks held\&. As a result, the counter's notify function is not called; the caller is expected to either call \fB_dbus_counter_notify()\fP on the counter when they are no longer holding locks, or take the same action that would be taken by the notify function\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIlink\fP link with counter as data 
+.RE
+.PP
+
+.PP
+Definition at line 280 of file dbus\-message\&.c\&.
+.PP
+References _dbus_counter_adjust_size(), _dbus_counter_adjust_unix_fd(), _dbus_list_append_link(), DBusMessage::body, DBusMessage::counters, DBusList::data, DBusHeader::data, DBusMessage::header, NULL, and DBusMessage::size_counter_delta\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), and _dbus_message_add_counter()\&.
+.SS "void _dbus_message_get_network_data (\fBDBusMessage\fP * message, const \fBDBusString\fP ** header, const \fBDBusString\fP ** body)"
+
+.PP
+Gets the data to be sent over the network for this message\&. The header and then the body should be written out\&. This function is guaranteed to always return the same data once a message is locked (with \fBdbus_message_lock()\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message\&. 
+.br
+\fIheader\fP return location for message header data\&. 
+.br
+\fIbody\fP return location for message body data\&. 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessage::body, DBusHeader::data, DBusMessage::header, and DBusMessage::locked\&.
+.SS "void _dbus_message_get_unix_fds (\fBDBusMessage\fP * message, const int ** fds, unsigned * n_fds)"
+
+.PP
+Gets the unix fds to be sent over the network for this message\&. This function is guaranteed to always return the same data once a message is locked (with \fBdbus_message_lock()\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message\&. 
+.br
+\fIfds\fP return location of unix fd array 
+.br
+\fIn_fds\fP return number of entries in array 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessage::locked, and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_message_iter_get_args_valist (\fBDBusMessageIter\fP * iter, \fBDBusError\fP * error, int first_arg_type, va_list var_args)"
+
+.PP
+Implementation of the varargs arg-getting functions\&. \fBdbus_message_get_args()\fP is the place to go for complete documentation\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBdbus_message_get_args\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the message iter 
+.br
+\fIerror\fP error to be filled in 
+.br
+\fIfirst_arg_type\fP type of the first argument 
+.br
+\fIvar_args\fP return location for first argument, followed by list of type/location pairs 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error was set 
+.RE
+.PP
+
+.PP
+Definition at line 796 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_close(), _dbus_dup(), _dbus_strdup(), _dbus_type_reader_get_current_type(), _dbus_type_reader_get_element_type(), _dbus_type_reader_next(), _dbus_type_reader_read_basic(), _dbus_type_reader_read_fixed_multi(), _dbus_type_reader_recurse(), _dbus_type_to_string(), _dbus_warn(), DBUS_ERROR_INCONSISTENT_MESSAGE, DBUS_ERROR_INVALID_ARGS, DBUS_ERROR_NOT_SUPPORTED, dbus_free_string_array(), dbus_message_iter_get_arg_type(), dbus_new0, dbus_set_error(), DBUS_TYPE_ARRAY, DBUS_TYPE_INVALID, dbus_type_is_basic(), dbus_type_is_fixed(), DBUS_TYPE_UNIX_FD, FALSE, DBusMessageRealIter::message, NULL, DBusMessageRealIter::reader, TRUE, DBusMessageRealIter::u, and DBusBasicValue::u32\&.
+.PP
+Referenced by dbus_message_get_args_valist()\&.
+.SS "void _dbus_message_loader_get_buffer (\fBDBusMessageLoader\fP * loader, \fBDBusString\fP ** buffer)"
+
+.PP
+Gets the buffer to use for reading data from the network\&. Network data is read directly into an allocated buffer, which is then used in the \fBDBusMessage\fP, to avoid as many extra memcpy's as possible\&. The buffer must always be returned immediately using \fB_dbus_message_loader_return_buffer()\fP, even if no bytes are successfully read\&.
+.PP
+\fBTodo\fP
+.RS 4
+this function can be a lot more clever\&. For example it can probably always return a buffer size to read exactly the body of the next message, thus avoiding any memory wastage or reallocs\&.
+.RE
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+we need to enforce a max length on strings in header fields\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the message loader\&. 
+.br
+\fIbuffer\fP the buffer 
+.RE
+.PP
+
+.PP
+Definition at line 3962 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessageLoader::buffer_outstanding, DBusMessageLoader::data, and TRUE\&.
+.PP
+Referenced by _dbus_transport_do_iteration(), and dbus_message_demarshal()\&.
+.SS "\fBDBusValidity\fP _dbus_message_loader_get_corruption_reason (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Checks what kind of bad data confused the loader\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+why the loader is hosed, or DBUS_VALID if it isn't\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4438 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessageLoader::corrupted, DBusMessageLoader::corruption_reason, and DBUS_VALID\&.
+.SS "\fBdbus_bool_t\fP _dbus_message_loader_get_is_corrupted (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Checks whether the loader is confused due to bad data\&. If messages are received that are invalid, the loader gets confused and gives up permanently\&. This state is called 'corrupted\&.'
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the loader is hosed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4424 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessageLoader::corrupted, DBusMessageLoader::corruption_reason, and DBUS_VALID\&.
+.PP
+Referenced by _dbus_transport_queue_messages(), and dbus_message_demarshal()\&.
+.SS "long _dbus_message_loader_get_max_message_size (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Gets the maximum allowed message size in bytes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+max size in bytes 
+.RE
+.PP
+
+.PP
+Definition at line 4472 of file dbus\-message\&.c\&.
+.PP
+References DBusMessageLoader::max_message_size\&.
+.PP
+Referenced by _dbus_transport_get_max_message_size()\&.
+.SS "long _dbus_message_loader_get_max_message_unix_fds (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Gets the maximum allowed number of unix fds per message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+max unix fds 
+.RE
+.PP
+
+.PP
+Definition at line 4503 of file dbus\-message\&.c\&.
+.PP
+References DBusMessageLoader::max_message_unix_fds\&.
+.PP
+Referenced by _dbus_transport_get_max_message_unix_fds()\&.
+.SS "int _dbus_message_loader_get_pending_fds_count (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Return how many file descriptors are pending in the loader\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.RE
+.PP
+
+.PP
+Definition at line 4514 of file dbus\-message\&.c\&.
+.PP
+Referenced by _dbus_transport_get_pending_fds_count()\&.
+.SS "\fBdbus_bool_t\fP _dbus_message_loader_get_unix_fds (\fBDBusMessageLoader\fP * loader, int ** fds, unsigned * max_n_fds)"
+
+.PP
+Gets the buffer to use for reading unix fds from the network\&. This works similar to \fB_dbus_message_loader_get_buffer()\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the message loader\&. 
+.br
+\fIfds\fP the array to read fds into 
+.br
+\fImax_n_fds\fP how many fds to read at most 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success, FALSE on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 4002 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, dbus_realloc(), FALSE, DBusMessageLoader::max_message_unix_fds, and TRUE\&.
+.SS "\fBDBusMessageLoader\fP* _dbus_message_loader_new (void)"
+
+.PP
+Creates a new message loader\&. Returns \fBNULL\fP if memory can't be allocated\&.
+.PP
+\fBReturns:\fP
+.RS 4
+new loader, or \fBNULL\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3863 of file dbus\-message\&.c\&.
+.PP
+References _dbus_string_init(), _dbus_string_set_length(), DBusMessageLoader::corrupted, DBusMessageLoader::corruption_reason, DBusMessageLoader::data, dbus_free(), DBUS_MAXIMUM_MESSAGE_LENGTH, dbus_new0, DBUS_VALID, FALSE, INITIAL_LOADER_DATA_LEN, DBusMessageLoader::max_message_size, DBusMessageLoader::max_message_unix_fds, NULL, and DBusMessageLoader::refcount\&.
+.PP
+Referenced by _dbus_transport_init_base(), and dbus_message_demarshal()\&.
+.SS "\fBDBusMessage\fP* _dbus_message_loader_peek_message (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Peeks at first loaded message, returns \fBNULL\fP if no messages have been queued\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the next message, or \fBNULL\fP if none\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4365 of file dbus\-message\&.c\&.
+.PP
+References DBusList::data, DBusMessageLoader::messages, and NULL\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status()\&.
+.SS "\fBDBusMessage\fP* _dbus_message_loader_pop_message (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Pops a loaded message (passing ownership of the message to the caller)\&. Returns \fBNULL\fP if no messages have been queued\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the next message, or \fBNULL\fP if none\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4382 of file dbus\-message\&.c\&.
+.PP
+References _dbus_list_pop_first(), and DBusMessageLoader::messages\&.
+.PP
+Referenced by dbus_message_demarshal()\&.
+.SS "\fBDBusList\fP* _dbus_message_loader_pop_message_link (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Pops a loaded message inside a list link (passing ownership of the message and link to the caller)\&. Returns \fBNULL\fP if no messages have been loaded\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the next message link, or \fBNULL\fP if none\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4396 of file dbus\-message\&.c\&.
+.PP
+References _dbus_list_pop_first_link(), and DBusMessageLoader::messages\&.
+.PP
+Referenced by _dbus_transport_queue_messages()\&.
+.SS "void _dbus_message_loader_putback_message_link (\fBDBusMessageLoader\fP * loader, \fBDBusList\fP * link)"
+
+.PP
+Returns a popped message link, used to undo a pop\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.br
+\fIlink\fP the link with a message in it 
+.RE
+.PP
+
+.PP
+Definition at line 4408 of file dbus\-message\&.c\&.
+.PP
+References _dbus_list_prepend_link(), and DBusMessageLoader::messages\&.
+.PP
+Referenced by _dbus_transport_queue_messages()\&.
+.SS "\fBdbus_bool_t\fP _dbus_message_loader_queue_messages (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Converts buffered data into messages, if we have enough data\&. If we don't have enough data, does nothing\&.
+.PP
+\fBTodo\fP
+.RS 4
+we need to check that the proper named header fields exist for each message type\&.
+.RE
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+If a message has unknown type, we should probably eat it right here rather than passing it out to applications\&. However it's not an error to see messages of unknown type\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if we had enough memory to finish\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4302 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_have_message_untrusted(), _dbus_list_find_last(), DBusMessageLoader::corrupted, DBusMessageLoader::corruption_reason, DBusMessageLoader::data, dbus_message_unref(), DBUS_MINIMUM_HEADER_SIZE, DBUS_VALID, FALSE, DBusMessageLoader::max_message_size, DBusMessageRealIter::message, DBusMessageLoader::messages, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status(), and dbus_message_demarshal()\&.
+.SS "\fBDBusMessageLoader\fP* _dbus_message_loader_ref (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Increments the reference count of the loader\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the loader 
+.RE
+.PP
+
+.PP
+Definition at line 3911 of file dbus\-message\&.c\&.
+.PP
+References DBusMessageLoader::refcount\&.
+.SS "void _dbus_message_loader_return_buffer (\fBDBusMessageLoader\fP * loader, \fBDBusString\fP * buffer)"
+
+.PP
+Returns a buffer obtained from \fB_dbus_message_loader_get_buffer()\fP, indicating to the loader how many bytes of the buffer were filled in\&. This function must always be called, even if no bytes were successfully read\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.br
+\fIbuffer\fP the buffer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3982 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, DBusMessageLoader::buffer_outstanding, DBusMessageLoader::data, and FALSE\&.
+.PP
+Referenced by _dbus_transport_do_iteration(), and dbus_message_demarshal()\&.
+.SS "void _dbus_message_loader_return_unix_fds (\fBDBusMessageLoader\fP * loader, int * fds, unsigned n_fds)"
+
+.PP
+Returns a buffer obtained from \fB_dbus_message_loader_get_unix_fds()\fP\&. This works similar to \fB_dbus_message_loader_return_buffer()\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the message loader\&. 
+.br
+\fIfds\fP the array fds were read into 
+.br
+\fIn_fds\fP how many fds were read 
+.RE
+.PP
+
+.PP
+Definition at line 4051 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_header_get_field_basic(), _dbus_header_load(), _dbus_list_append(), _dbus_list_find_last(), _dbus_list_remove_last(), _dbus_memdup(), _dbus_string_compact(), _dbus_string_copy_len(), _dbus_string_delete(), _dbus_validate_body_with_reason(), _dbus_verbose_bytes_of_string(), DBusMessage::body, DBusMessageLoader::corrupted, DBusMessageLoader::corruption_reason, DBusHeader::data, DBusMessageLoader::data, dbus_free(), DBUS_HEADER_FIELD_UNIX_FDS, DBUS_TYPE_UINT32, DBUS_VALID, DBUS_VALIDITY_UNKNOWN_OOM_ERROR, FALSE, DBusMessage::header, DBusMessageLoader::messages, NULL, and TRUE\&.
+.SS "void _dbus_message_loader_set_max_message_size (\fBDBusMessageLoader\fP * loader, long size)"
+
+.PP
+Sets the maximum size message we allow\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.br
+\fIsize\fP the max message size in bytes 
+.RE
+.PP
+
+.PP
+Definition at line 4453 of file dbus\-message\&.c\&.
+.PP
+References DBUS_MAXIMUM_MESSAGE_LENGTH, and DBusMessageLoader::max_message_size\&.
+.PP
+Referenced by _dbus_transport_set_max_message_size()\&.
+.SS "void _dbus_message_loader_set_max_message_unix_fds (\fBDBusMessageLoader\fP * loader, long n)"
+
+.PP
+Sets the maximum unix fds per message we allow\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.br
+\fIn\fP the max number of unix fds in a message 
+.RE
+.PP
+
+.PP
+Definition at line 4484 of file dbus\-message\&.c\&.
+.PP
+References DBUS_MAXIMUM_MESSAGE_UNIX_FDS, and DBusMessageLoader::max_message_unix_fds\&.
+.PP
+Referenced by _dbus_transport_set_max_message_unix_fds()\&.
+.SS "void _dbus_message_loader_set_pending_fds_function (\fBDBusMessageLoader\fP * loader, void(*)(void *) callback, void * data)"
+
+.PP
+Register a function to be called whenever the number of pending file descriptors in the loader change\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader 
+.br
+\fIcallback\fP the callback 
+.br
+\fIdata\fP the data for the callback 
+.RE
+.PP
+
+.PP
+Definition at line 4532 of file dbus\-message\&.c\&.
+.PP
+References _DBUS_LOCK_NAME\&.
+.PP
+Referenced by _dbus_transport_set_pending_fds_function()\&.
+.SS "void _dbus_message_loader_unref (\fBDBusMessageLoader\fP * loader)"
+
+.PP
+Decrements the reference count of the loader and finalizes the loader when the count reaches zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloader\fP the loader\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3925 of file dbus\-message\&.c\&.
+.PP
+References _dbus_list_clear(), _dbus_list_foreach(), _dbus_string_free(), DBusMessageLoader::data, dbus_free(), dbus_message_unref(), DBusMessageLoader::messages, NULL, and DBusMessageLoader::refcount\&.
+.PP
+Referenced by _dbus_transport_finalize_base(), _dbus_transport_init_base(), and dbus_message_demarshal()\&.
+.SS "void _dbus_message_remove_counter (\fBDBusMessage\fP * message, \fBDBusCounter\fP * counter)"
+
+.PP
+Removes a counter tracking the size/unix fds of this message, and decrements the counter by the size/unix fds of this message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIcounter\fP the counter 
+.RE
+.PP
+
+.PP
+Definition at line 352 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_counter_adjust_size(), _dbus_counter_adjust_unix_fd(), _dbus_counter_notify(), _dbus_counter_unref(), _dbus_list_find_last(), _dbus_list_remove_link(), DBusMessage::counters, NULL, and DBusMessage::size_counter_delta\&.
+.PP
+Referenced by _dbus_connection_message_sent_unlocked(), and dbus_connection_ref()\&.
+.SS "\fBdbus_bool_t\fP dbus_message_allocate_data_slot (\fBdbus_int32_t\fP * slot_p)"
+
+.PP
+Allocates an integer ID to be used for storing application-specific data on any \fBDBusMessage\fP\&. The allocated ID may then be used with \fBdbus_message_set_data()\fP and \fBdbus_message_get_data()\fP\&. The passed-in slot must be initialized to -1, and is filled in with the slot ID\&. If the passed-in slot is not -1, it's assumed to be already allocated, and its refcount is incremented\&.
+.PP
+The allocated slot is global, i\&.e\&. all \fBDBusMessage\fP objects will have a slot with the given integer ID reserved\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIslot_p\fP address of a global variable storing the slot 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure (no memory) 
+.RE
+.PP
+
+.PP
+Definition at line 4560 of file dbus\-message\&.c\&.
+.PP
+References _dbus_data_slot_allocator_alloc()\&.
+.SS "\fBDBusMessage\fP* dbus_message_demarshal (const char * str, int len, \fBDBusError\fP * error)"
+
+.PP
+Demarshal a D-Bus message from the format described in the D-Bus specification\&. Generally, this function is only useful for encapsulating D-Bus messages in a different protocol\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the marshalled \fBDBusMessage\fP 
+.br
+\fIlen\fP the length of str 
+.br
+\fIerror\fP the location to save errors to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBNULL\fP if there was an error 
+.RE
+.PP
+
+.PP
+Definition at line 4783 of file dbus\-message\&.c\&.
+.PP
+References _dbus_message_loader_get_buffer(), _dbus_message_loader_get_is_corrupted(), _dbus_message_loader_new(), _dbus_message_loader_pop_message(), _dbus_message_loader_queue_messages(), _dbus_message_loader_return_buffer(), _dbus_message_loader_unref(), _dbus_string_append_len(), DBusMessageLoader::corruption_reason, DBUS_ERROR_INVALID_ARGS, dbus_set_error(), and NULL\&.
+.SS "int dbus_message_demarshal_bytes_needed (const char * buf, int len)"
+
+.PP
+Returns the number of bytes required to be in the buffer to demarshal a D-Bus message\&. Generally, this function is only useful for encapsulating D-Bus messages in a different protocol\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP data to be marshalled 
+.br
+\fIlen\fP the length of \fCbuf\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+-1 if there was no valid data to be demarshalled, 0 if there wasn't enough data to determine how much should be demarshalled\&. Otherwise returns the number of bytes to be demarshalled 
+.RE
+.PP
+
+.PP
+Definition at line 4841 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_have_message_untrusted(), _dbus_string_free(), _dbus_string_init_const_len(), DBUS_MAXIMUM_MESSAGE_LENGTH, DBUS_MINIMUM_HEADER_SIZE, and DBUS_VALID\&.
+.SS "void dbus_message_free_data_slot (\fBdbus_int32_t\fP * slot_p)"
+
+.PP
+Deallocates a global ID for message data slots\&. \fBdbus_message_get_data()\fP and \fBdbus_message_set_data()\fP may no longer be used with this slot\&. Existing data stored on existing \fBDBusMessage\fP objects will be freed when the message is finalized, but may not be retrieved (and may only be replaced if someone else reallocates the slot)\&. When the refcount on the passed-in slot reaches 0, it is set to -1\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIslot_p\fP address storing the slot to deallocate 
+.RE
+.PP
+
+.PP
+Definition at line 4578 of file dbus\-message\&.c\&.
+.PP
+References _dbus_data_slot_allocator_free()\&.
+.SS "\fBdbus_bool_t\fP dbus_message_get_allow_interactive_authorization (\fBDBusMessage\fP * message)"
+
+.PP
+Returns whether the flag controlled by \fBdbus_message_set_allow_interactive_authorization()\fP has been set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Definition at line 4919 of file dbus\-message\&.c\&.
+.PP
+References _dbus_header_get_flag(), DBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION, FALSE, DBusMessage::header, and NULL\&.
+.SS "void* dbus_message_get_data (\fBDBusMessage\fP * message, \fBdbus_int32_t\fP slot)"
+
+.PP
+Retrieves data previously set with \fBdbus_message_set_data()\fP\&. The slot must still be allocated (must not have been freed)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIslot\fP the slot to get data from 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the data, or \fBNULL\fP if not found 
+.RE
+.PP
+
+.PP
+Definition at line 4635 of file dbus\-message\&.c\&.
+.PP
+References _dbus_data_slot_list_get(), NULL, and DBusMessage::slot_list\&.
+.SS "void dbus_message_lock (\fBDBusMessage\fP * message)"
+
+.PP
+Locks a message\&. Allows checking that applications don't keep a reference to a message in the outgoing queue and change it underneath us\&. Messages are locked when they enter the outgoing queue (dbus_connection_send_message()), and the library complains if the message is modified while locked\&. This function may also called externally, for applications wrapping D-Bus in another protocol\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message to lock\&. 
+.RE
+.PP
+
+.PP
+Definition at line 384 of file dbus\-message\&.c\&.
+.PP
+References _dbus_assert, _dbus_header_delete_field(), _dbus_header_set_field_basic(), _dbus_header_update_lengths(), DBusMessage::body, DBUS_HEADER_FIELD_SIGNATURE, dbus_message_get_signature(), DBUS_TYPE_SIGNATURE, FALSE, DBusMessage::header, DBusMessage::locked, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), and dbus_message_marshal()\&.
+.SS "\fBdbus_bool_t\fP dbus_message_marshal (\fBDBusMessage\fP * msg, char ** marshalled_data_p, int * len_p)"
+
+.PP
+Turn a \fBDBusMessage\fP into the marshalled form as described in the D-Bus specification\&. Generally, this function is only useful for encapsulating D-Bus messages in a different protocol\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP the \fBDBusMessage\fP 
+.br
+\fImarshalled_data_p\fP the location to save the marshalled form to 
+.br
+\fIlen_p\fP the location to save the length of the marshalled form to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if there was not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 4721 of file dbus\-message\&.c\&.
+.PP
+References _dbus_string_copy(), _dbus_string_free(), _dbus_string_init(), _dbus_string_steal_data(), DBusMessage::body, DBusHeader::data, dbus_message_lock(), FALSE, DBusMessage::header, DBusMessage::locked, NULL, and TRUE\&.
+.SS "void dbus_message_set_allow_interactive_authorization (\fBDBusMessage\fP * message, \fBdbus_bool_t\fP allow)"
+
+.PP
+Sets a flag indicating that the caller of the method is prepared to wait for interactive authorization to take place (for instance via Polkit) before the actual method is processed\&. The flag is \fBFALSE\fP by default; that is, by default the other end is expected to make any authorization decisions non-interactively and promptly\&. It may use the error \fBDBUS_ERROR_INTERACTIVE_AUTHORIZATION_REQUIRED\fP to signal that authorization failed, but could have succeeded if this flag had been used\&.
+.PP
+For messages whose type is not \fBDBUS_MESSAGE_TYPE_METHOD_CALL\fP, this flag is meaningless and should not be set\&.
+.PP
+On the protocol level this toggles \fBDBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIallow\fP \fBTRUE\fP if interactive authorization is acceptable 
+.RE
+.PP
+
+.PP
+Definition at line 4901 of file dbus\-message\&.c\&.
+.PP
+References _dbus_header_toggle_flag(), DBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION, DBusMessage::header, DBusMessage::locked, and NULL\&.
+.SS "\fBdbus_bool_t\fP dbus_message_set_data (\fBDBusMessage\fP * message, \fBdbus_int32_t\fP slot, void * data, \fBDBusFreeFunction\fP free_data_func)"
+
+.PP
+Stores a pointer on a \fBDBusMessage\fP, along with an optional function to be used for freeing the data when the data is set again, or when the message is finalized\&. The slot number must have been allocated with \fBdbus_message_allocate_data_slot()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIslot\fP the slot number 
+.br
+\fIdata\fP the data to store 
+.br
+\fIfree_data_func\fP finalizer function for the data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if there was enough memory to store the data 
+.RE
+.PP
+
+.PP
+Definition at line 4599 of file dbus\-message\&.c\&.
+.PP
+References _dbus_data_slot_list_set(), FALSE, NULL, and DBusMessage::slot_list\&.
+.SS "void dbus_message_set_serial (\fBDBusMessage\fP * message, \fBdbus_uint32_t\fP serial)"
+
+.PP
+Sets the serial number of a message\&. This can only be done once on a message\&.
+.PP
+\fBDBusConnection\fP will automatically set the serial to an appropriate value when the message is sent; this function is only needed when encapsulating messages in another protocol, or otherwise bypassing \fBDBusConnection\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP the message 
+.br
+\fIserial\fP the serial 
+.RE
+.PP
+
+.PP
+Definition at line 254 of file dbus\-message\&.c\&.
+.PP
+References _dbus_header_set_serial(), DBusMessage::header, DBusMessage::locked, and NULL\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), and dbus_connection_send_with_reply()\&.
+.SS "int dbus_message_type_from_string (const char * type_str)"
+
+.PP
+Utility function to convert a machine-readable (not translated) string into a D-Bus message type\&. 
+.PP
+.nf
+1 "method_call"    -> DBUS_MESSAGE_TYPE_METHOD_CALL
+2 "method_return"  -> DBUS_MESSAGE_TYPE_METHOD_RETURN
+3 "signal"         -> DBUS_MESSAGE_TYPE_SIGNAL
+4 "error"          -> DBUS_MESSAGE_TYPE_ERROR
+5 anything else    -> DBUS_MESSAGE_TYPE_INVALID
+
+.fi
+.PP
+ 
+.PP
+Definition at line 4663 of file dbus\-message\&.c\&.
+.PP
+References DBUS_MESSAGE_TYPE_ERROR, DBUS_MESSAGE_TYPE_INVALID, DBUS_MESSAGE_TYPE_METHOD_CALL, DBUS_MESSAGE_TYPE_METHOD_RETURN, and DBUS_MESSAGE_TYPE_SIGNAL\&.
+.SS "const char* dbus_message_type_to_string (int type)"
+
+.PP
+Utility function to convert a D-Bus message type into a machine-readable string (not translated)\&. 
+.PP
+.nf
+1 DBUS_MESSAGE_TYPE_METHOD_CALL    -> "method_call"
+2 DBUS_MESSAGE_TYPE_METHOD_RETURN  -> "method_return"
+3 DBUS_MESSAGE_TYPE_SIGNAL         -> "signal"
+4 DBUS_MESSAGE_TYPE_ERROR          -> "error"
+5 DBUS_MESSAGE_TYPE_INVALID        -> "invalid"
+
+.fi
+.PP
+ 
+.PP
+Definition at line 4691 of file dbus\-message\&.c\&.
+.PP
+References DBUS_MESSAGE_TYPE_ERROR, DBUS_MESSAGE_TYPE_METHOD_CALL, DBUS_MESSAGE_TYPE_METHOD_RETURN, and DBUS_MESSAGE_TYPE_SIGNAL\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), _dbus_connection_message_sent_unlocked(), _dbus_connection_queue_received_message_link(), dbus_connection_dispatch(), and dbus_connection_steal_borrowed_message()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

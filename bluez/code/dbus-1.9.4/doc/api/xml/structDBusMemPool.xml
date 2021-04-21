@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusMemPool" kind="struct" language="C++" prot="public">
+    <compoundname>DBusMemPool</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusMemPool::element_size</definition>
+        <argsstring></argsstring>
+        <name>element_size</name>
+        <briefdescription>
+<para>size of a single object in the pool </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="100" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="100" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMemPool_1a45cdcee97621d5a2bd85edd90d87d8bf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusMemPool::block_size</definition>
+        <argsstring></argsstring>
+        <name>block_size</name>
+        <briefdescription>
+<para>size of most recently allocated block </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="101" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="101" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMemPool_1a2ebffd5d3e0eb209b1d0fa5779609818" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusMemPool::zero_elements</definition>
+        <argsstring></argsstring>
+        <name>zero_elements</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>whether to zero-init allocated elements </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="102" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="102" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMemPool_1af02ff4ac188a7a04a02ab140e568886b" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusFreedElement" kindref="compound">DBusFreedElement</ref> *</type>
+        <definition>DBusFreedElement* DBusMemPool::free_elements</definition>
+        <argsstring></argsstring>
+        <name>free_elements</name>
+        <briefdescription>
+<para>a free list of elements to recycle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="104" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="104" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMemPool_1a4682e065e26ee0dc4d2a17023cb41b8b" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusMemBlock" kindref="compound">DBusMemBlock</ref> *</type>
+        <definition>DBusMemBlock* DBusMemPool::blocks</definition>
+        <argsstring></argsstring>
+        <name>blocks</name>
+        <briefdescription>
+<para>blocks of memory from malloc() </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="105" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="105" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" compoundref="dbus-mempool_8c" startline="187" endline="204">_dbus_mem_pool_free</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMemPool_1a23cd8af3ecb8cd88074b1934b1d7597c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusMemPool::allocated_elements</definition>
+        <argsstring></argsstring>
+        <name>allocated_elements</name>
+        <briefdescription>
+<para>Count of outstanding allocated elements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="106" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="106" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals fields of <ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="192">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="192" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="190">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="191" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="192" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="191" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-mempool.c" line="99" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="98" bodyend="107"/>
+    <listofallmembers>
+      <member refid="structDBusMemPool_1a23cd8af3ecb8cd88074b1934b1d7597c" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>allocated_elements</name></member>
+      <member refid="structDBusMemPool_1a45cdcee97621d5a2bd85edd90d87d8bf" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>block_size</name></member>
+      <member refid="structDBusMemPool_1a4682e065e26ee0dc4d2a17023cb41b8b" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>blocks</name></member>
+      <member refid="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>element_size</name></member>
+      <member refid="structDBusMemPool_1af02ff4ac188a7a04a02ab140e568886b" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>free_elements</name></member>
+      <member refid="structDBusMemPool_1a2ebffd5d3e0eb209b1d0fa5779609818" prot="public" virt="non-virtual"><scope>DBusMemPool</scope><name>zero_elements</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

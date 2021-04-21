@@ -1,0 +1,62 @@
+.TH "DBusList" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusList \- A node in a linked list\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusList\fP * \fBprev\fP"
+.br
+.RI "\fIPrevious list node\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBnext\fP"
+.br
+.RI "\fINext list node\&. \fP"
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.RI "\fIData stored at this element\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A node in a linked list\&. 
+
+\fBDBusList\fP is a circular list; that is, the tail of the list points back to the head of the list\&. The empty list is represented by a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 34 of file dbus\-list\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "void* DBusList::data"
+
+.PP
+Data stored at this element\&. 
+.PP
+Definition at line 38 of file dbus\-list\&.h\&.
+.PP
+Referenced by _dbus_address_append_escaped(), _dbus_connection_close_if_only_one_ref(), _dbus_connection_close_possibly_shared(), _dbus_connection_message_sent_unlocked(), _dbus_connection_queue_received_message_link(), _dbus_connection_queue_synthesized_message_link(), _dbus_connection_unlock(), _dbus_list_copy(), _dbus_list_find_last(), _dbus_list_foreach(), _dbus_list_length_is_one(), _dbus_list_pop_first(), _dbus_list_pop_last(), _dbus_list_remove(), _dbus_message_add_counter_link(), _dbus_message_loader_peek_message(), _dbus_object_tree_dispatch_and_unlock(), _dbus_pending_call_ref_unlocked(), _dbus_pending_call_set_reply_unlocked(), _dbus_timeout_list_set_functions(), _dbus_transport_queue_messages(), _dbus_watch_list_set_functions(), _dbus_watch_list_toggle_all_watches(), dbus_address_entry_get_value(), dbus_connection_dispatch(), dbus_connection_free_preallocated_send(), dbus_connection_get_dispatch_status(), dbus_connection_pop_message(), dbus_connection_ref(), dbus_connection_remove_filter(), dbus_connection_steal_borrowed_message(), and dbus_parse_address()\&.
+.SS "\fBDBusList\fP* DBusList::next"
+
+.PP
+Next list node\&. 
+.PP
+Definition at line 37 of file dbus\-list\&.h\&.
+.PP
+Referenced by _dbus_list_append(), _dbus_list_append_link(), _dbus_list_length_is_one(), and _dbus_list_unlink()\&.
+.SS "\fBDBusList\fP* DBusList::prev"
+
+.PP
+Previous list node\&. 
+.PP
+Definition at line 36 of file dbus\-list\&.h\&.
+.PP
+Referenced by _dbus_list_length_is_one(), and _dbus_list_unlink()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

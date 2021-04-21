@@ -1,0 +1,277 @@
+.TH "DBusThreads" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusThreads \- Thread functions
+.PP
+\fBdbus_threads_init()\fP and \fBdbus_threads_init_default()\fP  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusThreadFunctions\fP"
+.br
+.RI "\fIFunctions that must be implemented to make the D-Bus library thread-aware\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusMutex\fP \fBDBusMutex\fP"
+.br
+.RI "\fIAn opaque mutex type provided by the \fBDBusThreadFunctions\fP implementation installed by \fBdbus_threads_init()\fP\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusCondVar\fP \fBDBusCondVar\fP"
+.br
+.RI "\fIAn opaque condition variable type provided by the \fBDBusThreadFunctions\fP implementation installed by \fBdbus_threads_init()\fP\&. \fP"
+.ti -1c
+.RI "typedef \fBDBusMutex\fP *(* \fBDBusMutexNewFunction\fP) (void)"
+.br
+.RI "\fIDeprecated, provide DBusRecursiveMutexNewFunction instead\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusMutexFreeFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIDeprecated, provide DBusRecursiveMutexFreeFunction instead\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusMutexLockFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIDeprecated, provide DBusRecursiveMutexLockFunction instead\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusMutexUnlockFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIDeprecated, provide DBusRecursiveMutexUnlockFunction instead\&. \fP"
+.ti -1c
+.RI "typedef \fBDBusMutex\fP *(* \fBDBusRecursiveMutexNewFunction\fP) (void)"
+.br
+.RI "\fICreates a new recursively-lockable mutex, or returns \fBNULL\fP if not enough memory\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusRecursiveMutexFreeFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIFrees a recursively-lockable mutex\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusRecursiveMutexLockFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fILocks a recursively-lockable mutex\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusRecursiveMutexUnlockFunction\fP) (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIUnlocks a recursively-lockable mutex\&. \fP"
+.ti -1c
+.RI "typedef \fBDBusCondVar\fP *(* \fBDBusCondVarNewFunction\fP) (void)"
+.br
+.RI "\fICreates a new condition variable\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusCondVarFreeFunction\fP) (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIFrees a condition variable\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusCondVarWaitFunction\fP) (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIWaits on a condition variable\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusCondVarWaitTimeoutFunction\fP) (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex, int timeout_milliseconds)"
+.br
+.RI "\fIWaits on a condition variable with a timeout\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusCondVarWakeOneFunction\fP) (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIWakes one waiting thread on a condition variable\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusCondVarWakeAllFunction\fP) (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIWakes all waiting threads on a condition variable\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDBusThreadFunctionsMask\fP { \fBDBUS_THREAD_FUNCTIONS_MUTEX_NEW_MASK\fP = 1 << 0, \fBDBUS_THREAD_FUNCTIONS_MUTEX_FREE_MASK\fP = 1 << 1, \fBDBUS_THREAD_FUNCTIONS_MUTEX_LOCK_MASK\fP = 1 << 2, \fBDBUS_THREAD_FUNCTIONS_MUTEX_UNLOCK_MASK\fP = 1 << 3, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_NEW_MASK\fP = 1 << 4, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_FREE_MASK\fP = 1 << 5, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_WAIT_MASK\fP = 1 << 6, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_WAIT_TIMEOUT_MASK\fP = 1 << 7, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_WAKE_ONE_MASK\fP = 1 << 8, \fBDBUS_THREAD_FUNCTIONS_CONDVAR_WAKE_ALL_MASK\fP = 1 << 9, \fBDBUS_THREAD_FUNCTIONS_RECURSIVE_MUTEX_NEW_MASK\fP = 1 << 10, \fBDBUS_THREAD_FUNCTIONS_RECURSIVE_MUTEX_FREE_MASK\fP = 1 << 11, \fBDBUS_THREAD_FUNCTIONS_RECURSIVE_MUTEX_LOCK_MASK\fP = 1 << 12, \fBDBUS_THREAD_FUNCTIONS_RECURSIVE_MUTEX_UNLOCK_MASK\fP = 1 << 13, \fBDBUS_THREAD_FUNCTIONS_ALL_MASK\fP = (1 << 14) - 1 }
+.RI "\fIFlags indicating which functions are present in \fBDBusThreadFunctions\fP\&. \fP""
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_threads_init\fP (const \fBDBusThreadFunctions\fP *functions)"
+.br
+.RI "\fIInitializes threads, like \fBdbus_threads_init_default()\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_threads_init_default\fP (void)"
+.br
+.RI "\fIInitializes threads\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBdbus_threads_init()\fP and \fBdbus_threads_init_default()\fP 
+
+Functions and macros related to threads and thread locks\&.
+.PP
+If threads are initialized, the D-Bus library has locks on all global data structures\&. In addition, each \fBDBusConnection\fP has a lock, so only one thread at a time can touch the connection\&. (See \fBDBusConnection\fP for more on connection locking\&.)
+.PP
+Most other objects, however, do not have locks - they can only be used from a single thread at a time, unless you lock them yourself\&. For example, a \fBDBusMessage\fP can't be modified from two threads at once\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBDBusCondVar\fP \fBDBusCondVar\fP"
+
+.PP
+An opaque condition variable type provided by the \fBDBusThreadFunctions\fP implementation installed by \fBdbus_threads_init()\fP\&. 
+.PP
+Definition at line 43 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusCondVarFreeFunction) (\fBDBusCondVar\fP *cond)"
+
+.PP
+Frees a condition variable\&. Found in \fBDBusThreadFunctions\fP\&. 
+.PP
+Definition at line 80 of file dbus\-threads\&.h\&.
+.SS "typedef \fBDBusCondVar\fP*(*  DBusCondVarNewFunction) (void)"
+
+.PP
+Creates a new condition variable\&. Found in \fBDBusThreadFunctions\fP\&. Can only fail (returning \fBNULL\fP) due to lack of memory\&. 
+.PP
+Definition at line 77 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusCondVarWaitFunction) (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex)"
+
+.PP
+Waits on a condition variable\&. Found in \fBDBusThreadFunctions\fP\&. Must work with either a recursive or nonrecursive mutex, whichever the thread implementation provides\&. Note that PTHREAD_MUTEX_RECURSIVE does not work with condition variables (does not save/restore the recursion count) so don't try using simply pthread_cond_wait() and a PTHREAD_MUTEX_RECURSIVE to implement this, it won't work right\&.
+.PP
+Has no error conditions\&. Must succeed if it returns\&. 
+.PP
+Definition at line 92 of file dbus\-threads\&.h\&.
+.SS "typedef \fBdbus_bool_t\fP(*  DBusCondVarWaitTimeoutFunction) (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex, int timeout_milliseconds)"
+
+.PP
+Waits on a condition variable with a timeout\&. Found in \fBDBusThreadFunctions\fP\&. Returns \fBTRUE\fP if the wait did not time out, and \fBFALSE\fP if it did\&.
+.PP
+Has no error conditions\&. Must succeed if it returns\&. 
+.PP
+Definition at line 101 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusCondVarWakeAllFunction) (\fBDBusCondVar\fP *cond)"
+
+.PP
+Wakes all waiting threads on a condition variable\&. Found in \fBDBusThreadFunctions\fP\&.
+.PP
+Has no error conditions\&. Must succeed if it returns\&. 
+.PP
+Definition at line 114 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusCondVarWakeOneFunction) (\fBDBusCondVar\fP *cond)"
+
+.PP
+Wakes one waiting thread on a condition variable\&. Found in \fBDBusThreadFunctions\fP\&.
+.PP
+Has no error conditions\&. Must succeed if it returns\&. 
+.PP
+Definition at line 108 of file dbus\-threads\&.h\&.
+.SS "typedef struct \fBDBusMutex\fP \fBDBusMutex\fP"
+
+.PP
+An opaque mutex type provided by the \fBDBusThreadFunctions\fP implementation installed by \fBdbus_threads_init()\fP\&. 
+.PP
+Definition at line 41 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusMutexFreeFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Deprecated, provide DBusRecursiveMutexFreeFunction instead\&. 
+.PP
+Definition at line 48 of file dbus\-threads\&.h\&.
+.SS "typedef \fBdbus_bool_t\fP(*  DBusMutexLockFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Deprecated, provide DBusRecursiveMutexLockFunction instead\&. Return value is lock success, but gets ignored in practice\&. 
+.PP
+Definition at line 50 of file dbus\-threads\&.h\&.
+.SS "typedef \fBDBusMutex\fP*(*  DBusMutexNewFunction) (void)"
+
+.PP
+Deprecated, provide DBusRecursiveMutexNewFunction instead\&. 
+.PP
+Definition at line 46 of file dbus\-threads\&.h\&.
+.SS "typedef \fBdbus_bool_t\fP(*  DBusMutexUnlockFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Deprecated, provide DBusRecursiveMutexUnlockFunction instead\&. Return value is unlock success, but gets ignored in practice\&. 
+.PP
+Definition at line 52 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusRecursiveMutexFreeFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Frees a recursively-lockable mutex\&. Found in \fBDBusThreadFunctions\fP\&. 
+.PP
+Definition at line 64 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusRecursiveMutexLockFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Locks a recursively-lockable mutex\&. Found in \fBDBusThreadFunctions\fP\&. Can only fail due to lack of memory\&. 
+.PP
+Definition at line 68 of file dbus\-threads\&.h\&.
+.SS "typedef \fBDBusMutex\fP*(*  DBusRecursiveMutexNewFunction) (void)"
+
+.PP
+Creates a new recursively-lockable mutex, or returns \fBNULL\fP if not enough memory\&. Can only fail due to lack of memory\&. Found in \fBDBusThreadFunctions\fP\&. Do not just use PTHREAD_MUTEX_RECURSIVE for this, because it does not save/restore the recursion count when waiting on a condition\&. libdbus requires the Java-style behavior where the mutex is fully unlocked to wait on a condition\&. 
+.PP
+Definition at line 61 of file dbus\-threads\&.h\&.
+.SS "typedef void(*  DBusRecursiveMutexUnlockFunction) (\fBDBusMutex\fP *mutex)"
+
+.PP
+Unlocks a recursively-lockable mutex\&. Found in \fBDBusThreadFunctions\fP\&. Can only fail due to lack of memory\&. 
+.PP
+Definition at line 72 of file dbus\-threads\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDBusThreadFunctionsMask\fP"
+
+.PP
+Flags indicating which functions are present in \fBDBusThreadFunctions\fP\&. Used to allow the library to detect older callers of \fBdbus_threads_init()\fP if new possible functions are added to \fBDBusThreadFunctions\fP\&. 
+.PP
+Definition at line 121 of file dbus\-threads\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_threads_init (const \fBDBusThreadFunctions\fP * functions)"
+
+.PP
+Initializes threads, like \fBdbus_threads_init_default()\fP\&. This version previously allowed user-specified threading primitives, but since D-Bus 1\&.6 it ignores them and behaves exactly like \fBdbus_threads_init_default()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfunctions\fP ignored, formerly functions for using threads 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 391 of file dbus\-threads\&.c\&.
+.PP
+References _dbus_current_generation, _dbus_threads_init_platform_specific(), _dbus_threads_lock_platform_specific(), _dbus_threads_unlock_platform_specific(), FALSE, and TRUE\&.
+.PP
+Referenced by dbus_threads_init_default()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_threads_init_default (void)"
+
+.PP
+Initializes threads\&. If this function is not called, the D-Bus library will not lock any data structures\&. If it is called, D-Bus will do locking, at some cost in efficiency\&.
+.PP
+Since D-Bus 1\&.7 it is safe to call this function from any thread, any number of times (but it must be called before any other libdbus API is used)\&.
+.PP
+In D-Bus 1\&.6 or older, this function must be called in the main thread before any other thread starts\&. As a result, it is not sufficient to call this function in a library or plugin, unless the library or plugin imposes a similar requirement on its callers\&.
+.PP
+\fBdbus_shutdown()\fP reverses the effects of this function when it resets all global state in libdbus\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 438 of file dbus\-threads\&.c\&.
+.PP
+References dbus_threads_init(), and NULL\&.
+.PP
+Referenced by _dbus_cmutex_new_at_location(), _dbus_condvar_new(), _dbus_condvar_wake_one(), and _dbus_rmutex_new_at_location()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

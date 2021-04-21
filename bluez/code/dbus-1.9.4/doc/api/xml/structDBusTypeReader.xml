@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTypeReader" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTypeReader</compoundname>
+    <includes refid="dbus-marshal-recursive_8h" local="no">dbus-marshal-recursive.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeReader::byte_order</definition>
+        <argsstring></argsstring>
+        <name>byte_order</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+<para>byte order of the block </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="41" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeReader::finished</definition>
+        <argsstring></argsstring>
+        <name>finished</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>marks we&apos;re at end iterator for cases where we don&apos;t have another way to tell </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="43" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a930fb8d6c82f269b0a151cfb33df86b3" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeReader::array_len_offset</definition>
+        <argsstring></argsstring>
+        <name>array_len_offset</name>
+        <bitfield> 3</bitfield>
+        <briefdescription>
+<para>bytes back from start_pos that len ends </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="46" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+        <definition>const DBusString* DBusTypeReader::type_str</definition>
+        <argsstring></argsstring>
+        <name>type_str</name>
+        <briefdescription>
+<para>string containing signature of block </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="47" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga3a5845f555f11c33ebaa71a75abff661" compoundref="dbus-marshal-recursive_8c" startline="760" endline="774">_dbus_type_reader_init_types_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4578cc623c8b0978ca780ce0ab950fdb" compoundref="dbus-marshal-recursive_8c" startline="1122" endline="1130">_dbus_type_reader_get_signature</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeReader::type_pos</definition>
+        <argsstring></argsstring>
+        <name>type_pos</name>
+        <briefdescription>
+<para>current position in signature </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="48" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga3a5845f555f11c33ebaa71a75abff661" compoundref="dbus-marshal-recursive_8c" startline="760" endline="774">_dbus_type_reader_init_types_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4578cc623c8b0978ca780ce0ab950fdb" compoundref="dbus-marshal-recursive_8c" startline="1122" endline="1130">_dbus_type_reader_get_signature</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+        <definition>const DBusString* DBusTypeReader::value_str</definition>
+        <argsstring></argsstring>
+        <name>value_str</name>
+        <briefdescription>
+<para>string containing values of block </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="49" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac87315d74386314ec3b148ef737626d2" compoundref="dbus-marshal-recursive_8c" startline="852" endline="860">_dbus_type_reader_read_raw</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" compoundref="dbus-marshal-recursive_8c" startline="1417" endline="1441">_dbus_type_reader_delete</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeReader::value_pos</definition>
+        <argsstring></argsstring>
+        <name>value_pos</name>
+        <briefdescription>
+<para>current position in values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="50" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga2a8ab1152821950b1fe29e000954981c" compoundref="dbus-marshal-recursive_8c" startline="837" endline="840">_dbus_type_reader_get_value_pos</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac87315d74386314ec3b148ef737626d2" compoundref="dbus-marshal-recursive_8c" startline="852" endline="860">_dbus_type_reader_read_raw</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" compoundref="dbus-marshal-recursive_8c" startline="1417" endline="1441">_dbus_type_reader_delete</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structDBusTypeReaderClass" kindref="compound">DBusTypeReaderClass</ref> *</type>
+        <definition>const DBusTypeReaderClass* DBusTypeReader::klass</definition>
+        <argsstring></argsstring>
+        <name>klass</name>
+        <briefdescription>
+<para>the vtable for the reader </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="52" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga3a5845f555f11c33ebaa71a75abff661" compoundref="dbus-marshal-recursive_8c" startline="760" endline="774">_dbus_type_reader_init_types_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac87315d74386314ec3b148ef737626d2" compoundref="dbus-marshal-recursive_8c" startline="852" endline="860">_dbus_type_reader_read_raw</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7def93d676d528c261aa274cea41c29d" compoundref="dbus-marshal-recursive_8c" startline="899" endline="905">_dbus_type_reader_get_array_length</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" compoundref="dbus-marshal-recursive_8c" startline="1417" endline="1441">_dbus_type_reader_delete</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a88a36090d466a1fc085a55f764e3a129" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeReader::start_pos</definition>
+        <argsstring></argsstring>
+        <name>start_pos</name>
+        <briefdescription>
+<para>for array readers, the start of the array values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="56" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1a26fa4f3e09e18d2da90218e3e0acf81b" prot="public" static="no" mutable="no">
+        <type>struct DBusTypeReader::@1::@2</type>
+        <definition>struct DBusTypeReader::@1::@2  DBusTypeReader::array</definition>
+        <argsstring></argsstring>
+        <name>array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be" prot="public" static="no" mutable="no">
+        <type>union DBusTypeReader::@1</type>
+        <definition>union DBusTypeReader::@1  DBusTypeReader::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <briefdescription>
+<para>class-specific data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="58" column="1"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The type reader is an iterator for reading values from a block of values. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="575">
+        <label>DBusTypeReaderClass</label>
+        <link refid="structDBusTypeReaderClass"/>
+      </node>
+      <node id="573">
+        <label>DBusTypeReader</label>
+        <link refid="structDBusTypeReader"/>
+        <childnode refid="574" relation="usage">
+          <edgelabel>value_str</edgelabel>
+          <edgelabel>type_str</edgelabel>
+        </childnode>
+        <childnode refid="575" relation="usage">
+          <edgelabel>klass</edgelabel>
+        </childnode>
+      </node>
+      <node id="574">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-marshal-recursive.h" line="40" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="39" bodyend="59"/>
+    <listofallmembers>
+      <member refid="structDBusTypeReader_1a26fa4f3e09e18d2da90218e3e0acf81b" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>array</name></member>
+      <member refid="structDBusTypeReader_1a930fb8d6c82f269b0a151cfb33df86b3" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>array_len_offset</name></member>
+      <member refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>byte_order</name></member>
+      <member refid="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>finished</name></member>
+      <member refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>klass</name></member>
+      <member refid="structDBusTypeReader_1a88a36090d466a1fc085a55f764e3a129" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>start_pos</name></member>
+      <member refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>type_pos</name></member>
+      <member refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>type_str</name></member>
+      <member refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>u</name></member>
+      <member refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>value_pos</name></member>
+      <member refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" prot="public" virt="non-virtual"><scope>DBusTypeReader</scope><name>value_str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

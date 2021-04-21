@@ -1,0 +1,897 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-userdb_8h" kind="file" language="C++">
+    <compoundname>dbus-userdb.h</compoundname>
+    <includes refid="dbus-sysdeps-unix_8h" local="no">dbus/dbus-sysdeps-unix.h</includes>
+    <includedby refid="dbus-sysdeps-unix_8c" local="yes">dbus-sysdeps-unix.c</includedby>
+    <includedby refid="dbus-sysdeps-util-unix_8c" local="yes">dbus-sysdeps-util-unix.c</includedby>
+    <includedby refid="dbus-userdb-util_8c" local="yes">dbus-userdb-util.c</includedby>
+    <includedby refid="dbus-userdb_8c" local="yes">dbus-userdb.c</includedby>
+    <incdepgraph>
+      <node id="5053">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5049">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="5045">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="5042">
+        <label>stdint.h</label>
+      </node>
+      <node id="5055">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="5040">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="5041" relation="include">
+        </childnode>
+        <childnode refid="5042" relation="include">
+        </childnode>
+        <childnode refid="5043" relation="include">
+        </childnode>
+        <childnode refid="5044" relation="include">
+        </childnode>
+        <childnode refid="5050" relation="include">
+        </childnode>
+        <childnode refid="5051" relation="include">
+        </childnode>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5055" relation="include">
+        </childnode>
+      </node>
+      <node id="5047">
+        <label>stddef.h</label>
+      </node>
+      <node id="5051">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5046" relation="include">
+        </childnode>
+        <childnode refid="5052" relation="include">
+        </childnode>
+        <childnode refid="5053" relation="include">
+        </childnode>
+      </node>
+      <node id="5039">
+        <label>dbus/dbus-sysdeps-unix.h</label>
+        <link refid="dbus-sysdeps-unix_8h_source"/>
+        <childnode refid="5040" relation="include">
+        </childnode>
+      </node>
+      <node id="5048">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="5045" relation="include">
+        </childnode>
+      </node>
+      <node id="5054">
+        <label>string.h</label>
+      </node>
+      <node id="5041">
+        <label>config.h</label>
+      </node>
+      <node id="5050">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="5051" relation="include">
+        </childnode>
+        <childnode refid="5044" relation="include">
+        </childnode>
+      </node>
+      <node id="5038">
+        <label>dbus-userdb.h</label>
+        <link refid="dbus-userdb.h"/>
+        <childnode refid="5039" relation="include">
+        </childnode>
+      </node>
+      <node id="5044">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5046" relation="include">
+        </childnode>
+        <childnode refid="5049" relation="include">
+        </childnode>
+      </node>
+      <node id="5046">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="5047" relation="include">
+        </childnode>
+        <childnode refid="5048" relation="include">
+        </childnode>
+      </node>
+      <node id="5043">
+        <label>inttypes.h</label>
+      </node>
+      <node id="5052">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5047" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5058">
+        <label>dbus-sysdeps-util-unix.c</label>
+        <link refid="dbus-sysdeps-util-unix_8c_source"/>
+      </node>
+      <node id="5057">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+      <node id="5059">
+        <label>dbus-userdb-util.c</label>
+        <link refid="dbus-userdb-util_8c_source"/>
+      </node>
+      <node id="5060">
+        <label>dbus-userdb.c</label>
+        <link refid="dbus-userdb_8c_source"/>
+      </node>
+      <node id="5056">
+        <label>dbus-userdb.h</label>
+        <link refid="dbus-userdb.h"/>
+        <childnode refid="5057" relation="include">
+        </childnode>
+        <childnode refid="5058" relation="include">
+        </childnode>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-userdb_8h_1a8088ed4bf90d1b7e6b05d97891a22d25" prot="public" static="no">
+        <type>struct DBusUserDatabase</type>
+        <definition>typedef struct DBusUserDatabase DBusUserDatabase</definition>
+        <argsstring></argsstring>
+        <name>DBusUserDatabase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="676" column="1" bodyfile="dbus/dbus-userdb.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusUserDatabase *</type>
+        <definition>DBusUserDatabase* _dbus_user_database_get_system</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_user_database_get_system</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the system global user database; must be called with lock held (<ref refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" kindref="member">_dbus_user_database_lock_system()</ref>). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the database or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="88" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="336" bodyend="343"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="49" endline="136">_dbus_is_console_user</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga90657adefa9bbac9b35eee63dd46a854" compoundref="dbus-userdb-util_8c" startline="160" endline="188">_dbus_get_group_id</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" compoundref="dbus-userdb-util_8c" startline="199" endline="231">_dbus_get_user_id_and_primary_group</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga91c63dcb68d38347578edf39eda1712a" compoundref="dbus-userdb_8c" startline="419" endline="451">_dbus_homedir_from_username</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gabdd1dc47f44e3d6702c86c68da9a0173" compoundref="dbus-userdb_8c" startline="461" endline="493">_dbus_homedir_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gacecdbb00a3c8b63e821edae537ae3c7b" compoundref="dbus-userdb_8c" startline="510" endline="542">_dbus_credentials_add_from_user</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_user_database_lock_system</definition>
+        <argsstring>(void) _DBUS_GNUC_WARN_UNUSED_RESULT</argsstring>
+        <name>_dbus_user_database_lock_system</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Locks global system user database. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="89" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="306" bodyend="317"/>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="49" endline="136">_dbus_is_console_user</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga90657adefa9bbac9b35eee63dd46a854" compoundref="dbus-userdb-util_8c" startline="160" endline="188">_dbus_get_group_id</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" compoundref="dbus-userdb-util_8c" startline="199" endline="231">_dbus_get_user_id_and_primary_group</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga788ce7775d7f812d28d931e8b87ddfde" compoundref="dbus-userdb_8c" startline="349" endline="361">_dbus_user_database_flush_system</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga9c4c1850787bfd457107b95fa1878869" compoundref="dbus-userdb_8c" startline="371" endline="385">_dbus_username_from_current_process</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga17ce3ab061a3ae2441cd33ece34f5e7a" compoundref="dbus-userdb_8c" startline="395" endline="409">_dbus_homedir_from_current_process</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga91c63dcb68d38347578edf39eda1712a" compoundref="dbus-userdb_8c" startline="419" endline="451">_dbus_homedir_from_username</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gabdd1dc47f44e3d6702c86c68da9a0173" compoundref="dbus-userdb_8c" startline="461" endline="493">_dbus_homedir_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gacecdbb00a3c8b63e821edae537ae3c7b" compoundref="dbus-userdb_8c" startline="510" endline="542">_dbus_credentials_add_from_user</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_user_database_unlock_system</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_user_database_unlock_system</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Unlocks global system user database. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="90" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="323" bodyend="327"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="49" endline="136">_dbus_is_console_user</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga90657adefa9bbac9b35eee63dd46a854" compoundref="dbus-userdb-util_8c" startline="160" endline="188">_dbus_get_group_id</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" compoundref="dbus-userdb-util_8c" startline="199" endline="231">_dbus_get_user_id_and_primary_group</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga788ce7775d7f812d28d931e8b87ddfde" compoundref="dbus-userdb_8c" startline="349" endline="361">_dbus_user_database_flush_system</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga9c4c1850787bfd457107b95fa1878869" compoundref="dbus-userdb_8c" startline="371" endline="385">_dbus_username_from_current_process</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga17ce3ab061a3ae2441cd33ece34f5e7a" compoundref="dbus-userdb_8c" startline="395" endline="409">_dbus_homedir_from_current_process</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga91c63dcb68d38347578edf39eda1712a" compoundref="dbus-userdb_8c" startline="419" endline="451">_dbus_homedir_from_username</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gabdd1dc47f44e3d6702c86c68da9a0173" compoundref="dbus-userdb_8c" startline="461" endline="493">_dbus_homedir_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gacecdbb00a3c8b63e821edae537ae3c7b" compoundref="dbus-userdb_8c" startline="510" endline="542">_dbus_credentials_add_from_user</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga788ce7775d7f812d28d931e8b87ddfde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_user_database_flush_system</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_user_database_flush_system</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Flushes the system global user database;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="91" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="349" bodyend="361"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1gab553751e96f8506d10349fb5fb1eaa82" compoundref="dbus-userdb_8c" startline="593" endline="599">_dbus_user_database_flush</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <referencedby refid="group__DBusSysdeps_1ga184b42c4b42b91ef73e9ee50a1fa12c2" compoundref="dbus-sysdeps-unix_8c" startline="3881" endline="3884">_dbus_flush_caches</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gaf07ee24eddcb3b0f85fa54196bc44fe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_get_user_id</definition>
+        <argsstring>(const DBusString *username, dbus_uid_t *uid)</argsstring>
+        <name>_dbus_get_user_id</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref> *</type>
+          <declname>uid</declname>
+        </param>
+        <briefdescription>
+<para>Gets user ID given username. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the username </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for UID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if username existed and we got the UID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="93" column="1" bodyfile="dbus/dbus-userdb-util.c" bodystart="146" bodyend="150"/>
+        <references refid="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" compoundref="dbus-userdb-util_8c" startline="199" endline="231">_dbus_get_user_id_and_primary_group</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusSysdeps_1ga437470fc327b0169fc14a0b66a6e5278" compoundref="dbus-sysdeps-util-unix_8c" startline="1035" endline="1040">_dbus_parse_unix_user_from_config</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga90657adefa9bbac9b35eee63dd46a854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_get_group_id</definition>
+        <argsstring>(const DBusString *group_name, dbus_gid_t *gid)</argsstring>
+        <name>_dbus_get_group_id</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>group_name</declname>
+          <defname>groupname</defname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref> *</type>
+          <declname>gid</declname>
+        </param>
+        <briefdescription>
+<para>Gets group ID given groupname. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>groupname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the groupname </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for GID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if group name existed and we got the GID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="95" column="1" bodyfile="dbus/dbus-userdb-util.c" bodystart="160" bodyend="188"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1gad370299b907799440331c47e8d2357e0" compoundref="dbus-userdb-util_8c" startline="347" endline="354">_dbus_user_database_get_groupname</references>
+        <references refid="structDBusGroupInfo_1a583e8d6d421fa85fb1d43789efae4b75" compoundref="dbus-sysdeps-unix_8h" startline="113">DBusGroupInfo::gid</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1ga96da816095ec7fec07136a6019745bcb" compoundref="dbus-sysdeps-util-unix_8c" startline="1051" endline="1055">_dbus_parse_unix_group_from_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_get_user_id_and_primary_group</definition>
+        <argsstring>(const DBusString *username, dbus_uid_t *uid_p, dbus_gid_t *gid_p)</argsstring>
+        <name>_dbus_get_user_id_and_primary_group</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref> *</type>
+          <declname>uid_p</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref> *</type>
+          <declname>gid_p</declname>
+        </param>
+        <briefdescription>
+<para>Gets user ID and primary group given username. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the username </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for UID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for GID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if username existed and we got the UID and GID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="97" column="1" bodyfile="dbus/dbus-userdb-util.c" bodystart="199" bodyend="231"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1gaccf1d5b330707a1835dcf4ce49a29c8c" compoundref="dbus-userdb_8c" startline="676" endline="683">_dbus_user_database_get_username</references>
+        <references refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" compoundref="dbus-sysdeps-unix_8h" startline="100">DBusUserInfo::uid</references>
+        <references refid="structDBusUserInfo_1ac970de2fac9ea4ba91485e6c37c3bf93" compoundref="dbus-sysdeps-unix_8h" startline="101">DBusUserInfo::primary_gid</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1ga45f661c5a089ed45233a1acabaf31964" compoundref="dbus-sysdeps-util-unix_8c" startline="312" endline="319">_dbus_verify_daemon_user</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga82c920a8c3b5958ba1ecf8e5f5d6373b" compoundref="dbus-sysdeps-util-unix_8c" startline="332" endline="380">_dbus_change_to_daemon_user</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf07ee24eddcb3b0f85fa54196bc44fe1" compoundref="dbus-userdb-util_8c" startline="146" endline="150">_dbus_get_user_id</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-userdb_8h_1ab035107c334414f482888b41e148564b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_credentials_from_uid</definition>
+        <argsstring>(dbus_uid_t user_id, DBusCredentials *credentials)</argsstring>
+        <name>_dbus_credentials_from_uid</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>user_id</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+          <declname>credentials</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_groups_from_uid</definition>
+        <argsstring>(dbus_uid_t uid, dbus_gid_t **group_ids, int *n_group_ids)</argsstring>
+        <name>_dbus_groups_from_uid</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref> **</type>
+          <declname>group_ids</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n_group_ids</declname>
+        </param>
+        <briefdescription>
+<para>Gets all groups corresponding to the given UID. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory, or user isn&apos;t known, but always initializes group_ids to a NULL array.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the UID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>group_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for array of group IDs </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_group_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for length of returned array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the UID existed and we got some credentials </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="102" column="1" bodyfile="dbus/dbus-userdb-util.c" bodystart="388" bodyend="433"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1ga6a7e8b8cf3a6968972e9a49726022638" compoundref="dbus-userdb_8c" startline="657" endline="664">_dbus_user_database_get_uid</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" compoundref="dbus-sysdeps-unix_8h" startline="100">DBusUserInfo::uid</references>
+        <references refid="structDBusUserInfo_1a21c07867fbffb1854a97aed265d87c89" compoundref="dbus-sysdeps-unix_8h" startline="103">DBusUserInfo::n_group_ids</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="structDBusUserInfo_1a902af9e0fb7d37c14eefb7d2b016ab11" compoundref="dbus-sysdeps-unix_8h" startline="102">DBusUserInfo::group_ids</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusInternalsUtils_1ga9c4c1850787bfd457107b95fa1878869" compoundref="dbus-userdb_8c" startline="371" endline="385">_dbus_username_from_current_process</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga17ce3ab061a3ae2441cd33ece34f5e7a" compoundref="dbus-userdb_8c" startline="395" endline="409">_dbus_homedir_from_current_process</references>
+        <references refid="group__DBusInternalsUtils_1gaf07ee24eddcb3b0f85fa54196bc44fe1" compoundref="dbus-userdb-util_8c" startline="146" endline="150">_dbus_get_user_id</references>
+        <references refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="49" endline="136">_dbus_is_console_user</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusSysdeps_1ga79647ec21c7edccd1510808ea0ca3779" compoundref="dbus-sysdeps-util-unix_8c" startline="1068" endline="1073">_dbus_unix_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_is_console_user</definition>
+        <argsstring>(dbus_uid_t uid, DBusError *error)</argsstring>
+        <name>_dbus_is_console_user</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Checks to see if the UID sent in is the console user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UID of person to check </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the UID is the same as the console user and there are no errors </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="105" column="1" bodyfile="dbus/dbus-userdb-util.c" bodystart="49" bodyend="136"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusSysdeps_1gab657f0434f01b463891942f373f7b4a1" compoundref="dbus-sysdeps_8h" startline="112">DBUS_UID_FORMAT</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusInternalsUtils_1ga04e98ad0e3a181f0a5921a4cbc49cf08" compoundref="dbus-sysdeps-util-unix_8c" startline="706" endline="734">_dbus_stat</references>
+        <references refid="structDBusStat_1a300fac914534803bcfacdd87b15e1a8d" compoundref="dbus-sysdeps_8h" startline="405">DBusStat::uid</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</references>
+        <references refid="group__DBusInternalsUtils_1ga31ec42cef2d15ca358e737bb5f19c5cf" compoundref="dbus-sysdeps-util-unix_8c" startline="645" endline="679">_dbus_user_at_console</references>
+        <references refid="structDBusUserInfo_1ac6b57db1dc8315eee3f532f4e77912d1" compoundref="dbus-sysdeps-unix_8h" startline="104">DBusUserInfo::username</references>
+        <referencedby refid="group__DBusSysdeps_1gaed2e025454364fbe31cd9b6538c9a936" compoundref="dbus-sysdeps-util-unix_8c" startline="1085" endline="1090">_dbus_unix_user_is_at_console</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gad1c3538c544df91f438a13c9fb4d3a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_is_a_number</definition>
+        <argsstring>(const DBusString *str, unsigned long *num)</argsstring>
+        <name>_dbus_is_a_number</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>unsigned long *</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a given string is actually a number and converts it if it is. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to check </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the memory location of the unsigned long to fill in </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if str is a number and num is filled in </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="108" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="103" bodyend="113"/>
+        <references refid="group__DBusString_1ga84cc8d08bb48b7915d673f7cc7886f97" compoundref="dbus-sysdeps_8c" startline="474" endline="498">_dbus_string_parse_uint</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga9c4c1850787bfd457107b95fa1878869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_username_from_current_process</definition>
+        <argsstring>(const DBusString **username)</argsstring>
+        <name>_dbus_username_from_current_process</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+<para>Gets username of user owning current process. </para>        </briefdescription>
+        <detaileddescription>
+<para>The returned string is valid until <ref refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" kindref="member">dbus_shutdown()</ref> is called.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to store pointer to username </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="111" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="371" bodyend="385"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga17ce3ab061a3ae2441cd33ece34f5e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_homedir_from_current_process</definition>
+        <argsstring>(const DBusString **homedir)</argsstring>
+        <name>_dbus_homedir_from_current_process</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>homedir</declname>
+        </param>
+        <briefdescription>
+<para>Gets homedir of user owning current process. </para>        </briefdescription>
+        <detaileddescription>
+<para>The returned string is valid until <ref refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" kindref="member">dbus_shutdown()</ref> is called.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>homedir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to store pointer to homedir </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="112" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="395" bodyend="409"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1ga079d34a9d90759e6b3ebebab424c696e" compoundref="dbus-sysdeps-util-unix_8c" startline="1309" endline="1379">_dbus_get_standard_session_servicedirs</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga91c63dcb68d38347578edf39eda1712a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_homedir_from_username</definition>
+        <argsstring>(const DBusString *username, DBusString *homedir)</argsstring>
+        <name>_dbus_homedir_from_username</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>homedir</declname>
+        </param>
+        <briefdescription>
+<para>Gets the home directory for the given user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the username </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>homedir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to append home directory to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if user existed and we appended their homedir </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="113" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="419" bodyend="451"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1gaccf1d5b330707a1835dcf4ce49a29c8c" compoundref="dbus-userdb_8c" startline="676" endline="683">_dbus_user_database_get_username</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="structDBusUserInfo_1a5235d4d021cd134e1130e1e8e912bc0c" compoundref="dbus-sysdeps-unix_8h" startline="105">DBusUserInfo::homedir</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gabdd1dc47f44e3d6702c86c68da9a0173" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_homedir_from_uid</definition>
+        <argsstring>(dbus_uid_t uid, DBusString *homedir)</argsstring>
+        <name>_dbus_homedir_from_uid</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>homedir</declname>
+        </param>
+        <briefdescription>
+<para>Gets the home directory for the given user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the uid </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>homedir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to append home directory to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if user existed and we appended their homedir </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-userdb.h" line="116" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="461" bodyend="493"/>
+        <references refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" compoundref="dbus-userdb_8c" startline="306" endline="317">_dbus_user_database_lock_system</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" compoundref="dbus-userdb_8c" startline="336" endline="343">_dbus_user_database_get_system</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" compoundref="dbus-userdb_8c" startline="323" endline="327">_dbus_user_database_unlock_system</references>
+        <references refid="group__DBusInternalsUtils_1ga6a7e8b8cf3a6968972e9a49726022638" compoundref="dbus-userdb_8c" startline="657" endline="664">_dbus_user_database_get_uid</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="structDBusUserInfo_1a5235d4d021cd134e1130e1e8e912bc0c" compoundref="dbus-sysdeps-unix_8h" startline="105">DBusUserInfo::homedir</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1ga3cc5a5734416858fa58f3166ed181a64" compoundref="dbus-sysdeps-unix_8c" startline="3900" endline="3963">_dbus_append_keyring_directory_for_credentials</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-userdb.h<sp/>User<sp/>database<sp/>abstraction</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_USERDB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_USERDB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-sysdeps-unix.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Don&apos;t<sp/>include<sp/>this<sp/>on<sp/>Windows&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">DBusUserDatabase<sp/>DBusUserDatabase;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_USERDB_INCLUDES_PRIVATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-hash.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">DBusUserDatabase</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>refcount;<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref><sp/>*users;<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref><sp/>*groups;<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref><sp/>*users_by_name;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref><sp/>*groups_by_name;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">DBusUserDatabase*<sp/><ref refid="group__DBusInternalsUtils_1ga1dbf2c80952d17707c544f5d86dd8545" kindref="member">_dbus_user_database_new</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">DBusUserDatabase*<sp/>_dbus_user_database_ref<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gab553751e96f8506d10349fb5fb1eaa82" kindref="member">_dbus_user_database_flush</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga55dbb78c415da040037442eca4c4e80e" kindref="member">_dbus_user_database_unref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga6a7e8b8cf3a6968972e9a49726022638" kindref="member">_dbus_user_database_get_uid</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/>**info,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga70d3fd2edd61c69edc6f7fe1d5cfa6ea" kindref="member">_dbus_user_database_get_gid</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gid,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/>**info,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gaccf1d5b330707a1835dcf4ce49a29c8c" kindref="member">_dbus_user_database_get_username</ref><sp/><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/>*username,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/>**info,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gad370299b907799440331c47e8d2357e0" kindref="member">_dbus_user_database_get_groupname</ref><sp/>(DBusUserDatabase<sp/><sp/><sp/><sp/><sp/>*db,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/>*groupname,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/>**info,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref>*<sp/><sp/><ref refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" kindref="member">_dbus_user_database_lookup</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBusUserDatabase<sp/>*db,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*username,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref>*<sp/><ref refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" kindref="member">_dbus_user_database_lookup_group</ref><sp/>(DBusUserDatabase<sp/>*db,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gid,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*groupname,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gaf725ba6f380a3b926650626eef714b67" kindref="member">_dbus_user_info_free_allocated</ref><sp/><sp/><sp/>(<ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/><sp/><sp/><sp/>*info);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gab9420d7a4a31329a00fd5709f8cf08ba" kindref="member">_dbus_group_info_free_allocated</ref><sp/><sp/>(<ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/><sp/><sp/><sp/>*info);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_USERDB_INCLUDES_PRIVATE<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">DBusUserDatabase*<sp/><ref refid="group__DBusInternalsUtils_1ga79b6c3cf0d735622b6af2795840f9d21" kindref="member">_dbus_user_database_get_system</ref><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga15df3b3fdaa4946f69ff87f3a9a03fe7" kindref="member">_dbus_user_database_lock_system</ref><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>_DBUS_GNUC_WARN_UNUSED_RESULT;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga468e1d62e1df24bb699c4a37fdfa274c" kindref="member">_dbus_user_database_unlock_system</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga788ce7775d7f812d28d931e8b87ddfde" kindref="member">_dbus_user_database_flush_system</ref><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gaf07ee24eddcb3b0f85fa54196bc44fe1" kindref="member">_dbus_get_user_id</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*username,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*uid);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga90657adefa9bbac9b35eee63dd46a854" kindref="member">_dbus_get_group_id</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*group_name,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gid);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gac82f42ff83fabbde717cc08569265e6e" kindref="member">_dbus_get_user_id_and_primary_group</ref><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*username,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*uid_p,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gid_p);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_credentials_from_uid<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user_id,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref><sp/><sp/><sp/>*credentials);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" kindref="member">_dbus_groups_from_uid</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**group_ids,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*n_group_ids);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" kindref="member">_dbus_is_console_user</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gad1c3538c544df91f438a13c9fb4d3a1b" kindref="member">_dbus_is_a_number</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*num);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga9c4c1850787bfd457107b95fa1878869" kindref="member">_dbus_username_from_current_process</ref><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>**username);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga17ce3ab061a3ae2441cd33ece34f5e7a" kindref="member">_dbus_homedir_from_current_process</ref><sp/><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>**homedir);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga91c63dcb68d38347578edf39eda1712a" kindref="member">_dbus_homedir_from_username</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(const<sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*username,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*homedir);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gabdd1dc47f44e3d6702c86c68da9a0173" kindref="member">_dbus_homedir_from_uid</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*homedir);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_USERDB_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-userdb.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1998 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-connection-internal_8h" kind="file" language="C++">
+    <compoundname>dbus-connection-internal.h</compoundname>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includes refid="dbus-connection_8h" local="no">dbus/dbus-connection.h</includes>
+    <includes refid="dbus-message_8h" local="no">dbus/dbus-message.h</includes>
+    <includes refid="dbus-transport_8h" local="no">dbus/dbus-transport.h</includes>
+    <includes refid="dbus-resources_8h" local="no">dbus/dbus-resources.h</includes>
+    <includes refid="dbus-list_8h" local="no">dbus/dbus-list.h</includes>
+    <includes refid="dbus-timeout_8h" local="no">dbus/dbus-timeout.h</includes>
+    <includes refid="dbus-dataslot_8h" local="no">dbus/dbus-dataslot.h</includes>
+    <includedby refid="dbus-bus_8c" local="yes">dbus-bus.c</includedby>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-object-tree_8c" local="yes">dbus-object-tree.c</includedby>
+    <includedby refid="dbus-pending-call_8c" local="yes">dbus-pending-call.c</includedby>
+    <includedby refid="dbus-server-debug-pipe_8c" local="yes">dbus-server-debug-pipe.c</includedby>
+    <includedby refid="dbus-server-socket_8c" local="yes">dbus-server-socket.c</includedby>
+    <includedby refid="dbus-server-unix_8c" local="yes">dbus-server-unix.c</includedby>
+    <includedby refid="dbus-transport-socket_8c" local="yes">dbus-transport-socket.c</includedby>
+    <includedby refid="dbus-transport-unix_8c" local="yes">dbus-transport-unix.c</includedby>
+    <includedby refid="dbus-transport-win_8c" local="yes">dbus-transport-win.c</includedby>
+    <includedby refid="dbus-transport_8c" local="yes">dbus-transport.c</includedby>
+    <incdepgraph>
+      <node id="408">
+        <label>stdarg.h</label>
+      </node>
+      <node id="393">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal.h"/>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="414" relation="include">
+        </childnode>
+        <childnode refid="416" relation="include">
+        </childnode>
+        <childnode refid="418" relation="include">
+        </childnode>
+        <childnode refid="419" relation="include">
+        </childnode>
+        <childnode refid="420" relation="include">
+        </childnode>
+        <childnode refid="421" relation="include">
+        </childnode>
+      </node>
+      <node id="419">
+        <label>dbus/dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="402" relation="include">
+        </childnode>
+      </node>
+      <node id="413">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="414" relation="include">
+        </childnode>
+        <childnode refid="415" relation="include">
+        </childnode>
+      </node>
+      <node id="401">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="396">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="404">
+        <label>stdint.h</label>
+      </node>
+      <node id="415">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="410">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="418">
+        <label>dbus/dbus-resources.h</label>
+        <link refid="dbus-resources_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+      </node>
+      <node id="402">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="403" relation="include">
+        </childnode>
+        <childnode refid="404" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="410" relation="include">
+        </childnode>
+      </node>
+      <node id="394">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="402" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+      </node>
+      <node id="397">
+        <label>stddef.h</label>
+      </node>
+      <node id="420">
+        <label>dbus/dbus-timeout.h</label>
+        <link refid="dbus-timeout_8h_source"/>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
+        </childnode>
+      </node>
+      <node id="407">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="399">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+      </node>
+      <node id="409">
+        <label>string.h</label>
+      </node>
+      <node id="412">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+      </node>
+      <node id="414">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="416">
+        <label>dbus/dbus-transport.h</label>
+        <link refid="dbus-transport_8h_source"/>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+      <node id="421">
+        <label>dbus/dbus-dataslot.h</label>
+        <link refid="dbus-dataslot_8h_source"/>
+        <childnode refid="394" relation="include">
+        </childnode>
+      </node>
+      <node id="411">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="412" relation="include">
+        </childnode>
+      </node>
+      <node id="403">
+        <label>config.h</label>
+      </node>
+      <node id="406">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+      </node>
+      <node id="400">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+      </node>
+      <node id="398">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+      </node>
+      <node id="405">
+        <label>inttypes.h</label>
+      </node>
+      <node id="417">
+        <label>dbus/dbus-address.h</label>
+        <link refid="dbus-address_8h_source"/>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+      </node>
+      <node id="395">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="422">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal.h"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="427" relation="include">
+        </childnode>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
+      </node>
+      <node id="424">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="429">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="432">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="423">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="425">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="428">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="433">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="431">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="426">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="430">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="427">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-connection-internal_8h_1a343c1d5cf03ece1001db74d7470abf5d" prot="public" static="no">
+        <name>_DBUS_DEFAULT_TIMEOUT_VALUE</name>
+        <initializer>(25 * 1000)</initializer>
+        <briefdescription>
+<para>default timeout value when waiting for a message reply, 25 seconds </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="45" column="9" bodyfile="dbus/dbus-connection-internal.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="dbus-connection-internal_8h_1a1c62ee1be575c784c55f168ab82a7bd2" prot="public" static="no">
+        <name>DBusIterationFlags</name>
+        <enumvalue id="dbus-connection-internal_8h_1a1c62ee1be575c784c55f168ab82a7bd2a449a102259e55ce147f282a20116e7a1" prot="public">
+          <name>DBUS_ITERATION_DO_WRITING</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Write messages out. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-connection-internal_8h_1a1c62ee1be575c784c55f168ab82a7bd2a2b09cdb13acf0a18c6702c2d5440cd4b" prot="public">
+          <name>DBUS_ITERATION_DO_READING</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Read messages in. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-connection-internal_8h_1a1c62ee1be575c784c55f168ab82a7bd2a8e7017e6a8e6843e04e9031a8f097b9f" prot="public">
+          <name>DBUS_ITERATION_BLOCK</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Block if nothing to do. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="38" column="1" bodyfile="dbus/dbus-connection-internal.h" bodystart="37" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-connection-internal_8h_1afffd4ba57ac8a6e2bec502bfe6dbe8f6" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusPendingFdsChangeFunction) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>DBusPendingFdsChangeFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="47" column="1" bodyfile="dbus/dbus-connection-internal.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga4fe0c8f7b72dc89b9e1a3110db2f778e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_lock</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_lock</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Acquires the connection lock. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="49" column="1" bodyfile="dbus/dbus-connection.c" bodystart="388" bodyend="391"/>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_unlock</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_unlock</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Releases the connection lock. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="50" column="1" bodyfile="dbus/dbus-connection.c" bodystart="399" bodyend="426"/>
+        <references refid="structDBusConnection_1afc069c0dc7f29123d432650580aec036" compoundref="dbus-connection_8c" startline="269">DBusConnection::expired_messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusThreadsInternals_1ga5946b9a5ea3e12a81a798b575b45c62f" compoundref="dbus-threads_8c" startline="150" endline="156">_dbus_rmutex_unlock</references>
+        <references refid="structDBusConnection_1a98e26cfd09ddbf0238f90bf4965641bf" compoundref="dbus-connection_8c" startline="260">DBusConnection::mutex</references>
+        <references refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" compoundref="dbus-list_8c" startline="628" endline="639">_dbus_list_pop_first_link</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" compoundref="dbus-list_8c" startline="254" endline="257">_dbus_list_free_link</references>
+        <references refid="structDBusConnection_1a211104e37f65d45ab8fcb149e4bcc84e" compoundref="dbus-connection_8c" startline="294">DBusConnection::wakeup_main_function</references>
+        <references refid="structDBusConnection_1ac8aff7bafd9ed046d835c5ed80bc218c" compoundref="dbus-connection_8c" startline="295">DBusConnection::wakeup_main_data</references>
+        <references refid="structDBusConnection_1ad9e7bf73a48f4951b24ce8eec7bb7ac5" compoundref="dbus-connection_8c" startline="262">DBusConnection::dispatch_mutex</references>
+        <references refid="structDBusConnection_1aaad1c7d6e6ba3e049ef790f4f9aa35cd" compoundref="dbus-connection_8c" startline="264">DBusConnection::io_path_mutex</references>
+        <references refid="structDBusConnection_1a201f92bbc0947b503a36eaff9ae0ede9" compoundref="dbus-connection_8c" startline="263">DBusConnection::dispatch_cond</references>
+        <references refid="structDBusConnection_1a6d87e03eea7aaff53f5574efcfb8c3e4" compoundref="dbus-connection_8c" startline="265">DBusConnection::io_path_cond</references>
+        <referencedby refid="group__DBusObjectTree_1ga3babe73ed342b6963997ef2efd73ef75" compoundref="dbus-object-tree_8c" startline="623" endline="677">_dbus_object_tree_unregister_and_unlock</referencedby>
+        <referencedby refid="group__DBusObjectTree_1ga1c51e43233ce0f3855c128f2555317eb" compoundref="dbus-object-tree_8c" startline="718" endline="724">_dbus_object_tree_free_all_unlocked</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gaab7040bd1bf037d99e9bbb75d0869a2f" compoundref="dbus-object-tree_8c" startline="1206" endline="1225">_dbus_object_tree_list_registered_and_unlock</referencedby>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* _dbus_connection_ref_unlocked</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_ref_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Increments the reference count of a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Requires that the caller already holds the connection lock.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the connection. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="51" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1419" bodyend="1433"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" compoundref="dbus-connection_8c" startline="258">DBusConnection::refcount</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" compoundref="dbus-connection_8c" startline="3302" endline="3328">dbus_connection_send</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusObjectTree_1ga3babe73ed342b6963997ef2efd73ef75" compoundref="dbus-object-tree_8c" startline="623" endline="677">_dbus_object_tree_unregister_and_unlock</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_unref_unlocked</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_unref_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the reference count of a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Requires that the caller already holds the connection lock.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="52" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1442" bodyend="1457"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusSysdeps_1ga3c50a069f795dceeb9172fe2b517bbdc" compoundref="dbus-sysdeps-unix_8c" startline="2585" endline="2599">_dbus_atomic_dec</references>
+        <references refid="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" compoundref="dbus-connection_8c" startline="258">DBusConnection::refcount</references>
+        <references refid="structDBusConnection_1a43d0bb9401103383e13ed3c99baf0daa" compoundref="dbus-connection_8c" startline="291">DBusConnection::client_serial</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_queue_received_message_link</definition>
+        <argsstring>(DBusConnection *connection, DBusList *link)</argsstring>
+        <name>_dbus_connection_queue_received_message_link</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Adds a message-containing list link to the incoming message queue, taking ownership of the link and the message&apos;s current refcount. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cannot fail due to lack of memory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message link to queue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="53" column="1" bodyfile="dbus/dbus-connection.c" bodystart="480" bodyend="534"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusTransport_1ga59ed246ec0ef9c64bc4684fc17726c1d" compoundref="dbus-transport_8c" startline="701" endline="704">_dbus_transport_peek_is_authenticated</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+        <references refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="315" endline="322">_dbus_list_append_link</references>
+        <references refid="structDBusConnection_1aacb3a29956aa7712db37916194fde869" compoundref="dbus-connection_8c" startline="268">DBusConnection::incoming_messages</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</references>
+        <references refid="group__DBusHashTable_1ga36ff49c4c35599e6fcdadc7f6805c49e" compoundref="dbus-hash_8c" startline="1074" endline="1087">_dbus_hash_table_lookup_int</references>
+        <references refid="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" compoundref="dbus-connection_8c" startline="289">DBusConnection::pending_replies</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusPendingCallInternals_1gaf1e630b966722af540502329ed028254" compoundref="dbus-pending-call_8c" startline="248" endline="253">_dbus_pending_call_is_timeout_added_unlocked</references>
+        <references refid="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" compoundref="dbus-connection_8c" startline="885" endline="892">_dbus_connection_remove_timeout_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaa9acac047b61c9a0eaff1977151e9e08" compoundref="dbus-pending-call_8c" startline="279" endline="284">_dbus_pending_call_get_timeout_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gafea13f8b9977d341e41201c407adea2a" compoundref="dbus-pending-call_8c" startline="263" endline="269">_dbus_pending_call_set_timeout_added_unlocked</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusConnection_1a9bda45f2d5c9af5c187fc31d7c98b424" compoundref="dbus-connection_8c" startline="276">DBusConnection::n_incoming</references>
+        <references refid="group__DBusMessageInternals_1ga75bcb613a291eb7e427f77f2f3635b8f" compoundref="dbus-message_8c" startline="4691" endline="4706">dbus_message_type_to_string</references>
+        <references refid="group__DBusMessage_1ga41cace31999105137772b6257ea540f9" compoundref="dbus-message_8c" startline="1722" endline="1727">dbus_message_get_type</references>
+        <references refid="group__DBusMessage_1ga18adf731bb42d324fe2624407319e4af" compoundref="dbus-message_8c" startline="3096" endline="3108">dbus_message_get_path</references>
+        <references refid="group__DBusMessage_1ga1ad192bd4538cae556121a71b4e09d42" compoundref="dbus-message_8c" startline="3227" endline="3239">dbus_message_get_interface</references>
+        <references refid="group__DBusMessage_1gaf5c6b705c53db07a5ae2c6b76f230cf9" compoundref="dbus-message_8c" startline="3313" endline="3325">dbus_message_get_member</references>
+        <references refid="group__DBusMessage_1gaed63e4c2baaa50d782e8ebb7643def19" compoundref="dbus-message_8c" startline="3543" endline="3553">dbus_message_get_signature</references>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga3d31a01751860b67f960dcaffb7bb4ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_connection_has_messages_to_send_unlocked</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_has_messages_to_send_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether there are messages in the outgoing message queue. </para>        </briefdescription>
+        <detaileddescription>
+<para>Called with connection lock held.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the outgoing queue is non-empty. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="55" column="1" bodyfile="dbus/dbus-connection.c" bodystart="572" bodyend="576"/>
+        <references refid="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" compoundref="dbus-connection_8c" startline="267">DBusConnection::outgoing_messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnection_1gac40563ec4c0e309d936daf3163ba9bb7" compoundref="dbus-connection_8c" startline="588" endline="599">dbus_connection_has_messages_to_send</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga3955cd53ac4f671a5bb54019887389a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* _dbus_connection_get_message_to_send</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_get_message_to_send</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Gets the next outgoing message. </para>        </briefdescription>
+        <detaileddescription>
+<para>The message remains in the queue, and the caller does not own a reference to it.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the message to be sent. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="56" column="1" bodyfile="dbus/dbus-connection.c" bodystart="609" bodyend="614"/>
+        <references refid="group__DBusList_1ga18afc36fff1636a71295bcc7a75dc4f6" compoundref="dbus-list_8c" startline="596" endline="602">_dbus_list_get_last</references>
+        <references refid="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" compoundref="dbus-connection_8c" startline="267">DBusConnection::outgoing_messages</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_message_sent_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusMessage *message)</argsstring>
+        <name>_dbus_connection_message_sent_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Notifies the connection that a message has been sent, so the message can be removed from the outgoing queue. </para>        </briefdescription>
+        <detaileddescription>
+<para>Called with the connection lock held.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message that was sent. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="57" column="1" bodyfile="dbus/dbus-connection.c" bodystart="625" bodyend="667"/>
+        <references refid="group__DBusList_1ga42736fb02458bfffed948a509962c059" compoundref="dbus-list_8c" startline="580" endline="586">_dbus_list_get_last_link</references>
+        <references refid="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" compoundref="dbus-connection_8c" startline="267">DBusConnection::outgoing_messages</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" compoundref="dbus-list_8c" startline="499" endline="518">_dbus_list_unlink</references>
+        <references refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" compoundref="dbus-list_8c" startline="333" endline="337">_dbus_list_prepend_link</references>
+        <references refid="structDBusConnection_1afc069c0dc7f29123d432650580aec036" compoundref="dbus-connection_8c" startline="269">DBusConnection::expired_messages</references>
+        <references refid="structDBusConnection_1a07025e177949c5e65d5f983ac5f5e878" compoundref="dbus-connection_8c" startline="275">DBusConnection::n_outgoing</references>
+        <references refid="group__DBusMessageInternals_1ga75bcb613a291eb7e427f77f2f3635b8f" compoundref="dbus-message_8c" startline="4691" endline="4706">dbus_message_type_to_string</references>
+        <references refid="group__DBusMessage_1ga41cace31999105137772b6257ea540f9" compoundref="dbus-message_8c" startline="1722" endline="1727">dbus_message_get_type</references>
+        <references refid="group__DBusMessage_1ga18adf731bb42d324fe2624407319e4af" compoundref="dbus-message_8c" startline="3096" endline="3108">dbus_message_get_path</references>
+        <references refid="group__DBusMessage_1ga1ad192bd4538cae556121a71b4e09d42" compoundref="dbus-message_8c" startline="3227" endline="3239">dbus_message_get_interface</references>
+        <references refid="group__DBusMessage_1gaf5c6b705c53db07a5ae2c6b76f230cf9" compoundref="dbus-message_8c" startline="3313" endline="3325">dbus_message_get_member</references>
+        <references refid="group__DBusMessage_1gaed63e4c2baaa50d782e8ebb7643def19" compoundref="dbus-message_8c" startline="3543" endline="3553">dbus_message_get_signature</references>
+        <references refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</references>
+        <references refid="structDBusConnection_1a5dcb660883904035076579c6d2f46501" compoundref="dbus-connection_8c" startline="278">DBusConnection::outgoing_counter</references>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga82adef36b4cd583bc1146eae5756c063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_connection_add_watch_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusWatch *watch)</argsstring>
+        <name>_dbus_connection_add_watch_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Adds a watch using the connection&apos;s DBusAddWatchFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>Otherwise records the watch to be added when said function is available. Also re-adds the watch if the DBusAddWatchFunction changes. May fail due to lack of memory. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="59" column="1" bodyfile="dbus/dbus-connection.c" bodystart="743" bodyend="749"/>
+        <references refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga65fc02c0756d0c7caaa39cd60922c99b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_remove_watch_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusWatch *watch)</argsstring>
+        <name>_dbus_connection_remove_watch_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Removes a watch using the connection&apos;s DBusRemoveWatchFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this function on a watch that was not previously added. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="61" column="1" bodyfile="dbus/dbus-connection.c" bodystart="761" bodyend="768"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga6c00e2eaf225b154760976af5688d250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_toggle_watch_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusWatch *watch, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_connection_toggle_watch_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Toggles a watch and notifies app via connection&apos;s DBusWatchToggledFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this function on a watch that was not previously added. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch to toggle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to enable or disable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="63" column="1" bodyfile="dbus/dbus-connection.c" bodystart="781" bodyend="791"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusWatchInternals_1ga14bb50e8663a1d9d3960b4f73c09c097" compoundref="dbus-watch_8c" startline="436" endline="455">_dbus_watch_list_toggle_watch</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_connection_handle_watch</definition>
+        <argsstring>(DBusWatch *watch, unsigned int condition, void *data)</argsstring>
+        <name>_dbus_connection_handle_watch</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>condition</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>A callback for use with dbus_watch_new() to create a <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>This is basically a hack - we could delete <ref refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" kindref="member">_dbus_transport_handle_watch()</ref> and the virtual handle_watch in <ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> if we got rid of it. The reason this is some work is threading, see the <ref refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" kindref="member">_dbus_connection_handle_watch()</ref> implementation.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>condition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current condition of the file descriptors being watched. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>must be a pointer to a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the IO condition may not have been fully handled due to lack of memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="66" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1486" bodyend="1525"/>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusPendingCallInternals_1gab21a3014fa3cacf2a580e079321abc33" compoundref="dbus-pending-call_8c" startline="57">CONNECTION_UNLOCK</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" compoundref="dbus-transport_8c" startline="889" endline="915">_dbus_transport_handle_watch</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</references>
+        <references refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</references>
+        <references refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</references>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</references>
+        <references refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</references>
+        <references refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</references>
+        <references refid="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" compoundref="dbus-hash_8c" startline="613" endline="623">_dbus_hash_iter_get_value</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</references>
+        <references refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="649" endline="662">_dbus_list_pop_first</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemoryInternals_1ga8dc6d5dd0a0e7901ab793da7403ee734" compoundref="dbus-memory_8c" startline="810" endline="821">_dbus_register_shutdown_func</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusHashTable_1gad51eb3fe682721dd4f6a920ca87cb730" compoundref="dbus-hash_8c" startline="1049" endline="1062">_dbus_hash_table_lookup_string</references>
+        <references refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</references>
+        <references refid="structDBusConnection_1ad1abb7ad98db87f32b4abda22df075bd" compoundref="dbus-connection_8c" startline="306">DBusConnection::server_guid</references>
+        <references refid="structDBusConnection_1aae47138b9b2494b65072ff300d631aa8" compoundref="dbus-connection_8c" startline="315">DBusConnection::shareable</references>
+        <references refid="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" compoundref="dbus-list_8c" startline="292" endline="304">_dbus_list_prepend</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" compoundref="dbus-hash_8c" startline="1214" endline="1230">_dbus_hash_table_insert_string</references>
+        <references refid="group__DBusHashTable_1ga388d50ce1a07bf0790b9f2ecdb08a396" compoundref="dbus-hash_8c" startline="1123" endline="1140">_dbus_hash_table_remove_string</references>
+        <references refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="415" endline="433">_dbus_list_remove</references>
+        <references refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" compoundref="dbus-connection_8c" startline="1442" endline="1457">_dbus_connection_unref_unlocked</references>
+        <references refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</references>
+        <references refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</references>
+        <references refid="group__DBusTransport_1gab7c53c32a2320c81aae8ce4345762e73" compoundref="dbus-transport_8c" startline="477" endline="491">_dbus_transport_unref</references>
+        <references refid="structDBusConnection_1a336a7953a4a28e55f6e6a07acfa11df3" compoundref="dbus-connection_8c" startline="330">DBusConnection::have_connection_lock</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</references>
+        <references refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusAddress_1ga37a7009b07cf991ff07f3e86d71bf352" compoundref="dbus-address_8c" startline="189" endline="196">dbus_address_entries_free</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga69e87e3be94b8c681585ec870e39a64a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_connection_add_timeout_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_connection_add_timeout_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Adds a timeout using the connection&apos;s DBusAddTimeoutFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>Otherwise records the timeout to be added when said function is available. Also re-adds the timeout if the DBusAddTimeoutFunction changes. May fail due to lack of memory. The timeout will fire repeatedly until removed. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="69" column="1" bodyfile="dbus/dbus-connection.c" bodystart="867" bodyend="873"/>
+        <references refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_remove_timeout_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_connection_remove_timeout_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Removes a timeout using the connection&apos;s DBusRemoveTimeoutFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this function on a timeout that was not previously added. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="71" column="1" bodyfile="dbus/dbus-connection.c" bodystart="885" bodyend="892"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" compoundref="dbus-connection_8c" startline="3302" endline="3328">dbus_connection_send</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_toggle_timeout_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusTimeout *timeout, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_connection_toggle_timeout_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Toggles a timeout and notifies app via connection&apos;s DBusTimeoutToggledFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this function on a timeout that was not previously added. Connection lock should be held when calling this.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to toggle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to enable or disable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="73" column="1" bodyfile="dbus/dbus-connection.c" bodystart="905" bodyend="913"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" compoundref="dbus-timeout_8c" startline="362" endline="376">_dbus_timeout_list_toggle_timeout</references>
+        <references refid="group__DBusPendingCallInternals_1gaf5f3df36149bfe55d824eb08d00768fc" compoundref="dbus-pending-call_8c" startline="293" endline="298">_dbus_pending_call_get_reply_serial_unlocked</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusPendingCallInternals_1gaa9acac047b61c9a0eaff1977151e9e08" compoundref="dbus-pending-call_8c" startline="279" endline="284">_dbus_pending_call_get_timeout_unlocked</references>
+        <references refid="group__DBusConnectionInternals_1ga69e87e3be94b8c681585ec870e39a64a" compoundref="dbus-connection_8c" startline="867" endline="873">_dbus_connection_add_timeout_unlocked</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</references>
+        <references refid="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" compoundref="dbus-connection_8c" startline="289">DBusConnection::pending_replies</references>
+        <references refid="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" compoundref="dbus-connection_8c" startline="885" endline="892">_dbus_connection_remove_timeout_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gafea13f8b9977d341e41201c407adea2a" compoundref="dbus-pending-call_8c" startline="263" endline="269">_dbus_pending_call_set_timeout_added_unlocked</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gae725060aa80d9df58dcee4f1fa108784" compoundref="dbus-pending-call_8c" startline="338" endline="343">_dbus_pending_call_get_connection_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaf1e630b966722af540502329ed028254" compoundref="dbus-pending-call_8c" startline="248" endline="253">_dbus_pending_call_is_timeout_added_unlocked</references>
+        <references refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1ga26f09beed0dd6323cca0452abf344567" compoundref="dbus-pending-call_8c" startline="457" endline="470">_dbus_pending_call_unref_and_unlock</references>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" compoundref="dbus-connection_8c" startline="1442" endline="1457">_dbus_connection_unref_unlocked</references>
+        <references refid="group__DBusHashTable_1gacdebe75bd692605a69dc73c15e0eefd0" compoundref="dbus-hash_8c" startline="1151" endline="1168">_dbus_hash_table_remove_int</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* _dbus_connection_new_for_transport</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>_dbus_connection_new_for_transport</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new connection for the given transport. </para>        </briefdescription>
+        <detaileddescription>
+<para>A transport represents a message stream that uses some concrete mechanism, such as UNIX domain sockets. May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if insufficient memory exists to create the connection.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>transport</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the transport. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new connection, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="76" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1249" bodyend="1409"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusWatchInternals_1ga5d9db5d0af5916a5ec890eb38d5741eb" compoundref="dbus-watch_8c" startline="232" endline="241">_dbus_watch_list_new</references>
+        <references refid="group__DBusTimeoutInternals_1ga5b122b35cdb3926b7dc2d084ddff9d62" compoundref="dbus-timeout_8c" startline="194" endline="203">_dbus_timeout_list_new</references>
+        <references refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" compoundref="dbus-threads_8c" startline="53" endline="64">_dbus_rmutex_new_at_location</references>
+        <references refid="structDBusConnection_1a98e26cfd09ddbf0238f90bf4965641bf" compoundref="dbus-connection_8c" startline="260">DBusConnection::mutex</references>
+        <references refid="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" compoundref="dbus-threads_8c" startline="77" endline="88">_dbus_cmutex_new_at_location</references>
+        <references refid="structDBusConnection_1aaad1c7d6e6ba3e049ef790f4f9aa35cd" compoundref="dbus-connection_8c" startline="264">DBusConnection::io_path_mutex</references>
+        <references refid="structDBusConnection_1ad9e7bf73a48f4951b24ce8eec7bb7ac5" compoundref="dbus-connection_8c" startline="262">DBusConnection::dispatch_mutex</references>
+        <references refid="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" compoundref="dbus-threads_8c" startline="199" endline="204">_dbus_condvar_new_at_location</references>
+        <references refid="structDBusConnection_1a201f92bbc0947b503a36eaff9ae0ede9" compoundref="dbus-connection_8c" startline="263">DBusConnection::dispatch_cond</references>
+        <references refid="structDBusConnection_1a6d87e03eea7aaff53f5574efcfb8c3e4" compoundref="dbus-connection_8c" startline="265">DBusConnection::io_path_cond</references>
+        <references refid="structDBusConnection_1a773fb4ecd2738548dbbfbe6d1206da92" compoundref="dbus-connection_8c" startline="286">DBusConnection::slot_mutex</references>
+        <references refid="group__DBusMessage_1ga6ce3213dfb17be7956affba40207a5a0" compoundref="dbus-message_8c" startline="1424" endline="1453">dbus_message_new_signal</references>
+        <references refid="group__DBusShared_1ga850990a54a46142ee7c5f8174cc932c1" compoundref="dbus-shared_8h" startline="82">DBUS_PATH_LOCAL</references>
+        <references refid="group__DBusShared_1ga9ef6478aae637449ec0c5de1679f75ce" compoundref="dbus-shared_8h" startline="100">DBUS_INTERFACE_LOCAL</references>
+        <references refid="group__DBusList_1gac20b9981531cef590d49a59240344cd8" compoundref="dbus-list_8c" startline="242" endline="245">_dbus_list_alloc_link</references>
+        <references refid="group__DBusResources_1ga9911dd8fa020299a2b517251ea0be399" compoundref="dbus-resources_8c" startline="88" endline="99">_dbus_counter_new</references>
+        <references refid="group__DBusObjectTree_1ga5920f14b487122f13a3d439952d5ed2e" compoundref="dbus-object-tree_8c" startline="92" endline="121">_dbus_object_tree_new</references>
+        <references refid="group__DBusSysdeps_1ga6890d4cde3afec0bf274ca2af8c9e204" compoundref="dbus-sysdeps-unix_8c" startline="2990" endline="2993">_dbus_disable_sigpipe</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" compoundref="dbus-connection_8c" startline="258">DBusConnection::refcount</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+        <references refid="structDBusConnection_1abdb6a32972d924531fb2cd80c7fd6d37" compoundref="dbus-connection_8c" startline="281">DBusConnection::watches</references>
+        <references refid="structDBusConnection_1af3936ac5c968f2ac09bf05cf36025994" compoundref="dbus-connection_8c" startline="282">DBusConnection::timeouts</references>
+        <references refid="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" compoundref="dbus-connection_8c" startline="289">DBusConnection::pending_replies</references>
+        <references refid="structDBusConnection_1a5dcb660883904035076579c6d2f46501" compoundref="dbus-connection_8c" startline="278">DBusConnection::outgoing_counter</references>
+        <references refid="structDBusConnection_1a32d14cefcb4daea257544397755d45ed" compoundref="dbus-connection_8c" startline="284">DBusConnection::filter_list</references>
+        <references refid="structDBusConnection_1af3bbd2ecba171ebb8e952eaa030971d7" compoundref="dbus-connection_8c" startline="302">DBusConnection::last_dispatch_status</references>
+        <references refid="group__DBusConnection_1ggabf250a32ff740b2a8c99136e0142d8d2acb9bb9daa90f520d5fc9e84de3c5f017" compoundref="dbus-connection_8h" startline="82">DBUS_DISPATCH_COMPLETE</references>
+        <references refid="structDBusConnection_1acd289771721a459f4f9cdeaca0fa87c2" compoundref="dbus-connection_8c" startline="304">DBusConnection::objects</references>
+        <references refid="structDBusConnection_1a2a9f22339f90157f308a532462218404" compoundref="dbus-connection_8c" startline="317">DBusConnection::exit_on_disconnect</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusConnection_1aae47138b9b2494b65072ff300d631aa8" compoundref="dbus-connection_8c" startline="315">DBusConnection::shareable</references>
+        <references refid="structDBusConnection_1ab13bc36d7e6f91995768277ecbd5482c" compoundref="dbus-connection_8c" startline="319">DBusConnection::route_peer_messages</references>
+        <references refid="structDBusConnection_1a48d141d4311211e921571043bdbaeefb" compoundref="dbus-connection_8c" startline="321">DBusConnection::disconnected_message_arrived</references>
+        <references refid="structDBusConnection_1a3b2707b9d10d0643f91a8e027ae118b5" compoundref="dbus-connection_8c" startline="325">DBusConnection::disconnected_message_processed</references>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusDataSlot_1ga6de49b3a1210202215d40a5a19806992" compoundref="dbus-dataslot_8c" startline="197" endline="201">_dbus_data_slot_list_init</references>
+        <references refid="structDBusConnection_1a0f805edcd9c09aaf45974510403dccbd" compoundref="dbus-connection_8c" startline="287">DBusConnection::slot_list</references>
+        <references refid="structDBusConnection_1a43d0bb9401103383e13ed3c99baf0daa" compoundref="dbus-connection_8c" startline="291">DBusConnection::client_serial</references>
+        <references refid="structDBusConnection_1aa70afc41f6184604c027e7f71a314d7f" compoundref="dbus-connection_8c" startline="292">DBusConnection::disconnect_message_link</references>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusTransport_1ga9aaa3f8bf429c94d4ed180dff36c503c" compoundref="dbus-transport_8c" startline="927" endline="941">_dbus_transport_set_connection</references>
+        <references refid="group__DBusPendingCallInternals_1gab21a3014fa3cacf2a580e079321abc33" compoundref="dbus-pending-call_8c" startline="57">CONNECTION_UNLOCK</references>
+        <references refid="group__DBusTransport_1ga31d6dbc864c9ea643d72521bbb1b7c56" compoundref="dbus-transport_8c" startline="460" endline="467">_dbus_transport_ref</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" compoundref="dbus-list_8c" startline="254" endline="257">_dbus_list_free_link</references>
+        <references refid="group__DBusThreadsInternals_1ga29444a34b569fca22fac48067832aacd" compoundref="dbus-threads_8c" startline="224" endline="231">_dbus_condvar_free_at_location</references>
+        <references refid="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" compoundref="dbus-threads_8c" startline="94" endline="101">_dbus_rmutex_free_at_location</references>
+        <references refid="group__DBusThreadsInternals_1ga20ec8aeb88b1f65445a4d3c1c0bd0048" compoundref="dbus-threads_8c" startline="107" endline="114">_dbus_cmutex_free_at_location</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</references>
+        <references refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</references>
+        <references refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</references>
+        <references refid="group__DBusResources_1ga48d9b53d1a395ab3c4f1846ca569ef3f" compoundref="dbus-resources_8c" startline="124" endline="135">_dbus_counter_unref</references>
+        <references refid="group__DBusObjectTree_1ga7639e273ab160c422a7cef0cda60ded5" compoundref="dbus-object-tree_8c" startline="143" endline="155">_dbus_object_tree_unref</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_do_iteration_unlocked</definition>
+        <argsstring>(DBusConnection *connection, DBusPendingCall *pending, unsigned int flags, int timeout_milliseconds)</argsstring>
+        <name>_dbus_connection_do_iteration_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+          <declname>pending</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <briefdescription>
+<para>Queues incoming messages and sends outgoing messages for this connection, optionally blocking in the process. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each call to <ref refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" kindref="member">_dbus_connection_do_iteration_unlocked()</ref> will call select() or poll() one time and then read or write data if possible.</para><para>The purpose of this function is to be able to flush outgoing messages or queue up incoming messages without returning control to the application and causing reentrancy weirdness.</para><para>The flags parameter allows you to specify whether to read incoming messages, write outgoing messages, or both, and whether to block if no immediate action is possible.</para><para>The timeout_milliseconds parameter does nothing unless the iteration is blocking.</para><para>If there are no outgoing messages and DBUS_ITERATION_DO_READING wasn&apos;t specified, then it&apos;s impossible to block, even if you specify DBUS_ITERATION_BLOCK; in that case the function returns immediately.</para><para>If pending is not NULL then a check is made if the pending call is completed after the io path has been required. If the call has been completed nothing is done. This must be done since the _dbus_connection_acquire_io_path releases the connection lock for a while.</para><para>Called with connection lock held.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pending</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pending call that should be checked or NULL </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iteration flags. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_milliseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum blocking time, or -1 for no limit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="77" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1198" bodyend="1237"/>
+        <references refid="structDBusConnection_1a07025e177949c5e65d5f983ac5f5e878" compoundref="dbus-connection_8c" startline="275">DBusConnection::n_outgoing</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusPendingCallInternals_1ga37bef4359b3c29629a57f5fe480690a1" compoundref="dbus-pending-call_8c" startline="480" endline="483">_dbus_pending_call_get_completed_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaf5f3df36149bfe55d824eb08d00768fc" compoundref="dbus-pending-call_8c" startline="293" endline="298">_dbus_pending_call_get_reply_serial_unlocked</references>
+        <references refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gad5e725e66dc16a411544e25675fb9fba" compoundref="dbus-connection_8c" startline="2379" endline="2550">_dbus_connection_block_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</referencedby>
+        <referencedby refid="group__DBusConnection_1ga10e68d9d2f41d655a4151ddeb807ff54" compoundref="dbus-connection_8c" startline="3641" endline="3661">dbus_connection_flush</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_close_possibly_shared</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_close_possibly_shared</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Closes a shared OR private connection, while <ref refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" kindref="member">dbus_connection_close()</ref> can only be used on private connections. </para>        </briefdescription>
+        <detaileddescription>
+<para>Should only be called by the dbus code that owns the connection - an owner must be known, the open/close state is like malloc/free, not like ref/unref.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="81" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1948" bodyend="1955"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="structDBusPreallocatedSend_1ae164fe13f866bebbd714b526104c5bff" compoundref="dbus-connection_8c" startline="243">DBusPreallocatedSend::queue_link</references>
+        <references refid="group__DBusList_1gac20b9981531cef590d49a59240344cd8" compoundref="dbus-list_8c" startline="242" endline="245">_dbus_list_alloc_link</references>
+        <references refid="structDBusPreallocatedSend_1aae6c1bd98f78491482d5f59b6ef138d4" compoundref="dbus-connection_8c" startline="244">DBusPreallocatedSend::counter_link</references>
+        <references refid="structDBusConnection_1a5dcb660883904035076579c6d2f46501" compoundref="dbus-connection_8c" startline="278">DBusConnection::outgoing_counter</references>
+        <references refid="group__DBusResources_1gae93240c77bfb66642453518c9bb90bc4" compoundref="dbus-resources_8c" startline="108" endline="115">_dbus_counter_ref</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="structDBusPreallocatedSend_1a465af3647772c89500df0b46f43d035b" compoundref="dbus-connection_8c" startline="242">DBusPreallocatedSend::connection</references>
+        <references refid="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" compoundref="dbus-list_8c" startline="254" endline="257">_dbus_list_free_link</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" compoundref="dbus-list_8c" startline="333" endline="337">_dbus_list_prepend_link</references>
+        <references refid="structDBusConnection_1a714fd51af8730c367b079594c7f756ae" compoundref="dbus-connection_8c" startline="267">DBusConnection::outgoing_messages</references>
+        <references refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</references>
+        <references refid="group__DBusMessage_1ga834035e4817acd64adc8ca584bdf3982" compoundref="dbus-message_8c" startline="1667" endline="1680">dbus_message_ref</references>
+        <references refid="structDBusConnection_1a07025e177949c5e65d5f983ac5f5e878" compoundref="dbus-connection_8c" startline="275">DBusConnection::n_outgoing</references>
+        <references refid="group__DBusMessageInternals_1ga75bcb613a291eb7e427f77f2f3635b8f" compoundref="dbus-message_8c" startline="4691" endline="4706">dbus_message_type_to_string</references>
+        <references refid="group__DBusMessage_1ga41cace31999105137772b6257ea540f9" compoundref="dbus-message_8c" startline="1722" endline="1727">dbus_message_get_type</references>
+        <references refid="group__DBusMessage_1ga18adf731bb42d324fe2624407319e4af" compoundref="dbus-message_8c" startline="3096" endline="3108">dbus_message_get_path</references>
+        <references refid="group__DBusMessage_1ga1ad192bd4538cae556121a71b4e09d42" compoundref="dbus-message_8c" startline="3227" endline="3239">dbus_message_get_interface</references>
+        <references refid="group__DBusMessage_1gaf5c6b705c53db07a5ae2c6b76f230cf9" compoundref="dbus-message_8c" startline="3313" endline="3325">dbus_message_get_member</references>
+        <references refid="group__DBusMessage_1gaed63e4c2baaa50d782e8ebb7643def19" compoundref="dbus-message_8c" startline="3543" endline="3553">dbus_message_get_signature</references>
+        <references refid="group__DBusMessage_1gaac65c926e6253e49aa689b4f032fad45" compoundref="dbus-message_8c" startline="3450" endline="3462">dbus_message_get_destination</references>
+        <references refid="group__DBusMessage_1ga390710c25564c80025a006c376da2030" compoundref="dbus-message_8c" startline="1127" endline="1132">dbus_message_get_serial</references>
+        <references refid="group__DBusMessageInternals_1ga3dd30a62c63eb9972cc0c564f2a89c3b" compoundref="dbus-message_8c" startline="254" endline="261">dbus_message_set_serial</references>
+        <references refid="group__DBusMessageInternals_1ga3ecc9c24381af05289161f477ad6a578" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</references>
+        <references refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" compoundref="dbus-connection_8c" startline="1198" endline="1237">_dbus_connection_do_iteration_unlocked</references>
+        <referencedby refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" compoundref="dbus-bus_8c" startline="387" endline="413">_dbus_bus_notify_shared_connection_disconnected_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_close_if_only_one_ref</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_close_if_only_one_ref</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Used internally to handle the semantics of <ref refid="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" kindref="member">dbus_server_set_new_connection_function()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the new connection function does not ref the connection, we want to close it.</para><para>A bit of a hack, probably the new connection function should have returned a value for whether to close, or should have had to close the connection itself if it didn&apos;t want it.</para><para>But, this works OK as long as the new connection function doesn&apos;t do anything crazy like keep the connection around without ref&apos;ing it.</para><para>We have to lock the connection across refcount check and close in case the new connection function spawns a thread that closes and unrefs. In that case, if the app thread closes and unrefs first, we&apos;ll harmlessly close again; if the app thread still has the ref, we&apos;ll close and then the app will close harmlessly. If the app unrefs without closing, the app is broken since if the app refs from the new connection function it is supposed to also close.</para><para>If we didn&apos;t atomically check the refcount and close with the lock held though, we could screw this up.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="82" column="1" bodyfile="dbus/dbus-connection.c" bodystart="2146" bodyend="2160"/>
+        <references refid="structDBusMessageFilter_1a2d2debd9a708cb7d4f8447c18f7458b9" compoundref="dbus-connection_8c" startline="230">DBusMessageFilter::refcount</references>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusSysdeps_1ga626c810359ba0e362367ce2ec6691aca" compoundref="dbus-sysdeps-unix_8c" startline="2609" endline="2623">_dbus_atomic_get</references>
+        <references refid="structDBusConnection_1a6fbf0227071fc20ffd5b0e79aef58e92" compoundref="dbus-connection_8c" startline="258">DBusConnection::refcount</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusPendingCallInternals_1gab21a3014fa3cacf2a580e079321abc33" compoundref="dbus-pending-call_8c" startline="57">CONNECTION_UNLOCK</references>
+        <references refid="group__DBusSysdeps_1ga1153b4669819148af6b3f6f2b7c9183a" compoundref="dbus-sysdeps-unix_8c" startline="2870" endline="2888">_dbus_sleep_milliseconds</references>
+        <references refid="group__DBusMessage_1gab9e5bf8d87a95c5ca7026a791148ebd4" compoundref="dbus-message_8c" startline="1289" endline="1309">dbus_message_new</references>
+        <references refid="group__DBusProtocol_1ga2b9423d95066313d73eeea8eeaf86812" compoundref="dbus-protocol_8h" startline="238">DBUS_MESSAGE_TYPE_ERROR</references>
+        <references refid="group__DBusMessage_1ga892f9857707371c2a53cec6b54c843c7" compoundref="dbus-message_8c" startline="3371" endline="3384">dbus_message_set_error_name</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMessage_1ga0e86aeb2dc6831ccc9a21fcbf8cc16f7" compoundref="dbus-message_8c" startline="2984" endline="2993">dbus_message_set_no_reply</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMessage_1gaec08603ff3d49bbcded67d25188a23f1" compoundref="dbus-message_8c" startline="1143" endline="1154">dbus_message_set_reply_serial</references>
+        <references refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</references>
+        <references refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="structDBusConnection_1aacb3a29956aa7712db37916194fde869" compoundref="dbus-connection_8c" startline="268">DBusConnection::incoming_messages</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="structDBusConnection_1a9bda45f2d5c9af5c187fc31d7c98b424" compoundref="dbus-connection_8c" startline="276">DBusConnection::n_incoming</references>
+        <references refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</references>
+        <references refid="structDBusConnection_1ad8fa077f91fe62d0c10862e2ff9e86ca" compoundref="dbus-connection_8c" startline="289">DBusConnection::pending_replies</references>
+        <references refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</references>
+        <references refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</references>
+        <references refid="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" compoundref="dbus-hash_8c" startline="613" endline="623">_dbus_hash_iter_get_value</references>
+        <references refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1ga1bc4de7652108d0629522a4e3adffcab" compoundref="dbus-pending-call_8c" startline="228" endline="239">_dbus_pending_call_queue_timeout_error_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaf1e630b966722af540502329ed028254" compoundref="dbus-pending-call_8c" startline="248" endline="253">_dbus_pending_call_is_timeout_added_unlocked</references>
+        <references refid="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" compoundref="dbus-connection_8c" startline="885" endline="892">_dbus_connection_remove_timeout_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaa9acac047b61c9a0eaff1977151e9e08" compoundref="dbus-pending-call_8c" startline="279" endline="284">_dbus_pending_call_get_timeout_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gafea13f8b9977d341e41201c407adea2a" compoundref="dbus-pending-call_8c" startline="263" endline="269">_dbus_pending_call_set_timeout_added_unlocked</references>
+        <references refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</references>
+        <references refid="group__DBusPendingCallInternals_1ga26f09beed0dd6323cca0452abf344567" compoundref="dbus-pending-call_8c" startline="457" endline="470">_dbus_pending_call_unref_and_unlock</references>
+        <references refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="172" endline="194">_dbus_pending_call_set_reply_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1ga6b10d157242e540fd18bd3db733dab5c" compoundref="dbus-pending-call_8c" startline="204" endline="218">_dbus_pending_call_complete</references>
+        <references refid="group__DBusPendingCall_1gadaba15a74ba4925cdef52d4791cd3147" compoundref="dbus-pending-call_8c" startline="597" endline="609">dbus_pending_call_unref</references>
+        <references refid="group__DBusPendingCallInternals_1gaf5f3df36149bfe55d824eb08d00768fc" compoundref="dbus-pending-call_8c" startline="293" endline="298">_dbus_pending_call_get_reply_serial_unlocked</references>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1a80b82deae7e9f4abafa4ecf5fe440139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+        <definition>DBusPendingCall* _dbus_pending_call_new</definition>
+        <argsstring>(DBusConnection *connection, int timeout_milliseconds, DBusTimeoutHandler timeout_handler)</argsstring>
+        <name>_dbus_pending_call_new</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" kindref="member">DBusTimeoutHandler</ref></type>
+          <declname>timeout_handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1a8f79b994e34d31045b5c315c1fb62d88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_pending_call_notify</definition>
+        <argsstring>(DBusPendingCall *pending)</argsstring>
+        <name>_dbus_pending_call_notify</name>
+        <param>
+          <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+          <declname>pending</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_remove_pending_call</definition>
+        <argsstring>(DBusConnection *connection, DBusPendingCall *pending)</argsstring>
+        <name>_dbus_connection_remove_pending_call</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+          <declname>pending</declname>
+        </param>
+        <briefdescription>
+<para>Removes a pending call from the connection, such that the pending reply will be ignored. </para>        </briefdescription>
+        <detaileddescription>
+<para>May drop the last reference to the pending call.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pending</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pending call </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="88" column="1" bodyfile="dbus/dbus-connection.c" bodystart="1044" bodyend="1049"/>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <references refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gab21a3014fa3cacf2a580e079321abc33" compoundref="dbus-pending-call_8c" startline="57">CONNECTION_UNLOCK</references>
+        <references refid="group__DBusThreadsInternals_1gabea1bdc19c155bca909839090c05eee2" compoundref="dbus-threads_8c" startline="136" endline="142">_dbus_cmutex_lock</references>
+        <references refid="structDBusConnection_1aaad1c7d6e6ba3e049ef790f4f9aa35cd" compoundref="dbus-connection_8c" startline="264">DBusConnection::io_path_mutex</references>
+        <references refid="structDBusConnection_1a9f71e445534a4405075c33b5a075589f" compoundref="dbus-connection_8c" startline="313">DBusConnection::io_path_acquired</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusThreadsInternals_1ga918e53c2abc48ff496f3c75566ba8bd3" compoundref="dbus-threads_8c" startline="261" endline="270">_dbus_condvar_wait_timeout</references>
+        <references refid="structDBusConnection_1a6d87e03eea7aaff53f5574efcfb8c3e4" compoundref="dbus-connection_8c" startline="265">DBusConnection::io_path_cond</references>
+        <references refid="group__DBusThreadsInternals_1ga6938b8a4547ce48290615990f64bd3bb" compoundref="dbus-threads_8c" startline="240" endline="247">_dbus_condvar_wait</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusThreadsInternals_1gad199edcd1bb88cfd2e9dcfb47cbc732f" compoundref="dbus-threads_8c" startline="164" endline="170">_dbus_cmutex_unlock</references>
+        <references refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" compoundref="dbus-connection_8c" startline="1442" endline="1457">_dbus_connection_unref_unlocked</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" compoundref="dbus-threads_8c" startline="278" endline="284">_dbus_condvar_wake_one</references>
+        <referencedby refid="group__DBusPendingCall_1ga6530d18f891d3ca5f5df87ea7c2b155c" compoundref="dbus-pending-call_8c" startline="663" endline="669">dbus_pending_call_cancel</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gad5e725e66dc16a411544e25675fb9fba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_block_pending_call</definition>
+        <argsstring>(DBusPendingCall *pending)</argsstring>
+        <name>_dbus_connection_block_pending_call</name>
+        <param>
+          <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+          <declname>pending</declname>
+        </param>
+        <briefdescription>
+<para>Blocks until a pending call times out or gets a reply. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not re-enter the main loop or run filter/path-registered callbacks. The reply to the message will not be seen by filter callbacks.</para><para>Returns immediately if pending call already got a reply.</para><para><xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>could use performance improvements (it keeps scanning the whole message queue for example)</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pending</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pending call we block for a reply on </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="90" column="1" bodyfile="dbus/dbus-connection.c" bodystart="2379" bodyend="2550"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusPendingCall_1gacbf33ae8a1cc125628f9ea44d175c159" compoundref="dbus-pending-call_8c" startline="679" endline="690">dbus_pending_call_get_completed</references>
+        <references refid="group__DBusPendingCall_1ga334f6c6621583e15fdaf1a3f93dd2221" compoundref="dbus-pending-call_8c" startline="577" endline="588">dbus_pending_call_ref</references>
+        <references refid="group__DBusPendingCallInternals_1ga68e5ff616e6a6563d83966c3d88b9b32" compoundref="dbus-pending-call_8c" startline="323" endline="329">_dbus_pending_call_get_connection_and_lock</references>
+        <references refid="group__DBusPendingCallInternals_1gaf5f3df36149bfe55d824eb08d00768fc" compoundref="dbus-pending-call_8c" startline="293" endline="298">_dbus_pending_call_get_reply_serial_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1gaa9acac047b61c9a0eaff1977151e9e08" compoundref="dbus-pending-call_8c" startline="279" endline="284">_dbus_pending_call_get_timeout_unlocked</references>
+        <references refid="group__DBusSysdeps_1gab9951a7fd8c33188bf86314e7fd56300" compoundref="dbus-sysdeps-unix_8c" startline="2738" endline="2759">_dbus_get_monotonic_time</references>
+        <references refid="group__DBusTimeout_1ga67ba21b6189438875c6007ee79da5e37" compoundref="dbus-timeout_8c" startline="416" endline="419">dbus_timeout_get_interval</references>
+        <references refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" compoundref="dbus-connection_8c" startline="1198" endline="1237">_dbus_connection_do_iteration_unlocked</references>
+        <references refid="group__DBusPendingCallInternals_1ga37bef4359b3c29629a57f5fe480690a1" compoundref="dbus-pending-call_8c" startline="480" endline="483">_dbus_pending_call_get_completed_unlocked</references>
+        <references refid="group__DBusPendingCall_1gadaba15a74ba4925cdef52d4791cd3147" compoundref="dbus-pending-call_8c" startline="597" endline="609">dbus_pending_call_unref</references>
+        <references refid="group__DBusConnection_1ggabf250a32ff740b2a8c99136e0142d8d2adf8e8a594ab338cb9cf7855b19e37e93" compoundref="dbus-connection_8h" startline="81">DBUS_DISPATCH_DATA_REMAINS</references>
+        <references refid="group__DBusProtocol_1gaef6443e0bd8cdcc1606d985a775d07a7" compoundref="dbus-protocol_8h" startline="389">DBUS_ERROR_DISCONNECTED</references>
+        <references refid="structDBusConnection_1aa70afc41f6184604c027e7f71a314d7f" compoundref="dbus-connection_8c" startline="292">DBusConnection::disconnect_message_link</references>
+        <references refid="group__DBusConnection_1ggabf250a32ff740b2a8c99136e0142d8d2a5af20a035f29cfa67fb8d69fb693b685" compoundref="dbus-connection_8h" startline="83">DBUS_DISPATCH_NEED_MEMORY</references>
+        <references refid="group__DBusPendingCallInternals_1ga99fcbae5b8f2ed2cc019cab85f63d4e4" compoundref="dbus-pending-call_8c" startline="53">CONNECTION_LOCK</references>
+        <referencedby refid="group__DBusPendingCall_1ga67b99f749a7f477c7b5d70f2acee5452" compoundref="dbus-pending-call_8c" startline="737" endline="742">dbus_pending_call_block</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1a560949954390f14b96572473e8c00e77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_pending_call_complete_and_unlock</definition>
+        <argsstring>(DBusPendingCall *pending, DBusMessage *message)</argsstring>
+        <name>_dbus_pending_call_complete_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> *</type>
+          <declname>pending</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1ga2974eb1c261305fafc635e14fc575d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_connection_send_and_unlock</definition>
+        <argsstring>(DBusConnection *connection, DBusMessage *message, dbus_uint32_t *client_serial)</argsstring>
+        <name>_dbus_connection_send_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>client_serial</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" kindref="member">dbus_connection_send()</ref>, but assumes the connection is already locked on function entry, and unlocks before returning. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to send </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client_serial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for client serial of sent message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on out-of-memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="93" column="1" bodyfile="dbus/dbus-connection.c" bodystart="2098" bodyend="2119"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusPendingCallInternals_1gab21a3014fa3cacf2a580e079321abc33" compoundref="dbus-pending-call_8c" startline="57">CONNECTION_UNLOCK</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" compoundref="dbus-connection_8c" startline="3302" endline="3328">dbus_connection_send</referencedby>
+        <referencedby refid="group__DBusObjectTree_1ga1c51e43233ce0f3855c128f2555317eb" compoundref="dbus-object-tree_8c" startline="718" endline="724">_dbus_object_tree_free_all_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_queue_synthesized_message_link</definition>
+        <argsstring>(DBusConnection *connection, DBusList *link)</argsstring>
+        <name>_dbus_connection_queue_synthesized_message_link</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Adds a link + message to the incoming message queue. </para>        </briefdescription>
+        <detaileddescription>
+<para>Can&apos;t fail. Takes ownership of both link and message.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list node and message to queue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="97" column="1" bodyfile="dbus/dbus-connection.c" bodystart="545" bodyend="561"/>
+        <references refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="315" endline="322">_dbus_list_append_link</references>
+        <references refid="structDBusConnection_1aacb3a29956aa7712db37916194fde869" compoundref="dbus-connection_8c" startline="268">DBusConnection::incoming_messages</references>
+        <references refid="structDBusConnection_1a9bda45f2d5c9af5c187fc31d7c98b424" compoundref="dbus-connection_8c" startline="276">DBusConnection::n_incoming</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga1bc4de7652108d0629522a4e3adffcab" compoundref="dbus-pending-call_8c" startline="228" endline="239">_dbus_pending_call_queue_timeout_error_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1a1e5b66d89c2e5925e056ddb890c691e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_test_get_locks</definition>
+        <argsstring>(DBusConnection *conn, DBusMutex **mutex_loc, DBusMutex **dispatch_mutex_loc, DBusMutex **io_path_mutex_loc, DBusCondVar **dispatch_cond_loc, DBusCondVar **io_path_cond_loc)</argsstring>
+        <name>_dbus_connection_test_get_locks</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>conn</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref> **</type>
+          <declname>mutex_loc</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref> **</type>
+          <declname>dispatch_mutex_loc</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref> **</type>
+          <declname>io_path_mutex_loc</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>dispatch_cond_loc</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>io_path_cond_loc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gac6dba97d98f486b87468ae8076349a66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_connection_get_pending_fds_count</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_get_pending_fds_count</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Return how many file descriptors are pending in the loader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="105" column="1" bodyfile="dbus/dbus-connection.c" bodystart="2558" bodyend="2561"/>
+        <references refid="group__DBusTransport_1ga3545c064545957f73f583bf63d07c40c" compoundref="dbus-transport_8c" startline="1521" endline="1524">_dbus_transport_get_pending_fds_count</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusConnectionInternals_1gac84ff2ad1060326f8c1f94a171fefa98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_set_pending_fds_function</definition>
+        <argsstring>(DBusConnection *connection, DBusPendingFdsChangeFunction callback, void *data)</argsstring>
+        <name>_dbus_connection_set_pending_fds_function</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>DBusPendingFdsChangeFunction</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Register a function to be called whenever the number of pending file descriptors in the loader change. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callback </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="106" column="1" bodyfile="dbus/dbus-connection.c" bodystart="2571" bodyend="2577"/>
+        <references refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</references>
+        <references refid="structDBusConnection_1a9855f1d7d5404770dd4aa09239c70b3b" compoundref="dbus-connection_8c" startline="280">DBusConnection::transport</references>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1a8c022a21b890c6956094819709fcc266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_connection_get_stats</definition>
+        <argsstring>(DBusConnection *connection, dbus_uint32_t *in_messages, dbus_uint32_t *in_bytes, dbus_uint32_t *in_fds, dbus_uint32_t *in_peak_bytes, dbus_uint32_t *in_peak_fds, dbus_uint32_t *out_messages, dbus_uint32_t *out_bytes, dbus_uint32_t *out_fds, dbus_uint32_t *out_peak_bytes, dbus_uint32_t *out_peak_fds)</argsstring>
+        <name>_dbus_connection_get_stats</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_messages</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_fds</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_peak_bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_peak_fds</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>out_messages</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>out_bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>out_fds</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>out_peak_bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>out_peak_fds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-connection-internal_8h_1aa5bd25f31b3772195a72fa0545442f6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* _dbus_connection_get_address</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_connection_get_address</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection-internal.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_bus_notify_shared_connection_disconnected_unlocked</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_bus_notify_shared_connection_disconnected_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Internal function that checks to see if this is a shared connection owned by the bus and if it is unref it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a connection that has been disconnected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="387" column="1" bodyfile="dbus/dbus-bus.c" bodystart="387" bodyend="413"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</references>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" compoundref="dbus-bus_8c" startline="646" endline="728">dbus_bus_register</references>
+        <references refid="group__DBusShared_1gga980320deb96476bee7555edcdebc3528a564d3ef2f14a3955e764614b95162ad5" compoundref="dbus-shared_8h" startline="60">DBUS_BUS_STARTER</references>
+        <references refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" compoundref="dbus-connection_8c" startline="2616" endline="2629">dbus_connection_open</references>
+        <references refid="group__DBusConnection_1ga434e3fc7ee420fd30e2f05e57ff26b1d" compoundref="dbus-connection_8c" startline="2659" endline="2672">dbus_connection_open_private</references>
+        <references refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</references>
+        <references refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" compoundref="dbus-connection_8c" startline="3145" endline="3153">dbus_connection_set_exit_on_disconnect</references>
+        <references refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="structBusData_1a0efe71943560d7c5f9eba63618852db2" compoundref="dbus-bus_8c" startline="82">BusData::is_well_known</references>
+        <references refid="group__DBusBusInternals_1ga2ae7ac6acf3f48e31fb3809cd038b598" compoundref="dbus-bus_8c" startline="90">N_BUS_TYPES</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-connection-internal.h<sp/>DBusConnection<sp/>internal<sp/>interfaces</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_CONNECTION_INTERNAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_CONNECTION_INTERNAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-connection.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-message.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-transport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-resources.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-list.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-timeout.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-dataslot.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>DBUS_ITERATION_DO_WRITING<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>DBUS_ITERATION_DO_READING<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>DBUS_ITERATION_BLOCK<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2<sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/>DBusIterationFlags;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor">#define<sp/>_DBUS_DEFAULT_TIMEOUT_VALUE<sp/>(25<sp/>*<sp/>1000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<sp/>DBusPendingFdsChangeFunction)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga4fe0c8f7b72dc89b9e1a3110db2f778e" kindref="member">_dbus_connection_lock</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" kindref="member">_dbus_connection_unlock</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*<sp/><sp/><ref refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" kindref="member">_dbus_connection_ref_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga9ffbd9aa4f07cb30d92887e956a9fd43" kindref="member">_dbus_connection_unref_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" kindref="member">_dbus_connection_queue_received_message_link</ref><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga3d31a01751860b67f960dcaffb7bb4ef" kindref="member">_dbus_connection_has_messages_to_send_unlocked</ref><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga3955cd53ac4f671a5bb54019887389a7" kindref="member">_dbus_connection_get_message_to_send</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" kindref="member">_dbus_connection_message_sent_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*message);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga82adef36b4cd583bc1146eae5756c063" kindref="member">_dbus_connection_add_watch_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*watch);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga65fc02c0756d0c7caaa39cd60922c99b" kindref="member">_dbus_connection_remove_watch_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*watch);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga6c00e2eaf225b154760976af5688d250" kindref="member">_dbus_connection_toggle_watch_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*watch,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" kindref="member">_dbus_connection_handle_watch</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusWatch" kindref="compound">DBusWatch</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*watch,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga69e87e3be94b8c681585ec870e39a64a" kindref="member">_dbus_connection_add_timeout_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" kindref="member">_dbus_connection_remove_timeout_unlocked</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" kindref="member">_dbus_connection_toggle_timeout_unlocked</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>*<sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" kindref="member">_dbus_connection_new_for_transport</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTransport" kindref="compound">DBusTransport</ref><sp/><sp/><sp/><sp/><sp/><sp/>*transport);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga283f0254537c4bf4453dbed6fad2e21e" kindref="member">_dbus_connection_do_iteration_unlocked</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref><sp/><sp/><sp/><sp/>*pending,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_milliseconds);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" kindref="member">_dbus_connection_close_possibly_shared</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" kindref="member">_dbus_connection_close_if_only_one_ref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref>*<sp/><sp/>_dbus_pending_call_new<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_milliseconds,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" kindref="member">DBusTimeoutHandler</ref><sp/><sp/>timeout_handler);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_pending_call_notify<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref><sp/><sp/><sp/><sp/>*pending);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" kindref="member">_dbus_connection_remove_pending_call</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref><sp/><sp/><sp/><sp/>*pending);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gad5e725e66dc16a411544e25675fb9fba" kindref="member">_dbus_connection_block_pending_call</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref><sp/><sp/><sp/><sp/>*pending);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_pending_call_complete_and_unlock<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref><sp/><sp/><sp/><sp/>*pending,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*message);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1ga2974eb1c261305fafc635e14fc575d03" kindref="member">_dbus_connection_send_and_unlock</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/><sp/><sp/><sp/><sp/>*connection,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*message,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>*client_serial);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" kindref="member">_dbus_connection_queue_synthesized_message_link</ref><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>*link);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_connection_test_get_locks<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*conn,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref><sp/>**mutex_loc,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref><sp/>**dispatch_mutex_loc,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref><sp/>**io_path_mutex_loc,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>**dispatch_cond_loc,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>**io_path_cond_loc);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gac6dba97d98f486b87468ae8076349a66" kindref="member">_dbus_connection_get_pending_fds_count</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnectionInternals_1gac84ff2ad1060326f8c1f94a171fefa98" kindref="member">_dbus_connection_set_pending_fds_function</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DBusPendingFdsChangeFunction<sp/>callback,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>if<sp/>DBUS_ENABLE_STATS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_dbus_connection_get_stats<sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*in_messages,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*in_bytes,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*in_fds,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*in_peak_bytes,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*in_peak_fds,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*out_messages,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*out_bytes,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*out_fds,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*out_peak_bytes,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/>*out_peak_fds);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>if<sp/>DBUS_ENABLE_EMBEDDED_TESTS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>_dbus_connection_get_address<sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>_dbus_bus_*<sp/>stuff<sp/>doesn&apos;t<sp/>really<sp/>belong<sp/>here,<sp/>but<sp/>dbus-bus-internal.h<sp/>seems</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>silly<sp/>for<sp/>one<sp/>function</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="135"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" kindref="member">_dbus_bus_notify_shared_connection_disconnected_unlocked</ref><sp/>(<ref refid="structDBusConnection" kindref="compound">DBusConnection</ref><sp/>*connection);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_CONNECTION_INTERNAL_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-connection-internal.h"/>
+  </compounddef>
+</doxygen>

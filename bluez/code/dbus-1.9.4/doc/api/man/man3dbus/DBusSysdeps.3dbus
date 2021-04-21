@@ -1,0 +1,2567 @@
+.TH "DBusSysdeps" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSysdeps \- Internal system-dependent API
+.PP
+Internal system-dependent API available on UNIX and Windows\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusAtomic\fP"
+.br
+.RI "\fIAn atomic integer safe to increment or decrement from multiple threads\&. \fP"
+.ti -1c
+.RI "struct \fBDBusPollFD\fP"
+.br
+.RI "\fIA portable struct pollfd wrapper\&. \fP"
+.ti -1c
+.RI "struct \fBDBusStat\fP"
+.br
+.RI "\fIPortable struct with stat() results\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_PID_UNSET\fP   ((\fBdbus_pid_t\fP) \-1)"
+.br
+.RI "\fIan invalid PID used to represent an uninitialized dbus_pid_t field \fP"
+.ti -1c
+.RI "#define \fBDBUS_UID_UNSET\fP   ((\fBdbus_uid_t\fP) \-1)"
+.br
+.RI "\fIan invalid UID used to represent an uninitialized dbus_uid_t field \fP"
+.ti -1c
+.RI "#define \fBDBUS_GID_UNSET\fP   ((\fBdbus_gid_t\fP) \-1)"
+.br
+.RI "\fIan invalid GID used to represent an uninitialized dbus_gid_t field \fP"
+.ti -1c
+.RI "#define \fBDBUS_PID_FORMAT\fP   '%lu'"
+.br
+.RI "\fIan appropriate printf format for dbus_pid_t \fP"
+.ti -1c
+.RI "#define \fBDBUS_UID_FORMAT\fP   '%lu'"
+.br
+.RI "\fIan appropriate printf format for dbus_uid_t \fP"
+.ti -1c
+.RI "#define \fBDBUS_GID_FORMAT\fP   '%lu'"
+.br
+.RI "\fIan appropriate printf format for dbus_gid_t \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLIN\fP   0x0001"
+.br
+.RI "\fIThere is data to read\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLPRI\fP   0x0002"
+.br
+.RI "\fIThere is urgent data to read\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLOUT\fP   0x0004"
+.br
+.RI "\fIWriting now will not block\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLERR\fP   0x0008"
+.br
+.RI "\fIError condition\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLHUP\fP   0x0010"
+.br
+.RI "\fIHung up\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POLLNVAL\fP   0x0020"
+.br
+.RI "\fIInvalid request: fd not open\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_VA_COPY\fP(ap1,  ap2)   ((ap1) = (ap2))"
+.br
+.ti -1c
+.RI "#define \fB_DBUS_BYTE_OF_PRIMITIVE\fP(p,  i)   (((const char*)&(p))[(i)])"
+.br
+.RI "\fICasts a primitive C type to a byte array and then indexes a particular byte of the array\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_DOUBLES_BITWISE_EQUAL\fP(a,  b)"
+.br
+.RI "\fIOn x86 there is an 80-bit FPU, and if you do 'a == b' it may have a or b in an 80-bit register, thus failing to compare the two 64-bit doubles for bitwise equality\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_DEFAULT_MESSAGE_UNIX_FDS\fP   16"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long \fBdbus_pid_t\fP"
+.br
+.RI "\fIA process ID\&. \fP"
+.ti -1c
+.RI "typedef unsigned long \fBdbus_uid_t\fP"
+.br
+.RI "\fIA user ID\&. \fP"
+.ti -1c
+.RI "typedef unsigned long \fBdbus_gid_t\fP"
+.br
+.RI "\fIA group ID\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusAtomic\fP \fBDBusAtomic\fP"
+.br
+.RI "\fIOpaque type representing an atomically-modifiable integer that can be used from multiple threads\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusDirIter\fP \fBDBusDirIter\fP"
+.br
+.RI "\fIOpaque type for reading a directory listing\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusSignalHandler\fP) (int sig)"
+.br
+.RI "\fIA UNIX signal handler\&. \fP"
+.ti -1c
+.RI "typedef union \fBDBusGUID\fP \fBDBusGUID\fP"
+.br
+.RI "\fIType representing a universally unique ID\&. \fP"
+.ti -1c
+.RI "typedef struct DBusRLimit \fBDBusRLimit\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDBusSystemLogSeverity\fP { \fBDBUS_SYSTEM_LOG_INFO\fP, \fBDBUS_SYSTEM_LOG_WARNING\fP, \fBDBUS_SYSTEM_LOG_SECURITY\fP, \fBDBUS_SYSTEM_LOG_FATAL\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_abort\fP (void)"
+.br
+.RI "\fIAborts the program with SIGABRT (dumping core)\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_getenv\fP (const char *varname)"
+.br
+.RI "\fIWrapper for getenv()\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_clearenv\fP (void)"
+.br
+.RI "\fIWrapper for clearenv()\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_split_paths_and_append\fP (\fBDBusString\fP *dirs, const char *suffix, \fBDBusList\fP **dir_list)"
+.br
+.RI "\fISplit paths into a list of char strings\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_check_setuid\fP (void)"
+.br
+.RI "\fI\fBNOTE\fP: If you modify this function, please also consider making the corresponding change in GLib\&. \fP"
+.ti -1c
+.RI "char ** \fB_dbus_get_environment\fP (void)"
+.br
+.RI "\fIGets a \fBNULL\fP-terminated list of key=value pairs from the environment\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_close_socket\fP (int fd, \fBDBusError\fP *error)"
+.br
+.RI "\fISocket interface\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_read_socket\fP (int fd, \fBDBusString\fP *buffer, int count)"
+.br
+.RI "\fILike \fB_dbus_read()\fP, but only works on sockets so is available on Windows\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_write_socket\fP (int fd, const \fBDBusString\fP *buffer, int start, int len)"
+.br
+.RI "\fILike \fB_dbus_write()\fP, but only supports sockets and is thus available on Windows\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_write_socket_two\fP (int fd, const \fBDBusString\fP *buffer1, int start1, int len1, const \fBDBusString\fP *buffer2, int start2, int len2)"
+.br
+.RI "\fILike \fB_dbus_write_two()\fP but only works on sockets and is thus available on Windows\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_read_socket_with_unix_fds\fP (int fd, \fBDBusString\fP *buffer, int count, int *fds, int *n_fds)"
+.br
+.RI "\fILike \fB_dbus_read_socket()\fP but also tries to read unix fds from the socket\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_write_socket_with_unix_fds\fP (int fd, const \fBDBusString\fP *buffer, int start, int len, const int *fds, int n_fds)"
+.br
+.ti -1c
+.RI "int \fB_dbus_write_socket_with_unix_fds_two\fP (int fd, const \fBDBusString\fP *buffer1, int start1, int len1, const \fBDBusString\fP *buffer2, int start2, int len2, const int *fds, int n_fds)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_socket_is_invalid\fP (int fd)"
+.br
+.ti -1c
+.RI "int \fB_dbus_connect_tcp_socket\fP (const char *host, const char *port, const char *family, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a socket and connects to a socket at the given host and port\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_connect_tcp_socket_with_nonce\fP (const char *host, const char *port, const char *family, const char *noncefile, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "int \fB_dbus_listen_tcp_socket\fP (const char *host, const char *port, const char *family, \fBDBusString\fP *retport, int **fds_p, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a socket and binds it to the given path, then listens on the socket\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_accept\fP (int listen_fd)"
+.br
+.RI "\fIAccepts a connection on a listening socket\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_read_credentials_socket\fP (int client_fd, \fBDBusCredentials\fP *credentials, \fBDBusError\fP *error)"
+.br
+.RI "\fIReads a single byte which must be nul (an error occurs otherwise), and reads unix credentials if available\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_send_credentials_socket\fP (int server_fd, \fBDBusError\fP *error)"
+.br
+.RI "\fISends a single nul byte with our UNIX credentials as ancillary data\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_credentials_add_from_user\fP (\fBDBusCredentials\fP *credentials, const \fBDBusString\fP *username)"
+.br
+.RI "\fIAdds the credentials corresponding to the given username\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_credentials_add_from_current_process\fP (\fBDBusCredentials\fP *credentials)"
+.br
+.RI "\fIAdds the credentials of the current process to the passed-in credentials object\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_append_user_from_current_process\fP (\fBDBusString\fP *str)"
+.br
+.RI "\fIAppend to the string the identity we would like to have when we authenticate, on UNIX this is the current process UID and on Windows something else, probably a Windows SID string\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_parse_unix_user_from_config\fP (const \fBDBusString\fP *username, \fBdbus_uid_t\fP *uid_p)"
+.br
+.RI "\fIParse a UNIX user from the bus config file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_parse_unix_group_from_config\fP (const \fBDBusString\fP *groupname, \fBdbus_gid_t\fP *gid_p)"
+.br
+.RI "\fIParse a UNIX group from the bus config file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_groups_from_uid\fP (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP **group_ids, int *n_group_ids)"
+.br
+.RI "\fIGets all groups corresponding to the given UNIX user ID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_user_is_at_console\fP (\fBdbus_uid_t\fP uid, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks to see if the UNIX user ID is at the console\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_user_is_process_owner\fP (\fBdbus_uid_t\fP uid)"
+.br
+.RI "\fIChecks to see if the UNIX user ID matches the UID of the process\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_windows_user_is_process_owner\fP (const char *windows_sid)"
+.br
+.RI "\fIChecks to see if the Windows user SID matches the owner of the process\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_append_keyring_directory_for_credentials\fP (\fBDBusString\fP *directory, \fBDBusCredentials\fP *credentials)"
+.br
+.RI "\fIAppends the directory in which a keyring for the given credentials should be stored\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_daemon_is_session_bus_address_published\fP (const char *scope)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_daemon_publish_session_bus_address\fP (const char *address, const char *shm_name)"
+.br
+.ti -1c
+.RI "void \fB_dbus_daemon_unpublish_session_bus_address\fP (void)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_socket_can_pass_unix_fd\fP (int fd)"
+.br
+.RI "\fIChecks whether file descriptors may be passed via the socket\&. \fP"
+.ti -1c
+.RI "\fBdbus_int32_t\fP \fB_dbus_atomic_inc\fP (\fBDBusAtomic\fP *atomic)"
+.br
+.RI "\fIAtomically increments an integer\&. \fP"
+.ti -1c
+.RI "\fBdbus_int32_t\fP \fB_dbus_atomic_dec\fP (\fBDBusAtomic\fP *atomic)"
+.br
+.RI "\fIAtomically decrement an integer\&. \fP"
+.ti -1c
+.RI "\fBdbus_int32_t\fP \fB_dbus_atomic_get\fP (\fBDBusAtomic\fP *atomic)"
+.br
+.RI "\fIAtomically get the value of an integer\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_poll\fP (\fBDBusPollFD\fP *fds, int n_fds, int timeout_milliseconds)"
+.br
+.RI "\fIWrapper for poll()\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_sleep_milliseconds\fP (int milliseconds)"
+.br
+.RI "\fISleeps the given number of milliseconds\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_get_monotonic_time\fP (long *tv_sec, long *tv_usec)"
+.br
+.RI "\fIGet current time, as in gettimeofday()\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_get_real_time\fP (long *tv_sec, long *tv_usec)"
+.br
+.RI "\fIGet current time, as in gettimeofday()\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_create_directory\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIdirectory interface \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_delete_directory\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIRemoves a directory; Directory must be empty\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_concat_dir_and_file\fP (\fBDBusString\fP *dir, const \fBDBusString\fP *next_component)"
+.br
+.RI "\fIAppends the given filename to the given directory\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_string_get_dirname\fP (const \fBDBusString\fP *filename, \fBDBusString\fP *dirname)"
+.br
+.RI "\fIGet the directory name from a complete filename\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_path_is_absolute\fP (const \fBDBusString\fP *filename)"
+.br
+.RI "\fIChecks whether the filename is an absolute path\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_standard_session_servicedirs\fP (\fBDBusList\fP **dirs)"
+.br
+.RI "\fIReturns the standard directories for a session bus to look for service activation files\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_standard_system_servicedirs\fP (\fBDBusList\fP **dirs)"
+.br
+.RI "\fIReturns the standard directories for a system bus to look for service activation files\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_append_system_config_file\fP (\fBDBusString\fP *str)"
+.br
+.RI "\fIAppend the absolute path of the system\&.conf file (there is no system bus on Windows so this can just return FALSE and print a warning or something) \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_append_session_config_file\fP (\fBDBusString\fP *str)"
+.br
+.RI "\fIAppend the absolute path of the session\&.conf file\&. \fP"
+.ti -1c
+.RI "\fBDBusDirIter\fP * \fB_dbus_directory_open\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIOpen a directory to iterate over\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_directory_get_next_file\fP (\fBDBusDirIter\fP *iter, \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIGet next file in the directory\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_directory_close\fP (\fBDBusDirIter\fP *iter)"
+.br
+.RI "\fICloses a directory iteration\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_check_dir_is_private_to_user\fP (\fBDBusString\fP *dir, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks to make sure the given directory is private to the user\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_get_tmpdir\fP (void)"
+.br
+.RI "\fIGets the temporary files directory by inspecting the environment variables TMPDIR, TMP, and TEMP in that order\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_generate_pseudorandom_bytes_buffer\fP (char *buffer, int n_bytes)"
+.br
+.RI "\fIRandom numbers\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_generate_random_bytes_buffer\fP (char *buffer, int n_bytes)"
+.br
+.RI "\fIFills n_bytes of the given buffer with random bytes\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_generate_random_bytes\fP (\fBDBusString\fP *str, int n_bytes)"
+.br
+.RI "\fIGenerates the given number of random bytes, using the best mechanism we can come up with\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_generate_random_ascii\fP (\fBDBusString\fP *str, int n_bytes)"
+.br
+.RI "\fIGenerates the given number of random bytes, where the bytes are chosen from the alphanumeric ASCII subset\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_error_from_errno\fP (int error_number)"
+.br
+.RI "\fIConverts a UNIX errno, or Windows errno or WinSock error value into a \fBDBusError\fP name\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_error_from_system_errno\fP (void)"
+.br
+.RI "\fIConverts the current system errno value into a \fBDBusError\fP name\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_save_socket_errno\fP (void)"
+.br
+.ti -1c
+.RI "void \fB_dbus_restore_socket_errno\fP (int saved_errno)"
+.br
+.ti -1c
+.RI "void \fB_dbus_set_errno_to_zero\fP (void)"
+.br
+.RI "\fIAssign 0 to the global errno variable\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_eagain_or_ewouldblock\fP (int e)"
+.br
+.RI "\fISee if errno is EAGAIN or EWOULDBLOCK (this has to be done differently for Winsock so is abstracted) \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_enomem\fP (int e)"
+.br
+.RI "\fISee if errno is ENOMEM\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_eintr\fP (int e)"
+.br
+.RI "\fISee if errno is EINTR\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_epipe\fP (int e)"
+.br
+.RI "\fISee if errno is EPIPE\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_etoomanyrefs\fP (int e)"
+.br
+.RI "\fISee if errno is ETOOMANYREFS\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_strerror_from_errno\fP (void)"
+.br
+.RI "\fIGet error message from errno\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_disable_sigpipe\fP (void)"
+.br
+.RI "\fIsignal (SIGPIPE, SIG_IGN); \fP"
+.ti -1c
+.RI "void \fB_dbus_exit\fP (int code) _DBUS_GNUC_NORETURN"
+.br
+.RI "\fIExit the process, returning the given value\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_printf_string_upper_bound\fP (const char *format, va_list args)"
+.br
+.RI "\fIMeasure the length of the given format string and arguments, not including the terminating nul\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_stat\fP (const \fBDBusString\fP *filename, \fBDBusStat\fP *statbuf, \fBDBusError\fP *error)"
+.br
+.RI "\fIstat() wrapper\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_full_duplex_pipe\fP (int *fd1, int *fd2, \fBdbus_bool_t\fP blocking, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a full-duplex pipe (as in socketpair())\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_print_backtrace\fP (void)"
+.br
+.RI "\fIOn GNU libc systems, print a crude backtrace to stderr\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_become_daemon\fP (const \fBDBusString\fP *pidfile, \fBDBusPipe\fP *print_pid_pipe, \fBDBusError\fP *error, \fBdbus_bool_t\fP keep_umask)"
+.br
+.RI "\fIDoes the chdir, fork, setsid, etc\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_verify_daemon_user\fP (const char *user)"
+.br
+.RI "\fIVerify that after the fork we can successfully change to this user\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_change_to_daemon_user\fP (const char *user, \fBDBusError\fP *error)"
+.br
+.RI "\fIChanges the user and group the bus is running as\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_write_pid_to_file_and_pipe\fP (const \fBDBusString\fP *pidfile, \fBDBusPipe\fP *print_pid_pipe, \fBdbus_pid_t\fP pid_to_write, \fBDBusError\fP *error)"
+.br
+.RI "\fIWrites the given pid_to_write to a pidfile (if non-NULL) and/or to a pipe (if non-NULL)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_command_for_pid\fP (unsigned long pid, \fBDBusString\fP *str, int max_len, \fBDBusError\fP *error)"
+.br
+.RI "\fIGet a printable string describing the command used to execute the process with pid\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_set_signal_handler\fP (int sig, \fBDBusSignalHandler\fP handler)"
+.br
+.RI "\fIInstalls a UNIX signal handler\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_at_console\fP (const char *username, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks if user is at the console\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_init_system_log\fP (\fBdbus_bool_t\fP is_daemon)"
+.br
+.ti -1c
+.RI "void \fB_dbus_system_log\fP (DBusSystemLogSeverity severity, const char *msg,\&.\&.\&.)"
+.br
+.RI "\fILog a message to the system log file (e\&.g\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_system_logv\fP (DBusSystemLogSeverity severity, const char *msg, va_list args)"
+.br
+.RI "\fILog a message to the system log file (e\&.g\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_autolaunch_address\fP (const char *scope, \fBDBusString\fP *address, \fBDBusError\fP *error)"
+.br
+.RI "\fIReturns the address of a new session bus\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_lookup_session_address\fP (\fBdbus_bool_t\fP *supported, \fBDBusString\fP *address, \fBDBusError\fP *error)"
+.br
+.RI "\fIDetermines the address of the session bus by querying a platform-specific method\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_read_local_machine_uuid\fP (\fBDBusGUID\fP *machine_id, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP *error)"
+.br
+.RI "\fIReads the uuid of the machine we're running on from the dbus configuration\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_threads_init_platform_specific\fP (void)"
+.br
+.RI "\fIInitialize threads as in \fBdbus_threads_init_default()\fP, appropriately for the platform\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_threads_lock_platform_specific\fP (void)"
+.br
+.RI "\fILock a static mutex used to protect \fB_dbus_threads_init_platform_specific()\fP\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_threads_unlock_platform_specific\fP (void)"
+.br
+.RI "\fIUndo \fB_dbus_threads_lock_platform_specific()\fP\&. \fP"
+.ti -1c
+.RI "unsigned long \fB_dbus_pid_for_log\fP (void)"
+.br
+.RI "\fIThe only reason this is separate from \fB_dbus_getpid()\fP is to allow it on Windows for logging but not for other purposes\&. \fP"
+.ti -1c
+.RI "\fBdbus_pid_t\fP \fB_dbus_getpid\fP (void)"
+.br
+.RI "\fIGets our process ID\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_flush_caches\fP (void)"
+.br
+.RI "\fICalled when the bus daemon is signaled to reload its configuration; any caches should be nuked\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_replace_install_prefix\fP (const char *configure_time_path)"
+.br
+.ti -1c
+.RI "DBusRLimit * \fB_dbus_rlimit_save_fd_limit\fP (\fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_rlimit_raise_fd_limit_if_privileged\fP (unsigned int desired, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_rlimit_restore_fd_limit\fP (DBusRLimit *saved, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "void \fB_dbus_rlimit_free\fP (DBusRLimit *lim)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internal system-dependent API available on UNIX and Windows\&. 
+
+The system-dependent API has a dual purpose\&. First, it encapsulates all usage of operating system APIs for ease of auditing and to avoid cluttering the rest of the code with bizarre OS quirks and headers\&. Second, it abstracts different operating system APIs for portability\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _DBUS_DOUBLES_BITWISE_EQUAL(a, b)"
+\fBValue:\fP
+.PP
+.nf
+(_DBUS_BYTE_OF_PRIMITIVE (a, 0) == _DBUS_BYTE_OF_PRIMITIVE (b, 0) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 1) == _DBUS_BYTE_OF_PRIMITIVE (b, 1) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 2) == _DBUS_BYTE_OF_PRIMITIVE (b, 2) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 3) == _DBUS_BYTE_OF_PRIMITIVE (b, 3) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 4) == _DBUS_BYTE_OF_PRIMITIVE (b, 4) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 5) == _DBUS_BYTE_OF_PRIMITIVE (b, 5) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 6) == _DBUS_BYTE_OF_PRIMITIVE (b, 6) &&       \\
+      _DBUS_BYTE_OF_PRIMITIVE (a, 7) == _DBUS_BYTE_OF_PRIMITIVE (b, 7))
+.fi
+.PP
+On x86 there is an 80-bit FPU, and if you do 'a == b' it may have a or b in an 80-bit register, thus failing to compare the two 64-bit doubles for bitwise equality\&. So this macro compares the two doubles bitwise\&. 
+.PP
+Definition at line 488 of file dbus\-sysdeps\&.h\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef union \fBDBusGUID\fP \fBDBusGUID\fP"
+
+.PP
+Type representing a universally unique ID\&. 
+.PP
+\fBTodo\fP
+.RS 4
+rename to UUID instead of GUID 
+.RE
+.PP
+
+.PP
+Definition at line 509 of file dbus\-sysdeps\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int _dbus_accept (int listen_fd)"
+
+.PP
+Accepts a connection on a listening socket\&. Handles EINTR for you\&.
+.PP
+This will enable FD_CLOEXEC for the returned socket\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlisten_fd\fP the listen file descriptor 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the connection fd of the client, or -1 on error
+.RE
+.PP
+Handles EINTR for you\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlisten_fd\fP the listen file descriptor 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the connection fd of the client, or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 2029 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_fd_set_close_on_exec(), and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_append_keyring_directory_for_credentials (\fBDBusString\fP * directory, \fBDBusCredentials\fP * credentials)"
+
+.PP
+Appends the directory in which a keyring for the given credentials should be stored\&. The credentials should have either a Windows or UNIX user in them\&. The directory should be an absolute path\&.
+.PP
+On UNIX the directory is ~/\&.dbus-keyrings while on Windows it should probably be something else, since the dotfile convention is not normal on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirectory\fP string to append directory to 
+.br
+\fIcredentials\fP credentials the directory should be for
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on no memory 
+.RE
+.PP
+
+.PP
+Definition at line 3900 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_concat_dir_and_file(), _dbus_credentials_are_anonymous(), _dbus_credentials_get_unix_uid(), _dbus_getenv(), _dbus_homedir_from_uid(), _dbus_string_append(), _dbus_string_copy(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_set_length(), _dbus_warn(), DBUS_UID_UNSET, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_keyring_new_for_credentials()\&.
+.SS "\fBdbus_bool_t\fP _dbus_append_session_config_file (\fBDBusString\fP * str)"
+
+.PP
+Append the absolute path of the session\&.conf file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to append to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 1447 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_string_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_append_system_config_file (\fBDBusString\fP * str)"
+
+.PP
+Append the absolute path of the system\&.conf file (there is no system bus on Windows so this can just return FALSE and print a warning or something) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to append to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 1435 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_string_append()\&.
+.SS "\fBdbus_bool_t\fP _dbus_append_user_from_current_process (\fBDBusString\fP * str)"
+
+.PP
+Append to the string the identity we would like to have when we authenticate, on UNIX this is the current process UID and on Windows something else, probably a Windows SID string\&. No escaping is required, that is done in \fBdbus-auth\&.c\fP\&. The username here need not be anything human-readable, it can be the machine-readable form i\&.e\&. a user id\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to append to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on no memory
+.RE
+.PP
+No escaping is required, that is done in \fBdbus-auth\&.c\fP\&. The username here need not be anything human-readable, it can be the machine-readable form i\&.e\&. a user id\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to append to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on no memory 
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+to which class belongs this 
+.RE
+.PP
+
+.PP
+Definition at line 2460 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_geteuid(), _dbus_getpid(), _dbus_string_append(), _dbus_string_append_uint(), FALSE, and NULL\&.
+.PP
+Referenced by _dbus_read_local_machine_uuid()\&.
+.SS "\fBdbus_int32_t\fP _dbus_atomic_dec (\fBDBusAtomic\fP * atomic)"
+
+.PP
+Atomically decrement an integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIatomic\fP pointer to the integer to decrement 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value before decrementing 
+.RE
+.PP
+
+.PP
+Definition at line 2585 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBusAtomic::value\&.
+.PP
+Referenced by _dbus_connection_unref_unlocked(), _dbus_object_tree_get_user_data_unlocked(), _dbus_pending_call_unref_and_unlock(), _dbus_server_unref_unlocked(), dbus_connection_unref(), dbus_free(), dbus_message_unref(), dbus_pending_call_unref(), dbus_server_ref(), and dbus_server_unref()\&.
+.SS "\fBdbus_int32_t\fP _dbus_atomic_get (\fBDBusAtomic\fP * atomic)"
+
+.PP
+Atomically get the value of an integer\&. It may change at any time thereafter, so this is mostly only useful for assertions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIatomic\fP pointer to the integer to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value at this moment 
+.RE
+.PP
+
+.PP
+Definition at line 2609 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBusAtomic::value\&.
+.PP
+Referenced by _dbus_connection_close_if_only_one_ref(), dbus_connection_ref(), and dbus_message_get_reply_serial()\&.
+.SS "\fBdbus_int32_t\fP _dbus_atomic_inc (\fBDBusAtomic\fP * atomic)"
+
+.PP
+Atomically increments an integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIatomic\fP pointer to the integer to increment 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value before incrementing 
+.RE
+.PP
+
+.PP
+Definition at line 2562 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBusAtomic::value\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), _dbus_connection_ref_unlocked(), _dbus_object_tree_get_user_data_unlocked(), _dbus_pending_call_new_unlocked(), _dbus_pending_call_ref_unlocked(), _dbus_server_init_base(), _dbus_server_ref_unlocked(), dbus_connection_add_filter(), dbus_connection_ref(), dbus_malloc(), dbus_malloc0(), dbus_message_copy(), dbus_message_get_reply_serial(), dbus_message_ref(), dbus_pending_call_ref(), dbus_realloc(), dbus_server_ref(), and dbus_server_unref()\&.
+.SS "\fBdbus_bool_t\fP _dbus_become_daemon (const \fBDBusString\fP * pidfile, \fBDBusPipe\fP * print_pid_pipe, \fBDBusError\fP * error, \fBdbus_bool_t\fP keep_umask)"
+
+.PP
+Does the chdir, fork, setsid, etc\&. to become a daemon process\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpidfile\fP \fBNULL\fP, or pidfile to create 
+.br
+\fIprint_pid_pipe\fP pipe to print daemon's pid to, or -1 for none 
+.br
+\fIerror\fP return location for errors 
+.br
+\fIkeep_umask\fP \fBTRUE\fP to keep the original umask 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure
+.RE
+.PP
+to become a daemon process\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpidfile\fP \fBNULL\fP, or pidfile to create 
+.br
+\fIprint_pid_pipe\fP file descriptor to print daemon's pid to, or -1 for none 
+.br
+\fIerror\fP return location for errors 
+.br
+\fIkeep_umask\fP \fBTRUE\fP to keep the original umask 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_close(), _dbus_error_from_errno(), _dbus_error_from_system_errno(), _dbus_getenv(), _dbus_strerror_from_errno(), _dbus_write_pid_to_file_and_pipe(), DBUS_ERROR_FAILED, DBUS_ERROR_NOT_SUPPORTED, dbus_set_error(), FALSE, DBusError::message, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_change_to_daemon_user (const char * user, \fBDBusError\fP * error)"
+
+.PP
+Changes the user and group the bus is running as\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuser\fP the user to become 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_error_from_errno(), _dbus_get_user_id_and_primary_group(), _dbus_string_init_const(), _dbus_warn(), DBUS_ERROR_FAILED, DBUS_ERROR_NOT_SUPPORTED, dbus_free(), dbus_new0, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_check_dir_is_private_to_user (\fBDBusString\fP * dir, \fBDBusError\fP * error)"
+
+.PP
+Checks to make sure the given directory is private to the user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP the name of the directory 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 2084 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_error_from_errno(), _dbus_strdup(), _dbus_warn(), DBUS_ERROR_FAILED, DBUS_ERROR_NO_MEMORY, dbus_free(), DBUS_GID_FORMAT, DBUS_GID_UNSET, dbus_malloc(), dbus_new, dbus_realloc(), dbus_set_error(), DBUS_UID_UNSET, FALSE, DBusUserInfo::group_ids, DBusUserInfo::homedir, DBusUserInfo::n_group_ids, NULL, DBusUserInfo::primary_gid, TRUE, DBusUserInfo::uid, and DBusUserInfo::username\&.
+.SS "\fBdbus_bool_t\fP _dbus_check_setuid (void)"
+
+.PP
+\fBNOTE\fP: If you modify this function, please also consider making the corresponding change in GLib\&. See glib/gutils\&.c:g_check_setuid()\&.
+.PP
+Returns TRUE if the current process was executed as setuid (or an equivalent __libc_enable_secure is available)\&. See: http://osdir.com/ml/linux.lfs.hardened/2007-04/msg00032.html 
+.PP
+Definition at line 4127 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_get_autolaunch_address(), _dbus_getenv(), _dbus_keyring_new_for_credentials(), _dbus_lookup_launchd_socket(), and _dbus_threads_init_platform_specific()\&.
+.SS "\fBdbus_bool_t\fP _dbus_clearenv (void)"
+
+.PP
+Wrapper for clearenv()\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success\&. 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file dbus\-sysdeps\&.c\&.
+.PP
+References FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_close_socket (int fd, \fBDBusError\fP * error)"
+
+.PP
+Socket interface\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Use for the file descriptors a struct
+.IP "\(bu" 2
+struct DBusSocket{ int d; }; - instead of int to get type-safety which will be checked by the compiler\&.
+.PP
+.RE
+.PP
+.PP
+Socket interface\&.
+.PP
+Should not be used on non-socket file descriptors or handles\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the socket 
+.br
+\fIerror\fP return location for an error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set
+.RE
+.PP
+Socket interface\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.br
+\fIerror\fP error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error set 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_strerror_from_errno(), dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_babysitter_ref(), _dbus_babysitter_unref(), _dbus_server_listen_platform_specific(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_tcp_socket(), _dbus_transport_new_for_domain_socket(), and _dbus_transport_new_for_tcp_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_command_for_pid (unsigned long pid, \fBDBusString\fP * str, int max_len, \fBDBusError\fP * error)"
+
+.PP
+Get a printable string describing the command used to execute the process with pid\&. This string should only be used for informative purposes such as logging; it may not be trusted\&.
+.PP
+The command is guaranteed to be printable ASCII and no longer than max_len\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpid\fP Process id 
+.br
+\fIstr\fP Append command to this string 
+.br
+\fImax_len\fP Maximum length of returned command 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 1208 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_read(), _dbus_string_append_printf(), _dbus_string_copy(), _dbus_string_free(), _dbus_string_init(), dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_concat_dir_and_file (\fBDBusString\fP * dir, const \fBDBusString\fP * next_component)"
+
+.PP
+Appends the given filename to the given directory\&. 
+.PP
+\fBTodo\fP
+.RS 4
+it might be cute to collapse multiple '/' such as 'foo//' concat '//bar'
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP the directory name 
+.br
+\fInext_component\fP the filename 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+it might be cute to collapse multiple '/' such as 'foo//' concat '//bar'
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP the directory name 
+.br
+\fInext_component\fP the filename 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 2825 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_string_append_byte(), _dbus_string_copy(), _dbus_string_shorten(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_append_keyring_directory_for_credentials(), _dbus_get_standard_session_servicedirs(), _dbus_keyring_new_for_credentials(), _dbus_server_listen_platform_specific(), _dbus_sha_compute(), _dbus_split_paths_and_append(), and _dbus_user_at_console()\&.
+.SS "int _dbus_connect_tcp_socket (const char * host, const char * port, const char * family, \fBDBusError\fP * error)"
+
+.PP
+Creates a socket and connects to a socket at the given host and port\&. The connection fd is returned, and is set up as nonblocking\&.
+.PP
+This will set FD_CLOEXEC for the socket returned
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP the host name to connect to 
+.br
+\fIport\fP the port to connect to 
+.br
+\fIfamily\fP the address family to listen on, NULL for all 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+connection file descriptor or -1 on error
+.RE
+.PP
+The connection fd is returned, and is set up as nonblocking\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP the host name to connect to 
+.br
+\fIport\fP the port to connect to 
+.br
+\fIfamily\fP the address family to listen on, NULL for all 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+connection file descriptor or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 1262 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_strerror_from_errno(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _DBUS_ZERO, DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_INVALID_ARGS, DBUS_ERROR_NO_MEMORY, dbus_set_error(), and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_create_directory (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+directory interface directory interface
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP directory filename 
+.br
+\fIerror\fP initialized error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 2791 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_strerror_from_errno(), DBUS_ERROR_FAILED, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_keyring_new_for_credentials()\&.
+.SS "\fBdbus_bool_t\fP _dbus_credentials_add_from_current_process (\fBDBusCredentials\fP * credentials)"
+
+.PP
+Adds the credentials of the current process to the passed-in credentials object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcredentials\fP credentials to add to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory; does not properly roll back on failure, so only some credentials may have been added 
+.RE
+.PP
+
+.PP
+Definition at line 2430 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_credentials_add_pid(), _dbus_credentials_add_unix_uid(), _dbus_credentials_add_windows_sid(), _dbus_geteuid(), _dbus_getpid(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_credentials_new_from_current_process(), and _dbus_keyring_new_for_credentials()\&.
+.SS "\fBdbus_bool_t\fP _dbus_credentials_add_from_user (\fBDBusCredentials\fP * credentials, const \fBDBusString\fP * username)"
+
+.PP
+Adds the credentials corresponding to the given username\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcredentials\fP credentials to fill in 
+.br
+\fIusername\fP the username 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the username existed and we got some credentials
+.RE
+.PP
+Used among other purposes to parses a desired identity provided from a client in the auth protocol\&. On UNIX this means parsing a UID, on Windows probably parsing an SID string\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is broken because it treats OOM and parse error the same way\&. Needs a \fBDBusError\fP\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcredentials\fP credentials to fill in 
+.br
+\fIusername\fP the username 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the username existed and we got some credentials 
+.RE
+.PP
+
+.PP
+Definition at line 2049 of file dbus\-sysdeps\-win\&.c\&.
+.PP
+References _dbus_credentials_add_unix_uid(), _dbus_credentials_add_windows_sid(), _dbus_user_database_get_system(), _dbus_user_database_get_username(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, NULL, TRUE, and DBusUserInfo::uid\&.
+.SS "\fBdbus_bool_t\fP _dbus_delete_directory (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Removes a directory; Directory must be empty\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP directory filename 
+.br
+\fIerror\fP initialized error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 4000 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBUS_ERROR_FAILED, dbus_set_error(), FALSE, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_directory_get_next_file (\fBDBusDirIter\fP * iter, \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Get next file in the directory\&. Will not return '\&.' or '\&.\&.' on UNIX\&. If an error occurs, the contents of 'filename' are undefined\&. The error is never set if the function succeeds\&.
+.PP
+This function is not re-entrant, and not necessarily thread-safe\&. Only use it for test code or single-threaded utilities\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the iterator 
+.br
+\fIfilename\fP string to be set to the next file in the dir 
+.br
+\fIerror\fP return location for error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if filename was filled in with a new filename
+.RE
+.PP
+Will not return '\&.' or '\&.\&.' on UNIX\&. If an error occurs, the contents of 'filename' are undefined\&. The error is never set if the function succeeds\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the iterator 
+.br
+\fIfilename\fP string to be set to the next file in the dir 
+.br
+\fIerror\fP return location for error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if filename was filled in with a new filename 
+.RE
+.PP
+
+.PP
+Definition at line 802 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_error_from_errno(), _dbus_string_append(), _dbus_string_set_length(), DBusDirIter::d, DBUS_ERROR_NO_MEMORY, dbus_set_error(), FALSE, and TRUE\&.
+.SS "\fBDBusDirIter\fP* _dbus_directory_open (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Open a directory to iterate over\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the directory name 
+.br
+\fIerror\fP exception return object or \fBNULL\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+new iterator, or \fBNULL\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 754 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_error_from_errno(), _dbus_string_append(), _dbus_string_ends_with_c_str(), _dbus_string_free(), _dbus_string_init_from_string(), DBusDirIter::d, DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_new0, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "const char* _dbus_error_from_errno (int error_number)"
+
+.PP
+Converts a UNIX errno, or Windows errno or WinSock error value into a \fBDBusError\fP name\&. 
+.PP
+\fBTodo\fP
+.RS 4
+should cover more errnos, specifically those from open()\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror_number\fP the errno\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+an error name 
+.RE
+.PP
+
+.PP
+Definition at line 614 of file dbus\-sysdeps\&.c\&.
+.PP
+References DBUS_ERROR_ACCESS_DENIED, DBUS_ERROR_ADDRESS_IN_USE, DBUS_ERROR_FAILED, DBUS_ERROR_FILE_EXISTS, DBUS_ERROR_FILE_NOT_FOUND, DBUS_ERROR_LIMITS_EXCEEDED, DBUS_ERROR_NO_MEMORY, DBUS_ERROR_NO_NETWORK, DBUS_ERROR_NO_SERVER, DBUS_ERROR_NOT_SUPPORTED, and DBUS_ERROR_TIMEOUT\&.
+.PP
+Referenced by _dbus_append_address_from_socket(), _dbus_become_daemon(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_close(), _dbus_close_socket(), _dbus_command_for_pid(), _dbus_connect_exec(), _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_directory_close(), _dbus_directory_get_next_file(), _dbus_directory_open(), _dbus_dup(), _dbus_error_from_system_errno(), _dbus_file_get_contents(), _dbus_full_duplex_pipe(), _dbus_get_tmpdir(), _dbus_is_console_user(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_read_credentials_socket(), _dbus_send_credentials_socket(), _dbus_stat(), and _dbus_string_save_to_file()\&.
+.SS "const char* _dbus_error_from_system_errno (void)"
+
+.PP
+Converts the current system errno value into a \fBDBusError\fP name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+an error name 
+.RE
+.PP
+
+.PP
+Definition at line 706 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_error_from_errno()\&.
+.PP
+Referenced by _dbus_become_daemon()\&.
+.SS "void _dbus_exit (int code)"
+
+.PP
+Exit the process, returning the given value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode\fP the exit code 
+.RE
+.PP
+
+.PP
+Definition at line 2961 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_abort(), and dbus_connection_pop_message()\&.
+.SS "void _dbus_flush_caches (void)"
+
+.PP
+Called when the bus daemon is signaled to reload its configuration; any caches should be nuked\&. Of course any caches that need explicit reload are probably broken, but c'est la vie\&. 
+.PP
+Definition at line 3881 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_user_database_flush_system()\&.
+.SS "\fBdbus_bool_t\fP _dbus_full_duplex_pipe (int * fd1, int * fd2, \fBdbus_bool_t\fP blocking, \fBDBusError\fP * error)"
+
+.PP
+Creates a full-duplex pipe (as in socketpair())\&. Sets both ends of the pipe nonblocking\&.
+.PP
+Marks both file descriptors as close-on-exec
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd1\fP return location for one end 
+.br
+\fIfd2\fP return location for the other end 
+.br
+\fIblocking\fP \fBTRUE\fP if pipe should be blocking 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure (if error is set)
+.RE
+.PP
+Sets both ends of the pipe nonblocking\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd1\fP return location for one end 
+.br
+\fIfd2\fP return location for the other end 
+.br
+\fIblocking\fP \fBTRUE\fP if pipe should be blocking 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure (if error is set) 
+.RE
+.PP
+
+.PP
+Definition at line 3175 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_fd_set_close_on_exec(), _dbus_strerror_from_errno(), _dbus_warn(), _DBUS_ZERO, DBUS_ERROR_FAILED, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_spawn_async_with_babysitter()\&.
+.SS "\fBdbus_bool_t\fP _dbus_generate_random_ascii (\fBDBusString\fP * str, int n_bytes)"
+
+.PP
+Generates the given number of random bytes, where the bytes are chosen from the alphanumeric ASCII subset\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIn_bytes\fP the number of random ASCII bytes to append to string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if no memory or other failure 
+.RE
+.PP
+
+.PP
+Definition at line 575 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_assert, _dbus_generate_random_bytes(), _dbus_string_validate_ascii(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific(), and _dbus_string_save_to_file()\&.
+.SS "\fBdbus_bool_t\fP _dbus_generate_random_bytes (\fBDBusString\fP * str, int n_bytes)"
+
+.PP
+Generates the given number of random bytes, using the best mechanism we can come up with\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIn_bytes\fP the number of random bytes to append to string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 2918 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_read(), _dbus_string_get_data_len(), _dbus_string_lengthen(), _dbus_string_set_length(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_generate_random_ascii(), and _dbus_generate_random_bytes_buffer()\&.
+.SS "void _dbus_generate_random_bytes_buffer (char * buffer, int n_bytes)"
+
+.PP
+Fills n_bytes of the given buffer with random bytes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP an allocated buffer 
+.br
+\fIn_bytes\fP the number of bytes in buffer to write to 
+.RE
+.PP
+
+.PP
+Definition at line 543 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_generate_pseudorandom_bytes_buffer(), _dbus_generate_random_bytes(), _dbus_string_copy_to_buffer(), _dbus_string_free(), and _dbus_string_init()\&.
+.PP
+Referenced by _dbus_generate_uuid()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_autolaunch_address (const char * scope, \fBDBusString\fP * address, \fBDBusError\fP * error)"
+
+.PP
+Returns the address of a new session bus\&. If successful, returns \fBTRUE\fP and appends the address to \fCaddress\fP\&. If a failure happens, returns \fBFALSE\fP and sets an error in \fCerror\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscope\fP scope of autolaunch (Windows only) 
+.br
+\fIaddress\fP a \fBDBusString\fP where the address can be stored 
+.br
+\fIerror\fP a \fBDBusError\fP to store the error in case of failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if an error happened 
+.RE
+.PP
+
+.PP
+Definition at line 3574 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_check_setuid(), _dbus_get_local_machine_uuid_encoded(), _dbus_getenv(), _DBUS_N_ELEMENTS, _dbus_string_free(), _dbus_string_init(), DBUS_ERROR_FAILED, DBUS_ERROR_NOT_SUPPORTED, dbus_set_error_const(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_transport_finalize_base()\&.
+.SS "char** _dbus_get_environment (void)"
+
+.PP
+Gets a \fBNULL\fP-terminated list of key=value pairs from the environment\&. Use dbus_free_string_array to free it\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the environment or \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file dbus\-sysdeps\-util\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_path_is_absolute(), _dbus_strdup(), _dbus_string_equal_c_str(), _dbus_string_free(), _dbus_string_get_dirname(), _dbus_string_init(), _dbus_string_init_const(), _dbus_warn(), dbus_free_string_array(), dbus_new0, FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_eagain_or_ewouldblock (int e)"
+
+.PP
+See if errno is EAGAIN or EWOULDBLOCK (this has to be done differently for Winsock so is abstracted) 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if e == EAGAIN or e == EWOULDBLOCK 
+.RE
+.PP
+
+.PP
+Definition at line 3987 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_file_exists(), _dbus_string_append(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_eintr (int e)"
+
+.PP
+See if errno is EINTR\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if e == EINTR 
+.RE
+.PP
+
+.PP
+Definition at line 739 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_enomem (int e)"
+
+.PP
+See if errno is ENOMEM\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if e == ENOMEM 
+.RE
+.PP
+
+.PP
+Definition at line 729 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_epipe (int e)"
+
+.PP
+See if errno is EPIPE\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if errno == EPIPE 
+.RE
+.PP
+
+.PP
+Definition at line 749 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_etoomanyrefs (int e)"
+
+.PP
+See if errno is ETOOMANYREFS\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if errno == ETOOMANYREFS 
+.RE
+.PP
+
+.PP
+Definition at line 759 of file dbus\-sysdeps\&.c\&.
+.PP
+References FALSE\&.
+.SS "void _dbus_get_monotonic_time (long * tv_sec, long * tv_usec)"
+
+.PP
+Get current time, as in gettimeofday()\&. Use the monotonic clock if available, to avoid problems when the system time changes\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv_sec\fP return location for number of seconds 
+.br
+\fItv_usec\fP return location for number of microseconds 
+.RE
+.PP
+
+.PP
+Definition at line 2738 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_get_real_time(), and NULL\&.
+.PP
+Referenced by _dbus_connection_block_pending_call()\&.
+.SS "void _dbus_get_real_time (long * tv_sec, long * tv_usec)"
+
+.PP
+Get current time, as in gettimeofday()\&. Never uses the monotonic clock\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv_sec\fP return location for number of seconds 
+.br
+\fItv_usec\fP return location for number of microseconds 
+.RE
+.PP
+
+.PP
+Definition at line 2769 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBUS_INT64_CONSTANT, dbus_uint64_t, and NULL\&.
+.PP
+Referenced by _dbus_generate_pseudorandom_bytes_buffer(), _dbus_generate_uuid(), _dbus_get_monotonic_time(), and _dbus_keyring_validate_context()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_standard_session_servicedirs (\fBDBusList\fP ** dirs)"
+
+.PP
+Returns the standard directories for a session bus to look for service activation files\&. On UNIX this should be the standard xdg freedesktop\&.org data directories:
+.PP
+XDG_DATA_HOME=${XDG_DATA_HOME-$HOME/\&.local/share} XDG_DATA_DIRS=${XDG_DATA_DIRS-/usr/local/share:/usr/share}
+.PP
+and
+.PP
+DBUS_DATADIR
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirs\fP the directory list we are returning 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on OOM
+.RE
+.PP
+On Windows this should be data directories:
+.PP
+CommonProgramFiles%/dbus
+.PP
+and
+.PP
+relocated DBUS_DATADIR
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirs\fP the directory list we are returning 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 1309 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_concat_dir_and_file(), _dbus_getenv(), _dbus_homedir_from_current_process(), _dbus_path_is_absolute(), _dbus_split_paths_and_append(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_standard_system_servicedirs (\fBDBusList\fP ** dirs)"
+
+.PP
+Returns the standard directories for a system bus to look for service activation files\&. On UNIX this should be the standard xdg freedesktop\&.org data directories:
+.PP
+XDG_DATA_DIRS=${XDG_DATA_DIRS-/usr/local/share:/usr/share}
+.PP
+and
+.PP
+DBUS_DATADIR
+.PP
+On Windows there is no system bus and this function can return nothing\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirs\fP the directory list we are returning 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 1401 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_split_paths_and_append(), _dbus_string_init_const(), NULL, and TRUE\&.
+.SS "const char* _dbus_get_tmpdir (void)"
+
+.PP
+Gets the temporary files directory by inspecting the environment variables TMPDIR, TMP, and TEMP in that order\&. If none of those are set '/tmp' is returned
+.PP
+\fBReturns:\fP
+.RS 4
+location of temp directory, or \fBNULL\fP if no memory for locking 
+.RE
+.PP
+
+.PP
+Definition at line 3320 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_abort(), _dbus_assert, _dbus_close_all(), _dbus_error_from_errno(), _DBUS_LOCK, _dbus_read(), _dbus_string_init(), _dbus_string_set_length(), _DBUS_UNLOCK, _dbus_warn(), DBUS_ERROR_SPAWN_EXEC_FAILED, dbus_set_error(), FALSE, NULL, READ_END, TRUE, and WRITE_END\&.
+.SS "const char * _dbus_getenv (const char * varname)"
+
+.PP
+Wrapper for getenv()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvarname\fP name of environment variable 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+value of environment variable or \fBNULL\fP if unset 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_check_setuid(), and NULL\&.
+.PP
+Referenced by _dbus_abort(), _dbus_append_keyring_directory_for_credentials(), _dbus_become_daemon(), _dbus_get_autolaunch_address(), _dbus_get_standard_session_servicedirs(), _dbus_real_assert_not_reached(), _dbus_server_new_for_launchd(), _dbus_spawn_async_with_babysitter(), and _dbus_warn_check_failed()\&.
+.SS "\fBdbus_pid_t\fP _dbus_getpid (void)"
+
+.PP
+Gets our process ID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+process ID 
+.RE
+.PP
+
+.PP
+Definition at line 2471 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+Referenced by _dbus_append_user_from_current_process(), _dbus_credentials_add_from_current_process(), _dbus_pid_for_log(), and _dbus_system_logv()\&.
+.SS "int _dbus_listen_tcp_socket (const char * host, const char * port, const char * family, \fBDBusString\fP * retport, int ** fds_p, \fBDBusError\fP * error)"
+
+.PP
+Creates a socket and binds it to the given path, then listens on the socket\&. The socket is set to be nonblocking\&. In case of port=0 a random free port is used and returned in the port parameter\&. If inaddr_any is specified, the hostname is ignored\&.
+.PP
+This will set FD_CLOEXEC for the socket returned
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP the host name to listen on 
+.br
+\fIport\fP the port to listen on, if zero a free port will be used 
+.br
+\fIfamily\fP the address family to listen on, NULL for all 
+.br
+\fIretport\fP string to return the actual port listened on 
+.br
+\fIfds_p\fP location to store returned file descriptors 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of listening file descriptors or -1 on error
+.RE
+.PP
+The socket is set to be nonblocking\&. In case of port=0 a random free port is used and returned in the port parameter\&. If inaddr_any is specified, the hostname is ignored\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP the host name to listen on 
+.br
+\fIport\fP the port to listen on, if zero a free port will be used 
+.br
+\fIfamily\fP the address family to listen on, NULL for all 
+.br
+\fIretport\fP string to return the actual port listened on 
+.br
+\fIfds_p\fP location to store returned file descriptors 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of listening file descriptors or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 1386 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_close(), _dbus_error_from_errno(), _dbus_strerror_from_errno(), _dbus_string_append(), _dbus_warn(), _DBUS_ZERO, DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_INVALID_ARGS, DBUS_ERROR_IO_ERROR, DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_realloc(), dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_server_new_for_tcp_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_lookup_session_address (\fBdbus_bool_t\fP * supported, \fBDBusString\fP * address, \fBDBusError\fP * error)"
+
+.PP
+Determines the address of the session bus by querying a platform-specific method\&. The first parameter will be a boolean specifying whether or not a dynamic session lookup is supported on this platform\&.
+.PP
+If supported is TRUE and the return value is \fBTRUE\fP, the address will be appended to \fCaddress\fP\&. If a failure happens, returns \fBFALSE\fP and sets an error in \fCerror\fP\&.
+.PP
+If supported is FALSE, ignore the return value\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsupported\fP returns whether this method is supported 
+.br
+\fIaddress\fP a \fBDBusString\fP where the address can be stored 
+.br
+\fIerror\fP a \fBDBusError\fP to store the error in case of failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if an error happened 
+.RE
+.PP
+
+.PP
+Definition at line 3856 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References FALSE, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_parse_unix_group_from_config (const \fBDBusString\fP * groupname, \fBdbus_gid_t\fP * gid_p)"
+
+.PP
+Parse a UNIX group from the bus config file\&. On Windows, this should simply always fail (just return \fBFALSE\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgroupname\fP the groupname text 
+.br
+\fIgid_p\fP place to return the gid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1051 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_get_group_id(), and FALSE\&.
+.SS "\fBdbus_bool_t\fP _dbus_parse_unix_user_from_config (const \fBDBusString\fP * username, \fBdbus_uid_t\fP * uid_p)"
+
+.PP
+Parse a UNIX user from the bus config file\&. On Windows, this should simply always fail (just return \fBFALSE\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP the username text 
+.br
+\fIuid_p\fP place to return the uid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1035 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_get_user_id(), and FALSE\&.
+.SS "\fBdbus_bool_t\fP _dbus_path_is_absolute (const \fBDBusString\fP * filename)"
+
+.PP
+Checks whether the filename is an absolute path\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if an absolute path 
+.RE
+.PP
+
+.PP
+Definition at line 689 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References FALSE\&.
+.PP
+Referenced by _dbus_get_environment(), and _dbus_get_standard_session_servicedirs()\&.
+.SS "unsigned long _dbus_pid_for_log (void)"
+
+.PP
+The only reason this is separate from \fB_dbus_getpid()\fP is to allow it on Windows for logging but not for other purposes\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+process ID to put in log messages 
+.RE
+.PP
+
+.PP
+Definition at line 2501 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_getpid(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_abort(), _dbus_real_assert(), _dbus_real_assert_not_reached(), and _dbus_warn_check_failed()\&.
+.SS "int _dbus_poll (\fBDBusPollFD\fP * fds, int n_fds, int timeout_milliseconds)"
+
+.PP
+Wrapper for poll()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfds\fP the file descriptors to poll 
+.br
+\fIn_fds\fP number of descriptors in the array 
+.br
+\fItimeout_milliseconds\fP timeout or -1 for infinite 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+numbers of fds with revents, or <0 on error 
+.RE
+.PP
+
+.PP
+Definition at line 2634 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert_not_reached, _DBUS_POLLERR, _DBUS_POLLHUP, _DBUS_POLLIN, _DBUS_POLLNVAL, _DBUS_POLLOUT, _DBUS_POLLPRI, _dbus_strerror_from_errno(), _dbus_warn(), DBusPollFD::events, FALSE, DBusPollFD::fd, NULL, and DBusPollFD::revents\&.
+.PP
+Referenced by _dbus_babysitter_unref()\&.
+.SS "void _dbus_print_backtrace (void)"
+
+.PP
+On GNU libc systems, print a crude backtrace to stderr\&. On other systems, print 'no backtrace support' and block for possible gdb attachment if an appropriate environment variable is set\&. 
+.PP
+Definition at line 3133 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+Referenced by _dbus_abort()\&.
+.SS "int _dbus_printf_string_upper_bound (const char * format, va_list args)"
+
+.PP
+Measure the length of the given format string and arguments, not including the terminating nul\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIformat\fP a printf-style format string 
+.br
+\fIargs\fP arguments for the format string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+length of the given format string and args, or -1 if no memory
+.RE
+.PP
+Measure the length of the given format string and arguments, not including the terminating nul\&. 
+.PP
+Definition at line 3250 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_string_validate_utf8(), DBUS_ERROR_FAILED, dbus_free(), dbus_malloc(), dbus_new, dbus_set_error_const(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_string_append_printf_valist()\&.
+.SS "\fBdbus_bool_t\fP _dbus_read_credentials_socket (int handle, \fBDBusCredentials\fP * credentials, \fBDBusError\fP * error)"
+
+.PP
+Reads a single byte which must be nul (an error occurs otherwise), and reads unix credentials if available\&. Clears the credentials object, then adds pid/uid if available, so any previous credentials stored in the object are lost\&.
+.PP
+\fBDBusServer\fP makes the security assumption that the credentials returned by this method are the credentials that were active at the time the socket was opened\&. Do not add APIs to this method that would break that assumption\&.
+.PP
+In particular, it is incorrect to use any API of the form 'get the process ID at the other end of the connection, then
+determine its uid, gid, or other credentials from the pid' (e\&.g\&. looking in /proc on Linux)\&. If we did that, we would be vulnerable to several attacks\&. A malicious process could queue up the rest of the authentication handshake and a malicious message that it should not be allowed to send, then race with the \fBDBusServer\fP to exec() a more privileged (e\&.g\&. setuid) binary that would have been allowed to send that message; or it could exit, and arrange for enough setuid processes to be started that its pid would be recycled for one of those processes with high probability; or it could fd-pass the connection to a more privileged process\&.
+.PP
+Return value indicates whether a byte was read, not whether we got valid credentials\&. On some systems, such as Linux, reading/writing the byte isn't actually required, but we do it anyway just to avoid multiple codepaths\&.
+.PP
+Fails if no byte is available, so you must select() first\&.
+.PP
+The point of the byte is that on some systems we have to use sendmsg()/recvmsg() to transmit credentials\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient_fd\fP the client file descriptor 
+.br
+\fIcredentials\fP object to add client credentials to 
+.br
+\fIerror\fP location to store error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success
+.RE
+.PP
+Fills in pid/uid/gid with -1 if no credentials are available\&. Return value indicates whether a byte was read, not whether we got valid credentials\&. On some systems, such as Linux, reading/writing the byte isn't actually required, but we do it anyway just to avoid multiple codepaths\&.
+.PP
+Fails if no byte is available, so you must select() first\&.
+.PP
+The point of the byte is that on some systems we have to use sendmsg()/recvmsg() to transmit credentials\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhandle\fP the client file descriptor 
+.br
+\fIcredentials\fP struct to fill with credentials of client 
+.br
+\fIerror\fP location to store error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1701 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_credentials_add_adt_audit_data(), _dbus_credentials_add_pid(), _dbus_credentials_add_unix_uid(), _dbus_credentials_add_windows_sid(), _dbus_credentials_clear(), _dbus_error_from_errno(), _dbus_read_socket(), _dbus_string_free(), _dbus_string_init(), _DBUS_ZERO, DBUS_ERROR_FAILED, DBUS_PID_FORMAT, DBUS_PID_UNSET, dbus_set_error(), DBUS_UID_FORMAT, DBUS_UID_UNSET, FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_read_local_machine_uuid (\fBDBusGUID\fP * machine_id, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP * error)"
+
+.PP
+Reads the uuid of the machine we're running on from the dbus configuration\&. Optionally try to create it (only root can do this usually)\&.
+.PP
+On UNIX, reads a file that gets created by dbus-uuidgen in a post-install script\&. On Windows, if there's a standard machine uuid we could just use that, but I can't find one with the right properties (the hardware profile guid can change without rebooting I believe)\&. If there's no standard one we might want to use the registry instead of a file for this, and I'm not sure how we'd ensure the uuid gets created\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImachine_id\fP guid to init with the machine's uuid 
+.br
+\fIcreate_if_not_found\fP try to create the uuid if it doesn't exist 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the error is set 
+.RE
+.PP
+
+.PP
+Definition at line 3684 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_append_user_from_current_process(), _dbus_assert, _dbus_generate_uuid(), _dbus_read_uuid_file(), _dbus_sha_compute(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_tolower_ascii(), _dbus_write_uuid_file(), DBusGUID::as_uint32s, dbus_error_free(), DBUS_ERROR_NO_MEMORY, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_get_local_machine_uuid_encoded(), and dbus_internal_do_not_use_get_uuid()\&.
+.SS "int _dbus_read_socket (int fd, \fBDBusString\fP * buffer, int count)"
+
+.PP
+Like \fB_dbus_read()\fP, but only works on sockets so is available on Windows\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the socket 
+.br
+\fIbuffer\fP string to append data to 
+.br
+\fIcount\fP max amount of data to read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes appended to the string
+.RE
+.PP
+Like \fB_dbus_read()\fP, but only works on sockets so is available on Windows\&.
+.PP
+Thin wrapper around the read() system call that appends the data it reads to the \fBDBusString\fP buffer\&. It appends up to the given count, and returns the same value and same errno as read()\&. The only exception is that \fB_dbus_read_socket()\fP handles EINTR for you\&. \fB_dbus_read_socket()\fP can return ENOMEM, even though regular UNIX read doesn't\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to read from 
+.br
+\fIbuffer\fP the buffer to append data to 
+.br
+\fIcount\fP the amount of data to read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes read or -1 
+.RE
+.PP
+
+.PP
+Definition at line 220 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_read(), _dbus_string_get_data_len(), _dbus_string_lengthen(), _dbus_string_set_length(), and _dbus_verbose_bytes_of_string()\&.
+.PP
+Referenced by _dbus_read_credentials_socket(), and _dbus_read_socket_with_unix_fds()\&.
+.SS "int _dbus_read_socket_with_unix_fds (int fd, \fBDBusString\fP * buffer, int count, int * fds, int * n_fds)"
+
+.PP
+Like \fB_dbus_read_socket()\fP but also tries to read unix fds from the socket\&. When there are more fds to read than space in the array passed this function will fail with ENOSPC\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the socket 
+.br
+\fIbuffer\fP string to append data to 
+.br
+\fIcount\fP max amount of data to read 
+.br
+\fIfds\fP array to place read file descriptors in 
+.br
+\fIn_fds\fP on input space in fds array, on output how many fds actually got read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes appended to string 
+.RE
+.PP
+
+.PP
+Definition at line 276 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_fd_set_close_on_exec(), _dbus_read_socket(), _dbus_string_get_data_len(), _dbus_string_lengthen(), _dbus_string_set_length(), _dbus_verbose_bytes_of_string(), _dbus_write_socket(), _dbus_write_socket_two(), _DBUS_ZERO, FALSE, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_send_credentials_socket (int server_fd, \fBDBusError\fP * error)"
+
+.PP
+Sends a single nul byte with our UNIX credentials as ancillary data\&. Returns \fBTRUE\fP if the data was successfully written\&. On systems that don't support sending credentials, just writes a byte, doesn't send any credentials\&. On some systems, such as Linux, reading/writing the byte isn't actually required, but we do it anyway just to avoid multiple codepaths\&.
+.PP
+Fails if no byte can be written, so you must select() first\&.
+.PP
+The point of the byte is that on some systems we have to use sendmsg()/recvmsg() to transmit credentials\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIserver_fd\fP file descriptor for connection to server 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the byte was sent 
+.RE
+.PP
+
+.PP
+Definition at line 2008 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_error_from_errno(), _dbus_strerror_from_errno(), _dbus_string_init_const_len(), _dbus_write_socket(), DBUS_ERROR_IO_ERROR, dbus_set_error(), FALSE, and TRUE\&.
+.SS "void _dbus_set_signal_handler (int sig, \fBDBusSignalHandler\fP handler)"
+
+.PP
+Installs a UNIX signal handler\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsig\fP the signal to handle 
+.br
+\fIhandler\fP the handler
+.RE
+.PP
+Installs a UNIX signal handler\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsig\fP the signal to handle 
+.br
+\fIhandler\fP the handler 
+.RE
+.PP
+
+.PP
+Definition at line 614 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References NULL\&.
+.SS "void _dbus_sleep_milliseconds (int milliseconds)"
+
+.PP
+Sleeps the given number of milliseconds\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImilliseconds\fP number of milliseconds 
+.RE
+.PP
+
+.PP
+Definition at line 2870 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_generate_pseudorandom_bytes_buffer(), _dbus_string_get_data_len(), _dbus_string_lengthen(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_abort(), and _dbus_connection_close_if_only_one_ref()\&.
+.SS "\fBdbus_bool_t\fP _dbus_socket_can_pass_unix_fd (int fd)"
+
+.PP
+Checks whether file descriptors may be passed via the socket\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the socket 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE when fd passing over this socket is supported 
+.RE
+.PP
+
+.PP
+Definition at line 4028 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _DBUS_ZERO, and FALSE\&.
+.PP
+Referenced by _dbus_transport_new_for_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_split_paths_and_append (\fBDBusString\fP * dirs, const char * suffix, \fBDBusList\fP ** dir_list)"
+
+.PP
+Split paths into a list of char strings\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirs\fP string with pathes 
+.br
+\fIsuffix\fP string concated to each path in dirs 
+.br
+\fIdir_list\fP contains a list of splitted pathes return \fBTRUE\fP is pathes could be splittes,\fBFALSE\fP in oom case 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_concat_dir_and_file(), _dbus_list_append(), _dbus_list_clear(), _dbus_list_foreach(), _dbus_string_chop_white(), _dbus_string_copy_data(), _dbus_string_copy_len(), _dbus_string_find(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), dbus_free(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_get_standard_session_servicedirs(), and _dbus_get_standard_system_servicedirs()\&.
+.SS "\fBdbus_bool_t\fP _dbus_stat (const \fBDBusString\fP * filename, \fBDBusStat\fP * statbuf, \fBDBusError\fP * error)"
+
+.PP
+stat() wrapper\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename to stat 
+.br
+\fIstatbuf\fP the stat info to fill in 
+.br
+\fIerror\fP return location for error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error was set 
+.RE
+.PP
+
+.PP
+Definition at line 706 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_error_from_errno(), DBusStat::atime, DBusStat::ctime, DBUS_GID_UNSET, DBUS_INT64_CONSTANT, dbus_int64_t, dbus_set_error(), DBUS_UID_UNSET, FALSE, DBusStat::gid, DBusStat::mode, DBusStat::mtime, DBusStat::nlink, NULL, DBusStat::size, TRUE, and DBusStat::uid\&.
+.PP
+Referenced by _dbus_is_console_user()\&.
+.SS "const char* _dbus_strerror_from_errno (void)"
+
+.PP
+Get error message from errno\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+_dbus_strerror(errno) 
+.RE
+.PP
+
+.PP
+Definition at line 773 of file dbus\-sysdeps\&.c\&.
+.PP
+Referenced by _dbus_become_daemon(), _dbus_close_socket(), _dbus_connect_tcp_socket(), _dbus_create_directory(), _dbus_delete_file(), _dbus_full_duplex_pipe(), _dbus_listen_tcp_socket(), _dbus_poll(), _dbus_send_credentials_socket(), _dbus_write_socket(), and _dbus_write_socket_two()\&.
+.SS "\fBdbus_bool_t\fP _dbus_string_get_dirname (const \fBDBusString\fP * filename, \fBDBusString\fP * dirname)"
+
+.PP
+Get the directory name from a complete filename\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.br
+\fIdirname\fP string to append directory name to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 1132 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_append(), _dbus_string_copy_len(), _dbus_string_find_byte_backward(), and NULL\&.
+.PP
+Referenced by _dbus_directory_close(), and _dbus_get_environment()\&.
+.SS "void _dbus_system_log (DBusSystemLogSeverity severity, const char * msg,  \&.\&.\&.)"
+
+.PP
+Log a message to the system log file (e\&.g\&. syslog on Unix)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIseverity\fP a severity value 
+.br
+\fImsg\fP a printf-style format string 
+.RE
+.PP
+
+.PP
+Definition at line 543 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_system_logv()\&.
+.SS "void _dbus_system_logv (DBusSystemLogSeverity severity, const char * msg, va_list args)"
+
+.PP
+Log a message to the system log file (e\&.g\&. syslog on Unix)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIseverity\fP a severity value 
+.br
+\fImsg\fP a printf-style format string 
+.br
+\fIargs\fP arguments for the format string
+.RE
+.PP
+If the FATAL severity is given, this function will terminate the program with an error code\&. 
+.PP
+Definition at line 565 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_getpid(), and DBUS_PID_FORMAT\&.
+.PP
+Referenced by _dbus_system_log()\&.
+.SS "\fBdbus_bool_t\fP _dbus_threads_init_platform_specific (void)"
+
+.PP
+Initialize threads as in \fBdbus_threads_init_default()\fP, appropriately for the platform\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 278 of file dbus\-sysdeps\-pthread\&.c\&.
+.PP
+References _dbus_check_setuid(), FALSE, and TRUE\&.
+.PP
+Referenced by dbus_threads_init()\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_groups_from_uid (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP ** group_ids, int * n_group_ids)"
+
+.PP
+Gets all groups corresponding to the given UNIX user ID\&. On UNIX, just calls \fB_dbus_groups_from_uid()\fP\&. On Windows, should always fail since we don't know any UNIX groups\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the UID 
+.br
+\fIgroup_ids\fP return location for array of group IDs 
+.br
+\fIn_group_ids\fP return location for length of returned array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID existed and we got some credentials 
+.RE
+.PP
+
+.PP
+Definition at line 1068 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_groups_from_uid(), FALSE, and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_user_is_at_console (\fBdbus_uid_t\fP uid, \fBDBusError\fP * error)"
+
+.PP
+Checks to see if the UNIX user ID is at the console\&. Should always fail on Windows (set the error to \fBDBUS_ERROR_NOT_SUPPORTED\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP UID of person to check 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID is the same as the console user and there are no errors 
+.RE
+.PP
+
+.PP
+Definition at line 1085 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_is_console_user(), DBUS_ERROR_NOT_SUPPORTED, dbus_set_error(), and FALSE\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_user_is_process_owner (\fBdbus_uid_t\fP uid)"
+
+.PP
+Checks to see if the UNIX user ID matches the UID of the process\&. Should always return \fBFALSE\fP on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the UNIX user ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if this uid owns the process\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1100 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_geteuid(), and FALSE\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_at_console (const char * username, \fBDBusError\fP * error)"
+
+.PP
+Checks if user is at the console\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP user to check 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP is the user is at the consolei and there are no errors 
+.RE
+.PP
+
+.PP
+Definition at line 645 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_concat_dir_and_file(), _dbus_file_exists(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), and FALSE\&.
+.PP
+Referenced by _dbus_is_console_user()\&.
+.SS "\fBdbus_bool_t\fP _dbus_verify_daemon_user (const char * user)"
+
+.PP
+Verify that after the fork we can successfully change to this user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuser\fP the username given in the daemon configuration 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if username is valid 
+.RE
+.PP
+
+.PP
+Definition at line 312 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_get_user_id_and_primary_group(), _dbus_string_init_const(), NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_windows_user_is_process_owner (const char * windows_sid)"
+
+.PP
+Checks to see if the Windows user SID matches the owner of the process\&. Should always return \fBFALSE\fP on UNIX\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwindows_sid\fP the Windows user SID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if this user owns the process\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1113 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References FALSE, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_write_pid_to_file_and_pipe (const \fBDBusString\fP * pidfile, \fBDBusPipe\fP * print_pid_pipe, \fBdbus_pid_t\fP pid_to_write, \fBDBusError\fP * error)"
+
+.PP
+Writes the given pid_to_write to a pidfile (if non-NULL) and/or to a pipe (if non-NULL)\&. Does nothing if pidfile and print_pid_pipe are both NULL\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpidfile\fP the file to write to or \fBNULL\fP 
+.br
+\fIprint_pid_pipe\fP the pipe to write to or \fBNULL\fP 
+.br
+\fIpid_to_write\fP the pid to write out 
+.br
+\fIerror\fP error on failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 238 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_string_append(), _dbus_string_append_int(), _dbus_string_free(), _dbus_string_init(), DBUS_ERROR_FAILED, dbus_error_is_set(), dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_become_daemon()\&.
+.SS "int _dbus_write_socket (int fd, const \fBDBusString\fP * buffer, int start, int len)"
+
+.PP
+Like \fB_dbus_write()\fP, but only supports sockets and is thus available on Windows\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to write 
+.br
+\fIbuffer\fP the buffer to write data from 
+.br
+\fIstart\fP the first byte in the buffer to write 
+.br
+\fIlen\fP the number of bytes to try to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes written or -1 on error
+.RE
+.PP
+Like \fB_dbus_write()\fP, but only supports sockets and is thus available on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to write 
+.br
+\fIbuffer\fP the buffer to write data from 
+.br
+\fIstart\fP the first byte in the buffer to write 
+.br
+\fIlen\fP the number of bytes to try to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes written or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 238 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_strerror_from_errno(), _dbus_verbose_bytes_of_string(), and _dbus_write()\&.
+.PP
+Referenced by _dbus_read_socket_with_unix_fds(), and _dbus_send_credentials_socket()\&.
+.SS "int _dbus_write_socket_two (int fd, const \fBDBusString\fP * buffer1, int start1, int len1, const \fBDBusString\fP * buffer2, int start2, int len2)"
+
+.PP
+Like \fB_dbus_write_two()\fP but only works on sockets and is thus available on Windows\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.br
+\fIbuffer1\fP first buffer 
+.br
+\fIstart1\fP first byte to write in first buffer 
+.br
+\fIlen1\fP number of bytes to write from first buffer 
+.br
+\fIbuffer2\fP second buffer, or \fBNULL\fP 
+.br
+\fIstart2\fP first byte to write in second buffer 
+.br
+\fIlen2\fP number of bytes to write in second buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+total bytes written from both buffers, or -1 on error
+.RE
+.PP
+Like \fB_dbus_write_two()\fP but only works on sockets and is thus available on Windows\&.
+.PP
+The return value is the number of bytes written in the first buffer, plus the number written in the second\&. If the first buffer is written successfully and an error occurs writing the second, the number of bytes in the first is returned (i\&.e\&. the error is ignored), on systems that don't have writev\&. Handles EINTR for you\&. The second buffer may be \fBNULL\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.br
+\fIbuffer1\fP first buffer 
+.br
+\fIstart1\fP first byte to write in first buffer 
+.br
+\fIlen1\fP number of bytes to write from first buffer 
+.br
+\fIbuffer2\fP second buffer, or \fBNULL\fP 
+.br
+\fIstart2\fP first byte to write in second buffer 
+.br
+\fIlen2\fP number of bytes to write in second buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+total bytes written from both buffers, or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 549 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_abort(), _dbus_assert, _dbus_assert_not_reached, _DBUS_LOCK, _dbus_strerror_from_errno(), _DBUS_UNLOCK, _dbus_write_two(), _DBUS_ZERO, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_read_socket_with_unix_fds()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

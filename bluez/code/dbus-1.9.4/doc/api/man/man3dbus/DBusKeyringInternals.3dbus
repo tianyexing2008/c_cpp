@@ -1,0 +1,72 @@
+.TH "DBusKeyringInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusKeyringInternals \- DBusKeyring implementation details
+.PP
+\fBDBusKeyring\fP implementation details\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusKey\fP"
+.br
+.RI "\fIA single key from the cookie file\&. \fP"
+.ti -1c
+.RI "struct \fBDBusKeyring\fP"
+.br
+.RI "\fIInternals of \fBDBusKeyring\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNEW_KEY_TIMEOUT_SECONDS\fP   (60*5)"
+.br
+.RI "\fIThe maximum age of a key before we create a new key to use in challenges\&. \fP"
+.ti -1c
+.RI "#define \fBEXPIRE_KEYS_TIMEOUT_SECONDS\fP   (\fBNEW_KEY_TIMEOUT_SECONDS\fP + (60*2))"
+.br
+.RI "\fIThe time after which we drop a key from the secrets file\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_TIME_TRAVEL_SECONDS\fP   (60*5)"
+.br
+.RI "\fIThe maximum amount of time a key can be in the future\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_KEYS_IN_FILE\fP   256"
+.br
+.RI "\fIMaximum number of keys in the keyring before we just ignore the rest\&. \fP"
+.ti -1c
+.RI "#define \fBMAX_LOCK_TIMEOUTS\fP   32"
+.br
+.RI "\fIMaximum number of timeouts waiting for lock before we decide it's stale\&. \fP"
+.ti -1c
+.RI "#define \fBLOCK_TIMEOUT_MILLISECONDS\fP   250"
+.br
+.RI "\fILength of each timeout while waiting for a lock\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusKeyring\fP implementation details\&. 
+
+The guts of \fBDBusKeyring\fP\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define EXPIRE_KEYS_TIMEOUT_SECONDS   (\fBNEW_KEY_TIMEOUT_SECONDS\fP + (60*2))"
+
+.PP
+The time after which we drop a key from the secrets file\&. The EXPIRE_KEYS_TIMEOUT_SECONDS - NEW_KEY_TIMEOUT_SECONDS is the minimum time window a client has to complete authentication\&. 
+.PP
+Definition at line 73 of file dbus\-keyring\&.c\&.
+.SS "#define NEW_KEY_TIMEOUT_SECONDS   (60*5)"
+
+.PP
+The maximum age of a key before we create a new key to use in challenges\&. This isn't super-reliably enforced, since system clocks can change or be wrong, but we make a best effort to only use keys for a short time\&. 
+.PP
+Definition at line 67 of file dbus\-keyring\&.c\&.
+.PP
+Referenced by _dbus_keyring_validate_context()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

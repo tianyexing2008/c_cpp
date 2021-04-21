@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusPendingCall" kind="struct" language="C++" prot="public">
+    <compoundname>DBusPendingCall</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusPendingCall_1a952e3c744db112d49bbaffe0fe45048d" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAtomic" kindref="compound">DBusAtomic</ref></type>
+        <definition>DBusAtomic DBusPendingCall::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>reference count </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="64" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="64" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga26f09beed0dd6323cca0452abf344567" compoundref="dbus-pending-call_8c" startline="457" endline="470">_dbus_pending_call_unref_and_unlock</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga334f6c6621583e15fdaf1a3f93dd2221" compoundref="dbus-pending-call_8c" startline="577" endline="588">dbus_pending_call_ref</referencedby>
+        <referencedby refid="group__DBusPendingCall_1gadaba15a74ba4925cdef52d4791cd3147" compoundref="dbus-pending-call_8c" startline="597" endline="609">dbus_pending_call_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1ad1b1c044ae4f9f94b05b4a5eb2f3917a" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref></type>
+        <definition>DBusDataSlotList DBusPendingCall::slot_list</definition>
+        <argsstring></argsstring>
+        <name>slot_list</name>
+        <briefdescription>
+<para>Data stored by allocated integer ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="66" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="66" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga7d4196ca35b8df842c05a02dbb71c269" compoundref="dbus-pending-call_8c" startline="502" endline="528">_dbus_pending_call_set_data_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5749f73b7ec7a8fe4f2e6a839e292806" compoundref="dbus-pending-call_8c" startline="827" endline="841">dbus_pending_call_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1a057527b236383b2f3436f4ed5ddc2d4b" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga0934446fa9009211ca180fc1a01813b4" kindref="member">DBusPendingCallNotifyFunction</ref></type>
+        <definition>DBusPendingCallNotifyFunction DBusPendingCall::function</definition>
+        <argsstring></argsstring>
+        <name>function</name>
+        <briefdescription>
+<para>Notifier when reply arrives. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="68" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="68" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga6b10d157242e540fd18bd3db733dab5c" compoundref="dbus-pending-call_8c" startline="204" endline="218">_dbus_pending_call_complete</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga16b67b418b1dc27cfdda6b20f7447670" compoundref="dbus-pending-call_8c" startline="622" endline="645">dbus_pending_call_set_notify</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1adaee5e70f04e503f25b8c4202fd4747f" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* DBusPendingCall::connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <briefdescription>
+<para>Connections we&apos;re associated with. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="70" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="70" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga1bc4de7652108d0629522a4e3adffcab" compoundref="dbus-pending-call_8c" startline="228" endline="239">_dbus_pending_call_queue_timeout_error_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga68e5ff616e6a6563d83966c3d88b9b32" compoundref="dbus-pending-call_8c" startline="323" endline="329">_dbus_pending_call_get_connection_and_lock</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1gae725060aa80d9df58dcee4f1fa108784" compoundref="dbus-pending-call_8c" startline="338" endline="343">_dbus_pending_call_get_connection_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga26f09beed0dd6323cca0452abf344567" compoundref="dbus-pending-call_8c" startline="457" endline="470">_dbus_pending_call_unref_and_unlock</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga7d4196ca35b8df842c05a02dbb71c269" compoundref="dbus-pending-call_8c" startline="502" endline="528">_dbus_pending_call_set_data_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga16b67b418b1dc27cfdda6b20f7447670" compoundref="dbus-pending-call_8c" startline="622" endline="645">dbus_pending_call_set_notify</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga6530d18f891d3ca5f5df87ea7c2b155c" compoundref="dbus-pending-call_8c" startline="663" endline="669">dbus_pending_call_cancel</referencedby>
+        <referencedby refid="group__DBusPendingCall_1gacbf33ae8a1cc125628f9ea44d175c159" compoundref="dbus-pending-call_8c" startline="679" endline="690">dbus_pending_call_get_completed</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5a738928c2369fef093ce00658903d06" compoundref="dbus-pending-call_8c" startline="702" endline="719">dbus_pending_call_steal_reply</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga9295e7e602c41c6501b69bc995907e1b" compoundref="dbus-pending-call_8c" startline="801" endline="816">dbus_pending_call_set_data</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5749f73b7ec7a8fe4f2e6a839e292806" compoundref="dbus-pending-call_8c" startline="827" endline="841">dbus_pending_call_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1a30c043b7cc468ab01fce6596dac1da57" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* DBusPendingCall::reply</definition>
+        <argsstring></argsstring>
+        <name>reply</name>
+        <briefdescription>
+<para>Reply (after we&apos;ve received it) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="71" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="71" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="172" endline="194">_dbus_pending_call_set_reply_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9901fc4c5fd2db9bf1ce2dcc9abf55fc" compoundref="dbus-pending-call_8c" startline="354" endline="384">_dbus_pending_call_set_timeout_error_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5a738928c2369fef093ce00658903d06" compoundref="dbus-pending-call_8c" startline="702" endline="719">dbus_pending_call_steal_reply</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1af9dea193bf4ab249c280ff6abcb743f8" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+        <definition>DBusTimeout* DBusPendingCall::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <briefdescription>
+<para>Timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="72" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="72" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1gaa9acac047b61c9a0eaff1977151e9e08" compoundref="dbus-pending-call_8c" startline="279" endline="284">_dbus_pending_call_get_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1a85252a169617a86f80462bfb53ca2f7c" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusPendingCall::timeout_link</definition>
+        <argsstring></argsstring>
+        <name>timeout_link</name>
+        <briefdescription>
+<para>Preallocated timeout response. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="74" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="74" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="172" endline="194">_dbus_pending_call_set_reply_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga1bc4de7652108d0629522a4e3adffcab" compoundref="dbus-pending-call_8c" startline="228" endline="239">_dbus_pending_call_queue_timeout_error_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9901fc4c5fd2db9bf1ce2dcc9abf55fc" compoundref="dbus-pending-call_8c" startline="354" endline="384">_dbus_pending_call_set_timeout_error_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1ab6234d38b3f3ca8ff5de2d3cce8c3100" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusPendingCall::reply_serial</definition>
+        <argsstring></argsstring>
+        <name>reply_serial</name>
+        <briefdescription>
+<para>Expected serial of reply. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="76" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="76" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="172" endline="194">_dbus_pending_call_set_reply_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1gaf5f3df36149bfe55d824eb08d00768fc" compoundref="dbus-pending-call_8c" startline="293" endline="298">_dbus_pending_call_get_reply_serial_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4c0325356df50a5dc103bdab3e7148f3" compoundref="dbus-pending-call_8c" startline="307" endline="314">_dbus_pending_call_set_reply_serial_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1ac9b0b400f7d555e4e2b3eb1e5f4c26aa" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusPendingCall::completed</definition>
+        <argsstring></argsstring>
+        <name>completed</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>TRUE if completed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="78" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="78" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1ga6b10d157242e540fd18bd3db733dab5c" compoundref="dbus-pending-call_8c" startline="204" endline="218">_dbus_pending_call_complete</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga37bef4359b3c29629a57f5fe480690a1" compoundref="dbus-pending-call_8c" startline="480" endline="483">_dbus_pending_call_get_completed_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCall_1gacbf33ae8a1cc125628f9ea44d175c159" compoundref="dbus-pending-call_8c" startline="679" endline="690">dbus_pending_call_get_completed</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5a738928c2369fef093ce00658903d06" compoundref="dbus-pending-call_8c" startline="702" endline="719">dbus_pending_call_steal_reply</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusPendingCall_1a9e1230f62e6ada8af3903d299f2ff0b4" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusPendingCall::timeout_added</definition>
+        <argsstring></argsstring>
+        <name>timeout_added</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Have added the timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-pending-call.c" line="79" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="79" bodyend="-1"/>
+        <referencedby refid="group__DBusPendingCallInternals_1gaf1e630b966722af540502329ed028254" compoundref="dbus-pending-call_8c" startline="248" endline="253">_dbus_pending_call_is_timeout_added_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1gafea13f8b9977d341e41201c407adea2a" compoundref="dbus-pending-call_8c" startline="263" endline="269">_dbus_pending_call_set_timeout_added_unlocked</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusPendingCall" kindref="compound">DBusPendingCall</ref> - all fields are private. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="364">
+        <label>DBusConnection</label>
+        <link refid="structDBusConnection"/>
+        <childnode refid="365" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="368" relation="usage">
+          <edgelabel>pending_replies</edgelabel>
+        </childnode>
+        <childnode refid="373" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="364" relation="usage">
+          <edgelabel>dispatch_status_function</edgelabel>
+        </childnode>
+        <childnode refid="375" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="377" relation="usage">
+          <edgelabel>dispatch_mutex</edgelabel>
+          <edgelabel>io_path_mutex</edgelabel>
+        </childnode>
+        <childnode refid="378" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="381" relation="usage">
+          <edgelabel>io_path_cond</edgelabel>
+          <edgelabel>dispatch_cond</edgelabel>
+        </childnode>
+        <childnode refid="382" relation="usage">
+          <edgelabel>message_borrowed</edgelabel>
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>incoming_messages</edgelabel>
+          <edgelabel>filter_list</edgelabel>
+          <edgelabel>outgoing_messages</edgelabel>
+          <edgelabel>disconnect_message_link</edgelabel>
+          <edgelabel>expired_messages</edgelabel>
+        </childnode>
+        <childnode refid="386" relation="usage">
+          <edgelabel>slot_mutex</edgelabel>
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="387" relation="usage">
+          <edgelabel>transport</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="396" relation="usage">
+          <edgelabel>outgoing_counter</edgelabel>
+        </childnode>
+      </node>
+      <node id="384">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="385" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="379">
+        <label>DBusObjectSubtree</label>
+        <link refid="structDBusObjectSubtree"/>
+        <childnode refid="364" relation="usage">
+          <edgelabel>message_function</edgelabel>
+          <edgelabel>unregister_function</edgelabel>
+        </childnode>
+        <childnode refid="379" relation="usage">
+          <edgelabel>parent</edgelabel>
+          <edgelabel>subtrees</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+      </node>
+      <node id="386">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="373">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="374" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="368">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="369" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="372" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="394">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="395">
+        <label>DBusTransportVTable</label>
+        <link refid="structDBusTransportVTable"/>
+      </node>
+      <node id="374">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="374" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="389">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="388" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="365">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="367" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="382">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="375" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="384" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="371">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="371" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="396">
+        <label>DBusCounter</label>
+        <link refid="structDBusCounter"/>
+        <childnode refid="396" relation="usage">
+          <edgelabel>notify_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="390">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="388" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="385">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="391">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="380">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="392">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="393" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="391" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="369">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="370" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="371" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="378">
+        <label>DBusObjectTree</label>
+        <link refid="structDBusObjectTree"/>
+        <childnode refid="364" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="379" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="367">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="376">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="366">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="387">
+        <label>DBusTransport</label>
+        <link refid="structDBusTransport"/>
+        <childnode refid="364" relation="usage">
+          <edgelabel>unix_user_function</edgelabel>
+          <edgelabel>windows_user_function</edgelabel>
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="388" relation="usage">
+          <edgelabel>auth</edgelabel>
+        </childnode>
+        <childnode refid="391" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="394" relation="usage">
+          <edgelabel>loader</edgelabel>
+        </childnode>
+        <childnode refid="395" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="396" relation="usage">
+          <edgelabel>live_messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="377">
+        <label>DBusCMutex</label>
+        <link refid="structDBusCMutex"/>
+      </node>
+      <node id="372">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="372" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="381">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="393">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="370">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="370" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="375">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="376" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="383">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="363">
+        <label>DBusPendingCall</label>
+        <link refid="structDBusPendingCall"/>
+        <childnode refid="363" relation="usage">
+          <edgelabel>function</edgelabel>
+        </childnode>
+        <childnode refid="364" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="375" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>timeout_link</edgelabel>
+        </childnode>
+        <childnode refid="382" relation="usage">
+          <edgelabel>reply</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="367" relation="usage">
+          <edgelabel>timeout</edgelabel>
+        </childnode>
+      </node>
+      <node id="388">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="389" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="383" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="390" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="391" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="392" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-pending-call.c" line="63" column="1" bodyfile="dbus/dbus-pending-call.c" bodystart="62" bodyend="80"/>
+    <listofallmembers>
+      <member refid="structDBusPendingCall_1ac9b0b400f7d555e4e2b3eb1e5f4c26aa" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>completed</name></member>
+      <member refid="structDBusPendingCall_1adaee5e70f04e503f25b8c4202fd4747f" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>connection</name></member>
+      <member refid="structDBusPendingCall_1a057527b236383b2f3436f4ed5ddc2d4b" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>function</name></member>
+      <member refid="structDBusPendingCall_1a952e3c744db112d49bbaffe0fe45048d" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>refcount</name></member>
+      <member refid="structDBusPendingCall_1a30c043b7cc468ab01fce6596dac1da57" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>reply</name></member>
+      <member refid="structDBusPendingCall_1ab6234d38b3f3ca8ff5de2d3cce8c3100" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>reply_serial</name></member>
+      <member refid="structDBusPendingCall_1ad1b1c044ae4f9f94b05b4a5eb2f3917a" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>slot_list</name></member>
+      <member refid="structDBusPendingCall_1af9dea193bf4ab249c280ff6abcb743f8" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>timeout</name></member>
+      <member refid="structDBusPendingCall_1a9e1230f62e6ada8af3903d299f2ff0b4" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>timeout_added</name></member>
+      <member refid="structDBusPendingCall_1a85252a169617a86f80462bfb53ca2f7c" prot="public" virt="non-virtual"><scope>DBusPendingCall</scope><name>timeout_link</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

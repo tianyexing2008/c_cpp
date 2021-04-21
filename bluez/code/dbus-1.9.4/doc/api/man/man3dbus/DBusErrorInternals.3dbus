@@ -1,0 +1,69 @@
+.TH "DBusErrorInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusErrorInternals \- Error reporting internals
+.PP
+Error reporting internals\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusRealError\fP"
+.br
+.RI "\fIInternals of \fBDBusError\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INIT\fP   { \fBNULL\fP, \fBNULL\fP, \fBTRUE\fP, 0, 0, 0, 0, \fBNULL\fP }"
+.br
+.RI "\fIExpands to a suitable initializer for a \fBDBusError\fP on the stack\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_DBUS_STATIC_ASSERT\fP (sizeof(\fBDBusRealError\fP)==sizeof(\fBDBusError\fP))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Error reporting internals\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_ERROR_INIT   { \fBNULL\fP, \fBNULL\fP, \fBTRUE\fP, 0, 0, 0, 0, \fBNULL\fP }"
+
+.PP
+Expands to a suitable initializer for a \fBDBusError\fP on the stack\&. Declaring a \fBDBusError\fP with:
+.PP
+.PP
+.nf
+1 DBusError error = DBUS_ERROR_INIT;
+2 
+3 do_things_with (&error);
+.fi
+.PP
+.PP
+is a more concise form of:
+.PP
+.PP
+.nf
+1 DBusError error;
+2 
+3 dbus_error_init (&error);
+4 do_things_with (&error);
+.fi
+.PP
+ 
+.PP
+Definition at line 62 of file dbus\-errors\&.h\&.
+.PP
+Referenced by _dbus_babysitter_unref(), _dbus_connection_handle_watch(), _dbus_get_local_machine_uuid_encoded(), _dbus_read_uuid_file(), _dbus_sha_compute(), _dbus_spawn_async_with_babysitter(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), _dbus_user_database_lookup(), dbus_address_unescape_value(), dbus_connection_register_fallback(), dbus_connection_register_object_path(), dbus_server_get_data(), and dbus_server_listen()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

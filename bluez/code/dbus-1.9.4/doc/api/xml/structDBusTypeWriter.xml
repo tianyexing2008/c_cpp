@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTypeWriter" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTypeWriter</compoundname>
+    <includes refid="dbus-marshal-recursive_8h" local="no">dbus-marshal-recursive.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeWriter::byte_order</definition>
+        <argsstring></argsstring>
+        <name>byte_order</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+<para>byte order to write values with </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="66" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeWriter::container_type</definition>
+        <argsstring></argsstring>
+        <name>container_type</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+<para>what are we inside? (e.g. </para>        </briefdescription>
+        <detaileddescription>
+<para>struct, variant, array) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="68" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" compoundref="dbus-marshal-recursive_8c" startline="2140" endline="2158">_dbus_type_writer_append_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1ga6e2d1e936c3c61fe00d80a3f22fd5e76" compoundref="dbus-message_8c" startline="2791" endline="2825">dbus_message_iter_append_fixed_array</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeWriter::type_pos_is_expectation</definition>
+        <argsstring></argsstring>
+        <name>type_pos_is_expectation</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>type_pos can be either an insertion point for or an expected next type </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="70" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusTypeWriter::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>whether to write values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="72" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4905750705d220efe9dfc71f49bedc11" compoundref="dbus-marshal-recursive_8c" startline="2728" endline="2732">_dbus_type_writer_write_reader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+        <definition>DBusString* DBusTypeWriter::type_str</definition>
+        <argsstring></argsstring>
+        <name>type_str</name>
+        <briefdescription>
+<para>where to write typecodes (or read type expectations) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="74" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga863b2f232a21582f9e6fe1951b09da91" compoundref="dbus-marshal-recursive_8c" startline="1543" endline="1552">_dbus_type_writer_add_types</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga34d675b57c7e6569707d22ba76ae010c" compoundref="dbus-marshal-recursive_8c" startline="1560" endline="1564">_dbus_type_writer_remove_types</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeWriter::type_pos</definition>
+        <argsstring></argsstring>
+        <name>type_pos</name>
+        <briefdescription>
+<para>current pos in type_str </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="75" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga863b2f232a21582f9e6fe1951b09da91" compoundref="dbus-marshal-recursive_8c" startline="1543" endline="1552">_dbus_type_writer_add_types</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga34d675b57c7e6569707d22ba76ae010c" compoundref="dbus-marshal-recursive_8c" startline="1560" endline="1564">_dbus_type_writer_remove_types</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+        <definition>DBusString* DBusTypeWriter::value_str</definition>
+        <argsstring></argsstring>
+        <name>value_str</name>
+        <briefdescription>
+<para>where to write values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="76" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeWriter::value_pos</definition>
+        <argsstring></argsstring>
+        <name>value_pos</name>
+        <briefdescription>
+<para>next position to write </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="77" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" compoundref="dbus-marshal-recursive_8c" startline="2140" endline="2158">_dbus_type_writer_append_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a24531a73a7b434bc3596a13dc0a12957" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeWriter::start_pos</definition>
+        <argsstring></argsstring>
+        <name>start_pos</name>
+        <briefdescription>
+<para>position of first element in the array </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="82" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a9bb5ce609d67e3254d35a261a425788c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeWriter::len_pos</definition>
+        <argsstring></argsstring>
+        <name>len_pos</name>
+        <briefdescription>
+<para>position of length of the array </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="83" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1a2241529e1b6ab17bf0bbb838c896e02b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTypeWriter::element_type_pos</definition>
+        <argsstring></argsstring>
+        <name>element_type_pos</name>
+        <briefdescription>
+<para>position of array element type in type_str </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="84" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1aa5247dc0cb37527a7affbf28a0904423" prot="public" static="no" mutable="no">
+        <type>struct DBusTypeWriter::@3::@4</type>
+        <definition>struct DBusTypeWriter::@3::@4  DBusTypeWriter::array</definition>
+        <argsstring></argsstring>
+        <name>array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a" prot="public" static="no" mutable="no">
+        <type>union DBusTypeWriter::@3</type>
+        <definition>union DBusTypeWriter::@3  DBusTypeWriter::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <briefdescription>
+<para>class-specific data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="86" column="1"/>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" compoundref="dbus-marshal-recursive_8c" startline="2140" endline="2158">_dbus_type_writer_append_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The type writer is an iterator for writing to a block of values. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="579">
+        <label>DBusTypeWriter</label>
+        <link refid="structDBusTypeWriter"/>
+        <childnode refid="580" relation="usage">
+          <edgelabel>value_str</edgelabel>
+          <edgelabel>type_str</edgelabel>
+        </childnode>
+      </node>
+      <node id="580">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-marshal-recursive.h" line="65" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="64" bodyend="87"/>
+    <listofallmembers>
+      <member refid="structDBusTypeWriter_1aa5247dc0cb37527a7affbf28a0904423" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>array</name></member>
+      <member refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>byte_order</name></member>
+      <member refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>container_type</name></member>
+      <member refid="structDBusTypeWriter_1a2241529e1b6ab17bf0bbb838c896e02b" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>element_type_pos</name></member>
+      <member refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>enabled</name></member>
+      <member refid="structDBusTypeWriter_1a9bb5ce609d67e3254d35a261a425788c" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>len_pos</name></member>
+      <member refid="structDBusTypeWriter_1a24531a73a7b434bc3596a13dc0a12957" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>start_pos</name></member>
+      <member refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>type_pos</name></member>
+      <member refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>type_pos_is_expectation</name></member>
+      <member refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>type_str</name></member>
+      <member refid="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>u</name></member>
+      <member refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>value_pos</name></member>
+      <member refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" prot="public" virt="non-virtual"><scope>DBusTypeWriter</scope><name>value_str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

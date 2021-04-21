@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-mempool_8h" kind="file" language="C++">
+    <compoundname>dbus-mempool.h</compoundname>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includes refid="dbus-memory_8h" local="no">dbus/dbus-memory.h</includes>
+    <includes refid="dbus-types_8h" local="no">dbus/dbus-types.h</includes>
+    <includedby refid="dbus-hash_8c" local="yes">dbus-hash.c</includedby>
+    <includedby refid="dbus-list_8c" local="yes">dbus-list.c</includedby>
+    <includedby refid="dbus-mempool_8c" local="yes">dbus-mempool.c</includedby>
+    <incdepgraph>
+      <node id="1939">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1932">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1927">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="1935">
+        <label>stdint.h</label>
+      </node>
+      <node id="1941">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="1933">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="1934" relation="include">
+        </childnode>
+        <childnode refid="1935" relation="include">
+        </childnode>
+        <childnode refid="1936" relation="include">
+        </childnode>
+        <childnode refid="1931" relation="include">
+        </childnode>
+        <childnode refid="1937" relation="include">
+        </childnode>
+        <childnode refid="1938" relation="include">
+        </childnode>
+        <childnode refid="1940" relation="include">
+        </childnode>
+        <childnode refid="1939" relation="include">
+        </childnode>
+        <childnode refid="1941" relation="include">
+        </childnode>
+      </node>
+      <node id="1925">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1931" relation="include">
+        </childnode>
+        <childnode refid="1933" relation="include">
+        </childnode>
+        <childnode refid="1942" relation="include">
+        </childnode>
+      </node>
+      <node id="1928">
+        <label>stddef.h</label>
+      </node>
+      <node id="1938">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1939" relation="include">
+        </childnode>
+      </node>
+      <node id="1930">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+      </node>
+      <node id="1940">
+        <label>string.h</label>
+      </node>
+      <node id="1943">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+      </node>
+      <node id="1924">
+        <label>dbus-mempool.h</label>
+        <link refid="dbus-mempool.h"/>
+        <childnode refid="1925" relation="include">
+        </childnode>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+      </node>
+      <node id="1942">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1943" relation="include">
+        </childnode>
+      </node>
+      <node id="1934">
+        <label>config.h</label>
+      </node>
+      <node id="1937">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="1938" relation="include">
+        </childnode>
+        <childnode refid="1931" relation="include">
+        </childnode>
+      </node>
+      <node id="1931">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1932" relation="include">
+        </childnode>
+      </node>
+      <node id="1929">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1928" relation="include">
+        </childnode>
+        <childnode refid="1930" relation="include">
+        </childnode>
+      </node>
+      <node id="1936">
+        <label>inttypes.h</label>
+      </node>
+      <node id="1926">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1928" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1946">
+        <label>dbus-list.c</label>
+        <link refid="dbus-list_8c_source"/>
+      </node>
+      <node id="1945">
+        <label>dbus-hash.c</label>
+        <link refid="dbus-hash_8c_source"/>
+      </node>
+      <node id="1947">
+        <label>dbus-mempool.c</label>
+        <link refid="dbus-mempool_8c_source"/>
+      </node>
+      <node id="1944">
+        <label>dbus-mempool.h</label>
+        <link refid="dbus-mempool.h"/>
+        <childnode refid="1945" relation="include">
+        </childnode>
+        <childnode refid="1946" relation="include">
+        </childnode>
+        <childnode refid="1947" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusMemPool_1gaadb50c95482bc5d2808e190c5618065c" prot="public" static="no">
+        <type>struct <ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref></type>
+        <definition>DBusMemPool</definition>
+        <argsstring></argsstring>
+        <name>DBusMemPool</name>
+        <briefdescription>
+<para>Opaque object representing a memory pool. </para>        </briefdescription>
+        <detaileddescription>
+<para>Memory pools allow avoiding per-malloc-block memory overhead when allocating a lot of small objects that are all the same size. They are slightly faster than calling malloc() also. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="106" column="1" bodyfile="dbus/dbus-mempool.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+        <definition>DBusMemPool* _dbus_mem_pool_new</definition>
+        <argsstring>(int element_size, dbus_bool_t zero_elements)</argsstring>
+        <name>_dbus_mem_pool_new</name>
+        <param>
+          <type>int</type>
+          <declname>element_size</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>zero_elements</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new memory pool, or returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para>        </briefdescription>
+        <detaileddescription>
+<para>Objects in the pool must be at least sizeof(void*) bytes each, due to the way memory pools work. To avoid creating 64 bit problems, this means at least 8 bytes on all platforms, unless you are 4 bytes on 32-bit and 8 bytes on 64-bit.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>element_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of an element allocated from the pool. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zero_elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to zero-initialize elements </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new pool or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="35" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="138" bodyend="179"/>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" compoundref="dbus-mempool_8c" startline="100">DBusMemPool::element_size</references>
+        <references refid="structDBusMemPool_1a2ebffd5d3e0eb209b1d0fa5779609818" compoundref="dbus-mempool_8c" startline="102">DBusMemPool::zero_elements</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMemPool_1a23cd8af3ecb8cd88074b1934b1d7597c" compoundref="dbus-mempool_8c" startline="106">DBusMemPool::allocated_elements</references>
+        <references refid="structDBusMemPool_1a45cdcee97621d5a2bd85edd90d87d8bf" compoundref="dbus-mempool_8c" startline="101">DBusMemPool::block_size</references>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_mem_pool_free</definition>
+        <argsstring>(DBusMemPool *pool)</argsstring>
+        <name>_dbus_mem_pool_free</name>
+        <param>
+          <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <briefdescription>
+<para>Frees a memory pool (and all elements allocated from it). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the memory pool. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="37" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="187" bodyend="204"/>
+        <references refid="structDBusMemPool_1a4682e065e26ee0dc4d2a17023cb41b8b" compoundref="dbus-mempool_8c" startline="105">DBusMemPool::blocks</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusFreedElement_1ac4819bebce960943155f9fbd4ab6e6c5" compoundref="dbus-mempool_8c" startline="63">DBusFreedElement::next</references>
+        <references refid="structDBusMemBlock_1a88abbae4b7e92bfab8392c2aad2dae9b" compoundref="dbus-mempool_8c" startline="84">DBusMemBlock::next</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_mem_pool_alloc</definition>
+        <argsstring>(DBusMemPool *pool)</argsstring>
+        <name>_dbus_mem_pool_alloc</name>
+        <param>
+          <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an object from the memory pool. </para>        </briefdescription>
+        <detaileddescription>
+<para>The object must be freed with <ref refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" kindref="member">_dbus_mem_pool_dealloc()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the memory pool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the allocated object or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="38" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="214" bodyend="336"/>
+        <references refid="group__DBusMemPoolInternals_1ga412163ea9cb4effae42afc1147d8b9b8" compoundref="dbus-mempool_8c" startline="70">ELEMENT_PADDING</references>
+        <references refid="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" compoundref="dbus-mempool_8c" startline="100">DBusMemPool::element_size</references>
+        <references refid="structDBusMemPool_1a2ebffd5d3e0eb209b1d0fa5779609818" compoundref="dbus-mempool_8c" startline="102">DBusMemPool::zero_elements</references>
+        <references refid="group__DBusMemory_1gaa02722b030a091f6c14c4cb11a593623" compoundref="dbus-memory_8c" startline="531" endline="588">dbus_malloc0</references>
+        <references refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" compoundref="dbus-memory_8c" startline="461" endline="516">dbus_malloc</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMemBlock_1a88abbae4b7e92bfab8392c2aad2dae9b" compoundref="dbus-mempool_8c" startline="84">DBusMemBlock::next</references>
+        <references refid="structDBusMemPool_1a4682e065e26ee0dc4d2a17023cb41b8b" compoundref="dbus-mempool_8c" startline="105">DBusMemPool::blocks</references>
+        <references refid="structDBusMemPool_1a23cd8af3ecb8cd88074b1934b1d7597c" compoundref="dbus-mempool_8c" startline="106">DBusMemPool::allocated_elements</references>
+        <references refid="structDBusMemBlock_1af685833ddb17150a20cbe538f23f3113" compoundref="dbus-mempool_8c" startline="92">DBusMemBlock::elements</references>
+        <references refid="structDBusMemPool_1af02ff4ac188a7a04a02ab140e568886b" compoundref="dbus-mempool_8c" startline="104">DBusMemPool::free_elements</references>
+        <references refid="structDBusFreedElement_1ac4819bebce960943155f9fbd4ab6e6c5" compoundref="dbus-mempool_8c" startline="63">DBusFreedElement::next</references>
+        <references refid="structDBusMemBlock_1ad23a73654095952ea4e2c222c41e5441" compoundref="dbus-mempool_8c" startline="90">DBusMemBlock::used_so_far</references>
+        <references refid="structDBusMemPool_1a45cdcee97621d5a2bd85edd90d87d8bf" compoundref="dbus-mempool_8c" startline="101">DBusMemPool::block_size</references>
+        <references refid="group__DBusInternalsUtils_1ga5627db5e165848477e620846f6414db1" compoundref="dbus-internals_8h" startline="231">_DBUS_INT_MAX</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_mem_pool_dealloc</definition>
+        <argsstring>(DBusMemPool *pool, void *element)</argsstring>
+        <name>_dbus_mem_pool_dealloc</name>
+        <param>
+          <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>Deallocates an object previously created with <ref refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" kindref="member">_dbus_mem_pool_alloc()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The previous object must have come from this same pool. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the memory pool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>element</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the element earlier allocated. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if there are no remaining allocated elements </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="39" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="347" bodyend="406"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMemPool_1a4682e065e26ee0dc4d2a17023cb41b8b" compoundref="dbus-mempool_8c" startline="105">DBusMemPool::blocks</references>
+        <references refid="structDBusMemBlock_1af685833ddb17150a20cbe538f23f3113" compoundref="dbus-mempool_8c" startline="92">DBusMemBlock::elements</references>
+        <references refid="structDBusMemBlock_1a88abbae4b7e92bfab8392c2aad2dae9b" compoundref="dbus-mempool_8c" startline="84">DBusMemBlock::next</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMemPool_1a23cd8af3ecb8cd88074b1934b1d7597c" compoundref="dbus-mempool_8c" startline="106">DBusMemPool::allocated_elements</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusFreedElement_1ac4819bebce960943155f9fbd4ab6e6c5" compoundref="dbus-mempool_8c" startline="63">DBusFreedElement::next</references>
+        <references refid="structDBusMemPool_1af02ff4ac188a7a04a02ab140e568886b" compoundref="dbus-mempool_8c" startline="104">DBusMemPool::free_elements</references>
+        <references refid="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" compoundref="dbus-mempool_8c" startline="100">DBusMemPool::element_size</references>
+        <references refid="structDBusMemPool_1a45cdcee97621d5a2bd85edd90d87d8bf" compoundref="dbus-mempool_8c" startline="101">DBusMemPool::block_size</references>
+        <references refid="structDBusMemBlock_1ad23a73654095952ea4e2c222c41e5441" compoundref="dbus-mempool_8c" startline="90">DBusMemBlock::used_so_far</references>
+        <references refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" compoundref="dbus-memory_8c" startline="461" endline="516">dbus_malloc</references>
+        <references refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</references>
+        <references refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</references>
+        <references refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</references>
+        <references refid="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" compoundref="dbus-mempool_8c" startline="187" endline="204">_dbus_mem_pool_free</references>
+        <references refid="group__DBusMemory_1gaa02722b030a091f6c14c4cb11a593623" compoundref="dbus-memory_8c" startline="531" endline="588">dbus_malloc0</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga159dfec03d53e6e2ff485fc83aed2552" compoundref="dbus-hash_8c" startline="1339" endline="1350">_dbus_hash_table_free_preallocated_entry</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-mempool_8h_1a9503e246ea8d4313498a84e48203b066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_mem_pool_get_stats</definition>
+        <argsstring>(DBusMemPool *pool, dbus_uint32_t *in_use_p, dbus_uint32_t *in_free_list_p, dbus_uint32_t *allocated_p)</argsstring>
+        <name>_dbus_mem_pool_get_stats</name>
+        <param>
+          <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_use_p</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_free_list_p</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>allocated_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.h" line="43" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-mempool.h<sp/>Memory<sp/>pools</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MEMPOOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MEMPOOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-memory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="group__DBusMemPool_1gaadb50c95482bc5d2808e190c5618065c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref><sp/><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref>*<sp/><ref refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" kindref="member">_dbus_mem_pool_new</ref><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMemPool_1a690c2330fce2db5cfdbe6b810d70c92f" kindref="member">element_size</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><ref refid="structDBusMemPool_1a2ebffd5d3e0eb209b1d0fa5779609818" kindref="member">zero_elements</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" kindref="member">_dbus_mem_pool_free</ref><sp/><sp/><sp/><sp/>(<ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref><sp/>*pool);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" kindref="member">_dbus_mem_pool_alloc</ref><sp/><sp/><sp/>(<ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref><sp/>*pool);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><ref refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" kindref="member">_dbus_mem_pool_dealloc</ref><sp/>(<ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref><sp/>*pool,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*element);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>if<sp/>DBUS_ENABLE_STATS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_mem_pool_get_stats<sp/>(<ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref><sp/><sp/><sp/>*pool,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*in_use_p,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*in_free_list_p,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*allocated_p);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MEMPOOL_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-mempool.h"/>
+  </compounddef>
+</doxygen>

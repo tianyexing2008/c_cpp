@@ -1,0 +1,74 @@
+.TH "DBusServerSocket" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServerSocket \- Implementation details of \fBDBusServerSocket\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusServer\fP \fBbase\fP"
+.br
+.RI "\fIParent class members\&. \fP"
+.ti -1c
+.RI "int \fBn_fds\fP"
+.br
+.RI "\fINumber of active file handles\&. \fP"
+.ti -1c
+.RI "int * \fBfds\fP"
+.br
+.RI "\fIFile descriptor or -1 if disconnected\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP ** \fBwatch\fP"
+.br
+.RI "\fIFile descriptor watch\&. \fP"
+.ti -1c
+.RI "char * \fBsocket_name\fP"
+.br
+.RI "\fIName of domain socket, to unlink if appropriate\&. \fP"
+.ti -1c
+.RI "\fBDBusNonceFile\fP * \fBnoncefile\fP"
+.br
+.RI "\fINonce file used to authenticate clients\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusServerSocket\fP\&. 
+
+All members are private\&. 
+.PP
+Definition at line 50 of file dbus\-server\-socket\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusServer\fP DBusServerSocket::base"
+
+.PP
+Parent class members\&. 
+.PP
+Definition at line 52 of file dbus\-server\-socket\&.c\&.
+.PP
+Referenced by _dbus_server_new_for_socket()\&.
+.SS "int* DBusServerSocket::fds"
+
+.PP
+File descriptor or -1 if disconnected\&. 
+.PP
+Definition at line 54 of file dbus\-server\-socket\&.c\&.
+.PP
+Referenced by _dbus_server_new_for_socket()\&.
+.SS "\fBDBusWatch\fP** DBusServerSocket::watch"
+
+.PP
+File descriptor watch\&. 
+.PP
+Definition at line 55 of file dbus\-server\-socket\&.c\&.
+.PP
+Referenced by _dbus_server_new_for_socket()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

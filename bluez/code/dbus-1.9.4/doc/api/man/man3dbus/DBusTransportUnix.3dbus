@@ -1,0 +1,88 @@
+.TH "DBusTransportUnix" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTransportUnix \- DBusTransport implementations for UNIX
+.PP
+Implementation details of \fBDBusTransport\fP on UNIX\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusTransport\fP * \fB_dbus_transport_new_for_domain_socket\fP (const char *path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a new transport for the given Unix domain socket path\&. \fP"
+.ti -1c
+.RI "DBusTransportOpenResult \fB_dbus_transport_open_platform_specific\fP (\fBDBusAddressEntry\fP *entry, \fBDBusTransport\fP **transport_p, \fBDBusError\fP *error)"
+.br
+.RI "\fIOpens platform specific transport types\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusTransport\fP on UNIX\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDBusTransport\fP* _dbus_transport_new_for_domain_socket (const char * path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP * error)"
+
+.PP
+Creates a new transport for the given Unix domain socket path\&. This creates a client-side of a transport\&.
+.PP
+\fBTodo\fP
+.RS 4
+once we add a way to escape paths in a dbus address, this function needs to do escaping\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the path to the domain socket\&. 
+.br
+\fIabstract\fP \fBTRUE\fP to use abstract socket namespace 
+.br
+\fIerror\fP address where an error can be returned\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a new transport, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file dbus\-transport\-unix\&.c\&.
+.PP
+References _dbus_close_socket(), _dbus_connect_exec(), _dbus_connect_unix_socket(), _dbus_string_append(), _dbus_string_append_printf(), _dbus_string_free(), _dbus_string_init(), _dbus_transport_new_for_socket(), dbus_address_escape_value(), DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_set_error(), and NULL\&.
+.PP
+Referenced by _dbus_transport_open_platform_specific()\&.
+.SS "DBusTransportOpenResult _dbus_transport_open_platform_specific (\fBDBusAddressEntry\fP * entry, \fBDBusTransport\fP ** transport_p, \fBDBusError\fP * error)"
+
+.PP
+Opens platform specific transport types\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentry\fP the address entry to try opening 
+.br
+\fItransport_p\fP return location for the opened transport 
+.br
+\fIerror\fP error to be set 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+result of the attempt 
+.RE
+.PP
+
+.PP
+Definition at line 225 of file dbus\-transport\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_lookup_launchd_socket(), _dbus_set_bad_address(), _dbus_strdup(), _dbus_string_free(), _dbus_string_init(), _dbus_transport_new_for_domain_socket(), dbus_address_entry_get_method(), dbus_address_entry_get_value(), dbus_connection_open(), dbus_connection_unref(), DBUS_ERROR_BAD_ADDRESS, dbus_error_free(), DBUS_ERROR_INIT, dbus_error_init(), dbus_error_is_set(), DBUS_ERROR_NO_MEMORY, dbus_free_string_array(), dbus_move_error(), dbus_new0, dbus_set_error(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_transport_finalize_base()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

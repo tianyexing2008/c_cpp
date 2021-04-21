@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusRealHashIter" kind="struct" language="C++" prot="public">
+    <compoundname>DBusRealHashIter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+        <definition>DBusHashTable* DBusRealHashIter::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+<para>Pointer to table containing entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="214" column="1" bodyfile="dbus/dbus-hash.c" bodystart="214" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga7a1b9fd35f9f7bdd86f9d71a6379053f" compoundref="dbus-hash_8c" startline="659" endline="669">_dbus_hash_iter_get_int_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaa0cff082174b1ab0380902ce4ae43d08" compoundref="dbus-hash_8c" startline="696" endline="706">_dbus_hash_iter_get_string_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaab14d583840d0a1b5c829d76959dcbf0" compoundref="dbus-hash_8c" startline="678" endline="688">_dbus_hash_iter_get_uintptr_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" compoundref="dbus-hash_8c" startline="613" endline="623">_dbus_hash_iter_get_value</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga24193343c0948019d4a302fc18bfd5d9" compoundref="dbus-hash_8c" startline="636" endline="650">_dbus_hash_iter_set_value</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> **</type>
+        <definition>DBusHashEntry** DBusRealHashIter::bucket</definition>
+        <argsstring></argsstring>
+        <name>bucket</name>
+        <briefdescription>
+<para>Pointer to bucket that points to first entry in this entry&apos;s chain: used for deleting the entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="215" column="1" bodyfile="dbus/dbus-hash.c" bodystart="215" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>DBusHashEntry* DBusRealHashIter::entry</definition>
+        <argsstring></argsstring>
+        <name>entry</name>
+        <briefdescription>
+<para>Current hash entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="219" column="1" bodyfile="dbus/dbus-hash.c" bodystart="219" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" compoundref="dbus-hash_8c" startline="613" endline="623">_dbus_hash_iter_get_value</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga24193343c0948019d4a302fc18bfd5d9" compoundref="dbus-hash_8c" startline="636" endline="650">_dbus_hash_iter_set_value</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga7a1b9fd35f9f7bdd86f9d71a6379053f" compoundref="dbus-hash_8c" startline="659" endline="669">_dbus_hash_iter_get_int_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaab14d583840d0a1b5c829d76959dcbf0" compoundref="dbus-hash_8c" startline="678" endline="688">_dbus_hash_iter_get_uintptr_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaa0cff082174b1ab0380902ce4ae43d08" compoundref="dbus-hash_8c" startline="696" endline="706">_dbus_hash_iter_get_string_key</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusRealHashIter_1a056417c3726f4f98eb94a9d2784a59e0" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>DBusHashEntry* DBusRealHashIter::next_entry</definition>
+        <argsstring></argsstring>
+        <name>next_entry</name>
+        <briefdescription>
+<para>Next entry to be iterated onto in current bucket. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="220" column="1" bodyfile="dbus/dbus-hash.c" bodystart="220" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusRealHashIter_1adbf758933299ee6305c525ea0fe74824" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusRealHashIter::next_bucket</definition>
+        <argsstring></argsstring>
+        <name>next_bucket</name>
+        <briefdescription>
+<para>index of next bucket </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="221" column="1" bodyfile="dbus/dbus-hash.c" bodystart="221" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusRealHashIter_1a84f2a189ee1eb3e51a8089b798a7797a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusRealHashIter::n_entries_on_init</definition>
+        <argsstring></argsstring>
+        <name>n_entries_on_init</name>
+        <briefdescription>
+<para>used to detect table resize since initialization </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="222" column="1" bodyfile="dbus/dbus-hash.c" bodystart="222" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of <ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="440">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="441" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="444" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="443">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="443" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="439">
+        <label>DBusRealHashIter</label>
+        <link refid="structDBusRealHashIter"/>
+        <childnode refid="440" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+        <childnode refid="444" relation="usage">
+          <edgelabel>bucket</edgelabel>
+          <edgelabel>next_entry</edgelabel>
+          <edgelabel>entry</edgelabel>
+        </childnode>
+      </node>
+      <node id="441">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="442" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="443" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="444">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="444" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="442">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="442" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-hash.c" line="213" column="1" bodyfile="dbus/dbus-hash.c" bodystart="212" bodyend="223"/>
+    <listofallmembers>
+      <member refid="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>bucket</name></member>
+      <member refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>entry</name></member>
+      <member refid="structDBusRealHashIter_1a84f2a189ee1eb3e51a8089b798a7797a" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>n_entries_on_init</name></member>
+      <member refid="structDBusRealHashIter_1adbf758933299ee6305c525ea0fe74824" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>next_bucket</name></member>
+      <member refid="structDBusRealHashIter_1a056417c3726f4f98eb94a9d2784a59e0" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>next_entry</name></member>
+      <member refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" prot="public" virt="non-virtual"><scope>DBusRealHashIter</scope><name>table</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

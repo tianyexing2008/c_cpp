@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structBusData" kind="struct" language="C++" prot="public">
+    <compoundname>BusData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structBusData_1a3c78791306fb4810779fe498a1067f46" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* BusData::connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <briefdescription>
+<para>Connection we&apos;re associated with. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="79" column="1" bodyfile="dbus/dbus-bus.c" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structBusData_1aaba673d2a99c4ca76fada7384942dfc9" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* BusData::unique_name</definition>
+        <argsstring></argsstring>
+        <name>unique_name</name>
+        <briefdescription>
+<para>Unique name of this connection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="80" column="1" bodyfile="dbus/dbus-bus.c" bodystart="80" bodyend="-1"/>
+        <referencedby refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" compoundref="dbus-bus_8c" startline="646" endline="728">dbus_bus_register</referencedby>
+        <referencedby refid="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" compoundref="dbus-bus_8c" startline="766" endline="794">dbus_bus_set_unique_name</referencedby>
+        <referencedby refid="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" compoundref="dbus-bus_8c" startline="815" endline="839">dbus_bus_get_unique_name</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structBusData_1a0efe71943560d7c5f9eba63618852db2" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int BusData::is_well_known</definition>
+        <argsstring></argsstring>
+        <name>is_well_known</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Is one of the well-known connections in our global array. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="82" column="1" bodyfile="dbus/dbus-bus.c" bodystart="82" bodyend="-1"/>
+        <referencedby refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" compoundref="dbus-bus_8c" startline="387" endline="413">_dbus_bus_notify_shared_connection_disconnected_unlocked</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Block of message-bus-related data we attach to each <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> used with these convenience functions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>DBusConnection</label>
+        <link refid="structDBusConnection"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pending_replies</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>dispatch_status_function</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>dispatch_mutex</edgelabel>
+          <edgelabel>io_path_mutex</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>io_path_cond</edgelabel>
+          <edgelabel>dispatch_cond</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>message_borrowed</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>incoming_messages</edgelabel>
+          <edgelabel>filter_list</edgelabel>
+          <edgelabel>outgoing_messages</edgelabel>
+          <edgelabel>disconnect_message_link</edgelabel>
+          <edgelabel>expired_messages</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>slot_mutex</edgelabel>
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>transport</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>outgoing_counter</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>DBusObjectSubtree</label>
+        <link refid="structDBusObjectSubtree"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>message_function</edgelabel>
+          <edgelabel>unregister_function</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>parent</edgelabel>
+          <edgelabel>subtrees</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="11">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>DBusTransportVTable</label>
+        <link refid="structDBusTransportVTable"/>
+      </node>
+      <node id="12">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="26" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BusData</label>
+        <link refid="structBusData"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>DBusCounter</label>
+        <link refid="structDBusCounter"/>
+        <childnode refid="34" relation="usage">
+          <edgelabel>notify_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="26" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="29">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="18">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="30">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>DBusObjectTree</label>
+        <link refid="structDBusObjectTree"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="14">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="4">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>DBusTransport</label>
+        <link refid="structDBusTransport"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>unix_user_function</edgelabel>
+          <edgelabel>windows_user_function</edgelabel>
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>auth</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>loader</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>live_messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>DBusCMutex</label>
+        <link refid="structDBusCMutex"/>
+      </node>
+      <node id="10">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="26">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-bus.c" line="78" column="1" bodyfile="dbus/dbus-bus.c" bodystart="77" bodyend="83"/>
+    <listofallmembers>
+      <member refid="structBusData_1a3c78791306fb4810779fe498a1067f46" prot="public" virt="non-virtual"><scope>BusData</scope><name>connection</name></member>
+      <member refid="structBusData_1a0efe71943560d7c5f9eba63618852db2" prot="public" virt="non-virtual"><scope>BusData</scope><name>is_well_known</name></member>
+      <member refid="structBusData_1aaba673d2a99c4ca76fada7384942dfc9" prot="public" virt="non-virtual"><scope>BusData</scope><name>unique_name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

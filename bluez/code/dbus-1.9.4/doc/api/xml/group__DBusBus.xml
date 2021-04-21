@@ -1,0 +1,749 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusBus" kind="group">
+    <compoundname>DBusBus</compoundname>
+    <title>Message bus APIs</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBUS_EXPORT DBusConnection * dbus_bus_get</definition>
+        <argsstring>(DBusBusType type, DBusError *error)</argsstring>
+        <name>dbus_bus_get</name>
+        <param>
+          <type><ref refid="group__DBusShared_1ga980320deb96476bee7555edcdebc3528" kindref="member">DBusBusType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Connects to a bus daemon and registers the client with it. </para>        </briefdescription>
+        <detaileddescription>
+<para>If a connection to the bus already exists, then that connection is returned. The caller of this function owns a reference to the bus.</para><para>The caller may NOT call <ref refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" kindref="member">dbus_connection_close()</ref> on this connection; see <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref> and <ref refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" kindref="member">dbus_connection_close()</ref> for details on that.</para><para>If this function obtains a new connection object never before returned from <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref>, it will call <ref refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" kindref="member">dbus_connection_set_exit_on_disconnect()</ref>, so the application will exit if the connection closes. You can undo this by calling <ref refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" kindref="member">dbus_connection_set_exit_on_disconnect()</ref> yourself after you get the connection.</para><para><ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> calls <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> for you.</para><para>If returning a newly-created connection, this function will block until authentication and bus registration are complete.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bus type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> with new ref or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="558" column="1" bodyfile="dbus/dbus-bus.c" bodystart="558" bodyend="562"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBUS_EXPORT DBusConnection * dbus_bus_get_private</definition>
+        <argsstring>(DBusBusType type, DBusError *error)</argsstring>
+        <name>dbus_bus_get_private</name>
+        <param>
+          <type><ref refid="group__DBusShared_1ga980320deb96476bee7555edcdebc3528" kindref="member">DBusBusType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Connects to a bus daemon and registers the client with it as with <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlike <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref>, always creates a new connection. This connection will not be saved or recycled by libdbus. Caller owns a reference to the bus and must either close it or know it to be closed prior to releasing this reference.</para><para>See <ref refid="group__DBusConnection_1ga434e3fc7ee420fd30e2f05e57ff26b1d" kindref="member">dbus_connection_open_private()</ref> for more details on when to close and unref this connection.</para><para>This function calls <ref refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" kindref="member">dbus_connection_set_exit_on_disconnect()</ref> on the new connection, so the application will exit if the connection closes. You can undo this by calling <ref refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" kindref="member">dbus_connection_set_exit_on_disconnect()</ref> yourself after you get the connection.</para><para><ref refid="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" kindref="member">dbus_bus_get_private()</ref> calls <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> for you.</para><para>This function will block until authentication and bus registration are complete.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bus type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> with new ref </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="590" column="1" bodyfile="dbus/dbus-bus.c" bodystart="590" bodyend="594"/>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_bus_register</definition>
+        <argsstring>(DBusConnection *connection, DBusError *error)</argsstring>
+        <name>dbus_bus_register</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Registers a connection with the bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>This must be the first thing an application does when connecting to the message bus. If registration succeeds, the unique name will be set, and can be obtained using <ref refid="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" kindref="member">dbus_bus_get_unique_name()</ref>.</para><para>This function will block until registration is complete.</para><para>If the connection has already registered with the bus (determined by checking whether <ref refid="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" kindref="member">dbus_bus_get_unique_name()</ref> returns a non-<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> value), then this function does nothing.</para><para>If you use <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> or <ref refid="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" kindref="member">dbus_bus_get_private()</ref> this function will be called for you.</para><para><simplesect kind="note"><para>Just use <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> or <ref refid="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" kindref="member">dbus_bus_get_private()</ref> instead of <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> and save yourself some pain. Using <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> manually is only useful if you have your own custom message bus not found in <ref refid="group__DBusShared_1ga980320deb96476bee7555edcdebc3528" kindref="member">DBusBusType</ref>.</para></simplesect>
+If you open a bus connection with <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref> or <ref refid="group__DBusConnection_1ga434e3fc7ee420fd30e2f05e57ff26b1d" kindref="member">dbus_connection_open_private()</ref> you will have to <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> yourself, or make the appropriate registration method calls yourself. If you send the method calls yourself, call <ref refid="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" kindref="member">dbus_bus_set_unique_name()</ref> with the unique bus name you get from the bus.</para><para>For shared connections (created with <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref>) in a multithreaded application, you can&apos;t really make the registration calls yourself, because you don&apos;t know whether some other thread is also registering, and the bus will kick you off if you send two registration messages.</para><para>If you use <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> however, there is a lock that keeps both apps from registering at the same time.</para><para>The rule in a multithreaded app, then, is that <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> must be used to register, or you need to have your own locks that all threads in the app will respect.</para><para>In a single-threaded application you can register by hand instead of using <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>, as long as you check <ref refid="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" kindref="member">dbus_bus_get_unique_name()</ref> to see if a unique name has already been stored by another thread before you send the registration messages.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to store errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="646" column="1" bodyfile="dbus/dbus-bus.c" bodystart="646" bodyend="728"/>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structBusData_1aaba673d2a99c4ca76fada7384942dfc9" compoundref="dbus-bus_8c" startline="80">BusData::unique_name</references>
+        <referencedby refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" compoundref="dbus-bus_8c" startline="387" endline="413">_dbus_bus_notify_shared_connection_disconnected_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_bus_set_unique_name</definition>
+        <argsstring>(DBusConnection *connection, const char *unique_name)</argsstring>
+        <name>dbus_bus_set_unique_name</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>unique_name</declname>
+        </param>
+        <briefdescription>
+<para>Sets the unique name of the connection, as assigned by the message bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>Can only be used if you registered with the bus manually (i.e. if you did not call <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>). Can only be called once per connection. After the unique name is set, you can get it with <ref refid="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" kindref="member">dbus_bus_get_unique_name()</ref>.</para><para>The only reason to use this function is to re-implement the equivalent of <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref> yourself. One (probably unusual) reason to do that might be to do the bus registration call asynchronously instead of synchronously.</para><para><simplesect kind="note"><para>Just use <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> or <ref refid="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" kindref="member">dbus_bus_get_private()</ref>, or worst case <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>, instead of messing with this function. There&apos;s really no point creating pain for yourself by doing things manually.</para></simplesect>
+It&apos;s hard to use this function safely on shared connections (created by <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref>) in a multithreaded application, because only one registration attempt can be sent to the bus. If two threads are both sending the registration message, there is no mechanism in libdbus itself to avoid sending it twice.</para><para>Thus, you need a way to coordinate which thread sends the registration attempt; which also means you know which thread will call <ref refid="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" kindref="member">dbus_bus_set_unique_name()</ref>. If you don&apos;t know about all threads in the app (for example, if some libraries you&apos;re using might start libdbus-using threads), then you need to avoid using this function on shared connections.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unique_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the unique name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="766" column="1" bodyfile="dbus/dbus-bus.c" bodystart="766" bodyend="794"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structBusData_1aaba673d2a99c4ca76fada7384942dfc9" compoundref="dbus-bus_8c" startline="80">BusData::unique_name</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga8c10339a1e62f6a2e5752d9c2270d37b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>DBUS_EXPORT const char * dbus_bus_get_unique_name</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>dbus_bus_get_unique_name</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Gets the unique name of the connection as assigned by the message bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only possible after the connection has been registered with the message bus. All connections returned by <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> or <ref refid="group__DBusBus_1ga9c62186f19cf3bd3c7c604bdcefb4e09" kindref="member">dbus_bus_get_private()</ref> have been successfully registered.</para><para>The name remains valid until the connection is freed, and should not be freed by the caller.</para><para>Other than <ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref>, there are two ways to set the unique name; one is <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>, the other is <ref refid="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" kindref="member">dbus_bus_set_unique_name()</ref>. You are responsible for calling <ref refid="group__DBusBus_1ga0366177076e88bf37771341f32b0551c" kindref="member">dbus_bus_set_unique_name()</ref> if you register by hand instead of using <ref refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" kindref="member">dbus_bus_register()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the unique name or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="815" column="1" bodyfile="dbus/dbus-bus.c" bodystart="815" bodyend="839"/>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structBusData_1aaba673d2a99c4ca76fada7384942dfc9" compoundref="dbus-bus_8c" startline="80">BusData::unique_name</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga24d782c710f3d82caf1b1ed582dcf474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>DBUS_EXPORT unsigned long dbus_bus_get_unix_user</definition>
+        <argsstring>(DBusConnection *connection, const char *name, DBusError *error)</argsstring>
+        <name>dbus_bus_get_unix_user</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Asks the bus to return the UID the named connection authenticated as, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only works on UNIX; only works for connections on the same machine as the bus. If you are not on the same machine as the bus, then calling this is probably a bad idea, since the UID will mean little to your application.</para><para>For the system message bus you&apos;re guaranteed to be on the same machine since it only listens on a UNIX domain socket (at least, as shipped by default).</para><para>This function only works for connections that authenticated as a UNIX user, right now that includes all bus connections, but it&apos;s very possible to have connections with no associated UID. So check for errors and do something sensible if they happen.</para><para>This function will always return an error on Windows.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a name owned by the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the unix user id, or ((unsigned)-1) if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="865" column="1" bodyfile="dbus/dbus-bus.c" bodystart="865" bodyend="927"/>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusSysdeps_1ga3d2f3fb32bb759cabe362ca2de383f7d" compoundref="dbus-sysdeps_8h" startline="105">DBUS_UID_UNSET</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga18314500e7f6890a79bddbeace5df5f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_bus_get_id</definition>
+        <argsstring>(DBusConnection *connection, DBusError *error)</argsstring>
+        <name>dbus_bus_get_id</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Asks the bus to return its globally unique ID, as described in the D-Bus specification. </para>        </briefdescription>
+        <detaileddescription>
+<para>For the session bus, this is useful as a way to uniquely identify each user session. For the system bus, probably the bus ID is not useful; instead, use the machine ID since it&apos;s accessible without necessarily connecting to the bus and may be persistent beyond a single bus instance (across reboots for example). See <ref refid="group__DBusMisc_1ga2b21c9a12fea5f92763441c65ccbfcf9" kindref="member">dbus_get_local_machine_id()</ref>.</para><para>In addition to an ID for each bus and an ID for each machine, there is an ID for each address that the bus is listening on; that can be retrieved with <ref refid="group__DBusConnection_1gae6c19e146a37f9de6a06c1617874bed9" kindref="member">dbus_connection_get_server_id()</ref>, though it is probably not very useful.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the bus ID or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="948" column="1" bodyfile="dbus/dbus-bus.c" bodystart="948" bodyend="1007"/>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga8a9024c78c4ea89b6271f19dbc7861b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DBUS_EXPORT int dbus_bus_request_name</definition>
+        <argsstring>(DBusConnection *connection, const char *name, unsigned int flags, DBusError *error)</argsstring>
+        <name>dbus_bus_request_name</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Asks the bus to assign the given name to this connection by invoking the RequestName method on the bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is fully documented in the D-Bus specification. For quick reference, the flags and result codes are discussed here, but the specification is the canonical version of this information.</para><para>First you should know that for each bus name, the bus stores a queue of connections that would like to own it. Only one owns it at a time - called the primary owner. If the primary owner releases the name or disconnects, then the next owner in the queue atomically takes over.</para><para>So for example if you have an application org.freedesktop.TextEditor and multiple instances of it can be run, you can have all of them sitting in the queue. The first one to start up will receive messages sent to org.freedesktop.TextEditor, but if that one exits another will become the primary owner and receive messages.</para><para>The queue means you don&apos;t need to manually watch for the current owner to disappear and then request the name again.</para><para>When requesting a name, you can specify several flags.</para><para><ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> and <ref refid="group__DBusShared_1ga3c18c35e4c2dfbe9a0a5be47f4b4b6e9" kindref="member">DBUS_NAME_FLAG_DO_NOT_QUEUE</ref> are properties stored by the bus for this connection with respect to each requested bus name. These properties are stored even if the connection is queued and does not become the primary owner. You can update these flags by calling RequestName again (even if you already own the name).</para><para><ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> means that another requestor of the name can take it away from you by specifying <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>.</para><para><ref refid="group__DBusShared_1ga3c18c35e4c2dfbe9a0a5be47f4b4b6e9" kindref="member">DBUS_NAME_FLAG_DO_NOT_QUEUE</ref> means that if you aren&apos;t the primary owner, you don&apos;t want to be queued up - you only care about being the primary owner.</para><para>Unlike the other two flags, <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref> is a property of the individual RequestName call, i.e. the bus does not persistently associate it with the connection-name pair. If a RequestName call includes the <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref> flag, and the current primary owner has <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> set, then the current primary owner will be kicked off.</para><para>If no flags are given, an application will receive the requested name only if the name is currently unowned; and it will NOT give up the name if another application asks to take it over using <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>.</para><para>This function returns a result code. The possible result codes are as follows.</para><para><ref refid="group__DBusShared_1ga37a9bc7c6eb11d212bf8d5e5ff3b50f9" kindref="member">DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER</ref> means that the name had no existing owner, and the caller is now the primary owner; or that the name had an owner, and the caller specified <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>, and the current owner specified <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref>.</para><para><ref refid="group__DBusShared_1gaee62d7003ea4ed8c1957e9a072c7b16a" kindref="member">DBUS_REQUEST_NAME_REPLY_IN_QUEUE</ref> happens only if the caller does NOT specify <ref refid="group__DBusShared_1ga3c18c35e4c2dfbe9a0a5be47f4b4b6e9" kindref="member">DBUS_NAME_FLAG_DO_NOT_QUEUE</ref> and either the current owner did NOT specify <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> or the caller did NOT specify <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>. In this case the caller ends up in a queue to own the name after the current owner gives it up.</para><para><ref refid="group__DBusShared_1gac5e749f4dfcc3adcdb714ece3c1be1c7" kindref="member">DBUS_REQUEST_NAME_REPLY_EXISTS</ref> happens if the name has an owner already and the caller specifies <ref refid="group__DBusShared_1ga3c18c35e4c2dfbe9a0a5be47f4b4b6e9" kindref="member">DBUS_NAME_FLAG_DO_NOT_QUEUE</ref> and either the current owner has NOT specified <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> or the caller did NOT specify <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>.</para><para><ref refid="group__DBusShared_1gaefd5513d0d448f6c106202ebde26f969" kindref="member">DBUS_REQUEST_NAME_REPLY_ALREADY_OWNER</ref> happens if an application requests a name it already owns. (Re-requesting a name is useful if you want to change the <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> or <ref refid="group__DBusShared_1ga3c18c35e4c2dfbe9a0a5be47f4b4b6e9" kindref="member">DBUS_NAME_FLAG_DO_NOT_QUEUE</ref> settings.)</para><para>When a service represents an application, say &quot;text editor,&quot; then it should specify <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> if it wants the last editor started to be the user&apos;s editor vs. the first one started. Then any editor that can be the user&apos;s editor should specify <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref> to either take over (last-started-wins) or be queued up (first-started-wins) according to whether <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> was given.</para><para>Conventionally, single-instance applications often offer a command line option called <ndash/>replace which means to replace the current instance. To implement this, always set <ref refid="group__DBusShared_1ga40b7a263caf8d6e39b39a8c7350a084f" kindref="member">DBUS_NAME_FLAG_ALLOW_REPLACEMENT</ref> when you request your application&apos;s bus name. When you lose ownership of your bus name, you need to exit. Look for the signal &quot;NameLost&quot; from <ref refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" kindref="member">DBUS_SERVICE_DBUS</ref> and <ref refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" kindref="member">DBUS_INTERFACE_DBUS</ref> (the signal&apos;s first argument is the bus name that was lost). If starting up without <ndash/>replace, do not specify <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref>, and exit if you fail to become the bus name owner. If <ndash/>replace is given, ask to replace the old owner.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name to request </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flags </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a result code, -1 if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1112" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1112" bodyend="1176"/>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1gaa4aa5ebe51cdbe8c0651609fc72e841a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DBUS_EXPORT int dbus_bus_release_name</definition>
+        <argsstring>(DBusConnection *connection, const char *name, DBusError *error)</argsstring>
+        <name>dbus_bus_release_name</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Asks the bus to unassign the given name from this connection by invoking the ReleaseName method on the bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;ReleaseName&quot; method is canonically documented in the D-Bus specification.</para><para>Possible results are: <ref refid="group__DBusShared_1gaf51666b3db57bfc94f0fef7604ba35e2" kindref="member">DBUS_RELEASE_NAME_REPLY_RELEASED</ref> which means you owned the name or were in the queue to own it, and and now you don&apos;t own it and aren&apos;t in the queue. <ref refid="group__DBusShared_1ga994df340fa233202857ea9358b935aac" kindref="member">DBUS_RELEASE_NAME_REPLY_NOT_OWNER</ref> which means someone else owns the name so you can&apos;t release it. <ref refid="group__DBusShared_1ga2aebb664a3c1ea2c08740139f44c386a" kindref="member">DBUS_RELEASE_NAME_REPLY_NON_EXISTENT</ref> which means nobody owned the name.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name to remove </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a result code, -1 if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1198" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1198" bodyend="1260"/>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga5331b172dd8ed00eec130e894c5c2a0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_bus_name_has_owner</definition>
+        <argsstring>(DBusConnection *connection, const char *name, DBusError *error)</argsstring>
+        <name>dbus_bus_name_has_owner</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Asks the bus whether a certain name has an owner. </para>        </briefdescription>
+        <detaileddescription>
+<para>Using this can easily result in a race condition, since an owner can appear or disappear after you call this.</para><para>If you want to request a name, just request it; if you want to avoid replacing a current owner, don&apos;t specify <ref refid="group__DBusShared_1ga0f16ed23be47eb22a37a227a6e39597b" kindref="member">DBUS_NAME_FLAG_REPLACE_EXISTING</ref> and you will get an error if there&apos;s already an owner.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store any errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the name exists, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not or on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1280" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1280" bodyend="1331"/>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga81d303bf29d7c97ad4690ce35071b090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_bus_start_service_by_name</definition>
+        <argsstring>(DBusConnection *connection, const char *name, dbus_uint32_t flags, dbus_uint32_t *result, DBusError *error)</argsstring>
+        <name>dbus_bus_start_service_by_name</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Starts a service that will request ownership of the given name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The returned result will be one of be one of <ref refid="group__DBusShared_1ga375114145e2eb43473fb778cc603f08b" kindref="member">DBUS_START_REPLY_SUCCESS</ref> or <ref refid="group__DBusShared_1gad6de6047e398631e590cdae679f044c5" kindref="member">DBUS_START_REPLY_ALREADY_RUNNING</ref> if successful. Pass <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if you don&apos;t care about the result.</para><para>The flags parameter is for future expansion, currently you should specify 0.</para><para>It&apos;s often easier to avoid explicitly starting services, and just send a method call to the service&apos;s bus name instead. Method calls start a service to handle them by default unless you call <ref refid="group__DBusMessage_1ga1596d92a8d604f954b48c7410263d2f0" kindref="member">dbus_message_set_auto_start()</ref> to disable this behavior.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name we want the new service to request </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the flags (should always be 0 for now) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a place to store the result or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store any errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the activation succeeded, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1356" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1356" bodyend="1409"/>
+        <references refid="group__DBusConnection_1gae1cb64f4cf550949b23fd3a756b2f7d0" compoundref="dbus-connection_8c" startline="3302" endline="3328">dbus_connection_send</references>
+        <references refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</references>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" compoundref="dbus-message_8c" startline="1980" endline="1996">dbus_message_get_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1ga0e86aeb2dc6831ccc9a21fcbf8cc16f7" compoundref="dbus-message_8c" startline="2984" endline="2993">dbus_message_set_no_reply</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga481f7a3e2e43d17b528418632aa3dd87" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void send_no_return_values</definition>
+        <argsstring>(DBusConnection *connection, DBusMessage *msg, DBusError *error)</argsstring>
+        <name>send_no_return_values</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1412" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1412" bodyend="1435"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga4eb6401ba014da3dbe3dc4e2a8e5b3ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_bus_add_match</definition>
+        <argsstring>(DBusConnection *connection, const char *rule, DBusError *error)</argsstring>
+        <name>dbus_bus_add_match</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Adds a match rule to match messages going through the message bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;rule&quot; argument is the string form of a match rule.</para><para>If you pass <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for the error, this function will not block; the match thus won&apos;t be added until you flush the connection, and if there&apos;s an error adding the match you won&apos;t find out about it. This is generally acceptable, since the possible errors (including a lack of resources in the bus, the connection having exceeded its quota of active match rules, or the match rule being unparseable) are generally unrecoverable.</para><para>If you pass non-<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for the error this function will block until it gets a reply. This may be useful when using match rule keys introduced in recent versions of D-Bus, like &apos;arg0namespace&apos;, to allow the application to fall back to less efficient match rules supported by older versions of the daemon if the running version is not new enough; or when using user-supplied rules rather than rules hard-coded at compile time.</para><para>Normal API conventions would have the function return a boolean value indicating whether the error was set, but that would require blocking always to determine the return value.</para><para>The AddMatch method is fully documented in the D-Bus specification. For quick reference, the format of the match rules is discussed here, but the specification is the canonical version of this information.</para><para>Rules are specified as a string of comma separated key/value pairs. An example is "type=&apos;signal&apos;,sender=&apos;org.freedesktop.DBus&apos;, interface=&apos;org.freedesktop.DBus&apos;,member=&apos;Foo&apos;, path=&apos;/bar/foo&apos;,destination=&apos;:452345.34&apos;"</para><para>Possible keys you can match on are type, sender, interface, member, path, destination and numbered keys to match message args (keys are &apos;arg0&apos;, &apos;arg1&apos;, etc.). Omitting a key from the rule indicates a wildcard match. For instance omitting the member from a match rule but adding a sender would let all messages from that sender through regardless of the member.</para><para>Matches are inclusive not exclusive so as long as one rule matches the message will get through. It is important to note this because every time a message is received the application will be paged into memory to process it. This can cause performance problems such as draining batteries on embedded platforms.</para><para>If you match message args (&apos;arg0&apos;, &apos;arg1&apos;, and so forth) only string arguments will match. That is, arg0=&apos;5&apos; means match the string &quot;5&quot; not the integer 5.</para><para>Currently there is no way to match against non-string arguments.</para><para>A specialised form of wildcard matching on arguments is supported for path-like namespaces. If your argument match has a &apos;path&apos; suffix (eg: &quot;arg0path=&apos;/some/path/&apos;&quot;) then it is considered a match if the argument exactly matches the given string or if one of them ends in a &apos;/&apos; and is a prefix of the other.</para><para>Matching on interface is tricky because method call messages only optionally specify the interface. If a message omits the interface, then it will NOT match if the rule specifies an interface name. This means match rules on method calls should not usually give an interface.</para><para>However, signal messages are required to include the interface so when matching signals usually you should specify the interface in the match rule.</para><para>For security reasons, you can match arguments only up to <ref refid="group__DBusProtocol_1gaefeb44421a66e8184d70aae52918b101" kindref="member">DBUS_MAXIMUM_MATCH_RULE_ARG_NUMBER</ref>.</para><para>Match rules have a maximum length of <ref refid="group__DBusProtocol_1gaca161f9a67ce5adf617476c1956d4ee1" kindref="member">DBUS_MAXIMUM_MATCH_RULE_LENGTH</ref> bytes.</para><para>Both of these maximums are much higher than you&apos;re likely to need, they only exist because the D-Bus bus daemon has fixed limits on all resource usage.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>connection to the message bus </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>textual form of match rule </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store any errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1526" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1526" bodyend="1556"/>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBus_1ga6e6b98e19fa4400de7ef99c27b866b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_bus_remove_match</definition>
+        <argsstring>(DBusConnection *connection, const char *rule, DBusError *error)</argsstring>
+        <name>dbus_bus_remove_match</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Removes a previously-added match rule &quot;by value&quot; (the most recently-added identical rule gets removed). </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;rule&quot; argument is the string form of a match rule.</para><para>The bus compares match rules semantically, not textually, so whitespace and ordering don&apos;t have to be identical to the rule you passed to <ref refid="group__DBusBus_1ga4eb6401ba014da3dbe3dc4e2a8e5b3ef" kindref="member">dbus_bus_add_match()</ref>.</para><para>If you pass <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for the error, this function will not block; otherwise it will. See detailed explanation in docs for <ref refid="group__DBusBus_1ga4eb6401ba014da3dbe3dc4e2a8e5b3ef" kindref="member">dbus_bus_add_match()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>connection to the message bus </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>textual form of match rule </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store any errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="1576" column="1" bodyfile="dbus/dbus-bus.c" bodystart="1576" bodyend="1600"/>
+        <references refid="group__DBusShared_1gaa34514374bb61b8222a670a3d0b3fdc4" compoundref="dbus-shared_8h" startline="88">DBUS_INTERFACE_DBUS</references>
+        <references refid="group__DBusMessage_1ga591f3aab5dd2c87e56e05423c2a671d9" compoundref="dbus-message_8c" startline="1792" endline="1808">dbus_message_append_args</references>
+        <references refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusShared_1ga840a593b8fa139c69ef679830f42d91f" compoundref="dbus-shared_8h" startline="80">DBUS_PATH_DBUS</references>
+        <references refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" compoundref="dbus-shared_8h" startline="76">DBUS_SERVICE_DBUS</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Functions for communicating with the message bus. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="group__DBusBus_1ga77ba5250adb84620f16007e1b023cf26" kindref="member">dbus_bus_get()</ref> allows all modules and libraries in a given process to share the same connection to the bus daemon by storing the connection globally.</para><para>All other functions in this module are just convenience functions; most of them invoke methods on the bus daemon, by sending method call messages to <ref refid="group__DBusShared_1ga9e017e829e575bdc5c554fd4d07d7355" kindref="member">DBUS_SERVICE_DBUS</ref>. These convenience functions often make blocking method calls. If you don&apos;t want to block, you can send the method call messages manually in the same way you would any other method call message.</para><para>This module is the only one in libdbus that&apos;s specific to communicating with the message bus daemon. The rest of the API can also be used for connecting to another application directly.</para><para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>right now the default address of the system bus is hardcoded, so if you change it in the global config file suddenly you have to set DBUS_SYSTEM_BUS_ADDRESS env variable. Might be nice if the client lib somehow read the config file, or if the bus on startup somehow wrote out its address to a well-known spot, but might also not be worth it. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+  </compounddef>
+</doxygen>

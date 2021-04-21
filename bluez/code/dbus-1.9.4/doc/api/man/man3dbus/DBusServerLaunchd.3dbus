@@ -1,0 +1,50 @@
+.TH "DBusServerLaunchd" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServerLaunchd \- DBusServer implementations for Launchd
+.PP
+Implementation details of \fBDBusServer\fP with Launchd support\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusServer\fP * \fB_dbus_server_new_for_launchd\fP (const char *launchd_env_var, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a new server from launchd\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusServer\fP with Launchd support\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDBusServer\fP* _dbus_server_new_for_launchd (const char * launchd_env_var, \fBDBusError\fP * error)"
+
+.PP
+Creates a new server from launchd\&. launchd has allocaed a socket for us\&. We now query launchd for the file descriptor of this socket and create a server on it\&. In addition we inherit launchd's environment which holds a variable containing the path to the socket\&. This is used to init the server's address which is passed to autolaunched services\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlaunchd_env_var\fP the environment variable which holds the unix path to the socket 
+.br
+\fIerror\fP location to store reason for failure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new server, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file dbus\-server\-launchd\&.c\&.
+.PP
+References _dbus_fd_set_close_on_exec(), _dbus_getenv(), _dbus_server_new_for_socket(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_warn(), DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_FAILED, DBUS_ERROR_IO_ERROR, DBUS_ERROR_LIMITS_EXCEEDED, DBUS_ERROR_NO_MEMORY, DBUS_ERROR_NO_SERVER, dbus_set_error(), dbus_setenv(), and NULL\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

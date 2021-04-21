@@ -1,0 +1,52 @@
+.TH "DBusServerWin" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServerWin \- DBusServer implementations for Windows
+.PP
+Implementation details of \fBDBusServer\fP on Windows\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "DBusServerListenResult \fB_dbus_server_listen_platform_specific\fP (\fBDBusAddressEntry\fP *entry, \fBDBusServer\fP **server_p, \fBDBusError\fP *error)"
+.br
+.RI "\fITries to interpret the address entry in a platform-specific way, creating a platform-specific server type if appropriate\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusServer\fP on Windows\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "DBusServerListenResult _dbus_server_listen_platform_specific (\fBDBusAddressEntry\fP * entry, \fBDBusServer\fP ** server_p, \fBDBusError\fP * error)"
+
+.PP
+Tries to interpret the address entry in a platform-specific way, creating a platform-specific server type if appropriate\&. Sets error if the result is not OK\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentry\fP an address entry 
+.br
+\fIserver_p\fP location to store a new \fBDBusServer\fP, or \fBNULL\fP on failure\&. 
+.br
+\fIerror\fP location to store rationale for failure on bad address 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the outcome 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file dbus\-server\-win\&.c\&.
+.PP
+References _dbus_server_new_for_tcp_socket(), dbus_address_entry_get_method(), dbus_address_entry_get_value(), FALSE, and NULL\&.
+.PP
+Referenced by _dbus_server_unref_unlocked()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,647 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusServerInternals" kind="group">
+    <compoundname>DBusServerInternals</compoundname>
+    <title>DBusServer implementation details</title>
+    <innerclass refid="structDBusServer" prot="public">DBusServer</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusServerInternals_1ga0c100eb3b1ecdb886ac670c815eacf23" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusWatchAddFunction) (DBusWatchList *list, DBusWatch *watch)</definition>
+        <argsstring>)(DBusWatchList *list, DBusWatch *watch)</argsstring>
+        <name>DBusWatchAddFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_watch() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="222" column="1" bodyfile="dbus/dbus-server.c" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServerInternals_1ga39078b4c2b83651a39638ca210591b98" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusWatchRemoveFunction) (DBusWatchList *list, DBusWatch *watch)</definition>
+        <argsstring>)(DBusWatchList *list, DBusWatch *watch)</argsstring>
+        <name>DBusWatchRemoveFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_watch() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="225" column="1" bodyfile="dbus/dbus-server.c" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServerInternals_1ga890755ee5ee0e545b0ba7e9c09c6ac98" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusWatchToggleFunction) (DBusWatchList *list, DBusWatch *watch, dbus_bool_t enabled)</definition>
+        <argsstring>)(DBusWatchList *list, DBusWatch *watch, dbus_bool_t enabled)</argsstring>
+        <name>DBusWatchToggleFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_watch() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="228" column="1" bodyfile="dbus/dbus-server.c" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServerInternals_1ga1272640bcf4e26d62fe7f370320bf86f" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusTimeoutAddFunction) (DBusTimeoutList *list, DBusTimeout *timeout)</definition>
+        <argsstring>)(DBusTimeoutList *list, DBusTimeout *timeout)</argsstring>
+        <name>DBusTimeoutAddFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_timeout() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="329" column="1" bodyfile="dbus/dbus-server.c" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServerInternals_1gafb9fc05c4a99995ed205a9ad83c5f866" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusTimeoutRemoveFunction) (DBusTimeoutList *list, DBusTimeout *timeout)</definition>
+        <argsstring>)(DBusTimeoutList *list, DBusTimeout *timeout)</argsstring>
+        <name>DBusTimeoutRemoveFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_timeout() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="332" column="1" bodyfile="dbus/dbus-server.c" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServerInternals_1ga83663c3fa4f13a262c4ee1d3037e93e5" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusTimeoutToggleFunction) (DBusTimeoutList *list, DBusTimeout *timeout, dbus_bool_t enabled)</definition>
+        <argsstring>)(DBusTimeoutList *list, DBusTimeout *timeout, dbus_bool_t enabled)</argsstring>
+        <name>DBusTimeoutToggleFunction</name>
+        <briefdescription>
+<para>Function to be called in protected_change_timeout() with refcount held. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="335" column="1" bodyfile="dbus/dbus-server.c" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusServerInternals_1gae9d6174bb5be7a2f422af5389fbb081f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_trace_ref</definition>
+        <argsstring>(DBusServer *server, int old_refcount, int new_refcount, const char *why)</argsstring>
+        <name>_dbus_server_trace_ref</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>old_refcount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>new_refcount</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>why</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="58" column="1" bodyfile="dbus/dbus-server.c" bodystart="58" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga1a58a3f0c96db8b916fed31f94ae5d9d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* copy_address_with_guid_appended</definition>
+        <argsstring>(const DBusString *address, const DBusString *guid_hex)</argsstring>
+        <name>copy_address_with_guid_appended</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>guid_hex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="74" column="1" bodyfile="dbus/dbus-server.c" bodystart="74" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_server_init_base</definition>
+        <argsstring>(DBusServer *server, const DBusServerVTable *vtable, const DBusString *address)</argsstring>
+        <name>_dbus_server_init_base</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusServerVTable" kindref="compound">DBusServerVTable</ref> *</type>
+          <declname>vtable</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the members of the <ref refid="structDBusServer" kindref="compound">DBusServer</ref> base class. </para>        </briefdescription>
+        <detaileddescription>
+<para>Chained up to by subclass constructors.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vtable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vtable for the subclass. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server&apos;s address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="111" column="1" bodyfile="dbus/dbus-server.c" bodystart="111" bodyend="184"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="group__DBusDataSlot_1ga6de49b3a1210202215d40a5a19806992" compoundref="dbus-dataslot_8c" startline="197" endline="201">_dbus_data_slot_list_init</references>
+        <references refid="group__DBusInternalsUtils_1ga08c2922335845e5c857e88399436b9ba" compoundref="dbus-internals_8c" startline="641" endline="653">_dbus_generate_uuid</references>
+        <references refid="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" compoundref="dbus-threads_8c" startline="94" endline="101">_dbus_rmutex_free_at_location</references>
+        <references refid="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" compoundref="dbus-threads_8c" startline="53" endline="64">_dbus_rmutex_new_at_location</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</references>
+        <references refid="group__DBusTimeoutInternals_1ga5b122b35cdb3926b7dc2d084ddff9d62" compoundref="dbus-timeout_8c" startline="194" endline="203">_dbus_timeout_list_new</references>
+        <references refid="group__DBusInternalsUtils_1gaf08364813376bd2d8f455d435d85323e" compoundref="dbus-internals_8c" startline="663" endline="669">_dbus_uuid_encode</references>
+        <references refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</references>
+        <references refid="group__DBusWatchInternals_1ga5d9db5d0af5916a5ec890eb38d5741eb" compoundref="dbus-watch_8c" startline="232" endline="241">_dbus_watch_list_new</references>
+        <references refid="structDBusServer_1a359852bf33b3051180a9477da4d89acd" compoundref="dbus-server-protected_8h" startline="69">DBusServer::address</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusServer_1a799a94be0e3078f2e636f322f57d66f9" compoundref="dbus-server-protected_8h" startline="62">DBusServer::guid</references>
+        <references refid="structDBusServer_1a79cd5d1b25412d56b7fd41902d575794" compoundref="dbus-server-protected_8h" startline="64">DBusServer::guid_hex</references>
+        <references refid="structDBusServer_1a89c4751e61ed16591254b00cb9db1661" compoundref="dbus-server-protected_8h" startline="60">DBusServer::mutex</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a01a6dbb2573ce35f639873cd4dd85b4d" compoundref="dbus-server-protected_8h" startline="70">DBusServer::published_address</references>
+        <references refid="structDBusServer_1a7578bd99fc8aee641cbb5198cb2e7004" compoundref="dbus-server-protected_8h" startline="58">DBusServer::refcount</references>
+        <references refid="structDBusServer_1a0601cca8307ba17d4a8bcebe48b08362" compoundref="dbus-server-protected_8h" startline="74">DBusServer::slot_list</references>
+        <references refid="structDBusServer_1afcaccd00f2392a390616c47e425bae85" compoundref="dbus-server-protected_8h" startline="67">DBusServer::timeouts</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusServer_1aa5068890fea8c7e7261b600e7256e009" compoundref="dbus-server-protected_8h" startline="59">DBusServer::vtable</references>
+        <references refid="structDBusServer_1a7955050967aeaf09679f8ba1f2941880" compoundref="dbus-server-protected_8h" startline="66">DBusServer::watches</references>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_finalize_base</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>_dbus_server_finalize_base</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Finalizes the members of the <ref refid="structDBusServer" kindref="compound">DBusServer</ref> base class. </para>        </briefdescription>
+        <detaileddescription>
+<para>Chained up to by subclass finalizers.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="193" column="1" bodyfile="dbus/dbus-server.c" bodystart="193" bodyend="218"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</references>
+        <references refid="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" compoundref="dbus-threads_8c" startline="94" endline="101">_dbus_rmutex_free_at_location</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</references>
+        <references refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</references>
+        <references refid="structDBusServer_1a359852bf33b3051180a9477da4d89acd" compoundref="dbus-server-protected_8h" startline="69">DBusServer::address</references>
+        <references refid="structDBusServer_1adc1032bbed41413e5d0e01578f2bfffc" compoundref="dbus-server-protected_8h" startline="85">DBusServer::auth_mechanisms</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" compoundref="dbus-server_8c" startline="889" endline="910">dbus_server_set_new_connection_function</references>
+        <references refid="structDBusServer_1a7dabb30cdc09d6102810029fb56b8dfe" compoundref="dbus-server-protected_8h" startline="87">DBusServer::disconnected</references>
+        <references refid="structDBusServer_1a79cd5d1b25412d56b7fd41902d575794" compoundref="dbus-server-protected_8h" startline="64">DBusServer::guid_hex</references>
+        <references refid="structDBusServer_1adba8dd016471a800525a42926f9ee061" compoundref="dbus-server-protected_8h" startline="90">DBusServer::have_server_lock</references>
+        <references refid="structDBusServer_1a89c4751e61ed16591254b00cb9db1661" compoundref="dbus-server-protected_8h" startline="60">DBusServer::mutex</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a0601cca8307ba17d4a8bcebe48b08362" compoundref="dbus-server-protected_8h" startline="74">DBusServer::slot_list</references>
+        <references refid="structDBusServer_1afcaccd00f2392a390616c47e425bae85" compoundref="dbus-server-protected_8h" startline="67">DBusServer::timeouts</references>
+        <references refid="structDBusServer_1a7955050967aeaf09679f8ba1f2941880" compoundref="dbus-server-protected_8h" startline="66">DBusServer::watches</references>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1gab4eeabcc5a83647c39a5d15e5dd2c4f0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t protected_change_watch</definition>
+        <argsstring>(DBusServer *server, DBusWatch *watch, DBusWatchAddFunction add_function, DBusWatchRemoveFunction remove_function, DBusWatchToggleFunction toggle_function, dbus_bool_t enabled)</argsstring>
+        <name>protected_change_watch</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1ga0c100eb3b1ecdb886ac670c815eacf23" kindref="member">DBusWatchAddFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1ga39078b4c2b83651a39638ca210591b98" kindref="member">DBusWatchRemoveFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1ga890755ee5ee0e545b0ba7e9c09c6ac98" kindref="member">DBusWatchToggleFunction</ref></type>
+          <declname>toggle_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="233" column="1" bodyfile="dbus/dbus-server.c" bodystart="233" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga0866e5b205b8a570c77c8ad787b665fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_server_add_watch</definition>
+        <argsstring>(DBusServer *server, DBusWatch *watch)</argsstring>
+        <name>_dbus_server_add_watch</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Adds a watch for this server, chaining out to application-provided watch handlers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="288" column="1" bodyfile="dbus/dbus-server.c" bodystart="288" bodyend="295"/>
+        <references refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga61cfdbfcc9316d4bae55f83b069f248c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_remove_watch</definition>
+        <argsstring>(DBusServer *server, DBusWatch *watch)</argsstring>
+        <name>_dbus_server_remove_watch</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Removes a watch previously added with <ref refid="group__DBusServerInternals_1ga61cfdbfcc9316d4bae55f83b069f248c" kindref="member">_dbus_server_remove_watch()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the watch to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="304" column="1" bodyfile="dbus/dbus-server.c" bodystart="304" bodyend="312"/>
+        <references refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1gabdc55833c157737f5cb8b3662f8fc0ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_toggle_all_watches</definition>
+        <argsstring>(DBusServer *server, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_server_toggle_all_watches</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Toggles all watch and notifies app via server&apos;s DBusWatchToggledFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to enable or disable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="322" column="1" bodyfile="dbus/dbus-server.c" bodystart="322" bodyend="326"/>
+        <references refid="group__DBusWatchInternals_1ga935ba95d94a14aee79d80abe970eae53" compoundref="dbus-watch_8c" startline="465" endline="476">_dbus_watch_list_toggle_all_watches</references>
+        <references refid="structDBusServer_1a7955050967aeaf09679f8ba1f2941880" compoundref="dbus-server-protected_8h" startline="66">DBusServer::watches</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1gabf2efe3b6dc2ece68e836170a8cf3fda" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t protected_change_timeout</definition>
+        <argsstring>(DBusServer *server, DBusTimeout *timeout, DBusTimeoutAddFunction add_function, DBusTimeoutRemoveFunction remove_function, DBusTimeoutToggleFunction toggle_function, dbus_bool_t enabled)</argsstring>
+        <name>protected_change_timeout</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1ga1272640bcf4e26d62fe7f370320bf86f" kindref="member">DBusTimeoutAddFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1gafb9fc05c4a99995ed205a9ad83c5f866" kindref="member">DBusTimeoutRemoveFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServerInternals_1ga83663c3fa4f13a262c4ee1d3037e93e5" kindref="member">DBusTimeoutToggleFunction</ref></type>
+          <declname>toggle_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="341" column="1" bodyfile="dbus/dbus-server.c" bodystart="341" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga7e10a662386fb7f693e0d168161e395b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_server_add_timeout</definition>
+        <argsstring>(DBusServer *server, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_server_add_timeout</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Adds a timeout for this server, chaining out to application-provided timeout handlers. </para>        </briefdescription>
+        <detaileddescription>
+<para>The timeout should be repeatedly handled with <ref refid="group__DBusTimeout_1ga038b67c8d3db2624a1e4a8bc45f25d12" kindref="member">dbus_timeout_handle()</ref> at its given interval until it is removed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="397" column="1" bodyfile="dbus/dbus-server.c" bodystart="397" bodyend="403"/>
+        <references refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga69509697f091e354442cedb63886c20e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_remove_timeout</definition>
+        <argsstring>(DBusServer *server, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_server_remove_timeout</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Removes a timeout previously added with <ref refid="group__DBusServerInternals_1ga7e10a662386fb7f693e0d168161e395b" kindref="member">_dbus_server_add_timeout()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="412" column="1" bodyfile="dbus/dbus-server.c" bodystart="412" bodyend="419"/>
+        <references refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga74d2714ce80a089d2607a6fc5763d819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_toggle_timeout</definition>
+        <argsstring>(DBusServer *server, DBusTimeout *timeout, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_server_toggle_timeout</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Toggles a timeout and notifies app via server&apos;s DBusTimeoutToggledFunction if available. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this function on a timeout that was not previously added.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to toggle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to enable or disable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="431" column="1" bodyfile="dbus/dbus-server.c" bodystart="431" bodyend="439"/>
+        <references refid="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" compoundref="dbus-timeout_8c" startline="362" endline="376">_dbus_timeout_list_toggle_timeout</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga987e9bf42ab4e4cededa8e8f65c54e2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_ref_unlocked</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>_dbus_server_ref_unlocked</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusServer_1gabe1c14264ef6bf3e5fe446ab9bf8b913" kindref="member">dbus_server_ref()</ref> but does not acquire the lock (must already be held) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="448" column="1" bodyfile="dbus/dbus-server.c" bodystart="448" bodyend="459"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a7578bd99fc8aee641cbb5198cb2e7004" compoundref="dbus-server-protected_8h" startline="58">DBusServer::refcount</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerInternals_1ga6e1d0b379c98b0d59ebd19dc9b8a2dbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_unref_unlocked</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>_dbus_server_unref_unlocked</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" kindref="member">dbus_server_unref()</ref> but does not acquire the lock (must already be held) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="467" column="1" bodyfile="dbus/dbus-server.c" bodystart="467" bodyend="493"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1ga3c50a069f795dceeb9172fe2b517bbdc" compoundref="dbus-sysdeps-unix_8c" startline="2585" endline="2599">_dbus_atomic_dec</references>
+        <references refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</references>
+        <references refid="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" compoundref="dbus-server-socket_8c" startline="529" endline="570">_dbus_server_listen_socket</references>
+        <references refid="structDBusServer_1a7dabb30cdc09d6102810029fb56b8dfe" compoundref="dbus-server-protected_8h" startline="87">DBusServer::disconnected</references>
+        <references refid="structDBusServerVTable_1a7242f69227f22aa789e383f30190695c" compoundref="dbus-server-protected_8h" startline="45">DBusServerVTable::finalize</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a7578bd99fc8aee641cbb5198cb2e7004" compoundref="dbus-server-protected_8h" startline="58">DBusServer::refcount</references>
+        <references refid="structDBusServer_1aa5068890fea8c7e7261b600e7256e009" compoundref="dbus-server-protected_8h" startline="59">DBusServer::vtable</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

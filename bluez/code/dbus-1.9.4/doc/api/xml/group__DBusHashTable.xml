@@ -1,0 +1,1442 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusHashTable" kind="group">
+    <compoundname>DBusHashTable</compoundname>
+    <title>Hash table</title>
+    <innerclass refid="structDBusHashIter" prot="public">DBusHashIter</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__DBusHashTable_1gab0ab9767ffa5b6720a13b3d741630852" prot="public" static="no">
+        <name>DBusHashType</name>
+        <enumvalue id="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" prot="public">
+          <name>DBUS_HASH_STRING</name>
+          <briefdescription>
+<para>Hash keys are strings. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" prot="public">
+          <name>DBUS_HASH_INT</name>
+          <briefdescription>
+<para>Hash keys are integers. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" prot="public">
+          <name>DBUS_HASH_UINTPTR</name>
+          <briefdescription>
+<para>Hash keys are integer capable to hold a pointer. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Indicates the type of a key in the hash table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.h" line="68" column="1" bodyfile="dbus/dbus-hash.h" bodystart="67" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusHashTable_1gacb553563de4f4749bfa65d7f08fb1a58" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(*  KeyCompareFunc) (const void *key_a, const void *key_b)</definition>
+        <argsstring>)(const void *key_a, const void *key_b)</argsstring>
+        <name>KeyCompareFunc</name>
+        <briefdescription>
+<para>Key comparison function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="844" column="1" bodyfile="dbus/dbus-hash.c" bodystart="844" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusHashTable_1gae11437504d2f1ec62272264214968988" prot="public" static="no">
+        <type>struct <ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref></type>
+        <definition>DBusHashTable</definition>
+        <argsstring></argsstring>
+        <name>DBusHashTable</name>
+        <briefdescription>
+<para>Public opaque hash table object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.h" line="222" column="1" bodyfile="dbus/dbus-hash.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusHashTable_1gae8ee983d1bea5d9c49dab9714bc91a68" prot="public" static="no">
+        <type>struct <ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref></type>
+        <definition>DBusHashIter</definition>
+        <argsstring></argsstring>
+        <name>DBusHashIter</name>
+        <briefdescription>
+<para>Public opaque hash table iterator object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.h" line="222" column="1" bodyfile="dbus/dbus-hash.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" prot="public" static="no">
+        <type>struct <ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref></type>
+        <definition>typedef struct DBusPreallocatedHash DBusPreallocatedHash</definition>
+        <argsstring></argsstring>
+        <name>DBusPreallocatedHash</name>
+        <briefdescription>
+<para>A preallocated hash entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.h" line="115" column="1" bodyfile="dbus/dbus-hash.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+        <definition>DBusHashTable * _dbus_hash_table_new</definition>
+        <argsstring>(DBusHashType type, DBusFreeFunction key_free_function, DBusFreeFunction value_free_function)</argsstring>
+        <name>_dbus_hash_table_new</name>
+        <param>
+          <type><ref refid="group__DBusHashTable_1gab0ab9767ffa5b6720a13b3d741630852" kindref="member">DBusHashType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>key_free_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>value_free_function</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Should be freed with <ref refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" kindref="member">_dbus_hash_table_unref()</ref>. If memory cannot be allocated for the hash table, returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of hash key to use. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key_free_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to free hash keys. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_free_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to free hash values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new <ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="285" column="1" bodyfile="dbus/dbus-hash.c" bodystart="285" bodyend="337"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMemPool_1gaf1bae02bc5fcb879f77ff2c13ca03ac8" compoundref="dbus-mempool_8c" startline="138" endline="179">_dbus_mem_pool_new</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" compoundref="dbus-hash_8c" startline="171">buckets</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" compoundref="dbus-hash_8h" startline="71">DBUS_HASH_UINTPTR</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusHashTableInternals_1ga4518324f3c3caacf5694065f4f6071d8" compoundref="dbus-hash_8c" startline="130">DBUS_SMALL_HASH_TABLE</references>
+        <references refid="structDBusHashTable_1a2e7e7b92bb9633ab95cfaa592b89025c" compoundref="dbus-hash_8c" startline="191">down_shift</references>
+        <references refid="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" compoundref="dbus-hash_8c" startline="206">entry_pool</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" compoundref="dbus-hash_8c" startline="203">free_key_function</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="structDBusHashTable_1a29c408110c0d189d89b60c6c01cfb0cf" compoundref="dbus-hash_8c" startline="185">hi_rebuild_size</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="structDBusHashTable_1aae6ea7cb15d618866854b2b6bd468419" compoundref="dbus-hash_8c" startline="188">lo_rebuild_size</references>
+        <references refid="structDBusHashTable_1aec1230eebce3d256ca9ceebe372647e9" compoundref="dbus-hash_8c" startline="195">mask</references>
+        <references refid="structDBusHashTable_1a2dd2b9389d65d30e31e596dd786a9aa7" compoundref="dbus-hash_8c" startline="179">n_buckets</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusHashTableInternals_1ga8c6d6296d450e37074dbd8c15638b499" compoundref="dbus-hash_8c" startline="104">REBUILD_MULTIPLIER</references>
+        <references refid="structDBusHashTable_1acb2b7bcba65da77f7ecf67da355ff770" compoundref="dbus-hash_8c" startline="169">refcount</references>
+        <references refid="structDBusHashTable_1af71877d64657c34a783caf6b82b016e9" compoundref="dbus-hash_8c" startline="175">static_buckets</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga1dbf2c80952d17707c544f5d86dd8545" compoundref="dbus-userdb_8c" startline="550" endline="587">_dbus_user_database_new</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga4ad4622378885e5d911c26956e174a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+        <definition>DBusHashTable * _dbus_hash_table_ref</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>_dbus_hash_table_ref</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Increments the reference count for a hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table to add a reference to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the hash table. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="347" column="1" bodyfile="dbus/dbus-hash.c" bodystart="347" bodyend="352"/>
+        <references refid="structDBusHashTable_1acb2b7bcba65da77f7ecf67da355ff770" compoundref="dbus-hash_8c" startline="169">refcount</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_table_unref</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>_dbus_hash_table_unref</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the reference count for a hash table, freeing the hash table if the count reaches zero. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table to remove a reference from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="361" column="1" bodyfile="dbus/dbus-hash.c" bodystart="361" bodyend="410"/>
+        <references refid="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" compoundref="dbus-mempool_8c" startline="187" endline="204">_dbus_mem_pool_free</references>
+        <references refid="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" compoundref="dbus-hash_8c" startline="171">buckets</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" compoundref="dbus-hash_8c" startline="206">entry_pool</references>
+        <references refid="structDBusHashTable_1a2dd2b9389d65d30e31e596dd786a9aa7" compoundref="dbus-hash_8c" startline="179">n_buckets</references>
+        <references refid="structDBusHashEntry_1ae986e25c0b24237f9848ff43aa1d8501" compoundref="dbus-hash_8c" startline="145">DBusHashEntry::next</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusHashTable_1acb2b7bcba65da77f7ecf67da355ff770" compoundref="dbus-hash_8c" startline="169">refcount</references>
+        <references refid="structDBusHashTable_1af71877d64657c34a783caf6b82b016e9" compoundref="dbus-hash_8c" startline="175">static_buckets</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga55dbb78c415da040037442eca4c4e80e" compoundref="dbus-userdb_8c" startline="623" endline="644">_dbus_user_database_unref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_table_remove_all</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>_dbus_hash_table_remove_all</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Removed all entries from a hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table to remove all entries from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="418" column="1" bodyfile="dbus/dbus-hash.c" bodystart="418" bodyend="426"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</references>
+        <references refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</references>
+        <references refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</references>
+        <references refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</references>
+        <references refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</references>
+        <references refid="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" compoundref="dbus-hash_8c" startline="206">entry_pool</references>
+        <references refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" compoundref="dbus-hash_8c" startline="203">free_key_function</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="structDBusHashEntry_1ae986e25c0b24237f9848ff43aa1d8501" compoundref="dbus-hash_8c" startline="145">DBusHashEntry::next</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusInternalsUtils_1gab553751e96f8506d10349fb5fb1eaa82" compoundref="dbus-userdb_8c" startline="593" endline="599">_dbus_user_database_flush</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_iter_init</definition>
+        <argsstring>(DBusHashTable *table, DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_init</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a hash table iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para>To iterate over all entries in a hash table, use the following code (the printf assumes a hash from strings to strings obviously):</para><para><programlisting><codeline><highlight class="normal">DBusHashIter<sp/>iter;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_dbus_hash_iter_init<sp/>(table,<sp/>&amp;iter);</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>(_dbus_hash_iter_next<sp/>(&amp;iter))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>printf<sp/>(&quot;The<sp/>first<sp/>key<sp/>is<sp/>%s<sp/>and<sp/>value<sp/>is<sp/>%s\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_hash_iter_get_string_key<sp/>(&amp;iter),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_hash_iter_get_value<sp/>(&amp;iter));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+</programlisting></para><para>The iterator is initialized pointing &quot;one before&quot; the first hash entry. The first call to <ref refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" kindref="member">_dbus_hash_iter_next()</ref> moves it onto the first valid entry or returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the hash table is empty. Subsequent calls move to the next valid entry or return <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if there are no more entries.</para><para>Note that it is guaranteed to be safe to remove a hash entry during iteration, but it is not safe to add a hash entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table to iterate over. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator to initialize. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="517" column="1" bodyfile="dbus/dbus-hash.c" bodystart="517" bodyend="532"/>
+        <references refid="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" compoundref="dbus-hash_8c" startline="215">DBusRealHashIter::bucket</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="structDBusRealHashIter_1a84f2a189ee1eb3e51a8089b798a7797a" compoundref="dbus-hash_8c" startline="222">DBusRealHashIter::n_entries_on_init</references>
+        <references refid="structDBusRealHashIter_1adbf758933299ee6305c525ea0fe74824" compoundref="dbus-hash_8c" startline="221">DBusRealHashIter::next_bucket</references>
+        <references refid="structDBusRealHashIter_1a056417c3726f4f98eb94a9d2784a59e0" compoundref="dbus-hash_8c" startline="220">DBusRealHashIter::next_entry</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_iter_next</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_next</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Move the hash iterator forward one step, to the next hash entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>The documentation for <ref refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" kindref="member">_dbus_hash_iter_init()</ref> explains in more detail.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator to move forward. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if there are no more entries to move to. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="543" column="1" bodyfile="dbus/dbus-hash.c" bodystart="543" bodyend="581"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" compoundref="dbus-hash_8c" startline="215">DBusRealHashIter::bucket</references>
+        <references refid="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" compoundref="dbus-hash_8c" startline="171">buckets</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1a2dd2b9389d65d30e31e596dd786a9aa7" compoundref="dbus-hash_8c" startline="179">n_buckets</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="structDBusRealHashIter_1a84f2a189ee1eb3e51a8089b798a7797a" compoundref="dbus-hash_8c" startline="222">DBusRealHashIter::n_entries_on_init</references>
+        <references refid="structDBusHashEntry_1ae986e25c0b24237f9848ff43aa1d8501" compoundref="dbus-hash_8c" startline="145">DBusHashEntry::next</references>
+        <references refid="structDBusRealHashIter_1adbf758933299ee6305c525ea0fe74824" compoundref="dbus-hash_8c" startline="221">DBusRealHashIter::next_bucket</references>
+        <references refid="structDBusRealHashIter_1a056417c3726f4f98eb94a9d2784a59e0" compoundref="dbus-hash_8c" startline="220">DBusRealHashIter::next_entry</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_iter_remove_entry</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_remove_entry</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Removes the current entry from the hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para>If a key_free_function or value_free_function was provided to <ref refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" kindref="member">_dbus_hash_table_new()</ref>, frees the key and/or value for this entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="592" column="1" bodyfile="dbus/dbus-hash.c" bodystart="592" bodyend="605"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" compoundref="dbus-hash_8c" startline="215">DBusRealHashIter::bucket</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * _dbus_hash_iter_get_value</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_get_value</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the value of the current entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="613" column="1" bodyfile="dbus/dbus-hash.c" bodystart="613" bodyend="623"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga24193343c0948019d4a302fc18bfd5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_iter_set_value</definition>
+        <argsstring>(DBusHashIter *iter, void *value)</argsstring>
+        <name>_dbus_hash_iter_set_value</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the current entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the hash table has a value_free_function it will be used to free the previous value. The hash table will own the passed-in value (it will not be copied).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="636" column="1" bodyfile="dbus/dbus-hash.c" bodystart="636" bodyend="650"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga7a1b9fd35f9f7bdd86f9d71a6379053f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_hash_iter_get_int_key</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_get_int_key</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the key for the current entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only works for hash tables of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" kindref="member">DBUS_HASH_INT</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="659" column="1" bodyfile="dbus/dbus-hash.c" bodystart="659" bodyend="669"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1gabbd3526a2ecd65da80b9f74ac286273d" compoundref="dbus-internals_8h" startline="176">_DBUS_POINTER_TO_INT</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gaab14d583840d0a1b5c829d76959dcbf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uintptr_t</type>
+        <definition>uintptr_t _dbus_hash_iter_get_uintptr_key</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_get_uintptr_key</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the key for the current entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only works for hash tables of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" kindref="member">DBUS_HASH_UINTPTR</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="678" column="1" bodyfile="dbus/dbus-hash.c" bodystart="678" bodyend="688"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gaa0cff082174b1ab0380902ce4ae43d08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * _dbus_hash_iter_get_string_key</definition>
+        <argsstring>(DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_get_string_key</name>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the key for the current entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only works for hash tables of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" kindref="member">DBUS_HASH_STRING</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="696" column="1" bodyfile="dbus/dbus-hash.c" bodystart="696" bodyend="706"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_iter_lookup</definition>
+        <argsstring>(DBusHashTable *table, void *key, dbus_bool_t create_if_not_found, DBusHashIter *iter)</argsstring>
+        <name>_dbus_hash_iter_lookup</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>create_if_not_found</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashIter" kindref="compound">DBusHashIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>A low-level but efficient interface for manipulating the hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s efficient because you can get, set, and optionally create the hash entry while only running the hash function one time.</para><para>Note that while calling <ref refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" kindref="member">_dbus_hash_iter_next()</ref> on the iterator filled in by this function may work, it&apos;s completely undefined which entries are after this iter and which are before it. So it would be silly to iterate using this iterator.</para><para>If the hash entry is created, its value will be initialized to all bits zero.</para><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> may be returned due to memory allocation failure, or because create_if_not_found was <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> and the entry did not exist.</para><para>If create_if_not_found is <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> and the entry is created, the hash table takes ownership of the key that&apos;s passed in.</para><para>For a hash table of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" kindref="member">DBUS_HASH_INT</ref>, cast the int key to the key parameter using <ref refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" kindref="member">_DBUS_INT_TO_POINTER()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>create_if_not_found</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, create the entry if it didn&apos;t exist. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator to initialize. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the hash entry now exists (and the iterator is thus valid). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="740" column="1" bodyfile="dbus/dbus-hash.c" bodystart="740" bodyend="768"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealHashIter_1ad36967dc68709d676ad591d7f75dd7fa" compoundref="dbus-hash_8c" startline="215">DBusRealHashIter::bucket</references>
+        <references refid="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" compoundref="dbus-hash_8c" startline="171">buckets</references>
+        <references refid="structDBusRealHashIter_1a438db1cb3a9c6db716f8bf35fe3054c7" compoundref="dbus-hash_8c" startline="219">DBusRealHashIter::entry</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a29c408110c0d189d89b60c6c01cfb0cf" compoundref="dbus-hash_8c" startline="185">hi_rebuild_size</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1aae6ea7cb15d618866854b2b6bd468419" compoundref="dbus-hash_8c" startline="188">lo_rebuild_size</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="structDBusRealHashIter_1a84f2a189ee1eb3e51a8089b798a7797a" compoundref="dbus-hash_8c" startline="222">DBusRealHashIter::n_entries_on_init</references>
+        <references refid="structDBusHashEntry_1ae986e25c0b24237f9848ff43aa1d8501" compoundref="dbus-hash_8c" startline="145">DBusHashEntry::next</references>
+        <references refid="structDBusRealHashIter_1adbf758933299ee6305c525ea0fe74824" compoundref="dbus-hash_8c" startline="221">DBusRealHashIter::next_bucket</references>
+        <references refid="structDBusRealHashIter_1a056417c3726f4f98eb94a9d2784a59e0" compoundref="dbus-hash_8c" startline="220">DBusRealHashIter::next_entry</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusRealHashIter_1a0307c2b8fa9384554ceb3cc965b04633" compoundref="dbus-hash_8c" startline="214">DBusRealHashIter::table</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga97629b6bb6dd10055a9df7bd068a1fa5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void add_allocated_entry</definition>
+        <argsstring>(DBusHashTable *table, DBusHashEntry *entry, unsigned int idx, void *key, DBusHashEntry ***bucket)</argsstring>
+        <name>add_allocated_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> ***</type>
+          <declname>bucket</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="771" column="1" bodyfile="dbus/dbus-hash.c" bodystart="771" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga38db519d0b7b48e565bec753439e1e62" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>static DBusHashEntry* add_entry</definition>
+        <argsstring>(DBusHashTable *table, unsigned int idx, void *key, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>add_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> ***</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="799" column="1" bodyfile="dbus/dbus-hash.c" bodystart="799" bodyend="825"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gaa15f29b2da5c07763b91fba71f4fa3e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>static DBusHashEntry* find_generic_function</definition>
+        <argsstring>(DBusHashTable *table, void *key, unsigned int idx, KeyCompareFunc compare_func, dbus_bool_t create_if_not_found, DBusHashEntry ***bucket, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>find_generic_function</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1gacb553563de4f4749bfa65d7f08fb1a58" kindref="member">KeyCompareFunc</ref></type>
+          <declname>compare_func</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>create_if_not_found</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> ***</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="847" column="1" bodyfile="dbus/dbus-hash.c" bodystart="847" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gad51eb3fe682721dd4f6a920ca87cb730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * _dbus_hash_table_lookup_string</definition>
+        <argsstring>(DBusHashTable *table, const char *key)</argsstring>
+        <name>_dbus_hash_table_lookup_string</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the value for a given string in a hash table of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" kindref="member">DBUS_HASH_STRING</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns NULL if the value is not present. (A not-present entry is indistinguishable from an entry with a value of NULL.) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to look up. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value of the hash entry. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1049" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1049" bodyend="1062"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga36ff49c4c35599e6fcdadc7f6805c49e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * _dbus_hash_table_lookup_int</definition>
+        <argsstring>(DBusHashTable *table, int key)</argsstring>
+        <name>_dbus_hash_table_lookup_int</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the value for a given integer in a hash table of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" kindref="member">DBUS_HASH_INT</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns NULL if the value is not present. (A not-present entry is indistinguishable from an entry with a value of NULL.) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the integer to look up. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value of the hash entry. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1074" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1074" bodyend="1087"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gae0ac411f87a797767f36c6e64fd807b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * _dbus_hash_table_lookup_uintptr</definition>
+        <argsstring>(DBusHashTable *table, uintptr_t key)</argsstring>
+        <name>_dbus_hash_table_lookup_uintptr</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uintptr_t</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the value for a given integer in a hash table of type <ref refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" kindref="member">DBUS_HASH_UINTPTR</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns NULL if the value is not present. (A not-present entry is indistinguishable from an entry with a value of NULL.) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the integer to look up. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value of the hash entry. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1099" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1099" bodyend="1112"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" compoundref="dbus-hash_8h" startline="71">DBUS_HASH_UINTPTR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga388d50ce1a07bf0790b9f2ecdb08a396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_remove_string</definition>
+        <argsstring>(DBusHashTable *table, const char *key)</argsstring>
+        <name>_dbus_hash_table_remove_string</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Removes the hash entry for the given key. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no hash entry for the key exists, does nothing.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the entry existed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1123" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1123" bodyend="1140"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gacdebe75bd692605a69dc73c15e0eefd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_remove_int</definition>
+        <argsstring>(DBusHashTable *table, int key)</argsstring>
+        <name>_dbus_hash_table_remove_int</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Removes the hash entry for the given key. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no hash entry for the key exists, does nothing.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the entry existed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1151" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1151" bodyend="1168"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga0ad8fa1108bad2b4bd5b4ce539d32d64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_remove_uintptr</definition>
+        <argsstring>(DBusHashTable *table, uintptr_t key)</argsstring>
+        <name>_dbus_hash_table_remove_uintptr</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uintptr_t</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Removes the hash entry for the given key. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no hash entry for the key exists, does nothing.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the entry existed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1179" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1179" bodyend="1196"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" compoundref="dbus-hash_8h" startline="71">DBUS_HASH_UINTPTR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_insert_string</definition>
+        <argsstring>(DBusHashTable *table, char *key, void *value)</argsstring>
+        <name>_dbus_hash_table_insert_string</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates a hash entry with the given key and value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The key and value are not copied; they are stored in the hash table by reference. If an entry with the given key already exists, the previous key and value are overwritten (and freed if the hash table has a key_free_function and/or value_free_function).</para><para>Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if memory for the new hash entry can&apos;t be allocated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1214" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1214" bodyend="1230"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" compoundref="dbus-hash_8c" startline="1366" endline="1388">_dbus_hash_table_insert_string_preallocated</references>
+        <references refid="group__DBusHashTable_1ga7c2fed5599678e550af10eaa7fd5b1d1" compoundref="dbus-hash_8c" startline="1322" endline="1329">_dbus_hash_table_preallocate_entry</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_insert_int</definition>
+        <argsstring>(DBusHashTable *table, int key, void *value)</argsstring>
+        <name>_dbus_hash_table_insert_int</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates a hash entry with the given key and value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The key and value are not copied; they are stored in the hash table by reference. If an entry with the given key already exists, the previous key and value are overwritten (and freed if the hash table has a key_free_function and/or value_free_function).</para><para>Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if memory for the new hash entry can&apos;t be allocated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1248" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1248" bodyend="1271"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" compoundref="dbus-hash_8c" startline="203">free_key_function</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_hash_table_insert_uintptr</definition>
+        <argsstring>(DBusHashTable *table, uintptr_t key, void *value)</argsstring>
+        <name>_dbus_hash_table_insert_uintptr</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uintptr_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates a hash entry with the given key and value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The key and value are not copied; they are stored in the hash table by reference. If an entry with the given key already exists, the previous key and value are overwritten (and freed if the hash table has a key_free_function and/or value_free_function).</para><para>Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if memory for the new hash entry can&apos;t be allocated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash entry value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1289" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1289" bodyend="1312"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" compoundref="dbus-hash_8h" startline="71">DBUS_HASH_UINTPTR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" compoundref="dbus-hash_8c" startline="203">free_key_function</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga7c2fed5599678e550af10eaa7fd5b1d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+        <definition>DBusPreallocatedHash * _dbus_hash_table_preallocate_entry</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>_dbus_hash_table_preallocate_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Preallocate an opaque data blob that allows us to insert into the hash table at a later time without allocating any memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the preallocated data, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1322" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1322" bodyend="1329"/>
+        <referencedby refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" compoundref="dbus-hash_8c" startline="1214" endline="1230">_dbus_hash_table_insert_string</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga159dfec03d53e6e2ff485fc83aed2552" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_table_free_preallocated_entry</definition>
+        <argsstring>(DBusHashTable *table, DBusPreallocatedHash *preallocated)</argsstring>
+        <name>_dbus_hash_table_free_preallocated_entry</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <briefdescription>
+<para>Frees an opaque DBusPreallocatedHash that was <emphasis>not</emphasis> used in order to insert into the hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>preallocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the preallocated data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1339" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1339" bodyend="1350"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</references>
+        <references refid="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" compoundref="dbus-hash_8c" startline="206">entry_pool</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_hash_table_insert_string_preallocated</definition>
+        <argsstring>(DBusHashTable *table, DBusPreallocatedHash *preallocated, char *key, void *value)</argsstring>
+        <name>_dbus_hash_table_insert_string_preallocated</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusHashTable_1ga175dc6ab841ed32bb6acf6e4c0df36a8" kindref="member">DBusPreallocatedHash</ref> *</type>
+          <declname>preallocated</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a string-keyed entry into the hash table, using a preallocated data block from <ref refid="group__DBusHashTable_1ga7c2fed5599678e550af10eaa7fd5b1d1" kindref="member">_dbus_hash_table_preallocate_entry()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function cannot fail due to lack of memory. The DBusPreallocatedHash object is consumed and should not be reused or freed. Otherwise this function works just like <ref refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" kindref="member">_dbus_hash_table_insert_string()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>preallocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the preallocated data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash key </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1366" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1366" bodyend="1388"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" compoundref="dbus-hash_8c" startline="201">find_function</references>
+        <references refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" compoundref="dbus-hash_8c" startline="203">free_key_function</references>
+        <references refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" compoundref="dbus-hash_8c" startline="204">free_value_function</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" compoundref="dbus-hash_8c" startline="198">key_type</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" compoundref="dbus-hash_8c" startline="1214" endline="1230">_dbus_hash_table_insert_string</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_hash_table_get_n_entries</definition>
+        <argsstring>(DBusHashTable *table)</argsstring>
+        <name>_dbus_hash_table_get_n_entries</name>
+        <param>
+          <type><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Gets the number of hash entries in a hash table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hash table. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of entries in the table. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="1397" column="1" bodyfile="dbus/dbus-hash.c" bodystart="1397" bodyend="1400"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusHashTable_1ga7a1b9fd35f9f7bdd86f9d71a6379053f" compoundref="dbus-hash_8c" startline="659" endline="669">_dbus_hash_iter_get_int_key</references>
+        <references refid="group__DBusHashTable_1gaa0cff082174b1ab0380902ce4ae43d08" compoundref="dbus-hash_8c" startline="696" endline="706">_dbus_hash_iter_get_string_key</references>
+        <references refid="group__DBusHashTable_1ga34bf277ee37f919bd00516b5ae4e12b5" compoundref="dbus-hash_8c" startline="613" endline="623">_dbus_hash_iter_get_value</references>
+        <references refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</references>
+        <references refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</references>
+        <references refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</references>
+        <references refid="group__DBusHashTable_1ga0ef12d773a546f070cff91cbf1e8d16e" compoundref="dbus-hash_8c" startline="592" endline="605">_dbus_hash_iter_remove_entry</references>
+        <references refid="group__DBusHashTable_1ga24193343c0948019d4a302fc18bfd5d9" compoundref="dbus-hash_8c" startline="636" endline="650">_dbus_hash_iter_set_value</references>
+        <references refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</references>
+        <references refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" compoundref="dbus-hash_8c" startline="1214" endline="1230">_dbus_hash_table_insert_string</references>
+        <references refid="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" compoundref="dbus-hash_8c" startline="1289" endline="1312">_dbus_hash_table_insert_uintptr</references>
+        <references refid="group__DBusHashTable_1ga36ff49c4c35599e6fcdadc7f6805c49e" compoundref="dbus-hash_8c" startline="1074" endline="1087">_dbus_hash_table_lookup_int</references>
+        <references refid="group__DBusHashTable_1gad51eb3fe682721dd4f6a920ca87cb730" compoundref="dbus-hash_8c" startline="1049" endline="1062">_dbus_hash_table_lookup_string</references>
+        <references refid="group__DBusHashTable_1gae0ac411f87a797767f36c6e64fd807b3" compoundref="dbus-hash_8c" startline="1099" endline="1112">_dbus_hash_table_lookup_uintptr</references>
+        <references refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</references>
+        <references refid="group__DBusHashTable_1ga4ad4622378885e5d911c26956e174a45" compoundref="dbus-hash_8c" startline="347" endline="352">_dbus_hash_table_ref</references>
+        <references refid="group__DBusHashTable_1gacdebe75bd692605a69dc73c15e0eefd0" compoundref="dbus-hash_8c" startline="1151" endline="1168">_dbus_hash_table_remove_int</references>
+        <references refid="group__DBusHashTable_1ga388d50ce1a07bf0790b9f2ecdb08a396" compoundref="dbus-hash_8c" startline="1123" endline="1140">_dbus_hash_table_remove_string</references>
+        <references refid="group__DBusHashTable_1ga0ad8fa1108bad2b4bd5b4ce539d32d64" compoundref="dbus-hash_8c" startline="1179" endline="1196">_dbus_hash_table_remove_uintptr</references>
+        <references refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a26446bd9fbb15c6c381b35a810207141" compoundref="dbus-hash_8h" startline="70">DBUS_HASH_INT</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a481fd0166d28da725b3e97f15192434e" compoundref="dbus-hash_8h" startline="69">DBUS_HASH_STRING</references>
+        <references refid="group__DBusHashTable_1ggab0ab9767ffa5b6720a13b3d741630852a477caf35cc3676d6412c9b57f1d0f6c7" compoundref="dbus-hash_8h" startline="71">DBUS_HASH_UINTPTR</references>
+        <references refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" compoundref="dbus-memory_8c" startline="461" endline="516">dbus_malloc</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHashEntry_1aefd9bbdcbc7d15c906e2c289c8d2e894" compoundref="dbus-hash_8c" startline="149">DBusHashEntry::key</references>
+        <references refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" compoundref="dbus-hash_8c" startline="182">n_entries</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusHashEntry_1ad792e9c81cc3a23859b2c60b3b00af3e" compoundref="dbus-hash_8c" startline="150">DBusHashEntry::value</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref> data structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to <ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,83 @@
+.TH "DBusMacros" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMacros \- Utility macros
+.PP
+\fBTRUE\fP, \fBFALSE\fP, \fBNULL\fP, and so on  
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_BEGIN_DECLS\fP"
+.br
+.RI "\fIMacro used prior to declaring functions in the D-Bus header files\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_END_DECLS\fP"
+.br
+.RI "\fIMacro used after declaring functions in the D-Bus header files\&. \fP"
+.ti -1c
+.RI "#define \fBTRUE\fP   1"
+.br
+.RI "\fIExpands to '1'\&. \fP"
+.ti -1c
+.RI "#define \fBFALSE\fP   0"
+.br
+.RI "\fIExpands to '0'\&. \fP"
+.ti -1c
+.RI "#define \fBNULL\fP   ((void*) 0)"
+.br
+.RI "\fIA null pointer, defined appropriately for C or C++\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_DEPRECATED\fP"
+.br
+.RI "\fITells the compiler to warn about a function or type if it's used\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_GNUC_EXTENSION\fP"
+.br
+.RI "\fITells gcc not to warn about extensions to the C standard in the following expression, even if compiling with -pedantic\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_EXPORT\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBTRUE\fP, \fBFALSE\fP, \fBNULL\fP, and so on 
+
+Utility macros\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _DBUS_GNUC_EXTENSION"
+
+.PP
+Tells gcc not to warn about extensions to the C standard in the following expression, even if compiling with -pedantic\&. Do not use this macro in your own code; please consider it to be internal to libdbus\&. 
+.SS "#define DBUS_BEGIN_DECLS"
+
+.PP
+Macro used prior to declaring functions in the D-Bus header files\&. Expands to 'extern 'C'' when using a C++ compiler, and expands to nothing when using a C compiler\&.
+.PP
+Please don't use this in your own code, consider it D-Bus internal\&. 
+.SS "#define DBUS_DEPRECATED"
+
+.PP
+Tells the compiler to warn about a function or type if it's used\&. Code marked in this way should also be enclosed in 
+.PP
+.nf
+1 #ifndef DBUS_DISABLE_DEPRECATED
+2  deprecated stuff here
+3 #endif
+
+.fi
+.PP
+.PP
+Please don't use this in your own code, consider it D-Bus internal\&. 
+.SS "#define DBUS_END_DECLS"
+
+.PP
+Macro used after declaring functions in the D-Bus header files\&. Expands to '}' when using a C++ compiler, and expands to nothing when using a C compiler\&.
+.PP
+Please don't use this in your own code, consider it D-Bus internal\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

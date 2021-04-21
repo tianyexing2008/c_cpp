@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusAuthServer" kind="struct" language="C++" prot="public">
+    <compoundname>DBusAuthServer</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusAuthServer_1ab43e81116262d4dde5e6b923120ac3a0" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref></type>
+        <definition>DBusAuth DBusAuthServer::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <briefdescription>
+<para>Parent class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="214" column="1" bodyfile="dbus/dbus-auth.c" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthServer_1ac73a6f0760eca6e1b7204b3c8e9c6127" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusAuthServer::failures</definition>
+        <argsstring></argsstring>
+        <name>failures</name>
+        <briefdescription>
+<para>Number of times client has been rejected. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="216" column="1" bodyfile="dbus/dbus-auth.c" bodystart="216" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" compoundref="dbus-auth_8c" startline="2247" endline="2283">_dbus_auth_server_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthServer_1a0527732b2f979011cfeb501c8347fda0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusAuthServer::max_failures</definition>
+        <argsstring></argsstring>
+        <name>max_failures</name>
+        <briefdescription>
+<para>Number of times we reject before disconnect. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="217" column="1" bodyfile="dbus/dbus-auth.c" bodystart="217" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" compoundref="dbus-auth_8c" startline="2247" endline="2283">_dbus_auth_server_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthServer_1a4e5f1bdf9bf827a0d6d370bbad73af1c" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusAuthServer::guid</definition>
+        <argsstring></argsstring>
+        <name>guid</name>
+        <briefdescription>
+<para>Our globally unique ID in hex encoding. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="219" column="1" bodyfile="dbus/dbus-auth.c" bodystart="219" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" compoundref="dbus-auth_8c" startline="2247" endline="2283">_dbus_auth_server_new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&quot;Subclass&quot; of <ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> for server side. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="76">
+        <label>DBusAuthServer</label>
+        <link refid="structDBusAuthServer"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>guid</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="78" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="80">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="78" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="82">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="81" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="77">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="78">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="79" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="81" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="82" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-auth.c" line="213" column="1" bodyfile="dbus/dbus-auth.c" bodystart="212" bodyend="221"/>
+    <listofallmembers>
+      <member refid="structDBusAuthServer_1ab43e81116262d4dde5e6b923120ac3a0" prot="public" virt="non-virtual"><scope>DBusAuthServer</scope><name>base</name></member>
+      <member refid="structDBusAuthServer_1ac73a6f0760eca6e1b7204b3c8e9c6127" prot="public" virt="non-virtual"><scope>DBusAuthServer</scope><name>failures</name></member>
+      <member refid="structDBusAuthServer_1a4e5f1bdf9bf827a0d6d370bbad73af1c" prot="public" virt="non-virtual"><scope>DBusAuthServer</scope><name>guid</name></member>
+      <member refid="structDBusAuthServer_1a0527732b2f979011cfeb501c8347fda0" prot="public" virt="non-virtual"><scope>DBusAuthServer</scope><name>max_failures</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

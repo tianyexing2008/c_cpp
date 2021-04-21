@@ -1,0 +1,1459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-sysdeps-unix_8h" kind="file" language="C++">
+    <compoundname>dbus-sysdeps-unix.h</compoundname>
+    <includes refid="dbus-sysdeps_8h" local="no">dbus/dbus-sysdeps.h</includes>
+    <includedby refid="dbus-file-unix_8c" local="yes">dbus-file-unix.c</includedby>
+    <includedby refid="dbus-pipe-unix_8c" local="yes">dbus-pipe-unix.c</includedby>
+    <includedby refid="dbus-server-unix_8c" local="yes">dbus-server-unix.c</includedby>
+    <includedby refid="dbus-spawn_8c" local="yes">dbus-spawn.c</includedby>
+    <includedby refid="dbus-sysdeps-unix_8c" local="yes">dbus-sysdeps-unix.c</includedby>
+    <includedby refid="dbus-userdb_8h" local="no">dbus-userdb.h</includedby>
+    <includedby refid="dbus-sysdeps-util-unix_8c" local="yes">dbus-sysdeps-util-unix.c</includedby>
+    <includedby refid="dbus-transport-unix_8c" local="yes">dbus-transport-unix.c</includedby>
+    <incdepgraph>
+      <node id="3782">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3778">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3774">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3771">
+        <label>stdint.h</label>
+      </node>
+      <node id="3784">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3769">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3770" relation="include">
+        </childnode>
+        <childnode refid="3771" relation="include">
+        </childnode>
+        <childnode refid="3772" relation="include">
+        </childnode>
+        <childnode refid="3773" relation="include">
+        </childnode>
+        <childnode refid="3779" relation="include">
+        </childnode>
+        <childnode refid="3780" relation="include">
+        </childnode>
+        <childnode refid="3783" relation="include">
+        </childnode>
+        <childnode refid="3782" relation="include">
+        </childnode>
+        <childnode refid="3784" relation="include">
+        </childnode>
+      </node>
+      <node id="3776">
+        <label>stddef.h</label>
+      </node>
+      <node id="3780">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3774" relation="include">
+        </childnode>
+        <childnode refid="3775" relation="include">
+        </childnode>
+        <childnode refid="3781" relation="include">
+        </childnode>
+        <childnode refid="3782" relation="include">
+        </childnode>
+      </node>
+      <node id="3768">
+        <label>dbus-sysdeps-unix.h</label>
+        <link refid="dbus-sysdeps-unix.h"/>
+        <childnode refid="3769" relation="include">
+        </childnode>
+      </node>
+      <node id="3777">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3774" relation="include">
+        </childnode>
+      </node>
+      <node id="3783">
+        <label>string.h</label>
+      </node>
+      <node id="3770">
+        <label>config.h</label>
+      </node>
+      <node id="3779">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3780" relation="include">
+        </childnode>
+        <childnode refid="3773" relation="include">
+        </childnode>
+      </node>
+      <node id="3773">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3774" relation="include">
+        </childnode>
+        <childnode refid="3775" relation="include">
+        </childnode>
+        <childnode refid="3778" relation="include">
+        </childnode>
+      </node>
+      <node id="3775">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3776" relation="include">
+        </childnode>
+        <childnode refid="3777" relation="include">
+        </childnode>
+      </node>
+      <node id="3772">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3781">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3774" relation="include">
+        </childnode>
+        <childnode refid="3776" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3792">
+        <label>dbus-sysdeps-util-unix.c</label>
+        <link refid="dbus-sysdeps-util-unix_8c_source"/>
+      </node>
+      <node id="3788">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="3790">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+      <node id="3785">
+        <label>dbus-sysdeps-unix.h</label>
+        <link refid="dbus-sysdeps-unix.h"/>
+        <childnode refid="3786" relation="include">
+        </childnode>
+        <childnode refid="3787" relation="include">
+        </childnode>
+        <childnode refid="3788" relation="include">
+        </childnode>
+        <childnode refid="3789" relation="include">
+        </childnode>
+        <childnode refid="3790" relation="include">
+        </childnode>
+        <childnode refid="3791" relation="include">
+        </childnode>
+        <childnode refid="3792" relation="include">
+        </childnode>
+        <childnode refid="3795" relation="include">
+        </childnode>
+      </node>
+      <node id="3789">
+        <label>dbus-spawn.c</label>
+        <link refid="dbus-spawn_8c_source"/>
+      </node>
+      <node id="3793">
+        <label>dbus-userdb-util.c</label>
+        <link refid="dbus-userdb-util_8c_source"/>
+      </node>
+      <node id="3795">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="3786">
+        <label>dbus-file-unix.c</label>
+        <link refid="dbus-file-unix_8c_source"/>
+      </node>
+      <node id="3794">
+        <label>dbus-userdb.c</label>
+        <link refid="dbus-userdb_8c_source"/>
+      </node>
+      <node id="3791">
+        <label>dbus-userdb.h</label>
+        <link refid="dbus-userdb_8h_source"/>
+        <childnode refid="3790" relation="include">
+        </childnode>
+        <childnode refid="3792" relation="include">
+        </childnode>
+        <childnode refid="3793" relation="include">
+        </childnode>
+        <childnode refid="3794" relation="include">
+        </childnode>
+      </node>
+      <node id="3787">
+        <label>dbus-pipe-unix.c</label>
+        <link refid="dbus-pipe-unix_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusUserInfo" prot="public">DBusUserInfo</innerclass>
+    <innerclass refid="structDBusGroupInfo" prot="public">DBusGroupInfo</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusSysdepsUnix_1gad5b51b2ac2fa9bd8b35442cc242c6605" prot="public" static="no">
+        <type>struct <ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref></type>
+        <definition>typedef struct DBusUserInfo DBusUserInfo</definition>
+        <argsstring></argsstring>
+        <name>DBusUserInfo</name>
+        <briefdescription>
+<para>Information about a UNIX user. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="86" column="1" bodyfile="dbus/dbus-sysdeps-unix.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusSysdepsUnix_1ga4530e3a5663c77a98ccc208a1fe0ad14" prot="public" static="no">
+        <type>struct <ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref></type>
+        <definition>typedef struct DBusGroupInfo DBusGroupInfo</definition>
+        <argsstring></argsstring>
+        <name>DBusGroupInfo</name>
+        <briefdescription>
+<para>Information about a UNIX group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="86" column="1" bodyfile="dbus/dbus-sysdeps-unix.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_close</definition>
+        <argsstring>(int fd, DBusError *error)</argsstring>
+        <name>_dbus_close</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Closes a file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="44" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="3025" bodyend="3042"/>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1gaca61af8681a48862835ea8cfd263f5ab" compoundref="dbus-sysdeps-util-unix_8c" startline="85" endline="165">_dbus_become_daemon</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3551d425aba3d92e652b8809fdfe9339" compoundref="dbus-sysdeps-util-unix_8c" startline="1208" endline="1273">_dbus_command_for_pid</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaa3adf90f6e47d30eeacf0a27d1a09ee5" compoundref="dbus-sysdeps-unix_8c" startline="1262" endline="1268">_dbus_connect_tcp_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" compoundref="dbus-sysdeps-unix_8c" startline="833" endline="914">_dbus_connect_unix_socket</referencedby>
+        <referencedby refid="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" compoundref="dbus-file-unix_8c" startline="353" endline="388">_dbus_create_file_exclusively</referencedby>
+        <referencedby refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" compoundref="dbus-file-unix_8c" startline="55" endline="151">_dbus_file_get_contents</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae96a3f400324b065f78a865a86454d09" compoundref="dbus-sysdeps-unix_8c" startline="3175" endline="3239">_dbus_full_duplex_pipe</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gac9fd08af5e54c0e9b3db108b48a65778" compoundref="dbus-sysdeps-unix_8c" startline="2918" endline="2953">_dbus_generate_random_bytes</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" compoundref="dbus-sysdeps-unix_8c" startline="1162" endline="1246">_dbus_listen_systemd_sockets</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gafdae31b3b61299dbaaccfcb1205a6f30" compoundref="dbus-sysdeps-unix_8c" startline="1386" endline="1582">_dbus_listen_tcp_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga2cd48fe3d7aa14d0d3c7813cdddb3f74" compoundref="dbus-sysdeps-unix_8c" startline="1035" endline="1149">_dbus_listen_unix_socket</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-unix_8c" startline="164" endline="317">_dbus_string_save_to_file</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_dup</definition>
+        <argsstring>(int fd, DBusError *error)</argsstring>
+        <name>_dbus_dup</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Duplicates a file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Makes sure the fd returned is &gt;= 3 (i.e. avoids stdin/stdout/stderr). Sets O_CLOEXEC.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to duplicate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of error location. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>duplicated file descriptor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="46" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="3053" bodyend="3085"/>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusSysdepsUnix_1ga000b1d83b0188e2db82d766b6665bb83" compoundref="dbus-sysdeps-unix_8c" startline="3003" endline="3015">_dbus_fd_set_close_on_exec</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</referencedby>
+        <referencedby refid="group__DBusMessage_1ga41c23a05e552d0574d0444d4693d18ab" compoundref="dbus-message_8c" startline="2293" endline="2325">dbus_message_iter_get_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_read</definition>
+        <argsstring>(int fd, DBusString *buffer, int count)</argsstring>
+        <name>_dbus_read</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Thin wrapper around the read() system call that appends the data it reads to the <ref refid="structDBusString" kindref="compound">DBusString</ref> buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>It appends up to the given count, and returns the same value and same errno as read(). The only exception is that <ref refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" kindref="member">_dbus_read()</ref> handles EINTR for you. Also, <ref refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" kindref="member">_dbus_read()</ref> can return ENOMEM, even though regular UNIX read doesn&apos;t.</para><para>Unlike <ref refid="group__DBusSysdeps_1ga6fe72fa1c0484ac5594b08145ea19530" kindref="member">_dbus_read_socket()</ref>, <ref refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" kindref="member">_dbus_read()</ref> is not available on Windows.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to read from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer to append data to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the amount of data to read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes read or -1 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="49" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="628" bodyend="675"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusString_1ga7a73fb373398606e6e1d0a86c4587a3c" compoundref="dbus-string_8c" startline="490" endline="501">_dbus_string_get_data_len</references>
+        <references refid="group__DBusString_1ga8f13997d90ceed2f437706e6b7804d9b" compoundref="dbus-string_8c" startline="760" endline="771">_dbus_string_lengthen</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="group__DBusMarshal_1ga3926bb35edf78d114cf0c341fe3258e0" compoundref="dbus-marshal-basic_8c" startline="1360" endline="1388">_dbus_verbose_bytes_of_string</references>
+        <referencedby refid="group__DBusSysdeps_1ga3551d425aba3d92e652b8809fdfe9339" compoundref="dbus-sysdeps-util-unix_8c" startline="1208" endline="1273">_dbus_command_for_pid</referencedby>
+        <referencedby refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" compoundref="dbus-file-unix_8c" startline="55" endline="151">_dbus_file_get_contents</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gac9fd08af5e54c0e9b3db108b48a65778" compoundref="dbus-sysdeps-unix_8c" startline="2918" endline="2953">_dbus_generate_random_bytes</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3ecdae905f2d9e95fd35891b20f06532" compoundref="dbus-sysdeps-unix_8c" startline="3320" endline="3355">_dbus_get_tmpdir</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga6fe72fa1c0484ac5594b08145ea19530" compoundref="dbus-sysdeps-unix_8c" startline="220" endline="225">_dbus_read_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_write</definition>
+        <argsstring>(int fd, const DBusString *buffer, int start, int len)</argsstring>
+        <name>_dbus_write</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Thin wrapper around the write() system call that writes a part of a <ref refid="structDBusString" kindref="compound">DBusString</ref> and handles EINTR for you. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer to write data from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first byte in the buffer to write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of bytes to try to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes written or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="53" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="688" bodyend="711"/>
+        <references refid="group__DBusMarshal_1ga3926bb35edf78d114cf0c341fe3258e0" compoundref="dbus-marshal-basic_8c" startline="1360" endline="1388">_dbus_verbose_bytes_of_string</references>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-unix_8c" startline="164" endline="317">_dbus_string_save_to_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga346cadd9b0f7d0ae1cd19007b2e4c2de" compoundref="dbus-sysdeps-unix_8c" startline="238" endline="261">_dbus_write_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga506a183b1f6970d1bfca165ab3de4736" compoundref="dbus-sysdeps-unix_8c" startline="734" endline="799">_dbus_write_two</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga506a183b1f6970d1bfca165ab3de4736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_write_two</definition>
+        <argsstring>(int fd, const DBusString *buffer1, int start1, int len1, const DBusString *buffer2, int start2, int len2)</argsstring>
+        <name>_dbus_write_two</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len2</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" kindref="member">_dbus_write()</ref> but will use writev() if possible to write both buffers in sequence. </para>        </briefdescription>
+        <detaileddescription>
+<para>The return value is the number of bytes written in the first buffer, plus the number written in the second. If the first buffer is written successfully and an error occurs writing the second, the number of bytes in the first is returned (i.e. the error is ignored), on systems that don&apos;t have writev. Handles EINTR for you. The second buffer may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first byte to write in first buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of bytes to write from first buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>second buffer, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first byte to write in second buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of bytes to write in second buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>total bytes written from both buffers, or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="58" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="734" bodyend="799"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" compoundref="dbus-sysdeps-unix_8c" startline="688" endline="711">_dbus_write</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusSysdeps_1ga02da720105c2a2397b7c687c5ca81174" compoundref="dbus-sysdeps-unix_8c" startline="549" endline="603">_dbus_write_socket_two</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_connect_unix_socket</definition>
+        <argsstring>(const char *path, dbus_bool_t abstract, DBusError *error)</argsstring>
+        <name>_dbus_connect_unix_socket</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>abstract</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a socket and connects it to the UNIX domain socket at the given path. </para>        </briefdescription>
+        <detaileddescription>
+<para>The connection fd is returned, and is set up as nonblocking.</para><para>Uses abstract sockets instead of filesystem-linked sockets if requested (it&apos;s possible only on Linux; see &quot;man 7 unix&quot; on Linux). On non-Linux abstract socket usage always fails.</para><para>This will set FD_CLOEXEC for the socket returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to UNIX domain socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>abstract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to use abstract namespace </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>connection file descriptor or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="66" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="833" bodyend="914"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1gaec42589166158b1385d5f5439318cda2" compoundref="dbus-internals_8h" startline="179">_DBUS_ZERO</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga2cd48fe3d7aa14d0d3c7813cdddb3f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_listen_unix_socket</definition>
+        <argsstring>(const char *path, dbus_bool_t abstract, DBusError *error)</argsstring>
+        <name>_dbus_listen_unix_socket</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>abstract</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a socket and binds it to the given path, then listens on the socket. </para>        </briefdescription>
+        <detaileddescription>
+<para>The socket is set to be nonblocking.</para><para>Uses abstract sockets instead of filesystem-linked sockets if requested (it&apos;s possible only on Linux; see &quot;man 7 unix&quot; on Linux). On non-Linux abstract socket usage always fails.</para><para>This will set FD_CLOEXEC for the socket returned</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the socket name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>abstract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to use abstract namespace </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the listening file descriptor or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="69" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="1035" bodyend="1149"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusInternalsUtils_1gaec42589166158b1385d5f5439318cda2" compoundref="dbus-internals_8h" startline="179">_DBUS_ZERO</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerUnix_1ga21ce093bda6ce6c7f94d1d894b6b4358" compoundref="dbus-server-unix_8c" startline="237" endline="310">_dbus_server_new_for_domain_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_connect_exec</definition>
+        <argsstring>(const char *path, char *const argv[], DBusError *error)</argsstring>
+        <name>_dbus_connect_exec</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>char *const</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a UNIX domain socket and connects it to the specified process to execute. </para>        </briefdescription>
+        <detaileddescription>
+<para>This will set FD_CLOEXEC for the socket returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to the executable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the argument list for the process to execute. argv[0] typically is identical to the path of the executable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>connection file descriptor or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="73" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="929" bodyend="1015"/>
+        <references refid="group__DBusSysdepsUnix_1gae63f6bdc70a1dd5c9ba0a6a1be57e320" compoundref="dbus-sysdeps-unix_8c" startline="4057" endline="4115">_dbus_close_all</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusSysdepsUnix_1ga000b1d83b0188e2db82d766b6665bb83" compoundref="dbus-sysdeps-unix_8c" startline="3003" endline="3015">_dbus_fd_set_close_on_exec</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_listen_systemd_sockets</definition>
+        <argsstring>(int **fd, DBusError *error)</argsstring>
+        <name>_dbus_listen_systemd_sockets</name>
+        <param>
+          <type>int **</type>
+          <declname>fd</declname>
+          <defname>fds</defname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Acquires one or more sockets passed in from systemd. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sockets are set to be nonblocking.</para><para>This will set FD_CLOEXEC for the sockets returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptors </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of file descriptors </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="77" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="1162" bodyend="1246"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" compoundref="dbus-errors_8c" startline="243" endline="266">dbus_set_error_const</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga8ce0c309cd13c15fe215b7b72cbc3f48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_read_credentials</definition>
+        <argsstring>(int client_fd, DBusCredentials *credentials, DBusError *error)</argsstring>
+        <name>_dbus_read_credentials</name>
+        <param>
+          <type>int</type>
+          <declname>client_fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+          <declname>credentials</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gaed5d695b1c0b1f265ef3448c7de1b33a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_send_credentials</definition>
+        <argsstring>(int server_fd, DBusError *error)</argsstring>
+        <name>_dbus_send_credentials</name>
+        <param>
+          <type>int</type>
+          <declname>server_fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_lookup_launchd_socket</definition>
+        <argsstring>(DBusString *socket_path, const char *launchd_env_var, DBusError *error)</argsstring>
+        <name>_dbus_lookup_launchd_socket</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>socket_path</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>launchd_env_var</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>quries launchd for a specific env var which holds the socket path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>append the socket path to this <ref refid="structDBusString" kindref="compound">DBusString</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>launchd_env_var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the env var to look up </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="structDBusError" kindref="compound">DBusError</ref> to store the error in case of failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value of the env var </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="86" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="3731" bodyend="3779"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1ga6c14c6bf4dd98b3fe3a114e9f5630148" compoundref="dbus-sysdeps-unix_8c" startline="4127" endline="4170">_dbus_check_setuid</references>
+        <references refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga7af1cbfa905f26d972ab644d890548b8" compoundref="dbus-string_8c" startline="780" endline="789">_dbus_string_shorten</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" compoundref="dbus-errors_8c" startline="243" endline="266">dbus_set_error_const</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga95e9deb9dd2d76aa3a64fdac555d956d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_user_info_fill</definition>
+        <argsstring>(DBusUserInfo *info, const DBusString *username, DBusError *error)</argsstring>
+        <name>_dbus_user_info_fill</name>
+        <param>
+          <type><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Gets user info for the given username. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user info object to initialize </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the username </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="117" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="2397" bodyend="2403"/>
+        <references refid="group__DBusSysdeps_1ga3d2f3fb32bb759cabe362ca2de383f7d" compoundref="dbus-sysdeps_8h" startline="105">DBUS_UID_UNSET</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gafcc2fbcde2c72f499f04fa43d97dfcec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_user_info_fill_uid</definition>
+        <argsstring>(DBusUserInfo *info, dbus_uid_t uid, DBusError *error)</argsstring>
+        <name>_dbus_user_info_fill_uid</name>
+        <param>
+          <type><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Gets user info for the given user ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user info object to initialize </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the user ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="120" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="2414" bodyend="2420"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gaa40334f7b4f185a437a8bc6d6e0994a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_user_info_free</definition>
+        <argsstring>(DBusUserInfo *info)</argsstring>
+        <name>_dbus_user_info_free</name>
+        <param>
+          <type><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Frees the members of info (but not info itself) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the user info struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="123" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="76" bodyend="81"/>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusUserInfo_1a902af9e0fb7d37c14eefb7d2b016ab11" compoundref="dbus-sysdeps-unix_8h" startline="102">DBusUserInfo::group_ids</references>
+        <references refid="structDBusUserInfo_1a5235d4d021cd134e1130e1e8e912bc0c" compoundref="dbus-sysdeps-unix_8h" startline="105">DBusUserInfo::homedir</references>
+        <references refid="structDBusUserInfo_1ac6b57db1dc8315eee3f532f4e77912d1" compoundref="dbus-sysdeps-unix_8h" startline="104">DBusUserInfo::username</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaf725ba6f380a3b926650626eef714b67" compoundref="dbus-userdb_8c" startline="45" endline="52">_dbus_user_info_free_allocated</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga23814bdf1859c6aa52da1feab8f1aed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_group_info_fill</definition>
+        <argsstring>(DBusGroupInfo *info, const DBusString *groupname, DBusError *error)</argsstring>
+        <name>_dbus_group_info_fill</name>
+        <param>
+          <type><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>groupname</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the given <ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref> struct with information about the given group name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the group info struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>groupname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of group </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="125" column="1" bodyfile="dbus/dbus-sysdeps-util-unix.c" bodystart="1000" bodyend="1007"/>
+        <references refid="group__DBusSysdeps_1ga768a080926a119a6131083facc0bd42b" compoundref="dbus-sysdeps_8h" startline="107">DBUS_GID_UNSET</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gad235e373b223982b7d3aba8a2b602b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_group_info_fill_gid</definition>
+        <argsstring>(DBusGroupInfo *info, dbus_gid_t gid, DBusError *error)</argsstring>
+        <name>_dbus_group_info_fill_gid</name>
+        <param>
+          <type><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref></type>
+          <declname>gid</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the given <ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref> struct with information about the given group ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the group info struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>group ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="128" column="1" bodyfile="dbus/dbus-sysdeps-util-unix.c" bodystart="1019" bodyend="1024"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gac2d226476e6fff50bdfaace18b897fe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_group_info_free</definition>
+        <argsstring>(DBusGroupInfo *info)</argsstring>
+        <name>_dbus_group_info_free</name>
+        <param>
+          <type><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref> *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Frees the members of info (but not info itself). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the group info </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="131" column="1" bodyfile="dbus/dbus-userdb.c" bodystart="89" bodyend="92"/>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusGroupInfo_1af1a4b925663336f64c62cfcab40571c6" compoundref="dbus-sysdeps-unix_8h" startline="114">DBusGroupInfo::groupname</references>
+        <referencedby refid="group__DBusInternalsUtils_1gab9420d7a4a31329a00fd5709f8cf08ba" compoundref="dbus-userdb_8c" startline="61" endline="68">_dbus_group_info_free_allocated</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gae7701063932951bdd8a7df0dcacb3bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+        <definition>dbus_uid_t _dbus_getuid</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_getuid</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets our UID. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>process UID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="133" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="2480" bodyend="2483"/>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga50438942c6e9f4027ea555a09d758ca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+        <definition>dbus_uid_t _dbus_geteuid</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_geteuid</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets our effective UID. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>process effective UID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="134" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="2489" bodyend="2492"/>
+        <referencedby refid="group__DBusSysdeps_1ga095c54de3974c6d04c29ef86c6e06e35" compoundref="dbus-sysdeps-unix_8c" startline="2460" endline="2464">_dbus_append_user_from_current_process</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9d5493f8bd1c5577060c8c6dce44d09f" compoundref="dbus-sysdeps-unix_8c" startline="2430" endline="2446">_dbus_credentials_add_from_current_process</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga849177164bc5e73435104f57c631ed7e" compoundref="dbus-sysdeps-util-unix_8c" startline="1100" endline="1103">_dbus_unix_user_is_process_owner</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga5a1854d99394d4593522ff5f2ca380d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_parse_uid</definition>
+        <argsstring>(const DBusString *uid_str, dbus_uid_t *uid)</argsstring>
+        <name>_dbus_parse_uid</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>uid_str</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref> *</type>
+          <declname>uid</declname>
+        </param>
+        <briefdescription>
+<para>Gets a UID from a UID string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uid_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the UID in string form </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UID to fill in </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if successfully filled in UID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="136" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="2514" bodyend="2544"/>
+        <references refid="group__DBusString_1ga93e22894a5e2e0d65c179c7d36a8b1c8" compoundref="dbus-sysdeps_8c" startline="435" endline="459">_dbus_string_parse_int</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1gae63f6bdc70a1dd5c9ba0a6a1be57e320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_close_all</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_close_all</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Closes all file descriptors except the first three (i.e. </para>        </briefdescription>
+        <detaileddescription>
+<para>stdin, stdout, stderr). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="139" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="4057" bodyend="4115"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" compoundref="dbus-sysdeps-unix_8c" startline="929" endline="1015">_dbus_connect_exec</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3ecdae905f2d9e95fd35891b20f06532" compoundref="dbus-sysdeps-unix_8c" startline="3320" endline="3355">_dbus_get_tmpdir</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga974b137fa165ce2e0ace041b20883fe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_append_address_from_socket</definition>
+        <argsstring>(int fd, DBusString *address, DBusError *error)</argsstring>
+        <name>_dbus_append_address_from_socket</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Read the address from the socket and append it to the string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="141" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="4180" bodyend="4244"/>
+        <references refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1gab0078cf7e0e5bd784ec6d6e0cc3923a2" compoundref="dbus-string_8c" startline="1113" endline="1125">_dbus_string_append_printf</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdepsUnix_1ga000b1d83b0188e2db82d766b6665bb83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_fd_set_close_on_exec</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>_dbus_fd_set_close_on_exec</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+<para>Sets the file descriptor to be close on exec. </para>        </briefdescription>
+        <detaileddescription>
+<para>Should be called for all file descriptors in D-Bus code.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-unix.h" line="145" column="1" bodyfile="dbus/dbus-sysdeps-unix.c" bodystart="3003" bodyend="3015"/>
+        <referencedby refid="group__DBusSysdeps_1ga687f4393a365474ec16f02e40c418cce" compoundref="dbus-sysdeps-unix_8c" startline="2029" endline="2073">_dbus_accept</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" compoundref="dbus-sysdeps-unix_8c" startline="929" endline="1015">_dbus_connect_exec</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" compoundref="dbus-sysdeps-unix_8c" startline="3053" endline="3085">_dbus_dup</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae96a3f400324b065f78a865a86454d09" compoundref="dbus-sysdeps-unix_8c" startline="3175" endline="3239">_dbus_full_duplex_pipe</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga14aa692ac7e9aab777b9f565c4b8933b" compoundref="dbus-sysdeps-unix_8c" startline="276" endline="433">_dbus_read_socket_with_unix_fds</referencedby>
+        <referencedby refid="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" compoundref="dbus-server-launchd_8c" startline="66" endline="209">_dbus_server_new_for_launchd</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-sysdeps-unix.h<sp/>UNIX-specific<sp/>wrappers<sp/>around<sp/>system/libc<sp/>features<sp/>(internal<sp/>to<sp/>D-Bus<sp/>implementation)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003,<sp/>2006<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_SYSDEPS_UNIX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_SYSDEPS_UNIX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-sysdeps.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Don&apos;t<sp/>include<sp/>this<sp/>on<sp/>Windows&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" kindref="member">_dbus_close</ref><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" kindref="member">_dbus_dup</ref><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" kindref="member">_dbus_read</ref><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*buffer,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" kindref="member">_dbus_write</ref><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*buffer,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="group__DBusSysdepsUnix_1ga506a183b1f6970d1bfca165ab3de4736" kindref="member">_dbus_write_two</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*buffer1,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start1,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len1,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*buffer2,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start2,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len2);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" kindref="member">_dbus_connect_unix_socket</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*path,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">abstract</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1ga2cd48fe3d7aa14d0d3c7813cdddb3f74" kindref="member">_dbus_listen_unix_socket</ref><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*path,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">abstract</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" kindref="member">_dbus_connect_exec</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*path,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>argv[],</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" kindref="member">_dbus_listen_systemd_sockets</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**fd,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_read_credentials<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_fd,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref><sp/><sp/>*credentials,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_send_credentials<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server_fd,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" kindref="member">_dbus_lookup_launchd_socket</ref><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*socket_path,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*launchd_env_var,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="group__DBusSysdepsUnix_1gad5b51b2ac2fa9bd8b35442cc242c6605" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref>;</highlight></codeline>
+<codeline lineno="93" refid="group__DBusSysdepsUnix_1ga4530e3a5663c77a98ccc208a1fe0ad14" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="structDBusUserInfo" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><ref refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" kindref="member">uid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="structDBusUserInfo_1ac970de2fac9ea4ba91485e6c37c3bf93" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><ref refid="structDBusUserInfo_1ac970de2fac9ea4ba91485e6c37c3bf93" kindref="member">primary_gid</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="structDBusUserInfo_1a902af9e0fb7d37c14eefb7d2b016ab11" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/>*<ref refid="structDBusUserInfo_1a902af9e0fb7d37c14eefb7d2b016ab11" kindref="member">group_ids</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="structDBusUserInfo_1a21c07867fbffb1854a97aed265d87c89" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusUserInfo_1a21c07867fbffb1854a97aed265d87c89" kindref="member">n_group_ids</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="structDBusUserInfo_1ac6b57db1dc8315eee3f532f4e77912d1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusUserInfo_1ac6b57db1dc8315eee3f532f4e77912d1" kindref="member">username</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="structDBusUserInfo_1a5235d4d021cd134e1130e1e8e912bc0c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusUserInfo_1a5235d4d021cd134e1130e1e8e912bc0c" kindref="member">homedir</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="structDBusGroupInfo" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113" refid="structDBusGroupInfo_1a583e8d6d421fa85fb1d43789efae4b75" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><ref refid="structDBusGroupInfo_1a583e8d6d421fa85fb1d43789efae4b75" kindref="member">gid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114" refid="structDBusGroupInfo_1af1a4b925663336f64c62cfcab40571c6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusGroupInfo_1af1a4b925663336f64c62cfcab40571c6" kindref="member">groupname</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1ga95e9deb9dd2d76aa3a64fdac555d956d" kindref="member">_dbus_user_info_fill</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/><sp/><sp/><sp/>*info,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*<ref refid="structDBusUserInfo_1ac6b57db1dc8315eee3f532f4e77912d1" kindref="member">username</ref>,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1gafcc2fbcde2c72f499f04fa43d97dfcec" kindref="member">_dbus_user_info_fill_uid</ref><sp/>(<ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/><sp/><sp/><sp/>*info,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" kindref="member">uid</ref>,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdepsUnix_1gaa40334f7b4f185a437a8bc6d6e0994a1" kindref="member">_dbus_user_info_free</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusUserInfo" kindref="compound">DBusUserInfo</ref><sp/><sp/><sp/><sp/><sp/>*info);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1ga23814bdf1859c6aa52da1feab8f1aed4" kindref="member">_dbus_group_info_fill</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/><sp/><sp/><sp/>*info,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*groupname,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1gad235e373b223982b7d3aba8a2b602b58" kindref="member">_dbus_group_info_fill_gid</ref><sp/>(<ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/><sp/><sp/><sp/>*info,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga2f5c2e418b81ec2a86594f56ec6d7627" kindref="member">dbus_gid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gid,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdepsUnix_1gac2d226476e6fff50bdfaace18b897fe9" kindref="member">_dbus_group_info_free</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusGroupInfo" kindref="compound">DBusGroupInfo</ref><sp/><sp/><sp/><sp/>*info);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdepsUnix_1gae7701063932951bdd8a7df0dcacb3bab" kindref="member">_dbus_getuid</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdepsUnix_1ga50438942c6e9f4027ea555a09d758ca3" kindref="member">_dbus_geteuid</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1ga5a1854d99394d4593522ff5f2ca380d9" kindref="member">_dbus_parse_uid</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*uid_str,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusUserInfo_1a2d9c74d29f371e391a79b81162050b2e" kindref="member">uid</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1gae63f6bdc70a1dd5c9ba0a6a1be57e320" kindref="member">_dbus_close_all</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusSysdepsUnix_1ga974b137fa165ce2e0ace041b20883fe6" kindref="member">_dbus_append_address_from_socket</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*address,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__DBusSysdepsUnix_1ga000b1d83b0188e2db82d766b6665bb83" kindref="member">_dbus_fd_set_close_on_exec</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_SYSDEPS_UNIX_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-sysdeps-unix.h"/>
+  </compounddef>
+</doxygen>

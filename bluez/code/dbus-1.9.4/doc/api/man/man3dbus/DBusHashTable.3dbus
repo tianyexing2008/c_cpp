@@ -1,0 +1,98 @@
+.TH "DBusHashTable" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusHashTable \- Internals of \fBDBusHashTable\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "\fBDBusHashEntry\fP ** \fBbuckets\fP"
+.br
+.RI "\fIPointer to bucket array\&. \fP"
+.ti -1c
+.RI "\fBDBusHashEntry\fP * \fBstatic_buckets\fP [\fBDBUS_SMALL_HASH_TABLE\fP]"
+.br
+.RI "\fIBucket array used for small tables (to avoid mallocs and frees)\&. \fP"
+.ti -1c
+.RI "int \fBn_buckets\fP"
+.br
+.RI "\fITotal number of buckets allocated at **buckets\&. \fP"
+.ti -1c
+.RI "int \fBn_entries\fP"
+.br
+.RI "\fITotal number of entries present in table\&. \fP"
+.ti -1c
+.RI "int \fBhi_rebuild_size\fP"
+.br
+.RI "\fIEnlarge table when n_entries gets to be this large\&. \fP"
+.ti -1c
+.RI "int \fBlo_rebuild_size\fP"
+.br
+.RI "\fIShrink table when n_entries gets below this\&. \fP"
+.ti -1c
+.RI "int \fBdown_shift\fP"
+.br
+.RI "\fIShift count used in hashing function\&. \fP"
+.ti -1c
+.RI "int \fBmask\fP"
+.br
+.RI "\fIMask value used in hashing function\&. \fP"
+.ti -1c
+.RI "\fBDBusHashType\fP \fBkey_type\fP"
+.br
+.RI "\fIType of keys used in this table\&. \fP"
+.ti -1c
+.RI "\fBDBusFindEntryFunction\fP \fBfind_function\fP"
+.br
+.RI "\fIFunction for finding entries\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_key_function\fP"
+.br
+.RI "\fIFunction to free keys\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_value_function\fP"
+.br
+.RI "\fIFunction to free values\&. \fP"
+.ti -1c
+.RI "\fBDBusMemPool\fP * \fBentry_pool\fP"
+.br
+.RI "\fIMemory pool for hash entries\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusHashTable\fP\&. 
+
+Hash table internals\&. Hash tables are opaque objects, they must be used via accessor functions\&. 
+.PP
+Definition at line 168 of file dbus\-hash\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusHashEntry\fP** DBusHashTable::buckets"
+
+.PP
+Pointer to bucket array\&. Each element points to first entry in bucket's hash chain, or \fBNULL\fP\&. 
+.PP
+Definition at line 171 of file dbus\-hash\&.c\&.
+.PP
+Referenced by _dbus_hash_iter_lookup(), _dbus_hash_iter_next(), _dbus_hash_table_new(), and _dbus_hash_table_unref()\&.
+.SS "int DBusHashTable::down_shift"
+
+.PP
+Shift count used in hashing function\&. Designed to use high- order bits of randomized keys\&. 
+.PP
+Definition at line 191 of file dbus\-hash\&.c\&.
+.PP
+Referenced by _dbus_hash_table_new()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

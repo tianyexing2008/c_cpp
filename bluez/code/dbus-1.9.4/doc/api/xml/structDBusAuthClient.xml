@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusAuthClient" kind="struct" language="C++" prot="public">
+    <compoundname>DBusAuthClient</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusAuthClient_1a7aaf0c9832007ece465ac5289e5d7a8b" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref></type>
+        <definition>DBusAuth DBusAuthClient::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <briefdescription>
+<para>Parent class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="201" column="1" bodyfile="dbus/dbus-auth.c" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthClient_1a646ae1e39e617ec3e3dd097fc18372eb" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusAuthClient::mechs_to_try</definition>
+        <argsstring></argsstring>
+        <name>mechs_to_try</name>
+        <briefdescription>
+<para>Mechanisms we got from the server that we&apos;re going to try using. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="203" column="1" bodyfile="dbus/dbus-auth.c" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthClient_1a91607b9958e0eaf7da388d9b9a347f08" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusAuthClient::guid_from_server</definition>
+        <argsstring></argsstring>
+        <name>guid_from_server</name>
+        <briefdescription>
+<para>GUID received from server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="205" column="1" bodyfile="dbus/dbus-auth.c" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&quot;Subclass&quot; of <ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> for client side </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="60">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="63">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="57" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>DBusAuthClient</label>
+        <link refid="structDBusAuthClient"/>
+        <childnode refid="57" relation="usage">
+          <edgelabel>guid_from_server</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>mechs_to_try</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="58" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="64">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="57" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="59">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="60" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-auth.c" line="200" column="1" bodyfile="dbus/dbus-auth.c" bodystart="199" bodyend="207"/>
+    <listofallmembers>
+      <member refid="structDBusAuthClient_1a7aaf0c9832007ece465ac5289e5d7a8b" prot="public" virt="non-virtual"><scope>DBusAuthClient</scope><name>base</name></member>
+      <member refid="structDBusAuthClient_1a91607b9958e0eaf7da388d9b9a347f08" prot="public" virt="non-virtual"><scope>DBusAuthClient</scope><name>guid_from_server</name></member>
+      <member refid="structDBusAuthClient_1a646ae1e39e617ec3e3dd097fc18372eb" prot="public" virt="non-virtual"><scope>DBusAuthClient</scope><name>mechs_to_try</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

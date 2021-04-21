@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusSHAInternals" kind="group">
+    <compoundname>DBusSHAInternals</compoundname>
+    <title>SHA implementation details</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSHAInternals_1gacb3a3d07eeea54e39b19523e15ba7266" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SHATransform</definition>
+        <argsstring>(dbus_uint32_t *digest, dbus_uint32_t *data)</argsstring>
+        <name>SHATransform</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>digest</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="171" column="1" bodyfile="dbus/dbus-sha.c" bodystart="171" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHAInternals_1ga8fe288fb1beb26a03538964b38742d28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void swap_words</definition>
+        <argsstring>(dbus_uint32_t *buffer, int byte_count)</argsstring>
+        <name>swap_words</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="284" column="1" bodyfile="dbus/dbus-sha.c" bodystart="284" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHAInternals_1ga1c6b49de5f4ffdbd888e434f28574d6f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sha_init</definition>
+        <argsstring>(DBusSHAContext *context)</argsstring>
+        <name>sha_init</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="297" column="1" bodyfile="dbus/dbus-sha.c" bodystart="297" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHAInternals_1ga71cc72ead1294a0f566450f79fcb49c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sha_append</definition>
+        <argsstring>(DBusSHAContext *context, const unsigned char *buffer, unsigned int count)</argsstring>
+        <name>sha_append</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="311" column="1" bodyfile="dbus/dbus-sha.c" bodystart="311" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHAInternals_1ga733ead33bfe89ca14cc26bb4733685fa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sha_finish</definition>
+        <argsstring>(DBusSHAContext *context, unsigned char digest[20])</argsstring>
+        <name>sha_finish</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>digest</declname>
+          <array>[20]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="364" column="1" bodyfile="dbus/dbus-sha.c" bodystart="364" bodyend="404"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of SHA implementation. </para>    </briefdescription>
+    <detaileddescription>
+<para>The implementation of SHA-1 (see <ulink url="http://www.itl.nist.gov/fipspubs/fip180-1.htm">http://www.itl.nist.gov/fipspubs/fip180-1.htm</ulink>). This SHA implementation was written by A.M. Kuchling </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

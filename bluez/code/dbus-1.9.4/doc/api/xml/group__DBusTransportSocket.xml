@@ -1,0 +1,621 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusTransportSocket" kind="group">
+    <compoundname>DBusTransportSocket</compoundname>
+    <title>DBusTransport implementations for sockets</title>
+    <innerclass refid="structDBusTransportSocket" prot="public">DBusTransportSocket</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusTransportSocket_1ga762346435786136b694d19a9bc5bce37" prot="public" static="no">
+        <type>struct <ref refid="structDBusTransportSocket" kindref="compound">DBusTransportSocket</ref></type>
+        <definition>typedef struct DBusTransportSocket DBusTransportSocket</definition>
+        <argsstring></argsstring>
+        <name>DBusTransportSocket</name>
+        <briefdescription>
+<para>Opaque object representing a socket file descriptor transport. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="119" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusTransportSocket_1ga330cb42090f260f149eb6bebe90d08eb" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusTransportVTable" kindref="compound">DBusTransportVTable</ref></type>
+        <definition>const DBusTransportVTable socket_vtable</definition>
+        <argsstring></argsstring>
+        <name>socket_vtable</name>
+        <initializer>= {
+  socket_finalize,
+  socket_handle_watch,
+  socket_disconnect,
+  socket_connection_set,
+  socket_do_iteration,
+  socket_live_messages_changed,
+  socket_get_socket_fd
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1251" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1251" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga50e34bcc956b0355521588ad974d0436" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void free_watches</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>free_watches</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="72" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="72" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gad2f6305a56deacea83ec1d6540162a9b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_finalize</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>socket_finalize</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="102" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="102" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga97ff9154510f6da93b4d5dda2ab946f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void check_write_watch</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>check_write_watch</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="122" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="122" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga4b0522dbdf77d837109cf3d7e3854669" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void check_read_watch</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>check_read_watch</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="175" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="175" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gaadab16bd2eaf9d23f52b58fd963f3568" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void do_io_error</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>do_io_error</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="235" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="235" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gaa246d34ed446e6d8d24851075ffd3531" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t read_data_into_auth</definition>
+        <argsstring>(DBusTransport *transport, dbus_bool_t *oom)</argsstring>
+        <name>read_data_into_auth</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref> *</type>
+          <declname>oom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="244" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="244" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga215ea4894f5218eba2a0e40198775872" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t write_data_from_auth</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>write_data_from_auth</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="300" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="300" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga1ca85472e1fde2c43d1c14dce28f0096" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t exchange_credentials</definition>
+        <argsstring>(DBusTransport *transport, dbus_bool_t do_reading, dbus_bool_t do_writing)</argsstring>
+        <name>exchange_credentials</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>do_reading</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>do_writing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="340" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="340" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga986f4e549ac9a6832592044491f1de0b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t do_authentication</definition>
+        <argsstring>(DBusTransport *transport, dbus_bool_t do_reading, dbus_bool_t do_writing, dbus_bool_t *auth_completed)</argsstring>
+        <name>do_authentication</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>do_reading</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>do_writing</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref> *</type>
+          <declname>auth_completed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="400" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="400" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gabca5f046620a313b6254d9ccd8d9fa15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t do_writing</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>do_writing</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="497" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="497" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga303ebcd467ec7b37c5fd31fb820cc7be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t do_reading</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>do_reading</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="735" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="735" bodyend="908"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga1c81aeff8d3bda23fbbf9ebc35d57bc3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t unix_error_with_read_to_come</definition>
+        <argsstring>(DBusTransport *itransport, DBusWatch *watch, unsigned int flags)</argsstring>
+        <name>unix_error_with_read_to_come</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>itransport</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="911" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="911" bodyend="927"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga6bf99ef22f42e3f35529c560bf3d64e9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t socket_handle_watch</definition>
+        <argsstring>(DBusTransport *transport, DBusWatch *watch, unsigned int flags)</argsstring>
+        <name>socket_handle_watch</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="930" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="930" bodyend="1016"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gaad956043efa82e9ff36bde212f9d3fd1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_disconnect</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>socket_disconnect</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1019" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1019" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga415d668f02078ffeea7d3e2fb01b020f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t socket_connection_set</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>socket_connection_set</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1032" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1032" bodyend="1060"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gad305035768098418ed5e446c6996d0e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_do_iteration</definition>
+        <argsstring>(DBusTransport *transport, unsigned int flags, int timeout_milliseconds)</argsstring>
+        <name>socket_do_iteration</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000064"><xreftitle>Todo</xreftitle><xrefdescription><para>We need to have a way to wake up the select sleep if a new iteration request comes in with a flag (read/write) that we&apos;re not currently serving.</para></xrefdescription></xrefsect>Otherwise a call that just reads could block a write call forever (if there are no incoming messages). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1070" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1070" bodyend="1230"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gaa0280e12fd23c923d8c29a8fd570e01a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_live_messages_changed</definition>
+        <argsstring>(DBusTransport *transport)</argsstring>
+        <name>socket_live_messages_changed</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1233" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1233" bodyend="1237"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga44ba5a520701cfdf50741828dae9e40a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t socket_get_socket_fd</definition>
+        <argsstring>(DBusTransport *transport, int *fd_p)</argsstring>
+        <name>socket_get_socket_fd</name>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+          <declname>transport</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>fd_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1241" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1241" bodyend="1249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+        <definition>DBusTransport* _dbus_transport_new_for_socket</definition>
+        <argsstring>(int fd, const DBusString *server_guid, const DBusString *address)</argsstring>
+        <name>_dbus_transport_new_for_socket</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>server_guid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new transport for the given socket file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The file descriptor must be nonblocking (use _dbus_set_fd_nonblocking() to make it so). This function is shared by various transports that boil down to a full duplex file descriptor.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_guid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>non-<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if this transport is on the server side of a connection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the transport&apos;s address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new transport, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1273" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1273" bodyend="1334"/>
+        <references refid="group__DBusAuth_1ga831cbd78b6c7f382840e4094f02efdb5" compoundref="dbus-auth_8c" startline="2789" endline="2792">_dbus_auth_set_unix_fd_possible</references>
+        <references refid="group__DBusSysdeps_1ga06183453a52a6919619e85dc1812c9b7" compoundref="dbus-sysdeps-unix_8c" startline="4028" endline="4050">_dbus_socket_can_pass_unix_fd</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</references>
+        <references refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</references>
+        <references refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</references>
+        <references refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</references>
+        <references refid="structDBusTransport_1acf71c91312f325be13ce6c09298b1eb8" compoundref="dbus-transport-protected_8h" startline="90">DBusTransport::auth</references>
+        <references refid="structDBusTransportSocket_1ab820e51211635434c40ffa812d8013e5" compoundref="dbus-transport-socket_8c" startline="51">base</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" compoundref="dbus-connection_8h" startline="60">DBUS_WATCH_READABLE</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a62ddca29b06bfbbc08bb7f3dfd3d307f" compoundref="dbus-connection_8h" startline="61">DBUS_WATCH_WRITABLE</references>
+        <references refid="structDBusTransportSocket_1a840f1a09f5256b5c737e3e45beb47966" compoundref="dbus-transport-socket_8c" startline="66">encoded_incoming</references>
+        <references refid="structDBusTransportSocket_1a88925e2ff68a30457c0fee211812c5d6" compoundref="dbus-transport-socket_8c" startline="63">encoded_outgoing</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusTransportSocket_1ad3f866a158a1c00c2773696eef3bbe5f" compoundref="dbus-transport-socket_8c" startline="52">fd</references>
+        <references refid="structDBusTransportSocket_1ac70dd065b0e2805198432d93f5f4f5dc" compoundref="dbus-transport-socket_8c" startline="56">max_bytes_read_per_iteration</references>
+        <references refid="structDBusTransportSocket_1a5e8631812d429f8567974836627ab3de" compoundref="dbus-transport-socket_8c" startline="57">max_bytes_written_per_iteration</references>
+        <references refid="structDBusTransportSocket_1a5304711c08da21ef109e3c736a8bcfe7" compoundref="dbus-transport-socket_8c" startline="59">message_bytes_written</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTransportSocket_1aba60b33603091a87f7cbd2a8e76cd8f6" compoundref="dbus-transport-socket_8c" startline="53">read_watch</references>
+        <references refid="structDBusTransportSocket_1a0134735f074583b16a91d7f54bfcccb9" compoundref="dbus-transport-socket_8c" startline="54">write_watch</references>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" compoundref="dbus-transport-socket_8c" startline="1348" endline="1416">_dbus_transport_new_for_tcp_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+        <definition>DBusTransport* _dbus_transport_new_for_tcp_socket</definition>
+        <argsstring>(const char *host, const char *port, const char *family, const char *noncefile, DBusError *error)</argsstring>
+        <name>_dbus_transport_new_for_tcp_socket</name>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>noncefile</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new transport for the given hostname and port. </para>        </briefdescription>
+        <detaileddescription>
+<para>If host is NULL, it will default to localhost</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the host to connect to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the port to connect to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>family</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address family to connect to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>noncefile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to nonce file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store reason for failure. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new transport, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1348" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1348" bodyend="1416"/>
+        <references refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="structDBusTransportSocket_1ad3f866a158a1c00c2773696eef3bbe5f" compoundref="dbus-transport-socket_8c" startline="52">fd</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransportSocket_1ga1bb28d9c6b0aa2b7efdf63f97116bb85" compoundref="dbus-transport-socket_8c" startline="1427" endline="1476">_dbus_transport_open_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportSocket_1ga1bb28d9c6b0aa2b7efdf63f97116bb85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusTransportOpenResult</type>
+        <definition>DBusTransportOpenResult _dbus_transport_open_socket</definition>
+        <argsstring>(DBusAddressEntry *entry, DBusTransport **transport_p, DBusError *error)</argsstring>
+        <name>_dbus_transport_open_socket</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> **</type>
+          <declname>transport_p</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Opens a TCP socket transport. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address entry to try opening as a tcp transport. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transport_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for the opened transport </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result of the attempt </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="1427" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="1427" bodyend="1476"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusAddressInternals_1ga5b6409826263c7d62570c56889f7ddb2" compoundref="dbus-address_8c" startline="65" endline="78">_dbus_set_bad_address</references>
+        <references refid="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" compoundref="dbus-transport-socket_8c" startline="1348" endline="1416">_dbus_transport_new_for_tcp_socket</references>
+        <references refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> on sockets. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

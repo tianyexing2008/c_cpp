@@ -1,0 +1,170 @@
+.TH "DBusMisc" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMisc \- Miscellaneous
+.PP
+Miscellaneous API that doesn't cleanly fit anywhere else\&.  
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_MAJOR_VERSION\fP   1"
+.br
+.RI "\fIThe COMPILE TIME major version of libdbus, that is, the 'X' in 'X\&.Y\&.Z', as an integer literal\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MINOR_VERSION\fP   9"
+.br
+.RI "\fIThe COMPILE TIME minor version of libdbus, that is, the 'Y' in 'X\&.Y\&.Z', as an integer literal\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MICRO_VERSION\fP   4"
+.br
+.RI "\fIThe COMPILE TIME micro version of libdbus, that is, the 'Z' in 'X\&.Y\&.Z', as an integer literal\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_VERSION\fP   ((1 << 16) | (9 << 8) | (4))"
+.br
+.RI "\fIThe COMPILE TIME version of libdbus, as a single integer that has 0 in the most significant byte, the major version in the next most significant byte, the minor version in the third most significant, and the micro version in the least significant byte\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_VERSION_STRING\fP   '1\&.9\&.4'"
+.br
+.RI "\fIThe COMPILE TIME version of libdbus, as a string 'X\&.Y\&.Z'\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBdbus_get_local_machine_id\fP (void)"
+.br
+.RI "\fIObtains the machine UUID of the machine this process is running on\&. \fP"
+.ti -1c
+.RI "void \fBdbus_get_version\fP (int *major_version_p, int *minor_version_p, int *micro_version_p)"
+.br
+.RI "\fIGets the DYNAMICALLY LINKED version of libdbus\&. \fP"
+.ti -1c
+.RI "DBUS_EXPORT \fBdbus_bool_t\fP \fBdbus_setenv\fP (const char *variable, const char *value)"
+.br
+.RI "\fIWrapper for setenv()\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Miscellaneous API that doesn't cleanly fit anywhere else\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_MAJOR_VERSION   1"
+
+.PP
+The COMPILE TIME major version of libdbus, that is, the 'X' in 'X\&.Y\&.Z', as an integer literal\&. Consider carefully whether to use this or the runtime version from \fBdbus_get_version()\fP\&. 
+.PP
+Referenced by dbus_get_version()\&.
+.SS "#define DBUS_MICRO_VERSION   4"
+
+.PP
+The COMPILE TIME micro version of libdbus, that is, the 'Z' in 'X\&.Y\&.Z', as an integer literal\&. Consider carefully whether to use this or the runtime version from \fBdbus_get_version()\fP\&. 
+.PP
+Referenced by dbus_get_version()\&.
+.SS "#define DBUS_MINOR_VERSION   9"
+
+.PP
+The COMPILE TIME minor version of libdbus, that is, the 'Y' in 'X\&.Y\&.Z', as an integer literal\&. Consider carefully whether to use this or the runtime version from \fBdbus_get_version()\fP\&. 
+.PP
+Referenced by dbus_get_version()\&.
+.SS "#define DBUS_VERSION   ((1 << 16) | (9 << 8) | (4))"
+
+.PP
+The COMPILE TIME version of libdbus, as a single integer that has 0 in the most significant byte, the major version in the next most significant byte, the minor version in the third most significant, and the micro version in the least significant byte\&. This means two DBUS_VERSION can be compared to see which is higher\&.
+.PP
+Consider carefully whether to use this or the runtime version from \fBdbus_get_version()\fP\&. 
+.PP
+Referenced by dbus_get_version()\&.
+.SS "#define DBUS_VERSION_STRING   '1\&.9\&.4'"
+
+.PP
+The COMPILE TIME version of libdbus, as a string 'X\&.Y\&.Z'\&. Consider carefully whether to use this or the runtime version from \fBdbus_get_version()\fP\&. 
+.PP
+Referenced by dbus_get_version()\&.
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT char * dbus_get_local_machine_id (void)"
+
+.PP
+Obtains the machine UUID of the machine this process is running on\&. The returned string must be freed with \fBdbus_free()\fP\&.
+.PP
+This UUID is guaranteed to remain the same until the next reboot (unless the sysadmin foolishly changes it and screws themselves)\&. It will usually remain the same across reboots also, but hardware configuration changes or rebuilding the machine could break that\&.
+.PP
+The idea is that two processes with the same machine ID should be able to use shared memory, UNIX domain sockets, process IDs, and other features of the OS that require both processes to be running on the same OS kernel instance\&.
+.PP
+The machine ID can also be used to create unique per-machine instances\&. For example, you could use it in bus names or X selection names\&.
+.PP
+The machine ID is preferred over the machine hostname, because the hostname is frequently set to 'localhost\&.localdomain' and may also change at runtime\&.
+.PP
+You can get the machine ID of a remote application by invoking the method GetMachineId from interface org\&.freedesktop\&.DBus\&.Peer\&.
+.PP
+If the remote application has the same machine ID as the one returned by this function, then the remote application is on the same machine as your application\&.
+.PP
+The UUID is not a UUID in the sense of RFC4122; the details are explained in the D-Bus specification\&.
+.PP
+\fBReturns:\fP
+.RS 4
+a 32-byte-long hex-encoded UUID string, or \fBNULL\fP if insufficient memory 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file dbus\-misc\&.c\&.
+.PP
+References _dbus_get_local_machine_uuid_encoded(), _dbus_string_free(), _dbus_string_init(), _dbus_string_steal_data(), and NULL\&.
+.SS "DBUS_EXPORT void dbus_get_version (int * major_version_p, int * minor_version_p, int * micro_version_p)"
+
+.PP
+Gets the DYNAMICALLY LINKED version of libdbus\&. Alternatively, there are macros \fBDBUS_MAJOR_VERSION\fP, \fBDBUS_MINOR_VERSION\fP, \fBDBUS_MICRO_VERSION\fP, and \fBDBUS_VERSION\fP which allow you to test the VERSION YOU ARE COMPILED AGAINST\&. In other words, you can get either the runtime or the compile-time version\&. Think carefully about which of these you want in a given case\&.
+.PP
+The libdbus full version number is 'MAJOR\&.MINOR\&.MICRO' where the MINOR changes if API is added, and the MICRO changes with each release of a MAJOR\&.MINOR series\&. The MINOR is an odd number for development releases and an even number for stable releases\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImajor_version_p\fP pointer to return the major version, or \fBNULL\fP 
+.br
+\fIminor_version_p\fP pointer to return the minor version, or \fBNULL\fP 
+.br
+\fImicro_version_p\fP pointer to return the micro version, or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 161 of file dbus\-misc\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_string_append_byte(), _dbus_string_append_int(), _dbus_string_equal_c_str(), _dbus_string_free(), _dbus_string_init(), DBUS_MAJOR_VERSION, DBUS_MICRO_VERSION, DBUS_MINOR_VERSION, DBUS_VERSION, DBUS_VERSION_STRING, NULL, and TRUE\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_setenv (const char * varname, const char * value)"
+
+.PP
+Wrapper for setenv()\&. If the value is \fBNULL\fP, unsets the environment variable\&.
+.PP
+There is an unfixable memleak in that it is unsafe to free memory malloced for use with setenv\&. This is because we can not rely on internal implementation details of the underlying libc library\&.
+.PP
+This function is not thread-safe, because altering the environment in Unix is not thread-safe in general\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvarname\fP name of environment variable 
+.br
+\fIvalue\fP value of environment variable, or \fBNULL\fP to unset 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if not enough memory\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_assert, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_server_new_for_launchd()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

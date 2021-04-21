@@ -1,0 +1,118 @@
+.TH "DBusSHA" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSHA \- SHA implementation
+.PP
+SHA-1 hash\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_sha_init\fP (\fBDBusSHAContext\fP *context)"
+.br
+.RI "\fIInitializes the SHA context\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_sha_update\fP (\fBDBusSHAContext\fP *context, const \fBDBusString\fP *data)"
+.br
+.RI "\fIFeeds more data into an existing shasum computation\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_sha_final\fP (\fBDBusSHAContext\fP *context, \fBDBusString\fP *results)"
+.br
+.RI "\fISHA finalization\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_sha_compute\fP (const \fBDBusString\fP *data, \fBDBusString\fP *ascii_output)"
+.br
+.RI "\fIComputes the ASCII hex-encoded shasum of the given data and appends it to the output string\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+SHA-1 hash\&. 
+
+Types and functions related to computing SHA-1 hash\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_sha_compute (const \fBDBusString\fP * data, \fBDBusString\fP * ascii_output)"
+
+.PP
+Computes the ASCII hex-encoded shasum of the given data and appends it to the output string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP input data to be hashed 
+.br
+\fIascii_output\fP string to append ASCII shasum to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 483 of file dbus\-sha\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_concat_dir_and_file(), _dbus_file_get_contents(), _dbus_sha_compute(), _dbus_sha_final(), _dbus_sha_init(), _dbus_sha_update(), _dbus_string_append(), _dbus_string_append_byte(), _dbus_string_delete(), _dbus_string_equal(), _dbus_string_find(), _dbus_string_free(), _dbus_string_hex_encode(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_init_const_len(), _dbus_string_move(), _dbus_string_parse_int(), _dbus_string_pop_line(), _dbus_string_set_length(), _dbus_string_skip_blank(), _dbus_string_starts_with_c_str(), _dbus_warn(), dbus_error_free(), DBUS_ERROR_INIT, FALSE, DBusError::message, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_read_local_machine_uuid(), and _dbus_sha_compute()\&.
+.SS "\fBdbus_bool_t\fP _dbus_sha_final (\fBDBusSHAContext\fP * context, \fBDBusString\fP * results)"
+
+.PP
+SHA finalization\&. Ends an SHA message-digest operation, writing the the message digest and zeroing the context\&. The results are returned as a raw 20-byte digest, not as the ascii-hex-digits string form of the digest\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP the SHA context 
+.br
+\fIresults\fP string to append the 20-byte SHA digest to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory to append the digest 
+.RE
+.PP
+
+.PP
+Definition at line 456 of file dbus\-sha\&.c\&.
+.PP
+References _dbus_string_append_len(), _DBUS_ZERO, FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_sha_compute()\&.
+.SS "void _dbus_sha_init (\fBDBusSHAContext\fP * context)"
+
+.PP
+Initializes the SHA context\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP an uninitialized context, typically on the stack\&. 
+.RE
+.PP
+
+.PP
+Definition at line 420 of file dbus\-sha\&.c\&.
+.PP
+Referenced by _dbus_sha_compute()\&.
+.SS "void _dbus_sha_update (\fBDBusSHAContext\fP * context, const \fBDBusString\fP * data)"
+
+.PP
+Feeds more data into an existing shasum computation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP the SHA context 
+.br
+\fIdata\fP the additional data to hash 
+.RE
+.PP
+
+.PP
+Definition at line 432 of file dbus\-sha\&.c\&.
+.PP
+Referenced by _dbus_sha_compute()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,195 @@
+.TH "DBusAddress" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusAddress \- Address parsing
+.PP
+Parsing addresses of D-Bus servers\&.  
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusAddressEntry\fP \fBDBusAddressEntry\fP"
+.br
+.RI "\fIOpaque type representing one of the semicolon-separated items in an address\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdbus_address_entries_free\fP (\fBDBusAddressEntry\fP **entries)"
+.br
+.RI "\fIFrees a \fBNULL\fP-terminated array of address entries\&. \fP"
+.ti -1c
+.RI "const char * \fBdbus_address_entry_get_method\fP (\fBDBusAddressEntry\fP *entry)"
+.br
+.RI "\fIReturns the method string of an address entry\&. \fP"
+.ti -1c
+.RI "const char * \fBdbus_address_entry_get_value\fP (\fBDBusAddressEntry\fP *entry, const char *key)"
+.br
+.RI "\fIReturns a value from a key of an entry\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_parse_address\fP (const char *address, \fBDBusAddressEntry\fP ***entry, int *array_len, \fBDBusError\fP *error)"
+.br
+.RI "\fIParses an address string of the form: \fP"
+.ti -1c
+.RI "char * \fBdbus_address_escape_value\fP (const char *value)"
+.br
+.RI "\fIEscapes the given string as a value in a key=value pair for a D-Bus address\&. \fP"
+.ti -1c
+.RI "char * \fBdbus_address_unescape_value\fP (const char *value, \fBDBusError\fP *error)"
+.br
+.RI "\fIUnescapes the given string as a value in a key=value pair for a D-Bus address\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Parsing addresses of D-Bus servers\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT void dbus_address_entries_free (\fBDBusAddressEntry\fP ** entries)"
+
+.PP
+Frees a \fBNULL\fP-terminated array of address entries\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentries\fP the array\&. 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file dbus\-address\&.c\&.
+.PP
+References _dbus_string_init(), dbus_free(), dbus_new0, DBusAddressEntry::method, and NULL\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_transport_finalize_base(), dbus_address_unescape_value(), and dbus_server_listen()\&.
+.SS "DBUS_EXPORT const char * dbus_address_entry_get_method (\fBDBusAddressEntry\fP * entry)"
+
+.PP
+Returns the method string of an address entry\&. For example, given the address entry 'tcp:host=example\&.com' it would return the string 'tcp'
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentry\fP the entry\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a string describing the method\&. This string must not be freed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file dbus\-address\&.c\&.
+.PP
+References DBusAddressEntry::method\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific(), _dbus_server_listen_socket(), _dbus_transport_finalize_base(), _dbus_transport_open_platform_specific(), _dbus_transport_open_socket(), and dbus_server_listen()\&.
+.SS "DBUS_EXPORT const char * dbus_address_entry_get_value (\fBDBusAddressEntry\fP * entry, const char * key)"
+
+.PP
+Returns a value from a key of an entry\&. For example, given the address 'tcp:host=example\&.com,port=8073' if you asked for the key 'host' you would get the value 'example\&.com'
+.PP
+The returned value is already unescaped\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentry\fP the entry\&. 
+.br
+\fIkey\fP the key\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the key value\&. This string must not be freed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 244 of file dbus\-address\&.c\&.
+.PP
+References _DBUS_ADDRESS_OPTIONALLY_ESCAPED_BYTE, _dbus_assert, _dbus_list_get_first_link(), _dbus_list_get_next_link, _dbus_string_append_byte(), _dbus_string_equal_c_str(), _dbus_string_hex_decode(), _dbus_string_init_const(), DBusList::data, DBUS_ERROR_BAD_ADDRESS, dbus_error_is_set(), dbus_set_error(), FALSE, DBusAddressEntry::keys, NULL, TRUE, and DBusAddressEntry::values\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_server_listen_platform_specific(), _dbus_server_listen_socket(), _dbus_transport_finalize_base(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), _dbus_transport_open_socket(), and dbus_address_unescape_value()\&.
+.SS "DBUS_EXPORT char * dbus_address_escape_value (const char * value)"
+
+.PP
+Escapes the given string as a value in a key=value pair for a D-Bus address\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP the unescaped value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+newly-allocated escaped value or \fBNULL\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 583 of file dbus\-address\&.c\&.
+.PP
+References _dbus_address_append_escaped(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_steal_data(), and NULL\&.
+.PP
+Referenced by _dbus_transport_new_for_domain_socket(), and dbus_address_unescape_value()\&.
+.SS "DBUS_EXPORT char * dbus_address_unescape_value (const char * value, \fBDBusError\fP * error)"
+
+.PP
+Unescapes the given string as a value in a key=value pair for a D-Bus address\&. Note that \fBdbus_address_entry_get_value()\fP returns an already-unescaped value\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP the escaped value 
+.br
+\fIerror\fP error to set if the unescaping fails 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+newly-allocated unescaped value or \fBNULL\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 617 of file dbus\-address\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _DBUS_N_ELEMENTS, _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), _dbus_string_steal_data(), _dbus_warn(), dbus_address_entries_free(), dbus_address_entry_get_value(), dbus_address_escape_value(), dbus_error_free(), DBUS_ERROR_INIT, dbus_error_is_set(), dbus_free(), dbus_parse_address(), DBusError::message, NULL, and TRUE\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_parse_address (const char * address, \fBDBusAddressEntry\fP *** entry, int * array_len, \fBDBusError\fP * error)"
+
+.PP
+Parses an address string of the form: method:key=value,key=value;method:key=value
+.PP
+See the D-Bus specification for complete docs on the format\&.
+.PP
+When connecting to an address, the first address entries in the semicolon-separated list should be tried first\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddress\fP the address\&. 
+.br
+\fIentry\fP return location to an array of entries\&. 
+.br
+\fIarray_len\fP return location for array length\&. 
+.br
+\fIerror\fP address where an error can be returned\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 363 of file dbus\-address\&.c\&.
+.PP
+References _dbus_assert, _dbus_list_append(), _dbus_list_clear(), _dbus_list_get_first_link(), _dbus_list_get_length(), _dbus_list_get_next_link, _dbus_string_copy_len(), _dbus_string_find(), _dbus_string_find_to(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), DBusList::data, DBUS_ERROR_BAD_ADDRESS, dbus_error_is_set(), DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_new, dbus_new0, dbus_set_error(), FALSE, DBusAddressEntry::keys, DBusAddressEntry::method, NULL, TRUE, and DBusAddressEntry::values\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_transport_finalize_base(), dbus_address_unescape_value(), and dbus_server_listen()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

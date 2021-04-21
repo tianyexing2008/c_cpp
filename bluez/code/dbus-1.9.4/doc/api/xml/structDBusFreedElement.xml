@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusFreedElement" kind="struct" language="C++" prot="public">
+    <compoundname>DBusFreedElement</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusFreedElement_1ac4819bebce960943155f9fbd4ab6e6c5" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusFreedElement" kindref="compound">DBusFreedElement</ref> *</type>
+        <definition>DBusFreedElement* DBusFreedElement::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+<para>next element of the free list </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="63" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="63" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1ga58e4f3def46410d5bb138a2b8f366b1a" compoundref="dbus-mempool_8c" startline="187" endline="204">_dbus_mem_pool_free</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+        <referencedby refid="group__DBusMemPool_1ga4e2feaefee7384ed940059e6c7b0a9d5" compoundref="dbus-mempool_8c" startline="347" endline="406">_dbus_mem_pool_dealloc</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>struct representing an element on the free list. </para>    </briefdescription>
+    <detaileddescription>
+<para>We just cast freed elements to this so we can make a list out of them. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="156">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="156" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-mempool.c" line="62" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="61" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structDBusFreedElement_1ac4819bebce960943155f9fbd4ab6e6c5" prot="public" virt="non-virtual"><scope>DBusFreedElement</scope><name>next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

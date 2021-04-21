@@ -1,0 +1,1517 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusAuthInternals" kind="group">
+    <compoundname>DBusAuthInternals</compoundname>
+    <title>Authentication implementation details</title>
+    <innerclass refid="structDBusAuthMechanismHandler" prot="public">DBusAuthMechanismHandler</innerclass>
+    <innerclass refid="structDBusAuthStateData" prot="public">DBusAuthStateData</innerclass>
+    <innerclass refid="structDBusAuth" prot="public">DBusAuth</innerclass>
+    <innerclass refid="structDBusAuthClient" prot="public">DBusAuthClient</innerclass>
+    <innerclass refid="structDBusAuthServer" prot="public">DBusAuthServer</innerclass>
+    <innerclass refid="structDBusAuthCommandName" prot="public">DBusAuthCommandName</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" prot="public" static="no">
+        <name>DBusAuthCommand</name>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3bae186060209ef4cde39a0572ee5b37776" prot="public">
+          <name>DBUS_AUTH_COMMAND_AUTH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba26f977f92f88e1b17ad48a8917bcc8b0" prot="public">
+          <name>DBUS_AUTH_COMMAND_CANCEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3babfdc1d0b6b33e0ae521fc516bcbdf9f3" prot="public">
+          <name>DBUS_AUTH_COMMAND_DATA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba6fc3211c9d3ef243a22b45223fa9f11b" prot="public">
+          <name>DBUS_AUTH_COMMAND_BEGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba0dd7f1380aae6e52b0ac645d888d0023" prot="public">
+          <name>DBUS_AUTH_COMMAND_REJECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba5ddbe85a7480cf3d9ed1be81ce9f3e5b" prot="public">
+          <name>DBUS_AUTH_COMMAND_OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3baa781028733974b4e08a0ea8a07cc0bd8" prot="public">
+          <name>DBUS_AUTH_COMMAND_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba879a2c3aea0460a2d790046704da802d" prot="public">
+          <name>DBUS_AUTH_COMMAND_UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3bab241b8aa8bd9efa67475edac07dcee77" prot="public">
+          <name>DBUS_AUTH_COMMAND_NEGOTIATE_UNIX_FD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusAuthInternals_1ggabb6518f15bcdde0584166353ba8dca3ba0093a8f35020c640b94a22466f46117c" prot="public">
+          <name>DBUS_AUTH_COMMAND_AGREE_UNIX_FD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the known authentication commands. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="119" column="1" bodyfile="dbus/dbus-auth.c" bodystart="119" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1ga9f1fd4d8b2a7c914ba3b99c8d744440a" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusInitialResponseFunction) (DBusAuth *auth, DBusString *response)</definition>
+        <argsstring>)(DBusAuth *auth, DBusString *response)</argsstring>
+        <name>DBusInitialResponseFunction</name>
+        <briefdescription>
+<para>This function appends an initial client response to the given string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="70" column="1" bodyfile="dbus/dbus-auth.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1ga48b33737b56c50aed5d10216e2cea928" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusAuthDataFunction) (DBusAuth *auth, const DBusString *data)</definition>
+        <argsstring>)(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>DBusAuthDataFunction</name>
+        <briefdescription>
+<para>This function processes a block of data received from the peer. </para>        </briefdescription>
+        <detaileddescription>
+<para>i.e. handles a DATA command. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="77" column="1" bodyfile="dbus/dbus-auth.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1ga71db20fb63028c4e9ef7cde9406964ba" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusAuthEncodeFunction) (DBusAuth *auth, const DBusString *data, DBusString *encoded)</definition>
+        <argsstring>)(DBusAuth *auth, const DBusString *data, DBusString *encoded)</argsstring>
+        <name>DBusAuthEncodeFunction</name>
+        <briefdescription>
+<para>This function encodes a block of data from the peer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="83" column="1" bodyfile="dbus/dbus-auth.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1gaafda9129712732921ea83991e49a5a5a" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusAuthDecodeFunction) (DBusAuth *auth, const DBusString *data, DBusString *decoded)</definition>
+        <argsstring>)(DBusAuth *auth, const DBusString *data, DBusString *decoded)</argsstring>
+        <name>DBusAuthDecodeFunction</name>
+        <briefdescription>
+<para>This function decodes a block of data from the peer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="90" column="1" bodyfile="dbus/dbus-auth.c" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1gaf29551f7af65937d7e0952efa2c471be" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusAuthShutdownFunction) (DBusAuth *auth)</definition>
+        <argsstring>)(DBusAuth *auth)</argsstring>
+        <name>DBusAuthShutdownFunction</name>
+        <briefdescription>
+<para>This function is called when the mechanism is abandoned. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="97" column="1" bodyfile="dbus/dbus-auth.c" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusAuthInternals_1gacfb344c12cad609b6203c862c66cac3d" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusAuthStateFunction) (DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</definition>
+        <argsstring>)(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>DBusAuthStateFunction</name>
+        <briefdescription>
+<para>Auth state function, determines the reaction to incoming events for a particular state. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns whether we had enough memory to complete the operation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="137" column="1" bodyfile="dbus/dbus-auth.c" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusAuthInternals_1gab8bc5528ae4033326c8bdf6e99a0d9f8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData server_state_waiting_for_auth</definition>
+        <argsstring></argsstring>
+        <name>server_state_waiting_for_auth</name>
+        <initializer>= {
+  &quot;WaitingForAuth&quot;, handle_server_state_waiting_for_auth
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="252" column="1" bodyfile="dbus/dbus-auth.c" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga4cce99e2fb96673b57132a5145265cd4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData server_state_waiting_for_data</definition>
+        <argsstring></argsstring>
+        <name>server_state_waiting_for_data</name>
+        <initializer>= {
+  &quot;WaitingForData&quot;, handle_server_state_waiting_for_data
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="255" column="1" bodyfile="dbus/dbus-auth.c" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1gaad75558cfe9e83cafea741659a23d35a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData server_state_waiting_for_begin</definition>
+        <argsstring></argsstring>
+        <name>server_state_waiting_for_begin</name>
+        <initializer>= {
+  &quot;WaitingForBegin&quot;, handle_server_state_waiting_for_begin
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="258" column="1" bodyfile="dbus/dbus-auth.c" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga7d1826927c9f8a5b1e0fa6da9f75f9ed" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData client_state_need_send_auth</definition>
+        <argsstring></argsstring>
+        <name>client_state_need_send_auth</name>
+        <initializer>= {
+  &quot;NeedSendAuth&quot;, NULL
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="279" column="1" bodyfile="dbus/dbus-auth.c" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga0ea3e198d7e6e0d9434c4ca3adb69819" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData client_state_waiting_for_data</definition>
+        <argsstring></argsstring>
+        <name>client_state_waiting_for_data</name>
+        <initializer>= {
+  &quot;WaitingForData&quot;, handle_client_state_waiting_for_data
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="282" column="1" bodyfile="dbus/dbus-auth.c" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga8432f1df0086b498e258d1734b80e6d4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData client_state_waiting_for_ok</definition>
+        <argsstring></argsstring>
+        <name>client_state_waiting_for_ok</name>
+        <initializer>= {
+  &quot;WaitingForOK&quot;, handle_client_state_waiting_for_ok
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="285" column="1" bodyfile="dbus/dbus-auth.c" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga98587ef2170cc00381bbf8fb0ccd32b0" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData client_state_waiting_for_reject</definition>
+        <argsstring></argsstring>
+        <name>client_state_waiting_for_reject</name>
+        <initializer>= {
+  &quot;WaitingForReject&quot;, handle_client_state_waiting_for_reject
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="288" column="1" bodyfile="dbus/dbus-auth.c" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga0788d7a9c669a3f7e316685c95f1180b" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData client_state_waiting_for_agree_unix_fd</definition>
+        <argsstring></argsstring>
+        <name>client_state_waiting_for_agree_unix_fd</name>
+        <initializer>= {
+  &quot;WaitingForAgreeUnixFD&quot;, handle_client_state_waiting_for_agree_unix_fd
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="291" column="1" bodyfile="dbus/dbus-auth.c" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga2a74efd046514bb27bfe0c8ce5273f4c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData common_state_authenticated</definition>
+        <argsstring></argsstring>
+        <name>common_state_authenticated</name>
+        <initializer>= {
+  &quot;Authenticated&quot;,  NULL
+}</initializer>
+        <briefdescription>
+<para>Common terminal states. </para>        </briefdescription>
+        <detaileddescription>
+<para>Terminal states have handler == NULL. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="299" column="1" bodyfile="dbus/dbus-auth.c" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1gace7b28f36f2b61f3c866681b6295a668" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref></type>
+        <definition>const DBusAuthStateData common_state_need_disconnect</definition>
+        <argsstring></argsstring>
+        <name>common_state_need_disconnect</name>
+        <initializer>= {
+  &quot;NeedDisconnect&quot;,  NULL
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="303" column="1" bodyfile="dbus/dbus-auth.c" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1gaa5f3eb708b773ac71b356286cbcef471" prot="public" static="yes" mutable="no">
+        <type>const char</type>
+        <definition>const char auth_side_client[]</definition>
+        <argsstring>[]</argsstring>
+        <name>auth_side_client</name>
+        <initializer>= &quot;client&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="307" column="1" bodyfile="dbus/dbus-auth.c" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1gadf6c49374fe193c0771ee0b9f541956a" prot="public" static="yes" mutable="no">
+        <type>const char</type>
+        <definition>const char auth_side_server[]</definition>
+        <argsstring>[]</argsstring>
+        <name>auth_side_server</name>
+        <initializer>= &quot;server&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="308" column="1" bodyfile="dbus/dbus-auth.c" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga0c46c147e96ee4c04993504cb4e1f9ef" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthMechanismHandler" kindref="compound">DBusAuthMechanismHandler</ref></type>
+        <definition>const DBusAuthMechanismHandler all_mechanisms[]</definition>
+        <argsstring>[]</argsstring>
+        <name>all_mechanisms</name>
+        <initializer>= {
+  { &quot;EXTERNAL&quot;,
+    handle_server_data_external_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_server_shutdown_external_mech,
+    handle_client_initial_response_external_mech,
+    handle_client_data_external_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_client_shutdown_external_mech },
+  { &quot;DBUS_COOKIE_SHA1&quot;,
+    handle_server_data_cookie_sha1_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_server_shutdown_cookie_sha1_mech,
+    handle_client_initial_response_cookie_sha1_mech,
+    handle_client_data_cookie_sha1_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_client_shutdown_cookie_sha1_mech },
+  { &quot;ANONYMOUS&quot;,
+    handle_server_data_anonymous_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_server_shutdown_anonymous_mech,
+    handle_client_initial_response_anonymous_mech,
+    handle_client_data_anonymous_mech,
+    <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,
+    handle_client_shutdown_anonymous_mech },  
+  { <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1298" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusAuthInternals_1ga32a89164810d47dda31e49094f89cd11" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusAuthCommandName" kindref="compound">DBusAuthCommandName</ref></type>
+        <definition>const DBusAuthCommandName auth_command_names[]</definition>
+        <argsstring>[]</argsstring>
+        <name>auth_command_names</name>
+        <initializer>= {
+  { &quot;AUTH&quot;,              DBUS_AUTH_COMMAND_AUTH },
+  { &quot;CANCEL&quot;,            DBUS_AUTH_COMMAND_CANCEL },
+  { &quot;DATA&quot;,              DBUS_AUTH_COMMAND_DATA },
+  { &quot;BEGIN&quot;,             DBUS_AUTH_COMMAND_BEGIN },
+  { &quot;REJECTED&quot;,          DBUS_AUTH_COMMAND_REJECTED },
+  { &quot;OK&quot;,                DBUS_AUTH_COMMAND_OK },
+  { &quot;ERROR&quot;,             DBUS_AUTH_COMMAND_ERROR },
+  { &quot;NEGOTIATE_UNIX_FD&quot;, DBUS_AUTH_COMMAND_NEGOTIATE_UNIX_FD },
+  { &quot;AGREE_UNIX_FD&quot;,     DBUS_AUTH_COMMAND_AGREE_UNIX_FD }
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="2100" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga364938707d3be305c7698630b449ec2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void goto_state</definition>
+        <argsstring>(DBusAuth *auth, const DBusAuthStateData *new_state)</argsstring>
+        <name>goto_state</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusAuthStateData" kindref="compound">DBusAuthStateData</ref> *</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="223" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2128" bodyend="2137"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga78ab7c8f39e34fd08cdf001e93f07ee7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_auth</definition>
+        <argsstring>(DBusAuth *auth, const DBusAuthMechanismHandler *mech)</argsstring>
+        <name>send_auth</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusAuthMechanismHandler" kindref="compound">DBusAuthMechanismHandler</ref> *</type>
+          <declname>mech</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="225" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1352" bodyend="1409"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga9bd4575bd464d769639dc12a83f92bf8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_data</definition>
+        <argsstring>(DBusAuth *auth, DBusString *data)</argsstring>
+        <name>send_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="227" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1412" bodyend="1438"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga07c4b42a3522100b0d53f2dcd90722be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_rejected</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_rejected</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="229" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1441" bodyend="1493"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gabba9fbd26f00d8d0c4addbbd328cb3b7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_error</definition>
+        <argsstring>(DBusAuth *auth, const char *message)</argsstring>
+        <name>send_error</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="230" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1496" bodyend="1500"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga03568ae57c64dad76faf8a479580697c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_ok</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_ok</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="232" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1503" bodyend="1524"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga5e5538e4dd38389d6304a114a31fb4ac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_begin</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_begin</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="233" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1527" bodyend="1536"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaf6a8beae016d19ec5cde95a7336dd01d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_cancel</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_cancel</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="234" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1582" bodyend="1591"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga81144ed098921dc8aed06ae7790c7c81" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_negotiate_unix_fd</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_negotiate_unix_fd</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="235" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1638" bodyend="1646"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga8cabb0b19d613d1976b302b694eb97cc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t send_agree_unix_fd</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>send_agree_unix_fd</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="236" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1649" bodyend="1662"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga08f0d979ba79b587c96985afbdeb2a59" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_state_waiting_for_auth</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_server_state_waiting_for_auth</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Client states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="242" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1735" bodyend="1765"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga7afa5333399ac5c02c0bd17d45a02ede" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_state_waiting_for_data</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_server_state_waiting_for_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="245" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1768" bodyend="1798"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga6f61b2e6f8677d3f491389bb9ba692fb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_state_waiting_for_begin</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_server_state_waiting_for_begin</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="248" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1801" bodyend="1834"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaa4ac619ed4c34246e0ba86471fa26fdc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_state_waiting_for_data</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_client_state_waiting_for_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Client states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="266" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1976" bodyend="2005"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga51ac2685be05b0094dbb53b9da6accb2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_state_waiting_for_ok</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_client_state_waiting_for_ok</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="269" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2008" bodyend="2033"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaa2d616056b11ccf82de4283ae9251c1d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_state_waiting_for_reject</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_client_state_waiting_for_reject</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="272" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2036" bodyend="2058"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga33cd8342e0dfd7680adf0fb8eb4126c7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_state_waiting_for_agree_unix_fd</definition>
+        <argsstring>(DBusAuth *auth, DBusAuthCommand command, const DBusString *args)</argsstring>
+        <name>handle_client_state_waiting_for_agree_unix_fd</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="275" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2061" bodyend="2090"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga2d1ed070225e699fc0023c5b8cba8f5c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+        <definition>static DBusAuth* _dbus_auth_new</definition>
+        <argsstring>(int size)</argsstring>
+        <name>_dbus_auth_new</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="338" column="1" bodyfile="dbus/dbus-auth.c" bodystart="338" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaa3f636dbcffb9a8f8d6c9da7eb959a38" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shutdown_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>shutdown_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="418" column="1" bodyfile="dbus/dbus-auth.c" bodystart="418" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gad89ad84fbd828da5ce619134d6e5c6e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t sha1_compute_hash</definition>
+        <argsstring>(DBusAuth *auth, int cookie_id, const DBusString *server_challenge, const DBusString *client_challenge, DBusString *hash)</argsstring>
+        <name>sha1_compute_hash</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cookie_id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>server_challenge</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>client_challenge</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="450" column="1" bodyfile="dbus/dbus-auth.c" bodystart="450" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gae6a773e9db6cf57bb2a679a96f763b46" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t sha1_handle_first_client_response</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>sha1_handle_first_client_response</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="519" column="1" bodyfile="dbus/dbus-auth.c" bodystart="519" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gacb4381ab05fc5fb3c8ab4686149c0d83" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t sha1_handle_second_client_response</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>sha1_handle_second_client_response</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="670" column="1" bodyfile="dbus/dbus-auth.c" bodystart="670" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga885fe9ec2c63ec2a9d7f08f246411329" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_data_cookie_sha1_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_server_data_cookie_sha1_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="777" column="1" bodyfile="dbus/dbus-auth.c" bodystart="777" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaca037873a267eb4924886652972337c4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_server_shutdown_cookie_sha1_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_server_shutdown_cookie_sha1_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="787" column="1" bodyfile="dbus/dbus-auth.c" bodystart="787" bodyend="791"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga98e45a502528192d7259239a43b29dcb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_initial_response_cookie_sha1_mech</definition>
+        <argsstring>(DBusAuth *auth, DBusString *response)</argsstring>
+        <name>handle_client_initial_response_cookie_sha1_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="794" column="1" bodyfile="dbus/dbus-auth.c" bodystart="794" bodyend="819"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaecee1a68772840b65466842b78eb3b58" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_data_cookie_sha1_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_client_data_cookie_sha1_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="822" column="1" bodyfile="dbus/dbus-auth.c" bodystart="822" bodyend="1006"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaf0d06666cc759b6362f5004ef11d170d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_client_shutdown_cookie_sha1_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_client_shutdown_cookie_sha1_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1009" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1009" bodyend="1013"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga0d870b4584242209505c29f760b55c0a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_data_external_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_server_data_external_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1020" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1020" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga5a7fffed088a6442be23b5e8530eda0b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_server_shutdown_external_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_server_shutdown_external_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1136" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1136" bodyend="1139"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gacc42235b33e06f3786b2470cf969a460" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_initial_response_external_mech</definition>
+        <argsstring>(DBusAuth *auth, DBusString *response)</argsstring>
+        <name>handle_client_initial_response_external_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1142" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1142" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaecb46af69e676dfc0135ba3c69d7060b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_data_external_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_client_data_external_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1173" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1173" bodyend="1178"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga3ec51373ae87a229135f689908cd9519" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_client_shutdown_external_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_client_shutdown_external_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1181" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1181" bodyend="1184"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gac5341e2d16f4e512896fcb9809539b0e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_server_data_anonymous_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_server_data_anonymous_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1191" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1191" bodyend="1231"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gad9bf95704c333494ea39c1a54f75bf49" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_server_shutdown_anonymous_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_server_shutdown_anonymous_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1234" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1234" bodyend="1237"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gabdbfad8fe1e913f7b4c391f2f8d22bce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_initial_response_anonymous_mech</definition>
+        <argsstring>(DBusAuth *auth, DBusString *response)</argsstring>
+        <name>handle_client_initial_response_anonymous_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1240" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1240" bodyend="1270"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga62da615c4311131fc58cc31598dfbb94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_client_data_anonymous_mech</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *data)</argsstring>
+        <name>handle_client_data_anonymous_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1273" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1273" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga05ee7e7033922204b50ea4559495ed35" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void handle_client_shutdown_anonymous_mech</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>handle_client_shutdown_anonymous_mech</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1281" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1281" bodyend="1284"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga30449b95b27086fdc1b72e230fbc8b79" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structDBusAuthMechanismHandler" kindref="compound">DBusAuthMechanismHandler</ref> *</type>
+        <definition>static const DBusAuthMechanismHandler* find_mech</definition>
+        <argsstring>(const DBusString *name, char **allowed_mechs)</argsstring>
+        <name>find_mech</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>allowed_mechs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1327" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1327" bodyend="1349"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gae9052fafa37ab29ff4377f28dcc46026" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t process_ok</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *args_from_ok)</argsstring>
+        <name>process_ok</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args_from_ok</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1539" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1539" bodyend="1579"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga734b0623a60bbd84f18cf94cf76d0db6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t process_data</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *args, DBusAuthDataFunction data_func)</argsstring>
+        <name>process_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusAuthInternals_1ga48b33737b56c50aed5d10216e2cea928" kindref="member">DBusAuthDataFunction</ref></type>
+          <declname>data_func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1594" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1594" bodyend="1635"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gaf1d5063deafc06df019c539b187ea656" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_auth</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *args)</argsstring>
+        <name>handle_auth</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1665" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1665" bodyend="1732"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga09b66705adaa4a4d4bb35810d355928d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t get_word</definition>
+        <argsstring>(const DBusString *str, int *start, DBusString *word)</argsstring>
+        <name>get_word</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>word</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1838" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1838" bodyend="1856"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga4e0c559790f8ca34b4ff1a39cc31955a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t record_mechanisms</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *args)</argsstring>
+        <name>record_mechanisms</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1859" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1859" bodyend="1934"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1gac567d92c0b3fae32d36c4aa8b2731ff2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t process_rejected</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *args)</argsstring>
+        <name>process_rejected</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="1937" column="1" bodyfile="dbus/dbus-auth.c" bodystart="1937" bodyend="1972"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga9042f937e0b74f18b115812510626085" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusAuthInternals_1gabb6518f15bcdde0584166353ba8dca3b" kindref="member">DBusAuthCommand</ref></type>
+        <definition>static DBusAuthCommand lookup_command_from_name</definition>
+        <argsstring>(DBusString *command)</argsstring>
+        <name>lookup_command_from_name</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="2113" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2113" bodyend="2125"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuthInternals_1ga716e89dd37f410f5365cdb312da88ac7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t process_command</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>process_command</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="2141" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2141" bodyend="2229"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusAuthInternals_1ga4211a12320d0b32bb2fbf0b56d6752a1" prot="public" static="no">
+        <name>DBUS_AUTH_IS_SERVER</name>
+        <param><defname>auth</defname></param>
+        <initializer>((auth)-&gt;side == auth_side_server)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the conversation is the server side </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="313" column="9" bodyfile="dbus/dbus-auth.c" bodystart="313" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" prot="public" static="no">
+        <name>DBUS_AUTH_IS_CLIENT</name>
+        <param><defname>auth</defname></param>
+        <initializer>((auth)-&gt;side == auth_side_client)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the conversation is the client side </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="318" column="9" bodyfile="dbus/dbus-auth.c" bodystart="318" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" compoundref="dbus-auth_8c" startline="2681" endline="2702">_dbus_auth_decode_data</referencedby>
+        <referencedby refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" compoundref="dbus-auth_8c" startline="2618" endline="2639">_dbus_auth_encode_data</referencedby>
+        <referencedby refid="group__DBusAuth_1gad0bf394093dd9ac43ebf71a5f35a4f3f" compoundref="dbus-auth_8c" startline="2755" endline="2763">_dbus_auth_get_guid_from_server</referencedby>
+        <referencedby refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" compoundref="dbus-auth_8c" startline="2650" endline="2664">_dbus_auth_needs_decoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" compoundref="dbus-auth_8c" startline="2591" endline="2605">_dbus_auth_needs_encoding</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusAuthInternals_1ga6c2966c96fefbc8b40106d6b5235c854" prot="public" static="no">
+        <name>DBUS_AUTH_CLIENT</name>
+        <param><defname>auth</defname></param>
+        <initializer>((<ref refid="structDBusAuthClient" kindref="compound">DBusAuthClient</ref>*)(auth))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>auth cast to <ref refid="structDBusAuthClient" kindref="compound">DBusAuthClient</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="323" column="9" bodyfile="dbus/dbus-auth.c" bodystart="323" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1gaee76dbcdada8bcafe131f5a2de151ac3" compoundref="dbus-auth_8c" startline="2293" endline="2322">_dbus_auth_client_new</referencedby>
+        <referencedby refid="group__DBusAuth_1gad0bf394093dd9ac43ebf71a5f35a4f3f" compoundref="dbus-auth_8c" startline="2755" endline="2763">_dbus_auth_get_guid_from_server</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusAuthInternals_1ga3d476942b91b7b5825a914c2ae743717" prot="public" static="no">
+        <name>DBUS_AUTH_SERVER</name>
+        <param><defname>auth</defname></param>
+        <initializer>((<ref refid="structDBusAuthServer" kindref="compound">DBusAuthServer</ref>*)(auth))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>auth cast to <ref refid="structDBusAuthServer" kindref="compound">DBusAuthServer</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="328" column="9" bodyfile="dbus/dbus-auth.c" bodystart="328" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" compoundref="dbus-auth_8c" startline="2247" endline="2283">_dbus_auth_server_new</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusAuthInternals_1ga533f0d915e592df54a97401b597441b8" prot="public" static="no">
+        <name>DBUS_AUTH_NAME</name>
+        <param><defname>auth</defname></param>
+        <initializer>((auth)-&gt;side)</initializer>
+        <briefdescription>
+<para>The name of the auth (&quot;client&quot; or &quot;server&quot;) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="335" column="9" bodyfile="dbus/dbus-auth.c" bodystart="335" bodyend="-1"/>
+        <referencedby refid="group__DBusAuth_1gaed9f7f1d3289a0ae2fea2204729ac01f" compoundref="dbus-auth_8c" startline="2500" endline="2510">_dbus_auth_bytes_sent</referencedby>
+        <referencedby refid="group__DBusAuth_1ga097c71f7f20b749275c6b31cd98623f5" compoundref="dbus-auth_8c" startline="2431" endline="2463">_dbus_auth_do_work</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusAuthInternals_1gae379752f3a8ebb11e727e75d87a35554" prot="public" static="no">
+        <name>N_CHALLENGE_BYTES</name>
+        <initializer>(128/8)</initializer>
+        <briefdescription>
+<para><ulink url="http://www.ietf.org/rfc/rfc2831.txt">http://www.ietf.org/rfc/rfc2831.txt</ulink> suggests at least 64 bits of entropy, we use 128. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the number of bytes in the random challenge. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="516" column="9" bodyfile="dbus/dbus-auth.c" bodystart="516" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>Private details of authentication code. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

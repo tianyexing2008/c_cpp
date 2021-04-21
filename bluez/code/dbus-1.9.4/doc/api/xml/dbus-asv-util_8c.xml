@@ -1,0 +1,805 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-asv-util_8c" kind="file" language="C++">
+    <compoundname>dbus-asv-util.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus_8h" local="no">dbus/dbus.h</includes>
+    <includes refid="dbus-asv-util_8h" local="yes">dbus/dbus-asv-util.h</includes>
+    <incdepgraph>
+      <node id="215">
+        <label>dbus/dbus-signature.h</label>
+        <link refid="dbus-signature_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>stdarg.h</label>
+      </node>
+      <node id="207">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="205">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="212">
+        <label>dbus/dbus-misc.h</label>
+        <link refid="dbus-misc_8h_source"/>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="221">
+        <label>stdint.h</label>
+      </node>
+      <node id="211">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="226">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="196">
+        <label>dbus-asv-util.c</label>
+        <link refid="dbus-asv-util.c"/>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="218">
+        <label>dbus/dbus-asv-util.h</label>
+        <link refid="dbus-asv-util_8h_source"/>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>dbus/dbus.h</label>
+        <link refid="dbus_8h_source"/>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="220">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+      <node id="203">
+        <label>stddef.h</label>
+      </node>
+      <node id="224">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>string.h</label>
+      </node>
+      <node id="214">
+        <label>dbus/dbus-server.h</label>
+        <link refid="dbus-server_8h_source"/>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+      </node>
+      <node id="217">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="206">
+        <label>dbus/dbus-bus.h</label>
+        <link refid="dbus-bus_8h_source"/>
+        <childnode refid="207" relation="include">
+        </childnode>
+      </node>
+      <node id="209">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>dbus/dbus-pending-call.h</label>
+        <link refid="dbus-pending-call_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+      </node>
+      <node id="197">
+        <label>config.h</label>
+      </node>
+      <node id="223">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>dbus/dbus-syntax.h</label>
+        <link refid="dbus-syntax_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="204">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+      </node>
+      <node id="202">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+      </node>
+      <node id="222">
+        <label>inttypes.h</label>
+      </node>
+      <node id="201">
+        <label>dbus/dbus-address.h</label>
+        <link refid="dbus-address_8h_source"/>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dbus-asv-util_8c_1a904814e3ef5e4b3713ce787684c072f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* _dbus_asv_new_method_return</definition>
+        <argsstring>(DBusMessage *message, DBusMessageIter *iter, DBusMessageIter *arr_iter)</argsstring>
+        <name>_dbus_asv_new_method_return</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <briefdescription>
+<para>Convenience function to create a method-call reply whose type is a{sv} (map from string to variant). </para>        </briefdescription>
+        <detaileddescription>
+<para>Append values with 0 or more sequences of _dbus_asv_open_entry(), appending a value to var_iter, and _dbus_asv_close_entry(), then close the a{sv} with _dbus_asv_close() or _dbus_asv_abandon().</para><para>This must be paired with a call to _dbus_asv_close() or _dbus_asv_abandon().</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a method call message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an iterator which will be initialized to append to the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arr_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an iterator which will be initialized to append to the array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new message, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="46" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="46" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1aff1dc0da7c772da60d1d715a510ad23b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t _dbus_asv_open_entry</definition>
+        <argsstring>(DBusMessageIter *arr_iter, DBusMessageIter *entry_iter, const char *key, const char *type, DBusMessageIter *var_iter)</argsstring>
+        <name>_dbus_asv_open_entry</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>entry_iter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>var_iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="84" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="84" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1a1aff9613dcbe08f606e21a1ce601afeb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t _dbus_asv_close_entry</definition>
+        <argsstring>(DBusMessageIter *arr_iter, DBusMessageIter *entry_iter, DBusMessageIter *var_iter)</argsstring>
+        <name>_dbus_asv_close_entry</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>entry_iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>var_iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="122" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="122" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1aafc881a759b7a47498825b87b82a705a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_asv_close</definition>
+        <argsstring>(DBusMessageIter *iter, DBusMessageIter *arr_iter)</argsstring>
+        <name>_dbus_asv_close</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <briefdescription>
+<para>Closes an a{sv} after successfully appending all values. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this function fails, you must abandon iter and whatever larger data structure (message, etc.) the a{sv} was embedded in.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator which is appending to the message or other data structure containing the a{sv} </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arr_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator appending to the array, will be closed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, or <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="149" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1a81ad8c8db01287c3954e495300248797" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _dbus_asv_abandon_entry</definition>
+        <argsstring>(DBusMessageIter *arr_iter, DBusMessageIter *entry_iter, DBusMessageIter *var_iter)</argsstring>
+        <name>_dbus_asv_abandon_entry</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>entry_iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>var_iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="166" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="166" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1a89198a1672614dcb34868dcf4652fc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_asv_abandon</definition>
+        <argsstring>(DBusMessageIter *iter, DBusMessageIter *arr_iter)</argsstring>
+        <name>_dbus_asv_abandon</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <briefdescription>
+<para>Closes an a{sv} after unsuccessfully appending a value. </para>        </briefdescription>
+        <detaileddescription>
+<para>You must also abandon whatever larger data structure (message, etc.) the a{sv} was embedded in.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator which is appending to the message or other data structure containing the a{sv} </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arr_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator appending to the array, will be closed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="184" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1a86cd59463ac7a848b8d98cbda00208a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_asv_add_uint32</definition>
+        <argsstring>(DBusMessageIter *arr_iter, const char *key, dbus_uint32_t value)</argsstring>
+        <name>_dbus_asv_add_uint32</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Create a new entry in an a{sv} (map from string to variant) with a 32-bit unsigned integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this function fails, the a{sv} must be abandoned, for instance with _dbus_asv_abandon().</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator which is appending to the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a UTF-8 key for the map </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, or <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="203" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="203" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-asv-util_8c_1a9b86c222ecec29e70dea0307d21893e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_asv_add_string</definition>
+        <argsstring>(DBusMessageIter *arr_iter, const char *key, const char *value)</argsstring>
+        <name>_dbus_asv_add_string</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>arr_iter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Create a new entry in an a{sv} (map from string to variant) with a UTF-8 string value. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this function fails, the a{sv} must be abandoned, for instance with _dbus_asv_abandon().</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator which is appending to the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a UTF-8 key for the map </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, or <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-asv-util.c" line="239" column="1" bodyfile="dbus/dbus-asv-util.c" bodystart="239" bodyend="260"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>dbus-asv-util.c<sp/>-<sp/>utility<sp/>functions<sp/>for<sp/>a{sv}</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2011-2012<sp/>Nokia<sp/>Corporation</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2012-2013<sp/>Collabora<sp/>Ltd.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>02110-1301<sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus/dbus-asv-util.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">_dbus_asv_new_method_return<sp/>(<ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/><sp/><sp/><sp/><sp/><sp/>*message,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/><sp/>*iter,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/><sp/>*arr_iter)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref><sp/>*reply<sp/>=<sp/><ref refid="group__DBusMessage_1ga95142bd8288f397194ee0eefb1d27125" kindref="member">dbus_message_new_method_return</ref><sp/>(message);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reply<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" kindref="member">dbus_message_iter_init_append</ref><sp/>(reply,<sp/>iter);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga943150f4e87fd8507da224d22c266100" kindref="member">dbus_message_iter_open_container</ref><sp/>(iter,<sp/><ref refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" kindref="member">DBUS_TYPE_ARRAY</ref>,<sp/></highlight><highlight class="stringliteral">&quot;{sv}&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr_iter))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" kindref="member">dbus_message_unref</ref><sp/>(reply);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reply;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>Open<sp/>a<sp/>new<sp/>entry<sp/>in<sp/>an<sp/>a{sv}<sp/>(map<sp/>from<sp/>string<sp/>to<sp/>variant).</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>This<sp/>must<sp/>be<sp/>paired<sp/>with<sp/>a<sp/>call<sp/>to<sp/>either<sp/>_dbus_asv_close_entry()</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>or<sp/>_dbus_asv_abandon_entry().</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>If<sp/>this<sp/>function<sp/>fails,<sp/>the<sp/>a{sv}<sp/>must<sp/>be<sp/>abandoned,<sp/>for<sp/>instance</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>with<sp/>_dbus_asv_abandon().</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@param<sp/>arr_iter<sp/>the<sp/>iterator<sp/>which<sp/>is<sp/>appending<sp/>to<sp/>the<sp/>array</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@param<sp/>entry_iter<sp/>will<sp/>be<sp/>initialized<sp/>to<sp/>append<sp/>to<sp/>the<sp/>dict-entry</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@param<sp/>key<sp/>a<sp/>UTF-8<sp/>key<sp/>for<sp/>the<sp/>map</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@param<sp/>type<sp/>the<sp/>type<sp/>of<sp/>the<sp/>variant<sp/>value,<sp/>e.g.<sp/>DBUS_TYPE_STRING_AS_STRING</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@param<sp/>var_iter<sp/>will<sp/>be<sp/>initialized<sp/>to<sp/>append<sp/>(i.e.<sp/>write)<sp/>to<sp/>the<sp/>variant</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@returns<sp/>#TRUE<sp/>on<sp/>success,<sp/>or<sp/>#FALSE<sp/>if<sp/>not<sp/>enough<sp/>memory</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">_dbus_asv_open_entry<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*entry_iter,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*key,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*type,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*var_iter)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga943150f4e87fd8507da224d22c266100" kindref="member">dbus_message_iter_open_container</ref><sp/>(arr_iter,<sp/><ref refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" kindref="member">DBUS_TYPE_DICT_ENTRY</ref>,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/>entry_iter))</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" kindref="member">dbus_message_iter_append_basic</ref><sp/>(entry_iter,<sp/><ref refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" kindref="member">DBUS_TYPE_STRING</ref>,<sp/>&amp;key))</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(arr_iter,<sp/>entry_iter);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga943150f4e87fd8507da224d22c266100" kindref="member">dbus_message_iter_open_container</ref><sp/>(entry_iter,<sp/><ref refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" kindref="member">DBUS_TYPE_VARIANT</ref>,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,<sp/>var_iter))</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(arr_iter,<sp/>entry_iter);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>Closes<sp/>an<sp/>a{sv}<sp/>entry<sp/>after<sp/>successfully<sp/>appending<sp/>the<sp/>value.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>If<sp/>this<sp/>function<sp/>fails,<sp/>the<sp/>a{sv}<sp/>must<sp/>be<sp/>abandoned,<sp/>for<sp/>instance</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>with<sp/>_dbus_asv_abandon().</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@param<sp/>arr_iter<sp/>the<sp/>iterator<sp/>which<sp/>is<sp/>appending<sp/>to<sp/>the<sp/>array</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@param<sp/>entry_iter<sp/>the<sp/>iterator<sp/>appending<sp/>to<sp/>the<sp/>dict-entry,<sp/>will<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@param<sp/>var_iter<sp/>the<sp/>iterator<sp/>appending<sp/>to<sp/>the<sp/>variant,<sp/>will<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@returns<sp/>#TRUE<sp/>on<sp/>success,<sp/>or<sp/>#FALSE<sp/>if<sp/>not<sp/>enough<sp/>memory</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">_dbus_asv_close_entry<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*entry_iter,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*var_iter)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1gaf00482f63d4af88b7851621d1f24087a" kindref="member">dbus_message_iter_close_container</ref><sp/>(entry_iter,<sp/>var_iter))</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(arr_iter,<sp/>entry_iter);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1gaf00482f63d4af88b7851621d1f24087a" kindref="member">dbus_message_iter_close_container</ref><sp/>(arr_iter,<sp/>entry_iter))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">_dbus_asv_close<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*iter,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMessage_1gaf00482f63d4af88b7851621d1f24087a" kindref="member">dbus_message_iter_close_container</ref><sp/>(iter,<sp/>arr_iter);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>Closes<sp/>an<sp/>a{sv}<sp/>entry<sp/>after<sp/>unsuccessfully<sp/>appending<sp/>a<sp/>value.</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>You<sp/>must<sp/>also<sp/>abandon<sp/>the<sp/>a{sv}<sp/>itself<sp/>(for<sp/>instance<sp/>with</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>_dbus_asv_abandon()),<sp/>and<sp/>abandon<sp/>whatever<sp/>larger<sp/>data<sp/>structure</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>the<sp/>a{sv}<sp/>was<sp/>embedded<sp/>in.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@param<sp/>iter<sp/>the<sp/>iterator<sp/>which<sp/>is<sp/>appending<sp/>to<sp/>the<sp/>message<sp/>or<sp/>other<sp/>data<sp/>structure<sp/>containing<sp/>the<sp/>a{sv}</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@param<sp/>arr_iter<sp/>the<sp/>iterator<sp/>appending<sp/>to<sp/>the<sp/>array,<sp/>will<sp/>be<sp/>closed</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@returns<sp/>#TRUE<sp/>on<sp/>success,<sp/>or<sp/>#FALSE<sp/>if<sp/>not<sp/>enough<sp/>memory</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">_dbus_asv_abandon_entry<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*entry_iter,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*var_iter)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(entry_iter,<sp/>var_iter);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(arr_iter,<sp/>entry_iter);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">_dbus_asv_abandon<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*iter,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMessage_1ga6e62697ca11f0a57dbecc93d5721612c" kindref="member">dbus_message_iter_abandon_container</ref><sp/>(iter,<sp/>arr_iter);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">_dbus_asv_add_uint32<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>value)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>entry_iter,<sp/>var_iter;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_dbus_asv_open_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>key,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusProtocol_1gadd89012acfc88aef2b084ed265242e5e" kindref="member">DBUS_TYPE_UINT32_AS_STRING</ref>,<sp/>&amp;var_iter))</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" kindref="member">dbus_message_iter_append_basic</ref><sp/>(&amp;var_iter,<sp/><ref refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" kindref="member">DBUS_TYPE_UINT32</ref>,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;value))</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_asv_abandon_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>&amp;var_iter);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_dbus_asv_close_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>&amp;var_iter))</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">_dbus_asv_add_string<sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*arr_iter,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>entry_iter,<sp/>var_iter;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_dbus_asv_open_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>key,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusProtocol_1gabca06d9d52c249619f52c903c06800aa" kindref="member">DBUS_TYPE_STRING_AS_STRING</ref>,<sp/>&amp;var_iter))</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" kindref="member">dbus_message_iter_append_basic</ref><sp/>(&amp;var_iter,<sp/><ref refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" kindref="member">DBUS_TYPE_STRING</ref>,</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;value))</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_asv_abandon_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>&amp;var_iter);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_dbus_asv_close_entry<sp/>(arr_iter,<sp/>&amp;entry_iter,<sp/>&amp;var_iter))</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-asv-util.c"/>
+  </compounddef>
+</doxygen>

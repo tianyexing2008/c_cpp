@@ -1,0 +1,773 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusServer" kind="group">
+    <compoundname>DBusServer</compoundname>
+    <title>DBusServer</title>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusServer_1ga39dc10dc2cbe727cf312c51b25b4341e" prot="public" static="no">
+        <type>struct <ref refid="structDBusServer" kindref="compound">DBusServer</ref></type>
+        <definition>DBusServer</definition>
+        <argsstring></argsstring>
+        <name>DBusServer</name>
+        <briefdescription>
+<para>An opaque object representing a server that listens for connections from other applications. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each time a connection is made, a new <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> is created and made available via an application-provided DBusNewConnectionFunction. The DBusNewConnectionFunction is provided with <ref refid="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" kindref="member">dbus_server_set_new_connection_function()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.h" line="517" column="1" bodyfile="dbus/dbus-server.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusServer_1ga78eff950d25762a146d58d806bc8f724" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusNewConnectionFunction) (DBusServer *server, DBusConnection *new_connection, void *data)</definition>
+        <argsstring>)(DBusServer *server, DBusConnection *new_connection, void *data)</argsstring>
+        <name>DBusNewConnectionFunction</name>
+        <briefdescription>
+<para>Called when a new connection to the server is available. </para>        </briefdescription>
+        <detaileddescription>
+<para>Must reference and save the new connection, or close the new connection. Set with <ref refid="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" kindref="member">dbus_server_set_new_connection_function()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.h" line="47" column="1" bodyfile="dbus/dbus-server.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusServer_1ga5b7584b9e0277a9205222347dea1792b" prot="public" static="yes" mutable="no">
+        <type>const struct @7</type>
+        <definition>const struct @7  listen_funcs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>listen_funcs</name>
+        <initializer>= {
+  { <ref refid="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" kindref="member">_dbus_server_listen_socket</ref> }
+  , { <ref refid="group__DBusServerWin_1gaec00cdf4977b9bd33621df684406a779" kindref="member">_dbus_server_listen_platform_specific</ref> }
+
+
+
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="526" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusServer_1gaa0d783eaf99d7f70b8b1d0bfdd43bb82" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref></type>
+        <definition>DBusDataSlotAllocator slot_allocator</definition>
+        <argsstring></argsstring>
+        <name>slot_allocator</name>
+        <initializer>=
+  _DBUS_DATA_SLOT_ALLOCATOR_INIT (<ref refid="group__DBusInternalsUtils_1gade571435b55fae64217f5142aa78ee8d" kindref="member">_DBUS_LOCK_NAME</ref> (server_slots))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1059" column="1" bodyfile="dbus/dbus-server.c" bodystart="1059" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+        <definition>DBUS_EXPORT DBusServer * dbus_server_listen</definition>
+        <argsstring>(const char *address, DBusError *error)</argsstring>
+        <name>dbus_server_listen</name>
+        <param>
+          <type>const char *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Listens for new connections on the given address. </para>        </briefdescription>
+        <detaileddescription>
+<para>If there are multiple semicolon-separated address entries in the address, tries each one and listens on the first one that works.</para><para>Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> and sets error if listening fails for any reason. Otherwise returns a new <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. <ref refid="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" kindref="member">dbus_server_set_new_connection_function()</ref>, <ref refid="group__DBusServer_1gaa5723810ea52e9f1815062fd91395892" kindref="member">dbus_server_set_watch_functions()</ref>, and <ref refid="group__DBusServer_1gacafa42ffc063a7386db40a975c32d530" kindref="member">dbus_server_set_timeout_functions()</ref> should be called immediately to render the server fully functional.</para><para>To free the server, applications must call first <ref refid="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" kindref="member">dbus_server_disconnect()</ref> and then <ref refid="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" kindref="member">dbus_server_unref()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of this server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store reason for failure. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new <ref refid="structDBusServer" kindref="compound">DBusServer</ref>, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="549" column="1" bodyfile="dbus/dbus-server.c" bodystart="549" bodyend="678"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="group__DBusAddress_1ga37a7009b07cf991ff07f3e86d71bf352" compoundref="dbus-address_8c" startline="189" endline="196">dbus_address_entries_free</references>
+        <references refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</references>
+        <references refid="group__DBusProtocol_1ga3d13424a19bb774cf3481216bf4ba366" compoundref="dbus-protocol_8h" startline="387">DBUS_ERROR_ADDRESS_IN_USE</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</references>
+        <references refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gabe1c14264ef6bf3e5fe446ab9bf8b913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+        <definition>DBUS_EXPORT DBusServer * dbus_server_ref</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_ref</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Increments the reference count of a <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the server </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="687" column="1" bodyfile="dbus/dbus-server.c" bodystart="687" bodyend="709"/>
+        <references refid="group__DBusSysdeps_1ga3c50a069f795dceeb9172fe2b517bbdc" compoundref="dbus-sysdeps-unix_8c" startline="2585" endline="2599">_dbus_atomic_dec</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="group__DBusInternalsUtils_1ga748d6ccfb8090bf9f0bf338946c8f5e2" compoundref="dbus-internals_8c" startline="893">_dbus_return_if_fail_warning_format</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a7578bd99fc8aee641cbb5198cb2e7004" compoundref="dbus-server-protected_8h" startline="58">refcount</references>
+        <referencedby refid="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" compoundref="dbus-server_8c" startline="770" endline="789">dbus_server_disconnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_server_unref</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_unref</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the reference count of a <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Finalizes the server if the reference count reaches zero.</para><para>The server must be disconnected before the refcount reaches zero.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="720" column="1" bodyfile="dbus/dbus-server.c" bodystart="720" bodyend="759"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdeps_1ga3c50a069f795dceeb9172fe2b517bbdc" compoundref="dbus-sysdeps-unix_8c" startline="2585" endline="2599">_dbus_atomic_dec</references>
+        <references refid="group__DBusSysdeps_1gae74c3fcf12acaeccdb152ef907de951c" compoundref="dbus-sysdeps-unix_8c" startline="2562" endline="2576">_dbus_atomic_inc</references>
+        <references refid="group__DBusInternalsUtils_1ga748d6ccfb8090bf9f0bf338946c8f5e2" compoundref="dbus-internals_8c" startline="893">_dbus_return_if_fail_warning_format</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="structDBusServer_1a7dabb30cdc09d6102810029fb56b8dfe" compoundref="dbus-server-protected_8h" startline="87">disconnected</references>
+        <references refid="structDBusServerVTable_1a7242f69227f22aa789e383f30190695c" compoundref="dbus-server-protected_8h" startline="45">DBusServerVTable::finalize</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a7578bd99fc8aee641cbb5198cb2e7004" compoundref="dbus-server-protected_8h" startline="58">refcount</references>
+        <references refid="structDBusServer_1aa5068890fea8c7e7261b600e7256e009" compoundref="dbus-server-protected_8h" startline="59">vtable</references>
+        <referencedby refid="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" compoundref="dbus-server_8c" startline="770" endline="789">dbus_server_disconnect</referencedby>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_server_disconnect</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_disconnect</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Releases the server&apos;s address and stops listening for new clients. </para>        </briefdescription>
+        <detaileddescription>
+<para>If called more than once, only the first call has an effect. Does not modify the server&apos;s reference count.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="770" column="1" bodyfile="dbus/dbus-server.c" bodystart="770" bodyend="789"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusServer_1gabe1c14264ef6bf3e5fe446ab9bf8b913" compoundref="dbus-server_8c" startline="687" endline="709">dbus_server_ref</references>
+        <references refid="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" compoundref="dbus-server_8c" startline="720" endline="759">dbus_server_unref</references>
+        <references refid="structDBusServerVTable_1afebdb548922853fcf96b7c6f84ea4017" compoundref="dbus-server-protected_8h" startline="48">DBusServerVTable::disconnect</references>
+        <references refid="structDBusServer_1a7dabb30cdc09d6102810029fb56b8dfe" compoundref="dbus-server-protected_8h" startline="87">disconnected</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusServer_1aa5068890fea8c7e7261b600e7256e009" compoundref="dbus-server-protected_8h" startline="59">vtable</references>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga93c36d8b42a3f2a4f3706a0c3609b3d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_get_is_connected</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_get_is_connected</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the server is still listening for new connections. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="797" column="1" bodyfile="dbus/dbus-server.c" bodystart="797" bodyend="808"/>
+        <references refid="structDBusServer_1a7dabb30cdc09d6102810029fb56b8dfe" compoundref="dbus-server-protected_8h" startline="87">disconnected</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga63a133dc2786afed48c87127baa96927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_server_get_address</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_get_address</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Returns the address of the server, as a newly-allocated string which must be freed by the caller. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the address or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="818" column="1" bodyfile="dbus/dbus-server.c" bodystart="818" bodyend="829"/>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="structDBusServer_1a359852bf33b3051180a9477da4d89acd" compoundref="dbus-server-protected_8h" startline="69">address</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga3b2920b3c65836113781d9dd00d1e139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_server_get_id</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>dbus_server_get_id</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Returns the unique ID of the server, as a newly-allocated string which must be freed by the caller. </para>        </briefdescription>
+        <detaileddescription>
+<para>This ID is normally used by clients to tell when two <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> would be equivalent (because the server address passed to <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref> will have the same guid in the two cases). <ref refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" kindref="member">dbus_connection_open()</ref> can re-use an existing connection with the same ID instead of opening a new connection.</para><para>This is an ID unique to each <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. Remember that a <ref refid="structDBusServer" kindref="compound">DBusServer</ref> represents only one mode of connecting, so e.g. a bus daemon can listen on multiple addresses which will mean it has multiple <ref refid="structDBusServer" kindref="compound">DBusServer</ref> each with their own ID.</para><para>The ID is not a UUID in the sense of RFC4122; the details are explained in the D-Bus specification.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the id of the server or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="854" column="1" bodyfile="dbus/dbus-server.c" bodystart="854" bodyend="866"/>
+        <references refid="group__DBusString_1ga7e509d4f959d19d96f83250e62287b06" compoundref="dbus-string_8c" startline="672" endline="685">_dbus_string_copy_data</references>
+        <references refid="structDBusServer_1a79cd5d1b25412d56b7fd41902d575794" compoundref="dbus-server-protected_8h" startline="64">guid_hex</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gaa14d9109e04adccffd9a40460c28c53b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_server_set_new_connection_function</definition>
+        <argsstring>(DBusServer *server, DBusNewConnectionFunction function, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>dbus_server_set_new_connection_function</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusServer_1ga78eff950d25762a146d58d806bc8f724" kindref="member">DBusNewConnectionFunction</ref></type>
+          <declname>function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets a function to be used for handling new connections. </para>        </briefdescription>
+        <detaileddescription>
+<para>The given function is passed each new connection as the connection is created. If the new connection function increments the connection&apos;s reference count, the connection will stay alive. Otherwise, the connection will be unreferenced and closed. The new connection function may also close the connection itself, which is considered good form if the connection is not wanted.</para><para>The connection here is private in the sense of <ref refid="group__DBusConnection_1ga434e3fc7ee420fd30e2f05e57ff26b1d" kindref="member">dbus_connection_open_private()</ref>, so if the new connection function keeps a reference it must arrange for the connection to be closed. i.e. libdbus does not own this connection once the new connection function takes a reference.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function to handle new connections. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to the new connection handler. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="889" column="1" bodyfile="dbus/dbus-server.c" bodystart="889" bodyend="910"/>
+        <references refid="structDBusServer_1acfba406ae6f288887feaccc3d621d094" compoundref="dbus-server-protected_8h" startline="78">new_connection_data</references>
+        <references refid="structDBusServer_1a5d5b68a92cf47a3eb50e5e6ec7d2ca3a" compoundref="dbus-server-protected_8h" startline="80">new_connection_free_data_function</references>
+        <references refid="structDBusServer_1a964ff125a29a7dac02f81e1a26233ff6" compoundref="dbus-server-protected_8h" startline="76">new_connection_function</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gaa5723810ea52e9f1815062fd91395892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_set_watch_functions</definition>
+        <argsstring>(DBusServer *server, DBusAddWatchFunction add_function, DBusRemoveWatchFunction remove_function, DBusWatchToggledFunction toggled_function, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>dbus_server_set_watch_functions</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga285ce1f8bb94ef2f89f23db3de8cfe4b" kindref="member">DBusAddWatchFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga487ca73e58570f302ba7159c81719243" kindref="member">DBusRemoveWatchFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga005459ba2ddd69ba2d89f0e04ef57b10" kindref="member">DBusWatchToggledFunction</ref></type>
+          <declname>toggled_function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets the watch functions for the server. </para>        </briefdescription>
+        <detaileddescription>
+<para>These functions are responsible for making the application&apos;s main loop aware of file descriptors that need to be monitored for events.</para><para>This function behaves exactly like <ref refid="group__DBusConnection_1gaebf031eb444b4f847606aa27daa3d8e6" kindref="member">dbus_connection_set_watch_functions()</ref>; see the documentation for that routine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>add_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to begin monitoring a new descriptor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remove_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to stop monitoring a descriptor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toggled_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to notify when the watch is enabled/disabled </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to add_function and remove_function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure (no memory) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="929" column="1" bodyfile="dbus/dbus-server.c" bodystart="929" bodyend="964"/>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a7955050967aeaf09679f8ba1f2941880" compoundref="dbus-server-protected_8h" startline="66">watches</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gacafa42ffc063a7386db40a975c32d530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_set_timeout_functions</definition>
+        <argsstring>(DBusServer *server, DBusAddTimeoutFunction add_function, DBusRemoveTimeoutFunction remove_function, DBusTimeoutToggledFunction toggled_function, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>dbus_server_set_timeout_functions</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga91d796869e7fa9e96d843b2c0d480df1" kindref="member">DBusAddTimeoutFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga418f70c8dfaa15c45f1d51fb9569eab8" kindref="member">DBusRemoveTimeoutFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga45c22fb4103827cd10f319cc90e286ae" kindref="member">DBusTimeoutToggledFunction</ref></type>
+          <declname>toggled_function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets the timeout functions for the server. </para>        </briefdescription>
+        <detaileddescription>
+<para>These functions are responsible for making the application&apos;s main loop aware of timeouts.</para><para>This function behaves exactly like <ref refid="group__DBusConnection_1gab3cbc68eec427e9ce1783b25d44fe93c" kindref="member">dbus_connection_set_timeout_functions()</ref>; see the documentation for that routine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>add_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to add a timeout. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remove_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to remove a timeout. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toggled_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to notify when the timeout is enabled/disabled </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to add_function and remove_function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure (no memory) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="982" column="1" bodyfile="dbus/dbus-server.c" bodystart="982" bodyend="1017"/>
+        <references refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1afcaccd00f2392a390616c47e425bae85" compoundref="dbus-server-protected_8h" startline="67">timeouts</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga309e5f1510c74c4b221d12d874d53341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_set_auth_mechanisms</definition>
+        <argsstring>(DBusServer *server, const char **mechanisms)</argsstring>
+        <name>dbus_server_set_auth_mechanisms</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>mechanisms</declname>
+        </param>
+        <briefdescription>
+<para>Sets the authentication mechanisms that this server offers to clients, as a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated array of mechanism names. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function only affects connections created <emphasis>after</emphasis> it is called. Pass <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> instead of an array to use all available mechanisms (this is the default behavior).</para><para>The D-Bus specification describes some of the supported mechanisms.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mechanisms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated array of mechanisms </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1033" column="1" bodyfile="dbus/dbus-server.c" bodystart="1033" bodyend="1057"/>
+        <references refid="group__DBusInternalsUtils_1ga53bbcbbd0b564c14c599813dde535443" compoundref="dbus-internals_8c" startline="578" endline="608">_dbus_dup_string_array</references>
+        <references refid="group__DBusInternalsUtils_1gade571435b55fae64217f5142aa78ee8d" compoundref="dbus-internals_8h" startline="328">_DBUS_LOCK_NAME</references>
+        <references refid="structDBusServer_1adc1032bbed41413e5d0e01578f2bfffc" compoundref="dbus-server-protected_8h" startline="85">auth_mechanisms</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1ga05d280cd92ea5bb0d49bbe5b1fb1d5c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_allocate_data_slot</definition>
+        <argsstring>(dbus_int32_t *slot_p)</argsstring>
+        <name>dbus_server_allocate_data_slot</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref> *</type>
+          <declname>slot_p</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an integer ID to be used for storing application-specific data on any <ref refid="structDBusServer" kindref="compound">DBusServer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The allocated ID may then be used with <ref refid="group__DBusServer_1gab9ecb216dc9c40b0c7d370673fb9b269" kindref="member">dbus_server_set_data()</ref> and <ref refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" kindref="member">dbus_server_get_data()</ref>. The slot must be initialized with -1. If a nonnegative slot is passed in, the refcount is incremented on that slot, rather than creating a new slot.</para><para>The allocated slot is global, i.e. all <ref refid="structDBusServer" kindref="compound">DBusServer</ref> objects will have a slot with the given integer ID reserved.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of global variable storing the slot ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1077" column="1" bodyfile="dbus/dbus-server.c" bodystart="1077" bodyend="1081"/>
+        <references refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gac6ebc6105e32ab38ef0ac60dec6d5bc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_server_free_data_slot</definition>
+        <argsstring>(dbus_int32_t *slot_p)</argsstring>
+        <name>dbus_server_free_data_slot</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref> *</type>
+          <declname>slot_p</declname>
+        </param>
+        <briefdescription>
+<para>Deallocates a global ID for server data slots. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" kindref="member">dbus_server_get_data()</ref> and <ref refid="group__DBusServer_1gab9ecb216dc9c40b0c7d370673fb9b269" kindref="member">dbus_server_set_data()</ref> may no longer be used with this slot. Existing data stored on existing <ref refid="structDBusServer" kindref="compound">DBusServer</ref> objects will be freed when the server is finalized, but may not be retrieved (and may only be replaced if someone else reallocates the slot).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the slot to deallocate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1095" column="1" bodyfile="dbus/dbus-server.c" bodystart="1095" bodyend="1100"/>
+        <references refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gab9ecb216dc9c40b0c7d370673fb9b269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_server_set_data</definition>
+        <argsstring>(DBusServer *server, int slot, void *data, DBusFreeFunction free_data_func)</argsstring>
+        <name>dbus_server_set_data</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_func</declname>
+        </param>
+        <briefdescription>
+<para>Stores a pointer on a <ref refid="structDBusServer" kindref="compound">DBusServer</ref>, along with an optional function to be used for freeing the data when the data is set again, or when the server is finalized. </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot number must have been allocated with <ref refid="group__DBusServer_1ga05d280cd92ea5bb0d49bbe5b1fb1d5c2" kindref="member">dbus_server_allocate_data_slot()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to store </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>finalizer function for the data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if there was enough memory to store the data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1116" column="1" bodyfile="dbus/dbus-server.c" bodystart="1116" bodyend="1145"/>
+        <references refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" compoundref="dbus-dataslot_8c" startline="221" endline="273">_dbus_data_slot_list_set</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a0601cca8307ba17d4a8bcebe48b08362" compoundref="dbus-server-protected_8h" startline="74">slot_list</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>DBUS_EXPORT void * dbus_server_get_data</definition>
+        <argsstring>(DBusServer *server, int slot)</argsstring>
+        <name>dbus_server_get_data</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves data previously set with <ref refid="group__DBusServer_1gab9ecb216dc9c40b0c7d370673fb9b269" kindref="member">dbus_server_set_data()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot must still be allocated (must not have been freed).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot to get data from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the data, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server.c" line="1156" column="1" bodyfile="dbus/dbus-server.c" bodystart="1156" bodyend="1172"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" compoundref="dbus-dataslot_8c" startline="285" endline="308">_dbus_data_slot_list_get</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" compoundref="dbus-server_8c" startline="770" endline="789">dbus_server_disconnect</references>
+        <references refid="group__DBusServer_1ga63a133dc2786afed48c87127baa96927" compoundref="dbus-server_8c" startline="818" endline="829">dbus_server_get_address</references>
+        <references refid="group__DBusServer_1ga3b2920b3c65836113781d9dd00d1e139" compoundref="dbus-server_8c" startline="854" endline="866">dbus_server_get_id</references>
+        <references refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</references>
+        <references refid="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" compoundref="dbus-server_8c" startline="720" endline="759">dbus_server_unref</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusServer_1a0601cca8307ba17d4a8bcebe48b08362" compoundref="dbus-server-protected_8h" startline="74">slot_list</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Server that listens for new connections. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="structDBusServer" kindref="compound">DBusServer</ref> represents a server that other applications can connect to. Each connection from another application is represented by a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>.</para><para><xrefsect id="todo_1_todo000046"><xreftitle>Todo</xreftitle><xrefdescription><para>Thread safety hasn&apos;t been tested much for <ref refid="structDBusServer" kindref="compound">DBusServer</ref> </para><para>Need notification to apps of disconnection, may matter for some transports </para></xrefdescription></xrefsect></para>    </detaileddescription>
+  </compounddef>
+</doxygen>

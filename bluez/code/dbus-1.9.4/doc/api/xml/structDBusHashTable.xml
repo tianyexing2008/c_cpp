@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusHashTable" kind="struct" language="C++" prot="public">
+    <compoundname>DBusHashTable</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusHashTable_1acb2b7bcba65da77f7ecf67da355ff770" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="169" column="1" bodyfile="dbus/dbus-hash.c" bodystart="169" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga4ad4622378885e5d911c26956e174a45" compoundref="dbus-hash_8c" startline="347" endline="352">_dbus_hash_table_ref</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> **</type>
+        <definition>DBusHashEntry** DBusHashTable::buckets</definition>
+        <argsstring></argsstring>
+        <name>buckets</name>
+        <briefdescription>
+<para>Pointer to bucket array. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each element points to first entry in bucket&apos;s hash chain, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="171" column="1" bodyfile="dbus/dbus-hash.c" bodystart="171" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1af71877d64657c34a783caf6b82b016e9" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHashEntry" kindref="compound">DBusHashEntry</ref> *</type>
+        <definition>DBusHashEntry* DBusHashTable::static_buckets[DBUS_SMALL_HASH_TABLE]</definition>
+        <argsstring>[DBUS_SMALL_HASH_TABLE]</argsstring>
+        <name>static_buckets</name>
+        <briefdescription>
+<para>Bucket array used for small tables (to avoid mallocs and frees). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="175" column="1" bodyfile="dbus/dbus-hash.c" bodystart="175" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a2dd2b9389d65d30e31e596dd786a9aa7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::n_buckets</definition>
+        <argsstring></argsstring>
+        <name>n_buckets</name>
+        <briefdescription>
+<para>Total number of buckets allocated at **buckets. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="179" column="1" bodyfile="dbus/dbus-hash.c" bodystart="179" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::n_entries</definition>
+        <argsstring></argsstring>
+        <name>n_entries</name>
+        <briefdescription>
+<para>Total number of entries present in table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="182" column="1" bodyfile="dbus/dbus-hash.c" bodystart="182" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga1b0e6df8a8617ef0f8f25adfba3acc4c" compoundref="dbus-hash_8c" startline="517" endline="532">_dbus_hash_iter_init</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga723e61fcc91ca673e90ff872c07ea19c" compoundref="dbus-hash_8c" startline="543" endline="581">_dbus_hash_iter_next</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad48297fc27442c19a7c4bd4d1ef9ef77" compoundref="dbus-hash_8c" startline="1397" endline="1400">_dbus_hash_table_get_n_entries</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a29c408110c0d189d89b60c6c01cfb0cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::hi_rebuild_size</definition>
+        <argsstring></argsstring>
+        <name>hi_rebuild_size</name>
+        <briefdescription>
+<para>Enlarge table when n_entries gets to be this large. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="185" column="1" bodyfile="dbus/dbus-hash.c" bodystart="185" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1aae6ea7cb15d618866854b2b6bd468419" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::lo_rebuild_size</definition>
+        <argsstring></argsstring>
+        <name>lo_rebuild_size</name>
+        <briefdescription>
+<para>Shrink table when n_entries gets below this. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="188" column="1" bodyfile="dbus/dbus-hash.c" bodystart="188" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a2e7e7b92bb9633ab95cfaa592b89025c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::down_shift</definition>
+        <argsstring></argsstring>
+        <name>down_shift</name>
+        <briefdescription>
+<para>Shift count used in hashing function. </para>        </briefdescription>
+        <detaileddescription>
+<para>Designed to use high- order bits of randomized keys. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="191" column="1" bodyfile="dbus/dbus-hash.c" bodystart="191" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1aec1230eebce3d256ca9ceebe372647e9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusHashTable::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <briefdescription>
+<para>Mask value used in hashing function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="195" column="1" bodyfile="dbus/dbus-hash.c" bodystart="195" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusHashTable_1gab0ab9767ffa5b6720a13b3d741630852" kindref="member">DBusHashType</ref></type>
+        <definition>DBusHashType DBusHashTable::key_type</definition>
+        <argsstring></argsstring>
+        <name>key_type</name>
+        <briefdescription>
+<para>Type of keys used in this table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="198" column="1" bodyfile="dbus/dbus-hash.c" bodystart="198" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad51eb3fe682721dd4f6a920ca87cb730" compoundref="dbus-hash_8c" startline="1049" endline="1062">_dbus_hash_table_lookup_string</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga36ff49c4c35599e6fcdadc7f6805c49e" compoundref="dbus-hash_8c" startline="1074" endline="1087">_dbus_hash_table_lookup_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1gae0ac411f87a797767f36c6e64fd807b3" compoundref="dbus-hash_8c" startline="1099" endline="1112">_dbus_hash_table_lookup_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga388d50ce1a07bf0790b9f2ecdb08a396" compoundref="dbus-hash_8c" startline="1123" endline="1140">_dbus_hash_table_remove_string</referencedby>
+        <referencedby refid="group__DBusHashTable_1gacdebe75bd692605a69dc73c15e0eefd0" compoundref="dbus-hash_8c" startline="1151" endline="1168">_dbus_hash_table_remove_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga0ad8fa1108bad2b4bd5b4ce539d32d64" compoundref="dbus-hash_8c" startline="1179" endline="1196">_dbus_hash_table_remove_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga43e98a91a11952824c544330e19f6c22" compoundref="dbus-hash_8c" startline="1214" endline="1230">_dbus_hash_table_insert_string</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" compoundref="dbus-hash_8c" startline="1289" endline="1312">_dbus_hash_table_insert_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" compoundref="dbus-hash_8c" startline="1366" endline="1388">_dbus_hash_table_insert_string_preallocated</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusHashTableInternals_1gafd9dd7ab6565479a3980bba65f5b1c0e" kindref="member">DBusFindEntryFunction</ref></type>
+        <definition>DBusFindEntryFunction DBusHashTable::find_function</definition>
+        <argsstring></argsstring>
+        <name>find_function</name>
+        <briefdescription>
+<para>Function for finding entries. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="201" column="1" bodyfile="dbus/dbus-hash.c" bodystart="201" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gab156c35d6dd9ff6e408a835db28323fb" compoundref="dbus-hash_8c" startline="740" endline="768">_dbus_hash_iter_lookup</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad51eb3fe682721dd4f6a920ca87cb730" compoundref="dbus-hash_8c" startline="1049" endline="1062">_dbus_hash_table_lookup_string</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga36ff49c4c35599e6fcdadc7f6805c49e" compoundref="dbus-hash_8c" startline="1074" endline="1087">_dbus_hash_table_lookup_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1gae0ac411f87a797767f36c6e64fd807b3" compoundref="dbus-hash_8c" startline="1099" endline="1112">_dbus_hash_table_lookup_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga388d50ce1a07bf0790b9f2ecdb08a396" compoundref="dbus-hash_8c" startline="1123" endline="1140">_dbus_hash_table_remove_string</referencedby>
+        <referencedby refid="group__DBusHashTable_1gacdebe75bd692605a69dc73c15e0eefd0" compoundref="dbus-hash_8c" startline="1151" endline="1168">_dbus_hash_table_remove_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga0ad8fa1108bad2b4bd5b4ce539d32d64" compoundref="dbus-hash_8c" startline="1179" endline="1196">_dbus_hash_table_remove_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" compoundref="dbus-hash_8c" startline="1289" endline="1312">_dbus_hash_table_insert_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" compoundref="dbus-hash_8c" startline="1366" endline="1388">_dbus_hash_table_insert_string_preallocated</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusHashTable::free_key_function</definition>
+        <argsstring></argsstring>
+        <name>free_key_function</name>
+        <briefdescription>
+<para>Function to free keys. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="203" column="1" bodyfile="dbus/dbus-hash.c" bodystart="203" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" compoundref="dbus-hash_8c" startline="1289" endline="1312">_dbus_hash_table_insert_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" compoundref="dbus-hash_8c" startline="1366" endline="1388">_dbus_hash_table_insert_string_preallocated</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusHashTable::free_value_function</definition>
+        <argsstring></argsstring>
+        <name>free_value_function</name>
+        <briefdescription>
+<para>Function to free values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="204" column="1" bodyfile="dbus/dbus-hash.c" bodystart="204" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga24193343c0948019d4a302fc18bfd5d9" compoundref="dbus-hash_8c" startline="636" endline="650">_dbus_hash_iter_set_value</referencedby>
+        <referencedby refid="group__DBusHashTable_1gaca20a83f3214db08fa34df2c49c8edd5" compoundref="dbus-hash_8c" startline="1248" endline="1271">_dbus_hash_table_insert_int</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga811d833032ca919a9063ca835482d01a" compoundref="dbus-hash_8c" startline="1289" endline="1312">_dbus_hash_table_insert_uintptr</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga770a9b786a9594350165b7224bd173ee" compoundref="dbus-hash_8c" startline="1366" endline="1388">_dbus_hash_table_insert_string_preallocated</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> *</type>
+        <definition>DBusMemPool* DBusHashTable::entry_pool</definition>
+        <argsstring></argsstring>
+        <name>entry_pool</name>
+        <briefdescription>
+<para>Memory pool for hash entries. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-hash.c" line="206" column="1" bodyfile="dbus/dbus-hash.c" bodystart="206" bodyend="-1"/>
+        <referencedby refid="group__DBusHashTable_1gac8e434348a354b9606d4c50c127a5eb4" compoundref="dbus-hash_8c" startline="285" endline="337">_dbus_hash_table_new</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga96b777e00764b44e0f3216fd8478f5a9" compoundref="dbus-hash_8c" startline="361" endline="410">_dbus_hash_table_unref</referencedby>
+        <referencedby refid="group__DBusHashTable_1gad169f3790ca67f8a0adafcdc88ef7188" compoundref="dbus-hash_8c" startline="418" endline="426">_dbus_hash_table_remove_all</referencedby>
+        <referencedby refid="group__DBusHashTable_1ga159dfec03d53e6e2ff485fc83aed2552" compoundref="dbus-hash_8c" startline="1339" endline="1350">_dbus_hash_table_free_preallocated_entry</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of <ref refid="structDBusHashTable" kindref="compound">DBusHashTable</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Hash table internals. Hash tables are opaque objects, they must be used via accessor functions. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="166">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="167" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="169">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="169" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="167">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="168" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="169" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="170">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="170" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="168">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="168" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-hash.c" line="168" column="1" bodyfile="dbus/dbus-hash.c" bodystart="168" bodyend="207"/>
+    <listofallmembers>
+      <member refid="structDBusHashTable_1a1f974e2cb3038685b3edf493406ad99d" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>buckets</name></member>
+      <member refid="structDBusHashTable_1a2e7e7b92bb9633ab95cfaa592b89025c" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>down_shift</name></member>
+      <member refid="structDBusHashTable_1ad1224e6c3c632afb265b78f8f6e30f97" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>entry_pool</name></member>
+      <member refid="structDBusHashTable_1ab98bafddf1b1ce1dad01c5595e278e35" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>find_function</name></member>
+      <member refid="structDBusHashTable_1a5f6541574ea8e6bedd80773dce8e52a6" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>free_key_function</name></member>
+      <member refid="structDBusHashTable_1afbb42b5326b9c79352b168eace1687ca" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>free_value_function</name></member>
+      <member refid="structDBusHashTable_1a29c408110c0d189d89b60c6c01cfb0cf" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>hi_rebuild_size</name></member>
+      <member refid="structDBusHashTable_1a28f326a2947b6be0b0b852db376a1092" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>key_type</name></member>
+      <member refid="structDBusHashTable_1aae6ea7cb15d618866854b2b6bd468419" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>lo_rebuild_size</name></member>
+      <member refid="structDBusHashTable_1aec1230eebce3d256ca9ceebe372647e9" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>mask</name></member>
+      <member refid="structDBusHashTable_1a2dd2b9389d65d30e31e596dd786a9aa7" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>n_buckets</name></member>
+      <member refid="structDBusHashTable_1affbf11a9c3dd72d55b7976891f7b4650" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>n_entries</name></member>
+      <member refid="structDBusHashTable_1acb2b7bcba65da77f7ecf67da355ff770" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>refcount</name></member>
+      <member refid="structDBusHashTable_1af71877d64657c34a783caf6b82b016e9" prot="public" virt="non-virtual"><scope>DBusHashTable</scope><name>static_buckets</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
