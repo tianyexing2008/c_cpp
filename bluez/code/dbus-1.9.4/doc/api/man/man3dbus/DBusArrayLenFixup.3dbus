@@ -1,0 +1,32 @@
+.TH "DBusArrayLenFixup" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusArrayLenFixup \- When modifying an existing block of values, array lengths may need to be adjusted; those adjustments are described by this struct\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-marshal\-recursive\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBlen_pos_in_reader\fP"
+.br
+.RI "\fIwhere the length was in the original block \fP"
+.ti -1c
+.RI "int \fBnew_len\fP"
+.br
+.RI "\fIthe new value of the length in the written-out block \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+When modifying an existing block of values, array lengths may need to be adjusted; those adjustments are described by this struct\&. 
+.PP
+Definition at line 93 of file dbus\-marshal\-recursive\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

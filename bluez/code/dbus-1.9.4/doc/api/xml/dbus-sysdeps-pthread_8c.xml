@@ -1,0 +1,873 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-sysdeps-pthread_8c" kind="file" language="C++">
+    <compoundname>dbus-sysdeps-pthread.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-internals_8h" local="yes">dbus-internals.h</includes>
+    <includes refid="dbus-sysdeps_8h" local="yes">dbus-sysdeps.h</includes>
+    <includes refid="dbus-threads_8h" local="yes">dbus-threads.h</includes>
+    <includes local="no">sys/time.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="3681">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3675">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3670">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3677">
+        <label>stdint.h</label>
+      </node>
+      <node id="3683">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3676">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3667" relation="include">
+        </childnode>
+        <childnode refid="3677" relation="include">
+        </childnode>
+        <childnode refid="3678" relation="include">
+        </childnode>
+        <childnode refid="3674" relation="include">
+        </childnode>
+        <childnode refid="3679" relation="include">
+        </childnode>
+        <childnode refid="3680" relation="include">
+        </childnode>
+        <childnode refid="3682" relation="include">
+        </childnode>
+        <childnode refid="3681" relation="include">
+        </childnode>
+        <childnode refid="3683" relation="include">
+        </childnode>
+      </node>
+      <node id="3668">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="3669" relation="include">
+        </childnode>
+        <childnode refid="3672" relation="include">
+        </childnode>
+        <childnode refid="3674" relation="include">
+        </childnode>
+        <childnode refid="3676" relation="include">
+        </childnode>
+        <childnode refid="3684" relation="include">
+        </childnode>
+      </node>
+      <node id="3671">
+        <label>stddef.h</label>
+      </node>
+      <node id="3680">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+        <childnode refid="3672" relation="include">
+        </childnode>
+        <childnode refid="3669" relation="include">
+        </childnode>
+        <childnode refid="3681" relation="include">
+        </childnode>
+      </node>
+      <node id="3673">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+      </node>
+      <node id="3687">
+        <label>pthread.h</label>
+      </node>
+      <node id="3682">
+        <label>string.h</label>
+      </node>
+      <node id="3685">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+        <childnode refid="3672" relation="include">
+        </childnode>
+      </node>
+      <node id="3666">
+        <label>dbus-sysdeps-pthread.c</label>
+        <link refid="dbus-sysdeps-pthread.c"/>
+        <childnode refid="3667" relation="include">
+        </childnode>
+        <childnode refid="3668" relation="include">
+        </childnode>
+        <childnode refid="3676" relation="include">
+        </childnode>
+        <childnode refid="3685" relation="include">
+        </childnode>
+        <childnode refid="3686" relation="include">
+        </childnode>
+        <childnode refid="3687" relation="include">
+        </childnode>
+        <childnode refid="3682" relation="include">
+        </childnode>
+      </node>
+      <node id="3686">
+        <label>sys/time.h</label>
+      </node>
+      <node id="3684">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+        <childnode refid="3672" relation="include">
+        </childnode>
+        <childnode refid="3685" relation="include">
+        </childnode>
+      </node>
+      <node id="3667">
+        <label>config.h</label>
+      </node>
+      <node id="3679">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3680" relation="include">
+        </childnode>
+        <childnode refid="3674" relation="include">
+        </childnode>
+      </node>
+      <node id="3674">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+        <childnode refid="3672" relation="include">
+        </childnode>
+        <childnode refid="3675" relation="include">
+        </childnode>
+      </node>
+      <node id="3672">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3671" relation="include">
+        </childnode>
+        <childnode refid="3673" relation="include">
+        </childnode>
+      </node>
+      <node id="3678">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3669">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3670" relation="include">
+        </childnode>
+        <childnode refid="3671" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structDBusRMutex" prot="public">DBusRMutex</innerclass>
+    <innerclass refid="structDBusCMutex" prot="public">DBusCMutex</innerclass>
+    <innerclass refid="structDBusCondVar" prot="public">DBusCondVar</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-sysdeps-pthread_8c_1ac6a0396bb67bd383e5396dbc56335839" prot="public" static="no">
+        <name>DBUS_MUTEX</name>
+        <param><defname>m</defname></param>
+        <initializer>((<ref refid="group__DBusThreads_1ga4eb021cd6cd0830423eac2738e0ddc40" kindref="member">DBusMutex</ref>*) m)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="60" column="9" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-pthread_8c_1ad45307605b09de6617df9503c6aeeebc" prot="public" static="no">
+        <name>DBUS_MUTEX_PTHREAD</name>
+        <param><defname>m</defname></param>
+        <initializer>((DBusMutexPThread*) m)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="61" column="9" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-pthread_8c_1a0db602c3f479cda61736e8a60c391808" prot="public" static="no">
+        <name>DBUS_COND_VAR</name>
+        <param><defname>c</defname></param>
+        <initializer>((<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref>*) c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="63" column="9" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-pthread_8c_1a0bbeda8b8bca105ba9c1fea527aab32c" prot="public" static="no">
+        <name>DBUS_COND_VAR_PTHREAD</name>
+        <param><defname>c</defname></param>
+        <initializer>((DBusCondVarPThread*) c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="64" column="9" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-pthread_8c_1a43a537939c564bcf2d93eb0ddd46c780" prot="public" static="no">
+        <name>PTHREAD_CHECK</name>
+        <param><defname>func_name</defname></param>
+        <param><defname>result_or_call</defname></param>
+        <initializer>do {                                  \
+    int tmp = (result_or_call);                                                        \
+    if (tmp != 0) {                                                                    \
+      <ref refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" kindref="member">_dbus_warn_check_failed</ref> (&quot;pthread function %s failed with %d %s in %s\n&quot;,        \
+                               func_name, tmp, strerror(tmp), _DBUS_FUNCTION_NAME);    \
+    }                                                                                  \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="72" column="10" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dbus-sysdeps-pthread_8c_1a43be9063ab0393957684de68ef773752" prot="public" static="yes" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t init_mutex</definition>
+        <argsstring></argsstring>
+        <name>init_mutex</name>
+        <initializer>= PTHREAD_MUTEX_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="290" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1ab211cab48c935ec96f8f37791ddfd517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+        <definition>DBusCMutex* _dbus_platform_cmutex_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_platform_cmutex_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="82" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="82" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a1a9e74e62b844d02f3c6335a015e98a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+        <definition>DBusRMutex* _dbus_platform_rmutex_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_platform_rmutex_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="107" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="107" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a9a39a4a32091a10a925b1e3f866e0eb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_cmutex_free</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_platform_cmutex_free</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="136" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a9b63e8f676dcb2b16b16eee42c054a78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_rmutex_free</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_platform_rmutex_free</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="143" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="143" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a7ea08b9c214e1244e9381130dd20a8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_cmutex_lock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_platform_cmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="150" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1aa1755e7e8d422a998e03d7b90b9647d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_rmutex_lock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_platform_rmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="156" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a9dff4c52dd146147d0ed0529a7ad0a7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_cmutex_unlock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_platform_cmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="162" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a4af410960be4fea1a7539f260780d24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_rmutex_unlock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_platform_rmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="168" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1aa60fd2f3af596a6bd069b11115e27a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+        <definition>DBusCondVar* _dbus_platform_condvar_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_platform_condvar_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="174" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="174" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a6bc04c307db1c59e3ad8c96b2fe670ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_condvar_free</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_platform_condvar_free</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="207" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="207" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a946f9036b67e60ba3df061a7c685b501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_condvar_wait</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex)</argsstring>
+        <name>_dbus_platform_condvar_wait</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="214" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="214" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a30fb2f0260e72341291732c607be1d66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_platform_condvar_wait_timeout</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex, int timeout_milliseconds)</argsstring>
+        <name>_dbus_platform_condvar_wait_timeout</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="221" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="221" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a7a3c6408f9feaeb506a24149b13a7fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_platform_condvar_wake_one</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_platform_condvar_wake_one</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="262" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="262" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-pthread_8c_1a80031ffb847814aaa41644b6eca502c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void check_monotonic_clock</definition>
+        <argsstring>(void)</argsstring>
+        <name>check_monotonic_clock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="268" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="268" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_threads_init_platform_specific</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_threads_init_platform_specific</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize threads as in <ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default()</ref>, appropriately for the platform. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="278" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="278" bodyend="288"/>
+        <referencedby refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" compoundref="dbus-threads_8c" startline="391" endline="412">dbus_threads_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_threads_lock_platform_specific</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_threads_lock_platform_specific</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Lock a static mutex used to protect <ref refid="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" kindref="member">_dbus_threads_init_platform_specific()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="293" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="293" bodyend="296"/>
+        <referencedby refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" compoundref="dbus-memory_8c" startline="897" endline="918">dbus_shutdown</referencedby>
+        <referencedby refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" compoundref="dbus-threads_8c" startline="391" endline="412">dbus_threads_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_threads_unlock_platform_specific</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_threads_unlock_platform_specific</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Undo <ref refid="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" kindref="member">_dbus_threads_lock_platform_specific()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-pthread.c" line="299" column="1" bodyfile="dbus/dbus-sysdeps-pthread.c" bodystart="299" bodyend="302"/>
+        <referencedby refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" compoundref="dbus-memory_8c" startline="897" endline="918">dbus_shutdown</referencedby>
+        <referencedby refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" compoundref="dbus-threads_8c" startline="391" endline="412">dbus_threads_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-sysdeps-pthread.c<sp/>Implements<sp/>threads<sp/>using<sp/>pthreads<sp/>(internal<sp/>to<sp/>libdbus)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003,<sp/>2006<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-internals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-sysdeps.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-threads.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_ERRNO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_MONOTONIC_CLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Whether<sp/>we<sp/>have<sp/>a<sp/>&quot;monotonic&quot;<sp/>clock;<sp/>i.e.<sp/>a<sp/>clock<sp/>not<sp/>affected<sp/>by</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>changes<sp/>in<sp/>system<sp/>time.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>initialized<sp/>once<sp/>in<sp/>check_monotonic_clock<sp/>below.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>https://bugs.freedesktop.org/show_bug.cgi?id=18121</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>have_monotonic_clock<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structDBusRMutex" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" refkind="member"><highlight class="normal"><sp/><sp/>pthread_mutex_t<sp/><ref refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" kindref="member">lock</ref>;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structDBusCMutex" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>{</highlight></codeline>
+<codeline lineno="53" refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" refkind="member"><highlight class="normal"><sp/><sp/>pthread_mutex_t<sp/><ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>;<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structDBusCondVar" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>{</highlight></codeline>
+<codeline lineno="57" refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" refkind="member"><highlight class="normal"><sp/><sp/>pthread_cond_t<sp/><ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>;<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MUTEX(m)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((DBusMutex*)<sp/>m)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MUTEX_PTHREAD(m)<sp/>((DBusMutexPThread*)<sp/>m)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_COND_VAR(c)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((DBusCondVar*)<sp/>c)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_COND_VAR_PTHREAD(c)<sp/>((DBusCondVarPThread*)<sp/>c)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_DISABLE_ASSERT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>(tmp<sp/>!=<sp/>0)<sp/>is<sp/>a<sp/>no-op<sp/>usage<sp/>to<sp/>silence<sp/>compiler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PTHREAD_CHECK(func_name,<sp/>result_or_call)<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>int<sp/>tmp<sp/>=<sp/>(result_or_call);<sp/>if<sp/>(tmp<sp/>!=<sp/>0)<sp/>{;}<sp/>}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PTHREAD_CHECK(func_name,<sp/>result_or_call)<sp/>do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>int<sp/>tmp<sp/>=<sp/>(result_or_call);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(tmp<sp/>!=<sp/>0)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_warn_check_failed<sp/>(&quot;pthread<sp/>function<sp/>%s<sp/>failed<sp/>with<sp/>%d<sp/>%s<sp/>in<sp/>%s\n&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>func_name,<sp/>tmp,<sp/>strerror(tmp),<sp/>_DBUS_FUNCTION_NAME);<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!DBUS_DISABLE_ASSERT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">_dbus_platform_cmutex_new<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*pmutex;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>pmutex<sp/>=<sp/><ref refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" kindref="member">dbus_new</ref><sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pmutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>result<sp/>=<sp/>pthread_mutex_init<sp/>(&amp;pmutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>,<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>==<sp/>ENOMEM<sp/>||<sp/>result<sp/>==<sp/>EAGAIN)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(pmutex);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_init&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pmutex;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">_dbus_platform_rmutex_new<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*pmutex;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>pthread_mutexattr_t<sp/>mutexattr;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>pmutex<sp/>=<sp/><ref refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" kindref="member">dbus_new</ref><sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pmutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>pthread_mutexattr_init<sp/>(&amp;mutexattr);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>pthread_mutexattr_settype<sp/>(&amp;mutexattr,<sp/>PTHREAD_MUTEX_RECURSIVE);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>result<sp/>=<sp/>pthread_mutex_init<sp/>(&amp;pmutex-&gt;<ref refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" kindref="member">lock</ref>,<sp/>&amp;mutexattr);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>pthread_mutexattr_destroy<sp/>(&amp;mutexattr);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>==<sp/>ENOMEM<sp/>||<sp/>result<sp/>==<sp/>EAGAIN)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(pmutex);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_init&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pmutex;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">_dbus_platform_cmutex_free<sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_destroy&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_destroy<sp/>(&amp;mutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(mutex);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">_dbus_platform_rmutex_free<sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_destroy&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_destroy<sp/>(&amp;mutex-&gt;<ref refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(mutex);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">_dbus_platform_cmutex_lock<sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_lock&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_lock<sp/>(&amp;mutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">_dbus_platform_rmutex_lock<sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_lock&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_lock<sp/>(&amp;mutex-&gt;<ref refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">_dbus_platform_cmutex_unlock<sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_unlock&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_unlock<sp/>(&amp;mutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">_dbus_platform_rmutex_unlock<sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_mutex_unlock&quot;</highlight><highlight class="normal">,<sp/>pthread_mutex_unlock<sp/>(&amp;mutex-&gt;<ref refid="structDBusRMutex_1a9547c6c8e7394e171b68ff7c4567319c" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">_dbus_platform_condvar_new<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*pcond;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>pthread_condattr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>pcond<sp/>=<sp/><ref refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" kindref="member">dbus_new</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pcond<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>pthread_condattr_init<sp/>(&amp;attr);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_MONOTONIC_CLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(have_monotonic_clock)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_condattr_setclock<sp/>(&amp;attr,<sp/>CLOCK_MONOTONIC);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>result<sp/>=<sp/>pthread_cond_init<sp/>(&amp;pcond-&gt;<ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>,<sp/>&amp;attr);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>pthread_condattr_destroy<sp/>(&amp;attr);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>==<sp/>EAGAIN<sp/>||<sp/>result<sp/>==<sp/>ENOMEM)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(pcond);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_cond_init&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pcond;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal">_dbus_platform_condvar_free<sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_cond_destroy&quot;</highlight><highlight class="normal">,<sp/>pthread_cond_destroy<sp/>(&amp;cond-&gt;<ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>));</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(cond);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">_dbus_platform_condvar_wait<sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/><sp/>*mutex)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_cond_wait&quot;</highlight><highlight class="normal">,<sp/>pthread_cond_wait<sp/>(&amp;cond-&gt;<ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>,<sp/>&amp;mutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>));</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="221"><highlight class="normal">_dbus_platform_condvar_wait_timeout<sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*cond,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*mutex,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_milliseconds)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timeval<sp/>time_now;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>end_time;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_MONOTONIC_CLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(have_monotonic_clock)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>monotonic_timer;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>clock_gettime<sp/>(CLOCK_MONOTONIC,&amp;monotonic_timer);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time_now.tv_sec<sp/>=<sp/>monotonic_timer.tv_sec;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time_now.tv_usec<sp/>=<sp/>monotonic_timer.tv_nsec<sp/>/<sp/>1000;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>else<sp/>falls<sp/>through<sp/>to<sp/>gettimeofday<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>gettimeofday<sp/>(&amp;time_now,<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/>end_time.tv_sec<sp/>=<sp/>time_now.tv_sec<sp/>+<sp/>timeout_milliseconds<sp/>/<sp/>1000;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>end_time.tv_nsec<sp/>=<sp/>(time_now.tv_usec<sp/>+<sp/>(timeout_milliseconds<sp/>%<sp/>1000)<sp/>*<sp/>1000)<sp/>*<sp/>1000;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(end_time.tv_nsec<sp/>&gt;<sp/>1000*1000*1000)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>end_time.tv_sec<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>end_time.tv_nsec<sp/>-=<sp/>1000*1000*1000;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>result<sp/>=<sp/>pthread_cond_timedwait<sp/>(&amp;cond-&gt;<ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>,<sp/>&amp;mutex-&gt;<ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>,<sp/>&amp;end_time);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>ETIMEDOUT)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_cond_timedwait&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>return<sp/>true<sp/>if<sp/>we<sp/>did<sp/>not<sp/>time<sp/>out<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>!=<sp/>ETIMEDOUT;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">_dbus_platform_condvar_wake_one<sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>PTHREAD_CHECK<sp/>(</highlight><highlight class="stringliteral">&quot;pthread_cond_signal&quot;</highlight><highlight class="normal">,<sp/>pthread_cond_signal<sp/>(&amp;cond-&gt;<ref refid="structDBusCondVar_1a1c1e453c6198b5df982ab2a7582c72d6" kindref="member">cond</ref>));</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">check_monotonic_clock<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_MONOTONIC_CLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>dummy;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clock_getres<sp/>(CLOCK_MONOTONIC,<sp/>&amp;dummy)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>have_monotonic_clock<sp/>=<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="278" refid="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" refkind="member"><highlight class="normal"><ref refid="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" kindref="member">_dbus_threads_init_platform_specific</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>have<sp/>static<sp/>variables,<sp/>and<sp/>we<sp/>need<sp/>to<sp/>handle<sp/>both<sp/>the<sp/>case</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/><sp/><sp/>*<sp/>where<sp/>dbus_threads_init()<sp/>has<sp/>been<sp/>called<sp/>and<sp/>when<sp/>it<sp/>hasn&apos;t;</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/><sp/><sp/>*<sp/>so<sp/>initialize<sp/>them<sp/>before<sp/>any<sp/>threads<sp/>are<sp/>allowed<sp/>to<sp/>enter.</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>check_monotonic_clock<sp/>();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/>(void)<sp/><ref refid="group__DBusSysdeps_1ga6c14c6bf4dd98b3fe3a114e9f5630148" kindref="member">_dbus_check_setuid</ref><sp/>();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>pthread_mutex_t<sp/>init_mutex<sp/>=<sp/>PTHREAD_MUTEX_INITIALIZER;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" refkind="member"><highlight class="normal"><ref refid="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" kindref="member">_dbus_threads_lock_platform_specific</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>pthread_mutex_lock<sp/>(&amp;init_mutex);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" refkind="member"><highlight class="normal"><ref refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" kindref="member">_dbus_threads_unlock_platform_specific</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/>pthread_mutex_unlock<sp/>(&amp;init_mutex);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-sysdeps-pthread.c"/>
+  </compounddef>
+</doxygen>

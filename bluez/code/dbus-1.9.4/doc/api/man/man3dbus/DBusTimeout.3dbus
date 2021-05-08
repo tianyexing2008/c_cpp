@@ -1,0 +1,112 @@
+.TH "DBusTimeout" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTimeout \- Internals of \fBDBusTimeout\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "int \fBinterval\fP"
+.br
+.RI "\fITimeout interval in milliseconds\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeoutHandler\fP \fBhandler\fP"
+.br
+.RI "\fITimeout handler\&. \fP"
+.ti -1c
+.RI "void * \fBhandler_data\fP"
+.br
+.RI "\fITimeout handler data\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_handler_data_function\fP"
+.br
+.RI "\fIFree the timeout handler data\&. \fP"
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.RI "\fIApplication data\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_data_function\fP"
+.br
+.RI "\fIFree the application data\&. \fP"
+.ti -1c
+.RI "unsigned int \fBenabled\fP: 1"
+.br
+.RI "\fITrue if timeout is active\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusTimeout\fP\&. 
+.PP
+Definition at line 40 of file dbus\-timeout\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "void* DBusTimeout::data"
+
+.PP
+Application data\&. 
+.PP
+Definition at line 49 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_set_functions(), _dbus_timeout_new(), dbus_timeout_get_data(), and dbus_timeout_set_data()\&.
+.SS "unsigned int DBusTimeout::enabled"
+
+.PP
+True if timeout is active\&. 
+.PP
+Definition at line 51 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_toggle_timeout(), _dbus_timeout_new(), _dbus_timeout_set_enabled(), and dbus_timeout_get_enabled()\&.
+.SS "\fBDBusFreeFunction\fP DBusTimeout::free_data_function"
+
+.PP
+Free the application data\&. 
+.PP
+Definition at line 50 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_set_functions(), _dbus_timeout_new(), and dbus_timeout_set_data()\&.
+.SS "\fBDBusFreeFunction\fP DBusTimeout::free_handler_data_function"
+
+.PP
+Free the timeout handler data\&. 
+.PP
+Definition at line 47 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_new(), and _dbus_timeout_unref()\&.
+.SS "\fBDBusTimeoutHandler\fP DBusTimeout::handler"
+
+.PP
+Timeout handler\&. 
+.PP
+Definition at line 45 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_new(), and dbus_timeout_handle()\&.
+.SS "void* DBusTimeout::handler_data"
+
+.PP
+Timeout handler data\&. 
+.PP
+Definition at line 46 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_new(), _dbus_timeout_unref(), and dbus_timeout_handle()\&.
+.SS "int DBusTimeout::interval"
+
+.PP
+Timeout interval in milliseconds\&. 
+.PP
+Definition at line 43 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_new(), _dbus_timeout_set_interval(), and dbus_timeout_get_interval()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusDataSlotAllocator" kind="struct" language="C++" prot="public">
+    <compoundname>DBusDataSlotAllocator</compoundname>
+    <includes refid="dbus-dataslot_8h" local="no">dbus-dataslot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref> *</type>
+        <definition>DBusAllocatedSlot* DBusDataSlotAllocator::allocated_slots</definition>
+        <argsstring></argsstring>
+        <name>allocated_slots</name>
+        <briefdescription>
+<para>Allocated slots. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="57" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" compoundref="dbus-dataslot_8c" startline="46" endline="55">_dbus_data_slot_allocator_init</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" compoundref="dbus-dataslot_8c" startline="221" endline="273">_dbus_data_slot_list_set</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" compoundref="dbus-dataslot_8c" startline="285" endline="308">_dbus_data_slot_list_get</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusDataSlotAllocator::n_allocated_slots</definition>
+        <argsstring></argsstring>
+        <name>n_allocated_slots</name>
+        <briefdescription>
+<para>number of slots malloc&apos;d </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="58" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" compoundref="dbus-dataslot_8c" startline="46" endline="55">_dbus_data_slot_allocator_init</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusDataSlotAllocator::n_used_slots</definition>
+        <argsstring></argsstring>
+        <name>n_used_slots</name>
+        <briefdescription>
+<para>number of slots used </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="59" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" compoundref="dbus-dataslot_8c" startline="46" endline="55">_dbus_data_slot_allocator_init</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" prot="public" static="no" mutable="no">
+        <type>DBusGlobalLock</type>
+        <definition>DBusGlobalLock DBusDataSlotAllocator::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>index of thread lock </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="60" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" compoundref="dbus-dataslot_8c" startline="46" endline="55">_dbus_data_slot_allocator_init</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" compoundref="dbus-dataslot_8c" startline="221" endline="273">_dbus_data_slot_list_set</referencedby>
+        <referencedby refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" compoundref="dbus-dataslot_8c" startline="285" endline="308">_dbus_data_slot_list_get</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An allocator that tracks a set of slot IDs. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="147">
+        <label>DBusAllocatedSlot</label>
+        <link refid="structDBusAllocatedSlot"/>
+      </node>
+      <node id="146">
+        <label>DBusDataSlotAllocator</label>
+        <link refid="structDBusDataSlotAllocator"/>
+        <childnode refid="147" relation="usage">
+          <edgelabel>allocated_slots</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-dataslot.h" line="56" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="55" bodyend="61"/>
+    <listofallmembers>
+      <member refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" prot="public" virt="non-virtual"><scope>DBusDataSlotAllocator</scope><name>allocated_slots</name></member>
+      <member refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" prot="public" virt="non-virtual"><scope>DBusDataSlotAllocator</scope><name>lock</name></member>
+      <member refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" prot="public" virt="non-virtual"><scope>DBusDataSlotAllocator</scope><name>n_allocated_slots</name></member>
+      <member refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" prot="public" virt="non-virtual"><scope>DBusDataSlotAllocator</scope><name>n_used_slots</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusKeyringInternals" kind="group">
+    <compoundname>DBusKeyringInternals</compoundname>
+    <title>DBusKeyring implementation details</title>
+    <innerclass refid="structDBusKey" prot="public">DBusKey</innerclass>
+    <innerclass refid="structDBusKeyring" prot="public">DBusKeyring</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusKeyringInternals_1gae3a229e61b2070c708a5fcbe3d02d01d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+        <definition>static DBusKeyring* _dbus_keyring_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_keyring_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="123" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="123" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1gad08903975b40304ec13b9c111806a5b1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void free_keys</definition>
+        <argsstring>(DBusKey *keys, int n_keys)</argsstring>
+        <name>free_keys</name>
+        <param>
+          <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> *</type>
+          <declname>keys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_keys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="157" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="157" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1gad4334bf2f8ba576eb18407bb5e8dcbac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t _dbus_keyring_lock</definition>
+        <argsstring>(DBusKeyring *keyring)</argsstring>
+        <name>_dbus_keyring_lock</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="196" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="196" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1ga3b8d07b9cbdf52fe773a0504445dccd1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _dbus_keyring_unlock</definition>
+        <argsstring>(DBusKeyring *keyring)</argsstring>
+        <name>_dbus_keyring_unlock</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="247" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="247" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1ga49e2d59c69cd6cdde68b41e66eec11b8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> *</type>
+        <definition>static DBusKey* find_key_by_id</definition>
+        <argsstring>(DBusKey *keys, int n_keys, int id)</argsstring>
+        <name>find_key_by_id</name>
+        <param>
+          <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> *</type>
+          <declname>keys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_keys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="260" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="260" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1ga5da669e280128dc8377558e5b626a8de" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t add_new_key</definition>
+        <argsstring>(DBusKey **keys_p, int *n_keys_p, DBusError *error)</argsstring>
+        <name>add_new_key</name>
+        <param>
+          <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> **</type>
+          <declname>keys_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n_keys_p</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="279" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="279" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusKeyringInternals_1ga2db448e2c3a7b9a6c89a21eff406fe1d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t _dbus_keyring_reload</definition>
+        <argsstring>(DBusKeyring *keyring, dbus_bool_t add_new, DBusError *error)</argsstring>
+        <name>_dbus_keyring_reload</name>
+        <param>
+          <type><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> *</type>
+          <declname>keyring</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>add_new</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Reloads the keyring file, optionally adds one new key to the file, removes all expired keys from the file iff a key was added, then resaves the file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stores the keys from the file in keyring-&gt;keys. Note that the file is only resaved (written to) if a key is added, this means that only servers ever write to the file and need to lock it, which avoids a lot of lock contention at login time and such.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the keyring </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>add_new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to add a new key to the file, expire keys, and resave </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for errors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="394" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="394" bodyend="650"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusKeyringInternals_1ga73544ee0e71ac5224d339bcc87b4b559" prot="public" static="no">
+        <name>NEW_KEY_TIMEOUT_SECONDS</name>
+        <initializer>(60*5)</initializer>
+        <briefdescription>
+<para>The maximum age of a key before we create a new key to use in challenges. </para>        </briefdescription>
+        <detaileddescription>
+<para>This isn&apos;t super-reliably enforced, since system clocks can change or be wrong, but we make a best effort to only use keys for a short time. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="67" column="9" bodyfile="dbus/dbus-keyring.c" bodystart="67" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusKeyringInternals_1gada47ab381d8e794bd9563f362ea1e09e" prot="public" static="no">
+        <name>EXPIRE_KEYS_TIMEOUT_SECONDS</name>
+        <initializer>(<ref refid="group__DBusKeyringInternals_1ga73544ee0e71ac5224d339bcc87b4b559" kindref="member">NEW_KEY_TIMEOUT_SECONDS</ref> + (60*2))</initializer>
+        <briefdescription>
+<para>The time after which we drop a key from the secrets file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The EXPIRE_KEYS_TIMEOUT_SECONDS - NEW_KEY_TIMEOUT_SECONDS is the minimum time window a client has to complete authentication. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="73" column="9" bodyfile="dbus/dbus-keyring.c" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusKeyringInternals_1ga5b0fdbdfffac1aebfc00716cec02afcd" prot="public" static="no">
+        <name>MAX_TIME_TRAVEL_SECONDS</name>
+        <initializer>(60*5)</initializer>
+        <briefdescription>
+<para>The maximum amount of time a key can be in the future. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="77" column="9" bodyfile="dbus/dbus-keyring.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusKeyringInternals_1gacf841625731864fd6c3fab95bd0e878a" prot="public" static="no">
+        <name>MAX_KEYS_IN_FILE</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>Maximum number of keys in the keyring before we just ignore the rest. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="86" column="10" bodyfile="dbus/dbus-keyring.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusKeyringInternals_1gad11bde7ec18fb393d9f6e552dc89e6c2" prot="public" static="no">
+        <name>MAX_LOCK_TIMEOUTS</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>Maximum number of timeouts waiting for lock before we decide it&apos;s stale. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="191" column="9" bodyfile="dbus/dbus-keyring.c" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusKeyringInternals_1ga046e055537cce7bc45caf9d6e51e19dd" prot="public" static="no">
+        <name>LOCK_TIMEOUT_MILLISECONDS</name>
+        <initializer>250</initializer>
+        <briefdescription>
+<para>Length of each timeout while waiting for a lock. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="193" column="9" bodyfile="dbus/dbus-keyring.c" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>The guts of <ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

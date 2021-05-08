@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTransportVTable" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTransportVTable</compoundname>
+    <includes refid="dbus-transport-protected_8h" local="no">dbus-transport-protected.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTransportVTable_1adcfa2eb4cc86b2099f5d6857998b7cb9" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusTransportVTable::finalize) (DBusTransport *transport)</definition>
+        <argsstring>)(DBusTransport *transport)</argsstring>
+        <name>finalize</name>
+        <briefdescription>
+<para>The finalize method must free the transport. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="43" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gab7c53c32a2320c81aae8ce4345762e73" compoundref="dbus-transport_8c" startline="477" endline="491">_dbus_transport_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1ab7789265fc41b7e1334cfd58177dedad" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>dbus_bool_t(*  DBusTransportVTable::handle_watch) (DBusTransport *transport, DBusWatch *watch, unsigned int flags)</definition>
+        <argsstring>)(DBusTransport *transport, DBusWatch *watch, unsigned int flags)</argsstring>
+        <name>handle_watch</name>
+        <briefdescription>
+<para>The handle_watch method handles reading/writing data as indicated by the flags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="46" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" compoundref="dbus-transport_8c" startline="889" endline="915">_dbus_transport_handle_watch</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1a5396d6afe1d757a1bcf655fe5b4d7c9c" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusTransportVTable::disconnect) (DBusTransport *transport)</definition>
+        <argsstring>)(DBusTransport *transport)</argsstring>
+        <name>disconnect</name>
+        <briefdescription>
+<para>Disconnect this transport. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="53" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga78444dd8f6c6d6b429433ad81c3e318a" compoundref="dbus-transport_8c" startline="502" endline="516">_dbus_transport_disconnect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1a55358fee4baae19026e157e1d146fb38" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>dbus_bool_t(*  DBusTransportVTable::connection_set) (DBusTransport *transport)</definition>
+        <argsstring>)(DBusTransport *transport)</argsstring>
+        <name>connection_set</name>
+        <briefdescription>
+<para>Called when transport-&gt;connection has been filled in. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="56" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga9aaa3f8bf429c94d4ed180dff36c503c" compoundref="dbus-transport_8c" startline="927" endline="941">_dbus_transport_set_connection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1a85c52e8bd65892cbceaa49ef08215482" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusTransportVTable::do_iteration) (DBusTransport *transport, unsigned int flags, int timeout_milliseconds)</definition>
+        <argsstring>)(DBusTransport *transport, unsigned int flags, int timeout_milliseconds)</argsstring>
+        <name>do_iteration</name>
+        <briefdescription>
+<para>Called to do a single &quot;iteration&quot; (block on select/poll followed by reading or writing data). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="59" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1ab5d20908702927174d10cd9b0fd77d44" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusTransportVTable::live_messages_changed) (DBusTransport *transport)</definition>
+        <argsstring>)(DBusTransport *transport)</argsstring>
+        <name>live_messages_changed</name>
+        <briefdescription>
+<para>Outstanding messages counter changed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="66" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportVTable_1a0db8b5ce8c21eefb962631260ef0e932" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>dbus_bool_t(*  DBusTransportVTable::get_socket_fd) (DBusTransport *transport, int *fd_p)</definition>
+        <argsstring>)(DBusTransport *transport, int *fd_p)</argsstring>
+        <name>get_socket_fd</name>
+        <briefdescription>
+<para>Get socket file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-protected.h" line="69" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="group__DBusTransport_1gac58d38eb19b39774f89271fc6472e087" compoundref="dbus-transport_8c" startline="951" endline="970">_dbus_transport_get_socket_fd</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The virtual table that must be implemented to create a new kind of transport. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dbus/dbus-transport-protected.h" line="42" column="1" bodyfile="dbus/dbus-transport-protected.h" bodystart="41" bodyend="72"/>
+    <listofallmembers>
+      <member refid="structDBusTransportVTable_1a55358fee4baae19026e157e1d146fb38" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>connection_set</name></member>
+      <member refid="structDBusTransportVTable_1a5396d6afe1d757a1bcf655fe5b4d7c9c" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>disconnect</name></member>
+      <member refid="structDBusTransportVTable_1a85c52e8bd65892cbceaa49ef08215482" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>do_iteration</name></member>
+      <member refid="structDBusTransportVTable_1adcfa2eb4cc86b2099f5d6857998b7cb9" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>finalize</name></member>
+      <member refid="structDBusTransportVTable_1a0db8b5ce8c21eefb962631260ef0e932" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>get_socket_fd</name></member>
+      <member refid="structDBusTransportVTable_1ab7789265fc41b7e1334cfd58177dedad" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>handle_watch</name></member>
+      <member refid="structDBusTransportVTable_1ab5d20908702927174d10cd9b0fd77d44" prot="public" virt="non-virtual"><scope>DBusTransportVTable</scope><name>live_messages_changed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

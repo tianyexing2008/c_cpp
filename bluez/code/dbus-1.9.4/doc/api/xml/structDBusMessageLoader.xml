@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusMessageLoader" kind="struct" language="C++" prot="public">
+    <compoundname>DBusMessageLoader</compoundname>
+    <includes refid="dbus-message-private_8h" local="no">dbus-message-private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusMessageLoader::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="62" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gad39efb9ff20c7538f12e164a6920edc4" compoundref="dbus-message_8c" startline="3911" endline="3916">_dbus_message_loader_ref</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusMessageLoader::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Buffered data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="64" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" compoundref="dbus-message_8c" startline="3962" endline="3970">_dbus_message_loader_get_buffer</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" compoundref="dbus-message_8c" startline="3982" endline="3989">_dbus_message_loader_return_buffer</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusMessageLoader::messages</definition>
+        <argsstring></argsstring>
+        <name>messages</name>
+        <briefdescription>
+<para>Complete messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="66" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66674354acdd09ca6e11d600b34bdd5f" compoundref="dbus-message_8c" startline="4365" endline="4371">_dbus_message_loader_peek_message</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga9e5e75716d7263d9908d45a60b1b6bdc" compoundref="dbus-message_8c" startline="4382" endline="4385">_dbus_message_loader_pop_message</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga6ec3c1ad57340f717a47d79092122d04" compoundref="dbus-message_8c" startline="4396" endline="4399">_dbus_message_loader_pop_message_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga71b290eb470a55217971fcd6851fc40c" compoundref="dbus-message_8c" startline="4408" endline="4412">_dbus_message_loader_putback_message_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusMessageLoader::max_message_size</definition>
+        <argsstring></argsstring>
+        <name>max_message_size</name>
+        <briefdescription>
+<para>Maximum size of a message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="68" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga031623c6235f98801cab3e53f0a5f757" compoundref="dbus-message_8c" startline="4453" endline="4463">_dbus_message_loader_set_max_message_size</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gadd76a4b7191465f2dcb8e6b56b717961" compoundref="dbus-message_8c" startline="4472" endline="4475">_dbus_message_loader_get_max_message_size</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long DBusMessageLoader::max_message_unix_fds</definition>
+        <argsstring></argsstring>
+        <name>max_message_unix_fds</name>
+        <briefdescription>
+<para>Maximum unix fds in a message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="69" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga4ed7327f9dee98711ebd7c9e5b74dec0" compoundref="dbus-message_8c" startline="4002" endline="4038">_dbus_message_loader_get_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gadd6c0fa721b4340df936363fbde912dc" compoundref="dbus-message_8c" startline="4484" endline="4494">_dbus_message_loader_set_max_message_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf65867d15c7d8adb91f430c483c180be" compoundref="dbus-message_8c" startline="4503" endline="4506">_dbus_message_loader_get_max_message_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref></type>
+        <definition>DBusValidity DBusMessageLoader::corruption_reason</definition>
+        <argsstring></argsstring>
+        <name>corruption_reason</name>
+        <briefdescription>
+<para>why we were corrupted </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="71" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga38da52ac9344b00df530098bdd9a3842" compoundref="dbus-message_8c" startline="4424" endline="4429">_dbus_message_loader_get_is_corrupted</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafb8c42ed5242274586607812ff6fba10" compoundref="dbus-message_8c" startline="4438" endline="4444">_dbus_message_loader_get_corruption_reason</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusMessageLoader::corrupted</definition>
+        <argsstring></argsstring>
+        <name>corrupted</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>We got broken data, and are no longer working. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="73" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga38da52ac9344b00df530098bdd9a3842" compoundref="dbus-message_8c" startline="4424" endline="4429">_dbus_message_loader_get_is_corrupted</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafb8c42ed5242274586607812ff6fba10" compoundref="dbus-message_8c" startline="4438" endline="4444">_dbus_message_loader_get_corruption_reason</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusMessageLoader::buffer_outstanding</definition>
+        <argsstring></argsstring>
+        <name>buffer_outstanding</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Someone is using the buffer to read. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="75" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" compoundref="dbus-message_8c" startline="3962" endline="3970">_dbus_message_loader_get_buffer</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" compoundref="dbus-message_8c" startline="3982" endline="3989">_dbus_message_loader_return_buffer</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>All members are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="240">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="241" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="242" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="242">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="242" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="241">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-message-private.h" line="61" column="1" bodyfile="dbus/dbus-message-private.h" bodystart="60" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>buffer_outstanding</name></member>
+      <member refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>corrupted</name></member>
+      <member refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>corruption_reason</name></member>
+      <member refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>data</name></member>
+      <member refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>max_message_size</name></member>
+      <member refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>max_message_unix_fds</name></member>
+      <member refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>messages</name></member>
+      <member refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" prot="public" virt="non-virtual"><scope>DBusMessageLoader</scope><name>refcount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

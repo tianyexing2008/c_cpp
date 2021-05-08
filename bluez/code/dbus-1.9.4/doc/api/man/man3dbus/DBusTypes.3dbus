@@ -1,0 +1,98 @@
+.TH "DBusTypes" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTypes \- Basic types
+.PP
+dbus_bool_t, dbus_int32_t, etc\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBus8ByteStruct\fP"
+.br
+.RI "\fIAn 8-byte struct you could use to access int64 without having int64 support\&. \fP"
+.ti -1c
+.RI "union \fBDBusBasicValue\fP"
+.br
+.RI "\fIA simple value union that lets you access bytes as if they were various types; useful when dealing with basic types via void pointers and varargs\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_HAVE_INT64\fP   1"
+.br
+.RI "\fIAlways defined\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_INT64_CONSTANT\fP(val)   (\fB_DBUS_GNUC_EXTENSION\fP (val##LL))"
+.br
+.RI "\fIDeclare a 64-bit signed integer constant\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_UINT64_CONSTANT\fP(val)   (\fB_DBUS_GNUC_EXTENSION\fP (val##ULL))"
+.br
+.RI "\fIDeclare a 64-bit unsigned integer constant\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBdbus_uint32_t\fP \fBdbus_bool_t\fP"
+.br
+.RI "\fIA boolean, valid values are \fBTRUE\fP and \fBFALSE\fP\&. \fP"
+.ti -1c
+.RI "typedef unsigned int \fBdbus_uint32_t\fP"
+.br
+.RI "\fIA 32-bit unsigned integer on all platforms\&. \fP"
+.ti -1c
+.RI "typedef int \fBdbus_int32_t\fP"
+.br
+.RI "\fIA 32-bit signed integer on all platforms\&. \fP"
+.ti -1c
+.RI "typedef unsigned short \fBdbus_uint16_t\fP"
+.br
+.RI "\fIA 16-bit unsigned integer on all platforms\&. \fP"
+.ti -1c
+.RI "typedef short \fBdbus_int16_t\fP"
+.br
+.RI "\fIA 16-bit signed integer on all platforms\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_DBUS_GNUC_EXTENSION\fP typedef unsigned long long \fBdbus_uint64_t\fP"
+.br
+.RI "\fIA 64-bit unsigned integer\&. \fP"
+.ti -1c
+.RI "\fB_DBUS_GNUC_EXTENSION\fP typedef long long \fBdbus_int64_t\fP"
+.br
+.RI "\fIA 64-bit signed integer\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+dbus_bool_t, dbus_int32_t, etc\&. 
+
+Typedefs for common primitive types\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_HAVE_INT64   1"
+
+.PP
+Always defined\&. In older libdbus versions, this would be undefined if there was no 64-bit integer type on that platform\&. libdbus no longer supports such platforms\&. 
+.SS "#define DBUS_INT64_CONSTANT(val)   (\fB_DBUS_GNUC_EXTENSION\fP (val##LL))"
+
+.PP
+Declare a 64-bit signed integer constant\&. The macro adds the necessary 'LL' or whatever after the integer, giving a literal such as '325145246765LL' 
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_get_real_time(), and _dbus_stat()\&.
+.SS "#define DBUS_UINT64_CONSTANT(val)   (\fB_DBUS_GNUC_EXTENSION\fP (val##ULL))"
+
+.PP
+Declare a 64-bit unsigned integer constant\&. The macro adds the necessary 'ULL' or whatever after the integer, giving a literal such as '325145246765ULL' 
+.PP
+Referenced by _dbus_first_type_in_signature_c_str()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

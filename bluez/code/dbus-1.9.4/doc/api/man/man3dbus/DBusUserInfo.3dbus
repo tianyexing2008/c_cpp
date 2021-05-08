@@ -1,0 +1,48 @@
+.TH "DBusUserInfo" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusUserInfo \- Information about a UNIX user\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-sysdeps\-unix\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uid_t\fP \fBuid\fP"
+.br
+.RI "\fIUID\&. \fP"
+.ti -1c
+.RI "\fBdbus_gid_t\fP \fBprimary_gid\fP"
+.br
+.RI "\fIGID\&. \fP"
+.ti -1c
+.RI "\fBdbus_gid_t\fP * \fBgroup_ids\fP"
+.br
+.RI "\fIGroups IDs, \fIincluding\fP above primary group\&. \fP"
+.ti -1c
+.RI "int \fBn_group_ids\fP"
+.br
+.RI "\fISize of group IDs array\&. \fP"
+.ti -1c
+.RI "char * \fBusername\fP"
+.br
+.RI "\fIUsername\&. \fP"
+.ti -1c
+.RI "char * \fBhomedir\fP"
+.br
+.RI "\fIHome directory\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Information about a UNIX user\&. 
+.PP
+Definition at line 98 of file dbus\-sysdeps\-unix\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

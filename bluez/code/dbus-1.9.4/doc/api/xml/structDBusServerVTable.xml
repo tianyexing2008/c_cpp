@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusServerVTable" kind="struct" language="C++" prot="public">
+    <compoundname>DBusServerVTable</compoundname>
+    <includes refid="dbus-server-protected_8h" local="no">dbus-server-protected.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusServerVTable_1a7242f69227f22aa789e383f30190695c" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusServerVTable::finalize) (DBusServer *server)</definition>
+        <argsstring>)(DBusServer *server)</argsstring>
+        <name>finalize</name>
+        <briefdescription>
+<para>The finalize method must free the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-protected.h" line="45" column="1" bodyfile="dbus/dbus-server-protected.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="group__DBusServerInternals_1ga6e1d0b379c98b0d59ebd19dc9b8a2dbe" compoundref="dbus-server_8c" startline="467" endline="493">_dbus_server_unref_unlocked</referencedby>
+        <referencedby refid="group__DBusServer_1ga95d0b6cb9795b4919aa08f667807c555" compoundref="dbus-server_8c" startline="720" endline="759">dbus_server_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusServerVTable_1afebdb548922853fcf96b7c6f84ea4017" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(*  DBusServerVTable::disconnect) (DBusServer *server)</definition>
+        <argsstring>)(DBusServer *server)</argsstring>
+        <name>disconnect</name>
+        <briefdescription>
+<para>Disconnect this server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-protected.h" line="48" column="1" bodyfile="dbus/dbus-server-protected.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="group__DBusServer_1ga1ff306fbaaa608306b0619ba5c0029a1" compoundref="dbus-server_8c" startline="770" endline="789">dbus_server_disconnect</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Virtual table to be implemented by all server &quot;subclasses&quot;. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dbus/dbus-server-protected.h" line="44" column="1" bodyfile="dbus/dbus-server-protected.h" bodystart="43" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structDBusServerVTable_1afebdb548922853fcf96b7c6f84ea4017" prot="public" virt="non-virtual"><scope>DBusServerVTable</scope><name>disconnect</name></member>
+      <member refid="structDBusServerVTable_1a7242f69227f22aa789e383f30190695c" prot="public" virt="non-virtual"><scope>DBusServerVTable</scope><name>finalize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

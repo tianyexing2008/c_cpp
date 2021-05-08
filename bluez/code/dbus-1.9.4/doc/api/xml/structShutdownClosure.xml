@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structShutdownClosure" kind="struct" language="C++" prot="public">
+    <compoundname>ShutdownClosure</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structShutdownClosure_1a2152ea3eed35addda2f33eee5fbcdd26" prot="public" static="no" mutable="no">
+        <type><ref refid="structShutdownClosure" kindref="compound">ShutdownClosure</ref> *</type>
+        <definition>ShutdownClosure* ShutdownClosure::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+<para>Next <ref refid="structShutdownClosure" kindref="compound">ShutdownClosure</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="793" column="1" bodyfile="dbus/dbus-memory.c" bodystart="793" bodyend="-1"/>
+        <referencedby refid="group__DBusMemoryInternals_1ga8dc6d5dd0a0e7901ab793da7403ee734" compoundref="dbus-memory_8c" startline="810" endline="821">_dbus_register_shutdown_func</referencedby>
+        <referencedby refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" compoundref="dbus-memory_8c" startline="897" endline="918">dbus_shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structShutdownClosure_1a8d8d4ad2e646f8643a8044de02cf823f" prot="public" static="no" mutable="no">
+        <type>DBusShutdownFunction</type>
+        <definition>DBusShutdownFunction ShutdownClosure::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <briefdescription>
+<para>Function to call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="794" column="1" bodyfile="dbus/dbus-memory.c" bodystart="794" bodyend="-1"/>
+        <referencedby refid="group__DBusMemoryInternals_1ga8dc6d5dd0a0e7901ab793da7403ee734" compoundref="dbus-memory_8c" startline="810" endline="821">_dbus_register_shutdown_func</referencedby>
+        <referencedby refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" compoundref="dbus-memory_8c" startline="897" endline="918">dbus_shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structShutdownClosure_1ab6f70dacffc0aa2376a6c26e1fb17518" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ShutdownClosure::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Data for function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="795" column="1" bodyfile="dbus/dbus-memory.c" bodystart="795" bodyend="-1"/>
+        <referencedby refid="group__DBusMemoryInternals_1ga8dc6d5dd0a0e7901ab793da7403ee734" compoundref="dbus-memory_8c" startline="810" endline="821">_dbus_register_shutdown_func</referencedby>
+        <referencedby refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" compoundref="dbus-memory_8c" startline="897" endline="918">dbus_shutdown</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct represents a function to be called on shutdown. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="595">
+        <label>ShutdownClosure</label>
+        <link refid="structShutdownClosure"/>
+        <childnode refid="595" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-memory.c" line="792" column="1" bodyfile="dbus/dbus-memory.c" bodystart="791" bodyend="796"/>
+    <listofallmembers>
+      <member refid="structShutdownClosure_1ab6f70dacffc0aa2376a6c26e1fb17518" prot="public" virt="non-virtual"><scope>ShutdownClosure</scope><name>data</name></member>
+      <member refid="structShutdownClosure_1a8d8d4ad2e646f8643a8044de02cf823f" prot="public" virt="non-virtual"><scope>ShutdownClosure</scope><name>func</name></member>
+      <member refid="structShutdownClosure_1a2152ea3eed35addda2f33eee5fbcdd26" prot="public" virt="non-virtual"><scope>ShutdownClosure</scope><name>next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

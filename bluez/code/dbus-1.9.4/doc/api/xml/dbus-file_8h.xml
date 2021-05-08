@@ -1,0 +1,1423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-file_8h" kind="file" language="C++">
+    <compoundname>dbus-file.h</compoundname>
+    <includes refid="dbus-string_8h" local="no">dbus/dbus-string.h</includes>
+    <includes refid="dbus-errors_8h" local="no">dbus/dbus-errors.h</includes>
+    <includedby refid="dbus-sysdeps_8h" local="no">dbus-sysdeps.h</includedby>
+    <includedby refid="dbus-file-unix_8c" local="yes">dbus-file-unix.c</includedby>
+    <includedby refid="dbus-file_8c" local="yes">dbus-file.c</includedby>
+    <incdepgraph>
+      <node id="903">
+        <label>stdarg.h</label>
+      </node>
+      <node id="905">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="898">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="900">
+        <label>stddef.h</label>
+      </node>
+      <node id="897">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="899" relation="include">
+        </childnode>
+        <childnode refid="902" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+      <node id="901">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="898" relation="include">
+        </childnode>
+      </node>
+      <node id="896">
+        <label>dbus-file.h</label>
+        <link refid="dbus-file.h"/>
+        <childnode refid="897" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+      </node>
+      <node id="904">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="899" relation="include">
+        </childnode>
+        <childnode refid="905" relation="include">
+        </childnode>
+      </node>
+      <node id="899">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="900" relation="include">
+        </childnode>
+        <childnode refid="901" relation="include">
+        </childnode>
+      </node>
+      <node id="902">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="900" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="940">
+        <label>dbus-signature.c</label>
+        <link refid="dbus-signature_8c_source"/>
+      </node>
+      <node id="927">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="912">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal_8h_source"/>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="915" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="933">
+        <label>dbus-list.c</label>
+        <link refid="dbus-list_8c_source"/>
+      </node>
+      <node id="910">
+        <label>dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="909" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="925" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+        <childnode refid="948" relation="include">
+        </childnode>
+        <childnode refid="949" relation="include">
+        </childnode>
+        <childnode refid="950" relation="include">
+        </childnode>
+      </node>
+      <node id="962">
+        <label>dbus-server-win.c</label>
+        <link refid="dbus-server-win_8c_source"/>
+      </node>
+      <node id="965">
+        <label>dbus-server-win.h</label>
+        <link refid="dbus-server-win_8h_source"/>
+        <childnode refid="962" relation="include">
+        </childnode>
+      </node>
+      <node id="914">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="960">
+        <label>dbus-server-launchd.c</label>
+        <link refid="dbus-server-launchd_8c_source"/>
+      </node>
+      <node id="959">
+        <label>dbus-server-launchd.h</label>
+        <link refid="dbus-server-launchd_8h_source"/>
+        <childnode refid="960" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+      </node>
+      <node id="983">
+        <label>dbus-misc.c</label>
+        <link refid="dbus-misc_8c_source"/>
+      </node>
+      <node id="989">
+        <label>dbus-socket-set-epoll.c</label>
+        <link refid="dbus-socket-set-epoll_8c_source"/>
+      </node>
+      <node id="982">
+        <label>dbus-marshal-basic.c</label>
+        <link refid="dbus-marshal-basic_8c_source"/>
+      </node>
+      <node id="973">
+        <label>dbus-credentials.c</label>
+        <link refid="dbus-credentials_8c_source"/>
+      </node>
+      <node id="1004">
+        <label>dbus-credentials.h</label>
+        <link refid="dbus-credentials_8h_source"/>
+        <childnode refid="1005" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="972" relation="include">
+        </childnode>
+        <childnode refid="973" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="1001" relation="include">
+        </childnode>
+      </node>
+      <node id="987">
+        <label>dbus-resources.c</label>
+        <link refid="dbus-resources_8c_source"/>
+      </node>
+      <node id="995">
+        <label>dbus-sysdeps-util-unix.c</label>
+        <link refid="dbus-sysdeps-util-unix_8c_source"/>
+      </node>
+      <node id="953">
+        <label>dbus-auth-util.c</label>
+        <link refid="dbus-auth-util_8c_source"/>
+      </node>
+      <node id="952">
+        <label>dbus-asv-util.c</label>
+        <link refid="dbus-asv-util_8c_source"/>
+      </node>
+      <node id="951">
+        <label>dbus-asv-util.h</label>
+        <link refid="dbus-asv-util_8h_source"/>
+        <childnode refid="952" relation="include">
+        </childnode>
+      </node>
+      <node id="996">
+        <label>dbus-sysdeps-util-win.c</label>
+        <link refid="dbus-sysdeps-util-win_8c_source"/>
+      </node>
+      <node id="998">
+        <label>dbus-sysdeps-wince-glue.c</label>
+        <link refid="dbus-sysdeps-wince-glue_8c_source"/>
+      </node>
+      <node id="919">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="964">
+        <label>dbus-server-unix.h</label>
+        <link refid="dbus-server-unix_8h_source"/>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="963" relation="include">
+        </childnode>
+      </node>
+      <node id="972">
+        <label>dbus-credentials-util.c</label>
+        <link refid="dbus-credentials-util_8c_source"/>
+      </node>
+      <node id="986">
+        <label>dbus-pipe-win.c</label>
+        <link refid="dbus-pipe-win_8c_source"/>
+      </node>
+      <node id="947">
+        <label>dbus-sysdeps.c</label>
+        <link refid="dbus-sysdeps_8c_source"/>
+      </node>
+      <node id="1011">
+        <label>dbus-pipe.c</label>
+        <link refid="dbus-pipe_8c_source"/>
+      </node>
+      <node id="907">
+        <label>dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="1003" relation="include">
+        </childnode>
+        <childnode refid="1004" relation="include">
+        </childnode>
+        <childnode refid="1006" relation="include">
+        </childnode>
+        <childnode refid="975" relation="include">
+        </childnode>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1010" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="984" relation="include">
+        </childnode>
+        <childnode refid="989" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="992" relation="include">
+        </childnode>
+        <childnode refid="994" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="995" relation="include">
+        </childnode>
+        <childnode refid="996" relation="include">
+        </childnode>
+        <childnode refid="997" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="998" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+        <childnode refid="999" relation="include">
+        </childnode>
+      </node>
+      <node id="1010">
+        <label>dbus-pipe.h</label>
+        <link refid="dbus-pipe_8h_source"/>
+        <childnode refid="976" relation="include">
+        </childnode>
+        <childnode refid="985" relation="include">
+        </childnode>
+        <childnode refid="986" relation="include">
+        </childnode>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="995" relation="include">
+        </childnode>
+        <childnode refid="996" relation="include">
+        </childnode>
+      </node>
+      <node id="980">
+        <label>dbus-internals.c</label>
+        <link refid="dbus-internals_8c_source"/>
+      </node>
+      <node id="908">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="909" relation="include">
+        </childnode>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="951" relation="include">
+        </childnode>
+        <childnode refid="953" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="954" relation="include">
+        </childnode>
+        <childnode refid="957" relation="include">
+        </childnode>
+        <childnode refid="966" relation="include">
+        </childnode>
+        <childnode refid="968" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="972" relation="include">
+        </childnode>
+        <childnode refid="973" relation="include">
+        </childnode>
+        <childnode refid="974" relation="include">
+        </childnode>
+        <childnode refid="975" relation="include">
+        </childnode>
+        <childnode refid="976" relation="include">
+        </childnode>
+        <childnode refid="977" relation="include">
+        </childnode>
+        <childnode refid="978" relation="include">
+        </childnode>
+        <childnode refid="980" relation="include">
+        </childnode>
+        <childnode refid="981" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="982" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="979" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="983" relation="include">
+        </childnode>
+        <childnode refid="984" relation="include">
+        </childnode>
+        <childnode refid="915" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="985" relation="include">
+        </childnode>
+        <childnode refid="986" relation="include">
+        </childnode>
+        <childnode refid="987" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="959" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="964" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="965" relation="include">
+        </childnode>
+        <childnode refid="988" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+        <childnode refid="989" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="971" relation="include">
+        </childnode>
+        <childnode refid="990" relation="include">
+        </childnode>
+        <childnode refid="991" relation="include">
+        </childnode>
+        <childnode refid="992" relation="include">
+        </childnode>
+        <childnode refid="993" relation="include">
+        </childnode>
+        <childnode refid="994" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="995" relation="include">
+        </childnode>
+        <childnode refid="996" relation="include">
+        </childnode>
+        <childnode refid="997" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="998" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+        <childnode refid="999" relation="include">
+        </childnode>
+        <childnode refid="948" relation="include">
+        </childnode>
+        <childnode refid="949" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="1000" relation="include">
+        </childnode>
+        <childnode refid="1001" relation="include">
+        </childnode>
+        <childnode refid="1002" relation="include">
+        </childnode>
+        <childnode refid="950" relation="include">
+        </childnode>
+      </node>
+      <node id="949">
+        <label>dbus-timeout.c</label>
+        <link refid="dbus-timeout_8c_source"/>
+      </node>
+      <node id="957">
+        <label>dbus-timeout.h</label>
+        <link refid="dbus-timeout_8h_source"/>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="949" relation="include">
+        </childnode>
+      </node>
+      <node id="981">
+        <label>dbus-valgrind-internal.h</label>
+        <link refid="dbus-valgrind-internal_8h_source"/>
+        <childnode refid="980" relation="include">
+        </childnode>
+        <childnode refid="979" relation="include">
+        </childnode>
+      </node>
+      <node id="992">
+        <label>dbus-string.c</label>
+        <link refid="dbus-string_8c_source"/>
+      </node>
+      <node id="937">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="922">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="956">
+        <label>dbus-transport-win.h</label>
+        <link refid="dbus-transport-win_8h_source"/>
+      </node>
+      <node id="945">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+      <node id="1008">
+        <label>dbus-sysdeps-unix.h</label>
+        <link refid="dbus-sysdeps-unix_8h_source"/>
+        <childnode refid="975" relation="include">
+        </childnode>
+        <childnode refid="985" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="971" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="1009" relation="include">
+        </childnode>
+        <childnode refid="995" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+      </node>
+      <node id="999">
+        <label>dbus-test.c</label>
+        <link refid="dbus-test_8c_source"/>
+      </node>
+      <node id="990">
+        <label>dbus-string-private.h</label>
+        <link refid="dbus-string-private_8h_source"/>
+        <childnode refid="991" relation="include">
+        </childnode>
+        <childnode refid="992" relation="include">
+        </childnode>
+      </node>
+      <node id="932">
+        <label>dbus-keyring.c</label>
+        <link refid="dbus-keyring_8c_source"/>
+      </node>
+      <node id="1005">
+        <label>dbus-keyring.h</label>
+        <link refid="dbus-keyring_8h_source"/>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+      </node>
+      <node id="924">
+        <label>dbus-pending-call-internal.h</label>
+        <link refid="dbus-pending-call-internal_8h_source"/>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+      </node>
+      <node id="963">
+        <label>dbus-server.c</label>
+        <link refid="dbus-server_8c_source"/>
+      </node>
+      <node id="948">
+        <label>dbus-threads.c</label>
+        <link refid="dbus-threads_8c_source"/>
+      </node>
+      <node id="977">
+        <label>dbus-hash.c</label>
+        <link refid="dbus-hash_8c_source"/>
+      </node>
+      <node id="997">
+        <label>dbus-sysdeps-util.c</label>
+        <link refid="dbus-sysdeps-util_8c_source"/>
+      </node>
+      <node id="913">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="1006">
+        <label>dbus-hash.h</label>
+        <link refid="dbus-hash_8h_source"/>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="1007" relation="include">
+        </childnode>
+        <childnode refid="977" relation="include">
+        </childnode>
+        <childnode refid="915" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="1001" relation="include">
+        </childnode>
+      </node>
+      <node id="939">
+        <label>dbus-marshal-validate.c</label>
+        <link refid="dbus-marshal-validate_8c_source"/>
+      </node>
+      <node id="984">
+        <label>dbus-nonce.c</label>
+        <link refid="dbus-nonce_8c_source"/>
+      </node>
+      <node id="936">
+        <label>dbus-marshal-byteswap.c</label>
+        <link refid="dbus-marshal-byteswap_8c_source"/>
+      </node>
+      <node id="929">
+        <label>dbus-transport-protected.h</label>
+        <link refid="dbus-transport-protected_8h_source"/>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="991">
+        <label>dbus-string-util.c</label>
+        <link refid="dbus-string-util_8c_source"/>
+      </node>
+      <node id="925">
+        <label>dbus-message-internal.h</label>
+        <link refid="dbus-message-internal_8h_source"/>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+      </node>
+      <node id="935">
+        <label>dbus-marshal-byteswap.h</label>
+        <link refid="dbus-marshal-byteswap_8h_source"/>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+      </node>
+      <node id="915">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="918">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="961">
+        <label>dbus-server-socket.h</label>
+        <link refid="dbus-server-socket_8h_source"/>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="963" relation="include">
+        </childnode>
+      </node>
+      <node id="928">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="971">
+        <label>dbus-spawn.c</label>
+        <link refid="dbus-spawn_8c_source"/>
+      </node>
+      <node id="969">
+        <label>dbus-spawn.h</label>
+        <link refid="dbus-spawn_8h_source"/>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="971" relation="include">
+        </childnode>
+      </node>
+      <node id="942">
+        <label>dbus-shell.c</label>
+        <link refid="dbus-shell_8c_source"/>
+      </node>
+      <node id="923">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="1000">
+        <label>dbus-userdb-util.c</label>
+        <link refid="dbus-userdb-util_8c_source"/>
+      </node>
+      <node id="954">
+        <label>dbus-transport.h</label>
+        <link refid="dbus-transport_8h_source"/>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="955" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="956" relation="include">
+        </childnode>
+      </node>
+      <node id="967">
+        <label>dbus-dataslot.c</label>
+        <link refid="dbus-dataslot_8c_source"/>
+      </node>
+      <node id="944">
+        <label>dbus-sysdeps-thread-win.c</label>
+        <link refid="dbus-sysdeps-thread-win_8c_source"/>
+      </node>
+      <node id="966">
+        <label>dbus-dataslot.h</label>
+        <link refid="dbus-dataslot_8h_source"/>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="967" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+      </node>
+      <node id="994">
+        <label>dbus-sysdeps-pthread.c</label>
+        <link refid="dbus-sysdeps-pthread_8c_source"/>
+      </node>
+      <node id="958">
+        <label>dbus-server-protected.h</label>
+        <link refid="dbus-server-protected_8h_source"/>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="959" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+        <childnode refid="964" relation="include">
+        </childnode>
+        <childnode refid="965" relation="include">
+        </childnode>
+      </node>
+      <node id="921">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="955">
+        <label>dbus-transport-unix.h</label>
+        <link refid="dbus-transport-unix_8h_source"/>
+        <childnode refid="919" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="976">
+        <label>dbus-file-win.c</label>
+        <link refid="dbus-file-win_8c_source"/>
+      </node>
+      <node id="979">
+        <label>dbus-mempool.c</label>
+        <link refid="dbus-mempool_8c_source"/>
+      </node>
+      <node id="978">
+        <label>dbus-mempool.h</label>
+        <link refid="dbus-mempool_8h_source"/>
+        <childnode refid="977" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="979" relation="include">
+        </childnode>
+      </node>
+      <node id="988">
+        <label>dbus-sha.c</label>
+        <link refid="dbus-sha_8c_source"/>
+      </node>
+      <node id="970">
+        <label>dbus-spawn-win.c</label>
+        <link refid="dbus-spawn-win_8c_source"/>
+      </node>
+      <node id="938">
+        <label>dbus-marshal-recursive.c</label>
+        <link refid="dbus-marshal-recursive_8c_source"/>
+      </node>
+      <node id="934">
+        <label>dbus-marshal-recursive.h</label>
+        <link refid="dbus-marshal-recursive_8h_source"/>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+      </node>
+      <node id="975">
+        <label>dbus-file-unix.c</label>
+        <link refid="dbus-file-unix_8c_source"/>
+      </node>
+      <node id="916">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="920">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="931">
+        <label>dbus-transport-socket.h</label>
+        <link refid="dbus-transport-socket_8h_source"/>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="946">
+        <label>dbus-sysdeps-win.c</label>
+        <link refid="dbus-sysdeps-win_8c_source"/>
+      </node>
+      <node id="1007">
+        <label>dbus-sysdeps-win.h</label>
+        <link refid="dbus-sysdeps-win_8h_source"/>
+        <childnode refid="976" relation="include">
+        </childnode>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="996" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="998" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+      </node>
+      <node id="917">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="950">
+        <label>dbus-watch.c</label>
+        <link refid="dbus-watch_8c_source"/>
+      </node>
+      <node id="943">
+        <label>dbus-socket-set-poll.c</label>
+        <link refid="dbus-socket-set-poll_8c_source"/>
+      </node>
+      <node id="930">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="917" relation="include">
+        </childnode>
+      </node>
+      <node id="968">
+        <label>dbus-watch.h</label>
+        <link refid="dbus-watch_8h_source"/>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="969" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="950" relation="include">
+        </childnode>
+      </node>
+      <node id="1012">
+        <label>dbus-file.c</label>
+        <link refid="dbus-file_8c_source"/>
+      </node>
+      <node id="1002">
+        <label>dbus-uuidgen.c</label>
+        <link refid="dbus-uuidgen_8c_source"/>
+      </node>
+      <node id="993">
+        <label>dbus-syntax.c</label>
+        <link refid="dbus-syntax_8c_source"/>
+      </node>
+      <node id="906">
+        <label>dbus-file.h</label>
+        <link refid="dbus-file.h"/>
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="975" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+      </node>
+      <node id="1001">
+        <label>dbus-userdb.c</label>
+        <link refid="dbus-userdb_8c_source"/>
+      </node>
+      <node id="974">
+        <label>dbus-errors.c</label>
+        <link refid="dbus-errors_8c_source"/>
+      </node>
+      <node id="1009">
+        <label>dbus-userdb.h</label>
+        <link refid="dbus-userdb_8h_source"/>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="995" relation="include">
+        </childnode>
+        <childnode refid="1000" relation="include">
+        </childnode>
+        <childnode refid="1001" relation="include">
+        </childnode>
+      </node>
+      <node id="911">
+        <label>dbus-auth.c</label>
+        <link refid="dbus-auth_8c_source"/>
+      </node>
+      <node id="985">
+        <label>dbus-pipe-unix.c</label>
+        <link refid="dbus-pipe-unix_8c_source"/>
+      </node>
+      <node id="1003">
+        <label>dbus-auth.h</label>
+        <link refid="dbus-auth_8h_source"/>
+        <childnode refid="953" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="909">
+        <label>dbus-address.c</label>
+        <link refid="dbus-address_8c_source"/>
+      </node>
+      <node id="926">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+      </node>
+      <node id="941">
+        <label>dbus-memory.c</label>
+        <link refid="dbus-memory_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_file_exists</definition>
+        <argsstring>(const char *file)</argsstring>
+        <name>_dbus_file_exists</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>File interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>File interface.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>full path to the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if file exists </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="42" column="1" bodyfile="dbus/dbus-sysdeps-util-unix.c" bodystart="633" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_file_get_contents</definition>
+        <argsstring>(DBusString *str, const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_file_get_contents</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Appends the contents of the given file to the string, returning error code. </para>        </briefdescription>
+        <detaileddescription>
+<para>At the moment, won&apos;t open a file more than a megabyte in size.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to append to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename to load </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to set an error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error was set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="43" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="55" bodyend="151"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" compoundref="dbus-sysdeps-unix_8c" startline="628" endline="675">_dbus_read</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf08364813376bd2d8f455d435d85323e" compoundref="dbus-internals_8c" startline="663" endline="669">_dbus_uuid_encode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_string_save_to_file</definition>
+        <argsstring>(const DBusString *str, const DBusString *filename, dbus_bool_t world_readable, DBusError *error)</argsstring>
+        <name>_dbus_string_save_to_file</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>world_readable</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Writes a string out to a file. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the file exists, it will be atomically overwritten by the new data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file to save string to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>world_readable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If set, ensure the file is world readable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in on failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure</para></simplesect>
+If the file exists, it will be atomically overwritten by the new data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file to save string to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>world_readable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, ensure file is world readable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in on failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="46" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="164" bodyend="317"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1ga709ce349c6ee05263850444fb4e0177d" compoundref="dbus-sysdeps_8c" startline="575" endline="601">_dbus_generate_random_ascii</references>
+        <references refid="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" compoundref="dbus-file-unix_8c" startline="326" endline="344">_dbus_make_file_world_readable</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" compoundref="dbus-sysdeps-unix_8c" startline="688" endline="711">_dbus_write</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaa16de06b33c56323fa33dd96eaab3829" compoundref="dbus-internals_8c" startline="757" endline="793">_dbus_write_uuid_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_make_file_world_readable</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_make_file_world_readable</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Makes the file readable by every user in the system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the file&apos;s permissions could be changed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="51" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="326" bodyend="344"/>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-win_8c" startline="212" endline="358">_dbus_string_save_to_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_create_file_exclusively</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_create_file_exclusively</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates the given file, failing if the file already exists. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we created the file and it didn&apos;t exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="54" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="353" bodyend="388"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga4d4936493cddac47b6e7e4ab3f390627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_delete_file</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_delete_file</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Deletes the given file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if unlink() succeeded </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="56" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="399" bodyend="417"/>
+        <references refid="group__DBusInternalsUtils_1ga56de84795d6df4162ad79b3be7af7588" compoundref="dbus-sysdeps_8c" startline="773" endline="776">_dbus_strerror_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1gaec42589166158b1385d5f5439318cda2" compoundref="dbus-internals_8h" startline="179">_DBUS_ZERO</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-file.h<sp/>dbus<sp/>file<sp/>related<sp/>stuff<sp/>(internal<sp/>to<sp/>D-Bus<sp/>implementation)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_FILE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_FILE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-errors.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" kindref="member">_dbus_file_exists</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*file);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" kindref="member">_dbus_file_get_contents</ref><sp/><sp/><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*filename,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" kindref="member">_dbus_string_save_to_file</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*filename,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>world_readable,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" kindref="member">_dbus_make_file_world_readable</ref><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*filename,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><ref refid="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" kindref="member">_dbus_create_file_exclusively</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*filename,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><ref refid="group__DBusFile_1ga4d4936493cddac47b6e7e4ab3f390627" kindref="member">_dbus_delete_file</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*filename,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-file.h"/>
+  </compounddef>
+</doxygen>

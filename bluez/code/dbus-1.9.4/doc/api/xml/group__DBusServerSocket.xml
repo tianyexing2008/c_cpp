@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusServerSocket" kind="group">
+    <compoundname>DBusServerSocket</compoundname>
+    <title>DBusServer implementations for SOCKET</title>
+    <innerclass refid="structDBusServerSocket" prot="public">DBusServerSocket</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusServerSocket_1gace7aafbe2ae3cdbfbce3b01972dde0ce" prot="public" static="no">
+        <type>struct <ref refid="structDBusServerSocket" kindref="compound">DBusServerSocket</ref></type>
+        <definition>typedef struct DBusServerSocket DBusServerSocket</definition>
+        <argsstring></argsstring>
+        <name>DBusServerSocket</name>
+        <briefdescription>
+<para>Opaque object representing a Socket server implementation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="90" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusServerSocket_1ga5587e040f61701ab4724714f09d63d7c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDBusServerVTable" kindref="compound">DBusServerVTable</ref></type>
+        <definition>const DBusServerVTable socket_vtable</definition>
+        <argsstring></argsstring>
+        <name>socket_vtable</name>
+        <initializer>= {
+  socket_finalize,
+  socket_disconnect
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="262" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusServerSocket_1ga4173d576dffc860caa0e0372f2cbddc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_finalize</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>socket_finalize</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="61" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="61" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga9d137fcad039b4c03a3c4e9c4f313c8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t handle_new_client_fd_and_unlock</definition>
+        <argsstring>(DBusServer *server, int client_fd)</argsstring>
+        <name>handle_new_client_fd_and_unlock</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>client_fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="86" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="86" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga3313d7b1f1234563023c14664cfad7a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t socket_handle_watch</definition>
+        <argsstring>(DBusWatch *watch, unsigned int flags, void *data)</argsstring>
+        <name>socket_handle_watch</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="158" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="158" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga4ae9de080f582dfb8f77161567e7335a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void socket_disconnect</definition>
+        <argsstring>(DBusServer *server)</argsstring>
+        <name>socket_disconnect</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="227" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="227" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+        <definition>DBusServer* _dbus_server_new_for_socket</definition>
+        <argsstring>(int *fds, int n_fds, const DBusString *address, DBusNonceFile *noncefile)</argsstring>
+        <name>_dbus_server_new_for_socket</name>
+        <param>
+          <type>int *</type>
+          <declname>fds</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_fds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusNonceFile" kindref="compound">DBusNonceFile</ref> *</type>
+          <declname>noncefile</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new server listening on the given file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The file descriptor should be nonblocking (use _dbus_set_fd_nonblocking() to make it so). The file descriptor should be listening for connections, that is, listen() should have been successfully invoked on it. The server will use accept() to accept new client connections.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of file descriptors. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of file descriptors </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the server&apos;s address </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>noncefile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to be used for authentication (NULL if not needed) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new server, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="283" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="283" bodyend="369"/>
+        <references refid="group__DBusServerInternals_1ga0866e5b205b8a570c77c8ad787b665fd" compoundref="dbus-server_8c" startline="288" endline="295">_dbus_server_add_watch</references>
+        <references refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</references>
+        <references refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</references>
+        <references refid="group__DBusServerInternals_1ga61cfdbfcc9316d4bae55f83b069f248c" compoundref="dbus-server_8c" startline="304" endline="312">_dbus_server_remove_watch</references>
+        <references refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</references>
+        <references refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</references>
+        <references refid="structDBusServerSocket_1ad811bada4239e72eaf91efdb2de9b5e9" compoundref="dbus-server-socket_8c" startline="52">base</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" compoundref="dbus-connection_8h" startline="60">DBUS_WATCH_READABLE</references>
+        <references refid="structDBusServerSocket_1ab78b3c3d95035fa0428d89ce4acf375e" compoundref="dbus-server-socket_8c" startline="54">fds</references>
+        <references refid="structDBusServerSocket_1a0585f7f6633ec428ab4a0863cbf4ffb1" compoundref="dbus-server-socket_8c" startline="53">n_fds</references>
+        <references refid="structDBusServerSocket_1a6ea3eebf42eba2469bf64eb0f91e1f97" compoundref="dbus-server-socket_8c" startline="57">noncefile</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusServerSocket_1a9b0b7c50962dc70abf9f712369761522" compoundref="dbus-server-socket_8c" startline="55">watch</references>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerUnix_1ga21ce093bda6ce6c7f94d1d894b6b4358" compoundref="dbus-server-unix_8c" startline="237" endline="310">_dbus_server_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" compoundref="dbus-server-launchd_8c" startline="66" endline="209">_dbus_server_new_for_launchd</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="391" endline="514">_dbus_server_new_for_tcp_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+        <definition>DBusServer* _dbus_server_new_for_tcp_socket</definition>
+        <argsstring>(const char *host, const char *bind, const char *port, const char *family, DBusError *error, dbus_bool_t use_nonce)</argsstring>
+        <name>_dbus_server_new_for_tcp_socket</name>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>bind</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>use_nonce</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new server listening on TCP. </para>        </briefdescription>
+        <detaileddescription>
+<para>If host is NULL, it will default to localhost. If bind is NULL, it will default to the value for the host parameter, and if that is NULL, then localhost If bind is a hostname, it will be resolved and will listen on all returned addresses. If family is NULL, hostname resolution will try all address families, otherwise it can be ipv4 or ipv6 to restrict the addresses considered.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hostname to report for the listen address </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the hostname to listen on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the port to listen on or 0 to let the OS choose </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>family</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store reason for failure. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>use_nonce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to use a nonce for low-level authentication (nonce-tcp transport) or not (tcp transport) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new server, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="391" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="391" bodyend="514"/>
+        <references refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</references>
+        <references refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</references>
+        <references refid="group__DBusSysdeps_1gafdae31b3b61299dbaaccfcb1205a6f30" compoundref="dbus-sysdeps-unix_8c" startline="1386" endline="1582">_dbus_listen_tcp_socket</references>
+        <references refid="group__DBusServerSocket_1ga93d00891e32dbc05a33d3c69ca2ffef6" compoundref="dbus-server-socket_8c" startline="283" endline="369">_dbus_server_new_for_socket</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="structDBusServerSocket_1a6ea3eebf42eba2469bf64eb0f91e1f97" compoundref="dbus-server-socket_8c" startline="57">noncefile</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerWin_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-win_8c" startline="50" endline="93">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" compoundref="dbus-server-socket_8c" startline="529" endline="570">_dbus_server_listen_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusServerListenResult</type>
+        <definition>DBusServerListenResult _dbus_server_listen_socket</definition>
+        <argsstring>(DBusAddressEntry *entry, DBusServer **server_p, DBusError *error)</argsstring>
+        <name>_dbus_server_listen_socket</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> **</type>
+          <declname>server_p</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Tries to interpret the address entry for various socket-related addresses (well, currently only tcp and nonce-tcp). </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets error if the result is not OK.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an address entry </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a new <ref refid="structDBusServer" kindref="compound">DBusServer</ref>, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store rationale for failure on bad address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the outcome </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="529" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="529" bodyend="570"/>
+        <references refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="391" endline="514">_dbus_server_new_for_tcp_socket</references>
+        <references refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusServerInternals_1ga6e1d0b379c98b0d59ebd19dc9b8a2dbe" compoundref="dbus-server_8c" startline="467" endline="493">_dbus_server_unref_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusServerSocket_1gaa9518c980672f1b8dba8f5a981b93fd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_server_socket_own_filename</definition>
+        <argsstring>(DBusServer *server, char *filename)</argsstring>
+        <name>_dbus_server_socket_own_filename</name>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>This is a bad hack since it&apos;s really unix domain socket specific. </para>        </briefdescription>
+        <detaileddescription>
+<para>Also, the function weirdly adopts ownership of the passed-in string.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a socket server </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket filename to report/delete </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-socket.c" line="582" column="1" bodyfile="dbus/dbus-server-socket.c" bodystart="582" bodyend="588"/>
+        <references refid="structDBusServerSocket_1ad9467f2872fbf623e72642650af7feb0" compoundref="dbus-server-socket_8c" startline="56">socket_name</references>
+        <referencedby refid="group__DBusServerUnix_1ga21ce093bda6ce6c7f94d1d894b6b4358" compoundref="dbus-server-unix_8c" startline="237" endline="310">_dbus_server_new_for_domain_socket</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusServer" kindref="compound">DBusServer</ref> on SOCKET. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

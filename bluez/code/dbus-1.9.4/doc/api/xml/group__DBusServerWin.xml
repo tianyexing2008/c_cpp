@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusServerWin" kind="group">
+    <compoundname>DBusServerWin</compoundname>
+    <title>DBusServer implementations for Windows</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusServerWin_1gaec00cdf4977b9bd33621df684406a779" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusServerListenResult</type>
+        <definition>DBusServerListenResult _dbus_server_listen_platform_specific</definition>
+        <argsstring>(DBusAddressEntry *entry, DBusServer **server_p, DBusError *error)</argsstring>
+        <name>_dbus_server_listen_platform_specific</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusServer" kindref="compound">DBusServer</ref> **</type>
+          <declname>server_p</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Tries to interpret the address entry in a platform-specific way, creating a platform-specific server type if appropriate. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets error if the result is not OK.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an address entry </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store a new <ref refid="structDBusServer" kindref="compound">DBusServer</ref>, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store rationale for failure on bad address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the outcome </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-server-win.c" line="50" column="1" bodyfile="dbus/dbus-server-win.c" bodystart="50" bodyend="93"/>
+        <references refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="391" endline="514">_dbus_server_new_for_tcp_socket</references>
+        <references refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusServerInternals_1ga6e1d0b379c98b0d59ebd19dc9b8a2dbe" compoundref="dbus-server_8c" startline="467" endline="493">_dbus_server_unref_unlocked</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusServer" kindref="compound">DBusServer</ref> on Windows. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

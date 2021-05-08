@@ -1,0 +1,517 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTransportSocket" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTransportSocket</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTransportSocket_1ab820e51211635434c40ffa812d8013e5" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref></type>
+        <definition>DBusTransport DBusTransportSocket::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <briefdescription>
+<para>Parent instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="51" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="51" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1ad3f866a158a1c00c2773696eef3bbe5f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTransportSocket::fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+<para>File descriptor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="52" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="52" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" compoundref="dbus-transport-socket_8c" startline="1348" endline="1416">_dbus_transport_new_for_tcp_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1aba60b33603091a87f7cbd2a8e76cd8f6" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+        <definition>DBusWatch* DBusTransportSocket::read_watch</definition>
+        <argsstring></argsstring>
+        <name>read_watch</name>
+        <briefdescription>
+<para>Watch for readability. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="53" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="53" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1a0134735f074583b16a91d7f54bfcccb9" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+        <definition>DBusWatch* DBusTransportSocket::write_watch</definition>
+        <argsstring></argsstring>
+        <name>write_watch</name>
+        <briefdescription>
+<para>Watch for writability. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="54" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="54" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1ac70dd065b0e2805198432d93f5f4f5dc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTransportSocket::max_bytes_read_per_iteration</definition>
+        <argsstring></argsstring>
+        <name>max_bytes_read_per_iteration</name>
+        <briefdescription>
+<para>To avoid blocking too long. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="56" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="56" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1a5e8631812d429f8567974836627ab3de" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTransportSocket::max_bytes_written_per_iteration</definition>
+        <argsstring></argsstring>
+        <name>max_bytes_written_per_iteration</name>
+        <briefdescription>
+<para>To avoid blocking too long. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="57" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="57" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1a5304711c08da21ef109e3c736a8bcfe7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusTransportSocket::message_bytes_written</definition>
+        <argsstring></argsstring>
+        <name>message_bytes_written</name>
+        <briefdescription>
+<para>Number of bytes of current outgoing message that have been written. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="59" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="59" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1a88925e2ff68a30457c0fee211812c5d6" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusTransportSocket::encoded_outgoing</definition>
+        <argsstring></argsstring>
+        <name>encoded_outgoing</name>
+        <briefdescription>
+<para>Encoded version of current outgoing message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="63" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="63" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTransportSocket_1a840f1a09f5256b5c737e3e45beb47966" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusTransportSocket::encoded_incoming</definition>
+        <argsstring></argsstring>
+        <name>encoded_incoming</name>
+        <briefdescription>
+<para>Encoded version of current incoming data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-socket.c" line="66" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="66" bodyend="-1"/>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusTransportSocket" kindref="compound">DBusTransportSocket</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>All members are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="539">
+        <label>DBusConnection</label>
+        <link refid="structDBusConnection"/>
+        <childnode refid="540" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="543" relation="usage">
+          <edgelabel>pending_replies</edgelabel>
+        </childnode>
+        <childnode refid="548" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="539" relation="usage">
+          <edgelabel>dispatch_status_function</edgelabel>
+        </childnode>
+        <childnode refid="550" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="552" relation="usage">
+          <edgelabel>dispatch_mutex</edgelabel>
+          <edgelabel>io_path_mutex</edgelabel>
+        </childnode>
+        <childnode refid="553" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="556" relation="usage">
+          <edgelabel>io_path_cond</edgelabel>
+          <edgelabel>dispatch_cond</edgelabel>
+        </childnode>
+        <childnode refid="557" relation="usage">
+          <edgelabel>message_borrowed</edgelabel>
+        </childnode>
+        <childnode refid="541" relation="usage">
+          <edgelabel>incoming_messages</edgelabel>
+          <edgelabel>filter_list</edgelabel>
+          <edgelabel>outgoing_messages</edgelabel>
+          <edgelabel>disconnect_message_link</edgelabel>
+          <edgelabel>expired_messages</edgelabel>
+        </childnode>
+        <childnode refid="560" relation="usage">
+          <edgelabel>slot_mutex</edgelabel>
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+        <childnode refid="538" relation="usage">
+          <edgelabel>transport</edgelabel>
+        </childnode>
+        <childnode refid="555" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="561" relation="usage">
+          <edgelabel>outgoing_counter</edgelabel>
+        </childnode>
+      </node>
+      <node id="558">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="559" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="554">
+        <label>DBusObjectSubtree</label>
+        <link refid="structDBusObjectSubtree"/>
+        <childnode refid="539" relation="usage">
+          <edgelabel>message_function</edgelabel>
+          <edgelabel>unregister_function</edgelabel>
+        </childnode>
+        <childnode refid="554" relation="usage">
+          <edgelabel>parent</edgelabel>
+          <edgelabel>subtrees</edgelabel>
+        </childnode>
+        <childnode refid="555" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+      </node>
+      <node id="560">
+        <label>DBusRMutex</label>
+        <link refid="structDBusRMutex"/>
+      </node>
+      <node id="548">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="541" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="549" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="543">
+        <label>DBusHashTable</label>
+        <link refid="structDBusHashTable"/>
+        <childnode refid="544" relation="usage">
+          <edgelabel>entry_pool</edgelabel>
+        </childnode>
+        <childnode refid="547" relation="usage">
+          <edgelabel>buckets</edgelabel>
+          <edgelabel>find_function</edgelabel>
+          <edgelabel>static_buckets</edgelabel>
+        </childnode>
+      </node>
+      <node id="568">
+        <label>DBusMessageLoader</label>
+        <link refid="structDBusMessageLoader"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="541" relation="usage">
+          <edgelabel>messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="569">
+        <label>DBusTransportVTable</label>
+        <link refid="structDBusTransportVTable"/>
+      </node>
+      <node id="549">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="549" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="563">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="562" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="540">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="541" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="542" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="557">
+        <label>DBusMessage</label>
+        <link refid="structDBusMessage"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>body</edgelabel>
+        </childnode>
+        <childnode refid="550" relation="usage">
+          <edgelabel>slot_list</edgelabel>
+        </childnode>
+        <childnode refid="541" relation="usage">
+          <edgelabel>counters</edgelabel>
+        </childnode>
+        <childnode refid="555" relation="usage">
+          <edgelabel>refcount</edgelabel>
+        </childnode>
+        <childnode refid="558" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="546">
+        <label>DBusMemBlock</label>
+        <link refid="structDBusMemBlock"/>
+        <childnode refid="546" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="561">
+        <label>DBusCounter</label>
+        <link refid="structDBusCounter"/>
+        <childnode refid="561" relation="usage">
+          <edgelabel>notify_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="564">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="562" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="559">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="565">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="555">
+        <label>DBusAtomic</label>
+        <link refid="structDBusAtomic"/>
+      </node>
+      <node id="566">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="567" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="565" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="544">
+        <label>DBusMemPool</label>
+        <link refid="structDBusMemPool"/>
+        <childnode refid="545" relation="usage">
+          <edgelabel>free_elements</edgelabel>
+        </childnode>
+        <childnode refid="546" relation="usage">
+          <edgelabel>blocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="553">
+        <label>DBusObjectTree</label>
+        <link refid="structDBusObjectTree"/>
+        <childnode refid="539" relation="usage">
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="554" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="542">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="551">
+        <label>DBusDataSlot</label>
+        <link refid="structDBusDataSlot"/>
+      </node>
+      <node id="541">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="541" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="538">
+        <label>DBusTransport</label>
+        <link refid="structDBusTransport"/>
+        <childnode refid="539" relation="usage">
+          <edgelabel>unix_user_function</edgelabel>
+          <edgelabel>windows_user_function</edgelabel>
+          <edgelabel>connection</edgelabel>
+        </childnode>
+        <childnode refid="562" relation="usage">
+          <edgelabel>auth</edgelabel>
+        </childnode>
+        <childnode refid="565" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="568" relation="usage">
+          <edgelabel>loader</edgelabel>
+        </childnode>
+        <childnode refid="569" relation="usage">
+          <edgelabel>vtable</edgelabel>
+        </childnode>
+        <childnode refid="561" relation="usage">
+          <edgelabel>live_messages</edgelabel>
+        </childnode>
+      </node>
+      <node id="552">
+        <label>DBusCMutex</label>
+        <link refid="structDBusCMutex"/>
+      </node>
+      <node id="547">
+        <label>DBusHashEntry</label>
+        <link refid="structDBusHashEntry"/>
+        <childnode refid="547" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="556">
+        <label>DBusCondVar</label>
+        <link refid="structDBusCondVar"/>
+        <childnode refid="541" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="567">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="536">
+        <label>DBusTransportSocket</label>
+        <link refid="structDBusTransportSocket"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>encoded_outgoing</edgelabel>
+          <edgelabel>encoded_incoming</edgelabel>
+        </childnode>
+        <childnode refid="538" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+        <childnode refid="549" relation="usage">
+          <edgelabel>read_watch</edgelabel>
+          <edgelabel>write_watch</edgelabel>
+        </childnode>
+      </node>
+      <node id="545">
+        <label>DBusFreedElement</label>
+        <link refid="structDBusFreedElement"/>
+        <childnode refid="545" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="550">
+        <label>DBusDataSlotList</label>
+        <link refid="structDBusDataSlotList"/>
+        <childnode refid="551" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="537">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="562">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="563" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="537" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="564" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="565" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="566" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-transport-socket.c" line="50" column="1" bodyfile="dbus/dbus-transport-socket.c" bodystart="49" bodyend="69"/>
+    <listofallmembers>
+      <member refid="structDBusTransportSocket_1ab820e51211635434c40ffa812d8013e5" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>base</name></member>
+      <member refid="structDBusTransportSocket_1a840f1a09f5256b5c737e3e45beb47966" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>encoded_incoming</name></member>
+      <member refid="structDBusTransportSocket_1a88925e2ff68a30457c0fee211812c5d6" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>encoded_outgoing</name></member>
+      <member refid="structDBusTransportSocket_1ad3f866a158a1c00c2773696eef3bbe5f" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>fd</name></member>
+      <member refid="structDBusTransportSocket_1ac70dd065b0e2805198432d93f5f4f5dc" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>max_bytes_read_per_iteration</name></member>
+      <member refid="structDBusTransportSocket_1a5e8631812d429f8567974836627ab3de" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>max_bytes_written_per_iteration</name></member>
+      <member refid="structDBusTransportSocket_1a5304711c08da21ef109e3c736a8bcfe7" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>message_bytes_written</name></member>
+      <member refid="structDBusTransportSocket_1aba60b33603091a87f7cbd2a8e76cd8f6" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>read_watch</name></member>
+      <member refid="structDBusTransportSocket_1a0134735f074583b16a91d7f54bfcccb9" prot="public" virt="non-virtual"><scope>DBusTransportSocket</scope><name>write_watch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

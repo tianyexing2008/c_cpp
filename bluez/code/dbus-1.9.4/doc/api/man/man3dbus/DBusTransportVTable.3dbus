@@ -1,0 +1,70 @@
+.TH "DBusTransportVTable" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTransportVTable \- The virtual table that must be implemented to create a new kind of transport\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-transport\-protected\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "void(* \fBfinalize\fP )(\fBDBusTransport\fP *transport)"
+.br
+.RI "\fIThe finalize method must free the transport\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP(* \fBhandle_watch\fP )(\fBDBusTransport\fP *transport, \fBDBusWatch\fP *watch, unsigned int flags)"
+.br
+.RI "\fIThe handle_watch method handles reading/writing data as indicated by the flags\&. \fP"
+.ti -1c
+.RI "void(* \fBdisconnect\fP )(\fBDBusTransport\fP *transport)"
+.br
+.RI "\fIDisconnect this transport\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP(* \fBconnection_set\fP )(\fBDBusTransport\fP *transport)"
+.br
+.RI "\fICalled when transport->connection has been filled in\&. \fP"
+.ti -1c
+.RI "void(* \fBdo_iteration\fP )(\fBDBusTransport\fP *transport, unsigned int flags, int timeout_milliseconds)"
+.br
+.RI "\fICalled to do a single 'iteration' (block on select/poll followed by reading or writing data)\&. \fP"
+.ti -1c
+.RI "void(* \fBlive_messages_changed\fP )(\fBDBusTransport\fP *transport)"
+.br
+.RI "\fIOutstanding messages counter changed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP(* \fBget_socket_fd\fP )(\fBDBusTransport\fP *transport, int *fd_p)"
+.br
+.RI "\fIGet socket file descriptor\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The virtual table that must be implemented to create a new kind of transport\&. 
+.PP
+Definition at line 41 of file dbus\-transport\-protected\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "void(*  DBusTransportVTable::disconnect) (\fBDBusTransport\fP *transport)"
+
+.PP
+Disconnect this transport\&. 
+.PP
+Definition at line 53 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_disconnect()\&.
+.SS "void(*  DBusTransportVTable::finalize) (\fBDBusTransport\fP *transport)"
+
+.PP
+The finalize method must free the transport\&. 
+.PP
+Definition at line 43 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_unref()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

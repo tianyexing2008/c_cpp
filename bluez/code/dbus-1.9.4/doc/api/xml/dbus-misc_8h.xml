@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-misc_8h" kind="file" language="C++">
+    <compoundname>dbus-misc.h</compoundname>
+    <includes refid="dbus-types_8h" local="no">dbus/dbus-types.h</includes>
+    <includes refid="dbus-errors_8h" local="no">dbus/dbus-errors.h</includes>
+    <includedby refid="dbus_8h" local="no">dbus.h</includedby>
+    <includedby refid="dbus-bus_8c" local="yes">dbus-bus.c</includedby>
+    <includedby refid="dbus-misc_8c" local="yes">dbus-misc.c</includedby>
+    <includedby refid="dbus-sysdeps_8c" local="yes">dbus-sysdeps.c</includedby>
+    <incdepgraph>
+      <node id="2185">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="2183">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="2179">
+        <label>dbus-misc.h</label>
+        <link refid="dbus-misc.h"/>
+        <childnode refid="2180" relation="include">
+        </childnode>
+        <childnode refid="2184" relation="include">
+        </childnode>
+      </node>
+      <node id="2181">
+        <label>stddef.h</label>
+      </node>
+      <node id="2182">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="2183" relation="include">
+        </childnode>
+      </node>
+      <node id="2184">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="2183" relation="include">
+        </childnode>
+        <childnode refid="2180" relation="include">
+        </childnode>
+        <childnode refid="2185" relation="include">
+        </childnode>
+      </node>
+      <node id="2180">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="2181" relation="include">
+        </childnode>
+        <childnode refid="2182" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2190">
+        <label>dbus-misc.c</label>
+        <link refid="dbus-misc_8c_source"/>
+      </node>
+      <node id="2186">
+        <label>dbus-misc.h</label>
+        <link refid="dbus-misc.h"/>
+        <childnode refid="2187" relation="include">
+        </childnode>
+        <childnode refid="2189" relation="include">
+        </childnode>
+        <childnode refid="2190" relation="include">
+        </childnode>
+        <childnode refid="2191" relation="include">
+        </childnode>
+      </node>
+      <node id="2188">
+        <label>dbus-asv-util.c</label>
+        <link refid="dbus-asv-util_8c_source"/>
+      </node>
+      <node id="2187">
+        <label>dbus.h</label>
+        <link refid="dbus_8h_source"/>
+        <childnode refid="2188" relation="include">
+        </childnode>
+      </node>
+      <node id="2191">
+        <label>dbus-sysdeps.c</label>
+        <link refid="dbus-sysdeps_8c_source"/>
+      </node>
+      <node id="2189">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMisc_1ga2b21c9a12fea5f92763441c65ccbfcf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_get_local_machine_id</definition>
+        <argsstring>(void)</argsstring>
+        <name>dbus_get_local_machine_id</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Obtains the machine UUID of the machine this process is running on. </para>        </briefdescription>
+        <detaileddescription>
+<para>The returned string must be freed with <ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free()</ref>.</para><para>This UUID is guaranteed to remain the same until the next reboot (unless the sysadmin foolishly changes it and screws themselves). It will usually remain the same across reboots also, but hardware configuration changes or rebuilding the machine could break that.</para><para>The idea is that two processes with the same machine ID should be able to use shared memory, UNIX domain sockets, process IDs, and other features of the OS that require both processes to be running on the same OS kernel instance.</para><para>The machine ID can also be used to create unique per-machine instances. For example, you could use it in bus names or X selection names.</para><para>The machine ID is preferred over the machine hostname, because the hostname is frequently set to &quot;localhost.localdomain&quot; and may also change at runtime.</para><para>You can get the machine ID of a remote application by invoking the method GetMachineId from interface org.freedesktop.DBus.Peer.</para><para>If the remote application has the same machine ID as the one returned by this function, then the remote application is on the same machine as your application.</para><para>The UUID is not a UUID in the sense of RFC4122; the details are explained in the D-Bus specification.</para><para><simplesect kind="return"><para>a 32-byte-long hex-encoded UUID string, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if insufficient memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-misc.c" line="73" column="1" bodyfile="dbus/dbus-misc.c" bodystart="73" bodyend="95"/>
+        <references refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="854" endline="889">_dbus_get_local_machine_uuid_encoded</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMisc_1gacf200f947f77da9857685b58dc453d8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_get_version</definition>
+        <argsstring>(int *major_version_p, int *minor_version_p, int *micro_version_p)</argsstring>
+        <name>dbus_get_version</name>
+        <param>
+          <type>int *</type>
+          <declname>major_version_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>minor_version_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>micro_version_p</declname>
+        </param>
+        <briefdescription>
+<para>Gets the DYNAMICALLY LINKED version of libdbus. </para>        </briefdescription>
+        <detaileddescription>
+<para>Alternatively, there are macros <ref refid="group__DBusMisc_1gab0c43046c79ba743bb2a4ed39ca4a5cd" kindref="member">DBUS_MAJOR_VERSION</ref>, <ref refid="group__DBusMisc_1ga6dcc9731da9f0713d55faa14937b4e06" kindref="member">DBUS_MINOR_VERSION</ref>, <ref refid="group__DBusMisc_1ga44289275b3259451d0ba4185c735f1a3" kindref="member">DBUS_MICRO_VERSION</ref>, and <ref refid="group__DBusMisc_1ga75f948aee9cf34afea18081cb4a7395f" kindref="member">DBUS_VERSION</ref> which allow you to test the VERSION YOU ARE COMPILED AGAINST. In other words, you can get either the runtime or the compile-time version. Think carefully about which of these you want in a given case.</para><para>The libdbus full version number is &quot;MAJOR.MINOR.MICRO&quot; where the MINOR changes if API is added, and the MICRO changes with each release of a MAJOR.MINOR series. The MINOR is an odd number for development releases and an even number for stable releases.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>major_version_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to return the major version, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>minor_version_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to return the minor version, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>micro_version_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to return the micro version, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-misc.c" line="161" column="1" bodyfile="dbus/dbus-misc.c" bodystart="161" bodyend="171"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</references>
+        <references refid="group__DBusString_1ga41141ca36c361f92b6029530ff83fa66" compoundref="dbus-sysdeps_8c" startline="354" endline="382">_dbus_string_append_int</references>
+        <references refid="group__DBusString_1ga84f39f1bf398697920637d2982248c72" compoundref="dbus-string_8c" startline="2151" endline="2177">_dbus_string_equal_c_str</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusMisc_1gab0c43046c79ba743bb2a4ed39ca4a5cd">DBUS_MAJOR_VERSION</references>
+        <references refid="group__DBusMisc_1ga44289275b3259451d0ba4185c735f1a3">DBUS_MICRO_VERSION</references>
+        <references refid="group__DBusMisc_1ga6dcc9731da9f0713d55faa14937b4e06">DBUS_MINOR_VERSION</references>
+        <references refid="group__DBusMisc_1ga75f948aee9cf34afea18081cb4a7395f">DBUS_VERSION</references>
+        <references refid="group__DBusMisc_1ga538fff8f5929a940d195f3d74c49b27f">DBUS_VERSION_STRING</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMisc_1gac02f6b021decd9fa35697a36ea581f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_setenv</definition>
+        <argsstring>(const char *variable, const char *value)</argsstring>
+        <name>dbus_setenv</name>
+        <param>
+          <type>const char *</type>
+          <declname>variable</declname>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper for setenv(). </para>        </briefdescription>
+        <detaileddescription>
+<para>If the value is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, unsets the environment variable.</para><para>There is an unfixable memleak in that it is unsafe to free memory malloced for use with setenv. This is because we can not rely on internal implementation details of the underlying libc library.</para><para>This function is not thread-safe, because altering the environment in Unix is not thread-safe in general.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of environment variable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of environment variable, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> to unset </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-misc.h" line="48" column="1" bodyfile="dbus/dbus-sysdeps.c" bodystart="114" bodyend="176"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" compoundref="dbus-server-launchd_8c" startline="66" endline="209">_dbus_server_new_for_launchd</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-misc.h<sp/><sp/>A<sp/>few<sp/>assorted<sp/>public<sp/>functions<sp/>that<sp/>don&apos;t<sp/>fit<sp/>elsewhere</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2006<sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined<sp/>(DBUS_INSIDE_DBUS_H)<sp/>&amp;&amp;<sp/>!defined<sp/>(DBUS_COMPILATION)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Only<sp/>&lt;dbus/dbus.h&gt;<sp/>can<sp/>be<sp/>included<sp/>directly,<sp/>this<sp/>file<sp/>may<sp/>disappear<sp/>or<sp/>change<sp/>contents.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MISC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MISC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-errors.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMisc_1ga2b21c9a12fea5f92763441c65ccbfcf9" kindref="member">dbus_get_local_machine_id</ref><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMisc_1gacf200f947f77da9857685b58dc453d8a" kindref="member">dbus_get_version</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*major_version_p,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*minor_version_p,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*micro_version_p);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMisc_1gac02f6b021decd9fa35697a36ea581f86" kindref="member">dbus_setenv</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*variable,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MISC_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-misc.h"/>
+  </compounddef>
+</doxygen>

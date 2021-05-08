@@ -1,0 +1,80 @@
+.TH "DBusServerUnix" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServerUnix \- DBusServer implementations for UNIX
+.PP
+Implementation details of \fBDBusServer\fP on UNIX\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "DBusServerListenResult \fB_dbus_server_listen_platform_specific\fP (\fBDBusAddressEntry\fP *entry, \fBDBusServer\fP **server_p, \fBDBusError\fP *error)"
+.br
+.RI "\fITries to interpret the address entry in a platform-specific way, creating a platform-specific server type if appropriate\&. \fP"
+.ti -1c
+.RI "\fBDBusServer\fP * \fB_dbus_server_new_for_domain_socket\fP (const char *path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a new server listening on the given Unix domain socket\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusServer\fP on UNIX\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "DBusServerListenResult _dbus_server_listen_platform_specific (\fBDBusAddressEntry\fP * entry, \fBDBusServer\fP ** server_p, \fBDBusError\fP * error)"
+
+.PP
+Tries to interpret the address entry in a platform-specific way, creating a platform-specific server type if appropriate\&. Sets error if the result is not OK\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIentry\fP an address entry 
+.br
+\fIserver_p\fP location to store a new \fBDBusServer\fP, or \fBNULL\fP on failure\&. 
+.br
+\fIerror\fP location to store rationale for failure on bad address 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the outcome 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file dbus\-server\-unix\&.c\&.
+.PP
+References _dbus_append_address_from_socket(), _dbus_close_socket(), _dbus_concat_dir_and_file(), _dbus_generate_random_ascii(), _dbus_listen_systemd_sockets(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_launchd(), _dbus_server_new_for_socket(), _dbus_set_bad_address(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), dbus_address_entry_get_method(), dbus_address_entry_get_value(), DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_set_error(), FALSE, NULL, and TRUE\&.
+.SS "\fBDBusServer\fP* _dbus_server_new_for_domain_socket (const char * path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP * error)"
+
+.PP
+Creates a new server listening on the given Unix domain socket\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the path for the domain socket\&. 
+.br
+\fIabstract\fP \fBTRUE\fP to use abstract socket namespace 
+.br
+\fIerror\fP location to store reason for failure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new server, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 237 of file dbus\-server\-unix\&.c\&.
+.PP
+References _dbus_address_append_escaped(), _dbus_close_socket(), _dbus_listen_unix_socket(), _dbus_server_new_for_socket(), _dbus_server_socket_own_filename(), _dbus_strdup(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), DBUS_ERROR_NO_MEMORY, dbus_free(), dbus_set_error(), and NULL\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

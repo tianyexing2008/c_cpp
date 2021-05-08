@@ -1,0 +1,1081 @@
+.TH "DBusProtocol" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusProtocol \- Protocol constants
+.PP
+Defines constants which are part of the D-Bus protocol\&.  
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_LITTLE_ENDIAN\fP   ('l')"
+.br
+.RI "\fICode marking LSB-first byte order in the wire protocol\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_BIG_ENDIAN\fP   ('B')"
+.br
+.RI "\fICode marking MSB-first byte order in the wire protocol\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAJOR_PROTOCOL_VERSION\fP   1"
+.br
+.RI "\fIProtocol version\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INVALID\fP   ((int) '\\0')"
+.br
+.RI "\fIType code that is never equal to a legitimate type code\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INVALID_AS_STRING\fP   '\\0'"
+.br
+.RI "\fI\fBDBUS_TYPE_INVALID\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_BYTE\fP   ((int) 'y')"
+.br
+.RI "\fIType code marking an 8-bit unsigned integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_BYTE_AS_STRING\fP   'y'"
+.br
+.RI "\fI\fBDBUS_TYPE_BYTE\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_BOOLEAN\fP   ((int) 'b')"
+.br
+.RI "\fIType code marking a boolean\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_BOOLEAN_AS_STRING\fP   'b'"
+.br
+.RI "\fI\fBDBUS_TYPE_BOOLEAN\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT16\fP   ((int) 'n')"
+.br
+.RI "\fIType code marking a 16-bit signed integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT16_AS_STRING\fP   'n'"
+.br
+.RI "\fI\fBDBUS_TYPE_INT16\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT16\fP   ((int) 'q')"
+.br
+.RI "\fIType code marking a 16-bit unsigned integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT16_AS_STRING\fP   'q'"
+.br
+.RI "\fI\fBDBUS_TYPE_UINT16\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT32\fP   ((int) 'i')"
+.br
+.RI "\fIType code marking a 32-bit signed integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT32_AS_STRING\fP   'i'"
+.br
+.RI "\fI\fBDBUS_TYPE_INT32\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT32\fP   ((int) 'u')"
+.br
+.RI "\fIType code marking a 32-bit unsigned integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT32_AS_STRING\fP   'u'"
+.br
+.RI "\fI\fBDBUS_TYPE_UINT32\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT64\fP   ((int) 'x')"
+.br
+.RI "\fIType code marking a 64-bit signed integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_INT64_AS_STRING\fP   'x'"
+.br
+.RI "\fI\fBDBUS_TYPE_INT64\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT64\fP   ((int) 't')"
+.br
+.RI "\fIType code marking a 64-bit unsigned integer\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UINT64_AS_STRING\fP   't'"
+.br
+.RI "\fI\fBDBUS_TYPE_UINT64\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_DOUBLE\fP   ((int) 'd')"
+.br
+.RI "\fIType code marking an 8-byte double in IEEE 754 format\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_DOUBLE_AS_STRING\fP   'd'"
+.br
+.RI "\fI\fBDBUS_TYPE_DOUBLE\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_STRING\fP   ((int) 's')"
+.br
+.RI "\fIType code marking a UTF-8 encoded, nul-terminated Unicode string\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_STRING_AS_STRING\fP   's'"
+.br
+.RI "\fI\fBDBUS_TYPE_STRING\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_OBJECT_PATH\fP   ((int) 'o')"
+.br
+.RI "\fIType code marking a D-Bus object path\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_OBJECT_PATH_AS_STRING\fP   'o'"
+.br
+.RI "\fI\fBDBUS_TYPE_OBJECT_PATH\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_SIGNATURE\fP   ((int) 'g')"
+.br
+.RI "\fIType code marking a D-Bus type signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_SIGNATURE_AS_STRING\fP   'g'"
+.br
+.RI "\fI\fBDBUS_TYPE_SIGNATURE\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UNIX_FD\fP   ((int) 'h')"
+.br
+.RI "\fIType code marking a unix file descriptor\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_UNIX_FD_AS_STRING\fP   'h'"
+.br
+.RI "\fI\fBDBUS_TYPE_UNIX_FD\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_ARRAY\fP   ((int) 'a')"
+.br
+.RI "\fIType code marking a D-Bus array type\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_ARRAY_AS_STRING\fP   'a'"
+.br
+.RI "\fI\fBDBUS_TYPE_ARRAY\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_VARIANT\fP   ((int) 'v')"
+.br
+.RI "\fIType code marking a D-Bus variant type\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_VARIANT_AS_STRING\fP   'v'"
+.br
+.RI "\fI\fBDBUS_TYPE_VARIANT\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_STRUCT\fP   ((int) 'r')"
+.br
+.RI "\fISTRUCT and DICT_ENTRY are sort of special since their codes can't appear in a type string, instead DBUS_STRUCT_BEGIN_CHAR/DBUS_DICT_ENTRY_BEGIN_CHAR have to appear\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_STRUCT_AS_STRING\fP   'r'"
+.br
+.RI "\fI\fBDBUS_TYPE_STRUCT\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_DICT_ENTRY\fP   ((int) 'e')"
+.br
+.RI "\fIType code used to represent a dict entry; however, this type code does not appear in type signatures, instead \fBDBUS_DICT_ENTRY_BEGIN_CHAR\fP and \fBDBUS_DICT_ENTRY_END_CHAR\fP will appear in a signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_TYPE_DICT_ENTRY_AS_STRING\fP   'e'"
+.br
+.RI "\fI\fBDBUS_TYPE_DICT_ENTRY\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_NUMBER_OF_TYPES\fP   (16)"
+.br
+.RI "\fIDoes not include \fBDBUS_TYPE_INVALID\fP, \fBDBUS_STRUCT_BEGIN_CHAR\fP, \fBDBUS_STRUCT_END_CHAR\fP, \fBDBUS_DICT_ENTRY_BEGIN_CHAR\fP, or \fBDBUS_DICT_ENTRY_END_CHAR\fP - i\&.e\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_STRUCT_BEGIN_CHAR\fP   ((int) '(')"
+.br
+.RI "\fICode marking the start of a struct type in a type signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_STRUCT_BEGIN_CHAR_AS_STRING\fP   '('"
+.br
+.RI "\fI\fBDBUS_STRUCT_BEGIN_CHAR\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_STRUCT_END_CHAR\fP   ((int) ')')"
+.br
+.RI "\fICode marking the end of a struct type in a type signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_STRUCT_END_CHAR_AS_STRING\fP   ')'"
+.br
+.RI "\fI\fBDBUS_STRUCT_END_CHAR\fP a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_DICT_ENTRY_BEGIN_CHAR\fP   ((int) '{')"
+.br
+.RI "\fICode marking the start of a dict entry type in a type signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_DICT_ENTRY_BEGIN_CHAR_AS_STRING\fP   '{'"
+.br
+.RI "\fI\fBDBUS_DICT_ENTRY_BEGIN_CHAR\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_DICT_ENTRY_END_CHAR\fP   ((int) '}')"
+.br
+.RI "\fICode marking the end of a dict entry type in a type signature\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_DICT_ENTRY_END_CHAR_AS_STRING\fP   '}'"
+.br
+.RI "\fI\fBDBUS_DICT_ENTRY_END_CHAR\fP as a string literal instead of a int literal \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_NAME_LENGTH\fP   255"
+.br
+.RI "\fIMax length in bytes of a bus name, interface, or member (not object path, paths are unlimited)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_SIGNATURE_LENGTH\fP   255"
+.br
+.RI "\fIThis one is 255 so it fits in a byte\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MATCH_RULE_LENGTH\fP   1024"
+.br
+.RI "\fIMax length of a match rule string; to keep people from hosing the daemon with some huge rule\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MATCH_RULE_ARG_NUMBER\fP   63"
+.br
+.RI "\fIMax arg number you can match on in a match rule, e\&.g\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_ARRAY_LENGTH\fP   (67108864)"
+.br
+.RI "\fIMax length of a marshaled array in bytes (64M, 2^26) We use signed int for lengths so must be INT_MAX or less\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_ARRAY_LENGTH_BITS\fP   26"
+.br
+.RI "\fINumber of bits you need in an unsigned to store the max array size\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MESSAGE_LENGTH\fP   (\fBDBUS_MAXIMUM_ARRAY_LENGTH\fP * 2)"
+.br
+.RI "\fIThe maximum total message size including header and body; similar rationale to max array size\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MESSAGE_LENGTH_BITS\fP   27"
+.br
+.RI "\fINumber of bits you need in an unsigned to store the max message size\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MESSAGE_UNIX_FDS\fP   (\fBDBUS_MAXIMUM_MESSAGE_LENGTH\fP/4)"
+.br
+.RI "\fIThe maximum total number of unix fds in a message\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_MESSAGE_UNIX_FDS_BITS\fP   (\fBDBUS_MAXIMUM_MESSAGE_LENGTH_BITS\fP\-2)"
+.br
+.RI "\fINumber of bits you need in an unsigned to store the max message unix fds\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MAXIMUM_TYPE_RECURSION_DEPTH\fP   32"
+.br
+.RI "\fIDepth of recursion in the type tree\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_MESSAGE_TYPE_INVALID\fP   0"
+.br
+.RI "\fIThis value is never a valid message type, see \fBdbus_message_get_type()\fP \fP"
+.ti -1c
+.RI "#define \fBDBUS_MESSAGE_TYPE_METHOD_CALL\fP   1"
+.br
+.RI "\fIMessage type of a method call message, see \fBdbus_message_get_type()\fP \fP"
+.ti -1c
+.RI "#define \fBDBUS_MESSAGE_TYPE_METHOD_RETURN\fP   2"
+.br
+.RI "\fIMessage type of a method return message, see \fBdbus_message_get_type()\fP \fP"
+.ti -1c
+.RI "#define \fBDBUS_MESSAGE_TYPE_ERROR\fP   3"
+.br
+.RI "\fIMessage type of an error reply message, see \fBdbus_message_get_type()\fP \fP"
+.ti -1c
+.RI "#define \fBDBUS_MESSAGE_TYPE_SIGNAL\fP   4"
+.br
+.RI "\fIMessage type of a signal message, see \fBdbus_message_get_type()\fP \fP"
+.ti -1c
+.RI "#define \fBDBUS_NUM_MESSAGE_TYPES\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FLAG_NO_REPLY_EXPECTED\fP   0x1"
+.br
+.RI "\fIIf set, this flag means that the sender of a message does not care about getting a reply, so the recipient need not send one\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FLAG_NO_AUTO_START\fP   0x2"
+.br
+.RI "\fIIf set, this flag means that even if the message bus knows how to start an owner for the destination bus name (see \fBdbus_message_set_destination()\fP), it should not do so\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION\fP   0x4"
+.br
+.RI "\fIIf set on a method call, this flag means that the caller is prepared to wait for interactive authorization\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_INVALID\fP   0"
+.br
+.RI "\fINot equal to any valid header field code\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_PATH\fP   1"
+.br
+.RI "\fIHeader field code for the path - the path is the object emitting a signal or the object receiving a method call\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_INTERFACE\fP   2"
+.br
+.RI "\fIHeader field code for the interface containing a member (method or signal)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_MEMBER\fP   3"
+.br
+.RI "\fIHeader field code for a member (method or signal)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_ERROR_NAME\fP   4"
+.br
+.RI "\fIHeader field code for an error name (found in \fBDBUS_MESSAGE_TYPE_ERROR\fP messages)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_REPLY_SERIAL\fP   5"
+.br
+.RI "\fIHeader field code for a reply serial, used to match a \fBDBUS_MESSAGE_TYPE_METHOD_RETURN\fP message with the message that it's a reply to\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_DESTINATION\fP   6"
+.br
+.RI "\fIHeader field code for the destination bus name of a message\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_SENDER\fP   7"
+.br
+.RI "\fIHeader field code for the sender of a message; usually initialized by the message bus\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_SIGNATURE\fP   8"
+.br
+.RI "\fIHeader field code for the type signature of a message\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_UNIX_FDS\fP   9"
+.br
+.RI "\fIHeader field code for the number of unix file descriptors associated with this message\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_FIELD_LAST\fP   \fBDBUS_HEADER_FIELD_UNIX_FDS\fP"
+.br
+.RI "\fIValue of the highest-numbered header field code, can be used to determine the size of an array indexed by header field code\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_HEADER_SIGNATURE\fP"
+.br
+.RI "\fIHeader format is defined as a signature: byte byte order byte message type ID byte flags byte protocol version uint32 body length uint32 serial array of struct (byte,variant) (field name, value) \fP"
+.ti -1c
+.RI "#define \fBDBUS_MINIMUM_HEADER_SIZE\fP   16"
+.br
+.RI "\fIThe smallest header size that can occur\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Failed'"
+.br
+.RI "\fIA generic error; 'something went wrong' - see the error message for more\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NO_MEMORY\fP   'org\&.freedesktop\&.DBus\&.Error\&.NoMemory'"
+.br
+.RI "\fIThere was not enough memory to complete an operation\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SERVICE_UNKNOWN\fP   'org\&.freedesktop\&.DBus\&.Error\&.ServiceUnknown'"
+.br
+.RI "\fIThe bus doesn't know how to launch a service to supply the bus name you wanted\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NAME_HAS_NO_OWNER\fP   'org\&.freedesktop\&.DBus\&.Error\&.NameHasNoOwner'"
+.br
+.RI "\fIThe bus name you referenced doesn't exist (i\&.e\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NO_REPLY\fP   'org\&.freedesktop\&.DBus\&.Error\&.NoReply'"
+.br
+.RI "\fINo reply to a message expecting one, usually means a timeout occurred\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_IO_ERROR\fP   'org\&.freedesktop\&.DBus\&.Error\&.IOError'"
+.br
+.RI "\fISomething went wrong reading or writing to a socket, for example\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_BAD_ADDRESS\fP   'org\&.freedesktop\&.DBus\&.Error\&.BadAddress'"
+.br
+.RI "\fIA D-Bus bus address was malformed\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NOT_SUPPORTED\fP   'org\&.freedesktop\&.DBus\&.Error\&.NotSupported'"
+.br
+.RI "\fIRequested operation isn't supported (like ENOSYS on UNIX)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_LIMITS_EXCEEDED\fP   'org\&.freedesktop\&.DBus\&.Error\&.LimitsExceeded'"
+.br
+.RI "\fISome limited resource is exhausted\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_ACCESS_DENIED\fP   'org\&.freedesktop\&.DBus\&.Error\&.AccessDenied'"
+.br
+.RI "\fISecurity restrictions don't allow doing what you're trying to do\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_AUTH_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.AuthFailed'"
+.br
+.RI "\fIAuthentication didn't work\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NO_SERVER\fP   'org\&.freedesktop\&.DBus\&.Error\&.NoServer'"
+.br
+.RI "\fIUnable to connect to server (probably caused by ECONNREFUSED on a socket)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_TIMEOUT\fP   'org\&.freedesktop\&.DBus\&.Error\&.Timeout'"
+.br
+.RI "\fICertain timeout errors, possibly ETIMEDOUT on a socket\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_NO_NETWORK\fP   'org\&.freedesktop\&.DBus\&.Error\&.NoNetwork'"
+.br
+.RI "\fINo network access (probably ENETUNREACH on a socket)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_ADDRESS_IN_USE\fP   'org\&.freedesktop\&.DBus\&.Error\&.AddressInUse'"
+.br
+.RI "\fICan't bind a socket since its address is in use (i\&.e\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_DISCONNECTED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Disconnected'"
+.br
+.RI "\fIThe connection is disconnected and you're trying to use it\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INVALID_ARGS\fP   'org\&.freedesktop\&.DBus\&.Error\&.InvalidArgs'"
+.br
+.RI "\fIInvalid arguments passed to a method call\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_FILE_NOT_FOUND\fP   'org\&.freedesktop\&.DBus\&.Error\&.FileNotFound'"
+.br
+.RI "\fIMissing file\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_FILE_EXISTS\fP   'org\&.freedesktop\&.DBus\&.Error\&.FileExists'"
+.br
+.RI "\fIExisting file and the operation you're using does not silently overwrite\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_UNKNOWN_METHOD\fP   'org\&.freedesktop\&.DBus\&.Error\&.UnknownMethod'"
+.br
+.RI "\fIMethod name you invoked isn't known by the object you invoked it on\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_UNKNOWN_OBJECT\fP   'org\&.freedesktop\&.DBus\&.Error\&.UnknownObject'"
+.br
+.RI "\fIObject you invoked a method on isn't known\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_UNKNOWN_INTERFACE\fP   'org\&.freedesktop\&.DBus\&.Error\&.UnknownInterface'"
+.br
+.RI "\fIInterface you invoked a method on isn't known by the object\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_UNKNOWN_PROPERTY\fP   'org\&.freedesktop\&.DBus\&.Error\&.UnknownProperty'"
+.br
+.RI "\fIProperty you tried to access isn't known by the object\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_PROPERTY_READ_ONLY\fP   'org\&.freedesktop\&.DBus\&.Error\&.PropertyReadOnly'"
+.br
+.RI "\fIProperty you tried to set is read-only\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_TIMED_OUT\fP   'org\&.freedesktop\&.DBus\&.Error\&.TimedOut'"
+.br
+.RI "\fICertain timeout errors, e\&.g\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_MATCH_RULE_NOT_FOUND\fP   'org\&.freedesktop\&.DBus\&.Error\&.MatchRuleNotFound'"
+.br
+.RI "\fITried to remove or modify a match rule that didn't exist\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_MATCH_RULE_INVALID\fP   'org\&.freedesktop\&.DBus\&.Error\&.MatchRuleInvalid'"
+.br
+.RI "\fIThe match rule isn't syntactically valid\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_EXEC_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ExecFailed'"
+.br
+.RI "\fIWhile starting a new process, the exec() call failed\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_FORK_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ForkFailed'"
+.br
+.RI "\fIWhile starting a new process, the fork() call failed\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_CHILD_EXITED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ChildExited'"
+.br
+.RI "\fIWhile starting a new process, the child exited with a status code\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_CHILD_SIGNALED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ChildSignaled'"
+.br
+.RI "\fIWhile starting a new process, the child exited on a signal\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.Failed'"
+.br
+.RI "\fIWhile starting a new process, something went wrong\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_SETUP_FAILED\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.FailedToSetup'"
+.br
+.RI "\fIWe failed to setup the environment correctly\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_CONFIG_INVALID\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ConfigInvalid'"
+.br
+.RI "\fIWe failed to setup the config parser correctly\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_SERVICE_INVALID\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ServiceNotValid'"
+.br
+.RI "\fIBus name was not valid\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_SERVICE_NOT_FOUND\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ServiceNotFound'"
+.br
+.RI "\fIService file not found in system-services directory\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_PERMISSIONS_INVALID\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.PermissionsInvalid'"
+.br
+.RI "\fIPermissions are incorrect on the setuid helper\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_FILE_INVALID\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.FileInvalid'"
+.br
+.RI "\fIService file invalid (Name, User or Exec missing)\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SPAWN_NO_MEMORY\fP   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.NoMemory'"
+.br
+.RI "\fITried to get a UNIX process ID and it wasn't available\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN\fP   'org\&.freedesktop\&.DBus\&.Error\&.UnixProcessIdUnknown'"
+.br
+.RI "\fITried to get a UNIX process ID and it wasn't available\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INVALID_SIGNATURE\fP   'org\&.freedesktop\&.DBus\&.Error\&.InvalidSignature'"
+.br
+.RI "\fIA type signature is not valid\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INVALID_FILE_CONTENT\fP   'org\&.freedesktop\&.DBus\&.Error\&.InvalidFileContent'"
+.br
+.RI "\fIA file contains invalid syntax or is otherwise broken\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN\fP   'org\&.freedesktop\&.DBus\&.Error\&.SELinuxSecurityContextUnknown'"
+.br
+.RI "\fIAsked for SELinux security context and it wasn't available\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN\fP   'org\&.freedesktop\&.DBus\&.Error\&.AdtAuditDataUnknown'"
+.br
+.RI "\fIAsked for ADT audit data and it wasn't available\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_OBJECT_PATH_IN_USE\fP   'org\&.freedesktop\&.DBus\&.Error\&.ObjectPathInUse'"
+.br
+.RI "\fIThere's already an object with the requested object path\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INCONSISTENT_MESSAGE\fP   'org\&.freedesktop\&.DBus\&.Error\&.InconsistentMessage'"
+.br
+.RI "\fIThe message meta data does not match the payload\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_ERROR_INTERACTIVE_AUTHORIZATION_REQUIRED\fP   'org\&.freedesktop\&.DBus\&.Error\&.InteractiveAuthorizationRequired'"
+.br
+.RI "\fIThe message is not allowed without performing interactive authorization, but could have succeeded if an interactive authorization step was allowed\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_INTROSPECT_1_0_XML_NAMESPACE\fP   'http://www\&.freedesktop\&.org/standards/dbus'"
+.br
+.RI "\fIXML namespace of the introspection format version 1\&.0\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_INTROSPECT_1_0_XML_PUBLIC_IDENTIFIER\fP   '\-//freedesktop//DTD D\-BUS Object Introspection 1\&.0//EN'"
+.br
+.RI "\fIXML public identifier of the introspection format version 1\&.0\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_INTROSPECT_1_0_XML_SYSTEM_IDENTIFIER\fP   'http://www\&.freedesktop\&.org/standards/dbus/1\&.0/introspect\&.dtd'"
+.br
+.RI "\fIXML system identifier of the introspection format version 1\&.0\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_INTROSPECT_1_0_XML_DOCTYPE_DECL_NODE\fP   '<!DOCTYPE node PUBLIC \\'' \fBDBUS_INTROSPECT_1_0_XML_PUBLIC_IDENTIFIER\fP '\\'\\n\\'' \fBDBUS_INTROSPECT_1_0_XML_SYSTEM_IDENTIFIER\fP '\\'>\\n'"
+.br
+.RI "\fIXML document type declaration of the introspection format version 1\&.0\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines constants which are part of the D-Bus protocol\&. 
+
+This header is intended for use by any library, not only libdbus\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_BIG_ENDIAN   ('B')"
+
+.PP
+Code marking MSB-first byte order in the wire protocol\&. 
+.PP
+Definition at line 54 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_header_create(), _dbus_header_have_message_untrusted(), _dbus_marshal_read_basic(), _dbus_marshal_skip_basic(), _dbus_unpack_uint32(), and _dbus_verbose_bytes()\&.
+.SS "#define DBUS_ERROR_ACCESS_DENIED   'org\&.freedesktop\&.DBus\&.Error\&.AccessDenied'"
+
+.PP
+Security restrictions don't allow doing what you're trying to do\&. 
+.PP
+Definition at line 373 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno()\&.
+.SS "#define DBUS_ERROR_ADDRESS_IN_USE   'org\&.freedesktop\&.DBus\&.Error\&.AddressInUse'"
+
+.PP
+Can't bind a socket since its address is in use (i\&.e\&. EADDRINUSE)\&. 
+.PP
+Definition at line 387 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno(), and dbus_server_listen()\&.
+.SS "#define DBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN   'org\&.freedesktop\&.DBus\&.Error\&.AdtAuditDataUnknown'"
+
+.PP
+Asked for ADT audit data and it wasn't available\&. 
+.PP
+Definition at line 448 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_AUTH_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.AuthFailed'"
+
+.PP
+Authentication didn't work\&. 
+.PP
+Definition at line 375 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_BAD_ADDRESS   'org\&.freedesktop\&.DBus\&.Error\&.BadAddress'"
+
+.PP
+A D-Bus bus address was malformed\&. 
+.PP
+Definition at line 367 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_server_new_for_launchd(), _dbus_set_bad_address(), _dbus_transport_open_platform_specific(), dbus_address_entry_get_value(), dbus_parse_address(), and dbus_server_listen()\&.
+.SS "#define DBUS_ERROR_DISCONNECTED   'org\&.freedesktop\&.DBus\&.Error\&.Disconnected'"
+
+.PP
+The connection is disconnected and you're trying to use it\&. 
+.PP
+Definition at line 389 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_connection_block_pending_call(), and dbus_connection_send_with_reply_and_block()\&.
+.SS "#define DBUS_ERROR_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.Failed'"
+
+.PP
+A generic error; 'something went wrong' - see the error message for more\&. 
+.PP
+Definition at line 355 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_babysitter_set_child_exit_error(), _dbus_become_daemon(), _dbus_bus_notify_shared_connection_disconnected_unlocked(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_create_directory(), _dbus_create_file_exclusively(), _dbus_delete_directory(), _dbus_delete_file(), _dbus_error_from_errno(), _dbus_file_get_contents(), _dbus_full_duplex_pipe(), _dbus_get_autolaunch_address(), _dbus_is_console_user(), _dbus_keyring_get_best_key(), _dbus_keyring_new_for_credentials(), _dbus_make_file_world_readable(), _dbus_printf_string_upper_bound(), _dbus_read_credentials_socket(), _dbus_server_new_for_launchd(), _dbus_write_pid_to_file_and_pipe(), and dbus_connection_send_with_reply_and_block()\&.
+.SS "#define DBUS_ERROR_FILE_EXISTS   'org\&.freedesktop\&.DBus\&.Error\&.FileExists'"
+
+.PP
+Existing file and the operation you're using does not silently overwrite\&. 
+.PP
+Definition at line 395 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno()\&.
+.SS "#define DBUS_ERROR_FILE_NOT_FOUND   'org\&.freedesktop\&.DBus\&.Error\&.FileNotFound'"
+
+.PP
+Missing file\&. 
+.PP
+Definition at line 393 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno()\&.
+.SS "#define DBUS_ERROR_INCONSISTENT_MESSAGE   'org\&.freedesktop\&.DBus\&.Error\&.InconsistentMessage'"
+
+.PP
+The message meta data does not match the payload\&. e\&.g\&. expected number of file descriptors were not sent over the socket this message was received on\&. 
+.PP
+Definition at line 453 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_message_iter_get_args_valist()\&.
+.SS "#define DBUS_ERROR_INTERACTIVE_AUTHORIZATION_REQUIRED   'org\&.freedesktop\&.DBus\&.Error\&.InteractiveAuthorizationRequired'"
+
+.PP
+The message is not allowed without performing interactive authorization, but could have succeeded if an interactive authorization step was allowed\&. 
+.PP
+Definition at line 457 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_INVALID_ARGS   'org\&.freedesktop\&.DBus\&.Error\&.InvalidArgs'"
+
+.PP
+Invalid arguments passed to a method call\&. 
+.PP
+Definition at line 391 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_connect_tcp_socket(), _dbus_listen_tcp_socket(), _dbus_message_iter_get_args_valist(), dbus_message_demarshal(), dbus_validate_bus_name(), dbus_validate_error_name(), dbus_validate_interface(), dbus_validate_member(), dbus_validate_path(), and dbus_validate_utf8()\&.
+.SS "#define DBUS_ERROR_INVALID_FILE_CONTENT   'org\&.freedesktop\&.DBus\&.Error\&.InvalidFileContent'"
+
+.PP
+A file contains invalid syntax or is otherwise broken\&. 
+.PP
+Definition at line 444 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_read_uuid_file(), and _dbus_uuid_encode()\&.
+.SS "#define DBUS_ERROR_INVALID_SIGNATURE   'org\&.freedesktop\&.DBus\&.Error\&.InvalidSignature'"
+
+.PP
+A type signature is not valid\&. 
+.PP
+Definition at line 442 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by dbus_signature_validate(), and dbus_signature_validate_single()\&.
+.SS "#define DBUS_ERROR_IO_ERROR   'org\&.freedesktop\&.DBus\&.Error\&.IOError'"
+
+.PP
+Something went wrong reading or writing to a socket, for example\&. 
+.PP
+Definition at line 365 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_listen_tcp_socket(), _dbus_send_credentials_socket(), and _dbus_server_new_for_launchd()\&.
+.SS "#define DBUS_ERROR_LIMITS_EXCEEDED   'org\&.freedesktop\&.DBus\&.Error\&.LimitsExceeded'"
+
+.PP
+Some limited resource is exhausted\&. 
+.PP
+Definition at line 371 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno(), and _dbus_server_new_for_launchd()\&.
+.SS "#define DBUS_ERROR_MATCH_RULE_INVALID   'org\&.freedesktop\&.DBus\&.Error\&.MatchRuleInvalid'"
+
+.PP
+The match rule isn't syntactically valid\&. 
+.PP
+Definition at line 414 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_MATCH_RULE_NOT_FOUND   'org\&.freedesktop\&.DBus\&.Error\&.MatchRuleNotFound'"
+
+.PP
+Tried to remove or modify a match rule that didn't exist\&. 
+.PP
+Definition at line 412 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_NAME_HAS_NO_OWNER   'org\&.freedesktop\&.DBus\&.Error\&.NameHasNoOwner'"
+
+.PP
+The bus name you referenced doesn't exist (i\&.e\&. no application owns it)\&. 
+.PP
+Definition at line 361 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_NO_MEMORY   'org\&.freedesktop\&.DBus\&.Error\&.NoMemory'"
+
+.PP
+There was not enough memory to complete an operation\&. 
+.PP
+Definition at line 357 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_babysitter_set_child_exit_error(), _dbus_check_dir_is_private_to_user(), _dbus_connect_tcp_socket(), _dbus_directory_close(), _dbus_directory_get_next_file(), _dbus_directory_open(), _dbus_error_from_errno(), _dbus_keyring_new_for_credentials(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_read_local_machine_uuid(), _dbus_server_listen_platform_specific(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_launchd(), _dbus_server_new_for_tcp_socket(), _dbus_spawn_async_with_babysitter(), _dbus_string_save_to_file(), _dbus_transport_finalize_base(), _dbus_transport_new_for_domain_socket(), _dbus_transport_new_for_tcp_socket(), _dbus_transport_open_platform_specific(), _dbus_user_database_lookup(), _dbus_user_database_lookup_group(), and dbus_parse_address()\&.
+.SS "#define DBUS_ERROR_NO_NETWORK   'org\&.freedesktop\&.DBus\&.Error\&.NoNetwork'"
+
+.PP
+No network access (probably ENETUNREACH on a socket)\&. 
+.PP
+Definition at line 385 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno()\&.
+.SS "#define DBUS_ERROR_NO_REPLY   'org\&.freedesktop\&.DBus\&.Error\&.NoReply'"
+
+.PP
+No reply to a message expecting one, usually means a timeout occurred\&. 
+.PP
+Definition at line 363 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_pending_call_set_timeout_error_unlocked()\&.
+.SS "#define DBUS_ERROR_NO_SERVER   'org\&.freedesktop\&.DBus\&.Error\&.NoServer'"
+
+.PP
+Unable to connect to server (probably caused by ECONNREFUSED on a socket)\&. 
+.PP
+Definition at line 377 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno(), and _dbus_server_new_for_launchd()\&.
+.SS "#define DBUS_ERROR_NOT_SUPPORTED   'org\&.freedesktop\&.DBus\&.Error\&.NotSupported'"
+
+.PP
+Requested operation isn't supported (like ENOSYS on UNIX)\&. 
+.PP
+Definition at line 369 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_become_daemon(), _dbus_change_to_daemon_user(), _dbus_connect_unix_socket(), _dbus_error_from_errno(), _dbus_get_autolaunch_address(), _dbus_keyring_new_for_credentials(), _dbus_listen_systemd_sockets(), _dbus_listen_unix_socket(), _dbus_lookup_launchd_socket(), _dbus_message_iter_get_args_valist(), and _dbus_unix_user_is_at_console()\&.
+.SS "#define DBUS_ERROR_OBJECT_PATH_IN_USE   'org\&.freedesktop\&.DBus\&.Error\&.ObjectPathInUse'"
+
+.PP
+There's already an object with the requested object path\&. 
+.PP
+Definition at line 450 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_object_tree_register(), dbus_connection_register_fallback(), and dbus_connection_register_object_path()\&.
+.SS "#define DBUS_ERROR_PROPERTY_READ_ONLY   'org\&.freedesktop\&.DBus\&.Error\&.PropertyReadOnly'"
+
+.PP
+Property you tried to set is read-only\&. 
+.PP
+Definition at line 405 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN   'org\&.freedesktop\&.DBus\&.Error\&.SELinuxSecurityContextUnknown'"
+
+.PP
+Asked for SELinux security context and it wasn't available\&. 
+.PP
+Definition at line 446 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SERVICE_UNKNOWN   'org\&.freedesktop\&.DBus\&.Error\&.ServiceUnknown'"
+
+.PP
+The bus doesn't know how to launch a service to supply the bus name you wanted\&. 
+.PP
+Definition at line 359 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_CHILD_EXITED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ChildExited'"
+
+.PP
+While starting a new process, the child exited with a status code\&. 
+.PP
+Definition at line 420 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_babysitter_set_child_exit_error(), and _dbus_spawn_async_with_babysitter()\&.
+.SS "#define DBUS_ERROR_SPAWN_CHILD_SIGNALED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ChildSignaled'"
+
+.PP
+While starting a new process, the child exited on a signal\&. 
+.PP
+Definition at line 422 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_babysitter_set_child_exit_error(), and _dbus_spawn_async_with_babysitter()\&.
+.SS "#define DBUS_ERROR_SPAWN_CONFIG_INVALID   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ConfigInvalid'"
+
+.PP
+We failed to setup the config parser correctly\&. 
+.PP
+Definition at line 428 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_EXEC_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ExecFailed'"
+
+.PP
+While starting a new process, the exec() call failed\&. 
+.PP
+Definition at line 416 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_babysitter_set_child_exit_error(), _dbus_get_tmpdir(), and _dbus_spawn_async_with_babysitter()\&.
+.SS "#define DBUS_ERROR_SPAWN_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.Failed'"
+
+.PP
+While starting a new process, something went wrong\&. 
+.PP
+Definition at line 424 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_FILE_INVALID   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.FileInvalid'"
+
+.PP
+Service file invalid (Name, User or Exec missing)\&. 
+.PP
+Definition at line 436 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_FORK_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ForkFailed'"
+
+.PP
+While starting a new process, the fork() call failed\&. 
+.PP
+Definition at line 418 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_spawn_async_with_babysitter()\&.
+.SS "#define DBUS_ERROR_SPAWN_NO_MEMORY   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.NoMemory'"
+
+.PP
+Tried to get a UNIX process ID and it wasn't available\&. 
+.PP
+Definition at line 438 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_PERMISSIONS_INVALID   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.PermissionsInvalid'"
+
+.PP
+Permissions are incorrect on the setuid helper\&. 
+.PP
+Definition at line 434 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_SERVICE_INVALID   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ServiceNotValid'"
+
+.PP
+Bus name was not valid\&. 
+.PP
+Definition at line 430 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_SERVICE_NOT_FOUND   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.ServiceNotFound'"
+
+.PP
+Service file not found in system-services directory\&. 
+.PP
+Definition at line 432 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_SPAWN_SETUP_FAILED   'org\&.freedesktop\&.DBus\&.Error\&.Spawn\&.FailedToSetup'"
+
+.PP
+We failed to setup the environment correctly\&. 
+.PP
+Definition at line 426 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_TIMED_OUT   'org\&.freedesktop\&.DBus\&.Error\&.TimedOut'"
+
+.PP
+Certain timeout errors, e\&.g\&. while starting a service\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+this is confusingly-named given that \fBDBUS_ERROR_TIMEOUT\fP also exists\&. We can't fix it for compatibility reasons so just be careful\&. 
+.RE
+.PP
+
+.PP
+Definition at line 410 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_TIMEOUT   'org\&.freedesktop\&.DBus\&.Error\&.Timeout'"
+
+.PP
+Certain timeout errors, possibly ETIMEDOUT on a socket\&. Note that \fBDBUS_ERROR_NO_REPLY\fP is used for message reply timeouts\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+this is confusingly-named given that \fBDBUS_ERROR_TIMED_OUT\fP also exists\&. We can't fix it for compatibility reasons so just be careful\&. 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_error_from_errno()\&.
+.SS "#define DBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN   'org\&.freedesktop\&.DBus\&.Error\&.UnixProcessIdUnknown'"
+
+.PP
+Tried to get a UNIX process ID and it wasn't available\&. 
+.PP
+Definition at line 440 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_UNKNOWN_INTERFACE   'org\&.freedesktop\&.DBus\&.Error\&.UnknownInterface'"
+
+.PP
+Interface you invoked a method on isn't known by the object\&. 
+.PP
+Definition at line 401 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_ERROR_UNKNOWN_METHOD   'org\&.freedesktop\&.DBus\&.Error\&.UnknownMethod'"
+
+.PP
+Method name you invoked isn't known by the object you invoked it on\&. 
+.PP
+Definition at line 397 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by dbus_connection_dispatch(), and dbus_connection_get_dispatch_status()\&.
+.SS "#define DBUS_ERROR_UNKNOWN_OBJECT   'org\&.freedesktop\&.DBus\&.Error\&.UnknownObject'"
+
+.PP
+Object you invoked a method on isn't known\&. 
+.PP
+Definition at line 399 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by dbus_connection_dispatch()\&.
+.SS "#define DBUS_ERROR_UNKNOWN_PROPERTY   'org\&.freedesktop\&.DBus\&.Error\&.UnknownProperty'"
+
+.PP
+Property you tried to access isn't known by the object\&. 
+.PP
+Definition at line 403 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_HEADER_FIELD_DESTINATION   6"
+
+.PP
+Header field code for the destination bus name of a message\&. See \fBdbus_message_set_destination()\fP\&. 
+.PP
+Definition at line 288 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_have_message_untrusted(), dbus_message_get_destination(), and dbus_message_set_destination()\&.
+.SS "#define DBUS_HEADER_FIELD_ERROR_NAME   4"
+
+.PP
+Header field code for an error name (found in \fBDBUS_MESSAGE_TYPE_ERROR\fP messages)\&. See \fBdbus_message_set_error_name()\fP\&. 
+.PP
+Definition at line 280 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_have_message_untrusted(), dbus_message_get_error_name(), and dbus_message_set_error_name()\&.
+.SS "#define DBUS_HEADER_FIELD_INTERFACE   2"
+
+.PP
+Header field code for the interface containing a member (method or signal)\&. See \fBdbus_message_set_interface()\fP\&. 
+.PP
+Definition at line 274 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_have_message_untrusted(), dbus_message_get_interface(), and dbus_message_set_interface()\&.
+.SS "#define DBUS_HEADER_FIELD_LAST   \fBDBUS_HEADER_FIELD_UNIX_FDS\fP"
+
+.PP
+Value of the highest-numbered header field code, can be used to determine the size of an array indexed by header field code\&. Remember though that unknown codes must be ignored, so check for that before indexing the array\&. 
+.PP
+Definition at line 311 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_get_field_basic(), _dbus_header_have_message_untrusted(), _dbus_header_load(), and _dbus_header_set_field_basic()\&.
+.SS "#define DBUS_HEADER_FIELD_MEMBER   3"
+
+.PP
+Header field code for a member (method or signal)\&. See \fBdbus_message_set_member()\fP\&. 
+.PP
+Definition at line 276 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_have_message_untrusted(), dbus_message_get_member(), and dbus_message_set_member()\&.
+.SS "#define DBUS_HEADER_FIELD_PATH   1"
+
+.PP
+Header field code for the path - the path is the object emitting a signal or the object receiving a method call\&. See \fBdbus_message_set_path()\fP\&. 
+.PP
+Definition at line 270 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), _dbus_header_have_message_untrusted(), dbus_message_get_path(), and dbus_message_set_path()\&.
+.SS "#define DBUS_HEADER_FIELD_REPLY_SERIAL   5"
+
+.PP
+Header field code for a reply serial, used to match a \fBDBUS_MESSAGE_TYPE_METHOD_RETURN\fP message with the message that it's a reply to\&. See \fBdbus_message_set_reply_serial()\fP\&. 
+.PP
+Definition at line 284 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), dbus_message_get_reply_serial(), and dbus_message_set_reply_serial()\&.
+.SS "#define DBUS_HEADER_FIELD_SENDER   7"
+
+.PP
+Header field code for the sender of a message; usually initialized by the message bus\&. See \fBdbus_message_set_sender()\fP\&. 
+.PP
+Definition at line 293 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_have_message_untrusted(), dbus_message_get_sender(), and dbus_message_set_sender()\&.
+.SS "#define DBUS_HEADER_FLAG_NO_AUTO_START   0x2"
+
+.PP
+If set, this flag means that even if the message bus knows how to start an owner for the destination bus name (see \fBdbus_message_set_destination()\fP), it should not do so\&. If this flag is not set, the bus may launch a program to process the message\&. 
+.PP
+Definition at line 256 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by dbus_message_get_auto_start(), and dbus_message_set_auto_start()\&.
+.SS "#define DBUS_HEADER_FLAG_NO_REPLY_EXPECTED   0x1"
+
+.PP
+If set, this flag means that the sender of a message does not care about getting a reply, so the recipient need not send one\&. See \fBdbus_message_set_no_reply()\fP\&. 
+.PP
+Definition at line 249 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by dbus_message_get_no_reply(), and dbus_message_set_no_reply()\&.
+.SS "#define DBUS_HEADER_SIGNATURE"
+\fBValue:\fP
+.PP
+.nf
+DBUS_TYPE_BYTE_AS_STRING                   \\
+     DBUS_TYPE_BYTE_AS_STRING                   \\
+     DBUS_TYPE_BYTE_AS_STRING                   \\
+     DBUS_TYPE_BYTE_AS_STRING                   \\
+     DBUS_TYPE_UINT32_AS_STRING                 \\
+     DBUS_TYPE_UINT32_AS_STRING                 \\
+     DBUS_TYPE_ARRAY_AS_STRING                  \\
+     DBUS_STRUCT_BEGIN_CHAR_AS_STRING           \\
+     DBUS_TYPE_BYTE_AS_STRING                   \\
+     DBUS_TYPE_VARIANT_AS_STRING                \\
+     DBUS_STRUCT_END_CHAR_AS_STRING
+.fi
+.PP
+Header format is defined as a signature: byte byte order byte message type ID byte flags byte protocol version uint32 body length uint32 serial array of struct (byte,variant) (field name, value) The length of the header can be computed as the fixed size of the initial data, plus the length of the array at the end, plus padding to an 8-boundary\&. 
+.PP
+Definition at line 326 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_LITTLE_ENDIAN   ('l')"
+
+.PP
+Code marking LSB-first byte order in the wire protocol\&. 
+.PP
+Definition at line 53 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_header_create(), _dbus_header_have_message_untrusted(), _dbus_marshal_read_basic(), _dbus_marshal_skip_basic(), _dbus_unpack_uint16(), _dbus_unpack_uint32(), and _dbus_verbose_bytes()\&.
+.SS "#define DBUS_MAJOR_PROTOCOL_VERSION   1"
+
+.PP
+Protocol version\&. 
+.PP
+Definition at line 57 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_create(), and _dbus_header_load()\&.
+.SS "#define DBUS_MAXIMUM_ARRAY_LENGTH   (67108864)"
+
+.PP
+Max length of a marshaled array in bytes (64M, 2^26) We use signed int for lengths so must be INT_MAX or less\&. We need something a bit smaller than INT_MAX because the array is inside a message with header info, etc\&. so an INT_MAX array wouldn't allow the message overhead\&. The 64M number is an attempt at a larger number than we'd reasonably ever use, but small enough that your bus would chew through it fairly quickly without locking up forever\&. If you have data that's likely to be larger than this, you should probably be sending it in multiple incremental messages anyhow\&. 
+.PP
+Definition at line 203 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_swap_array(), _dbus_validate_signature_with_reason(), and dbus_message_iter_append_fixed_array()\&.
+.SS "#define DBUS_MAXIMUM_MATCH_RULE_ARG_NUMBER   63"
+
+.PP
+Max arg number you can match on in a match rule, e\&.g\&. arg0='hello' is OK, arg3489720987='hello' is not 
+.PP
+Definition at line 191 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_MAXIMUM_MESSAGE_UNIX_FDS   (\fBDBUS_MAXIMUM_MESSAGE_LENGTH\fP/4)"
+
+.PP
+The maximum total number of unix fds in a message\&. Similar rationale as DBUS_MAXIMUM_MESSAGE_LENGTH\&. However we divide by four given that one fd is an int and hence at least 32 bits\&. 
+.PP
+Definition at line 218 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_message_loader_set_max_message_unix_fds()\&.
+.SS "#define DBUS_MAXIMUM_NAME_LENGTH   255"
+
+.PP
+Max length in bytes of a bus name, interface, or member (not object path, paths are unlimited)\&. This is limited because lots of stuff is O(n) in this number, plus it would be obnoxious to type in a paragraph-long method name so most likely something like that would be an exploit\&. 
+.PP
+Definition at line 178 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_validate_interface(), and _dbus_validate_member()\&.
+.SS "#define DBUS_MAXIMUM_TYPE_RECURSION_DEPTH   32"
+
+.PP
+Depth of recursion in the type tree\&. This is automatically limited to DBUS_MAXIMUM_SIGNATURE_LENGTH since you could only have an array of array of array of \&.\&.\&. that fit in the max signature\&. But that's probably a bit too large\&. 
+.PP
+Definition at line 227 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_validate_signature_with_reason()\&.
+.SS "#define DBUS_MINIMUM_HEADER_SIZE   16"
+
+.PP
+The smallest header size that can occur\&. (It won't be valid due to missing required header fields\&.) This is 4 bytes, two uint32, an array length\&. This isn't any kind of resource limit, just the necessary/logical outcome of the header signature\&. 
+.PP
+Definition at line 346 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_message_loader_queue_messages(), and dbus_message_demarshal_bytes_needed()\&.
+.SS "#define DBUS_NUMBER_OF_TYPES   (16)"
+
+.PP
+Does not include \fBDBUS_TYPE_INVALID\fP, \fBDBUS_STRUCT_BEGIN_CHAR\fP, \fBDBUS_STRUCT_END_CHAR\fP, \fBDBUS_DICT_ENTRY_BEGIN_CHAR\fP, or \fBDBUS_DICT_ENTRY_END_CHAR\fP - i\&.e\&. it is the number of valid types, not the number of distinct characters that may appear in a type signature\&. 
+.PP
+Definition at line 151 of file dbus\-protocol\&.h\&.
+.SS "#define DBUS_TYPE_STRUCT   ((int) 'r')"
+
+.PP
+STRUCT and DICT_ENTRY are sort of special since their codes can't appear in a type string, instead DBUS_STRUCT_BEGIN_CHAR/DBUS_DICT_ENTRY_BEGIN_CHAR have to appear\&. Type code used to represent a struct; however, this type code does not appear in type signatures, instead \fBDBUS_STRUCT_BEGIN_CHAR\fP and \fBDBUS_STRUCT_END_CHAR\fP will appear in a signature\&. 
+.PP
+Definition at line 136 of file dbus\-protocol\&.h\&.
+.PP
+Referenced by _dbus_header_get_byte_order(), _dbus_header_load(), _dbus_header_update_lengths(), _dbus_type_get_alignment(), _dbus_type_reader_recurse(), _dbus_type_signature_next(), _dbus_type_to_string(), _dbus_type_writer_init_values_only(), _dbus_type_writer_unrecurse(), _dbus_validate_signature_with_reason(), _dbus_verbose_bytes_of_string(), dbus_message_iter_open_container(), and dbus_type_is_valid()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

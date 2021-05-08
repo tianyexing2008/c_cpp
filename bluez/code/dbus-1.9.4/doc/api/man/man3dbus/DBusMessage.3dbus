@@ -1,0 +1,108 @@
+.TH "DBusMessage" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMessage \- Internals of \fBDBusMessage\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-message\-private\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusAtomic\fP \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "\fBDBusHeader\fP \fBheader\fP"
+.br
+.RI "\fIHeader network data and associated cache\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBbody\fP"
+.br
+.RI "\fIBody network data\&. \fP"
+.ti -1c
+.RI "unsigned int \fBlocked\fP: 1"
+.br
+.RI "\fIMessage being sent, no modifications allowed\&. \fP"
+.ti -1c
+.RI "unsigned int \fBin_cache\fP: 1"
+.br
+.RI "\fIHas been 'freed' since it's in the cache (this is a debug feature) \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBcounters\fP"
+.br
+.RI "\fI0-N \fBDBusCounter\fP used to track message size/unix fds\&. \fP"
+.ti -1c
+.RI "long \fBsize_counter_delta\fP"
+.br
+.RI "\fISize we incremented the size counters by\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBchanged_stamp\fP: \fBCHANGED_STAMP_BITS\fP"
+.br
+.RI "\fIIncremented when iterators are invalidated\&. \fP"
+.ti -1c
+.RI "\fBDBusDataSlotList\fP \fBslot_list\fP"
+.br
+.RI "\fIData stored by allocated integer ID\&. \fP"
+.ti -1c
+.RI "int \fBgeneration\fP"
+.br
+.RI "\fI_dbus_current_generation when message was created \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusMessage\fP\&. 
+
+Object representing a message received from or to be sent to another application\&. This is an opaque object, all members are private\&. 
+.PP
+Definition at line 99 of file dbus\-message\-private\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusString\fP DBusMessage::body"
+
+.PP
+Body network data\&. 
+.PP
+Definition at line 105 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_add_counter_link(), _dbus_message_get_network_data(), _dbus_message_loader_return_unix_fds(), dbus_message_copy(), dbus_message_get_reply_serial(), dbus_message_iter_init(), dbus_message_iter_init_append(), dbus_message_lock(), and dbus_message_marshal()\&.
+.SS "\fBdbus_uint32_t\fP DBusMessage::changed_stamp"
+
+.PP
+Incremented when iterators are invalidated\&. 
+.PP
+Definition at line 116 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by dbus_message_get_args_valist(), and dbus_message_get_reply_serial()\&.
+.SS "\fBDBusList\fP* DBusMessage::counters"
+
+.PP
+0-N \fBDBusCounter\fP used to track message size/unix fds\&. 
+.PP
+Definition at line 113 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_add_counter_link(), _dbus_message_remove_counter(), and dbus_message_get_reply_serial()\&.
+.SS "unsigned int DBusMessage::locked"
+
+.PP
+Message being sent, no modifications allowed\&. 
+.PP
+Definition at line 107 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_get_network_data(), _dbus_message_get_unix_fds(), dbus_message_copy(), dbus_message_get_reply_serial(), dbus_message_iter_init_append(), dbus_message_lock(), dbus_message_marshal(), dbus_message_set_allow_interactive_authorization(), dbus_message_set_auto_start(), dbus_message_set_destination(), dbus_message_set_error_name(), dbus_message_set_interface(), dbus_message_set_member(), dbus_message_set_no_reply(), dbus_message_set_path(), dbus_message_set_reply_serial(), dbus_message_set_sender(), and dbus_message_set_serial()\&.
+.SS "long DBusMessage::size_counter_delta"
+
+.PP
+Size we incremented the size counters by\&. 
+.PP
+Definition at line 114 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_add_counter_link(), _dbus_message_remove_counter(), and dbus_message_get_reply_serial()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

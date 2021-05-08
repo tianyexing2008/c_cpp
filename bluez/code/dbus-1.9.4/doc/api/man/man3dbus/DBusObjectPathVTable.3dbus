@@ -1,0 +1,50 @@
+.TH "DBusObjectPathVTable" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusObjectPathVTable \- Virtual table that must be implemented to handle a portion of the object path hierarchy\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-connection\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusObjectPathUnregisterFunction\fP \fBunregister_function\fP"
+.br
+.RI "\fIFunction to unregister this handler\&. \fP"
+.ti -1c
+.RI "\fBDBusObjectPathMessageFunction\fP \fBmessage_function\fP"
+.br
+.RI "\fIFunction to handle messages\&. \fP"
+.ti -1c
+.RI "void(* \fBdbus_internal_pad1\fP )(void *)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBdbus_internal_pad2\fP )(void *)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBdbus_internal_pad3\fP )(void *)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBdbus_internal_pad4\fP )(void *)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Virtual table that must be implemented to handle a portion of the object path hierarchy\&. 
+
+Attach the vtable to a particular path using \fBdbus_connection_register_object_path()\fP or \fBdbus_connection_register_fallback()\fP\&. 
+.PP
+Definition at line 384 of file dbus\-connection\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

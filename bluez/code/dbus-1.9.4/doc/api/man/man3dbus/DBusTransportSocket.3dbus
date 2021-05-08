@@ -1,0 +1,102 @@
+.TH "DBusTransportSocket" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTransportSocket \- Implementation details of \fBDBusTransportSocket\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusTransport\fP \fBbase\fP"
+.br
+.RI "\fIParent instance\&. \fP"
+.ti -1c
+.RI "int \fBfd\fP"
+.br
+.RI "\fIFile descriptor\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP * \fBread_watch\fP"
+.br
+.RI "\fIWatch for readability\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP * \fBwrite_watch\fP"
+.br
+.RI "\fIWatch for writability\&. \fP"
+.ti -1c
+.RI "int \fBmax_bytes_read_per_iteration\fP"
+.br
+.RI "\fITo avoid blocking too long\&. \fP"
+.ti -1c
+.RI "int \fBmax_bytes_written_per_iteration\fP"
+.br
+.RI "\fITo avoid blocking too long\&. \fP"
+.ti -1c
+.RI "int \fBmessage_bytes_written\fP"
+.br
+.RI "\fINumber of bytes of current outgoing message that have been written\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBencoded_outgoing\fP"
+.br
+.RI "\fIEncoded version of current outgoing message\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBencoded_incoming\fP"
+.br
+.RI "\fIEncoded version of current incoming data\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusTransportSocket\fP\&. 
+
+All members are private\&. 
+.PP
+Definition at line 49 of file dbus\-transport\-socket\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "int DBusTransportSocket::fd"
+
+.PP
+File descriptor\&. 
+.PP
+Definition at line 52 of file dbus\-transport\-socket\&.c\&.
+.PP
+Referenced by _dbus_transport_new_for_socket(), and _dbus_transport_new_for_tcp_socket()\&.
+.SS "int DBusTransportSocket::max_bytes_read_per_iteration"
+
+.PP
+To avoid blocking too long\&. 
+.PP
+Definition at line 56 of file dbus\-transport\-socket\&.c\&.
+.PP
+Referenced by _dbus_transport_new_for_socket()\&.
+.SS "int DBusTransportSocket::max_bytes_written_per_iteration"
+
+.PP
+To avoid blocking too long\&. 
+.PP
+Definition at line 57 of file dbus\-transport\-socket\&.c\&.
+.PP
+Referenced by _dbus_transport_new_for_socket()\&.
+.SS "\fBDBusWatch\fP* DBusTransportSocket::read_watch"
+
+.PP
+Watch for readability\&. 
+.PP
+Definition at line 53 of file dbus\-transport\-socket\&.c\&.
+.PP
+Referenced by _dbus_transport_new_for_socket()\&.
+.SS "\fBDBusWatch\fP* DBusTransportSocket::write_watch"
+
+.PP
+Watch for writability\&. 
+.PP
+Definition at line 54 of file dbus\-transport\-socket\&.c\&.
+.PP
+Referenced by _dbus_transport_new_for_socket()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

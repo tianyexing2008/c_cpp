@@ -1,0 +1,46 @@
+.TH "DBusTypeReaderClass" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTypeReaderClass \- Virtual table for a type reader\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.RI "\fIname for debugging \fP"
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.RI "\fIindex in all_reader_classes \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBtypes_only\fP"
+.br
+.RI "\fIonly iterates over types, not values \fP"
+.ti -1c
+.RI "void(* \fBrecurse\fP )(\fBDBusTypeReader\fP *sub, \fBDBusTypeReader\fP *parent)"
+.br
+.RI "\fIrecurse with this reader as sub \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP(* \fBcheck_finished\fP )(const \fBDBusTypeReader\fP *reader)"
+.br
+.RI "\fIcheck whether reader is at the end \fP"
+.ti -1c
+.RI "void(* \fBnext\fP )(\fBDBusTypeReader\fP *reader, int current_type)"
+.br
+.RI "\fIgo to the next value \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Virtual table for a type reader\&. 
+.PP
+Definition at line 125 of file dbus\-marshal\-recursive\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusWatchList" kind="struct" language="C++" prot="public">
+    <compoundname>DBusWatchList</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusWatchList_1ab4e73fc61203dd03949f0b7d163d456d" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusWatchList::watches</definition>
+        <argsstring></argsstring>
+        <name>watches</name>
+        <briefdescription>
+<para>Watch objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="216" column="1" bodyfile="dbus/dbus-watch.c" bodystart="216" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga935ba95d94a14aee79d80abe970eae53" compoundref="dbus-watch_8c" startline="465" endline="476">_dbus_watch_list_toggle_all_watches</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatchList_1ae515ab01e8d08e6b252e468be7dc7074" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga285ce1f8bb94ef2f89f23db3de8cfe4b" kindref="member">DBusAddWatchFunction</ref></type>
+        <definition>DBusAddWatchFunction DBusWatchList::add_watch_function</definition>
+        <argsstring></argsstring>
+        <name>add_watch_function</name>
+        <briefdescription>
+<para>Callback for adding a watch. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="218" column="1" bodyfile="dbus/dbus-watch.c" bodystart="218" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatchList_1a3b4b6c6d8aeb77d9b08404575e0b805a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga487ca73e58570f302ba7159c81719243" kindref="member">DBusRemoveWatchFunction</ref></type>
+        <definition>DBusRemoveWatchFunction DBusWatchList::remove_watch_function</definition>
+        <argsstring></argsstring>
+        <name>remove_watch_function</name>
+        <briefdescription>
+<para>Callback for removing a watch. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="219" column="1" bodyfile="dbus/dbus-watch.c" bodystart="219" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatchList_1aed21ba690eb810c4c2da581feaed822a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga005459ba2ddd69ba2d89f0e04ef57b10" kindref="member">DBusWatchToggledFunction</ref></type>
+        <definition>DBusWatchToggledFunction DBusWatchList::watch_toggled_function</definition>
+        <argsstring></argsstring>
+        <name>watch_toggled_function</name>
+        <briefdescription>
+<para>Callback on toggling enablement. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="220" column="1" bodyfile="dbus/dbus-watch.c" bodystart="220" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga14bb50e8663a1d9d3960b4f73c09c097" compoundref="dbus-watch_8c" startline="436" endline="455">_dbus_watch_list_toggle_watch</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatchList_1a767770241baf8ddcdb4b5c4b4f2a9727" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusWatchList::watch_data</definition>
+        <argsstring></argsstring>
+        <name>watch_data</name>
+        <briefdescription>
+<para>Data for watch callbacks. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="221" column="1" bodyfile="dbus/dbus-watch.c" bodystart="221" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga14bb50e8663a1d9d3960b4f73c09c097" compoundref="dbus-watch_8c" startline="436" endline="455">_dbus_watch_list_toggle_watch</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatchList_1a2308b08f7f4cb858fbcca718f2bef735" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusWatchList::watch_free_data_function</definition>
+        <argsstring></argsstring>
+        <name>watch_free_data_function</name>
+        <briefdescription>
+<para>Free function for watch callback data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="222" column="1" bodyfile="dbus/dbus-watch.c" bodystart="222" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusWatchList" kindref="compound">DBusWatchList</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>All fields are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="586">
+        <label>DBusWatchList</label>
+        <link refid="structDBusWatchList"/>
+        <childnode refid="587" relation="usage">
+          <edgelabel>watches</edgelabel>
+        </childnode>
+        <childnode refid="588" relation="usage">
+          <edgelabel>watch_toggled_function</edgelabel>
+          <edgelabel>add_watch_function</edgelabel>
+          <edgelabel>remove_watch_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="588">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="588" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="587">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="587" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-watch.c" line="215" column="1" bodyfile="dbus/dbus-watch.c" bodystart="214" bodyend="223"/>
+    <listofallmembers>
+      <member refid="structDBusWatchList_1ae515ab01e8d08e6b252e468be7dc7074" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>add_watch_function</name></member>
+      <member refid="structDBusWatchList_1a3b4b6c6d8aeb77d9b08404575e0b805a" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>remove_watch_function</name></member>
+      <member refid="structDBusWatchList_1a767770241baf8ddcdb4b5c4b4f2a9727" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>watch_data</name></member>
+      <member refid="structDBusWatchList_1a2308b08f7f4cb858fbcca718f2bef735" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>watch_free_data_function</name></member>
+      <member refid="structDBusWatchList_1aed21ba690eb810c4c2da581feaed822a" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>watch_toggled_function</name></member>
+      <member refid="structDBusWatchList_1ab4e73fc61203dd03949f0b7d163d456d" prot="public" virt="non-virtual"><scope>DBusWatchList</scope><name>watches</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

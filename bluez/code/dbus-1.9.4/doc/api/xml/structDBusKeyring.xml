@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusKeyring" kind="struct" language="C++" prot="public">
+    <compoundname>DBusKeyring</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusKeyring_1abd3bb1b915d602c6d8b6c582f55d1590" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusKeyring::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="113" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="113" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gacbe59117a5f042a680991461e6d2e20f" compoundref="dbus-keyring_8c" startline="667" endline="672">_dbus_keyring_ref</referencedby>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1ac7274d864db3f2239b2c4ec734da94da" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusKeyring::directory</definition>
+        <argsstring></argsstring>
+        <name>directory</name>
+        <briefdescription>
+<para>Directory the below two items are inside. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="114" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="114" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1a38b402331379977ffd151d327b66dc1f" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusKeyring::filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <briefdescription>
+<para>Keyring filename. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="115" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="115" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1ad4ac7b540d393d588c44aaa2c2f79056" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusKeyring::filename_lock</definition>
+        <argsstring></argsstring>
+        <name>filename_lock</name>
+        <briefdescription>
+<para>Name of lockfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="116" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="116" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1a2f415a81a41f5827df7ecffbfdbd13cf" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusKey" kindref="compound">DBusKey</ref> *</type>
+        <definition>DBusKey* DBusKeyring::keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+<para>Keys loaded from the file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="117" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="117" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1a82dbc0da13a4f11d831f448a1d2ada1f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusKeyring::n_keys</definition>
+        <argsstring></argsstring>
+        <name>n_keys</name>
+        <briefdescription>
+<para>Number of keys. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="118" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="118" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga5bbeeef1ba831a89d7f0f211e886e7c2" compoundref="dbus-keyring_8c" startline="853" endline="910">_dbus_keyring_validate_context</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusKeyring_1a5fce1fd5f4255b922caeda643ecb69cc" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+        <definition>DBusCredentials* DBusKeyring::credentials</definition>
+        <argsstring></argsstring>
+        <name>credentials</name>
+        <briefdescription>
+<para>Credentials containing user the keyring is for. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-keyring.c" line="119" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="119" bodyend="-1"/>
+        <referencedby refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga5ef8c7224182f27ff56b3105c6963cfd" compoundref="dbus-keyring_8c" startline="988" endline="993">_dbus_keyring_is_for_credentials</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of <ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> internals. <ref refid="structDBusKeyring" kindref="compound">DBusKeyring</ref> is an opaque object, it must be used via accessor functions. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="184">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="181">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="182" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="183" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="184" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="183">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="182" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="182">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-keyring.c" line="112" column="1" bodyfile="dbus/dbus-keyring.c" bodystart="111" bodyend="120"/>
+    <listofallmembers>
+      <member refid="structDBusKeyring_1a5fce1fd5f4255b922caeda643ecb69cc" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>credentials</name></member>
+      <member refid="structDBusKeyring_1ac7274d864db3f2239b2c4ec734da94da" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>directory</name></member>
+      <member refid="structDBusKeyring_1a38b402331379977ffd151d327b66dc1f" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>filename</name></member>
+      <member refid="structDBusKeyring_1ad4ac7b540d393d588c44aaa2c2f79056" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>filename_lock</name></member>
+      <member refid="structDBusKeyring_1a2f415a81a41f5827df7ecffbfdbd13cf" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>keys</name></member>
+      <member refid="structDBusKeyring_1a82dbc0da13a4f11d831f448a1d2ada1f" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>n_keys</name></member>
+      <member refid="structDBusKeyring_1abd3bb1b915d602c6d8b6c582f55d1590" prot="public" virt="non-virtual"><scope>DBusKeyring</scope><name>refcount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

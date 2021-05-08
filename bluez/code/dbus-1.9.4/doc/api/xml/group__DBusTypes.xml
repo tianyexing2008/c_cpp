@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusTypes" kind="group">
+    <compoundname>DBusTypes</compoundname>
+    <title>Basic types</title>
+    <innerclass refid="structDBus8ByteStruct" prot="public">DBus8ByteStruct</innerclass>
+    <innerclass refid="unionDBusBasicValue" prot="public">DBusBasicValue</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusTypes_1gae974c1b29f5fecef13e54edd065abcef" prot="public" static="no">
+        <name>DBUS_HAVE_INT64</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Always defined. </para>        </briefdescription>
+        <detaileddescription>
+<para>In older libdbus versions, this would be undefined if there was no 64-bit integer type on that platform. libdbus no longer supports such platforms. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusTypes_1ga8deac39e1bf9fcca44854afeaaaf6199" prot="public" static="no">
+        <name>DBUS_INT64_CONSTANT</name>
+        <param><defname>val</defname></param>
+        <initializer>(<ref refid="group__DBusMacros_1ga4fa4b760e4b3d14076981ad21407b5c8" kindref="member">_DBUS_GNUC_EXTENSION</ref> (val##LL))</initializer>
+        <briefdescription>
+<para>Declare a 64-bit signed integer constant. </para>        </briefdescription>
+        <detaileddescription>
+<para>The macro adds the necessary &quot;LL&quot; or whatever after the integer, giving a literal such as &quot;325145246765LL&quot; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="39" column="9"/>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae10ee21ab353beadbe2493728065f600" compoundref="dbus-sysdeps-win_8c" startline="2157" endline="2178">_dbus_get_real_time</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga04e98ad0e3a181f0a5921a4cbc49cf08" compoundref="dbus-sysdeps-util-win_8c" startline="376" endline="459">_dbus_stat</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusTypes_1ga20f58889c3ab16344378449148264f6d" prot="public" static="no">
+        <name>DBUS_UINT64_CONSTANT</name>
+        <param><defname>val</defname></param>
+        <initializer>(<ref refid="group__DBusMacros_1ga4fa4b760e4b3d14076981ad21407b5c8" kindref="member">_DBUS_GNUC_EXTENSION</ref> (val##ULL))</initializer>
+        <briefdescription>
+<para>Declare a 64-bit unsigned integer constant. </para>        </briefdescription>
+        <detaileddescription>
+<para>The macro adds the necessary &quot;ULL&quot; or whatever after the integer, giving a literal such as &quot;325145246765ULL&quot; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="40" column="9"/>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_bool_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_bool_t</name>
+        <briefdescription>
+<para>A boolean, valid values are <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> and <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-types.h" line="35" column="1" bodyfile="dbus/dbus-types.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>dbus_uint32_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_uint32_t</name>
+        <briefdescription>
+<para>A 32-bit unsigned integer on all platforms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="43" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" prot="public" static="no">
+        <type>int</type>
+        <definition>dbus_int32_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_int32_t</name>
+        <briefdescription>
+<para>A 32-bit signed integer on all platforms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="42" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>dbus_uint16_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_uint16_t</name>
+        <briefdescription>
+<para>A 16-bit unsigned integer on all platforms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="46" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusTypes_1ga51307e24d7621aae4a19be8f3d3c7c23" prot="public" static="no">
+        <type>short</type>
+        <definition>dbus_int16_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_int16_t</name>
+        <briefdescription>
+<para>A 16-bit signed integer on all platforms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="45" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMacros_1ga4fa4b760e4b3d14076981ad21407b5c8" kindref="member">_DBUS_GNUC_EXTENSION</ref> typedef unsigned long long</type>
+        <definition>dbus_uint64_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_uint64_t</name>
+        <briefdescription>
+<para>A 64-bit unsigned integer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="37" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaec86e8e1ae2f25b673ae6d900ab323c7" compoundref="dbus-marshal-basic_8c" startline="888" endline="929">_dbus_swap_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7f3320a0b0f7633cdf5c149588ae9bd9" compoundref="dbus-marshal-basic_8c" startline="1280" endline="1350">_dbus_verbose_bytes</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae10ee21ab353beadbe2493728065f600" compoundref="dbus-sysdeps-win_8c" startline="2157" endline="2178">_dbus_get_real_time</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusTypes_1gab650989bbedae260527d7ca663a2ad9f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMacros_1ga4fa4b760e4b3d14076981ad21407b5c8" kindref="member">_DBUS_GNUC_EXTENSION</ref> typedef long long</type>
+        <definition>dbus_int64_t</definition>
+        <argsstring></argsstring>
+        <name>dbus_int64_t</name>
+        <briefdescription>
+<para>A 64-bit signed integer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-arch-deps.h" line="36" column="1" bodyfile="dbus/dbus-arch-deps.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga04e98ad0e3a181f0a5921a4cbc49cf08" compoundref="dbus-sysdeps-util-win_8c" startline="376" endline="459">_dbus_stat</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>dbus_bool_t, dbus_int32_t, etc. </para>    </briefdescription>
+    <detaileddescription>
+<para>Typedefs for common primitive types. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

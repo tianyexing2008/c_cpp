@@ -1,0 +1,28 @@
+.TH "DBusFreedElement" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusFreedElement \- struct representing an element on the free list\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusFreedElement\fP * \fBnext\fP"
+.br
+.RI "\fInext element of the free list \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+struct representing an element on the free list\&. 
+
+We just cast freed elements to this so we can make a list out of them\&. 
+.PP
+Definition at line 61 of file dbus\-mempool\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

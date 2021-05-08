@@ -1,0 +1,652 @@
+.TH "DBusSysdepsUnix" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSysdepsUnix \- UNIX-specific internal API
+.PP
+Internal system-dependent API available on UNIX only\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusUserInfo\fP"
+.br
+.RI "\fIInformation about a UNIX user\&. \fP"
+.ti -1c
+.RI "struct \fBDBusGroupInfo\fP"
+.br
+.RI "\fIInformation about a UNIX group\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusUserInfo\fP \fBDBusUserInfo\fP"
+.br
+.RI "\fIInformation about a UNIX user\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusGroupInfo\fP \fBDBusGroupInfo\fP"
+.br
+.RI "\fIInformation about a UNIX group\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_close\fP (int fd, \fBDBusError\fP *error)"
+.br
+.RI "\fICloses a file descriptor\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_dup\fP (int fd, \fBDBusError\fP *error)"
+.br
+.RI "\fIDuplicates a file descriptor\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_read\fP (int fd, \fBDBusString\fP *buffer, int count)"
+.br
+.RI "\fIThin wrapper around the read() system call that appends the data it reads to the \fBDBusString\fP buffer\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_write\fP (int fd, const \fBDBusString\fP *buffer, int start, int len)"
+.br
+.RI "\fIThin wrapper around the write() system call that writes a part of a \fBDBusString\fP and handles EINTR for you\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_write_two\fP (int fd, const \fBDBusString\fP *buffer1, int start1, int len1, const \fBDBusString\fP *buffer2, int start2, int len2)"
+.br
+.RI "\fILike \fB_dbus_write()\fP but will use writev() if possible to write both buffers in sequence\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_connect_unix_socket\fP (const char *path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a socket and connects it to the UNIX domain socket at the given path\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_listen_unix_socket\fP (const char *path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a socket and binds it to the given path, then listens on the socket\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_connect_exec\fP (const char *path, char *const argv[], \fBDBusError\fP *error)"
+.br
+.RI "\fICreates a UNIX domain socket and connects it to the specified process to execute\&. \fP"
+.ti -1c
+.RI "int \fB_dbus_listen_systemd_sockets\fP (int **fd, \fBDBusError\fP *error)"
+.br
+.RI "\fIAcquires one or more sockets passed in from systemd\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_read_credentials\fP (int client_fd, \fBDBusCredentials\fP *credentials, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_send_credentials\fP (int server_fd, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_lookup_launchd_socket\fP (\fBDBusString\fP *socket_path, const char *launchd_env_var, \fBDBusError\fP *error)"
+.br
+.RI "\fIquries launchd for a specific env var which holds the socket path\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_info_fill\fP (\fBDBusUserInfo\fP *info, const \fBDBusString\fP *username, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets user info for the given username\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_info_fill_uid\fP (\fBDBusUserInfo\fP *info, \fBdbus_uid_t\fP uid, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets user info for the given user ID\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_info_free\fP (\fBDBusUserInfo\fP *info)"
+.br
+.RI "\fIFrees the members of info (but not info itself) \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_group_info_fill\fP (\fBDBusGroupInfo\fP *info, const \fBDBusString\fP *groupname, \fBDBusError\fP *error)"
+.br
+.RI "\fIInitializes the given \fBDBusGroupInfo\fP struct with information about the given group name\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_group_info_fill_gid\fP (\fBDBusGroupInfo\fP *info, \fBdbus_gid_t\fP gid, \fBDBusError\fP *error)"
+.br
+.RI "\fIInitializes the given \fBDBusGroupInfo\fP struct with information about the given group ID\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_group_info_free\fP (\fBDBusGroupInfo\fP *info)"
+.br
+.RI "\fIFrees the members of info (but not info itself)\&. \fP"
+.ti -1c
+.RI "\fBdbus_uid_t\fP \fB_dbus_getuid\fP (void)"
+.br
+.RI "\fIGets our UID\&. \fP"
+.ti -1c
+.RI "\fBdbus_uid_t\fP \fB_dbus_geteuid\fP (void)"
+.br
+.RI "\fIGets our effective UID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_parse_uid\fP (const \fBDBusString\fP *uid_str, \fBdbus_uid_t\fP *uid)"
+.br
+.RI "\fIGets a UID from a UID string\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_close_all\fP (void)"
+.br
+.RI "\fICloses all file descriptors except the first three (i\&.e\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_append_address_from_socket\fP (int fd, \fBDBusString\fP *address, \fBDBusError\fP *error)"
+.br
+.RI "\fIRead the address from the socket and append it to the string\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_fd_set_close_on_exec\fP (int fd)"
+.br
+.RI "\fISets the file descriptor to be close on exec\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internal system-dependent API available on UNIX only\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_append_address_from_socket (int fd, \fBDBusString\fP * address, \fBDBusError\fP * error)"
+
+.PP
+Read the address from the socket and append it to the string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the socket 
+.br
+\fIaddress\fP 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+
+.PP
+Definition at line 4180 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_address_append_escaped(), _dbus_error_from_errno(), _dbus_string_append(), _dbus_string_append_printf(), _dbus_string_init_const(), dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific()\&.
+.SS "\fBdbus_bool_t\fP _dbus_close (int fd, \fBDBusError\fP * error)"
+
+.PP
+Closes a file descriptor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.br
+\fIerror\fP error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error set 
+.RE
+.PP
+
+.PP
+Definition at line 3025 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_error_from_errno(), dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_become_daemon(), _dbus_close_socket(), _dbus_command_for_pid(), _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_create_file_exclusively(), _dbus_file_get_contents(), _dbus_full_duplex_pipe(), _dbus_generate_random_bytes(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_message_iter_get_args_valist(), _dbus_string_save_to_file(), and dbus_message_iter_append_basic()\&.
+.SS "void _dbus_close_all (void)"
+
+.PP
+Closes all file descriptors except the first three (i\&.e\&. stdin, stdout, stderr)\&. 
+.PP
+Definition at line 4057 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_connect_exec(), and _dbus_get_tmpdir()\&.
+.SS "int _dbus_connect_exec (const char * path, char *const argv[], \fBDBusError\fP * error)"
+
+.PP
+Creates a UNIX domain socket and connects it to the specified process to execute\&. This will set FD_CLOEXEC for the socket returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the path to the executable 
+.br
+\fIargv\fP the argument list for the process to execute\&. argv[0] typically is identical to the path of the executable 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+connection file descriptor or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 929 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close_all(), _dbus_error_from_errno(), _dbus_fd_set_close_on_exec(), and dbus_set_error()\&.
+.PP
+Referenced by _dbus_transport_new_for_domain_socket()\&.
+.SS "int _dbus_connect_unix_socket (const char * path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP * error)"
+
+.PP
+Creates a socket and connects it to the UNIX domain socket at the given path\&. The connection fd is returned, and is set up as nonblocking\&.
+.PP
+Uses abstract sockets instead of filesystem-linked sockets if requested (it's possible only on Linux; see 'man 7 unix' on Linux)\&. On non-Linux abstract socket usage always fails\&.
+.PP
+This will set FD_CLOEXEC for the socket returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the path to UNIX domain socket 
+.br
+\fIabstract\fP \fBTRUE\fP to use abstract namespace 
+.br
+\fIerror\fP return location for error code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+connection file descriptor or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 833 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _DBUS_ZERO, DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_NOT_SUPPORTED, dbus_set_error(), and NULL\&.
+.PP
+Referenced by _dbus_transport_new_for_domain_socket()\&.
+.SS "int _dbus_dup (int fd, \fBDBusError\fP * error)"
+
+.PP
+Duplicates a file descriptor\&. Makes sure the fd returned is >= 3 (i\&.e\&. avoids stdin/stdout/stderr)\&. Sets O_CLOEXEC\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to duplicate 
+.br
+\fIerror\fP address of error location\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+duplicated file descriptor 
+.RE
+.PP
+
+.PP
+Definition at line 3053 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_error_from_errno(), _dbus_fd_set_close_on_exec(), dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_message_iter_get_args_valist(), dbus_message_copy(), dbus_message_iter_append_basic(), and dbus_message_iter_get_basic()\&.
+.SS "void _dbus_fd_set_close_on_exec (int fd)"
+
+.PP
+Sets the file descriptor to be close on exec\&. Should be called for all file descriptors in D-Bus code\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.RE
+.PP
+
+.PP
+Definition at line 3003 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+Referenced by _dbus_accept(), _dbus_connect_exec(), _dbus_dup(), _dbus_full_duplex_pipe(), _dbus_read_socket_with_unix_fds(), and _dbus_server_new_for_launchd()\&.
+.SS "\fBdbus_uid_t\fP _dbus_geteuid (void)"
+
+.PP
+Gets our effective UID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+process effective UID 
+.RE
+.PP
+
+.PP
+Definition at line 2489 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+Referenced by _dbus_append_user_from_current_process(), _dbus_credentials_add_from_current_process(), and _dbus_unix_user_is_process_owner()\&.
+.SS "\fBdbus_uid_t\fP _dbus_getuid (void)"
+
+.PP
+Gets our UID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+process UID 
+.RE
+.PP
+
+.PP
+Definition at line 2480 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+Referenced by _dbus_user_database_lookup()\&.
+.SS "\fBdbus_bool_t\fP _dbus_group_info_fill (\fBDBusGroupInfo\fP * info, const \fBDBusString\fP * groupname, \fBDBusError\fP * error)"
+
+.PP
+Initializes the given \fBDBusGroupInfo\fP struct with information about the given group name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info struct 
+.br
+\fIgroupname\fP name of group 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1000 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References DBUS_GID_UNSET\&.
+.PP
+Referenced by _dbus_user_database_lookup_group()\&.
+.SS "\fBdbus_bool_t\fP _dbus_group_info_fill_gid (\fBDBusGroupInfo\fP * info, \fBdbus_gid_t\fP gid, \fBDBusError\fP * error)"
+
+.PP
+Initializes the given \fBDBusGroupInfo\fP struct with information about the given group ID\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info struct 
+.br
+\fIgid\fP group ID 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1019 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup_group()\&.
+.SS "void _dbus_group_info_free (\fBDBusGroupInfo\fP * info)"
+
+.PP
+Frees the members of info (but not info itself)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file dbus\-userdb\&.c\&.
+.PP
+References dbus_free(), and DBusGroupInfo::groupname\&.
+.PP
+Referenced by _dbus_group_info_free_allocated()\&.
+.SS "int _dbus_listen_systemd_sockets (int ** fds, \fBDBusError\fP * error)"
+
+.PP
+Acquires one or more sockets passed in from systemd\&. The sockets are set to be nonblocking\&.
+.PP
+This will set FD_CLOEXEC for the sockets returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfds\fP the file descriptors 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of file descriptors 
+.RE
+.PP
+
+.PP
+Definition at line 1162 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_NO_MEMORY, DBUS_ERROR_NOT_SUPPORTED, dbus_free(), dbus_new, dbus_set_error(), dbus_set_error_const(), NULL, and TRUE\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific()\&.
+.SS "int _dbus_listen_unix_socket (const char * path, \fBdbus_bool_t\fP abstract, \fBDBusError\fP * error)"
+
+.PP
+Creates a socket and binds it to the given path, then listens on the socket\&. The socket is set to be nonblocking\&.
+.PP
+Uses abstract sockets instead of filesystem-linked sockets if requested (it's possible only on Linux; see 'man 7 unix' on Linux)\&. On non-Linux abstract socket usage always fails\&.
+.PP
+This will set FD_CLOEXEC for the socket returned
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the socket name 
+.br
+\fIabstract\fP \fBTRUE\fP to use abstract namespace 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the listening file descriptor or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 1035 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_close(), _dbus_error_from_errno(), _dbus_warn(), _DBUS_ZERO, DBUS_ERROR_BAD_ADDRESS, DBUS_ERROR_NOT_SUPPORTED, dbus_set_error(), and NULL\&.
+.PP
+Referenced by _dbus_server_new_for_domain_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_lookup_launchd_socket (\fBDBusString\fP * socket_path, const char * launchd_env_var, \fBDBusError\fP * error)"
+
+.PP
+quries launchd for a specific env var which holds the socket path\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket_path\fP append the socket path to this \fBDBusString\fP 
+.br
+\fIlaunchd_env_var\fP the env var to look up 
+.br
+\fIerror\fP a \fBDBusError\fP to store the error in case of failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value of the env var 
+.RE
+.PP
+
+.PP
+Definition at line 3731 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_check_setuid(), _dbus_lookup_launchd_socket(), _DBUS_N_ELEMENTS, _dbus_string_append(), _dbus_string_copy(), _dbus_string_free(), _dbus_string_init(), _dbus_string_shorten(), dbus_error_is_set(), DBUS_ERROR_NOT_SUPPORTED, dbus_set_error(), dbus_set_error_const(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_lookup_launchd_socket(), and _dbus_transport_open_platform_specific()\&.
+.SS "\fBdbus_bool_t\fP _dbus_parse_uid (const \fBDBusString\fP * uid_str, \fBdbus_uid_t\fP * uid)"
+
+.PP
+Gets a UID from a UID string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid_str\fP the UID in string form 
+.br
+\fIuid\fP UID to fill in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if successfully filled in UID 
+.RE
+.PP
+
+.PP
+Definition at line 2514 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_string_parse_int(), FALSE, and TRUE\&.
+.SS "int _dbus_read (int fd, \fBDBusString\fP * buffer, int count)"
+
+.PP
+Thin wrapper around the read() system call that appends the data it reads to the \fBDBusString\fP buffer\&. It appends up to the given count, and returns the same value and same errno as read()\&. The only exception is that \fB_dbus_read()\fP handles EINTR for you\&. Also, \fB_dbus_read()\fP can return ENOMEM, even though regular UNIX read doesn't\&.
+.PP
+Unlike \fB_dbus_read_socket()\fP, \fB_dbus_read()\fP is not available on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to read from 
+.br
+\fIbuffer\fP the buffer to append data to 
+.br
+\fIcount\fP the amount of data to read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes read or -1 
+.RE
+.PP
+
+.PP
+Definition at line 628 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_get_data_len(), _dbus_string_lengthen(), _dbus_string_set_length(), and _dbus_verbose_bytes_of_string()\&.
+.PP
+Referenced by _dbus_command_for_pid(), _dbus_file_get_contents(), _dbus_generate_random_bytes(), _dbus_get_tmpdir(), and _dbus_read_socket()\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_info_fill (\fBDBusUserInfo\fP * info, const \fBDBusString\fP * username, \fBDBusError\fP * error)"
+
+.PP
+Gets user info for the given username\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP user info object to initialize 
+.br
+\fIusername\fP the username 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 2397 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References DBUS_UID_UNSET\&.
+.PP
+Referenced by _dbus_user_database_lookup()\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_info_fill_uid (\fBDBusUserInfo\fP * info, \fBdbus_uid_t\fP uid, \fBDBusError\fP * error)"
+
+.PP
+Gets user info for the given user ID\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP user info object to initialize 
+.br
+\fIuid\fP the user ID 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 2414 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup()\&.
+.SS "void _dbus_user_info_free (\fBDBusUserInfo\fP * info)"
+
+.PP
+Frees the members of info (but not info itself) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the user info struct 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file dbus\-userdb\&.c\&.
+.PP
+References dbus_free(), DBusUserInfo::group_ids, DBusUserInfo::homedir, and DBusUserInfo::username\&.
+.PP
+Referenced by _dbus_user_info_free_allocated()\&.
+.SS "int _dbus_write (int fd, const \fBDBusString\fP * buffer, int start, int len)"
+
+.PP
+Thin wrapper around the write() system call that writes a part of a \fBDBusString\fP and handles EINTR for you\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor to write 
+.br
+\fIbuffer\fP the buffer to write data from 
+.br
+\fIstart\fP the first byte in the buffer to write 
+.br
+\fIlen\fP the number of bytes to try to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the number of bytes written or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 688 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_verbose_bytes_of_string()\&.
+.PP
+Referenced by _dbus_string_save_to_file(), _dbus_write_socket(), and _dbus_write_two()\&.
+.SS "int _dbus_write_two (int fd, const \fBDBusString\fP * buffer1, int start1, int len1, const \fBDBusString\fP * buffer2, int start2, int len2)"
+
+.PP
+Like \fB_dbus_write()\fP but will use writev() if possible to write both buffers in sequence\&. The return value is the number of bytes written in the first buffer, plus the number written in the second\&. If the first buffer is written successfully and an error occurs writing the second, the number of bytes in the first is returned (i\&.e\&. the error is ignored), on systems that don't have writev\&. Handles EINTR for you\&. The second buffer may be \fBNULL\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP the file descriptor 
+.br
+\fIbuffer1\fP first buffer 
+.br
+\fIstart1\fP first byte to write in first buffer 
+.br
+\fIlen1\fP number of bytes to write from first buffer 
+.br
+\fIbuffer2\fP second buffer, or \fBNULL\fP 
+.br
+\fIstart2\fP first byte to write in second buffer 
+.br
+\fIlen2\fP number of bytes to write in second buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+total bytes written from both buffers, or -1 on error 
+.RE
+.PP
+
+.PP
+Definition at line 734 of file dbus\-sysdeps\-unix\&.c\&.
+.PP
+References _dbus_assert, _dbus_write(), and NULL\&.
+.PP
+Referenced by _dbus_write_socket_two()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

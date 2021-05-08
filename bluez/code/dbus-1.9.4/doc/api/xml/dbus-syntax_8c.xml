@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-syntax_8c" kind="file" language="C++">
+    <compoundname>dbus-syntax.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-syntax_8h" local="yes">dbus-syntax.h</includes>
+    <includes refid="dbus-internals_8h" local="yes">dbus-internals.h</includes>
+    <includes refid="dbus-marshal-validate_8h" local="yes">dbus-marshal-validate.h</includes>
+    <includes refid="dbus-shared_8h" local="yes">dbus-shared.h</includes>
+    <incdepgraph>
+      <node id="3647">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3639">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3634">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3643">
+        <label>stdint.h</label>
+      </node>
+      <node id="3653">
+        <label>dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="3649">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3642">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3632" relation="include">
+        </childnode>
+        <childnode refid="3643" relation="include">
+        </childnode>
+        <childnode refid="3644" relation="include">
+        </childnode>
+        <childnode refid="3638" relation="include">
+        </childnode>
+        <childnode refid="3645" relation="include">
+        </childnode>
+        <childnode refid="3646" relation="include">
+        </childnode>
+        <childnode refid="3648" relation="include">
+        </childnode>
+        <childnode refid="3647" relation="include">
+        </childnode>
+        <childnode refid="3649" relation="include">
+        </childnode>
+      </node>
+      <node id="3640">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="3641" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+        <childnode refid="3638" relation="include">
+        </childnode>
+        <childnode refid="3642" relation="include">
+        </childnode>
+        <childnode refid="3650" relation="include">
+        </childnode>
+      </node>
+      <node id="3636">
+        <label>stddef.h</label>
+      </node>
+      <node id="3646">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+        <childnode refid="3641" relation="include">
+        </childnode>
+        <childnode refid="3647" relation="include">
+        </childnode>
+      </node>
+      <node id="3637">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+      </node>
+      <node id="3648">
+        <label>string.h</label>
+      </node>
+      <node id="3651">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+      </node>
+      <node id="3652">
+        <label>dbus-marshal-validate.h</label>
+        <link refid="dbus-marshal-validate_8h_source"/>
+      </node>
+      <node id="3650">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+        <childnode refid="3651" relation="include">
+        </childnode>
+      </node>
+      <node id="3632">
+        <label>config.h</label>
+      </node>
+      <node id="3631">
+        <label>dbus-syntax.c</label>
+        <link refid="dbus-syntax.c"/>
+        <childnode refid="3632" relation="include">
+        </childnode>
+        <childnode refid="3633" relation="include">
+        </childnode>
+        <childnode refid="3640" relation="include">
+        </childnode>
+        <childnode refid="3652" relation="include">
+        </childnode>
+        <childnode refid="3653" relation="include">
+        </childnode>
+      </node>
+      <node id="3645">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3646" relation="include">
+        </childnode>
+        <childnode refid="3638" relation="include">
+        </childnode>
+      </node>
+      <node id="3633">
+        <label>dbus-syntax.h</label>
+        <link refid="dbus-syntax_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+        <childnode refid="3638" relation="include">
+        </childnode>
+      </node>
+      <node id="3638">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3635" relation="include">
+        </childnode>
+        <childnode refid="3639" relation="include">
+        </childnode>
+      </node>
+      <node id="3635">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3636" relation="include">
+        </childnode>
+        <childnode refid="3637" relation="include">
+        </childnode>
+      </node>
+      <node id="3644">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3641">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3634" relation="include">
+        </childnode>
+        <childnode refid="3636" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSyntax_1ga16a33f0ef4a9efd8f5e8f231dcf13d37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_path</definition>
+        <argsstring>(const char *path, DBusError *error)</argsstring>
+        <name>dbus_validate_path</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an object path for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid object path, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if path is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="54" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="54" bodyend="84"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga616ba4a0280b10222930aedadb7ea8d9" compoundref="dbus-marshal-validate_8c" startline="785" endline="834">_dbus_validate_path</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1ga1023d9c1a44eb2fe05c2b82e23622f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_interface</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_interface</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an interface name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid interface name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="101" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="101" bodyend="131"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga0ad919783f887a9b6f428e262beaeed9" compoundref="dbus-marshal-validate_8c" startline="921" endline="981">_dbus_validate_interface</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gab8540880d62965990957f07630aba700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_member</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_member</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a member (method/signal) name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid member name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="148" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="148" bodyend="178"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1gaf647272768029cb23a4e0d3f493587da" compoundref="dbus-marshal-validate_8c" startline="997" endline="1042">_dbus_validate_member</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gad1c5b9b2dbdb9f9ade7e497b23cb835f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_error_name</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_error_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check an error name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid error name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="195" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="195" bodyend="225"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1ga6d8075f3b60e2e71aad061aa44b120fe" compoundref="dbus-marshal-validate_8c" startline="1058" endline="1064">_dbus_validate_error_name</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1gabedd6f4019fc30bc4bbcd144198f8444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_bus_name</definition>
+        <argsstring>(const char *name, DBusError *error)</argsstring>
+        <name>dbus_validate_bus_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a bus name for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid bus name, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if name is valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="242" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="242" bodyend="272"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusMarshal_1gaab91a04fa2a96b8ce8843beae7327cd0" compoundref="dbus-marshal-validate_8c" startline="1187" endline="1192">_dbus_validate_bus_name</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSyntax_1ga7d98d5d9af66ff78e74d5dd1d8cd3390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_validate_utf8</definition>
+        <argsstring>(const char *alleged_utf8, DBusError *error)</argsstring>
+        <name>dbus_validate_utf8</name>
+        <param>
+          <type>const char *</type>
+          <declname>alleged_utf8</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a string for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Strings on D-Bus must be valid UTF-8. Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a <ref refid="structDBusError" kindref="compound">DBusError</ref> *, if you don&apos;t care about having an error name and message.</para><para>This function is suitable for validating C strings, but is not suitable for validating untrusted data from a network unless the string&apos;s length is also checked, since it assumes that the string ends at the first zero byte according to normal C conventions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alleged_utf8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string to be checked, which must not be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if alleged_utf8 is valid UTF-8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-syntax.c" line="289" column="1" bodyfile="dbus/dbus-syntax.c" bodystart="289" bodyend="307"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-syntax.c<sp/>-<sp/>utility<sp/>functions<sp/>for<sp/>strings<sp/>with<sp/>special<sp/>syntax</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Author:<sp/>Simon<sp/>McVittie<sp/>&lt;simon.mcvittie@collabora.co.uk&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2011<sp/>Nokia<sp/>Corporation</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-syntax.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-internals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-marshal-validate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-shared.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="54" refid="group__DBusSyntax_1ga16a33f0ef4a9efd8f5e8f231dcf13d37" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1ga16a33f0ef4a9efd8f5e8f231dcf13d37" kindref="member">dbus_validate_path</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*path,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(path<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>path);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>len<sp/>=<sp/>_dbus_string_get_length<sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>general,<sp/>it<sp/>ought<sp/>to<sp/>be<sp/>valid...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusMarshal_1ga616ba4a0280b10222930aedadb7ea8d9" kindref="member">_dbus_validate_path</ref><sp/>(&amp;str,<sp/>0,<sp/>len)))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>slow<sp/>path:<sp/>string<sp/>is<sp/>invalid,<sp/>find<sp/>out<sp/>why<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,<sp/>len))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Object<sp/>path<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>FIXME:<sp/>later,<sp/>diagnose<sp/>exactly<sp/>how<sp/>it<sp/>was<sp/>invalid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Object<sp/>path<sp/>was<sp/>not<sp/>valid:<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>path);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="101" refid="group__DBusSyntax_1ga1023d9c1a44eb2fe05c2b82e23622f98" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1ga1023d9c1a44eb2fe05c2b82e23622f98" kindref="member">dbus_validate_interface</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>name);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>len<sp/>=<sp/>_dbus_string_get_length<sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>general,<sp/>it<sp/>ought<sp/>to<sp/>be<sp/>valid...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusMarshal_1ga0ad919783f887a9b6f428e262beaeed9" kindref="member">_dbus_validate_interface</ref><sp/>(&amp;str,<sp/>0,<sp/>len)))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>slow<sp/>path:<sp/>string<sp/>is<sp/>invalid,<sp/>find<sp/>out<sp/>why<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,<sp/>len))</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Interface<sp/>name<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>FIXME:<sp/>later,<sp/>diagnose<sp/>exactly<sp/>how<sp/>it<sp/>was<sp/>invalid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Interface<sp/>name<sp/>was<sp/>not<sp/>valid:<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="148" refid="group__DBusSyntax_1gab8540880d62965990957f07630aba700" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1gab8540880d62965990957f07630aba700" kindref="member">dbus_validate_member</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>name);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>len<sp/>=<sp/>_dbus_string_get_length<sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>general,<sp/>it<sp/>ought<sp/>to<sp/>be<sp/>valid...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusMarshal_1gaf647272768029cb23a4e0d3f493587da" kindref="member">_dbus_validate_member</ref><sp/>(&amp;str,<sp/>0,<sp/>len)))</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>slow<sp/>path:<sp/>string<sp/>is<sp/>invalid,<sp/>find<sp/>out<sp/>why<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,<sp/>len))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Member<sp/>name<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>FIXME:<sp/>later,<sp/>diagnose<sp/>exactly<sp/>how<sp/>it<sp/>was<sp/>invalid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Member<sp/>name<sp/>was<sp/>not<sp/>valid:<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="195" refid="group__DBusSyntax_1gad1c5b9b2dbdb9f9ade7e497b23cb835f" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1gad1c5b9b2dbdb9f9ade7e497b23cb835f" kindref="member">dbus_validate_error_name</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>name);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>len<sp/>=<sp/>_dbus_string_get_length<sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>general,<sp/>it<sp/>ought<sp/>to<sp/>be<sp/>valid...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusMarshal_1ga6d8075f3b60e2e71aad061aa44b120fe" kindref="member">_dbus_validate_error_name</ref><sp/>(&amp;str,<sp/>0,<sp/>len)))</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>slow<sp/>path:<sp/>string<sp/>is<sp/>invalid,<sp/>find<sp/>out<sp/>why<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,<sp/>len))</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>name<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>FIXME:<sp/>later,<sp/>diagnose<sp/>exactly<sp/>how<sp/>it<sp/>was<sp/>invalid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>name<sp/>was<sp/>not<sp/>valid:<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="242" refid="group__DBusSyntax_1gabedd6f4019fc30bc4bbcd144198f8444" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1gabedd6f4019fc30bc4bbcd144198f8444" kindref="member">dbus_validate_bus_name</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>name);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>len<sp/>=<sp/>_dbus_string_get_length<sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>general,<sp/>it<sp/>ought<sp/>to<sp/>be<sp/>valid...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusMarshal_1gaab91a04fa2a96b8ce8843beae7327cd0" kindref="member">_dbus_validate_bus_name</ref><sp/>(&amp;str,<sp/>0,<sp/>len)))</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>slow<sp/>path:<sp/>string<sp/>is<sp/>invalid,<sp/>find<sp/>out<sp/>why<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,<sp/>len))</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Bus<sp/>name<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>FIXME:<sp/>later,<sp/>diagnose<sp/>exactly<sp/>how<sp/>it<sp/>was<sp/>invalid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Bus<sp/>name<sp/>was<sp/>not<sp/>valid:<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="289" refid="group__DBusSyntax_1ga7d98d5d9af66ff78e74d5dd1d8cd3390" refkind="member"><highlight class="normal"><ref refid="group__DBusSyntax_1ga7d98d5d9af66ff78e74d5dd1d8cd3390" kindref="member">dbus_validate_utf8</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*alleged_utf8,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(alleged_utf8<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str,<sp/>alleged_utf8);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_DBUS_LIKELY<sp/>(<ref refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" kindref="member">_dbus_string_validate_utf8</ref><sp/>(&amp;str,<sp/>0,</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_string_get_length<sp/>(&amp;str))))</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>don&apos;t<sp/>quote<sp/>the<sp/>actual<sp/>string<sp/>here,<sp/>since<sp/>a<sp/>DBusError<sp/>also<sp/>needs<sp/>to</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/><sp/><sp/>*<sp/>be<sp/>valid<sp/>UTF-8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>,</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;String<sp/>was<sp/>not<sp/>valid<sp/>UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>group<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-syntax.c"/>
+  </compounddef>
+</doxygen>

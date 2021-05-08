@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-sysdeps-util_8c" kind="file" language="C++">
+    <compoundname>dbus-sysdeps-util.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-sysdeps_8h" local="yes">dbus-sysdeps.h</includes>
+    <includes refid="dbus-internals_8h" local="yes">dbus-internals.h</includes>
+    <includes refid="dbus-string_8h" local="yes">dbus-string.h</includes>
+    <includes refid="dbus-test_8h" local="yes">dbus-test.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="3887">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3883">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3879">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3876">
+        <label>stdint.h</label>
+      </node>
+      <node id="3895">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3889">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3875">
+        <label>dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3874" relation="include">
+        </childnode>
+        <childnode refid="3876" relation="include">
+        </childnode>
+        <childnode refid="3877" relation="include">
+        </childnode>
+        <childnode refid="3878" relation="include">
+        </childnode>
+        <childnode refid="3884" relation="include">
+        </childnode>
+        <childnode refid="3885" relation="include">
+        </childnode>
+        <childnode refid="3888" relation="include">
+        </childnode>
+        <childnode refid="3887" relation="include">
+        </childnode>
+        <childnode refid="3889" relation="include">
+        </childnode>
+      </node>
+      <node id="3890">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="3886" relation="include">
+        </childnode>
+        <childnode refid="3880" relation="include">
+        </childnode>
+        <childnode refid="3878" relation="include">
+        </childnode>
+        <childnode refid="3875" relation="include">
+        </childnode>
+        <childnode refid="3891" relation="include">
+        </childnode>
+      </node>
+      <node id="3881">
+        <label>stddef.h</label>
+      </node>
+      <node id="3885">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+        <childnode refid="3880" relation="include">
+        </childnode>
+        <childnode refid="3886" relation="include">
+        </childnode>
+        <childnode refid="3887" relation="include">
+        </childnode>
+      </node>
+      <node id="3882">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+      </node>
+      <node id="3893">
+        <label>dbus-test.h</label>
+        <link refid="dbus-test_8h_source"/>
+        <childnode refid="3880" relation="include">
+        </childnode>
+        <childnode refid="3885" relation="include">
+        </childnode>
+        <childnode refid="3894" relation="include">
+        </childnode>
+      </node>
+      <node id="3888">
+        <label>string.h</label>
+      </node>
+      <node id="3892">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+        <childnode refid="3880" relation="include">
+        </childnode>
+      </node>
+      <node id="3873">
+        <label>dbus-sysdeps-util.c</label>
+        <link refid="dbus-sysdeps-util.c"/>
+        <childnode refid="3874" relation="include">
+        </childnode>
+        <childnode refid="3875" relation="include">
+        </childnode>
+        <childnode refid="3890" relation="include">
+        </childnode>
+        <childnode refid="3885" relation="include">
+        </childnode>
+        <childnode refid="3893" relation="include">
+        </childnode>
+        <childnode refid="3895" relation="include">
+        </childnode>
+      </node>
+      <node id="3894">
+        <label>dbus/dbus-marshal-validate.h</label>
+        <link refid="dbus-marshal-validate_8h_source"/>
+      </node>
+      <node id="3891">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+        <childnode refid="3880" relation="include">
+        </childnode>
+        <childnode refid="3892" relation="include">
+        </childnode>
+      </node>
+      <node id="3874">
+        <label>config.h</label>
+      </node>
+      <node id="3884">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3885" relation="include">
+        </childnode>
+        <childnode refid="3878" relation="include">
+        </childnode>
+      </node>
+      <node id="3878">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+        <childnode refid="3880" relation="include">
+        </childnode>
+        <childnode refid="3883" relation="include">
+        </childnode>
+      </node>
+      <node id="3880">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3881" relation="include">
+        </childnode>
+        <childnode refid="3882" relation="include">
+        </childnode>
+      </node>
+      <node id="3877">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3886">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3879" relation="include">
+        </childnode>
+        <childnode refid="3881" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dbus-sysdeps-util_8c_1aa006daaf11f1e2e45a6ababaf463212b" prot="public" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** environ</definition>
+        <argsstring></argsstring>
+        <name>environ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-util.c" line="39" column="1" bodyfile="dbus/dbus-sysdeps-wince-glue.c" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSysdeps_1gaae48868ce818ad287cdae113aabcc858" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char **</type>
+        <definition>char** _dbus_get_environment</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_get_environment</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated list of key=value pairs from the environment. </para>        </briefdescription>
+        <detaileddescription>
+<para>Use dbus_free_string_array to free it.</para><para><simplesect kind="return"><para>the environment or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-util.c" line="49" column="1" bodyfile="dbus/dbus-sysdeps-util.c" bodystart="49" bodyend="81"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusString_1gafa79c1113fa75419dcc5ee4290e06608" compoundref="dbus-sysdeps-util-unix_8c" startline="1132" endline="1171">_dbus_string_get_dirname</references>
+        <references refid="group__DBusString_1ga84f39f1bf398697920637d2982248c72" compoundref="dbus-string_8c" startline="2151" endline="2177">_dbus_string_equal_c_str</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusInternalsUtils_1ga6d80876bcae54f47cde79d0bce20321d" compoundref="dbus-sysdeps-util-unix_8c" startline="689" endline="695">_dbus_path_is_absolute</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-sysdeps-util.c<sp/>Tests<sp/>for<sp/>dbus-sysdeps.h<sp/>API</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003,<sp/>2004,<sp/>2005<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-sysdeps.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-internals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-string.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-test.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>do<sp/>nothing,<sp/>it&apos;s<sp/>in<sp/>stdlib.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined<sp/>__APPLE__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;crt_externs.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>environ<sp/>(*_NSGetEnviron())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**environ;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**</highlight></codeline>
+<codeline lineno="49" refid="group__DBusSysdeps_1gaae48868ce818ad287cdae113aabcc858" refkind="member"><highlight class="normal"><ref refid="group__DBusSysdeps_1gaae48868ce818ad287cdae113aabcc858" kindref="member">_dbus_get_environment</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>length;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**environment;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(environ<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(length<sp/>=<sp/>0;<sp/>environ[length]<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;<sp/>length++);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Add<sp/>one<sp/>for<sp/>NULL<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>length++;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>environment<sp/>=<sp/><ref refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" kindref="member">dbus_new0</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>length);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(environment<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>environ[i]<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>environment[i]<sp/>=<sp/><ref refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" kindref="member">_dbus_strdup</ref><sp/>(environ[i]);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(environment[i]<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(environ[i]<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" kindref="member">dbus_free_string_array</ref><sp/>(environment);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>environment<sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>environment;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_ENABLE_EMBEDDED_TESTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">check_dirname<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dirname)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>f,<sp/>d;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;f,<sp/>filename);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" kindref="member">_dbus_string_init</ref><sp/>(&amp;d))</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" kindref="member">_dbus_assert_not_reached</ref><sp/>(</highlight><highlight class="stringliteral">&quot;no<sp/>memory&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1gafa79c1113fa75419dcc5ee4290e06608" kindref="member">_dbus_string_get_dirname</ref><sp/>(&amp;f,<sp/>&amp;d))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" kindref="member">_dbus_assert_not_reached</ref><sp/>(</highlight><highlight class="stringliteral">&quot;no<sp/>memory&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga84f39f1bf398697920637d2982248c72" kindref="member">_dbus_string_equal_c_str</ref><sp/>(&amp;d,<sp/>dirname))</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;For<sp/>filename<sp/>\&quot;%s\&quot;<sp/>got<sp/>dirname<sp/>\&quot;%s\&quot;<sp/>and<sp/>expected<sp/>\&quot;%s\&quot;\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_string_get_const_data<sp/>(&amp;d),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dirname);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit<sp/>(1);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" kindref="member">_dbus_string_free</ref><sp/>(&amp;d);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">check_path_absolute<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>expected)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>p;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;p,<sp/>path);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__DBusInternalsUtils_1ga6d80876bcae54f47cde79d0bce20321d" kindref="member">_dbus_path_is_absolute</ref><sp/>(&amp;p)<sp/>!=<sp/>expected)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" kindref="member">_dbus_warn</ref><sp/>(</highlight><highlight class="stringliteral">&quot;For<sp/>path<sp/>\&quot;%s\&quot;<sp/>expected<sp/>absolute<sp/>=<sp/>%d<sp/>got<sp/>%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>path,<sp/>expected,<sp/><ref refid="group__DBusInternalsUtils_1ga6d80876bcae54f47cde79d0bce20321d" kindref="member">_dbus_path_is_absolute</ref><sp/>(&amp;p));</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit<sp/>(1);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">_dbus_sysdeps_test<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo\\bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo\\\\bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo/\\/bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo\\bar/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo//bar\\&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo\\bar/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar\\\\&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;\\foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;\\\\foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;\\\\&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;\\/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/\\/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\foo\\bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;c:\\foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;c:\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;c:/foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;c:/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;c:\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;c:/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;c:/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo//bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo///bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo//bar/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo///bar/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar//&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo//bar////&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;foo///bar///////&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;////foo&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/foo/bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/foo//bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/foo///bar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/foo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;///&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>check_dirname<sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:/&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:/foo&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;foo\\bar&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\foo&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;c:\\foo\\bar&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;\\&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;/foo&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>check_path_absolute<sp/>(</highlight><highlight class="stringliteral">&quot;foo/bar&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_ENABLE_EMBEDDED_TESTS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-sysdeps-util.c"/>
+  </compounddef>
+</doxygen>

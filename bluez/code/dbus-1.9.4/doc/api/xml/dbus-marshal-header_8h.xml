@@ -1,0 +1,1554 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-marshal-header_8h" kind="file" language="C++">
+    <compoundname>dbus-marshal-header.h</compoundname>
+    <includes refid="dbus-marshal-basic_8h" local="no">dbus/dbus-marshal-basic.h</includes>
+    <includes refid="dbus-marshal-validate_8h" local="no">dbus/dbus-marshal-validate.h</includes>
+    <includedby refid="dbus-message-private_8h" local="no">dbus-message-private.h</includedby>
+    <includedby refid="dbus-marshal-header_8c" local="yes">dbus-marshal-header.c</includedby>
+    <includedby refid="dbus-message_8c" local="yes">dbus-message.c</includedby>
+    <incdepgraph>
+      <node id="1621">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1614">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1618">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="1613">
+        <label>dbus/dbus-marshal-basic.h</label>
+        <link refid="dbus-marshal-basic_8h_source"/>
+        <childnode refid="1614" relation="include">
+        </childnode>
+        <childnode refid="1615" relation="include">
+        </childnode>
+        <childnode refid="1617" relation="include">
+        </childnode>
+        <childnode refid="1619" relation="include">
+        </childnode>
+      </node>
+      <node id="1616">
+        <label>stddef.h</label>
+      </node>
+      <node id="1619">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1618" relation="include">
+        </childnode>
+        <childnode refid="1615" relation="include">
+        </childnode>
+        <childnode refid="1620" relation="include">
+        </childnode>
+        <childnode refid="1621" relation="include">
+        </childnode>
+      </node>
+      <node id="1612">
+        <label>dbus-marshal-header.h</label>
+        <link refid="dbus-marshal-header.h"/>
+        <childnode refid="1613" relation="include">
+        </childnode>
+        <childnode refid="1622" relation="include">
+        </childnode>
+      </node>
+      <node id="1617">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1618" relation="include">
+        </childnode>
+      </node>
+      <node id="1622">
+        <label>dbus/dbus-marshal-validate.h</label>
+        <link refid="dbus-marshal-validate_8h_source"/>
+      </node>
+      <node id="1615">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1616" relation="include">
+        </childnode>
+        <childnode refid="1617" relation="include">
+        </childnode>
+      </node>
+      <node id="1620">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1618" relation="include">
+        </childnode>
+        <childnode refid="1616" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1626">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="1625">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="1628">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="1623">
+        <label>dbus-marshal-header.h</label>
+        <link refid="dbus-marshal-header.h"/>
+        <childnode refid="1624" relation="include">
+        </childnode>
+        <childnode refid="1628" relation="include">
+        </childnode>
+        <childnode refid="1627" relation="include">
+        </childnode>
+      </node>
+      <node id="1627">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="1624">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="1625" relation="include">
+        </childnode>
+        <childnode refid="1626" relation="include">
+        </childnode>
+        <childnode refid="1627" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusHeaderField" prot="public">DBusHeaderField</innerclass>
+    <innerclass refid="structDBusHeader" prot="public">DBusHeader</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-marshal-header_8h_1a47f4594bfbd230a070c592e27b9e3f9b" prot="public" static="no">
+        <name>_DBUS_HEADER_FIELD_VALUE_UNKNOWN</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="33" column="9" bodyfile="dbus/dbus-marshal-header.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-header_8h_1aead10cc8c2bb496dc66397b3b81eae9f" prot="public" static="no">
+        <name>_DBUS_HEADER_FIELD_VALUE_NONEXISTENT</name>
+        <initializer>-2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="34" column="9" bodyfile="dbus/dbus-marshal-header.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-marshal-header_8h_1aab54e1951f8402598b73d2636ea3b516" prot="public" static="no">
+        <type>struct <ref refid="structDBusHeader" kindref="compound">DBusHeader</ref></type>
+        <definition>typedef struct DBusHeader DBusHeader</definition>
+        <argsstring></argsstring>
+        <name>DBusHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="72" column="1" bodyfile="dbus/dbus-marshal-header.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-marshal-header_8h_1ae9d3d9bf9c4842374a220d61c9ad9f18" prot="public" static="no">
+        <type>struct <ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref></type>
+        <definition>typedef struct DBusHeaderField DBusHeaderField</definition>
+        <argsstring></argsstring>
+        <name>DBusHeaderField</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="72" column="1" bodyfile="dbus/dbus-marshal-header.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMarshal_1gabe1b78193d712976734a39d35842f033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_init</definition>
+        <argsstring>(DBusHeader *header)</argsstring>
+        <name>_dbus_header_init</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a header, but doesn&apos;t prepare it for use; to make the header valid, you have to call <ref refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" kindref="member">_dbus_header_create()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>header to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="62" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="460" bodyend="468"/>
+        <references refid="group__DBusString_1ga569b784beea1b4fa98f05d27e6dd0e72" compoundref="dbus-string_8c" startline="132" endline="165">_dbus_string_init_preallocated</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1ga6d41ad4de211c87f4b8a43340b6893e2" compoundref="dbus-marshal-header_8c" startline="443" endline="450">_dbus_header_reinit</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gab90a814a27aeeace7e02c4ed130539cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_free</definition>
+        <argsstring>(DBusHeader *header)</argsstring>
+        <name>_dbus_header_free</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>Frees a header. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="63" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="476" bodyend="479"/>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga6d41ad4de211c87f4b8a43340b6893e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_reinit</definition>
+        <argsstring>(DBusHeader *header)</argsstring>
+        <name>_dbus_header_reinit</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>Re-initializes a header that was previously initialized and never freed. </para>        </briefdescription>
+        <detaileddescription>
+<para>After this, to make the header valid you have to call <ref refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" kindref="member">_dbus_header_create()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>header to re-initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="64" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="443" bodyend="450"/>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" compoundref="dbus-marshal-header_8h" startline="58">DBusHeader::padding</references>
+        <referencedby refid="group__DBusMarshal_1gabe1b78193d712976734a39d35842f033" compoundref="dbus-marshal-header_8c" startline="460" endline="468">_dbus_header_init</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_create</definition>
+        <argsstring>(DBusHeader *header, int byte_order, int type, const char *destination, const char *path, const char *interface, const char *member, const char *error_name)</argsstring>
+        <name>_dbus_header_create</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+          <defname>message_type</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>member</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>error_name</declname>
+        </param>
+        <briefdescription>
+<para>Fills in the primary fields of the header, so the header is ready for use. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> may be specified for some or all of the fields to avoid adding those fields. Some combinations of fields don&apos;t make sense, and passing them in will trigger an assertion failure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte order of the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination field or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path field or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>interface field or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>member field or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error name or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="65" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="528" bodyend="653"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusProtocol_1ga728d893ff0c00e126517ba39835220a5" compoundref="dbus-protocol_8h" startline="240">DBUS_MESSAGE_TYPE_SIGNAL</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</references>
+        <references refid="group__DBusMarshal_1gaef7e86e442aeb887c8bfe5559cd4eabb" compoundref="dbus-marshal-header_8c" startline="123">HEADER_END_BEFORE_PADDING</references>
+        <references refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1gae1ab70067a616d852e5fc264abb66608" compoundref="dbus-protocol_8h" startline="57">DBUS_MAJOR_PROTOCOL_VERSION</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" compoundref="dbus-marshal-recursive_8c" startline="2106" endline="2125">_dbus_type_writer_recurse</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusMarshal_1ga935ea6d7c6bb72a10c670f5ef3e34d49" compoundref="dbus-marshal-header_8c" startline="47">FIELDS_ARRAY_SIGNATURE_OFFSET</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusProtocol_1ga0cd885e6e808b28ff082a7f8a2c9f579" compoundref="dbus-protocol_8h" startline="270">DBUS_HEADER_FIELD_PATH</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusProtocol_1gade98f71a08a1e0198d095fdb6d46cab9" compoundref="dbus-protocol_8h" startline="288">DBUS_HEADER_FIELD_DESTINATION</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga296b5f099b6c347f65d53ef0a6fa2b0d" compoundref="dbus-protocol_8h" startline="274">DBUS_HEADER_FIELD_INTERFACE</references>
+        <references refid="group__DBusProtocol_1ga2aa9d65ef983ac9c08c1d4cb31366818" compoundref="dbus-protocol_8h" startline="276">DBUS_HEADER_FIELD_MEMBER</references>
+        <references refid="group__DBusProtocol_1gac551be0f921390d01104cce30a814a5e" compoundref="dbus-protocol_8h" startline="280">DBUS_HEADER_FIELD_ERROR_NAME</references>
+        <references refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" compoundref="dbus-marshal-header_8h" startline="58">DBusHeader::padding</references>
+        <referencedby refid="group__DBusMessage_1gab9e5bf8d87a95c5ca7026a791148ebd4" compoundref="dbus-message_8c" startline="1289" endline="1309">dbus_message_new</referencedby>
+        <referencedby refid="group__DBusMessage_1ga98ddc82450d818138ef326a284201ee0" compoundref="dbus-message_8c" startline="1333" endline="1363">dbus_message_new_method_call</referencedby>
+        <referencedby refid="group__DBusMessage_1ga95142bd8288f397194ee0eefb1d27125" compoundref="dbus-message_8c" startline="1373" endline="1407">dbus_message_new_method_return</referencedby>
+        <referencedby refid="group__DBusMessage_1ga6ce3213dfb17be7956affba40207a5a0" compoundref="dbus-message_8c" startline="1424" endline="1453">dbus_message_new_signal</referencedby>
+        <referencedby refid="group__DBusMessage_1ga2ab896965aec97fb21293affeed36232" compoundref="dbus-message_8c" startline="1470" endline="1523">dbus_message_new_error</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga0d5aad82f8bf5a314dcf3f70930e254b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_copy</definition>
+        <argsstring>(const DBusHeader *header, DBusHeader *dest)</argsstring>
+        <name>_dbus_header_copy</name>
+        <param>
+          <type>const <ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Initializes dest with a copy of the given header. </para>        </briefdescription>
+        <detaileddescription>
+<para>Resets the message serial to 0 on the copy.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>header to copy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination for copy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="73" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="490" bodyend="509"/>
+        <references refid="group__DBusString_1ga569b784beea1b4fa98f05d27e6dd0e72" compoundref="dbus-string_8c" startline="132" endline="165">_dbus_string_init_preallocated</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="404" endline="418">_dbus_header_set_serial</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMessage_1ga4bed3858b3b48ec7c86d9fc56a6ce372" compoundref="dbus-message_8c" startline="1587" endline="1656">dbus_message_copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4427247494fc5c988498c5a87d42092d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_header_get_message_type</definition>
+        <argsstring>(DBusHeader *header)</argsstring>
+        <name>_dbus_header_get_message_type</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>Gets the type of the message. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the type </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="75" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="386" bodyend="394"/>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1gaf4fe78df75f4afa2ec63304462614b03" compoundref="dbus-marshal-header_8c" startline="55">TYPE_OFFSET</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gac975525a6ce258a7a70c583c9741b516" compoundref="dbus-protocol_8h" startline="232">DBUS_MESSAGE_TYPE_INVALID</references>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+        <referencedby refid="group__DBusMessage_1ga41cace31999105137772b6257ea540f9" compoundref="dbus-message_8c" startline="1722" endline="1727">dbus_message_get_type</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_set_serial</definition>
+        <argsstring>(DBusHeader *header, dbus_uint32_t serial)</argsstring>
+        <name>_dbus_header_set_serial</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+<para>Sets the serial number of a header. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can only be done once on a header.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the serial </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="76" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="404" bodyend="418"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" compoundref="dbus-marshal-header_8c" startline="427" endline="433">_dbus_header_get_serial</references>
+        <references refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga4a9c0639714b478a4905cdd6e999b6b3" compoundref="dbus-marshal-header_8c" startline="63">SERIAL_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <referencedby refid="group__DBusMarshal_1ga0d5aad82f8bf5a314dcf3f70930e254b" compoundref="dbus-marshal-header_8c" startline="490" endline="509">_dbus_header_copy</referencedby>
+        <referencedby refid="group__DBusMessage_1gaa35c17742d8fe091aa039cbd29961c52" compoundref="dbus-message_8c" startline="254" endline="261">dbus_message_set_serial</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t _dbus_header_get_serial</definition>
+        <argsstring>(DBusHeader *header)</argsstring>
+        <name>_dbus_header_get_serial</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>See <ref refid="group__DBusMessage_1ga390710c25564c80025a006c376da2030" kindref="member">dbus_message_get_serial()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the client serial </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="78" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="427" bodyend="433"/>
+        <references refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga4a9c0639714b478a4905cdd6e999b6b3" compoundref="dbus-marshal-header_8c" startline="63">SERIAL_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="404" endline="418">_dbus_header_set_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga390710c25564c80025a006c376da2030" compoundref="dbus-message_8c" startline="1127" endline="1132">dbus_message_get_serial</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_update_lengths</definition>
+        <argsstring>(DBusHeader *header, int body_len)</argsstring>
+        <name>_dbus_header_update_lengths</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>body_len</declname>
+        </param>
+        <briefdescription>
+<para>Fills in the correct body length. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>body_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the body </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="79" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1196" bodyend="1203"/>
+        <references refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga190a2d89e79c9d76fcba4f06ec8b5b5c" compoundref="dbus-marshal-header_8c" startline="61">BODY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</references>
+        <references refid="group__DBusMarshal_1ga935ea6d7c6bb72a10c670f5ef3e34d49" compoundref="dbus-marshal-header_8c" startline="47">FIELDS_ARRAY_SIGNATURE_OFFSET</references>
+        <references refid="group__DBusMarshal_1gae9759e0de1d8a650f37632c3dc22427e" compoundref="dbus-marshal-header_8c" startline="65">FIELDS_ARRAY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_set_field_basic</definition>
+        <argsstring>(DBusHeader *header, int field, int type, const void *value)</argsstring>
+        <name>_dbus_header_set_field_basic</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of a field with basic type. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the value is a string value, it isn&apos;t allowed to be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. If the field doesn&apos;t exist, it will be created.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the field to set </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value as for <ref refid="group__DBusMarshal_1ga854526bdf221a5e82b2e14581ac17d8f" kindref="member">_dbus_marshal_set_basic()</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="81" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1273" bodyend="1338"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" compoundref="dbus-protocol_8h" startline="311">DBUS_HEADER_FIELD_LAST</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMarshal_1ga935ea6d7c6bb72a10c670f5ef3e34d49" compoundref="dbus-marshal-header_8c" startline="47">FIELDS_ARRAY_SIGNATURE_OFFSET</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1gae9759e0de1d8a650f37632c3dc22427e" compoundref="dbus-marshal-header_8c" startline="65">FIELDS_ARRAY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" compoundref="dbus-marshal-recursive_8c" startline="2140" endline="2158">_dbus_type_writer_append_array</references>
+        <references refid="group__DBusMarshal_1gaca36ac2e9b37067279d1bc967793e071" compoundref="dbus-marshal-header_8c" startline="49">FIELDS_ARRAY_ELEMENT_SIGNATURE_OFFSET</references>
+        <references refid="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a">DBusTypeWriter::u</references>
+        <references refid="group__DBusMarshal_1gaaa085e57f49f527ef210e842be999929" compoundref="dbus-marshal-header_8c" startline="67">FIRST_FIELD_OFFSET</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="group__DBusMarshal_1gaef7e86e442aeb887c8bfe5559cd4eabb" compoundref="dbus-marshal-header_8c" startline="123">HEADER_END_BEFORE_PADDING</references>
+        <references refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+        <referencedby refid="group__DBusMessage_1gaec08603ff3d49bbcded67d25188a23f1" compoundref="dbus-message_8c" startline="1143" endline="1154">dbus_message_set_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_get_field_basic</definition>
+        <argsstring>(DBusHeader *header, int field, int type, void *value)</argsstring>
+        <name>_dbus_header_get_field_basic</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Gets the value of a field with basic type. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the field doesn&apos;t exist, returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>, otherwise returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the field to get </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value as for <ref refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" kindref="member">_dbus_marshal_read_basic()</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the field doesn&apos;t exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="85" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1351" bodyend="1376"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1ga075b0efc570129393d3fb653ce4bbd76" compoundref="dbus-protocol_8h" startline="266">DBUS_HEADER_FIELD_INVALID</references>
+        <references refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" compoundref="dbus-protocol_8h" startline="311">DBUS_HEADER_FIELD_LAST</references>
+        <references refid="group__DBusMarshal_1ga37be3d294f5be31c95bc7620e451b0b2" compoundref="dbus-marshal-header_8c" startline="90">EXPECTED_TYPE_OF_FIELD</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" compoundref="dbus-marshal-header_8h" startline="54">DBusHeader::fields</references>
+        <references refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" compoundref="dbus-marshal-header_8h" startline="41">DBusHeaderField::value_pos</references>
+        <references refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga18adf731bb42d324fe2624407319e4af" compoundref="dbus-message_8c" startline="3096" endline="3108">dbus_message_get_path</referencedby>
+        <referencedby refid="group__DBusMessage_1ga1ad192bd4538cae556121a71b4e09d42" compoundref="dbus-message_8c" startline="3227" endline="3239">dbus_message_get_interface</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf5c6b705c53db07a5ae2c6b76f230cf9" compoundref="dbus-message_8c" startline="3313" endline="3325">dbus_message_get_member</referencedby>
+        <referencedby refid="group__DBusMessage_1ga4e98b2283707a8e0313fc7c6fe3b1b5f" compoundref="dbus-message_8c" startline="3397" endline="3409">dbus_message_get_error_name</referencedby>
+        <referencedby refid="group__DBusMessage_1gaac65c926e6253e49aa689b4f032fad45" compoundref="dbus-message_8c" startline="3450" endline="3462">dbus_message_get_destination</referencedby>
+        <referencedby refid="group__DBusMessage_1ga13ce514ceb2d1598751f3a7760cf1375" compoundref="dbus-message_8c" startline="3510" endline="3522">dbus_message_get_sender</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaf4661ba8e7067f349ba03c9f5776bbb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_get_field_raw</definition>
+        <argsstring>(DBusHeader *header, int field, const DBusString **str, int *pos)</argsstring>
+        <name>_dbus_header_get_field_raw</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Gets the raw marshaled data for a field. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the field doesn&apos;t exist, returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>, otherwise returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>. Returns the start of the marshaled data, i.e. usually the byte where the length starts (for strings and arrays) or for basic types just the value itself.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the field to get </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for the data string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for start of field value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the field doesn&apos;t exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="89" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1392" bodyend="1406"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" compoundref="dbus-marshal-header_8h" startline="54">DBusHeader::fields</references>
+        <references refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" compoundref="dbus-marshal-header_8h" startline="41">DBusHeaderField::value_pos</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga7814248f4d74d109d29dc00487cd9b0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_delete_field</definition>
+        <argsstring>(DBusHeader *header, int field)</argsstring>
+        <name>_dbus_header_delete_field</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Deletes a field, if it exists. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the field to delete </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="93" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1416" bodyend="1446"/>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" compoundref="dbus-marshal-recursive_8c" startline="1417" endline="1441">_dbus_type_reader_delete</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <referencedby refid="group__DBusMessage_1gad3d6b8ec4745ec19f57cae07621f3a47" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gad2073f8f2f2ba3b710aa929dced34cc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_toggle_flag</definition>
+        <argsstring>(DBusHeader *header, dbus_uint32_t flag, dbus_bool_t value)</argsstring>
+        <name>_dbus_header_toggle_flag</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Toggles a message flag bit, turning on the bit if value = TRUE and flipping it off if value = FALSE. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message flag to toggle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>toggle on or off </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="95" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1457" bodyend="1469"/>
+        <references refid="group__DBusString_1ga7a73fb373398606e6e1d0a86c4587a3c" compoundref="dbus-string_8c" startline="490" endline="501">_dbus_string_get_data_len</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga7fe1bac4010cdc7e27de1e19702c071e" compoundref="dbus-marshal-header_8c" startline="57">FLAGS_OFFSET</references>
+        <referencedby refid="group__DBusMessage_1ga0e86aeb2dc6831ccc9a21fcbf8cc16f7" compoundref="dbus-message_8c" startline="2984" endline="2993">dbus_message_set_no_reply</referencedby>
+        <referencedby refid="group__DBusMessage_1ga1596d92a8d604f954b48c7410263d2f0" compoundref="dbus-message_8c" startline="3026" endline="3035">dbus_message_set_auto_start</referencedby>
+        <referencedby refid="group__DBusMessage_1gae734e7f4079375a0256d9e7f855ec4e4" compoundref="dbus-message_8c" startline="4901" endline="4910">dbus_message_set_allow_interactive_authorization</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga56619efed3088554b8760edd246b4157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_get_flag</definition>
+        <argsstring>(DBusHeader *header, dbus_uint32_t flag)</argsstring>
+        <name>_dbus_header_get_flag</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>Gets a message flag bit, returning TRUE if the bit is set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message flag to get </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the flag is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="98" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1479" bodyend="1487"/>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1ga7fe1bac4010cdc7e27de1e19702c071e" compoundref="dbus-marshal-header_8c" startline="57">FLAGS_OFFSET</references>
+        <referencedby refid="group__DBusMessage_1ga622d051a2e5f578814116a958b240aa4" compoundref="dbus-message_8c" startline="3003" endline="3009">dbus_message_get_no_reply</referencedby>
+        <referencedby refid="group__DBusMessage_1ga85d396a3a774e15c3dbb7704aa173384" compoundref="dbus-message_8c" startline="3045" endline="3051">dbus_message_get_auto_start</referencedby>
+        <referencedby refid="group__DBusMessage_1gae9daa615b732c27d690399cc32e1f5b9" compoundref="dbus-message_8c" startline="4919" endline="4925">dbus_message_get_allow_interactive_authorization</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-marshal-header_8h_1a2ff91c19c979679c04e0c1ce8dfd0df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_ensure_signature</definition>
+        <argsstring>(DBusHeader *header, DBusString **type_str, int *type_pos)</argsstring>
+        <name>_dbus_header_ensure_signature</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>type_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_have_message_untrusted</definition>
+        <argsstring>(int max_message_length, DBusValidity *validity, int *byte_order, int *fields_array_len, int *header_len, int *body_len, const DBusString *str, int start, int len)</argsstring>
+        <name>_dbus_header_have_message_untrusted</name>
+        <param>
+          <type>int</type>
+          <declname>max_message_length</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref> *</type>
+          <declname>validity</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>fields_array_len</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>header_len</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>body_len</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Given data long enough to contain the length of the message body and the fields array, check whether the data is long enough to contain the entire message (assuming the claimed lengths are accurate). </para>        </briefdescription>
+        <detaileddescription>
+<para>Also checks that the lengths are in sanity parameters.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_message_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum length of a valid message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for why the data is invalid if it is </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fields_array_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for claimed fields array length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>header_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for claimed header length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>body_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for claimed body length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of data, 8-aligned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the data is long enough for the claimed length, and the lengths were valid </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="103" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="673" bodyend="750"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1gafe869e3145b7e32c4fb6a6741c9fc78e" compoundref="dbus-internals_8h" startline="227">_DBUS_INT32_MAX</references>
+        <references refid="group__DBusMarshal_1gaa5b7e77f37761139698892e4b8aad029" compoundref="dbus-marshal-header_8c" startline="53">BYTE_ORDER_OFFSET</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1gae9759e0de1d8a650f37632c3dc22427e" compoundref="dbus-marshal-header_8c" startline="65">FIELDS_ARRAY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMarshal_1ga190a2d89e79c9d76fcba4f06ec8b5b5c" compoundref="dbus-marshal-header_8c" startline="61">BODY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1gaaa085e57f49f527ef210e842be999929" compoundref="dbus-marshal-header_8c" startline="67">FIRST_FIELD_OFFSET</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <references refid="group__DBusMarshal_1ga4427247494fc5c988498c5a87d42092d" compoundref="dbus-marshal-header_8c" startline="386" endline="394">_dbus_header_get_message_type</references>
+        <references refid="group__DBusProtocol_1ga728d893ff0c00e126517ba39835220a5" compoundref="dbus-protocol_8h" startline="240">DBUS_MESSAGE_TYPE_SIGNAL</references>
+        <references refid="group__DBusProtocol_1ga09416afd76b65139eddd31e1085d9ebf" compoundref="dbus-protocol_8h" startline="234">DBUS_MESSAGE_TYPE_METHOD_CALL</references>
+        <references refid="group__DBusProtocol_1ga2b9423d95066313d73eeea8eeaf86812" compoundref="dbus-protocol_8h" startline="238">DBUS_MESSAGE_TYPE_ERROR</references>
+        <references refid="group__DBusProtocol_1ga4a9012edd7f22342f845e98150aeb858" compoundref="dbus-protocol_8h" startline="236">DBUS_MESSAGE_TYPE_METHOD_RETURN</references>
+        <references refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" compoundref="dbus-protocol_8h" startline="311">DBUS_HEADER_FIELD_LAST</references>
+        <references refid="group__DBusProtocol_1ga075b0efc570129393d3fb653ce4bbd76" compoundref="dbus-protocol_8h" startline="266">DBUS_HEADER_FIELD_INVALID</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusMarshal_1ga37be3d294f5be31c95bc7620e451b0b2" compoundref="dbus-marshal-header_8c" startline="90">EXPECTED_TYPE_OF_FIELD</references>
+        <references refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" compoundref="dbus-marshal-header_8h" startline="54">DBusHeader::fields</references>
+        <references refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" compoundref="dbus-marshal-header_8h" startline="41">DBusHeaderField::value_pos</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1351" endline="1376">_dbus_header_get_field_basic</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusMarshal_1gaf4661ba8e7067f349ba03c9f5776bbb0" compoundref="dbus-marshal-header_8c" startline="1392" endline="1406">_dbus_header_get_field_raw</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusProtocol_1gade98f71a08a1e0198d095fdb6d46cab9" compoundref="dbus-protocol_8h" startline="288">DBUS_HEADER_FIELD_DESTINATION</references>
+        <references refid="group__DBusMarshal_1gaab91a04fa2a96b8ce8843beae7327cd0" compoundref="dbus-marshal-validate_8c" startline="1187" endline="1192">_dbus_validate_bus_name</references>
+        <references refid="group__DBusProtocol_1ga296b5f099b6c347f65d53ef0a6fa2b0d" compoundref="dbus-protocol_8h" startline="274">DBUS_HEADER_FIELD_INTERFACE</references>
+        <references refid="group__DBusMarshal_1ga0ad919783f887a9b6f428e262beaeed9" compoundref="dbus-marshal-validate_8c" startline="921" endline="981">_dbus_validate_interface</references>
+        <references refid="group__DBusString_1ga2095c2a797ae245521a7588b32279110" compoundref="dbus-string_8c" startline="2103" endline="2141">_dbus_string_equal_substring</references>
+        <references refid="group__DBusProtocol_1ga2aa9d65ef983ac9c08c1d4cb31366818" compoundref="dbus-protocol_8h" startline="276">DBUS_HEADER_FIELD_MEMBER</references>
+        <references refid="group__DBusMarshal_1gaf647272768029cb23a4e0d3f493587da" compoundref="dbus-marshal-validate_8c" startline="997" endline="1042">_dbus_validate_member</references>
+        <references refid="group__DBusProtocol_1gac551be0f921390d01104cce30a814a5e" compoundref="dbus-protocol_8h" startline="280">DBUS_HEADER_FIELD_ERROR_NAME</references>
+        <references refid="group__DBusMarshal_1ga6d8075f3b60e2e71aad061aa44b120fe" compoundref="dbus-marshal-validate_8c" startline="1058" endline="1064">_dbus_validate_error_name</references>
+        <references refid="group__DBusProtocol_1ga3ba84ae623951832bd73e2796bb13e71" compoundref="dbus-protocol_8h" startline="293">DBUS_HEADER_FIELD_SENDER</references>
+        <references refid="group__DBusProtocol_1ga0cd885e6e808b28ff082a7f8a2c9f579" compoundref="dbus-protocol_8h" startline="270">DBUS_HEADER_FIELD_PATH</references>
+        <references refid="group__DBusProtocol_1ga1067e28a7151a161e5fd601a3b017584" compoundref="dbus-protocol_8h" startline="284">DBUS_HEADER_FIELD_REPLY_SERIAL</references>
+        <references refid="group__DBusProtocol_1ga03b9c24acbfd1e3da19804c739612885" compoundref="dbus-protocol_8h" startline="302">DBUS_HEADER_FIELD_UNIX_FDS</references>
+        <references refid="group__DBusProtocol_1ga450d63fa110d3cb891082e23291580b4" compoundref="dbus-protocol_8h" startline="297">DBUS_HEADER_FIELD_SIGNATURE</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessage_1ga67b26fd2c8e3305f3a467a5f3e36b24a" compoundref="dbus-message_8c" startline="4841" endline="4877">dbus_message_demarshal_bytes_needed</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_header_load</definition>
+        <argsstring>(DBusHeader *header, DBusValidationMode mode, DBusValidity *validity, int byte_order, int fields_array_len, int header_len, int body_len, const DBusString *str, int start, int len)</argsstring>
+        <name>_dbus_header_load</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMarshal_1gaf9dce059725fa793c44b219460cbbe6d" kindref="member">DBusValidationMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref> *</type>
+          <declname>validity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fields_array_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>header_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>body_len</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Creates a message header from potentially-untrusted data. </para>        </briefdescription>
+        <detaileddescription>
+<para>The return value is <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if there was enough memory and the data was valid. If it returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, the header will be created. If it returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> and *validity == <ref refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007ca08cf1e84457c1f41acaf082de2060a65" kindref="member">DBUS_VALIDITY_UNKNOWN_OOM_ERROR</ref>, then there wasn&apos;t enough memory. If it returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> and *validity != <ref refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007ca08cf1e84457c1f41acaf082de2060a65" kindref="member">DBUS_VALIDITY_UNKNOWN_OOM_ERROR</ref> then the data was invalid.</para><para>The byte_order, fields_array_len, and body_len args should be from <ref refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" kindref="member">_dbus_header_have_message_untrusted()</ref>. Validation performed in <ref refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" kindref="member">_dbus_header_have_message_untrusted()</ref> is assumed to have been already done.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header (must be initialized) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to do validation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for invalidity reason </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte order from header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fields_array_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>claimed length of fields array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>body_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>claimed length of body </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>header_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>claimed length of header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of header, 8-aligned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of string to look at </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory or data was invalid, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="112" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="970" bodyend="1187"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007ca08cf1e84457c1f41acaf082de2060a65" compoundref="dbus-marshal-validate_8h" startline="52">DBUS_VALIDITY_UNKNOWN_OOM_ERROR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1gae997884ec8091aacb5492c2b5a7eaef9" compoundref="dbus-marshal-validate_8c" startline="703" endline="747">_dbus_validate_body_with_reason</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <references refid="group__DBusMarshal_1gaaa085e57f49f527ef210e842be999929" compoundref="dbus-marshal-header_8c" startline="67">FIRST_FIELD_OFFSET</references>
+        <references refid="group__DBusString_1ga199d0fc00ee3cd0300a1b3870d7986a3" compoundref="dbus-string_8c" startline="2652" endline="2676">_dbus_string_validate_nul</references>
+        <references refid="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" compoundref="dbus-marshal-header_8h" startline="58">DBusHeader::padding</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusMarshal_1ga2a8ab1152821950b1fe29e000954981c" compoundref="dbus-marshal-recursive_8c" startline="837" endline="840">_dbus_type_reader_get_value_pos</references>
+        <references refid="group__DBusMarshal_1gaa5b7e77f37761139698892e4b8aad029" compoundref="dbus-marshal-header_8c" startline="53">BYTE_ORDER_OFFSET</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="group__DBusMarshal_1gaf4fe78df75f4afa2ec63304462614b03" compoundref="dbus-marshal-header_8c" startline="55">TYPE_OFFSET</references>
+        <references refid="group__DBusProtocol_1gac975525a6ce258a7a70c583c9741b516" compoundref="dbus-protocol_8h" startline="232">DBUS_MESSAGE_TYPE_INVALID</references>
+        <references refid="group__DBusMarshal_1ga7fe1bac4010cdc7e27de1e19702c071e" compoundref="dbus-marshal-header_8c" startline="57">FLAGS_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga4f04ecce1223b00d263c0accdea144ad" compoundref="dbus-marshal-header_8c" startline="59">VERSION_OFFSET</references>
+        <references refid="group__DBusProtocol_1gae1ab70067a616d852e5fc264abb66608" compoundref="dbus-protocol_8h" startline="57">DBUS_MAJOR_PROTOCOL_VERSION</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMarshal_1ga190a2d89e79c9d76fcba4f06ec8b5b5c" compoundref="dbus-marshal-header_8c" startline="61">BODY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga4a9c0639714b478a4905cdd6e999b6b3" compoundref="dbus-marshal-header_8c" startline="63">SERIAL_OFFSET</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusMarshal_1gae9759e0de1d8a650f37632c3dc22427e" compoundref="dbus-marshal-header_8c" startline="65">FIELDS_ARRAY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1ga075b0efc570129393d3fb653ce4bbd76" compoundref="dbus-protocol_8h" startline="266">DBUS_HEADER_FIELD_INVALID</references>
+        <references refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" compoundref="dbus-protocol_8h" startline="311">DBUS_HEADER_FIELD_LAST</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" compoundref="dbus-marshal-header_8h" startline="54">DBusHeader::fields</references>
+        <references refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" compoundref="dbus-marshal-header_8h" startline="41">DBusHeaderField::value_pos</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gae5277c7b7bfb7b85e421baceac0398c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_header_byteswap</definition>
+        <argsstring>(DBusHeader *header, int new_order)</argsstring>
+        <name>_dbus_header_byteswap</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>new_order</declname>
+        </param>
+        <briefdescription>
+<para>Swaps the header into the given order if required. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new byte order </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="122" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="1496" bodyend="1512"/>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMarshal_1ga609a4b8c0b65096890766fda73a4c40f" compoundref="dbus-marshal-byteswap_8c" startline="222" endline="244">_dbus_marshal_byteswap</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1gaa5b7e77f37761139698892e4b8aad029" compoundref="dbus-marshal-header_8c" startline="53">BYTE_ORDER_OFFSET</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char _dbus_header_get_byte_order</definition>
+        <argsstring>(const DBusHeader *header)</argsstring>
+        <name>_dbus_header_get_byte_order</name>
+        <param>
+          <type>const <ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+<para>Returns the header&apos;s byte order. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the byte order </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-header.h" line="124" column="1" bodyfile="dbus/dbus-marshal-header.c" bodystart="174" bodyend="179"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMarshal_1gaa5b7e77f37761139698892e4b8aad029" compoundref="dbus-marshal-header_8c" startline="53">BYTE_ORDER_OFFSET</references>
+        <references refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" compoundref="dbus-protocol_8h" startline="311">DBUS_HEADER_FIELD_LAST</references>
+        <references refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" compoundref="dbus-marshal-header_8h" startline="54">DBusHeader::fields</references>
+        <references refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" compoundref="dbus-marshal-header_8h" startline="41">DBusHeaderField::value_pos</references>
+        <references refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" compoundref="dbus-marshal-recursive_8c" startline="732" endline="749">_dbus_type_reader_init</references>
+        <references refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</references>
+        <references refid="group__DBusMarshal_1ga935ea6d7c6bb72a10c670f5ef3e34d49" compoundref="dbus-marshal-header_8c" startline="47">FIELDS_ARRAY_SIGNATURE_OFFSET</references>
+        <references refid="group__DBusMarshal_1gae9759e0de1d8a650f37632c3dc22427e" compoundref="dbus-marshal-header_8c" startline="65">FIELDS_ARRAY_LENGTH_OFFSET</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" compoundref="dbus-marshal-recursive_8h" startline="76">DBusTypeWriter::value_str</references>
+        <references refid="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" compoundref="dbus-marshal-recursive_8c" startline="2106" endline="2125">_dbus_type_writer_recurse</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="404" endline="418">_dbus_header_set_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" compoundref="dbus-marshal-header_8c" startline="427" endline="433">_dbus_header_get_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1351" endline="1376">_dbus_header_get_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae5277c7b7bfb7b85e421baceac0398c8" compoundref="dbus-marshal-header_8c" startline="1496" endline="1512">_dbus_header_byteswap</referencedby>
+        <referencedby refid="group__DBusMessage_1ga9f98b47c84f0e401ea985e681de4e963" compoundref="dbus-message_8c" startline="2064" endline="2086">dbus_message_iter_init</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-marshal-header.h<sp/><sp/>Managing<sp/>marshaling/demarshaling<sp/>of<sp/>message<sp/>headers</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MARSHAL_HEADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MARSHAL_HEADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-marshal-basic.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-marshal-validate.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref><sp/><ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_DBUS_HEADER_FIELD_VALUE_UNKNOWN<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_DBUS_HEADER_FIELD_VALUE_NONEXISTENT<sp/>-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structDBusHeaderField" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41" refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusHeaderField_1aa9616d127de7488f6d9dc18c4d0c2133" kindref="member">value_pos</ref>;<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structDBusHeader" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49" refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><ref refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" kindref="member">data</ref>;<sp/></highlight></codeline>
+<codeline lineno="54" refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref><sp/>fields[<ref refid="group__DBusProtocol_1ga94f09d2b35473c8ffa6d3190b5f97c5c" kindref="member">DBUS_HEADER_FIELD_LAST</ref><sp/>+<sp/>1];<sp/></highlight></codeline>
+<codeline lineno="58" refid="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>padding<sp/>:<sp/>3;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="structDBusHeader_1abb64abdf3c7f3fbf77c511ccf1f07aa1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>byte_order<sp/>:<sp/>8;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gabe1b78193d712976734a39d35842f033" kindref="member">_dbus_header_init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gab90a814a27aeeace7e02c4ed130539cf" kindref="member">_dbus_header_free</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga6d41ad4de211c87f4b8a43340b6893e2" kindref="member">_dbus_header_reinit</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" kindref="member">_dbus_header_create</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*destination,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*path,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*interface,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*member,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error_name);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga0d5aad82f8bf5a314dcf3f70930e254b" kindref="member">_dbus_header_copy</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*dest);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga4427247494fc5c988498c5a87d42092d" kindref="member">_dbus_header_get_message_type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" kindref="member">_dbus_header_set_serial</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>serial);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" kindref="member">_dbus_header_get_serial</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" kindref="member">_dbus_header_update_lengths</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>body_len);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" kindref="member">_dbus_header_set_field_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" kindref="member">_dbus_header_get_field_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gaf4661ba8e7067f349ba03c9f5776bbb0" kindref="member">_dbus_header_get_field_raw</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>**str,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pos);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga7814248f4d74d109d29dc00487cd9b0c" kindref="member">_dbus_header_delete_field</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gad2073f8f2f2ba3b710aa929dced34cc3" kindref="member">_dbus_header_toggle_flag</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>flag,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga56619efed3088554b8760edd246b4157" kindref="member">_dbus_header_get_flag</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>flag);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/>_dbus_header_ensure_signature<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**type_str,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*type_pos);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" kindref="member">_dbus_header_have_message_untrusted</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_message_length,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref><sp/><sp/><sp/><sp/><sp/><sp/>*validity,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*byte_order,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*fields_array_len,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header_len,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*body_len,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" kindref="member">_dbus_header_load</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gaf9dce059725fa793c44b219460cbbe6d" kindref="member">DBusValidationMode</ref><sp/>mode,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref><sp/><sp/><sp/><sp/><sp/><sp/>*validity,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fields_array_len,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header_len,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>body_len,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gae5277c7b7bfb7b85e421baceac0398c8" kindref="member">_dbus_header_byteswap</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*header,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_order);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" kindref="member">_dbus_header_get_byte_order</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><sp/>*header);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MARSHAL_HEADER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-marshal-header.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,866 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-spawn_8h" kind="file" language="C++">
+    <compoundname>dbus-spawn.h</compoundname>
+    <includes refid="dbus-string_8h" local="no">dbus/dbus-string.h</includes>
+    <includes refid="dbus-errors_8h" local="no">dbus/dbus-errors.h</includes>
+    <includes refid="dbus-watch_8h" local="no">dbus/dbus-watch.h</includes>
+    <includedby refid="dbus-spawn-win_8c" local="yes">dbus-spawn-win.c</includedby>
+    <includedby refid="dbus-spawn_8c" local="yes">dbus-spawn.c</includedby>
+    <incdepgraph>
+      <node id="3420">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3434">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3419" relation="include">
+        </childnode>
+        <childnode refid="3435" relation="include">
+        </childnode>
+        <childnode refid="3436" relation="include">
+        </childnode>
+      </node>
+      <node id="3422">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3415">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3427">
+        <label>stdint.h</label>
+      </node>
+      <node id="3436">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="3431">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3425">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3426" relation="include">
+        </childnode>
+        <childnode refid="3427" relation="include">
+        </childnode>
+        <childnode refid="3428" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3429" relation="include">
+        </childnode>
+        <childnode refid="3414" relation="include">
+        </childnode>
+        <childnode refid="3430" relation="include">
+        </childnode>
+        <childnode refid="3420" relation="include">
+        </childnode>
+        <childnode refid="3431" relation="include">
+        </childnode>
+      </node>
+      <node id="3424">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="3419" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3425" relation="include">
+        </childnode>
+        <childnode refid="3432" relation="include">
+        </childnode>
+      </node>
+      <node id="3417">
+        <label>stddef.h</label>
+      </node>
+      <node id="3414">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+        <childnode refid="3419" relation="include">
+        </childnode>
+        <childnode refid="3420" relation="include">
+        </childnode>
+      </node>
+      <node id="3418">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+      </node>
+      <node id="3430">
+        <label>string.h</label>
+      </node>
+      <node id="3433">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+      </node>
+      <node id="3435">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+        <childnode refid="3418" relation="include">
+        </childnode>
+        <childnode refid="3419" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3420" relation="include">
+        </childnode>
+      </node>
+      <node id="3413">
+        <label>dbus-spawn.h</label>
+        <link refid="dbus-spawn.h"/>
+        <childnode refid="3414" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3423" relation="include">
+        </childnode>
+      </node>
+      <node id="3432">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+        <childnode refid="3433" relation="include">
+        </childnode>
+      </node>
+      <node id="3426">
+        <label>config.h</label>
+      </node>
+      <node id="3423">
+        <label>dbus/dbus-watch.h</label>
+        <link refid="dbus-watch_8h_source"/>
+        <childnode refid="3424" relation="include">
+        </childnode>
+        <childnode refid="3434" relation="include">
+        </childnode>
+      </node>
+      <node id="3429">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3414" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+      </node>
+      <node id="3421">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3416" relation="include">
+        </childnode>
+        <childnode refid="3422" relation="include">
+        </childnode>
+      </node>
+      <node id="3416">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3417" relation="include">
+        </childnode>
+        <childnode refid="3418" relation="include">
+        </childnode>
+      </node>
+      <node id="3428">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3419">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3415" relation="include">
+        </childnode>
+        <childnode refid="3417" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3439">
+        <label>dbus-spawn.c</label>
+        <link refid="dbus-spawn_8c_source"/>
+      </node>
+      <node id="3437">
+        <label>dbus-spawn.h</label>
+        <link refid="dbus-spawn.h"/>
+        <childnode refid="3438" relation="include">
+        </childnode>
+        <childnode refid="3439" relation="include">
+        </childnode>
+      </node>
+      <node id="3438">
+        <label>dbus-spawn-win.c</label>
+        <link refid="dbus-spawn-win_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-spawn_8h_1a07f66e33a2dfa0473b7e2499025062a6" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusSpawnChildSetupFunc) (void *user_data)</definition>
+        <argsstring>)(void *user_data)</argsstring>
+        <name>DBusSpawnChildSetupFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="34" column="1" bodyfile="dbus/dbus-spawn.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-spawn_8h_1a622d73cc108994eafeeb54ca8f995ddc" prot="public" static="no">
+        <type>struct <ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref></type>
+        <definition>typedef struct DBusBabysitter DBusBabysitter</definition>
+        <argsstring></argsstring>
+        <name>DBusBabysitter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="34" column="1" bodyfile="dbus/dbus-spawn.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-spawn_8h_1ae2111fb1989b6d3021b5ea9404fd2149" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(*  DBusBabysitterFinishedFunc) (DBusBabysitter *sitter, void *user_data)</definition>
+        <argsstring>)(DBusBabysitter *sitter, void *user_data)</argsstring>
+        <name>DBusBabysitterFinishedFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="38" column="1" bodyfile="dbus/dbus-spawn.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_spawn_async_with_babysitter</definition>
+        <argsstring>(DBusBabysitter **sitter_p, const char *log_name, char **argv, char **env, DBusSpawnChildSetupFunc child_setup, void *user_data, DBusError *error)</argsstring>
+        <name>_dbus_spawn_async_with_babysitter</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> **</type>
+          <declname>sitter_p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>log_name</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>env</declname>
+        </param>
+        <param>
+          <type>DBusSpawnChildSetupFunc</type>
+          <declname>child_setup</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Spawns a new process. </para>        </briefdescription>
+        <detaileddescription>
+<para>The child_setup function is passed the given user_data and is run in the child just before calling exec().</para><para>Also creates a &quot;babysitter&quot; which tracks the status of the child process, advising the parent if the child exits. If the spawn fails, no babysitter is created. If sitter_p is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, no babysitter is kept.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for babysitter or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>log_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name under which to log messages about this process being spawned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the executable and arguments </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>env</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the environment, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> to copy the parent&apos;s </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>child_setup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to call in child pre-exec() </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user data for setup function </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error object to be filled in if function fails </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error is filled in </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="41" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="644" bodyend="756"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusBabysitter_1aa5f57474dbc3603fd888430496769778" compoundref="dbus-spawn-win_8c" startline="71">DBusBabysitter::log_name</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusSysdeps_1gae96a3f400324b065f78a865a86454d09" compoundref="dbus-sysdeps-unix_8c" startline="3175" endline="3239">_dbus_full_duplex_pipe</references>
+        <references refid="structDBusBabysitter_1a9b5fa1cf7463e6e88308b85788e232a1" compoundref="dbus-spawn-win_8c" startline="80">DBusBabysitter::socket_to_babysitter</references>
+        <references refid="structDBusBabysitter_1a1f01b1d3775f4b3437a01117cf8ddfcb" compoundref="dbus-spawn-win_8c" startline="84">DBusBabysitter::sitter_watch</references>
+        <references refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" compoundref="dbus-connection_8h" startline="60">DBUS_WATCH_READABLE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</references>
+        <references refid="structDBusBabysitter_1ae0219a288aa52775dee075b80ab8c170" compoundref="dbus-spawn-win_8c" startline="83">DBusBabysitter::watches</references>
+        <references refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</references>
+        <references refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</references>
+        <references refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" compoundref="dbus-errors_8c" startline="243" endline="266">dbus_set_error_const</references>
+        <references refid="group__DBusProtocol_1gafe69e1ac207a66cc86d2880fd3ca62af" compoundref="dbus-protocol_8h" startline="418">DBUS_ERROR_SPAWN_FORK_FAILED</references>
+        <references refid="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" compoundref="dbus-spawn_8c" startline="324" endline="402">_dbus_babysitter_unref</references>
+        <references refid="group__DBusSysdeps_1gab846071a4de54cb7e518654f9375313a" compoundref="dbus-sysdeps_8c" startline="185" endline="193">_dbus_getenv</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1gab0078cf7e0e5bd784ec6d6e0cc3923a2" compoundref="dbus-string_8c" startline="1113" endline="1125">_dbus_string_append_printf</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn_8c" startline="1210" endline="1435">_dbus_spawn_async_with_babysitter</references>
+        <references refid="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" compoundref="dbus-spawn_8c" startline="755" endline="798">_dbus_babysitter_set_child_exit_error</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusErrors_1ga48515c580199514026542fe053ef1887" compoundref="dbus-errors_8c" startline="302" endline="320">dbus_error_has_name</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusProtocol_1gac04bc3bebee1674e93ef96aaa2b34b40" compoundref="dbus-protocol_8h" startline="416">DBUS_ERROR_SPAWN_EXEC_FAILED</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusProtocol_1ga6cd00ac22b189360a7f0ce2f2b97975b" compoundref="dbus-protocol_8h" startline="420">DBUS_ERROR_SPAWN_CHILD_EXITED</references>
+        <references refid="group__DBusInternalsUtils_1gacdc9c49735d6ce8364647c1961aa8d2b" compoundref="dbus-spawn_8c" startline="684" endline="698">_dbus_babysitter_kill_child</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="structDBusBabysitter_1ae89fdf7339b921a19728a2c8abfad251" compoundref="dbus-spawn_8c" startline="254">DBusBabysitter::error_watch</references>
+        <references refid="group__DBusInternalsUtils_1ga2469c53816dc077f9deefb187ffcabf3" compoundref="dbus-spawn_8c" startline="873">READ_END</references>
+        <references refid="structDBusBabysitter_1af0f5b85d39a7d2957ae83b3c594b88af" compoundref="dbus-spawn_8c" startline="250">DBusBabysitter::grandchild_pid</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga2efd706d915e621e5e18b3f0803c4ed2" compoundref="dbus-spawn_8c" startline="875">WRITE_END</references>
+        <references refid="structDBusBabysitter_1abc42ea27fa4ee1e4f04819364e0a9bde" compoundref="dbus-spawn_8c" startline="247">DBusBabysitter::error_pipe_from_child</references>
+        <references refid="structDBusBabysitter_1aa783f733db30b4587f08ee906612fa6c" compoundref="dbus-spawn_8c" startline="249">DBusBabysitter::sitter_pid</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusInternalsUtils_1gaf3ce8172242a1766bdd5cfe4b0a05d1f" compoundref="dbus-spawn_8c" startline="675">LIVE_CHILDREN</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusProtocol_1ga8404cd7fd5f0d62a63e26783bdf572ae" compoundref="dbus-protocol_8h" startline="422">DBUS_ERROR_SPAWN_CHILD_SIGNALED</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga98cc9642d4e5246804c8611022a68c0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_babysitter_set_result_function</definition>
+        <argsstring>(DBusBabysitter *sitter, DBusBabysitterFinishedFunc finished, void *user_data)</argsstring>
+        <name>_dbus_babysitter_set_result_function</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <param>
+          <type>DBusBabysitterFinishedFunc</type>
+          <declname>finished</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="48" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="759" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga525b5fdb780ddf6891918466965e6eb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+        <definition>DBusBabysitter* _dbus_babysitter_ref</definition>
+        <argsstring>(DBusBabysitter *sitter)</argsstring>
+        <name>_dbus_babysitter_ref</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <briefdescription>
+<para>Increment the reference count on the babysitter object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the babysitter </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="51" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="149" bodyend="158"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusBabysitter_1abd6c2c867f005bea3932fc9f754dd14e" compoundref="dbus-spawn-win_8c" startline="63">DBusBabysitter::refcount</references>
+        <references refid="structDBusBabysitter_1a1f01b1d3775f4b3437a01117cf8ddfcb" compoundref="dbus-spawn-win_8c" startline="84">DBusBabysitter::sitter_watch</references>
+        <references refid="structDBusBabysitter_1ae0219a288aa52775dee075b80ab8c170" compoundref="dbus-spawn-win_8c" startline="83">DBusBabysitter::watches</references>
+        <references refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</references>
+        <references refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</references>
+        <references refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</references>
+        <references refid="structDBusBabysitter_1a9b5fa1cf7463e6e88308b85788e232a1" compoundref="dbus-spawn-win_8c" startline="80">DBusBabysitter::socket_to_babysitter</references>
+        <references refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" compoundref="dbus-spawn-win_8c" startline="361" endline="375">_dbus_babysitter_set_watch_functions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_babysitter_unref</definition>
+        <argsstring>(DBusBabysitter *sitter)</argsstring>
+        <name>_dbus_babysitter_unref</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <briefdescription>
+<para>Decrement the reference count on the babysitter object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+When the reference count of the babysitter object reaches zero, the babysitter is killed and the child that was being babysat gets emancipated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="52" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="187" bodyend="265"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusBabysitter_1abd6c2c867f005bea3932fc9f754dd14e" compoundref="dbus-spawn-win_8c" startline="63">DBusBabysitter::refcount</references>
+        <references refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusBabysitter_1a1f01b1d3775f4b3437a01117cf8ddfcb" compoundref="dbus-spawn-win_8c" startline="84">DBusBabysitter::sitter_watch</references>
+        <references refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</references>
+        <references refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</references>
+        <references refid="structDBusBabysitter_1ae0219a288aa52775dee075b80ab8c170" compoundref="dbus-spawn-win_8c" startline="83">DBusBabysitter::watches</references>
+        <references refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</references>
+        <references refid="structDBusBabysitter_1aa5f57474dbc3603fd888430496769778" compoundref="dbus-spawn-win_8c" startline="71">DBusBabysitter::log_name</references>
+        <references refid="structDBusBabysitter_1aa783f733db30b4587f08ee906612fa6c" compoundref="dbus-spawn_8c" startline="249">DBusBabysitter::sitter_pid</references>
+        <references refid="structDBusBabysitter_1a6b3aa53fa01507b290bf575f5cc088e3" compoundref="dbus-spawn_8c" startline="261">DBusBabysitter::status</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusInternalsUtils_1ggaa1d634db87605c2a83f2750ce6052653ad13164fb31fb0b5bc1ec802d09d10411" compoundref="dbus-spawn_8c" startline="66">READ_STATUS_ERROR</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusInternalsUtils_1ggaa1d634db87605c2a83f2750ce6052653a7d65492f3f0d09176ac4504987457d23" compoundref="dbus-spawn_8c" startline="67">READ_STATUS_EOF</references>
+        <references refid="group__DBusInternalsUtils_1ggaa1d634db87605c2a83f2750ce6052653a105d3aa9ec19f4c060b39c7fafba39ff" compoundref="dbus-spawn_8c" startline="65">READ_STATUS_OK</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusBabysitter_1afc7d26bf84459ec406ddd615101018f9" compoundref="dbus-spawn_8c" startline="263">DBusBabysitter::have_fork_errnum</references>
+        <references refid="structDBusBabysitter_1aaca14d66f484b0a3b06b395aa8485c70" compoundref="dbus-spawn_8c" startline="260">DBusBabysitter::errnum</references>
+        <references refid="structDBusBabysitter_1a2275e6071accc74280cd354debb5f801" compoundref="dbus-spawn_8c" startline="264">DBusBabysitter::have_exec_errnum</references>
+        <references refid="structDBusBabysitter_1af0f5b85d39a7d2957ae83b3c594b88af" compoundref="dbus-spawn_8c" startline="250">DBusBabysitter::grandchild_pid</references>
+        <references refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</references>
+        <references refid="structDBusBabysitter_1a9b5fa1cf7463e6e88308b85788e232a1" compoundref="dbus-spawn-win_8c" startline="80">DBusBabysitter::socket_to_babysitter</references>
+        <references refid="structDBusBabysitter_1ae89fdf7339b921a19728a2c8abfad251" compoundref="dbus-spawn_8c" startline="254">DBusBabysitter::error_watch</references>
+        <references refid="structDBusBabysitter_1abc42ea27fa4ee1e4f04819364e0a9bde" compoundref="dbus-spawn_8c" startline="247">DBusBabysitter::error_pipe_from_child</references>
+        <references refid="group__DBusSysdeps_1ga96b5ba58b9939d789bfece0d9bb82f41" compoundref="dbus-sysdeps_8h" startline="294">_DBUS_POLLIN</references>
+        <references refid="group__DBusSysdeps_1ga231164196ff407eccb732452a2d36468" compoundref="dbus-sysdeps_8h" startline="300">_DBUS_POLLERR</references>
+        <references refid="group__DBusSysdeps_1ga6f08232c1f943313e3eefd7de8f3592f" compoundref="dbus-sysdeps_8h" startline="302">_DBUS_POLLHUP</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusPollFD_1a10b23977d2f696abfd276b9077f8c97e" compoundref="dbus-sysdeps_8h" startline="312">DBusPollFD::fd</references>
+        <references refid="structDBusPollFD_1a10e65e6721451e92361497b2efaa758f" compoundref="dbus-sysdeps_8h" startline="313">DBusPollFD::events</references>
+        <references refid="structDBusPollFD_1a24bc29c766b8bbddc5da052e7a46bc9e" compoundref="dbus-sysdeps_8h" startline="314">DBusPollFD::revents</references>
+        <references refid="group__DBusSysdeps_1gac1cdb5995dcef6dd54399ab610ae689a" compoundref="dbus-sysdeps-unix_8c" startline="2634" endline="2728">_dbus_poll</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" compoundref="dbus-spawn-win_8c" startline="361" endline="375">_dbus_babysitter_set_watch_functions</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1gacdc9c49735d6ce8364647c1961aa8d2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_babysitter_kill_child</definition>
+        <argsstring>(DBusBabysitter *sitter)</argsstring>
+        <name>_dbus_babysitter_kill_child</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <briefdescription>
+<para>Blocks until the babysitter process gives us the PID of the spawned grandchild, then kills the spawned grandchild. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="53" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="268" bodyend="276"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1gaf3ce8172242a1766bdd5cfe4b0a05d1f" compoundref="dbus-spawn_8c" startline="675">LIVE_CHILDREN</references>
+        <references refid="structDBusBabysitter_1af0f5b85d39a7d2957ae83b3c594b88af" compoundref="dbus-spawn_8c" startline="250">DBusBabysitter::grandchild_pid</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_babysitter_get_child_exited</definition>
+        <argsstring>(DBusBabysitter *sitter)</argsstring>
+        <name>_dbus_babysitter_get_child_exited</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the child has exited, without blocking. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="54" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="284" bodyend="288"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1gaf3ce8172242a1766bdd5cfe4b0a05d1f" compoundref="dbus-spawn_8c" startline="675">LIVE_CHILDREN</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusBabysitter_1a9b5fa1cf7463e6e88308b85788e232a1" compoundref="dbus-spawn-win_8c" startline="80">DBusBabysitter::socket_to_babysitter</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga1b17eec3f7915c21251685e16123f299" compoundref="dbus-spawn-win_8c" startline="303" endline="315">_dbus_babysitter_get_child_exit_status</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" compoundref="dbus-spawn-win_8c" startline="327" endline="358">_dbus_babysitter_set_child_exit_error</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" compoundref="dbus-spawn-win_8c" startline="361" endline="375">_dbus_babysitter_set_watch_functions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_babysitter_set_child_exit_error</definition>
+        <argsstring>(DBusBabysitter *sitter, DBusError *error)</argsstring>
+        <name>_dbus_babysitter_set_child_exit_error</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Sets the <ref refid="structDBusError" kindref="compound">DBusError</ref> with an explanation of why the spawned child process exited (on a signal, or whatever). </para>        </briefdescription>
+        <detaileddescription>
+<para>If the child process has not exited, does nothing (error will remain unset).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an error to fill in </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="55" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="327" bodyend="358"/>
+        <references refid="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" compoundref="dbus-spawn_8c" startline="706" endline="716">_dbus_babysitter_get_child_exited</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusProtocol_1gac04bc3bebee1674e93ef96aaa2b34b40" compoundref="dbus-protocol_8h" startline="416">DBUS_ERROR_SPAWN_EXEC_FAILED</references>
+        <references refid="structDBusBabysitter_1aa5f57474dbc3603fd888430496769778" compoundref="dbus-spawn-win_8c" startline="71">DBusBabysitter::log_name</references>
+        <references refid="group__DBusProtocol_1ga6cd00ac22b189360a7f0ce2f2b97975b" compoundref="dbus-protocol_8h" startline="420">DBUS_ERROR_SPAWN_CHILD_EXITED</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="structDBusBabysitter_1a2275e6071accc74280cd354debb5f801" compoundref="dbus-spawn_8c" startline="264">DBusBabysitter::have_exec_errnum</references>
+        <references refid="structDBusBabysitter_1aaca14d66f484b0a3b06b395aa8485c70" compoundref="dbus-spawn_8c" startline="260">DBusBabysitter::errnum</references>
+        <references refid="structDBusBabysitter_1afc7d26bf84459ec406ddd615101018f9" compoundref="dbus-spawn_8c" startline="263">DBusBabysitter::have_fork_errnum</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="structDBusBabysitter_1a6b3aa53fa01507b290bf575f5cc088e3" compoundref="dbus-spawn_8c" startline="261">DBusBabysitter::status</references>
+        <references refid="group__DBusProtocol_1ga8404cd7fd5f0d62a63e26783bdf572ae" compoundref="dbus-protocol_8h" startline="422">DBUS_ERROR_SPAWN_CHILD_SIGNALED</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga1b17eec3f7915c21251685e16123f299" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_babysitter_get_child_exit_status</definition>
+        <argsstring>(DBusBabysitter *sitter, int *status)</argsstring>
+        <name>_dbus_babysitter_get_child_exit_status</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Gets the exit status of the child. </para>        </briefdescription>
+        <detaileddescription>
+<para>We do this so implementation specific detail is not cluttering up dbus, for example the system launcher code. This can only be called if the child has exited, i.e. call <ref refid="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" kindref="member">_dbus_babysitter_get_child_exited()</ref>. It returns FALSE if the child did not return a status code, e.g. because the child was signaled or we failed to ever launch the child in the first place.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the returned status code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="57" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="303" bodyend="315"/>
+        <references refid="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" compoundref="dbus-spawn_8c" startline="706" endline="716">_dbus_babysitter_get_child_exited</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusBabysitter_1a6b3aa53fa01507b290bf575f5cc088e3" compoundref="dbus-spawn_8c" startline="261">DBusBabysitter::status</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_babysitter_set_watch_functions</definition>
+        <argsstring>(DBusBabysitter *sitter, DBusAddWatchFunction add_function, DBusRemoveWatchFunction remove_function, DBusWatchToggledFunction toggled_function, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>_dbus_babysitter_set_watch_functions</name>
+        <param>
+          <type><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref> *</type>
+          <declname>sitter</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga285ce1f8bb94ef2f89f23db3de8cfe4b" kindref="member">DBusAddWatchFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga487ca73e58570f302ba7159c81719243" kindref="member">DBusRemoveWatchFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga005459ba2ddd69ba2d89f0e04ef57b10" kindref="member">DBusWatchToggledFunction</ref></type>
+          <declname>toggled_function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets watch functions to notify us when the babysitter object needs to read/write file descriptors. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sitter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the babysitter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>add_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to begin monitoring a new descriptor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remove_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to stop monitoring a descriptor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toggled_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to notify when the watch is enabled/disabled </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to add_function and remove_function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure (no memory) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-spawn.h" line="59" column="1" bodyfile="dbus/dbus-spawn-win.c" bodystart="361" bodyend="375"/>
+        <references refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</references>
+        <references refid="structDBusBabysitter_1ae0219a288aa52775dee075b80ab8c170" compoundref="dbus-spawn-win_8c" startline="83">DBusBabysitter::watches</references>
+        <references refid="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" compoundref="dbus-spawn_8c" startline="706" endline="716">_dbus_babysitter_get_child_exited</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" compoundref="dbus-memory_8c" startline="461" endline="516">dbus_malloc</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga525b5fdb780ddf6891918466965e6eb6" compoundref="dbus-spawn_8c" startline="302" endline="310">_dbus_babysitter_ref</references>
+        <references refid="structDBusBabysitter_1aa5f57474dbc3603fd888430496769778" compoundref="dbus-spawn-win_8c" startline="71">DBusBabysitter::log_name</references>
+        <references refid="structDBusBabysitter_1a6b3aa53fa01507b290bf575f5cc088e3" compoundref="dbus-spawn_8c" startline="261">DBusBabysitter::status</references>
+        <references refid="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" compoundref="dbus-spawn_8c" startline="324" endline="402">_dbus_babysitter_unref</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4" compoundref="dbus-connection_8h" startline="60">DBUS_WATCH_READABLE</references>
+        <references refid="group__DBusSysdeps_1ga96b5ba58b9939d789bfece0d9bb82f41" compoundref="dbus-sysdeps_8h" startline="294">_DBUS_POLLIN</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98ab1474e26aa5be3d2876dd86bbe452156" compoundref="dbus-connection_8h" startline="62">DBUS_WATCH_ERROR</references>
+        <references refid="group__DBusSysdeps_1ga231164196ff407eccb732452a2d36468" compoundref="dbus-sysdeps_8h" startline="300">_DBUS_POLLERR</references>
+        <references refid="group__DBusConnection_1gga0556779e61aeb19eb9cf6b6466bd1b98a7a361a1a03f463c3c9e57f7368a0bfe4" compoundref="dbus-connection_8h" startline="67">DBUS_WATCH_HANGUP</references>
+        <references refid="group__DBusSysdeps_1ga6f08232c1f943313e3eefd7de8f3592f" compoundref="dbus-sysdeps_8h" startline="302">_DBUS_POLLHUP</references>
+        <references refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" compoundref="dbus-watch_8c" startline="586" endline="591">dbus_watch_get_socket</references>
+        <references refid="structDBusBabysitter_1abc42ea27fa4ee1e4f04819364e0a9bde" compoundref="dbus-spawn_8c" startline="247">DBusBabysitter::error_pipe_from_child</references>
+        <references refid="structDBusBabysitter_1a9b5fa1cf7463e6e88308b85788e232a1" compoundref="dbus-spawn-win_8c" startline="80">DBusBabysitter::socket_to_babysitter</references>
+        <references refid="group__DBusInternalsUtils_1gaf3ce8172242a1766bdd5cfe4b0a05d1f" compoundref="dbus-spawn_8c" startline="675">LIVE_CHILDREN</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusBabysitter_1a1f01b1d3775f4b3437a01117cf8ddfcb" compoundref="dbus-spawn-win_8c" startline="84">DBusBabysitter::sitter_watch</references>
+        <references refid="structDBusBabysitter_1ae89fdf7339b921a19728a2c8abfad251" compoundref="dbus-spawn_8c" startline="254">DBusBabysitter::error_watch</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-spawn.h<sp/>Wrapper<sp/>around<sp/>fork/exec</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_SPAWN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_SPAWN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-errors.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-watch.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<sp/>DBusSpawnChildSetupFunc)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user_data);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<sp/>DBusBabysitterFinishedFunc)<sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/>*sitter,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*user_data);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" kindref="member">_dbus_spawn_async_with_babysitter</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**sitter_p,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusBabysitter_1aa5f57474dbc3603fd888430496769778" kindref="member">log_name</ref>,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**argv,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**env,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DBusSpawnChildSetupFunc<sp/><sp/><sp/><sp/>child_setup,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*user_data,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_babysitter_set_result_function<sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DBusBabysitterFinishedFunc<sp/>finished,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*user_data);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref>*<sp/><ref refid="group__DBusInternalsUtils_1ga525b5fdb780ddf6891918466965e6eb6" kindref="member">_dbus_babysitter_ref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" kindref="member">_dbus_babysitter_unref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1gacdc9c49735d6ce8364647c1961aa8d2b" kindref="member">_dbus_babysitter_kill_child</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga5c463ea356ea62055a35211e8d81f8b9" kindref="member">_dbus_babysitter_get_child_exited</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" kindref="member">_dbus_babysitter_set_child_exit_error</ref><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga1b17eec3f7915c21251685e16123f299" kindref="member">_dbus_babysitter_get_child_exit_status</ref><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusBabysitter_1a6b3aa53fa01507b290bf575f5cc088e3" kindref="member">status</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" kindref="member">_dbus_babysitter_set_watch_functions</ref><sp/><sp/>(<ref refid="structDBusBabysitter" kindref="compound">DBusBabysitter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sitter,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga285ce1f8bb94ef2f89f23db3de8cfe4b" kindref="member">DBusAddWatchFunction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_function,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga487ca73e58570f302ba7159c81719243" kindref="member">DBusRemoveWatchFunction</ref><sp/><sp/><sp/><sp/>remove_function,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga005459ba2ddd69ba2d89f0e04ef57b10" kindref="member">DBusWatchToggledFunction</ref><sp/><sp/><sp/>toggled_function,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_data_function);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_SPAWN_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-spawn.h"/>
+  </compounddef>
+</doxygen>

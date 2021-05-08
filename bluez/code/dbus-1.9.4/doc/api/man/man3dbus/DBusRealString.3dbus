@@ -1,0 +1,64 @@
+.TH "DBusRealString" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusRealString \- Internals of \fBDBusString\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-string\-private\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned char * \fBstr\fP"
+.br
+.RI "\fIString data, plus nul termination\&. \fP"
+.ti -1c
+.RI "int \fBlen\fP"
+.br
+.RI "\fILength without nul\&. \fP"
+.ti -1c
+.RI "int \fBallocated\fP"
+.br
+.RI "\fIAllocated size of data\&. \fP"
+.ti -1c
+.RI "unsigned int \fBconstant\fP: 1"
+.br
+.RI "\fIString data is not owned by \fBDBusString\fP\&. \fP"
+.ti -1c
+.RI "unsigned int \fBlocked\fP: 1"
+.br
+.RI "\fI\fBDBusString\fP has been locked and can't be changed\&. \fP"
+.ti -1c
+.RI "unsigned int \fBinvalid\fP: 1"
+.br
+.RI "\fI\fBDBusString\fP is invalid (e\&.g\&. \fP"
+.ti -1c
+.RI "unsigned int \fBalign_offset\fP: 3"
+.br
+.RI "\fIstr - align_offset is the actual malloc block \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusString\fP\&. 
+
+\fBDBusString\fP internals\&. \fBDBusString\fP is an opaque objects, it must be used via accessor functions\&. 
+.PP
+Definition at line 43 of file dbus\-string\-private\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "unsigned int DBusRealString::invalid"
+
+.PP
+\fBDBusString\fP is invalid (e\&.g\&. already freed) 
+.PP
+Definition at line 50 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_free(), _dbus_string_init_const_len(), and _dbus_string_init_preallocated()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

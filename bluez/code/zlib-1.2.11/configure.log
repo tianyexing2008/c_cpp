@@ -1,0 +1,2296 @@
+--------------------
+./configure --prefix=/usr/etc/bluez/
+Sun Jun 28 18:31:07 CST 2020
+=== ztest41745.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest41745.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest41745.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest41745.c
+
+Checking for shared library support...
+=== ztest41745.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest41745.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest41745.so ztest41745.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest41745.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest41745.c
+Checking for size_t... Yes.
+
+
+=== ztest41745.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest41745.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest41745 ztest41745.c
+Checking for strerror... Yes.
+
+=== ztest41745.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking for unistd.h... Yes.
+
+=== ztest41745.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking for stdarg.h... Yes.
+
+=== ztest41745.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest41745.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest41745 ztest41745.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest41745.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest41745.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest41745.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/etc/bluez/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/usr/etc/bluez/
+Sun Jun 28 18:33:35 CST 2020
+=== ztest52586.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest52586.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest52586.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest52586.c
+
+Checking for shared library support...
+=== ztest52586.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest52586.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest52586.so ztest52586.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest52586.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest52586.c
+Checking for size_t... Yes.
+
+
+=== ztest52586.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest52586.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest52586 ztest52586.c
+Checking for strerror... Yes.
+
+=== ztest52586.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking for unistd.h... Yes.
+
+=== ztest52586.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking for stdarg.h... Yes.
+
+=== ztest52586.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest52586.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest52586 ztest52586.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest52586.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest52586.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest52586.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/etc/bluez/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/kuixiu/workspace/tools/outdir/
+Mon Feb 22 19:25:00 CST 2021
+=== ztest500.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest500.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest500.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest500.c
+
+Checking for shared library support...
+=== ztest500.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest500.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest500.so ztest500.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest500.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest500.c
+Checking for size_t... Yes.
+
+
+=== ztest500.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest500.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest500 ztest500.c
+Checking for strerror... Yes.
+
+=== ztest500.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking for unistd.h... Yes.
+
+=== ztest500.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking for stdarg.h... Yes.
+
+=== ztest500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest500 ztest500.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest500.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest500.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/kuixiu/workspace/tools/outdir/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/kuixiu/workspace/tools/outdir/
+Mon Feb 22 20:37:25 CST 2021
+=== ztest15591.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest15591.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest15591.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest15591.c
+
+Checking for shared library support...
+=== ztest15591.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest15591.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest15591.so ztest15591.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest15591.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest15591.c
+Checking for size_t... Yes.
+
+
+=== ztest15591.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest15591.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest15591 ztest15591.c
+Checking for strerror... Yes.
+
+=== ztest15591.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking for unistd.h... Yes.
+
+=== ztest15591.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking for stdarg.h... Yes.
+
+=== ztest15591.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest15591.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest15591 ztest15591.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest15591.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest15591.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15591.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/kuixiu/workspace/tools/outdir/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/kuixiu/workspace/tools/outdir/
+Mon Feb 22 20:52:23 CST 2021
+=== ztest38300.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest38300.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest38300.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest38300.c
+
+Checking for shared library support...
+=== ztest38300.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest38300.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest38300.so ztest38300.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest38300.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest38300.c
+Checking for size_t... Yes.
+
+
+=== ztest38300.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest38300.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest38300 ztest38300.c
+Checking for strerror... Yes.
+
+=== ztest38300.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking for unistd.h... Yes.
+
+=== ztest38300.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking for stdarg.h... Yes.
+
+=== ztest38300.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest38300.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest38300 ztest38300.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest38300.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest38300.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest38300.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/kuixiu/workspace/tools/outdir/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/kuixiu/workspace/tools/outdir/
+Mon Feb 22 20:52:31 CST 2021
+=== ztest39079.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest39079.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest39079.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest39079.c
+
+Checking for shared library support...
+=== ztest39079.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest39079.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest39079.so ztest39079.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest39079.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest39079.c
+Checking for size_t... Yes.
+
+
+=== ztest39079.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest39079.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest39079 ztest39079.c
+Checking for strerror... Yes.
+
+=== ztest39079.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking for unistd.h... Yes.
+
+=== ztest39079.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking for stdarg.h... Yes.
+
+=== ztest39079.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest39079.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest39079 ztest39079.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest39079.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest39079.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest39079.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/kuixiu/workspace/tools/outdir/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/kuixiu/workspace/tools/outdir/
+Mon Feb 22 21:17:48 CST 2021
+=== ztest79709.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest79709.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest79709.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest79709.c
+
+Checking for shared library support...
+=== ztest79709.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest79709.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest79709.so ztest79709.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest79709.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest79709.c
+Checking for size_t... Yes.
+
+
+=== ztest79709.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest79709.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest79709 ztest79709.c
+Checking for strerror... Yes.
+
+=== ztest79709.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking for unistd.h... Yes.
+
+=== ztest79709.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking for stdarg.h... Yes.
+
+=== ztest79709.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest79709.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest79709 ztest79709.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest79709.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest79709.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest79709.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/kuixiu/workspace/tools/outdir/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Wed Mar  3 10:26:13 CST 2021
+=== ztest37877.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest37877.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest37877.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest37877.c
+
+Checking for shared library support...
+=== ztest37877.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest37877.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest37877.so ztest37877.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest37877.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest37877.c
+Checking for size_t... Yes.
+
+
+=== ztest37877.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest37877.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest37877 ztest37877.c
+Checking for strerror... Yes.
+
+=== ztest37877.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking for unistd.h... Yes.
+
+=== ztest37877.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking for stdarg.h... Yes.
+
+=== ztest37877.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest37877.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest37877 ztest37877.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest37877.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest37877.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest37877.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Thu Mar  4 21:05:47 CST 2021
+=== ztest61760.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest61760.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest61760.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest61760.c
+
+Checking for shared library support...
+=== ztest61760.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest61760.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest61760.so ztest61760.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest61760.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest61760.c
+Checking for size_t... Yes.
+
+
+=== ztest61760.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest61760.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest61760 ztest61760.c
+Checking for strerror... Yes.
+
+=== ztest61760.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking for unistd.h... Yes.
+
+=== ztest61760.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking for stdarg.h... Yes.
+
+=== ztest61760.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest61760.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest61760 ztest61760.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest61760.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest61760.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest61760.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Fri Mar  5 10:18:49 CST 2021
+=== ztest56407.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest56407.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest56407.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest56407.c
+
+Checking for shared library support...
+=== ztest56407.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest56407.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest56407.so ztest56407.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest56407.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest56407.c
+Checking for size_t... Yes.
+
+
+=== ztest56407.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest56407.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest56407 ztest56407.c
+Checking for strerror... Yes.
+
+=== ztest56407.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking for unistd.h... Yes.
+
+=== ztest56407.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking for stdarg.h... Yes.
+
+=== ztest56407.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest56407.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest56407 ztest56407.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest56407.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest56407.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest56407.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Fri Mar  5 10:38:12 CST 2021
+=== ztest87383.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest87383.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest87383.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest87383.c
+
+Checking for shared library support...
+=== ztest87383.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest87383.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest87383.so ztest87383.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest87383.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest87383.c
+Checking for size_t... Yes.
+
+
+=== ztest87383.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest87383.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest87383 ztest87383.c
+Checking for strerror... Yes.
+
+=== ztest87383.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking for unistd.h... Yes.
+
+=== ztest87383.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking for stdarg.h... Yes.
+
+=== ztest87383.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest87383.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest87383 ztest87383.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest87383.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest87383.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest87383.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Fri Mar  5 10:50:27 CST 2021
+=== ztest12812.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest12812.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest12812.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest12812.c
+
+Checking for shared library support...
+=== ztest12812.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest12812.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest12812.so ztest12812.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest12812.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest12812.c
+Checking for size_t... Yes.
+
+
+=== ztest12812.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest12812.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest12812 ztest12812.c
+Checking for strerror... Yes.
+
+=== ztest12812.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking for unistd.h... Yes.
+
+=== ztest12812.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking for stdarg.h... Yes.
+
+=== ztest12812.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest12812.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest12812 ztest12812.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest12812.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest12812.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest12812.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Fri Mar  5 11:02:34 CST 2021
+=== ztest27098.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest27098.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest27098.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest27098.c
+
+Checking for shared library support...
+=== ztest27098.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest27098.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest27098.so ztest27098.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest27098.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest27098.c
+Checking for size_t... Yes.
+
+
+=== ztest27098.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest27098.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest27098 ztest27098.c
+Checking for strerror... Yes.
+
+=== ztest27098.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking for unistd.h... Yes.
+
+=== ztest27098.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking for stdarg.h... Yes.
+
+=== ztest27098.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest27098.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest27098 ztest27098.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest27098.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest27098.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest27098.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/disk4/liangshen/practice/bluez_outdir
+Fri Mar  5 11:13:46 CST 2021
+=== ztest43337.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -c ztest43337.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest43337.c ===
+int foo() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 ztest43337.c
+
+Checking for shared library support...
+=== ztest43337.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-himix200-linux-gcc -w -c -O3 -fPIC ztest43337.c
+arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest43337.so ztest43337.o
+Building shared library libz.so.1.2.11 with arm-himix200-linux-gcc.
+
+=== ztest43337.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 ztest43337.c
+Checking for size_t... Yes.
+
+
+=== ztest43337.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest43337.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest43337 ztest43337.c
+Checking for strerror... Yes.
+
+=== ztest43337.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking for unistd.h... Yes.
+
+=== ztest43337.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking for stdarg.h... Yes.
+
+=== ztest43337.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest43337.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest43337 ztest43337.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest43337.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest43337.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-himix200-linux-gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest43337.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = arm-himix200-linux-gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-himix200-linux-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-himix200-linux-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /disk4/liangshen/practice/bluez_outdir
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+

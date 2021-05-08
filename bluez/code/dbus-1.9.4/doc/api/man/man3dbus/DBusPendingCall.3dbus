@@ -1,0 +1,72 @@
+.TH "DBusPendingCall" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusPendingCall \- Implementation details of \fBDBusPendingCall\fP - all fields are private\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusAtomic\fP \fBrefcount\fP"
+.br
+.RI "\fIreference count \fP"
+.ti -1c
+.RI "\fBDBusDataSlotList\fP \fBslot_list\fP"
+.br
+.RI "\fIData stored by allocated integer ID\&. \fP"
+.ti -1c
+.RI "\fBDBusPendingCallNotifyFunction\fP \fBfunction\fP"
+.br
+.RI "\fINotifier when reply arrives\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP * \fBconnection\fP"
+.br
+.RI "\fIConnections we're associated with\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage\fP * \fBreply\fP"
+.br
+.RI "\fIReply (after we've received it) \fP"
+.ti -1c
+.RI "\fBDBusTimeout\fP * \fBtimeout\fP"
+.br
+.RI "\fITimeout\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBtimeout_link\fP"
+.br
+.RI "\fIPreallocated timeout response\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBreply_serial\fP"
+.br
+.RI "\fIExpected serial of reply\&. \fP"
+.ti -1c
+.RI "unsigned int \fBcompleted\fP: 1"
+.br
+.RI "\fITRUE if completed\&. \fP"
+.ti -1c
+.RI "unsigned int \fBtimeout_added\fP: 1"
+.br
+.RI "\fIHave added the timeout\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusPendingCall\fP - all fields are private\&. 
+.PP
+Definition at line 62 of file dbus\-pending\-call\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusPendingCallNotifyFunction\fP DBusPendingCall::function"
+
+.PP
+Notifier when reply arrives\&. 
+.PP
+Definition at line 68 of file dbus\-pending\-call\&.c\&.
+.PP
+Referenced by _dbus_pending_call_complete(), and dbus_pending_call_set_notify()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,78 @@
+.TH "DBusBasicValue" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusBasicValue \- A simple value union that lets you access bytes as if they were various types; useful when dealing with basic types via void pointers and varargs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-types\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBbytes\fP [8]"
+.br
+.RI "\fIas 8 individual bytes \fP"
+.ti -1c
+.RI "\fBdbus_int16_t\fP \fBi16\fP"
+.br
+.RI "\fIas int16 \fP"
+.ti -1c
+.RI "\fBdbus_uint16_t\fP \fBu16\fP"
+.br
+.RI "\fIas int16 \fP"
+.ti -1c
+.RI "\fBdbus_int32_t\fP \fBi32\fP"
+.br
+.RI "\fIas int32 \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBu32\fP"
+.br
+.RI "\fIas int32 \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBbool_val\fP"
+.br
+.RI "\fIas boolean \fP"
+.ti -1c
+.RI "\fBdbus_int64_t\fP \fBi64\fP"
+.br
+.RI "\fIas int64 \fP"
+.ti -1c
+.RI "\fBdbus_uint64_t\fP \fBu64\fP"
+.br
+.RI "\fIas int64 \fP"
+.ti -1c
+.RI "\fBDBus8ByteStruct\fP \fBeight\fP"
+.br
+.RI "\fIas 8-byte struct \fP"
+.ti -1c
+.RI "double \fBdbl\fP"
+.br
+.RI "\fIas double \fP"
+.ti -1c
+.RI "unsigned char \fBbyt\fP"
+.br
+.RI "\fIas byte \fP"
+.ti -1c
+.RI "char * \fBstr\fP"
+.br
+.RI "\fIas char* (string, object path or signature) \fP"
+.ti -1c
+.RI "int \fBfd\fP"
+.br
+.RI "\fIas Unix file descriptor \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A simple value union that lets you access bytes as if they were various types; useful when dealing with basic types via void pointers and varargs\&. 
+
+This union also contains a pointer member (which can be used to retrieve a string from \fBdbus_message_iter_get_basic()\fP, for instance), so on future platforms it could conceivably be larger than 8 bytes\&. 
+.PP
+Definition at line 137 of file dbus\-types\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

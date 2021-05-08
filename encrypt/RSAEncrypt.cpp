@@ -1,8 +1,10 @@
 #include <openssl/pem.h>
 #include <cstring>
 #include <iostream>
-#include <json.h>
+#include "json/json.h"
 #include "RSAEncrypt.h"
+
+#define SPLIT_LEN 117
 
 static const std::string base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
@@ -102,13 +104,14 @@ std::string base64Decode(std::string const& src) {
     return ret;
 }
 
+//获取单例
 CRSAEnCrypt* CRSAEnCrypt::getInstance() 
 {
     static CRSAEnCrypt instance;
     return &instance;
 }
 
-//
+//初始化公钥、私钥
 void CRSAEnCrypt::initkey(const char *privateKey, const char *publicKey)
 {
     if(m_pubKey.empty())
@@ -122,7 +125,8 @@ void CRSAEnCrypt::initkey(const char *privateKey, const char *publicKey)
     }
 }
 
-std::string CRSAEnCrypt::rsaPublicEncrypt(const std::string &clearText)
+//加密
+std::string CRSAEnCrypt::rsaPublicKeyEncrypt(const std::string &clearText)
 {
     std::string strRet;
     BIO *keybio = BIO_new_mem_buf((unsigned char *)m_pubKey.c_str(), -1);
@@ -136,7 +140,6 @@ std::string CRSAEnCrypt::rsaPublicEncrypt(const std::string &clearText)
     }
 
     int len = RSA_size(rsa);
-    //int len = 1028;
     char *encryptedText = (char *)malloc(len + 1);
     memset(encryptedText, 0, len + 1);
 
@@ -155,43 +158,36 @@ std::string CRSAEnCrypt::rsaPublicEncrypt(const std::string &clearText)
     return strRet;
 }
 
-//公钥加密 + 分片
-std::string CRSAEnCrypt::rsaSliptPublicEncrypt(const std::string &clearText)
+//公钥加密，分段处理
+std::string CRSAEnCrypt::rsaPublicKeyEncryptSplit(const std::string &clearText)
 {
     std::string result;
     std::string input;
     result.clear();
 
-    for(int i = 0 ; i< clearText.length() / 117; i++)
+    for(int i = 0 ; i< clearText.length() / SPLIT_LEN; i++)
     {  
         input.clear();
-        input.assign(clearText.begin() + i*117, clearText.begin() + i*117 + 117);
-
-        std::string tmp;
-        tmp = rsaPublicEncrypt(input);
-        result = result + tmp;//base64Encode((uint8_t*)tmp.c_str(), tmp.length());
-
+        input.assign(clearText.begin() + i * SPLIT_LEN, clearText.begin() + i * SPLIT_LEN + SPLIT_LEN);
+        result = result + rsaPublicKeyEncrypt(input);
     }
 
-    if(clearText.length() % 117 != 0)
+    if(clearText.length() % SPLIT_LEN != 0)
     {
-        int tem1 = clearText.length() / 117 * 117;
+        int32_t tmp = clearText.length() / SPLIT_LEN * SPLIT_LEN;
         input.clear();
-        input.assign(clearText.begin()+ tem1, clearText.end());
-
-        std::string tmp;
-        tmp = rsaPublicEncrypt(input);
-        result = result + tmp;//base64Encode((uint8_t*)tmp.c_str(), tmp.length());
+        input.assign(clearText.begin() + tmp, clearText.end());
+        result = result + rsaPublicKeyEncrypt(input);
     }
 
-    // std::string encode_str = base64Encode((uint8_t*)result.c_str(), result.length());
-    // return encode_str;
-
-    return result;
+    printf("before base64 len: %lu\n", result.length());
+    std::string encode_str = base64Encode((uint8_t*)result.c_str(), result.length());
+    printf("after base64 len: %lu\n", encode_str.length());
+    return encode_str;
 }
 
-// 公钥解密
-std::string CRSAEnCrypt::rsaPublicDecrypt(const std::string &clearText)
+//公钥解密
+std::string CRSAEnCrypt::rsaPublicKeyDecrypt(const std::string &clearText)
 {
     std::string strRet;
     BIO *keybio = BIO_new_mem_buf((unsigned char *)m_pubKey.c_str(), -1);
@@ -204,13 +200,15 @@ std::string CRSAEnCrypt::rsaPublicDecrypt(const std::string &clearText)
     }
 
     int len = RSA_size(rsa);
-    //int len = 1028;
     char *encryptedText = (char *)malloc(len + 1);
     memset(encryptedText, 0, len + 1);
+
     //解密
     int ret = RSA_public_decrypt(clearText.length(), (const unsigned char*)clearText.c_str(), (unsigned char*)encryptedText, rsa, RSA_PKCS1_PADDING);
     if (ret >= 0)
-    strRet = std::string(encryptedText, ret);
+    {
+        strRet = std::string(encryptedText, ret);
+    }
 
     // 释放内存
     free(encryptedText);
@@ -219,8 +217,8 @@ std::string CRSAEnCrypt::rsaPublicDecrypt(const std::string &clearText)
     return strRet;
 }
 
-//私钥解密
-std::string CRSAEnCrypt::rsaPrivateDecrypt(const std::string &clearText)
+//私钥解密，分段处理
+std::string CRSAEnCrypt::rsaPrivateKeyDecrypt(const std::string &clearText)
 {
     std::string strRet;
     BIO *keybio = BIO_new_mem_buf((unsigned char *)m_privateKey.c_str(), -1);
@@ -251,10 +249,12 @@ std::string CRSAEnCrypt::rsaPrivateDecrypt(const std::string &clearText)
     return strRet;
 }
 
-//公钥解密 + 分片
-std::string CRSAEnCrypt::rsaSliptPublicDecrypt(const std::string &data)
-{
+//公钥解密
+std::string CRSAEnCrypt::rsaPublicKeyDecryptSplit(const std::string &data)
+{    
+    printf("before base64Decode len: %lu\n", data.length());
     std::string clearText = base64Decode(data);
+    printf("after base64Decode len: %lu\n", clearText.length());
     std::string result;
     std::string input;
     result.clear();
@@ -262,7 +262,7 @@ std::string CRSAEnCrypt::rsaSliptPublicDecrypt(const std::string &data)
     {
         input.clear();
         input.assign(clearText.begin() + i * 128, clearText.begin() + i * 128 + 128);
-        result = result + rsaPublicDecrypt(input);
+        result = result + rsaPublicKeyDecrypt(input);
     }
 
     if(clearText.length() % 128 != 0)
@@ -270,16 +270,19 @@ std::string CRSAEnCrypt::rsaSliptPublicDecrypt(const std::string &data)
         int tem1 = clearText.length()/128 * 128;
         input.clear();
         input.assign(clearText.begin()+ tem1, clearText.end());
-        result = result + rsaPublicDecrypt(input);
+        result = result + rsaPublicKeyDecrypt(input);
     }
 
     return result;
 }
 
 //私钥解密 + 分片
-std::string CRSAEnCrypt::rsaSliptPrivateDecrypt(const std::string &Text)
+std::string CRSAEnCrypt::rsaPrivateKeyDecryptSplit(const std::string &Text)
 {
-    std::string clearText = Text;//base64Decode(Text);
+    printf("before base64Decode len: %lu\n", Text.length());
+    std::string clearText = base64Decode(Text);
+    printf("after base64Decode len: %lu\n", clearText.length());
+    
     //printf("BaseDecode len: %lu\n", clearText.length());
     std::string result;
     std::string input;
@@ -288,7 +291,7 @@ std::string CRSAEnCrypt::rsaSliptPrivateDecrypt(const std::string &Text)
     {
         input.clear();
         input.assign(clearText.begin() + i * 128, clearText.begin() + i * 128 + 128);
-        result = result + rsaPrivateDecrypt(input);
+        result = result + rsaPrivateKeyDecrypt(input);
     }
 
     if(clearText.length() % 128 != 0)
@@ -296,7 +299,7 @@ std::string CRSAEnCrypt::rsaSliptPrivateDecrypt(const std::string &Text)
         int tem1 = clearText.length()/128 * 128;
         input.clear();
         input.assign(clearText.begin()+ tem1, clearText.end());
-        result = result + rsaPrivateDecrypt(input);
+        result = result + rsaPrivateKeyDecrypt(input);
     }
 
     return result;    
@@ -330,13 +333,20 @@ ME+8N7vjifjYXW0=\n\
 
 std::string jsonToString(const Json::Value &value)
 {
+    //这个是最新json库的用法
+    // Json::StreamWriterBuilder build;
+    // build.settings_["indentation"] = "";
+    // std::unique_ptr<Json::StreamWriter> writer(build.newStreamWriter());
+    // std::ostringstream os;
+    // writer->write(value,&os);
+    // return os.str();
 
-    Json::StreamWriterBuilder build;
-    build.settings_["indentation"] = "";
-    std::unique_ptr<Json::StreamWriter> writer(build.newStreamWriter());
-    std::ostringstream os;
-    writer->write(value,&os);
-    return os.str();
+    //老json库
+    std::string jsonStr;
+    Json::FastWriter fast_writer;
+    jsonStr = fast_writer.write(value);
+
+    return jsonStr;
 }
 
 
@@ -355,6 +365,7 @@ int main()
 
     CRSAEnCrypt::getInstance()->initkey(privateKey, publicKey);
     std::string sourceStr = jsonToString(postMsg);
+    printf("string of json: %s\n", sourceStr.c_str());
 
     //单独测试base64加密、解密
     // std::string encodeStr = base64Encode((uint8_t *)sourceStr.c_str(), sourceStr.length());
@@ -362,11 +373,12 @@ int main()
     // std::string decodeStr = base64Decode(encodeStr);
     // printf("decodeStr len: %lu, %s\n", decodeStr.length(), decodeStr.c_str());
 
-    std::string test("hello world");
-    std::string rsaEncryptStr = CRSAEnCrypt::getInstance()->rsaSliptPublicEncrypt(test);
+    //公钥加密
+    std::string rsaEncryptStr = CRSAEnCrypt::getInstance()->rsaPublicKeyEncryptSplit(sourceStr);
     printf("after rsaEncryptStr len: %lu\n", rsaEncryptStr.length());
 
-    std::string rsaDecryptStr = CRSAEnCrypt::getInstance()->rsaSliptPrivateDecrypt(rsaEncryptStr);
+    //私钥解密
+    std::string rsaDecryptStr = CRSAEnCrypt::getInstance()->rsaPrivateKeyDecryptSplit(rsaEncryptStr);
     printf("after rsaDecryptStr: %lu, %s\n", rsaDecryptStr.length(), rsaDecryptStr.c_str());
 
     return 0;

@@ -1,0 +1,74 @@
+.TH "DBusTimeoutList" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTimeoutList \- \fBDBusTimeoutList\fP implementation details\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusList\fP * \fBtimeouts\fP"
+.br
+.RI "\fITimeout objects\&. \fP"
+.ti -1c
+.RI "\fBDBusAddTimeoutFunction\fP \fBadd_timeout_function\fP"
+.br
+.RI "\fICallback for adding a timeout\&. \fP"
+.ti -1c
+.RI "\fBDBusRemoveTimeoutFunction\fP \fBremove_timeout_function\fP"
+.br
+.RI "\fICallback for removing a timeout\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeoutToggledFunction\fP \fBtimeout_toggled_function\fP"
+.br
+.RI "\fICallback when timeout is enabled/disabled or changes interval\&. \fP"
+.ti -1c
+.RI "void * \fBtimeout_data\fP"
+.br
+.RI "\fIData for timeout callbacks\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBtimeout_free_data_function\fP"
+.br
+.RI "\fIFree function for timeout callback data\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusTimeoutList\fP implementation details\&. 
+
+All fields are private\&. 
+.PP
+Definition at line 176 of file dbus\-timeout\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusAddTimeoutFunction\fP DBusTimeoutList::add_timeout_function"
+
+.PP
+Callback for adding a timeout\&. 
+.PP
+Definition at line 180 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_add_timeout(), and _dbus_timeout_list_set_functions()\&.
+.SS "\fBDBusRemoveTimeoutFunction\fP DBusTimeoutList::remove_timeout_function"
+
+.PP
+Callback for removing a timeout\&. 
+.PP
+Definition at line 181 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_remove_timeout(), and _dbus_timeout_list_set_functions()\&.
+.SS "\fBDBusList\fP* DBusTimeoutList::timeouts"
+
+.PP
+Timeout objects\&. 
+.PP
+Definition at line 178 of file dbus\-timeout\&.c\&.
+.PP
+Referenced by _dbus_timeout_list_add_timeout(), _dbus_timeout_list_free(), _dbus_timeout_list_remove_timeout(), and _dbus_timeout_list_set_functions()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

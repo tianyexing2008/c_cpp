@@ -1,0 +1,40 @@
+.TH "DBusHeader" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusHeader \- Message header data and some cached details of it\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-marshal\-header\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusString\fP \fBdata\fP"
+.br
+.RI "\fIHeader network data, stored separately from body so we can independently realloc it\&. \fP"
+.ti -1c
+.RI "\fBDBusHeaderField\fP \fBfields\fP [\fBDBUS_HEADER_FIELD_LAST\fP+1]"
+.br
+.RI "\fITrack the location of each field in header\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBpadding\fP: 3"
+.br
+.RI "\fIbytes of alignment in header \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBbyte_order\fP: 8"
+.br
+.RI "\fIbyte order of header \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Message header data and some cached details of it\&. 
+.PP
+Definition at line 47 of file dbus\-marshal\-header\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

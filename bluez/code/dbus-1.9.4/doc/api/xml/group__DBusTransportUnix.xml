@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusTransportUnix" kind="group">
+    <compoundname>DBusTransportUnix</compoundname>
+    <title>DBusTransport implementations for UNIX</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+        <definition>DBusTransport* _dbus_transport_new_for_domain_socket</definition>
+        <argsstring>(const char *path, dbus_bool_t abstract, DBusError *error)</argsstring>
+        <name>_dbus_transport_new_for_domain_socket</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>abstract</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new transport for the given Unix domain socket path. </para>        </briefdescription>
+        <detaileddescription>
+<para>This creates a client-side of a transport.</para><para><xrefsect id="todo_1_todo000065"><xreftitle>Todo</xreftitle><xrefdescription><para>once we add a way to escape paths in a dbus address, this function needs to do escaping.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to the domain socket. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>abstract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to use abstract socket namespace </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new transport, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-unix.c" line="58" column="1" bodyfile="dbus/dbus-transport-unix.c" bodystart="58" bodyend="112"/>
+        <references refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-unix_8c" startline="204" endline="208">_dbus_close_socket</references>
+        <references refid="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" compoundref="dbus-sysdeps-unix_8c" startline="929" endline="1015">_dbus_connect_exec</references>
+        <references refid="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" compoundref="dbus-sysdeps-unix_8c" startline="833" endline="914">_dbus_connect_unix_socket</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1gab0078cf7e0e5bd784ec6d6e0cc3923a2" compoundref="dbus-string_8c" startline="1113" endline="1125">_dbus_string_append_printf</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</references>
+        <references refid="group__DBusAddress_1ga818e79423595cd2a306ec1b4dc1ab7f5" compoundref="dbus-address_8c" startline="583" endline="605">dbus_address_escape_value</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportUnix_1ga62d9b58f4dd550715a8f6bdb551de1f1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> *</type>
+        <definition>static DBusTransport* _dbus_transport_new_for_exec</definition>
+        <argsstring>(const char *path, char *const argv[], DBusError *error)</argsstring>
+        <name>_dbus_transport_new_for_exec</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>char *const</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new transport for the given binary and arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>This creates a client-side of a transport. The process will be forked off and executed with stdin/stdout connected to a local AF_UNIX socket.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to the domain socket. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameters list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new transport, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-unix.c" line="126" column="1" bodyfile="dbus/dbus-transport-unix.c" bodystart="126" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusTransportOpenResult</type>
+        <definition>DBusTransportOpenResult _dbus_transport_open_platform_specific</definition>
+        <argsstring>(DBusAddressEntry *entry, DBusTransport **transport_p, DBusError *error)</argsstring>
+        <name>_dbus_transport_open_platform_specific</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> **</type>
+          <declname>transport_p</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Opens platform specific transport types. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address entry to try opening </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transport_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for the opened transport </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result of the attempt </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-transport-unix.c" line="225" column="1" bodyfile="dbus/dbus-transport-unix.c" bodystart="225" bodyend="411"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</references>
+        <references refid="group__DBusAddressInternals_1ga5b6409826263c7d62570c56889f7ddb2" compoundref="dbus-address_8c" startline="65" endline="78">_dbus_set_bad_address</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</references>
+        <references refid="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" compoundref="dbus-address_8c" startline="227" endline="230">dbus_address_entry_get_method</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" compoundref="dbus-connection_8c" startline="2616" endline="2629">dbus_connection_open</references>
+        <references refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation details of <ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> on UNIX. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

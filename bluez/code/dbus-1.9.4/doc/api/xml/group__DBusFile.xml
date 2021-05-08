@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusFile" kind="group">
+    <compoundname>DBusFile</compoundname>
+    <title>DBusFile</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_file_exists</definition>
+        <argsstring>(const char *file)</argsstring>
+        <name>_dbus_file_exists</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>File interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>File interface.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>full path to the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if file exists </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="42" column="1" bodyfile="dbus/dbus-sysdeps-util-unix.c" bodystart="633" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_file_get_contents</definition>
+        <argsstring>(DBusString *str, const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_file_get_contents</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Appends the contents of the given file to the string, returning error code. </para>        </briefdescription>
+        <detaileddescription>
+<para>At the moment, won&apos;t open a file more than a megabyte in size.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to append to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename to load </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to set an error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error was set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="43" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="55" bodyend="151"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusSysdepsUnix_1gaf52cb1d5b9fc5611808ce32eff898c28" compoundref="dbus-sysdeps-unix_8c" startline="628" endline="675">_dbus_read</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf08364813376bd2d8f455d435d85323e" compoundref="dbus-internals_8c" startline="663" endline="669">_dbus_uuid_encode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_string_save_to_file</definition>
+        <argsstring>(const DBusString *str, const DBusString *filename, dbus_bool_t world_readable, DBusError *error)</argsstring>
+        <name>_dbus_string_save_to_file</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>world_readable</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Writes a string out to a file. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the file exists, it will be atomically overwritten by the new data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file to save string to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>world_readable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If set, ensure the file is world readable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in on failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure</para></simplesect>
+If the file exists, it will be atomically overwritten by the new data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file to save string to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>world_readable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, ensure file is world readable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in on failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="46" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="164" bodyend="317"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusInternalsUtils_1ga2212aa0e5732257598a6597748c658e4" compoundref="dbus-sysdeps_8c" startline="614" endline="698">_dbus_error_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1ga709ce349c6ee05263850444fb4e0177d" compoundref="dbus-sysdeps_8c" startline="575" endline="601">_dbus_generate_random_ascii</references>
+        <references refid="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" compoundref="dbus-file-unix_8c" startline="326" endline="344">_dbus_make_file_world_readable</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusSysdepsUnix_1ga3a789bcdfd3d468c2bf917fa5081b27f" compoundref="dbus-sysdeps-unix_8c" startline="688" endline="711">_dbus_write</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusInternalsUtils_1gaa16de06b33c56323fa33dd96eaab3829" compoundref="dbus-internals_8c" startline="757" endline="793">_dbus_write_uuid_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_make_file_world_readable</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_make_file_world_readable</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Makes the file readable by every user in the system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the file&apos;s permissions could be changed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="51" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="326" bodyend="344"/>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-win_8c" startline="212" endline="358">_dbus_string_save_to_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_create_file_exclusively</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_create_file_exclusively</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Creates the given file, failing if the file already exists. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we created the file and it didn&apos;t exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="54" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="353" bodyend="388"/>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusFile_1ga4d4936493cddac47b6e7e4ab3f390627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_delete_file</definition>
+        <argsstring>(const DBusString *filename, DBusError *error)</argsstring>
+        <name>_dbus_delete_file</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Deletes the given file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error location</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if unlink() succeeded </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-file.h" line="56" column="1" bodyfile="dbus/dbus-file-unix.c" bodystart="399" bodyend="417"/>
+        <references refid="group__DBusInternalsUtils_1ga56de84795d6df4162ad79b3be7af7588" compoundref="dbus-sysdeps_8c" startline="773" endline="776">_dbus_strerror_from_errno</references>
+        <references refid="group__DBusInternalsUtils_1gaec42589166158b1385d5f5439318cda2" compoundref="dbus-internals_8h" startline="179">_DBUS_ZERO</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

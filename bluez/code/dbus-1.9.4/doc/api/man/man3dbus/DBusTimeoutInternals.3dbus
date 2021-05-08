@@ -1,0 +1,329 @@
+.TH "DBusTimeoutInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTimeoutInternals \- DBusTimeout implementation details
+.PP
+implementation details for \fBDBusTimeout\fP  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusTimeout\fP"
+.br
+.RI "\fIInternals of \fBDBusTimeout\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusTimeoutList\fP"
+.br
+.RI "\fI\fBDBusTimeoutList\fP implementation details\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusTimeoutList\fP \fBDBusTimeoutList\fP"
+.br
+.RI "\fIOpaque data type representing a list of timeouts and a set of DBusAddTimeoutFunction/DBusRemoveTimeoutFunction\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusTimeoutHandler\fP) (void *data)"
+.br
+.RI "\fIfunction to run when the timeout is handled \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusTimeout\fP * \fB_dbus_timeout_new\fP (int interval, \fBDBusTimeoutHandler\fP handler, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fICreates a new \fBDBusTimeout\fP, enabled by default\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeout\fP * \fB_dbus_timeout_ref\fP (\fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIIncrements the reference count of a \fBDBusTimeout\fP object\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_unref\fP (\fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIDecrements the reference count of a \fBDBusTimeout\fP object and finalizes the object if the count reaches zero\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_set_interval\fP (\fBDBusTimeout\fP *timeout, int interval)"
+.br
+.RI "\fIChanges the timeout interval\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_set_enabled\fP (\fBDBusTimeout\fP *timeout, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fIChanges the timeout's enabled-ness\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeoutList\fP * \fB_dbus_timeout_list_new\fP (void)"
+.br
+.RI "\fICreates a new timeout list\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_list_free\fP (\fBDBusTimeoutList\fP *timeout_list)"
+.br
+.RI "\fIFrees a \fBDBusTimeoutList\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_timeout_list_set_functions\fP (\fBDBusTimeoutList\fP *timeout_list, \fBDBusAddTimeoutFunction\fP add_function, \fBDBusRemoveTimeoutFunction\fP remove_function, \fBDBusTimeoutToggledFunction\fP toggled_function, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fISets the timeout functions\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_timeout_list_add_timeout\fP (\fBDBusTimeoutList\fP *timeout_list, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIAdds a new timeout to the timeout list, invoking the application DBusAddTimeoutFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_list_remove_timeout\fP (\fBDBusTimeoutList\fP *timeout_list, \fBDBusTimeout\fP *timeout)"
+.br
+.RI "\fIRemoves a timeout from the timeout list, invoking the application's DBusRemoveTimeoutFunction if appropriate\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_timeout_list_toggle_timeout\fP (\fBDBusTimeoutList\fP *timeout_list, \fBDBusTimeout\fP *timeout, \fBdbus_bool_t\fP enabled)"
+.br
+.RI "\fISets a timeout to the given enabled state, invoking the application's DBusTimeoutToggledFunction if appropriate\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+implementation details for \fBDBusTimeout\fP 
+
+
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBDBusTimeoutList\fP"
+
+.PP
+Opaque data type representing a list of timeouts and a set of DBusAddTimeoutFunction/DBusRemoveTimeoutFunction\&. Automatically handles removing/re-adding timeouts when the DBusAddTimeoutFunction is updated or changed\&. Holds a reference count to each timeout\&. 
+.PP
+Definition at line 38 of file dbus\-timeout\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_timeout_list_add_timeout (\fBDBusTimeoutList\fP * timeout_list, \fBDBusTimeout\fP * timeout)"
+
+.PP
+Adds a new timeout to the timeout list, invoking the application DBusAddTimeoutFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout_list\fP the timeout list\&. 
+.br
+\fItimeout\fP the timeout to add\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP If no memory\&. 
+.RE
+.PP
+
+.PP
+Definition at line 310 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_list_append(), _dbus_list_remove_last(), _dbus_timeout_ref(), _dbus_timeout_unref(), DBusTimeoutList::add_timeout_function, FALSE, NULL, DBusTimeoutList::timeout_data, DBusTimeoutList::timeouts, and TRUE\&.
+.PP
+Referenced by _dbus_connection_add_timeout_unlocked(), and _dbus_server_add_timeout()\&.
+.SS "void _dbus_timeout_list_free (\fBDBusTimeoutList\fP * timeout_list)"
+
+.PP
+Frees a \fBDBusTimeoutList\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout_list\fP the timeout list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 211 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_list_clear(), _dbus_list_foreach(), _dbus_timeout_list_set_functions(), _dbus_timeout_unref(), dbus_free(), NULL, and DBusTimeoutList::timeouts\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), _dbus_server_finalize_base(), _dbus_server_init_base(), and dbus_connection_ref()\&.
+.SS "\fBDBusTimeoutList\fP * _dbus_timeout_list_new (void)"
+
+.PP
+Creates a new timeout list\&. Returns \fBNULL\fP if insufficient memory exists\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the new timeout list, or \fBNULL\fP on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file dbus\-timeout\&.c\&.
+.PP
+References dbus_new0, and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_server_init_base()\&.
+.SS "void _dbus_timeout_list_remove_timeout (\fBDBusTimeoutList\fP * timeout_list, \fBDBusTimeout\fP * timeout)"
+
+.PP
+Removes a timeout from the timeout list, invoking the application's DBusRemoveTimeoutFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout_list\fP the timeout list\&. 
+.br
+\fItimeout\fP the timeout to remove\&. 
+.RE
+.PP
+
+.PP
+Definition at line 340 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_list_remove(), _dbus_timeout_unref(), NULL, DBusTimeoutList::remove_timeout_function, DBusTimeoutList::timeout_data, and DBusTimeoutList::timeouts\&.
+.PP
+Referenced by _dbus_connection_remove_timeout_unlocked(), and _dbus_server_remove_timeout()\&.
+.SS "\fBdbus_bool_t\fP _dbus_timeout_list_set_functions (\fBDBusTimeoutList\fP * timeout_list, \fBDBusAddTimeoutFunction\fP add_function, \fBDBusRemoveTimeoutFunction\fP remove_function, \fBDBusTimeoutToggledFunction\fP toggled_function, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Sets the timeout functions\&. This function is the 'backend' for \fBdbus_connection_set_timeout_functions()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout_list\fP the timeout list 
+.br
+\fIadd_function\fP the add timeout function\&. 
+.br
+\fIremove_function\fP the remove timeout function\&. 
+.br
+\fItoggled_function\fP toggle notify function, or \fBNULL\fP 
+.br
+\fIdata\fP the data for those functions\&. 
+.br
+\fIfree_data_function\fP the function to free the data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_list_foreach(), _dbus_list_get_first_link(), _dbus_list_get_next_link, DBusTimeoutList::add_timeout_function, DBusList::data, DBusTimeout::data, FALSE, DBusTimeout::free_data_function, NULL, DBusTimeoutList::remove_timeout_function, DBusTimeoutList::timeout_data, DBusTimeoutList::timeout_free_data_function, DBusTimeoutList::timeout_toggled_function, DBusTimeoutList::timeouts, and TRUE\&.
+.PP
+Referenced by _dbus_timeout_list_free(), dbus_connection_set_timeout_functions(), and dbus_server_set_timeout_functions()\&.
+.SS "void _dbus_timeout_list_toggle_timeout (\fBDBusTimeoutList\fP * timeout_list, \fBDBusTimeout\fP * timeout, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Sets a timeout to the given enabled state, invoking the application's DBusTimeoutToggledFunction if appropriate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout_list\fP the timeout list\&. 
+.br
+\fItimeout\fP the timeout to toggle\&. 
+.br
+\fIenabled\fP \fBTRUE\fP to enable 
+.RE
+.PP
+
+.PP
+Definition at line 362 of file dbus\-timeout\&.c\&.
+.PP
+References DBusTimeout::enabled, NULL, DBusTimeoutList::timeout_data, and DBusTimeoutList::timeout_toggled_function\&.
+.PP
+Referenced by _dbus_connection_toggle_timeout_unlocked(), and _dbus_server_toggle_timeout()\&.
+.SS "\fBDBusTimeout\fP * _dbus_timeout_new (int interval, \fBDBusTimeoutHandler\fP handler, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Creates a new \fBDBusTimeout\fP, enabled by default\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinterval\fP the timeout interval in milliseconds\&. 
+.br
+\fIhandler\fP function to call when the timeout occurs\&. 
+.br
+\fIdata\fP data to pass to the handler 
+.br
+\fIfree_data_function\fP function to be called to free the data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the new \fBDBusTimeout\fP object, 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file dbus\-timeout\&.c\&.
+.PP
+References DBusTimeout::data, dbus_new0, DBusTimeout::enabled, DBusTimeout::free_data_function, DBusTimeout::free_handler_data_function, DBusTimeout::handler, DBusTimeout::handler_data, DBusTimeout::interval, NULL, DBusTimeout::refcount, and TRUE\&.
+.PP
+Referenced by _dbus_pending_call_new_unlocked()\&.
+.SS "\fBDBusTimeout\fP * _dbus_timeout_ref (\fBDBusTimeout\fP * timeout)"
+
+.PP
+Increments the reference count of a \fBDBusTimeout\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP the timeout object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the timeout object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file dbus\-timeout\&.c\&.
+.PP
+References DBusTimeout::refcount\&.
+.PP
+Referenced by _dbus_timeout_list_add_timeout()\&.
+.SS "void _dbus_timeout_set_enabled (\fBDBusTimeout\fP * timeout, \fBdbus_bool_t\fP enabled)"
+
+.PP
+Changes the timeout's enabled-ness\&. Note that you should use \fB_dbus_connection_toggle_timeout_unlocked()\fP etc\&. instead, if the timeout is passed out to an application main loop\&. i\&.e\&. you can't use this function in the D-Bus library, it's only used in the message bus daemon implementation\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP the timeout 
+.br
+\fIenabled\fP \fBTRUE\fP if timeout should be enabled\&. 
+.RE
+.PP
+
+.PP
+Definition at line 153 of file dbus\-timeout\&.c\&.
+.PP
+References DBusTimeout::enabled, and FALSE\&.
+.SS "void _dbus_timeout_set_interval (\fBDBusTimeout\fP * timeout, int interval)"
+
+.PP
+Changes the timeout interval\&. Note that you have to disable and re-enable the timeout using the timeout toggle function (\fB_dbus_connection_toggle_timeout_unlocked()\fP etc\&.) to notify the application of this change\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP the timeout 
+.br
+\fIinterval\fP the new interval 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_assert, and DBusTimeout::interval\&.
+.SS "void _dbus_timeout_unref (\fBDBusTimeout\fP * timeout)"
+
+.PP
+Decrements the reference count of a \fBDBusTimeout\fP object and finalizes the object if the count reaches zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP the timeout object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file dbus\-timeout\&.c\&.
+.PP
+References _dbus_assert, dbus_free(), dbus_timeout_set_data(), DBusTimeout::free_handler_data_function, DBusTimeout::handler_data, NULL, and DBusTimeout::refcount\&.
+.PP
+Referenced by _dbus_pending_call_ref_unlocked(), _dbus_timeout_list_add_timeout(), _dbus_timeout_list_free(), and _dbus_timeout_list_remove_timeout()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

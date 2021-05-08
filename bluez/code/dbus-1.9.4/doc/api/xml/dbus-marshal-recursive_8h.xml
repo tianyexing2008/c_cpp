@@ -1,0 +1,2046 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-marshal-recursive_8h" kind="file" language="C++">
+    <compoundname>dbus-marshal-recursive.h</compoundname>
+    <includes refid="dbus-protocol_8h" local="no">dbus/dbus-protocol.h</includes>
+    <includes refid="dbus-list_8h" local="no">dbus/dbus-list.h</includes>
+    <includedby refid="dbus-marshal-byteswap_8h" local="no">dbus-marshal-byteswap.h</includedby>
+    <includedby refid="dbus-marshal-header_8c" local="yes">dbus-marshal-header.c</includedby>
+    <includedby refid="dbus-marshal-recursive_8c" local="yes">dbus-marshal-recursive.c</includedby>
+    <includedby refid="dbus-marshal-validate_8c" local="yes">dbus-marshal-validate.c</includedby>
+    <includedby refid="dbus-message-util_8c" local="yes">dbus-message-util.c</includedby>
+    <includedby refid="dbus-message_8c" local="yes">dbus-message.c</includedby>
+    <includedby refid="dbus-signature_8c" local="yes">dbus-signature.c</includedby>
+    <incdepgraph>
+      <node id="1673">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1659">
+        <label>dbus/dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="1660" relation="include">
+        </childnode>
+        <childnode refid="1661" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1667" relation="include">
+        </childnode>
+      </node>
+      <node id="1658">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1662">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="1669">
+        <label>stdint.h</label>
+      </node>
+      <node id="1675">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="1667">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="1668" relation="include">
+        </childnode>
+        <childnode refid="1669" relation="include">
+        </childnode>
+        <childnode refid="1670" relation="include">
+        </childnode>
+        <childnode refid="1666" relation="include">
+        </childnode>
+        <childnode refid="1671" relation="include">
+        </childnode>
+        <childnode refid="1672" relation="include">
+        </childnode>
+        <childnode refid="1674" relation="include">
+        </childnode>
+        <childnode refid="1673" relation="include">
+        </childnode>
+        <childnode refid="1675" relation="include">
+        </childnode>
+      </node>
+      <node id="1660">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="1661" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1666" relation="include">
+        </childnode>
+        <childnode refid="1667" relation="include">
+        </childnode>
+        <childnode refid="1676" relation="include">
+        </childnode>
+      </node>
+      <node id="1663">
+        <label>stddef.h</label>
+      </node>
+      <node id="1672">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1661" relation="include">
+        </childnode>
+        <childnode refid="1673" relation="include">
+        </childnode>
+      </node>
+      <node id="1665">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+      </node>
+      <node id="1674">
+        <label>string.h</label>
+      </node>
+      <node id="1677">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+      </node>
+      <node id="1676">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1677" relation="include">
+        </childnode>
+      </node>
+      <node id="1657">
+        <label>dbus-marshal-recursive.h</label>
+        <link refid="dbus-marshal-recursive.h"/>
+        <childnode refid="1658" relation="include">
+        </childnode>
+        <childnode refid="1659" relation="include">
+        </childnode>
+      </node>
+      <node id="1668">
+        <label>config.h</label>
+      </node>
+      <node id="1671">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="1672" relation="include">
+        </childnode>
+        <childnode refid="1666" relation="include">
+        </childnode>
+      </node>
+      <node id="1666">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1658" relation="include">
+        </childnode>
+      </node>
+      <node id="1664">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1663" relation="include">
+        </childnode>
+        <childnode refid="1665" relation="include">
+        </childnode>
+      </node>
+      <node id="1670">
+        <label>inttypes.h</label>
+      </node>
+      <node id="1661">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1663" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1686">
+        <label>dbus-signature.c</label>
+        <link refid="dbus-signature_8c_source"/>
+      </node>
+      <node id="1685">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="1681">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="1684">
+        <label>dbus-marshal-validate.c</label>
+        <link refid="dbus-marshal-validate_8c_source"/>
+      </node>
+      <node id="1680">
+        <label>dbus-marshal-byteswap.c</label>
+        <link refid="dbus-marshal-byteswap_8c_source"/>
+      </node>
+      <node id="1679">
+        <label>dbus-marshal-byteswap.h</label>
+        <link refid="dbus-marshal-byteswap_8h_source"/>
+        <childnode refid="1680" relation="include">
+        </childnode>
+        <childnode refid="1681" relation="include">
+        </childnode>
+        <childnode refid="1682" relation="include">
+        </childnode>
+      </node>
+      <node id="1682">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="1683">
+        <label>dbus-marshal-recursive.c</label>
+        <link refid="dbus-marshal-recursive_8c_source"/>
+      </node>
+      <node id="1678">
+        <label>dbus-marshal-recursive.h</label>
+        <link refid="dbus-marshal-recursive.h"/>
+        <childnode refid="1679" relation="include">
+        </childnode>
+        <childnode refid="1681" relation="include">
+        </childnode>
+        <childnode refid="1683" relation="include">
+        </childnode>
+        <childnode refid="1684" relation="include">
+        </childnode>
+        <childnode refid="1685" relation="include">
+        </childnode>
+        <childnode refid="1682" relation="include">
+        </childnode>
+        <childnode refid="1686" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusTypeReader" prot="public">DBusTypeReader</innerclass>
+    <innerclass refid="structDBusTypeWriter" prot="public">DBusTypeWriter</innerclass>
+    <innerclass refid="structDBusArrayLenFixup" prot="public">DBusArrayLenFixup</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-marshal-recursive_8h_1a0d124feb6675ce921c88258fdb4cc6c3" prot="public" static="no">
+        <type>struct <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref></type>
+        <definition>typedef struct DBusTypeReader DBusTypeReader</definition>
+        <argsstring></argsstring>
+        <name>DBusTypeReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="1135" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-marshal-recursive_8h_1a9c40f0137eac002dd391c91b2bc664c6" prot="public" static="no">
+        <type>struct <ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref></type>
+        <definition>typedef struct DBusTypeWriter DBusTypeWriter</definition>
+        <argsstring></argsstring>
+        <name>DBusTypeWriter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="1135" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-marshal-recursive_8h_1a015c5e2d2ea89bc9b5447e2923da67a6" prot="public" static="no">
+        <type>struct <ref refid="structDBusTypeReaderClass" kindref="compound">DBusTypeReaderClass</ref></type>
+        <definition>typedef struct DBusTypeReaderClass DBusTypeReaderClass</definition>
+        <argsstring></argsstring>
+        <name>DBusTypeReaderClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="1135" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-marshal-recursive_8h_1ab368f1065d8b59a5a344434ad1ad713e" prot="public" static="no">
+        <type>struct <ref refid="structDBusArrayLenFixup" kindref="compound">DBusArrayLenFixup</ref></type>
+        <definition>typedef struct DBusArrayLenFixup DBusArrayLenFixup</definition>
+        <argsstring></argsstring>
+        <name>DBusArrayLenFixup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="1135" column="1" bodyfile="dbus/dbus-marshal-recursive.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_init</definition>
+        <argsstring>(DBusTypeReader *reader, int byte_order, const DBusString *type_str, int type_pos, const DBusString *value_str, int value_pos)</argsstring>
+        <name>_dbus_type_reader_init</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type_pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>value_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_pos</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a type reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order of the block to read </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the signature of the block to read </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location of signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing values block </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of values block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="99" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="732" bodyend="749"/>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMessage_1ga9f98b47c84f0e401ea985e681de4e963" compoundref="dbus-message_8c" startline="2064" endline="2086">dbus_message_iter_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga3a5845f555f11c33ebaa71a75abff661" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_init_types_only</definition>
+        <argsstring>(DBusTypeReader *reader, const DBusString *type_str, int type_pos)</argsstring>
+        <name>_dbus_type_reader_init_types_only</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type_pos</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" kindref="member">_dbus_type_reader_init()</ref> but the iteration is over the signature, not over values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the signature string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location in the signature string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="105" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="760" bodyend="774"/>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga5627db5e165848477e620846f6414db1" compoundref="dbus-internals_8h" startline="231">_DBUS_INT_MAX</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <referencedby refid="group__DBusMarshal_1ga609a4b8c0b65096890766fda73a4c40f" compoundref="dbus-marshal-byteswap_8c" startline="222" endline="244">_dbus_marshal_byteswap</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae997884ec8091aacb5492c2b5a7eaef9" compoundref="dbus-marshal-validate_8c" startline="703" endline="747">_dbus_validate_body_with_reason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_type_reader_get_current_type</definition>
+        <argsstring>(const DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_get_current_type</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Gets the type of the value the reader is currently pointing to; or for a types-only reader gets the type it&apos;s currently pointing to. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the reader is at the end of a block or end of a container such as an array, returns <ref refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" kindref="member">DBUS_TYPE_INVALID</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="108" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="785" bodyend="809"/>
+        <references refid="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" compoundref="dbus-marshal-recursive_8h" startline="43">DBusTypeReader::finished</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1aafa6c7a0dac10c17b46deb2b6dbd4665" compoundref="dbus-marshal-recursive_8c" startline="132">DBusTypeReaderClass::check_finished</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaeab5ea0def3f587a0ed548b77d5c5cea" compoundref="dbus-protocol_8h" startline="160">DBUS_STRUCT_END_CHAR</references>
+        <references refid="group__DBusProtocol_1ga725657eca93175475e0694b858f51fd6" compoundref="dbus-protocol_8h" startline="156">DBUS_STRUCT_BEGIN_CHAR</references>
+        <references refid="group__DBusProtocol_1ga29ad22c7342ead042ae9e55ae20b49f1" compoundref="dbus-protocol_8h" startline="168">DBUS_DICT_ENTRY_END_CHAR</references>
+        <references refid="group__DBusProtocol_1gad51b5f7a2e6d927295479dd371f6b353" compoundref="dbus-protocol_8h" startline="164">DBUS_DICT_ENTRY_BEGIN_CHAR</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga9f98b47c84f0e401ea985e681de4e963" compoundref="dbus-message_8c" startline="2064" endline="2086">dbus_message_iter_init</referencedby>
+        <referencedby refid="group__DBusMessage_1ga5aae3c882a75aed953d8b3d489e9b271" compoundref="dbus-message_8c" startline="2139" endline="2147">dbus_message_iter_get_arg_type</referencedby>
+        <referencedby refid="group__DBusMessage_1gae195a3312ae445e7ef0196854f3523f8" compoundref="dbus-message_8c" startline="2391" endline="2407">dbus_message_iter_get_fixed_array</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_type_reader_get_element_type</definition>
+        <argsstring>(const DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_get_element_type</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Gets the type of an element of the array the reader is currently pointing to. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this if <ref refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" kindref="member">_dbus_type_reader_get_current_type()</ref> doesn&apos;t return <ref refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" kindref="member">DBUS_TYPE_ARRAY</ref> for this reader.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="109" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="820" bodyend="830"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga868a7aeddb9b54b2805776b512f68cb4" compoundref="dbus-message_8c" startline="2158" endline="2167">dbus_message_iter_get_element_type</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga2a8ab1152821950b1fe29e000954981c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_type_reader_get_value_pos</definition>
+        <argsstring>(const DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_get_value_pos</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current position in the value block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="110" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="837" bodyend="840"/>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_read_basic</definition>
+        <argsstring>(const DBusTypeReader *reader, void *value)</argsstring>
+        <name>_dbus_type_reader_read_basic</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Reads a basic-typed value, as with <ref refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" kindref="member">_dbus_marshal_read_basic()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="111" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="869" bodyend="890"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" compoundref="dbus-marshal-recursive_8h" startline="41">DBusTypeReader::byte_order</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga41c23a05e552d0574d0444d4693d18ab" compoundref="dbus-message_8c" startline="2293" endline="2325">dbus_message_iter_get_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga7def93d676d528c261aa274cea41c29d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_type_reader_get_array_length</definition>
+        <argsstring>(const DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_get_array_length</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of bytes in the array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader to read from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes in the array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="113" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="899" bodyend="905"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <referencedby refid="group__DBusMessage_1gab8ff47649497b3e0b93a2289f5d3eb23" compoundref="dbus-message_8c" startline="2346" endline="2353">dbus_message_iter_get_array_len</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_read_fixed_multi</definition>
+        <argsstring>(const DBusTypeReader *reader, void *value, int *n_elements)</argsstring>
+        <name>_dbus_type_reader_read_fixed_multi</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n_elements</declname>
+        </param>
+        <briefdescription>
+<para>Reads a block of fixed-length basic values, from the current point in an array to the end of the array. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not work for arrays of string or container types.</para><para>This function returns the array in-place; it does not make a copy, and it does not swap the bytes.</para><para>If you ask for <ref refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" kindref="member">DBUS_TYPE_DOUBLE</ref> you will get a &quot;const double*&quot; back and the &quot;value&quot; argument should be a &quot;const double**&quot; and so on.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader to read from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to return the array values </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to return number of array elements </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="114" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="923" bodyend="973"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" compoundref="dbus-marshal-basic_8c" startline="1173" endline="1210">_dbus_type_get_alignment</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be">DBusTypeReader::u</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1gae195a3312ae445e7ef0196854f3523f8" compoundref="dbus-message_8c" startline="2391" endline="2407">dbus_message_iter_get_fixed_array</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gac87315d74386314ec3b148ef737626d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_read_raw</definition>
+        <argsstring>(const DBusTypeReader *reader, const unsigned char **value_location)</argsstring>
+        <name>_dbus_type_reader_read_raw</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const unsigned char **</type>
+          <declname>value_location</declname>
+        </param>
+        <briefdescription>
+<para>Get the address of the marshaled value in the data being read. </para>        </briefdescription>
+        <detaileddescription>
+<para>The address may not be aligned; you have to align it to the type of the value you want to read. Most of the demarshal routines do this for you.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the marshaled value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="117" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="852" bodyend="860"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_recurse</definition>
+        <argsstring>(DBusTypeReader *reader, DBusTypeReader *subreader)</argsstring>
+        <name>_dbus_type_reader_recurse</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>subreader</declname>
+          <defname>sub</defname>
+        </param>
+        <briefdescription>
+<para>Initialize a new reader pointing to the first type and corresponding value that&apos;s a child of the current container. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s an error to call this if the current type is a non-container.</para><para>Note that <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> traverses values, not types. So if you have an empty array of array of int, you can&apos;t recurse into it. You can only recurse into each element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sub</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a reader to init pointing to the first child </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="119" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="988" bodyend="1040"/>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReaderClass_1a7cd297c0e03c5204bc41bf305c7688c9" compoundref="dbus-marshal-recursive_8c" startline="128">DBusTypeReaderClass::id</references>
+        <references refid="structDBusTypeReaderClass_1ae9a1b13f853dda37eeaf6acb93879317" compoundref="dbus-marshal-recursive_8c" startline="130">DBusTypeReaderClass::recurse</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga7652e1208743da5dd4ecc5aef07bf207" compoundref="dbus-message_8c" startline="2195" endline="2206">dbus_message_iter_recurse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_reader_next</definition>
+        <argsstring>(DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_next</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Skip to the next value on this &quot;level&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para>e.g. the next field in a struct, the next value in an array. Returns FALSE at the end of the current container.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FALSE if nothing more to read at or below this level </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="121" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1051" bodyend="1077"/>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1a9ef686a97bbab3dc264628b62a4d5686" compoundref="dbus-marshal-recursive_8c" startline="133">DBusTypeReaderClass::next</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga97a59dbd1597ef1b267457e809f095de" compoundref="dbus-marshal-recursive_8c" startline="1091" endline="1098">_dbus_type_reader_has_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga554e9fafd4dcc84cebe9da9344846a82" compoundref="dbus-message_8c" startline="2114" endline="2122">dbus_message_iter_next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga97a59dbd1597ef1b267457e809f095de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_reader_has_next</definition>
+        <argsstring>(const DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_reader_has_next</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Check whether there&apos;s another value on this &quot;level&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para>e.g. the next field in a struct, the next value in an array. Returns FALSE at the end of the current container.</para><para>You probably don&apos;t want to use this; it makes for an awkward for/while loop. A nicer one is &quot;while ((current_type = get_current_type()) != INVALID)&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FALSE if nothing more to read at or below this level </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="122" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1091" bodyend="1098"/>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <referencedby refid="group__DBusMessage_1gaaffc75a699c96ff6197287f166df2149" compoundref="dbus-message_8c" startline="2095" endline="2103">dbus_message_iter_has_next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4578cc623c8b0978ca780ce0ab950fdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_reader_get_signature</definition>
+        <argsstring>(const DBusTypeReader *reader, const DBusString **str_p, int *start_p, int *len_p)</argsstring>
+        <name>_dbus_type_reader_get_signature</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>str_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>start_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>len_p</declname>
+        </param>
+        <briefdescription>
+<para>Gets the string and range of said string containing the signature of the current value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Essentially a more complete version of <ref refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" kindref="member">_dbus_type_reader_get_current_type()</ref> (returns the full type rather than only the outside of the onion).</para><para>Note though that the first byte in a struct signature is <ref refid="group__DBusProtocol_1ga725657eca93175475e0694b858f51fd6" kindref="member">DBUS_STRUCT_BEGIN_CHAR</ref> while the current type will be <ref refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" kindref="member">DBUS_TYPE_STRUCT</ref> so it isn&apos;t true that the first byte of the signature is always the same as the current type. Another difference is that this function will still return a signature when inside an empty array; say you recurse into empty array of int32, the signature is &quot;i&quot; but the current type will always be <ref refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" kindref="member">DBUS_TYPE_INVALID</ref> since there are no elements to be currently pointing to.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to return the string with the type in it </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to return start of the type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>place to return the length of the type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="123" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1122" bodyend="1130"/>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1gab4579a88a1a7eaf648350466f585ef8b" compoundref="dbus-message_8c" startline="2220" endline="2243">dbus_message_iter_get_signature</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_reader_set_basic</definition>
+        <argsstring>(DBusTypeReader *reader, const void *value, const DBusTypeReader *realign_root)</argsstring>
+        <name>_dbus_type_reader_set_basic</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>realign_root</declname>
+        </param>
+        <briefdescription>
+<para>Sets a new value for the basic type value pointed to by the reader, leaving the reader valid to continue reading. </para>        </briefdescription>
+        <detaileddescription>
+<para>Any other readers will be invalidated if you set a variable-length type such as a string.</para><para>The provided realign_root is the reader to start from when realigning the data that follows the newly-set value. The reader parameter must point to a value below the realign_root parameter. If the type being set is fixed-length, then realign_root may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. Only values reachable from realign_root will be realigned, so if your string contains other values you will need to deal with those somehow yourself. It is OK if realign_root is the same reader as the reader parameter, though if you aren&apos;t setting the root it may not be such a good idea.</para><para><xrefsect id="todo_1_todo000014"><xreftitle>Todo</xreftitle><xrefdescription><para><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> currently takes &quot;const&quot; versions of the type and value strings, and this function modifies those strings by casting away the const, which is of course bad if we want to get picky. (To be truly clean you&apos;d have an object which contained the type and value strings and set_basic would be a method on that object... this would also make <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> the same thing as DBusTypeMark. But since <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> is effectively that object for D-Bus it doesn&apos;t seem worth creating some random object.)</para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000015"><xreftitle>Todo</xreftitle><xrefdescription><para>optimize this by only rewriting until the old and new values are at the same alignment. Frequently this should result in only replacing the value that&apos;s immediately at hand.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reader indicating where to set a new value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the value to set </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>realign_root</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>realign from here </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="127" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1360" bodyend="1397"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusMarshal_1ga3926bb35edf78d114cf0c341fe3258e0" compoundref="dbus-marshal-basic_8c" startline="1360" endline="1388">_dbus_verbose_bytes_of_string</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_reader_delete</definition>
+        <argsstring>(DBusTypeReader *reader, const DBusTypeReader *realign_root)</argsstring>
+        <name>_dbus_type_reader_delete</name>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>realign_root</declname>
+        </param>
+        <briefdescription>
+<para>Recursively deletes any value pointed to by the reader, leaving the reader valid to continue reading. </para>        </briefdescription>
+        <detaileddescription>
+<para>Any other readers will be invalidated.</para><para>The provided realign_root is the reader to start from when realigning the data that follows the newly-set value. See <ref refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" kindref="member">_dbus_type_reader_set_basic()</ref> for more details on the realign_root paramter.</para><para><xrefsect id="todo_1_todo000016"><xreftitle>Todo</xreftitle><xrefdescription><para>for now this does not delete the typecodes associated with the value, so this function should only be used for array elements.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reader indicating where to delete a value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>realign_root</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>realign from here </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="130" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1417" bodyend="1441"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <referencedby refid="group__DBusMarshal_1ga7814248f4d74d109d29dc00487cd9b0c" compoundref="dbus-marshal-header_8c" startline="1416" endline="1446">_dbus_header_delete_field</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-marshal-recursive_8h_1a632a6f60d6b50b0fddb504f6554c051d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_reader_equal_values</definition>
+        <argsstring>(const DBusTypeReader *lhs, const DBusTypeReader *rhs)</argsstring>
+        <name>_dbus_type_reader_equal_values</name>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_signature_next</definition>
+        <argsstring>(const char *signature, int *type_pos)</argsstring>
+        <name>_dbus_type_signature_next</name>
+        <param>
+          <type>const char *</type>
+          <declname>signature</declname>
+          <defname>type_str</defname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>type_pos</declname>
+        </param>
+        <briefdescription>
+<para>Skips to the next &quot;complete&quot; type inside a type signature. </para>        </briefdescription>
+        <detaileddescription>
+<para>The signature is read starting at type_pos, and the next type position is stored in the same variable.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a type signature (must be valid) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer position in the type signature (in and out) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="136" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="340" bodyend="421"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusProtocol_1gaeab5ea0def3f587a0ed548b77d5c5cea" compoundref="dbus-protocol_8h" startline="160">DBUS_STRUCT_END_CHAR</references>
+        <references refid="group__DBusProtocol_1ga29ad22c7342ead042ae9e55ae20b49f1" compoundref="dbus-protocol_8h" startline="168">DBUS_DICT_ENTRY_END_CHAR</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1ga725657eca93175475e0694b858f51fd6" compoundref="dbus-protocol_8h" startline="156">DBUS_STRUCT_BEGIN_CHAR</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1gad51b5f7a2e6d927295479dd371f6b353" compoundref="dbus-protocol_8h" startline="164">DBUS_DICT_ENTRY_BEGIN_CHAR</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" compoundref="dbus-marshal-recursive_8h" startline="52">DBusTypeReader::klass</references>
+        <references refid="structDBusTypeReaderClass_1ad886037cd736e6f5cdbefb834b0bd5e7" compoundref="dbus-marshal-recursive_8c" startline="129">DBusTypeReaderClass::types_only</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="group__DBusMarshal_1ga8d9c5bcc039d9099df197a125a7259b8" compoundref="dbus-marshal-basic_8c" startline="1145" endline="1163">_dbus_marshal_skip_array</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" compoundref="dbus-marshal-recursive_8h" startline="41">DBusTypeReader::byte_order</references>
+        <references refid="group__DBusMarshal_1gafd1ab7e9bd8e74cc41f03c76f4dce2dd" compoundref="dbus-marshal-basic_8c" startline="1077" endline="1133">_dbus_marshal_skip_basic</references>
+        <references refid="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" compoundref="dbus-marshal-recursive_8h" startline="43">DBusTypeReader::finished</references>
+        <references refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be">DBusTypeReader::u</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusSignature_1ga898bbc14392cbedc087ce0be68d35c98" compoundref="dbus-signature_8c" startline="112" endline="132">dbus_signature_iter_get_signature</referencedby>
+        <referencedby refid="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" compoundref="dbus-signature_8c" startline="164" endline="193">dbus_signature_iter_next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_writer_init</definition>
+        <argsstring>(DBusTypeWriter *writer, int byte_order, DBusString *type_str, int type_pos, DBusString *value_str, int value_pos)</argsstring>
+        <name>_dbus_type_writer_init</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type_pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>value_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_pos</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a write iterator, which is used to write out values in serialized D-Bus format. </para>        </briefdescription>
+        <detaileddescription>
+<para>The type_pos passed in is expected to be inside an already-valid, though potentially empty, type signature. This means that the byte after type_pos must be either <ref refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" kindref="member">DBUS_TYPE_INVALID</ref> (aka nul) or some other valid type. <ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> won&apos;t enforce that the signature is already valid (you can append the nul byte at the end if you like), but just be aware that you need the nul byte eventually and <ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> isn&apos;t going to write it for you.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to init </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order to marshal into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write typecodes into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert typecodes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write values into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert values </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="139" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1490" bodyend="1512"/>
+        <references refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" compoundref="dbus-marshal-recursive_8h" startline="66">DBusTypeWriter::byte_order</references>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <references refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" compoundref="dbus-marshal-recursive_8h" startline="76">DBusTypeWriter::value_str</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" compoundref="dbus-marshal-recursive_8h" startline="68">DBusTypeWriter::container_type</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" compoundref="dbus-marshal-recursive_8h" startline="70">DBusTypeWriter::type_pos_is_expectation</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" compoundref="dbus-marshal-recursive_8h" startline="72">DBusTypeWriter::enabled</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1gaa9ecf7e96d5323bc1da9cdf0c3f2c1e7" compoundref="dbus-marshal-recursive_8c" startline="1525" endline="1532">_dbus_type_writer_init_types_delayed</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaa9ecf7e96d5323bc1da9cdf0c3f2c1e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_writer_init_types_delayed</definition>
+        <argsstring>(DBusTypeWriter *writer, int byte_order, DBusString *value_str, int value_pos)</argsstring>
+        <name>_dbus_type_writer_init_types_delayed</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>value_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_pos</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a write iterator, with the signature to be provided later. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to init </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order to marshal into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write values into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert values </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="145" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1525" bodyend="1532"/>
+        <references refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga863b2f232a21582f9e6fe1951b09da91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_writer_add_types</definition>
+        <argsstring>(DBusTypeWriter *writer, DBusString *type_str, int type_pos)</argsstring>
+        <name>_dbus_type_writer_add_types</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type_pos</declname>
+        </param>
+        <briefdescription>
+<para>Adds type string to the writer, if it had none. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to init </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type string to add </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="149" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1543" bodyend="1552"/>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga34d675b57c7e6569707d22ba76ae010c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_writer_remove_types</definition>
+        <argsstring>(DBusTypeWriter *writer)</argsstring>
+        <name>_dbus_type_writer_remove_types</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+<para>Removes type string from the writer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to remove from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="152" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1560" bodyend="1564"/>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <referencedby refid="group__DBusMessage_1gaf733047c467ce21f4a53b65a388f1e9d" compoundref="dbus-message_8c" startline="2421" endline="2440">dbus_message_iter_init_append</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_type_writer_init_values_only</definition>
+        <argsstring>(DBusTypeWriter *writer, int byte_order, const DBusString *type_str, int type_pos, DBusString *value_str, int value_pos)</argsstring>
+        <name>_dbus_type_writer_init_values_only</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>type_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type_pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>value_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_pos</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" kindref="member">_dbus_type_writer_init()</ref>, except the type string passed in should correspond to an existing signature that matches what you&apos;re going to write out. </para>        </briefdescription>
+        <detaileddescription>
+<para>The writer will check what you write vs. this existing signature.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to init </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order to marshal into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string with signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write values into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert values </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="153" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="1581" bodyend="1593"/>
+        <references refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" compoundref="dbus-marshal-recursive_8c" startline="1490" endline="1512">_dbus_type_writer_init</references>
+        <references refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" compoundref="dbus-marshal-recursive_8h" startline="70">DBusTypeWriter::type_pos_is_expectation</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" compoundref="dbus-marshal-recursive_8h" startline="72">DBusTypeWriter::enabled</references>
+        <references refid="group__DBusMarshal_1ga54323d48921de8c5bd04ae01548312bb" compoundref="dbus-marshal-basic_8c" startline="794" endline="851">_dbus_marshal_write_basic</references>
+        <references refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" compoundref="dbus-marshal-recursive_8h" startline="76">DBusTypeWriter::value_str</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" compoundref="dbus-marshal-recursive_8h" startline="66">DBusTypeWriter::byte_order</references>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <references refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" compoundref="dbus-marshal-recursive_8h" startline="68">DBusTypeWriter::container_type</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" compoundref="dbus-marshal-basic_8c" startline="1416" endline="1420">_dbus_first_type_in_signature</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusString_1gab0770800dce6df97e5d246105a44e7b4" compoundref="dbus-string_8c" startline="614" endline="628">_dbus_string_insert_byte</references>
+        <references refid="group__DBusString_1ga4764e75c464356408fc1a12df93177c1" compoundref="dbus-string_8c" startline="899" endline="907">_dbus_string_alloc_space</references>
+        <references refid="group__DBusString_1gaa0964d662ad17c58eb044c1b153017a6" compoundref="dbus-string_8c" startline="584" endline="603">_dbus_string_insert_bytes</references>
+        <references refid="group__DBusString_1ga2095c2a797ae245521a7588b32279110" compoundref="dbus-string_8c" startline="2103" endline="2141">_dbus_string_equal_substring</references>
+        <references refid="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a">DBusTypeWriter::u</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" compoundref="dbus-marshal-basic_8c" startline="182" endline="191">_dbus_unpack_uint32</references>
+        <references refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" compoundref="dbus-marshal-basic_8c" startline="1173" endline="1210">_dbus_type_get_alignment</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1ga725657eca93175475e0694b858f51fd6" compoundref="dbus-protocol_8h" startline="156">DBUS_STRUCT_BEGIN_CHAR</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusProtocol_1gad51b5f7a2e6d927295479dd371f6b353" compoundref="dbus-protocol_8h" startline="164">DBUS_DICT_ENTRY_BEGIN_CHAR</references>
+        <referencedby refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" compoundref="dbus-marshal-header_8c" startline="528" endline="653">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_write_basic</definition>
+        <argsstring>(DBusTypeWriter *writer, int type, const void *value)</argsstring>
+        <name>_dbus_type_writer_write_basic</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Writes out a basic type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type to write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the value to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="159" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2308" bodyend="2339"/>
+        <references refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" compoundref="dbus-marshal-recursive_8h" startline="70">DBusTypeWriter::type_pos_is_expectation</references>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusString_1ga4764e75c464356408fc1a12df93177c1" compoundref="dbus-string_8c" startline="899" endline="907">_dbus_string_alloc_space</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" compoundref="dbus-marshal-recursive_8h" startline="72">DBusTypeWriter::enabled</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" compoundref="dbus-marshal-header_8c" startline="528" endline="653">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2656" endline="2753">dbus_message_iter_append_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_write_fixed_multi</definition>
+        <argsstring>(DBusTypeWriter *writer, int element_type, const void *value, int n_elements)</argsstring>
+        <name>_dbus_type_writer_write_fixed_multi</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>element_type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_elements</declname>
+        </param>
+        <briefdescription>
+<para>Writes a block of fixed-length basic values, i.e. </para>        </briefdescription>
+        <detaileddescription>
+<para>those that are both <ref refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" kindref="member">dbus_type_is_fixed()</ref> and _dbus_type_is_basic(). The block must be written inside an array.</para><para>The value parameter should be the address of said array of values, so e.g. if it&apos;s an array of double, pass in &quot;const double**&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>element_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of stuff in the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements in the array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="162" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2356" bodyend="2392"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" compoundref="dbus-marshal-recursive_8h" startline="68">DBusTypeWriter::container_type</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" compoundref="dbus-marshal-recursive_8h" startline="70">DBusTypeWriter::type_pos_is_expectation</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" compoundref="dbus-marshal-recursive_8h" startline="72">DBusTypeWriter::enabled</references>
+        <references refid="group__DBusMarshal_1ga990da87b984d8917da26b89a6470fdf5" compoundref="dbus-marshal-basic_8c" startline="1020" endline="1064">_dbus_marshal_write_fixed_multi</references>
+        <references refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" compoundref="dbus-marshal-recursive_8h" startline="76">DBusTypeWriter::value_str</references>
+        <references refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" compoundref="dbus-marshal-recursive_8h" startline="66">DBusTypeWriter::byte_order</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" compoundref="dbus-marshal-recursive_8h" startline="50">DBusTypeReader::value_pos</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusArrayLenFixup_1aad03f6087695c9e9b409817ac34c6e2b" compoundref="dbus-marshal-recursive_8h" startline="95">DBusArrayLenFixup::len_pos_in_reader</references>
+        <references refid="structDBusArrayLenFixup_1a97cccea61d89992e6ad3a19bd569dd2f" compoundref="dbus-marshal-recursive_8h" startline="96">DBusArrayLenFixup::new_len</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusSignature_1gaa0c4c8aa34fa266daa55bd37bdad39b8" compoundref="dbus-signature_8c" startline="294" endline="300">dbus_type_is_container</references>
+        <references refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" compoundref="dbus-marshal-recursive_8h" startline="47">DBusTypeReader::type_str</references>
+        <references refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" compoundref="dbus-marshal-recursive_8h" startline="48">DBusTypeReader::type_pos</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1gacca774d24b7d7e790b169f23d3362497" compoundref="dbus-marshal-recursive_8c" startline="213">ARRAY_READER_LEN_POS</references>
+        <references refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be">DBusTypeReader::u</references>
+        <references refid="group__DBusMarshal_1ga4578cc623c8b0978ca780ce0ab950fdb" compoundref="dbus-marshal-recursive_8c" startline="1122" endline="1130">_dbus_type_reader_get_signature</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</references>
+        <references refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" compoundref="dbus-marshal-basic_8c" startline="182" endline="191">_dbus_unpack_uint32</references>
+        <references refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" compoundref="dbus-marshal-recursive_8h" startline="41">DBusTypeReader::byte_order</references>
+        <references refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" compoundref="dbus-marshal-recursive_8h" startline="49">DBusTypeReader::value_str</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" compoundref="dbus-marshal-recursive_8c" startline="2308" endline="2339">_dbus_type_writer_write_basic</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <referencedby refid="group__DBusMessage_1ga6e2d1e936c3c61fe00d80a3f22fd5e76" compoundref="dbus-message_8c" startline="2791" endline="2825">dbus_message_iter_append_fixed_array</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_recurse</definition>
+        <argsstring>(DBusTypeWriter *writer, int container_type, const DBusString *contained_type, int contained_type_start, DBusTypeWriter *sub)</argsstring>
+        <name>_dbus_type_writer_recurse</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>container_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>contained_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contained_type_start</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>sub</declname>
+        </param>
+        <briefdescription>
+<para>Opens a new container and writes out the initial information for that container. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>container_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the container to open </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contained_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array element type or variant content type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contained_type_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position to look for the type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sub</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new sub-writer to write container contents </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="166" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2106" bodyend="2125"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" compoundref="dbus-marshal-header_8c" startline="528" endline="653">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMessage_1ga943150f4e87fd8507da224d22c266100" compoundref="dbus-message_8c" startline="2849" endline="2901">dbus_message_iter_open_container</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_unrecurse</definition>
+        <argsstring>(DBusTypeWriter *writer, DBusTypeWriter *sub)</argsstring>
+        <name>_dbus_type_writer_unrecurse</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>sub</declname>
+        </param>
+        <briefdescription>
+<para>Closes a container created by <ref refid="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" kindref="member">_dbus_type_writer_recurse()</ref> and writes any additional information to the values block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sub</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the sub-writer created by <ref refid="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" kindref="member">_dbus_type_writer_recurse()</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="171" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2176" bodyend="2297"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" compoundref="dbus-marshal-recursive_8h" startline="70">DBusTypeWriter::type_pos_is_expectation</references>
+        <references refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" compoundref="dbus-marshal-recursive_8h" startline="75">DBusTypeWriter::type_pos</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" compoundref="dbus-marshal-recursive_8h" startline="68">DBusTypeWriter::container_type</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1gaeab5ea0def3f587a0ed548b77d5c5cea" compoundref="dbus-protocol_8h" startline="160">DBUS_STRUCT_END_CHAR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusProtocol_1ga29ad22c7342ead042ae9e55ae20b49f1" compoundref="dbus-protocol_8h" startline="168">DBUS_DICT_ENTRY_END_CHAR</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a">DBusTypeWriter::u</references>
+        <references refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</references>
+        <references refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" compoundref="dbus-marshal-recursive_8h" startline="76">DBusTypeWriter::value_str</references>
+        <references refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" compoundref="dbus-marshal-recursive_8h" startline="66">DBusTypeWriter::byte_order</references>
+        <references refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" compoundref="dbus-marshal-recursive_8h" startline="74">DBusTypeWriter::type_str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1ga65c023673b837c27e8ccda5c2528d806" compoundref="dbus-marshal-header_8c" startline="174" endline="179">_dbus_header_get_byte_order</referencedby>
+        <referencedby refid="group__DBusMarshal_1gac7901e4196f10d4763df89b42d5db03e" compoundref="dbus-marshal-header_8c" startline="528" endline="653">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1gaf00482f63d4af88b7851621d1f24087a" compoundref="dbus-message_8c" startline="2918" endline="2937">dbus_message_iter_close_container</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_append_array</definition>
+        <argsstring>(DBusTypeWriter *writer, const DBusString *contained_type, int contained_type_start, DBusTypeWriter *sub)</argsstring>
+        <name>_dbus_type_writer_append_array</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>contained_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contained_type_start</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>sub</declname>
+        </param>
+        <briefdescription>
+<para>Append to an existing array. </para>        </briefdescription>
+        <detaileddescription>
+<para>Essentially, the writer will read an existing length at the write location; jump over that length; and write new fields. On unrecurse(), the existing length will be updated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contained_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>element type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contained_type_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position of element type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sub</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the subwriter to init </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="173" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2140" bodyend="2158"/>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" compoundref="dbus-marshal-recursive_8h" startline="68">DBusTypeWriter::container_type</references>
+        <references refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" compoundref="dbus-marshal-recursive_8h" startline="77">DBusTypeWriter::value_pos</references>
+        <references refid="structDBusTypeWriter_1afe24080d2be45fb6033833a1a38d5d1a">DBusTypeWriter::u</references>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4905750705d220efe9dfc71f49bedc11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_type_writer_write_reader</definition>
+        <argsstring>(DBusTypeWriter *writer, DBusTypeReader *reader)</argsstring>
+        <name>_dbus_type_writer_write_reader</name>
+        <param>
+          <type><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref> *</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Iterate through all values in the given reader, writing a copy of each value to the writer. </para>        </briefdescription>
+        <detaileddescription>
+<para>The reader will be moved forward to its end position.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the writer to copy to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reader to copy from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-recursive.h" line="177" column="1" bodyfile="dbus/dbus-marshal-recursive.c" bodystart="2728" bodyend="2732"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" compoundref="dbus-marshal-recursive_8h" startline="72">DBusTypeWriter::enabled</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-marshal-recursive.h<sp/><sp/>Marshalling<sp/>routines<sp/>for<sp/>recursive<sp/>types</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004,<sp/>2005<sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MARSHAL_RECURSIVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MARSHAL_RECURSIVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-protocol.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-list.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTypeReaderClass" kindref="compound">DBusTypeReaderClass</ref><sp/><ref refid="structDBusTypeReaderClass" kindref="compound">DBusTypeReaderClass</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusArrayLenFixup" kindref="compound">DBusArrayLenFixup</ref><sp/><sp/><sp/><ref refid="structDBusArrayLenFixup" kindref="compound">DBusArrayLenFixup</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structDBusTypeReader" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41" refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref><sp/>:<sp/>8;<sp/></highlight></codeline>
+<codeline lineno="43" refid="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="structDBusTypeReader_1a551e64ee83df38ebda8c3677a91afe1b" kindref="member">finished</ref><sp/>:<sp/>1;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="structDBusTypeReader_1a930fb8d6c82f269b0a151cfb33df86b3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="structDBusTypeReader_1a930fb8d6c82f269b0a151cfb33df86b3" kindref="member">array_len_offset</ref><sp/>:<sp/>3;<sp/></highlight></codeline>
+<codeline lineno="47" refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48" refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*<ref refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" kindref="member">value_str</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" kindref="member">value_pos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReaderClass" kindref="compound">DBusTypeReaderClass</ref><sp/>*<ref refid="structDBusTypeReader_1a238bd0d5a30d8f59fd9b71c95af25563" kindref="member">klass</ref>;<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56" refid="structDBusTypeReader_1a88a36090d466a1fc085a55f764e3a129" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader_1a88a36090d466a1fc085a55f764e3a129" kindref="member">start_pos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>array;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be" kindref="member">u</ref>;<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structDBusTypeWriter" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66" refid="structDBusTypeWriter_1a6c4baf0b7148cf3f76924b654dada148" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref><sp/>:<sp/>8;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structDBusTypeWriter_1ad0953035070c7c7d21b044b7b2f0f491" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>container_type<sp/>:<sp/>8;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="structDBusTypeWriter_1ae6db89e9a3adcd52678dc089810cfb0b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>type_pos_is_expectation<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="72" refid="structDBusTypeWriter_1a52c8617918c108d36b947cbdfc99c6ea" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>enabled<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="74" refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*<ref refid="structDBusTypeWriter_1a95204ef3a9cf29ee31687032b142b836" kindref="member">type_str</ref>;<sp/></highlight></codeline>
+<codeline lineno="75" refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeWriter_1a77c19debc0427372f368cfe7188951f8" kindref="member">type_pos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*<ref refid="structDBusTypeWriter_1aa4e4b3af31fd7a93d0e54d10882bcc07" kindref="member">value_str</ref>;<sp/></highlight></codeline>
+<codeline lineno="77" refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeWriter_1a27c0475eedd90be65f90a799e5210947" kindref="member">value_pos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82" refid="structDBusTypeWriter_1a24531a73a7b434bc3596a13dc0a12957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeWriter_1a24531a73a7b434bc3596a13dc0a12957" kindref="member">start_pos</ref>;<sp/></highlight></codeline>
+<codeline lineno="83" refid="structDBusTypeWriter_1a9bb5ce609d67e3254d35a261a425788c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeWriter_1a9bb5ce609d67e3254d35a261a425788c" kindref="member">len_pos</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84" refid="structDBusTypeWriter_1a2241529e1b6ab17bf0bbb838c896e02b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeWriter_1a2241529e1b6ab17bf0bbb838c896e02b" kindref="member">element_type_pos</ref>;<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>array;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="structDBusTypeReader_1ada12bed6758840dc19b1fcb271fb01be" kindref="member">u</ref>;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="structDBusArrayLenFixup" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusArrayLenFixup" kindref="compound">DBusArrayLenFixup</ref></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95" refid="structDBusArrayLenFixup_1aad03f6087695c9e9b409817ac34c6e2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusArrayLenFixup_1aad03f6087695c9e9b409817ac34c6e2b" kindref="member">len_pos_in_reader</ref>;<sp/></highlight></codeline>
+<codeline lineno="96" refid="structDBusArrayLenFixup_1a97cccea61d89992e6ad3a19bd569dd2f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusArrayLenFixup_1a97cccea61d89992e6ad3a19bd569dd2f" kindref="member">new_len</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga35d70cf69b1196518367e3e68e9b2dd2" kindref="member">_dbus_type_reader_init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref>,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" kindref="member">value_str</ref>,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" kindref="member">value_pos</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga3a5845f555f11c33ebaa71a75abff661" kindref="member">_dbus_type_reader_init_types_only</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" kindref="member">_dbus_type_reader_get_current_type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" kindref="member">_dbus_type_reader_get_element_type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga2a8ab1152821950b1fe29e000954981c" kindref="member">_dbus_type_reader_get_value_pos</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" kindref="member">_dbus_type_reader_read_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga7def93d676d528c261aa274cea41c29d" kindref="member">_dbus_type_reader_get_array_length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" kindref="member">_dbus_type_reader_read_fixed_multi</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*n_elements);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gac87315d74386314ec3b148ef737626d2" kindref="member">_dbus_type_reader_read_raw</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>**value_location);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" kindref="member">_dbus_type_reader_recurse</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*subreader);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" kindref="member">_dbus_type_reader_next</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1ga97a59dbd1597ef1b267457e809f095de" kindref="member">_dbus_type_reader_has_next</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga4578cc623c8b0978ca780ce0ab950fdb" kindref="member">_dbus_type_reader_get_signature</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/>**str_p,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*start_p,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*len_p);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" kindref="member">_dbus_type_reader_set_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*realign_root);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1gaa4057610b3d9e81fed212c17f6599516" kindref="member">_dbus_type_reader_delete</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/>*realign_root);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_type_reader_equal_values<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/>*lhs,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/>*rhs);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" kindref="member">_dbus_type_signature_next</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*signature,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gadeb83962df31e074874e957d17a0d4d1" kindref="member">_dbus_type_writer_init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref>,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" kindref="member">value_str</ref>,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" kindref="member">value_pos</ref>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gaa9ecf7e96d5323bc1da9cdf0c3f2c1e7" kindref="member">_dbus_type_writer_init_types_delayed</ref><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref>,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" kindref="member">value_str</ref>,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" kindref="member">value_pos</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga863b2f232a21582f9e6fe1951b09da91" kindref="member">_dbus_type_writer_add_types</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga34d675b57c7e6569707d22ba76ae010c" kindref="member">_dbus_type_writer_remove_types</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" kindref="member">_dbus_type_writer_init_values_only</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1aeb0846d954066f420e1df98b81148702" kindref="member">byte_order</ref>,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1af52e270ededd0aabb642c6130a3e9e40" kindref="member">type_str</ref>,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1a160a55f9869e297572c5aa5b6ce7bc71" kindref="member">type_pos</ref>,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusTypeReader_1a4065d7775758beb044ee23a71875571f" kindref="member">value_str</ref>,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader_1ac17280869573f060a945a43e4a5c3ca4" kindref="member">value_pos</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1ga0103b0214766b0ff1ca05bcc7f1e631b" kindref="member">_dbus_type_writer_write_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" kindref="member">_dbus_type_writer_write_fixed_multi</ref><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>element_type,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_elements);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1ga4c0a1036e59dac270141052d951baff2" kindref="member">_dbus_type_writer_recurse</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>container_type,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*contained_type,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contained_type_start,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sub);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" kindref="member">_dbus_type_writer_unrecurse</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sub);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1gacc2b4c348f93898f6269feb0bf055617" kindref="member">_dbus_type_writer_append_array</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>*contained_type,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contained_type_start,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sub);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMarshal_1ga4905750705d220efe9dfc71f49bedc11" kindref="member">_dbus_type_writer_write_reader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTypeWriter" kindref="compound">DBusTypeWriter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*writer,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTypeReader" kindref="compound">DBusTypeReader</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*reader);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MARSHAL_RECURSIVE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-marshal-recursive.h"/>
+  </compounddef>
+</doxygen>

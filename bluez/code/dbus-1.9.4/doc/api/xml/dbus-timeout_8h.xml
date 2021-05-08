@@ -1,0 +1,961 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-timeout_8h" kind="file" language="C++">
+    <compoundname>dbus-timeout.h</compoundname>
+    <includes refid="dbus-connection_8h" local="no">dbus/dbus-connection.h</includes>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includedby refid="dbus-connection-internal_8h" local="no">dbus-connection-internal.h</includedby>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-server-protected_8h" local="no">dbus-server-protected.h</includedby>
+    <includedby refid="dbus-timeout_8c" local="yes">dbus-timeout.c</includedby>
+    <incdepgraph>
+      <node id="4476">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4467">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="4468" relation="include">
+        </childnode>
+        <childnode refid="4474" relation="include">
+        </childnode>
+        <childnode refid="4475" relation="include">
+        </childnode>
+        <childnode refid="4477" relation="include">
+        </childnode>
+      </node>
+      <node id="4473">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="4469">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="4481">
+        <label>stdint.h</label>
+      </node>
+      <node id="4477">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="4486">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="4479">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="4480" relation="include">
+        </childnode>
+        <childnode refid="4481" relation="include">
+        </childnode>
+        <childnode refid="4482" relation="include">
+        </childnode>
+        <childnode refid="4468" relation="include">
+        </childnode>
+        <childnode refid="4483" relation="include">
+        </childnode>
+        <childnode refid="4484" relation="include">
+        </childnode>
+        <childnode refid="4485" relation="include">
+        </childnode>
+        <childnode refid="4476" relation="include">
+        </childnode>
+        <childnode refid="4486" relation="include">
+        </childnode>
+      </node>
+      <node id="4478">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="4474" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+        <childnode refid="4468" relation="include">
+        </childnode>
+        <childnode refid="4479" relation="include">
+        </childnode>
+        <childnode refid="4487" relation="include">
+        </childnode>
+      </node>
+      <node id="4471">
+        <label>stddef.h</label>
+      </node>
+      <node id="4466">
+        <label>dbus-timeout.h</label>
+        <link refid="dbus-timeout.h"/>
+        <childnode refid="4467" relation="include">
+        </childnode>
+        <childnode refid="4478" relation="include">
+        </childnode>
+      </node>
+      <node id="4484">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+        <childnode refid="4474" relation="include">
+        </childnode>
+        <childnode refid="4476" relation="include">
+        </childnode>
+      </node>
+      <node id="4472">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+      </node>
+      <node id="4485">
+        <label>string.h</label>
+      </node>
+      <node id="4488">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+      </node>
+      <node id="4475">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+        <childnode refid="4472" relation="include">
+        </childnode>
+        <childnode refid="4474" relation="include">
+        </childnode>
+        <childnode refid="4468" relation="include">
+        </childnode>
+        <childnode refid="4476" relation="include">
+        </childnode>
+      </node>
+      <node id="4487">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+        <childnode refid="4488" relation="include">
+        </childnode>
+      </node>
+      <node id="4480">
+        <label>config.h</label>
+      </node>
+      <node id="4483">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="4484" relation="include">
+        </childnode>
+        <childnode refid="4468" relation="include">
+        </childnode>
+      </node>
+      <node id="4468">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4470" relation="include">
+        </childnode>
+        <childnode refid="4473" relation="include">
+        </childnode>
+      </node>
+      <node id="4470">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="4471" relation="include">
+        </childnode>
+        <childnode refid="4472" relation="include">
+        </childnode>
+      </node>
+      <node id="4482">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4474">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="4469" relation="include">
+        </childnode>
+        <childnode refid="4471" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4490">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal_8h_source"/>
+        <childnode refid="4491" relation="include">
+        </childnode>
+        <childnode refid="4492" relation="include">
+        </childnode>
+        <childnode refid="4493" relation="include">
+        </childnode>
+        <childnode refid="4494" relation="include">
+        </childnode>
+        <childnode refid="4495" relation="include">
+        </childnode>
+        <childnode refid="4496" relation="include">
+        </childnode>
+        <childnode refid="4497" relation="include">
+        </childnode>
+        <childnode refid="4498" relation="include">
+        </childnode>
+        <childnode refid="4499" relation="include">
+        </childnode>
+        <childnode refid="4500" relation="include">
+        </childnode>
+        <childnode refid="4501" relation="include">
+        </childnode>
+      </node>
+      <node id="4507">
+        <label>dbus-server-win.c</label>
+        <link refid="dbus-server-win_8c_source"/>
+      </node>
+      <node id="4510">
+        <label>dbus-server-win.h</label>
+        <link refid="dbus-server-win_8h_source"/>
+        <childnode refid="4507" relation="include">
+        </childnode>
+      </node>
+      <node id="4492">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="4505">
+        <label>dbus-server-launchd.c</label>
+        <link refid="dbus-server-launchd_8c_source"/>
+      </node>
+      <node id="4504">
+        <label>dbus-server-launchd.h</label>
+        <link refid="dbus-server-launchd_8h_source"/>
+        <childnode refid="4505" relation="include">
+        </childnode>
+        <childnode refid="4497" relation="include">
+        </childnode>
+      </node>
+      <node id="4497">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="4509">
+        <label>dbus-server-unix.h</label>
+        <link refid="dbus-server-unix_8h_source"/>
+        <childnode refid="4497" relation="include">
+        </childnode>
+        <childnode refid="4508" relation="include">
+        </childnode>
+      </node>
+      <node id="4511">
+        <label>dbus-timeout.c</label>
+        <link refid="dbus-timeout_8c_source"/>
+      </node>
+      <node id="4489">
+        <label>dbus-timeout.h</label>
+        <link refid="dbus-timeout.h"/>
+        <childnode refid="4490" relation="include">
+        </childnode>
+        <childnode refid="4492" relation="include">
+        </childnode>
+        <childnode refid="4502" relation="include">
+        </childnode>
+        <childnode refid="4511" relation="include">
+        </childnode>
+      </node>
+      <node id="4500">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="4508">
+        <label>dbus-server.c</label>
+        <link refid="dbus-server_8c_source"/>
+      </node>
+      <node id="4491">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="4493">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="4496">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="4506">
+        <label>dbus-server-socket.h</label>
+        <link refid="dbus-server-socket_8h_source"/>
+        <childnode refid="4496" relation="include">
+        </childnode>
+        <childnode refid="4497" relation="include">
+        </childnode>
+        <childnode refid="4507" relation="include">
+        </childnode>
+        <childnode refid="4508" relation="include">
+        </childnode>
+      </node>
+      <node id="4501">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="4502">
+        <label>dbus-server-protected.h</label>
+        <link refid="dbus-server-protected_8h_source"/>
+        <childnode refid="4503" relation="include">
+        </childnode>
+        <childnode refid="4504" relation="include">
+        </childnode>
+        <childnode refid="4506" relation="include">
+        </childnode>
+        <childnode refid="4509" relation="include">
+        </childnode>
+        <childnode refid="4510" relation="include">
+        </childnode>
+      </node>
+      <node id="4499">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="4494">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="4498">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="4495">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="4503">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="4495" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusTimeoutInternals_1gabc3cb66aa2ec450d298fe7ec3b480fa1" prot="public" static="no">
+        <type>struct <ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref></type>
+        <definition>DBusTimeoutList</definition>
+        <argsstring></argsstring>
+        <name>DBusTimeoutList</name>
+        <briefdescription>
+<para>Opaque data type representing a list of timeouts and a set of DBusAddTimeoutFunction/DBusRemoveTimeoutFunction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Automatically handles removing/re-adding timeouts when the DBusAddTimeoutFunction is updated or changed. Holds a reference count to each timeout. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.h" line="184" column="1" bodyfile="dbus/dbus-timeout.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" prot="public" static="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref>(*</type>
+        <definition>typedef dbus_bool_t(*  DBusTimeoutHandler) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>DBusTimeoutHandler</name>
+        <briefdescription>
+<para>function to run when the timeout is handled </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.h" line="41" column="1" bodyfile="dbus/dbus-timeout.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga3f63abde6bb7ebecf6fa8774ba501a26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+        <definition>DBusTimeout * _dbus_timeout_new</definition>
+        <argsstring>(int interval, DBusTimeoutHandler handler, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>_dbus_timeout_new</name>
+        <param>
+          <type>int</type>
+          <declname>interval</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" kindref="member">DBusTimeoutHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref>, enabled by default. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout interval in milliseconds. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to call when the timeout occurs. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to the handler </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object, </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="63" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="63" bodyend="84"/>
+        <references refid="structDBusTimeout_1a16cb374453e70f3951d02bcba73c1845" compoundref="dbus-timeout_8c" startline="49">DBusTimeout::data</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="structDBusTimeout_1a35ac546656105d0fe1929d4e3d224503" compoundref="dbus-timeout_8c" startline="51">DBusTimeout::enabled</references>
+        <references refid="structDBusTimeout_1af7ff88e58a10f4ed49a0838e0c930be0" compoundref="dbus-timeout_8c" startline="50">DBusTimeout::free_data_function</references>
+        <references refid="structDBusTimeout_1aadd5adfcf8896e0529df439548f351cc" compoundref="dbus-timeout_8c" startline="47">DBusTimeout::free_handler_data_function</references>
+        <references refid="structDBusTimeout_1a362a61722d3fae5c18c93654a57aa377" compoundref="dbus-timeout_8c" startline="45">DBusTimeout::handler</references>
+        <references refid="structDBusTimeout_1a58a22bfb2f7f0543745c2d56fa9f63a1" compoundref="dbus-timeout_8c" startline="46">DBusTimeout::handler_data</references>
+        <references refid="structDBusTimeout_1a8772f07a4695be987e7d0fea1b80ba16" compoundref="dbus-timeout_8c" startline="43">DBusTimeout::interval</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeout_1a1b2b2eadd3e162b213384cbd6d1e941e" compoundref="dbus-timeout_8c" startline="42">DBusTimeout::refcount</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1gadf014caa89efb09ae72c300ae5c4fda5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+        <definition>DBusTimeout * _dbus_timeout_ref</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>_dbus_timeout_ref</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Increments the reference count of a <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the timeout object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="93" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="93" bodyend="98"/>
+        <references refid="structDBusTimeout_1a1b2b2eadd3e162b213384cbd6d1e941e" compoundref="dbus-timeout_8c" startline="42">DBusTimeout::refcount</references>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_unref</definition>
+        <argsstring>(DBusTimeout *timeout)</argsstring>
+        <name>_dbus_timeout_unref</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the reference count of a <ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> object and finalizes the object if the count reaches zero. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="107" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="107" bodyend="122"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusTimeout_1ga88712006f7772174504a0fba0a0ddd60" compoundref="dbus-timeout_8c" startline="446" endline="455">dbus_timeout_set_data</references>
+        <references refid="structDBusTimeout_1aadd5adfcf8896e0529df439548f351cc" compoundref="dbus-timeout_8c" startline="47">DBusTimeout::free_handler_data_function</references>
+        <references refid="structDBusTimeout_1a58a22bfb2f7f0543745c2d56fa9f63a1" compoundref="dbus-timeout_8c" startline="46">DBusTimeout::handler_data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeout_1a1b2b2eadd3e162b213384cbd6d1e941e" compoundref="dbus-timeout_8c" startline="42">DBusTimeout::refcount</references>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1gadbd32136416a555ad737b533c8e713ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_set_interval</definition>
+        <argsstring>(DBusTimeout *timeout, int interval)</argsstring>
+        <name>_dbus_timeout_set_interval</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+<para>Changes the timeout interval. </para>        </briefdescription>
+        <detaileddescription>
+<para>Note that you have to disable and re-enable the timeout using the timeout toggle function (<ref refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" kindref="member">_dbus_connection_toggle_timeout_unlocked()</ref> etc.) to notify the application of this change.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new interval </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="134" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="134" bodyend="140"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusTimeout_1a8772f07a4695be987e7d0fea1b80ba16" compoundref="dbus-timeout_8c" startline="43">DBusTimeout::interval</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga1b85d28ab11e4e2f8916b786e13dbcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_set_enabled</definition>
+        <argsstring>(DBusTimeout *timeout, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_timeout_set_enabled</name>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Changes the timeout&apos;s enabled-ness. </para>        </briefdescription>
+        <detaileddescription>
+<para>Note that you should use <ref refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" kindref="member">_dbus_connection_toggle_timeout_unlocked()</ref> etc. instead, if the timeout is passed out to an application main loop. i.e. you can&apos;t use this function in the D-Bus library, it&apos;s only used in the message bus daemon implementation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if timeout should be enabled. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="153" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="153" bodyend="157"/>
+        <references refid="structDBusTimeout_1a35ac546656105d0fe1929d4e3d224503" compoundref="dbus-timeout_8c" startline="51">DBusTimeout::enabled</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga5b122b35cdb3926b7dc2d084ddff9d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+        <definition>DBusTimeoutList * _dbus_timeout_list_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_timeout_list_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new timeout list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if insufficient memory exists.</para><para><simplesect kind="return"><para>the new timeout list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="194" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="194" bodyend="203"/>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_list_free</definition>
+        <argsstring>(DBusTimeoutList *timeout_list)</argsstring>
+        <name>_dbus_timeout_list_free</name>
+        <param>
+          <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+          <declname>timeout_list</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="211" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="211" bodyend="223"/>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" compoundref="dbus-list_8c" startline="759" endline="774">_dbus_list_foreach</references>
+        <references refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</references>
+        <references refid="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" compoundref="dbus-timeout_8c" startline="107" endline="122">_dbus_timeout_unref</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" compoundref="dbus-timeout_8c" startline="178">DBusTimeoutList::timeouts</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_timeout_list_set_functions</definition>
+        <argsstring>(DBusTimeoutList *timeout_list, DBusAddTimeoutFunction add_function, DBusRemoveTimeoutFunction remove_function, DBusTimeoutToggledFunction toggled_function, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>_dbus_timeout_list_set_functions</name>
+        <param>
+          <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+          <declname>timeout_list</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga91d796869e7fa9e96d843b2c0d480df1" kindref="member">DBusAddTimeoutFunction</ref></type>
+          <declname>add_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga418f70c8dfaa15c45f1d51fb9569eab8" kindref="member">DBusRemoveTimeoutFunction</ref></type>
+          <declname>remove_function</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusConnection_1ga45c22fb4103827cd10f319cc90e286ae" kindref="member">DBusTimeoutToggledFunction</ref></type>
+          <declname>toggled_function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets the timeout functions. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is the &quot;backend&quot; for <ref refid="group__DBusConnection_1gab3cbc68eec427e9ce1783b25d44fe93c" kindref="member">dbus_connection_set_timeout_functions()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>add_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the add timeout function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remove_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the remove timeout function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toggled_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>toggle notify function, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data for those functions. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="239" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="239" bodyend="299"/>
+        <references refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" compoundref="dbus-list_8c" startline="759" endline="774">_dbus_list_foreach</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="structDBusTimeoutList_1aab57481c712e47f9157d23bc6731972e" compoundref="dbus-timeout_8c" startline="180">DBusTimeoutList::add_timeout_function</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="structDBusTimeout_1a16cb374453e70f3951d02bcba73c1845" compoundref="dbus-timeout_8c" startline="49">DBusTimeout::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusTimeout_1af7ff88e58a10f4ed49a0838e0c930be0" compoundref="dbus-timeout_8c" startline="50">DBusTimeout::free_data_function</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeoutList_1a51d25b272b950c3f63b3b71926940a55" compoundref="dbus-timeout_8c" startline="181">DBusTimeoutList::remove_timeout_function</references>
+        <references refid="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" compoundref="dbus-timeout_8c" startline="183">DBusTimeoutList::timeout_data</references>
+        <references refid="structDBusTimeoutList_1ac93efcdc11b6e68d19f1e57e0bff72f7" compoundref="dbus-timeout_8c" startline="184">DBusTimeoutList::timeout_free_data_function</references>
+        <references refid="structDBusTimeoutList_1a198efba668450ebafa97e9d5197fcc2e" compoundref="dbus-timeout_8c" startline="182">DBusTimeoutList::timeout_toggled_function</references>
+        <references refid="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" compoundref="dbus-timeout_8c" startline="178">DBusTimeoutList::timeouts</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</referencedby>
+        <referencedby refid="group__DBusConnection_1gab3cbc68eec427e9ce1783b25d44fe93c" compoundref="dbus-connection_8c" startline="4989" endline="5010">dbus_connection_set_timeout_functions</referencedby>
+        <referencedby refid="group__DBusServer_1gacafa42ffc063a7386db40a975c32d530" compoundref="dbus-server_8c" startline="982" endline="1017">dbus_server_set_timeout_functions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_timeout_list_add_timeout</definition>
+        <argsstring>(DBusTimeoutList *timeout_list, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_timeout_list_add_timeout</name>
+        <param>
+          <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+          <declname>timeout_list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new timeout to the timeout list, invoking the application DBusAddTimeoutFunction if appropriate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> If no memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="310" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="310" bodyend="330"/>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" compoundref="dbus-list_8c" startline="446" endline="459">_dbus_list_remove_last</references>
+        <references refid="group__DBusTimeoutInternals_1gadf014caa89efb09ae72c300ae5c4fda5" compoundref="dbus-timeout_8c" startline="93" endline="98">_dbus_timeout_ref</references>
+        <references refid="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" compoundref="dbus-timeout_8c" startline="107" endline="122">_dbus_timeout_unref</references>
+        <references refid="structDBusTimeoutList_1aab57481c712e47f9157d23bc6731972e" compoundref="dbus-timeout_8c" startline="180">DBusTimeoutList::add_timeout_function</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" compoundref="dbus-timeout_8c" startline="183">DBusTimeoutList::timeout_data</references>
+        <references refid="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" compoundref="dbus-timeout_8c" startline="178">DBusTimeoutList::timeouts</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga69e87e3be94b8c681585ec870e39a64a" compoundref="dbus-connection_8c" startline="867" endline="873">_dbus_connection_add_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga7e10a662386fb7f693e0d168161e395b" compoundref="dbus-server_8c" startline="397" endline="403">_dbus_server_add_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_list_remove_timeout</definition>
+        <argsstring>(DBusTimeoutList *timeout_list, DBusTimeout *timeout)</argsstring>
+        <name>_dbus_timeout_list_remove_timeout</name>
+        <param>
+          <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+          <declname>timeout_list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Removes a timeout from the timeout list, invoking the application&apos;s DBusRemoveTimeoutFunction if appropriate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="340" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="340" bodyend="351"/>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="415" endline="433">_dbus_list_remove</references>
+        <references refid="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" compoundref="dbus-timeout_8c" startline="107" endline="122">_dbus_timeout_unref</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeoutList_1a51d25b272b950c3f63b3b71926940a55" compoundref="dbus-timeout_8c" startline="181">DBusTimeoutList::remove_timeout_function</references>
+        <references refid="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" compoundref="dbus-timeout_8c" startline="183">DBusTimeoutList::timeout_data</references>
+        <references refid="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" compoundref="dbus-timeout_8c" startline="178">DBusTimeoutList::timeouts</references>
+        <referencedby refid="group__DBusConnectionInternals_1gabaa6d26f6eca30782904af1ceb703bd1" compoundref="dbus-connection_8c" startline="885" endline="892">_dbus_connection_remove_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga69509697f091e354442cedb63886c20e" compoundref="dbus-server_8c" startline="412" endline="419">_dbus_server_remove_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_timeout_list_toggle_timeout</definition>
+        <argsstring>(DBusTimeoutList *timeout_list, DBusTimeout *timeout, dbus_bool_t enabled)</argsstring>
+        <name>_dbus_timeout_list_toggle_timeout</name>
+        <param>
+          <type><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> *</type>
+          <declname>timeout_list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref> *</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Sets a timeout to the given enabled state, invoking the application&apos;s DBusTimeoutToggledFunction if appropriate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timeout to toggle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> to enable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="362" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="362" bodyend="376"/>
+        <references refid="structDBusTimeout_1a35ac546656105d0fe1929d4e3d224503" compoundref="dbus-timeout_8c" startline="51">DBusTimeout::enabled</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" compoundref="dbus-timeout_8c" startline="183">DBusTimeoutList::timeout_data</references>
+        <references refid="structDBusTimeoutList_1a198efba668450ebafa97e9d5197fcc2e" compoundref="dbus-timeout_8c" startline="182">DBusTimeoutList::timeout_toggled_function</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga165dcfd8b995ff0edd19aebcf3e1a61a" compoundref="dbus-connection_8c" startline="905" endline="913">_dbus_connection_toggle_timeout_unlocked</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga74d2714ce80a089d2607a6fc5763d819" compoundref="dbus-server_8c" startline="431" endline="439">_dbus_server_toggle_timeout</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-timeout.h<sp/>DBusTimeout<sp/>internal<sp/>interfaces</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_TIMEOUT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_TIMEOUT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-connection.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">/*<sp/>Public<sp/>methods<sp/>on<sp/>DBusTimeout<sp/>are<sp/>in<sp/>dbus-connection.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="group__DBusTimeoutInternals_1gabc3cb66aa2ec450d298fe7ec3b480fa1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>(*<sp/><ref refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" kindref="member">DBusTimeoutHandler</ref>)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref>*<sp/><ref refid="group__DBusTimeoutInternals_1ga3f63abde6bb7ebecf6fa8774ba501a26" kindref="member">_dbus_timeout_new</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interval,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga891c5d403b610a7dd8c4475e8aa14044" kindref="member">DBusTimeoutHandler</ref><sp/><sp/>handler,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><sp/><sp/><sp/>free_data_function);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref>*<sp/><ref refid="group__DBusTimeoutInternals_1gadf014caa89efb09ae72c300ae5c4fda5" kindref="member">_dbus_timeout_ref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1gaea6359793576a2eec42e27267bae7bbd" kindref="member">_dbus_timeout_unref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1gadbd32136416a555ad737b533c8e713ef" kindref="member">_dbus_timeout_set_interval</ref><sp/>(<ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interval);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga1b85d28ab11e4e2f8916b786e13dbcc4" kindref="member">_dbus_timeout_set_enabled</ref><sp/><sp/>(<ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/>*<ref refid="group__DBusTimeoutInternals_1ga5b122b35cdb3926b7dc2d084ddff9d62" kindref="member">_dbus_timeout_list_new</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" kindref="member">_dbus_timeout_list_free</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout_list);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" kindref="member">_dbus_timeout_list_set_functions</ref><sp/><sp/>(<ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout_list,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga91d796869e7fa9e96d843b2c0d480df1" kindref="member">DBusAddTimeoutFunction</ref><sp/><sp/><sp/><sp/><sp/>add_function,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga418f70c8dfaa15c45f1d51fb9569eab8" kindref="member">DBusRemoveTimeoutFunction</ref><sp/><sp/>remove_function,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusConnection_1ga45c22fb4103827cd10f319cc90e286ae" kindref="member">DBusTimeoutToggledFunction</ref><sp/>toggled_function,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_data_function);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" kindref="member">_dbus_timeout_list_add_timeout</ref><sp/><sp/><sp/><sp/>(<ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout_list,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" kindref="member">_dbus_timeout_list_remove_timeout</ref><sp/>(<ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout_list,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" kindref="member">_dbus_timeout_list_toggle_timeout</ref><sp/>(<ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout_list,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusTimeout" kindref="compound">DBusTimeout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timeout,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_TIMEOUT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-timeout.h"/>
+  </compounddef>
+</doxygen>

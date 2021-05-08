@@ -1,0 +1,1823 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-list_8h" kind="file" language="C++">
+    <compoundname>dbus-list.h</compoundname>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includes refid="dbus-memory_8h" local="no">dbus/dbus-memory.h</includes>
+    <includes refid="dbus-types_8h" local="no">dbus/dbus-types.h</includes>
+    <includes refid="dbus-sysdeps_8h" local="no">dbus/dbus-sysdeps.h</includes>
+    <includedby refid="dbus-address_8c" local="yes">dbus-address.c</includedby>
+    <includedby refid="dbus-auth_8c" local="yes">dbus-auth.c</includedby>
+    <includedby refid="dbus-connection-internal_8h" local="no">dbus-connection-internal.h</includedby>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-pending-call-internal_8h" local="no">dbus-pending-call-internal.h</includedby>
+    <includedby refid="dbus-message-internal_8h" local="no">dbus-message-internal.h</includedby>
+    <includedby refid="dbus-keyring_8c" local="no">dbus-keyring.c</includedby>
+    <includedby refid="dbus-list_8c" local="yes">dbus-list.c</includedby>
+    <includedby refid="dbus-marshal-recursive_8h" local="no">dbus-marshal-recursive.h</includedby>
+    <includedby refid="dbus-memory_8c" local="yes">dbus-memory.c</includedby>
+    <includedby refid="dbus-message_8c" local="yes">dbus-message.c</includedby>
+    <includedby refid="dbus-pending-call_8c" local="yes">dbus-pending-call.c</includedby>
+    <includedby refid="dbus-shell_8c" local="yes">dbus-shell.c</includedby>
+    <includedby refid="dbus-socket-set-poll_8c" local="no">dbus-socket-set-poll.c</includedby>
+    <includedby refid="dbus-sysdeps-thread-win_8c" local="yes">dbus-sysdeps-thread-win.c</includedby>
+    <includedby refid="dbus-sysdeps-unix_8c" local="yes">dbus-sysdeps-unix.c</includedby>
+    <includedby refid="dbus-sysdeps-win_8c" local="yes">dbus-sysdeps-win.c</includedby>
+    <includedby refid="dbus-sysdeps_8c" local="yes">dbus-sysdeps.c</includedby>
+    <includedby refid="dbus-threads_8c" local="yes">dbus-threads.c</includedby>
+    <includedby refid="dbus-timeout_8c" local="yes">dbus-timeout.c</includedby>
+    <includedby refid="dbus-watch_8c" local="yes">dbus-watch.c</includedby>
+    <incdepgraph>
+      <node id="1291">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1276">
+        <label>dbus-list.h</label>
+        <link refid="dbus-list.h"/>
+        <childnode refid="1277" relation="include">
+        </childnode>
+        <childnode refid="1278" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+      </node>
+      <node id="1284">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1279">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="1287">
+        <label>stdint.h</label>
+      </node>
+      <node id="1293">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="1285">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="1286" relation="include">
+        </childnode>
+        <childnode refid="1287" relation="include">
+        </childnode>
+        <childnode refid="1288" relation="include">
+        </childnode>
+        <childnode refid="1283" relation="include">
+        </childnode>
+        <childnode refid="1289" relation="include">
+        </childnode>
+        <childnode refid="1290" relation="include">
+        </childnode>
+        <childnode refid="1292" relation="include">
+        </childnode>
+        <childnode refid="1291" relation="include">
+        </childnode>
+        <childnode refid="1293" relation="include">
+        </childnode>
+      </node>
+      <node id="1277">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="1278" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1283" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+        <childnode refid="1294" relation="include">
+        </childnode>
+      </node>
+      <node id="1280">
+        <label>stddef.h</label>
+      </node>
+      <node id="1290">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1278" relation="include">
+        </childnode>
+        <childnode refid="1291" relation="include">
+        </childnode>
+      </node>
+      <node id="1282">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+      </node>
+      <node id="1292">
+        <label>string.h</label>
+      </node>
+      <node id="1295">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+      </node>
+      <node id="1294">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1295" relation="include">
+        </childnode>
+      </node>
+      <node id="1286">
+        <label>config.h</label>
+      </node>
+      <node id="1289">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="1290" relation="include">
+        </childnode>
+        <childnode refid="1283" relation="include">
+        </childnode>
+      </node>
+      <node id="1283">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+      </node>
+      <node id="1281">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1280" relation="include">
+        </childnode>
+        <childnode refid="1282" relation="include">
+        </childnode>
+      </node>
+      <node id="1288">
+        <label>inttypes.h</label>
+      </node>
+      <node id="1278">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1280" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1327">
+        <label>dbus-signature.c</label>
+        <link refid="dbus-signature_8c_source"/>
+      </node>
+      <node id="1314">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="1299">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal_8h_source"/>
+        <childnode refid="1300" relation="include">
+        </childnode>
+        <childnode refid="1301" relation="include">
+        </childnode>
+        <childnode refid="1302" relation="include">
+        </childnode>
+        <childnode refid="1303" relation="include">
+        </childnode>
+        <childnode refid="1304" relation="include">
+        </childnode>
+        <childnode refid="1305" relation="include">
+        </childnode>
+        <childnode refid="1306" relation="include">
+        </childnode>
+        <childnode refid="1307" relation="include">
+        </childnode>
+        <childnode refid="1308" relation="include">
+        </childnode>
+        <childnode refid="1309" relation="include">
+        </childnode>
+        <childnode refid="1310" relation="include">
+        </childnode>
+      </node>
+      <node id="1320">
+        <label>dbus-list.c</label>
+        <link refid="dbus-list_8c_source"/>
+      </node>
+      <node id="1296">
+        <label>dbus-list.h</label>
+        <link refid="dbus-list.h"/>
+        <childnode refid="1297" relation="include">
+        </childnode>
+        <childnode refid="1298" relation="include">
+        </childnode>
+        <childnode refid="1299" relation="include">
+        </childnode>
+        <childnode refid="1301" relation="include">
+        </childnode>
+        <childnode refid="1311" relation="include">
+        </childnode>
+        <childnode refid="1312" relation="include">
+        </childnode>
+        <childnode refid="1319" relation="include">
+        </childnode>
+        <childnode refid="1320" relation="include">
+        </childnode>
+        <childnode refid="1321" relation="include">
+        </childnode>
+        <childnode refid="1328" relation="include">
+        </childnode>
+        <childnode refid="1315" relation="include">
+        </childnode>
+        <childnode refid="1303" relation="include">
+        </childnode>
+        <childnode refid="1329" relation="include">
+        </childnode>
+        <childnode refid="1330" relation="include">
+        </childnode>
+        <childnode refid="1331" relation="include">
+        </childnode>
+        <childnode refid="1332" relation="include">
+        </childnode>
+        <childnode refid="1333" relation="include">
+        </childnode>
+        <childnode refid="1334" relation="include">
+        </childnode>
+        <childnode refid="1335" relation="include">
+        </childnode>
+        <childnode refid="1336" relation="include">
+        </childnode>
+        <childnode refid="1337" relation="include">
+        </childnode>
+      </node>
+      <node id="1301">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="1306">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="1334">
+        <label>dbus-sysdeps.c</label>
+        <link refid="dbus-sysdeps_8c_source"/>
+      </node>
+      <node id="1336">
+        <label>dbus-timeout.c</label>
+        <link refid="dbus-timeout_8c_source"/>
+      </node>
+      <node id="1324">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="1309">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="1332">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+      <node id="1319">
+        <label>dbus-keyring.c</label>
+        <link refid="dbus-keyring_8c_source"/>
+      </node>
+      <node id="1311">
+        <label>dbus-pending-call-internal.h</label>
+        <link refid="dbus-pending-call-internal_8h_source"/>
+        <childnode refid="1301" relation="include">
+        </childnode>
+        <childnode refid="1303" relation="include">
+        </childnode>
+      </node>
+      <node id="1335">
+        <label>dbus-threads.c</label>
+        <link refid="dbus-threads_8c_source"/>
+      </node>
+      <node id="1300">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="1326">
+        <label>dbus-marshal-validate.c</label>
+        <link refid="dbus-marshal-validate_8c_source"/>
+      </node>
+      <node id="1323">
+        <label>dbus-marshal-byteswap.c</label>
+        <link refid="dbus-marshal-byteswap_8c_source"/>
+      </node>
+      <node id="1316">
+        <label>dbus-transport-protected.h</label>
+        <link refid="dbus-transport-protected_8h_source"/>
+        <childnode refid="1317" relation="include">
+        </childnode>
+        <childnode refid="1318" relation="include">
+        </childnode>
+        <childnode refid="1307" relation="include">
+        </childnode>
+        <childnode refid="1308" relation="include">
+        </childnode>
+        <childnode refid="1309" relation="include">
+        </childnode>
+        <childnode refid="1310" relation="include">
+        </childnode>
+      </node>
+      <node id="1312">
+        <label>dbus-message-internal.h</label>
+        <link refid="dbus-message-internal_8h_source"/>
+        <childnode refid="1301" relation="include">
+        </childnode>
+        <childnode refid="1313" relation="include">
+        </childnode>
+        <childnode refid="1303" relation="include">
+        </childnode>
+        <childnode refid="1316" relation="include">
+        </childnode>
+      </node>
+      <node id="1322">
+        <label>dbus-marshal-byteswap.h</label>
+        <link refid="dbus-marshal-byteswap_8h_source"/>
+        <childnode refid="1323" relation="include">
+        </childnode>
+        <childnode refid="1324" relation="include">
+        </childnode>
+        <childnode refid="1315" relation="include">
+        </childnode>
+      </node>
+      <node id="1302">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="1305">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="1315">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="1329">
+        <label>dbus-shell.c</label>
+        <link refid="dbus-shell_8c_source"/>
+      </node>
+      <node id="1310">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="1331">
+        <label>dbus-sysdeps-thread-win.c</label>
+        <link refid="dbus-sysdeps-thread-win_8c_source"/>
+      </node>
+      <node id="1308">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="1325">
+        <label>dbus-marshal-recursive.c</label>
+        <link refid="dbus-marshal-recursive_8c_source"/>
+      </node>
+      <node id="1321">
+        <label>dbus-marshal-recursive.h</label>
+        <link refid="dbus-marshal-recursive_8h_source"/>
+        <childnode refid="1322" relation="include">
+        </childnode>
+        <childnode refid="1324" relation="include">
+        </childnode>
+        <childnode refid="1325" relation="include">
+        </childnode>
+        <childnode refid="1326" relation="include">
+        </childnode>
+        <childnode refid="1314" relation="include">
+        </childnode>
+        <childnode refid="1315" relation="include">
+        </childnode>
+        <childnode refid="1327" relation="include">
+        </childnode>
+      </node>
+      <node id="1303">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="1307">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="1318">
+        <label>dbus-transport-socket.h</label>
+        <link refid="dbus-transport-socket_8h_source"/>
+        <childnode refid="1304" relation="include">
+        </childnode>
+        <childnode refid="1305" relation="include">
+        </childnode>
+        <childnode refid="1307" relation="include">
+        </childnode>
+        <childnode refid="1308" relation="include">
+        </childnode>
+        <childnode refid="1309" relation="include">
+        </childnode>
+        <childnode refid="1310" relation="include">
+        </childnode>
+      </node>
+      <node id="1333">
+        <label>dbus-sysdeps-win.c</label>
+        <link refid="dbus-sysdeps-win_8c_source"/>
+      </node>
+      <node id="1304">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="1337">
+        <label>dbus-watch.c</label>
+        <link refid="dbus-watch_8c_source"/>
+      </node>
+      <node id="1330">
+        <label>dbus-socket-set-poll.c</label>
+        <link refid="dbus-socket-set-poll_8c_source"/>
+      </node>
+      <node id="1317">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="1304" relation="include">
+        </childnode>
+      </node>
+      <node id="1298">
+        <label>dbus-auth.c</label>
+        <link refid="dbus-auth_8c_source"/>
+      </node>
+      <node id="1297">
+        <label>dbus-address.c</label>
+        <link refid="dbus-address_8c_source"/>
+      </node>
+      <node id="1313">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="1301" relation="include">
+        </childnode>
+        <childnode refid="1314" relation="include">
+        </childnode>
+        <childnode refid="1315" relation="include">
+        </childnode>
+      </node>
+      <node id="1328">
+        <label>dbus-memory.c</label>
+        <link refid="dbus-memory_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusList" prot="public">DBusList</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" prot="public" static="no">
+        <name>_dbus_list_get_next_link</name>
+        <param><defname>list</defname></param>
+        <param><defname>link</defname></param>
+        <initializer>((link)-&gt;next == *(list) ? <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> : (link)-&gt;next)</initializer>
+        <briefdescription>
+<para>Gets the next link in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if there are no more links. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used for iteration.</para><para><programlisting><codeline><highlight class="normal">DBusList<sp/>*link;</highlight></codeline>
+<codeline><highlight class="normal">link<sp/>=<sp/>_dbus_list_get_first_link<sp/>(&amp;list);</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>(link<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(&quot;value<sp/>is<sp/>%p\n&quot;,<sp/>link-&gt;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>link<sp/>=<sp/>_dbus_list_get_next_link<sp/>(&amp;link);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current link. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the next link, or NULL if none. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="90" column="9" bodyfile="dbus/dbus-list.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</referencedby>
+        <referencedby refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" compoundref="dbus-list_8c" startline="697" endline="720">_dbus_list_copy</referencedby>
+        <referencedby refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" compoundref="dbus-list_8c" startline="759" endline="774">_dbus_list_foreach</referencedby>
+        <referencedby refid="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" compoundref="dbus-list_8c" startline="730" endline="746">_dbus_list_get_length</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="415" endline="433">_dbus_list_remove</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga935ba95d94a14aee79d80abe970eae53" compoundref="dbus-watch_8c" startline="465" endline="476">_dbus_watch_list_toggle_all_watches</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusList_1ga6637493bf5fc09bddb44ac295c475cae" prot="public" static="no">
+        <name>_dbus_list_get_prev_link</name>
+        <param><defname>list</defname></param>
+        <param><defname>link</defname></param>
+        <initializer>((link) == *(list) ? <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> : (link)-&gt;prev)</initializer>
+        <briefdescription>
+<para>Gets the previous link in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if there are no more links. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used for iteration.</para><para><programlisting><codeline><highlight class="normal">DBusList<sp/>*link;</highlight></codeline>
+<codeline><highlight class="normal">link<sp/>=<sp/>_dbus_list_get_last_link<sp/>(&amp;list);</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>(link<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(&quot;value<sp/>is<sp/>%p\n&quot;,<sp/>link-&gt;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>link<sp/>=<sp/>_dbus_list_get_prev_link<sp/>(&amp;link);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current link. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the previous link, or NULL if none. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="91" column="9" bodyfile="dbus/dbus-list.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusList_1gad99045e79db46159babe69718f343053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_append</definition>
+        <argsstring>(DBusList **list, void *data)</argsstring>
+        <name>_dbus_list_append</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Appends a value to the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if insufficient memory exists to add a list link. This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to append. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="40" column="1" bodyfile="dbus/dbus-list.c" bodystart="270" bodyend="280"/>
+        <references refid="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" compoundref="dbus-list_8c" startline="292" endline="304">_dbus_list_prepend</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusList_1a83180142180c856b2a02778e155cb044" compoundref="dbus-list_8h" startline="37">DBusList::next</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusConnection_1gae00f581e5487408cb294bf71826aff86" compoundref="dbus-connection_8c" startline="5511" endline="5548">dbus_connection_add_filter</referencedby>
+        <referencedby refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" compoundref="dbus-list_8c" startline="697" endline="720">_dbus_list_copy</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9393ded03e3b9812e4ba99b437ea992d" compoundref="dbus-sysdeps_8c" startline="226" endline="337">_dbus_split_paths_and_append</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_prepend</definition>
+        <argsstring>(DBusList **list, void *data)</argsstring>
+        <name>_dbus_list_prepend</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Prepends a value to the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if insufficient memory exists to add a list link. This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to prepend. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="42" column="1" bodyfile="dbus/dbus-list.c" bodystart="292" bodyend="304"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</referencedby>
+        <referencedby refid="group__DBusList_1ga2dacb82db59f0012951d8245017473c9" compoundref="dbus-list_8c" startline="348" endline="366">_dbus_list_insert_after</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-list_8h_1ae0f57b15f2adc5ece69af0bd625816d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_insert_before</definition>
+        <argsstring>(DBusList **list, DBusList *before_this_link, void *data)</argsstring>
+        <name>_dbus_list_insert_before</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>before_this_link</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga2dacb82db59f0012951d8245017473c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_insert_after</definition>
+        <argsstring>(DBusList **list, DBusList *after_this_link, void *data)</argsstring>
+        <name>_dbus_list_insert_after</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>after_this_link</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Inserts data into the list after the given existing link. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to modify </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>after_this_link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>existing link to insert after, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> to prepend </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to insert </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if memory allocation fails </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="47" column="1" bodyfile="dbus/dbus-list.c" bodystart="348" bodyend="366"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" compoundref="dbus-list_8c" startline="292" endline="304">_dbus_list_prepend</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga0d1fde0acf1330cb41a9c290c7ae87b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_insert_before_link</definition>
+        <argsstring>(DBusList **list, DBusList *before_this_link, DBusList *link)</argsstring>
+        <name>_dbus_list_insert_before_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>before_this_link</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a link into the list before the given existing link. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to modify </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>before_this_link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>existing link to insert before, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> to append </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link to insert </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="50" column="1" bodyfile="dbus/dbus-list.c" bodystart="376" bodyend="384"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="315" endline="322">_dbus_list_append_link</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga20f6b11dd53979b94b6c4822ff6c1141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_insert_after_link</definition>
+        <argsstring>(DBusList **list, DBusList *after_this_link, DBusList *link)</argsstring>
+        <name>_dbus_list_insert_after_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>after_this_link</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a link into the list after the given existing link. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to modify </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>after_this_link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>existing link to insert after, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> to prepend </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link to insert </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="53" column="1" bodyfile="dbus/dbus-list.c" bodystart="394" bodyend="402"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" compoundref="dbus-list_8c" startline="333" endline="337">_dbus_list_prepend_link</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_remove</definition>
+        <argsstring>(DBusList **list, void *data)</argsstring>
+        <name>_dbus_list_remove</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Removes a value from the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only removes the first value equal to the given data pointer, even if multiple values exist which match. This is a linear-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if a value was found to remove. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="56" column="1" bodyfile="dbus/dbus-list.c" bodystart="415" bodyend="433"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_remove_last</definition>
+        <argsstring>(DBusList **list, void *data)</argsstring>
+        <name>_dbus_list_remove_last</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Removes a value from the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only removes the last value equal to the given data pointer, even if multiple values exist which match. This is a linear-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if a value was found to remove. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="58" column="1" bodyfile="dbus/dbus-list.c" bodystart="446" bodyend="459"/>
+        <references refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_remove_link</definition>
+        <argsstring>(DBusList **list, DBusList *link)</argsstring>
+        <name>_dbus_list_remove_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Removes a link from the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list link to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="60" column="1" bodyfile="dbus/dbus-list.c" bodystart="527" bodyend="532"/>
+        <references refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" compoundref="dbus-list_8c" startline="499" endline="518">_dbus_list_unlink</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="415" endline="433">_dbus_list_remove</referencedby>
+        <referencedby refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" compoundref="dbus-list_8c" startline="446" endline="459">_dbus_list_remove_last</referencedby>
+        <referencedby refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="649" endline="662">_dbus_list_pop_first</referencedby>
+        <referencedby refid="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" compoundref="dbus-list_8c" startline="672" endline="685">_dbus_list_pop_last</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_list_find_last</definition>
+        <argsstring>(DBusList **list, void *data)</argsstring>
+        <name>_dbus_list_find_last</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Finds a value in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the last link with value equal to the given data pointer. This is a linear-time operation. Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no value found that matches.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to find. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the link if found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="62" column="1" bodyfile="dbus/dbus-list.c" bodystart="472" bodyend="488"/>
+        <references refid="group__DBusList_1ga42736fb02458bfffed948a509962c059" compoundref="dbus-list_8c" startline="580" endline="586">_dbus_list_get_last_link</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1ga6637493bf5fc09bddb44ac295c475cae" compoundref="dbus-list_8h" startline="91">_dbus_list_get_prev_link</references>
+        <referencedby refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" compoundref="dbus-list_8c" startline="446" endline="459">_dbus_list_remove_last</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" compoundref="dbus-message_8c" startline="4051" endline="4068">_dbus_message_loader_return_unix_fds</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_clear</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_clear</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Frees all links in the list and sets the list head to <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not free the data in each link, for obvious reasons. This is a linear-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="64" column="1" bodyfile="dbus/dbus-list.c" bodystart="542" bodyend="557"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" compoundref="dbus-list_8c" startline="697" endline="720">_dbus_list_copy</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="172" endline="194">_dbus_pending_call_set_reply_unlocked</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9393ded03e3b9812e4ba99b437ea992d" compoundref="dbus-sysdeps_8c" startline="226" endline="337">_dbus_split_paths_and_append</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_list_get_first_link</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_get_first_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Gets the first link in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first link, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="65" column="1" bodyfile="dbus/dbus-list.c" bodystart="567" bodyend="570"/>
+        <referencedby refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga9f9665902c763bd1ddf9d9bc57d7a7ba" compoundref="dbus-connection_8c" startline="2146" endline="2160">_dbus_connection_close_if_only_one_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" compoundref="dbus-list_8c" startline="628" endline="639">_dbus_list_pop_first_link</referencedby>
+        <referencedby refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="649" endline="662">_dbus_list_pop_first</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga935ba95d94a14aee79d80abe970eae53" compoundref="dbus-watch_8c" startline="465" endline="476">_dbus_watch_list_toggle_all_watches</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga42736fb02458bfffed948a509962c059" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_list_get_last_link</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_get_last_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Gets the last link in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the last link, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="66" column="1" bodyfile="dbus/dbus-list.c" bodystart="580" bodyend="586"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5563" endline="5614">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</referencedby>
+        <referencedby refid="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" compoundref="dbus-list_8c" startline="672" endline="685">_dbus_list_pop_last</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga18afc36fff1636a71295bcc7a75dc4f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_list_get_last</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_get_last</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Gets the last data in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the last data in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="67" column="1" bodyfile="dbus/dbus-list.c" bodystart="596" bodyend="602"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga3955cd53ac4f671a5bb54019887389a7" compoundref="dbus-connection_8c" startline="609" endline="614">_dbus_connection_get_message_to_send</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga254e18f698f5fc518bde031e723e67c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_list_get_first</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_get_first</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Gets the first data in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first data in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="68" column="1" bodyfile="dbus/dbus-list.c" bodystart="612" bodyend="618"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnection_1ga9d07083c520e291591a68adb78f64094" compoundref="dbus-connection_8c" startline="3850" endline="3890">dbus_connection_borrow_message</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_list_pop_first</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_pop_first</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Removes the first value in the list and returns it. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first data in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="69" column="1" bodyfile="dbus/dbus-list.c" bodystart="649" bodyend="662"/>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga9e5e75716d7263d9908d45a60b1b6bdc" compoundref="dbus-message_8c" startline="4382" endline="4385">_dbus_message_loader_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_list_pop_last</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_pop_last</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Removes the last value in the list and returns it. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the last data in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="70" column="1" bodyfile="dbus/dbus-list.c" bodystart="672" bodyend="685"/>
+        <references refid="group__DBusList_1ga42736fb02458bfffed948a509962c059" compoundref="dbus-list_8c" startline="580" endline="586">_dbus_list_get_last_link</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_list_pop_first_link</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_pop_first_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Removes the first link in the list and returns it. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first link in the list, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> for an empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="71" column="1" bodyfile="dbus/dbus-list.c" bodystart="628" bodyend="639"/>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" compoundref="dbus-list_8c" startline="499" endline="518">_dbus_list_unlink</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga6ec3c1ad57340f717a47d79092122d04" compoundref="dbus-message_8c" startline="4396" endline="4399">_dbus_message_loader_pop_message_link</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_copy</definition>
+        <argsstring>(DBusList **list, DBusList **dest)</argsstring>
+        <name>_dbus_list_copy</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Copies a list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a linear-time operation. If there isn&apos;t enough memory to copy the entire list, the destination list will be set to <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the head of the list to copy. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where the copied list should be placed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="72" column="1" bodyfile="dbus/dbus-list.c" bodystart="697" bodyend="720"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_list_get_length</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_get_length</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Gets the length of a list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a linear-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the head of the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number of elements in the list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="74" column="1" bodyfile="dbus/dbus-list.c" bodystart="730" bodyend="746"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gad660d78a12fa207d891838863dfc6ba7" compoundref="dbus-object-tree_8c" startline="903" endline="1064">_dbus_object_tree_dispatch_and_unlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gac20b9981531cef590d49a59240344cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_list_alloc_link</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>_dbus_list_alloc_link</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Allocates a linked list node. </para>        </briefdescription>
+        <detaileddescription>
+<para>Useful for preallocating nodes and using <ref refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" kindref="member">_dbus_list_append_link()</ref> to avoid allocations.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to store in the link. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a newly allocated link. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="75" column="1" bodyfile="dbus/dbus-list.c" bodystart="242" bodyend="245"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnection_1ga893d18d8b36ffb371f16d13645071289" compoundref="dbus-connection_8c" startline="4378" endline="4393">dbus_connection_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gad009d79879d654a009c83627726435d8" compoundref="dbus-message_8c" startline="329" endline="342">_dbus_message_add_counter</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9901fc4c5fd2db9bf1ce2dcc9abf55fc" compoundref="dbus-pending-call_8c" startline="354" endline="384">_dbus_pending_call_set_timeout_error_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_free_link</definition>
+        <argsstring>(DBusList *link)</argsstring>
+        <name>_dbus_list_free_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Frees a linked list node allocated with _dbus_list_alloc_link. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not free the data in the node.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="76" column="1" bodyfile="dbus/dbus-list.c" bodystart="254" bodyend="257"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1gad0ea06307b418616711131ea7bdae8ac" compoundref="dbus-connection_8c" startline="3191" endline="3202">dbus_connection_free_preallocated_send</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga893d18d8b36ffb371f16d13645071289" compoundref="dbus-connection_8c" startline="4378" endline="4393">dbus_connection_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_unlink</definition>
+        <argsstring>(DBusList **list, DBusList *link)</argsstring>
+        <name>_dbus_list_unlink</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Removes the given link from the list, but doesn&apos;t free it. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" kindref="member">_dbus_list_remove_link()</ref> both removes the link and also frees it.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link in the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="77" column="1" bodyfile="dbus/dbus-list.c" bodystart="499" bodyend="518"/>
+        <references refid="structDBusList_1a83180142180c856b2a02778e155cb044" compoundref="dbus-list_8h" startline="37">DBusList::next</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" compoundref="dbus-list_8h" startline="36">DBusList::prev</references>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</referencedby>
+        <referencedby refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" compoundref="dbus-list_8c" startline="628" endline="639">_dbus_list_pop_first_link</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_append_link</definition>
+        <argsstring>(DBusList **list, DBusList *link)</argsstring>
+        <name>_dbus_list_append_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Appends a link to the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cannot fail due to out of memory. This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link to append. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="79" column="1" bodyfile="dbus/dbus-list.c" bodystart="315" bodyend="322"/>
+        <references refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" compoundref="dbus-list_8c" startline="333" endline="337">_dbus_list_prepend_link</references>
+        <references refid="structDBusList_1a83180142180c856b2a02778e155cb044" compoundref="dbus-list_8h" startline="37">DBusList::next</references>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" compoundref="dbus-connection_8c" startline="545" endline="561">_dbus_connection_queue_synthesized_message_link</referencedby>
+        <referencedby refid="group__DBusList_1ga0d1fde0acf1330cb41a9c290c7ae87b5" compoundref="dbus-list_8c" startline="376" endline="384">_dbus_list_insert_before_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_prepend_link</definition>
+        <argsstring>(DBusList **list, DBusList *link)</argsstring>
+        <name>_dbus_list_prepend_link</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Prepends a link to the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cannot fail due to out of memory. This is a constant-time operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the list head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link to prepend. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="81" column="1" bodyfile="dbus/dbus-list.c" bodystart="333" bodyend="337"/>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+        <referencedby refid="group__DBusConnection_1ga893d18d8b36ffb371f16d13645071289" compoundref="dbus-connection_8c" startline="4378" endline="4393">dbus_connection_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="315" endline="322">_dbus_list_append_link</referencedby>
+        <referencedby refid="group__DBusList_1ga20f6b11dd53979b94b6c4822ff6c1141" compoundref="dbus-list_8c" startline="394" endline="402">_dbus_list_insert_after_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga71b290eb470a55217971fcd6851fc40c" compoundref="dbus-message_8c" startline="4408" endline="4412">_dbus_message_loader_putback_message_link</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_list_length_is_one</definition>
+        <argsstring>(DBusList **list)</argsstring>
+        <name>_dbus_list_length_is_one</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Check whether length is exactly one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if length is exactly one </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="83" column="1" bodyfile="dbus/dbus-list.c" bodystart="783" bodyend="787"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusList_1a83180142180c856b2a02778e155cb044" compoundref="dbus-list_8h" startline="37">DBusList::next</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" compoundref="dbus-list_8h" startline="36">DBusList::prev</references>
+        <references refid="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" compoundref="dbus-list_8c" startline="730" endline="746">_dbus_list_get_length</references>
+        <references refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</references>
+        <references refid="group__DBusInternalsUtils_1ga3bf800f1b6cc23f80006861d7417c8c8" compoundref="dbus-internals_8h" startline="230">_DBUS_INT_MIN</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusInternalsUtils_1gabbd3526a2ecd65da80b9f74ac286273d" compoundref="dbus-internals_8h" startline="176">_DBUS_POINTER_TO_INT</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusInternalsUtils_1ga5627db5e165848477e620846f6414db1" compoundref="dbus-internals_8h" startline="231">_DBUS_INT_MAX</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" compoundref="dbus-list_8c" startline="292" endline="304">_dbus_list_prepend</references>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusList_1ga18afc36fff1636a71295bcc7a75dc4f6" compoundref="dbus-list_8c" startline="596" endline="602">_dbus_list_get_last</references>
+        <references refid="group__DBusList_1ga254e18f698f5fc518bde031e723e67c6" compoundref="dbus-list_8c" startline="612" endline="618">_dbus_list_get_first</references>
+        <references refid="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" compoundref="dbus-list_8c" startline="672" endline="685">_dbus_list_pop_last</references>
+        <references refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="649" endline="662">_dbus_list_pop_first</references>
+        <references refid="group__DBusList_1ga42736fb02458bfffed948a509962c059" compoundref="dbus-list_8c" startline="580" endline="586">_dbus_list_get_last_link</references>
+        <references refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" compoundref="dbus-list_8c" startline="628" endline="639">_dbus_list_pop_first_link</references>
+        <references refid="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" compoundref="dbus-list_8c" startline="254" endline="257">_dbus_list_free_link</references>
+        <references refid="group__DBusList_1ga6637493bf5fc09bddb44ac295c475cae" compoundref="dbus-list_8h" startline="91">_dbus_list_get_prev_link</references>
+        <references refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="415" endline="433">_dbus_list_remove</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" compoundref="dbus-list_8c" startline="697" endline="720">_dbus_list_copy</references>
+        <references refid="group__DBusList_1ga2dacb82db59f0012951d8245017473c9" compoundref="dbus-list_8c" startline="348" endline="366">_dbus_list_insert_after</references>
+        <references refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" compoundref="dbus-list_8c" startline="446" endline="459">_dbus_list_remove_last</references>
+        <referencedby refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" compoundref="dbus-list_8c" startline="783" endline="787">_dbus_list_length_is_one</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_foreach</definition>
+        <argsstring>(DBusList **list, DBusForeachFunction function, void *data)</argsstring>
+        <name>_dbus_list_foreach</name>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> **</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusInternalsUtils_1ga692fe3070eecaffa172266d2f138fd69" kindref="member">DBusForeachFunction</ref></type>
+          <declname>function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Calls the given function for each element in the list. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function is passed the list element as its first argument, and the given data as its second argument.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the head of the list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to call for each element. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>extra data for the function. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="86" column="1" bodyfile="dbus/dbus-list.c" bodystart="759" bodyend="774"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9393ded03e3b9812e4ba99b437ea992d" compoundref="dbus-sysdeps_8c" startline="226" endline="337">_dbus_split_paths_and_append</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-list_8h_1ad4952f3e8dd21ec13543da306e0762c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_list_get_stats</definition>
+        <argsstring>(dbus_uint32_t *in_use_p, dbus_uint32_t *in_free_list_p, dbus_uint32_t *allocated_p)</argsstring>
+        <name>_dbus_list_get_stats</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_use_p</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>in_free_list_p</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref> *</type>
+          <declname>allocated_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-list.h" line="94" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-list.h<sp/>Generic<sp/>linked<sp/>list<sp/>utility<sp/>(internal<sp/>to<sp/>D-Bus<sp/>implementation)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-memory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-sysdeps.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structDBusList" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>*<ref refid="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" kindref="member">prev</ref>;<sp/></highlight></codeline>
+<codeline lineno="37" refid="structDBusList_1a83180142180c856b2a02778e155cb044" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>*<ref refid="structDBusList_1a83180142180c856b2a02778e155cb044" kindref="member">next</ref>;<sp/></highlight></codeline>
+<codeline lineno="38" refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>;<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1gad99045e79db46159babe69718f343053" kindref="member">_dbus_list_append</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1gab4aa60e0466ac7075f3d1751909d6a52" kindref="member">_dbus_list_prepend</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_list_insert_before<sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*before_this_link,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1ga2dacb82db59f0012951d8245017473c9" kindref="member">_dbus_list_insert_after</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*after_this_link,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga0d1fde0acf1330cb41a9c290c7ae87b5" kindref="member">_dbus_list_insert_before_link</ref><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*before_this_link,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga20f6b11dd53979b94b6c4822ff6c1141" kindref="member">_dbus_list_insert_after_link</ref><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*after_this_link,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" kindref="member">_dbus_list_remove</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" kindref="member">_dbus_list_remove_last</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" kindref="member">_dbus_list_remove_link</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref>*<sp/><sp/><sp/><ref refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" kindref="member">_dbus_list_find_last</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" kindref="member">_dbus_list_clear</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref>*<sp/><sp/><sp/><ref refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" kindref="member">_dbus_list_get_first_link</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref>*<sp/><sp/><sp/><ref refid="group__DBusList_1ga42736fb02458bfffed948a509962c059" kindref="member">_dbus_list_get_last_link</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga18afc36fff1636a71295bcc7a75dc4f6" kindref="member">_dbus_list_get_last</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga254e18f698f5fc518bde031e723e67c6" kindref="member">_dbus_list_get_first</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" kindref="member">_dbus_list_pop_first</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" kindref="member">_dbus_list_pop_last</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref>*<sp/><sp/><sp/><ref refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" kindref="member">_dbus_list_pop_first_link</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" kindref="member">_dbus_list_copy</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**dest);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" kindref="member">_dbus_list_get_length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="structDBusList" kindref="compound">DBusList</ref>*<sp/><sp/><sp/><ref refid="group__DBusList_1gac20b9981531cef590d49a59240344cd8" kindref="member">_dbus_list_alloc_link</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga6e824f717125ce40c549d5402e32610f" kindref="member">_dbus_list_free_link</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" kindref="member">_dbus_list_unlink</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" kindref="member">_dbus_list_append_link</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" kindref="member">_dbus_list_prepend_link</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/>*link);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusList_1ga1d0e850f8e151630fa94d3b05e6038d9" kindref="member">_dbus_list_length_is_one</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>**list);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" kindref="member">_dbus_list_foreach</ref><sp/>(<ref refid="structDBusList" kindref="compound">DBusList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**list,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga692fe3070eecaffa172266d2f138fd69" kindref="member">DBusForeachFunction</ref><sp/><sp/><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_dbus_list_get_next_link(list,<sp/>link)<sp/>((link)-&gt;next<sp/>==<sp/>*(list)<sp/>?<sp/>NULL<sp/>:<sp/>(link)-&gt;next)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="group__DBusList_1ga6637493bf5fc09bddb44ac295c475cae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_dbus_list_get_prev_link(list,<sp/>link)<sp/>((link)<sp/>==<sp/>*(list)<sp/>?<sp/>NULL<sp/>:<sp/>(link)-&gt;prev)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>if<sp/>DBUS_ENABLE_STATS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_list_get_stats<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*in_use_p,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*in_free_list_p,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>*allocated_p);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_LIST_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-list.h"/>
+  </compounddef>
+</doxygen>

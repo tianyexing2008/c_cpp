@@ -1,0 +1,2063 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusMessageInternals" kind="group">
+    <compoundname>DBusMessageInternals</compoundname>
+    <title>DBusMessage implementation details</title>
+    <innerclass refid="structDBusMessageLoader" prot="public">DBusMessageLoader</innerclass>
+    <innerclass refid="structDBusMessage" prot="public">DBusMessage</innerclass>
+    <innerclass refid="structDBusMessageRealIter" prot="public">DBusMessageRealIter</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__DBusMessageInternals_1ga61dadd085c1777f559549e05962b2c9e" prot="public" static="no">
+        <name>@5</name>
+        <enumvalue id="group__DBusMessageInternals_1gga61dadd085c1777f559549e05962b2c9eac97559aac48c82ad5858e57c580595ad" prot="public">
+          <name>DBUS_MESSAGE_ITER_TYPE_READER</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DBusMessageInternals_1gga61dadd085c1777f559549e05962b2c9ea752d6050689d3fb99c80c38e47fdff2f" prot="public">
+          <name>DBUS_MESSAGE_ITER_TYPE_WRITER</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="113" column="1" bodyfile="dbus/dbus-message.c" bodystart="113" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusMessageInternals_1ga84c2bf86d0ab364b236814eafb85e512" prot="public" static="no">
+        <type>struct <ref refid="structDBusMessageRealIter" kindref="compound">DBusMessageRealIter</ref></type>
+        <definition>typedef struct DBusMessageRealIter DBusMessageRealIter</definition>
+        <argsstring></argsstring>
+        <name>DBusMessageRealIter</name>
+        <briefdescription>
+<para>typedef for internals of message iterator </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="108" column="1" bodyfile="dbus/dbus-message.c" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusMessageInternals_1gab6a849ea8db3714da7a161b4f6a6f0fb" prot="public" static="no">
+        <type>struct <ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref></type>
+        <definition>DBusMessageLoader</definition>
+        <argsstring></argsstring>
+        <name>DBusMessageLoader</name>
+        <briefdescription>
+<para>The <ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> object encapsulates the process of converting a byte stream into a series of <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>It buffers the incoming bytes as efficiently as possible, and generates a queue of messages. <ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> is typically used as part of a <ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> implementation. The <ref refid="structDBusTransport" kindref="compound">DBusTransport</ref> then hands off the loaded messages to a <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>, making the messages visible to the application.</para><para><xrefsect id="todo_1_todo000025"><xreftitle>Todo</xreftitle><xrefdescription><para>write tests for break-loader that a) randomly delete header fields and b) set string fields to zero-length and other funky values.</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-internal.h" line="43" column="1" bodyfile="dbus/dbus-message-internal.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusMessageInternals_1ga0574b83e4022af7bd195abcd1e9361f3" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* message_cache[MAX_MESSAGE_CACHE_SIZE]</definition>
+        <argsstring>[MAX_MESSAGE_CACHE_SIZE]</argsstring>
+        <name>message_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="511" column="1" bodyfile="dbus/dbus-message.c" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusMessageInternals_1ga09970f0ca46c38d2038baa54dec096b5" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int message_cache_count</definition>
+        <argsstring></argsstring>
+        <name>message_cache_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="512" column="1" bodyfile="dbus/dbus-message.c" bodystart="512" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusMessageInternals_1ga3a81158a7febf4d8882d3afc56c52add" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t message_cache_shutdown_registered</definition>
+        <argsstring></argsstring>
+        <name>message_cache_shutdown_registered</name>
+        <initializer>= <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="513" column="1" bodyfile="dbus/dbus-message.c" bodystart="513" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusMessageInternals_1gaa0d783eaf99d7f70b8b1d0bfdd43bb82" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref></type>
+        <definition>DBusDataSlotAllocator slot_allocator</definition>
+        <argsstring></argsstring>
+        <name>slot_allocator</name>
+        <initializer>=
+  _DBUS_DATA_SLOT_ALLOCATOR_INIT (<ref refid="group__DBusInternalsUtils_1gade571435b55fae64217f5142aa78ee8d" kindref="member">_DBUS_LOCK_NAME</ref> (message_slots))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4542" column="1" bodyfile="dbus/dbus-message.c" bodystart="4542" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_iter_get_args_valist</definition>
+        <argsstring>(DBusMessageIter *iter, DBusError *error, int first_arg_type, va_list var_args)</argsstring>
+        <name>_dbus_message_iter_get_args_valist</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>first_arg_type</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>var_args</declname>
+        </param>
+        <briefdescription>
+<para>Implementation of the varargs arg-getting functions. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" kindref="member">dbus_message_get_args()</ref> is the place to go for complete documentation.</para><para><simplesect kind="see"><para><ref refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" kindref="member">dbus_message_get_args</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message iter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first_arg_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the first argument </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>var_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for first argument, followed by list of type/location pairs </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error was set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="136" column="1" bodyfile="dbus/dbus-message.c" bodystart="796" bodyend="1066"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" compoundref="dbus-sysdeps-unix_8c" startline="3053" endline="3085">_dbus_dup</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusProtocol_1ga2a23b986cd4cef832b8823b6b0d1bcb1" compoundref="dbus-protocol_8h" startline="453">DBUS_ERROR_INCONSISTENT_MESSAGE</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusMessage_1ga5aae3c882a75aed953d8b3d489e9b271" compoundref="dbus-message_8c" startline="2139" endline="2147">dbus_message_iter_get_arg_type</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessageRealIter_1a552cb582c65645ed46d9d1ad38ece3c7" compoundref="dbus-message_8c" startline="128">DBusMessageRealIter::message</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessageRealIter_1ae5c4e45b0a5d6642850144f642d7db67" compoundref="dbus-message_8c" startline="135">DBusMessageRealIter::reader</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusMessageRealIter_1ac9c3ce5775bc9f5f0720b65093345ec6">DBusMessageRealIter::u</references>
+        <references refid="unionDBusBasicValue_1a2501e54560ae240442d9d841b96b086b" compoundref="dbus-types_8h" startline="143">DBusBasicValue::u32</references>
+        <referencedby refid="group__DBusMessage_1gab0f9bbe4f3d26bc9b5cf4f243c268aaa" compoundref="dbus-message_8c" startline="2009" endline="2021">dbus_message_get_args_valist</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga7e3e6e067d4c4e90cd9e8d30ae09d312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_trace_ref</definition>
+        <argsstring>(DBusMessage *message, int old_refcount, int new_refcount, const char *why)</argsstring>
+        <name>_dbus_message_trace_ref</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>old_refcount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>new_refcount</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>why</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="93" column="1" bodyfile="dbus/dbus-message.c" bodystart="93" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga47a86f36abae39fe43916681d3f16330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_DBUS_STRING_DEFINE_STATIC</definition>
+        <argsstring>(_dbus_empty_signature_str,&quot;&quot;)</argsstring>
+        <name>_DBUS_STRING_DEFINE_STATIC</name>
+        <param>
+          <type>_dbus_empty_signature_str</type>
+        </param>
+        <param>
+          <type>&quot;&quot;</type>
+        </param>
+        <briefdescription>
+<para>An static string representing an empty signature. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gafeb33a4fc483652f4739d89fd04d7bc8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void get_const_signature</definition>
+        <argsstring>(DBusHeader *header, const DBusString **type_str_p, int *type_pos_p)</argsstring>
+        <name>get_const_signature</name>
+        <param>
+          <type><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref> *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>type_str_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>type_pos_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="140" column="1" bodyfile="dbus/dbus-message.c" bodystart="140" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gadb80b0c88f515bcb15188a858e9ffced" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _dbus_message_byteswap</definition>
+        <argsstring>(DBusMessage *message)</argsstring>
+        <name>_dbus_message_byteswap</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Swaps the message to compiler byte order if required. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="164" column="1" bodyfile="dbus/dbus-message.c" bodystart="164" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga617811b117ac5eb31151ffb7dabea7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_get_network_data</definition>
+        <argsstring>(DBusMessage *message, const DBusString **header, const DBusString **body)</argsstring>
+        <name>_dbus_message_get_network_data</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+<para>Gets the data to be sent over the network for this message. </para>        </briefdescription>
+        <detaileddescription>
+<para>The header and then the body should be written out. This function is guaranteed to always return the same data once a message is locked (with <ref refid="group__DBusMessageInternals_1ga3ecc9c24381af05289161f477ad6a578" kindref="member">dbus_message_lock()</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for message header data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>body</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for message body data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="208" column="1" bodyfile="dbus/dbus-message.c" bodystart="208" bodyend="216"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" compoundref="dbus-message-private_8h" startline="105">DBusMessage::body</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga577e9d5224c56b9cf2ca2691be2e838c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_get_unix_fds</definition>
+        <argsstring>(DBusMessage *message, const int **fds, unsigned *n_fds)</argsstring>
+        <name>_dbus_message_get_unix_fds</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const int **</type>
+          <declname>fds</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>n_fds</declname>
+        </param>
+        <briefdescription>
+<para>Gets the unix fds to be sent over the network for this message. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is guaranteed to always return the same data once a message is locked (with <ref refid="group__DBusMessageInternals_1ga3ecc9c24381af05289161f477ad6a578" kindref="member">dbus_message_lock()</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location of unix fd array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return number of entries in array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="227" column="1" bodyfile="dbus/dbus-message.c" bodystart="227" bodyend="240"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga3dd30a62c63eb9972cc0c564f2a89c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dbus_message_set_serial</definition>
+        <argsstring>(DBusMessage *message, dbus_uint32_t serial)</argsstring>
+        <name>dbus_message_set_serial</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+<para>Sets the serial number of a message. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can only be done once on a message.</para><para><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> will automatically set the serial to an appropriate value when the message is sent; this function is only needed when encapsulating messages in another protocol, or otherwise bypassing <ref refid="structDBusConnection" kindref="compound">DBusConnection</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the serial </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="254" column="1" bodyfile="dbus/dbus-message.c" bodystart="254" bodyend="261"/>
+        <references refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="404" endline="418">_dbus_header_set_serial</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnection_1gaa215df7ab7ca6dce7be153c6b9cc80ba" compoundref="dbus-connection_8c" startline="3399" endline="3500">dbus_connection_send_with_reply</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_add_counter_link</definition>
+        <argsstring>(DBusMessage *message, DBusList *link)</argsstring>
+        <name>_dbus_message_add_counter_link</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Adds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized. </para>        </briefdescription>
+        <detaileddescription>
+<para>The link contains a counter with its refcount already incremented, but the counter itself not incremented. Ownership of link and counter refcount is passed to the message.</para><para>This function may be called with locks held. As a result, the counter&apos;s notify function is not called; the caller is expected to either call <ref refid="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" kindref="member">_dbus_counter_notify()</ref> on the counter when they are no longer holding locks, or take the same action that would be taken by the notify function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>link with counter as data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="280" column="1" bodyfile="dbus/dbus-message.c" bodystart="280" bodyend="312"/>
+        <references refid="group__DBusResources_1gae37410c196947675c2a222a7979e9dee" compoundref="dbus-resources_8c" startline="148" endline="171">_dbus_counter_adjust_size</references>
+        <references refid="group__DBusResources_1ga7d9411d27b337289ab5648beb148cde6" compoundref="dbus-resources_8c" startline="202" endline="225">_dbus_counter_adjust_unix_fd</references>
+        <references refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="315" endline="322">_dbus_list_append_link</references>
+        <references refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" compoundref="dbus-message-private_8h" startline="105">DBusMessage::body</references>
+        <references refid="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" compoundref="dbus-message-private_8h" startline="113">DBusMessage::counters</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" compoundref="dbus-message-private_8h" startline="114">DBusMessage::size_counter_delta</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gad009d79879d654a009c83627726435d8" compoundref="dbus-message_8c" startline="329" endline="342">_dbus_message_add_counter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gad009d79879d654a009c83627726435d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_add_counter</definition>
+        <argsstring>(DBusMessage *message, DBusCounter *counter)</argsstring>
+        <name>_dbus_message_add_counter</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Adds a counter to be incremented immediately with the size/unix fds of this message, and decremented by the size/unix fds of this message when this message if finalized. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function may be called with locks held. As a result, the counter&apos;s notify function is not called; the caller is expected to either call <ref refid="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" kindref="member">_dbus_counter_notify()</ref> on the counter when they are no longer holding locks, or take the same action that would be taken by the notify function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="329" column="1" bodyfile="dbus/dbus-message.c" bodystart="329" bodyend="342"/>
+        <references refid="group__DBusResources_1gae93240c77bfb66642453518c9bb90bc4" compoundref="dbus-resources_8c" startline="108" endline="115">_dbus_counter_ref</references>
+        <references refid="group__DBusList_1gac20b9981531cef590d49a59240344cd8" compoundref="dbus-list_8c" startline="242" endline="245">_dbus_list_alloc_link</references>
+        <references refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_remove_counter</definition>
+        <argsstring>(DBusMessage *message, DBusCounter *counter)</argsstring>
+        <name>_dbus_message_remove_counter</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Removes a counter tracking the size/unix fds of this message, and decrements the counter by the size/unix fds of this message. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="352" column="1" bodyfile="dbus/dbus-message.c" bodystart="352" bodyend="371"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusResources_1gae37410c196947675c2a222a7979e9dee" compoundref="dbus-resources_8c" startline="148" endline="171">_dbus_counter_adjust_size</references>
+        <references refid="group__DBusResources_1ga7d9411d27b337289ab5648beb148cde6" compoundref="dbus-resources_8c" startline="202" endline="225">_dbus_counter_adjust_unix_fd</references>
+        <references refid="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" compoundref="dbus-resources_8c" startline="182" endline="189">_dbus_counter_notify</references>
+        <references refid="group__DBusResources_1ga48d9b53d1a395ab3c4f1846ca569ef3f" compoundref="dbus-resources_8c" startline="124" endline="135">_dbus_counter_unref</references>
+        <references refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</references>
+        <references refid="group__DBusList_1ga40abea762d9cb44e5ec6b31b1769dc2e" compoundref="dbus-list_8c" startline="527" endline="532">_dbus_list_remove_link</references>
+        <references refid="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" compoundref="dbus-message-private_8h" startline="113">DBusMessage::counters</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" compoundref="dbus-message-private_8h" startline="114">DBusMessage::size_counter_delta</references>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga3ecc9c24381af05289161f477ad6a578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dbus_message_lock</definition>
+        <argsstring>(DBusMessage *message)</argsstring>
+        <name>dbus_message_lock</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Locks a message. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allows checking that applications don&apos;t keep a reference to a message in the outgoing queue and change it underneath us. Messages are locked when they enter the outgoing queue (dbus_connection_send_message()), and the library complains if the message is modified while locked. This function may also called externally, for applications wrapping D-Bus in another protocol.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to lock. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="384" column="1" bodyfile="dbus/dbus-message.c" bodystart="384" bodyend="397"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga7814248f4d74d109d29dc00487cd9b0c" compoundref="dbus-marshal-header_8c" startline="1416" endline="1446">_dbus_header_delete_field</references>
+        <references refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1273" endline="1338">_dbus_header_set_field_basic</references>
+        <references refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</references>
+        <references refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" compoundref="dbus-message-private_8h" startline="105">DBusMessage::body</references>
+        <references refid="group__DBusProtocol_1ga450d63fa110d3cb891082e23291580b4" compoundref="dbus-protocol_8h" startline="297">DBUS_HEADER_FIELD_SIGNATURE</references>
+        <references refid="group__DBusMessage_1gaed63e4c2baaa50d782e8ebb7643def19" compoundref="dbus-message_8c" startline="3543" endline="3553">dbus_message_get_signature</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3f90a918ada328450fcfe9ac403b8807" compoundref="dbus-message_8c" startline="4721" endline="4768">dbus_message_marshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga80627f3604a11f0281d11a0db0553802" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t set_or_delete_string_field</definition>
+        <argsstring>(DBusMessage *message, int field, int typecode, const char *value)</argsstring>
+        <name>set_or_delete_string_field</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="400" column="1" bodyfile="dbus/dbus-message.c" bodystart="400" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga3304ebfa4ec7321dad2e6ed3a3204d36" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dbus_message_cache_shutdown</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>dbus_message_cache_shutdown</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="516" column="1" bodyfile="dbus/dbus-message.c" bodystart="516" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga3c8ae3f1790bbc79e1e463f81d70623a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>static DBusMessage* dbus_message_get_cached</definition>
+        <argsstring>(void)</argsstring>
+        <name>dbus_message_get_cached</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Tries to get a message from the message cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>The retrieved message will have junk in it, so it still needs to be cleared out in dbus_message_new_empty_header()</para><para><simplesect kind="return"><para>the message, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none cached </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="547" column="1" bodyfile="dbus/dbus-message.c" bodystart="547" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gaf2e5f8facf5bbe271b139f4718c9f042" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void free_counter</definition>
+        <argsstring>(void *element, void *data)</argsstring>
+        <name>free_counter</name>
+        <param>
+          <type>void *</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="628" column="1" bodyfile="dbus/dbus-message.c" bodystart="628" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gaaaee3576d7929a84f8cd9a2e54075bc7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dbus_message_cache_or_finalize</definition>
+        <argsstring>(DBusMessage *message)</argsstring>
+        <name>dbus_message_cache_or_finalize</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Tries to cache a message, otherwise finalize it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="649" column="1" bodyfile="dbus/dbus-message.c" bodystart="649" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+        <definition>DBusMessageLoader* _dbus_message_loader_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_message_loader_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new message loader. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if memory can&apos;t be allocated.</para><para><simplesect kind="return"><para>new loader, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3863" column="1" bodyfile="dbus/dbus-message.c" bodystart="3863" bodyend="3902"/>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" compoundref="dbus-message-private_8h" startline="73">DBusMessageLoader::corrupted</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusProtocol_1ga2874c299e1c87fe745ef09bf231264e9" compoundref="dbus-protocol_8h" startline="210">DBUS_MAXIMUM_MESSAGE_LENGTH</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMessageInternals_1gacbe0bfe7a9551ab0489a0ec9aba6e94e" compoundref="dbus-message_8c" startline="3854">INITIAL_LOADER_DATA_LEN</references>
+        <references refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" compoundref="dbus-message-private_8h" startline="68">DBusMessageLoader::max_message_size</references>
+        <references refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" compoundref="dbus-message-private_8h" startline="69">DBusMessageLoader::max_message_unix_fds</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" compoundref="dbus-message-private_8h" startline="62">DBusMessageLoader::refcount</references>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gad39efb9ff20c7538f12e164a6920edc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+        <definition>DBusMessageLoader* _dbus_message_loader_ref</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_ref</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Increments the reference count of the loader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the loader </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3911" column="1" bodyfile="dbus/dbus-message.c" bodystart="3911" bodyend="3916"/>
+        <references refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" compoundref="dbus-message-private_8h" startline="62">DBusMessageLoader::refcount</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_unref</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_unref</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the reference count of the loader and finalizes the loader when the count reaches zero. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3925" column="1" bodyfile="dbus/dbus-message.c" bodystart="3925" bodyend="3941"/>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" compoundref="dbus-list_8c" startline="759" endline="774">_dbus_list_foreach</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" compoundref="dbus-message-private_8h" startline="62">DBusMessageLoader::refcount</references>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_get_buffer</definition>
+        <argsstring>(DBusMessageLoader *loader, DBusString **buffer)</argsstring>
+        <name>_dbus_message_loader_get_buffer</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Gets the buffer to use for reading data from the network. </para>        </briefdescription>
+        <detaileddescription>
+<para>Network data is read directly into an allocated buffer, which is then used in the <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>, to avoid as many extra memcpy&apos;s as possible. The buffer must always be returned immediately using <ref refid="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" kindref="member">_dbus_message_loader_return_buffer()</ref>, even if no bytes are successfully read.</para><para><xrefsect id="todo_1_todo000040"><xreftitle>Todo</xreftitle><xrefdescription><para>this function can be a lot more clever. For example it can probably always return a buffer size to read exactly the body of the next message, thus avoiding any memory wastage or reallocs.</para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000041"><xreftitle>Todo</xreftitle><xrefdescription><para>we need to enforce a max length on strings in header fields.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message loader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3962" column="1" bodyfile="dbus/dbus-message.c" bodystart="3962" bodyend="3970"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" compoundref="dbus-message-private_8h" startline="75">DBusMessageLoader::buffer_outstanding</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_return_buffer</definition>
+        <argsstring>(DBusMessageLoader *loader, DBusString *buffer)</argsstring>
+        <name>_dbus_message_loader_return_buffer</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Returns a buffer obtained from <ref refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" kindref="member">_dbus_message_loader_get_buffer()</ref>, indicating to the loader how many bytes of the buffer were filled in. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function must always be called, even if no bytes were successfully read.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3982" column="1" bodyfile="dbus/dbus-message.c" bodystart="3982" bodyend="3989"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" compoundref="dbus-message-private_8h" startline="75">DBusMessageLoader::buffer_outstanding</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga4ed7327f9dee98711ebd7c9e5b74dec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_loader_get_unix_fds</definition>
+        <argsstring>(DBusMessageLoader *loader, int **fds, unsigned *max_n_fds)</argsstring>
+        <name>_dbus_message_loader_get_unix_fds</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type>int **</type>
+          <declname>fds</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>max_n_fds</declname>
+        </param>
+        <briefdescription>
+<para>Gets the buffer to use for reading unix fds from the network. </para>        </briefdescription>
+        <detaileddescription>
+<para>This works similar to <ref refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" kindref="member">_dbus_message_loader_get_buffer()</ref></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message loader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array to read fds into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_n_fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>how many fds to read at most </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE on success, FALSE on OOM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4002" column="1" bodyfile="dbus/dbus-message.c" bodystart="4002" bodyend="4038"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMemory_1ga2d505f2960ccf343042d363170b27f9c" compoundref="dbus-memory_8c" startline="601" endline="692">dbus_realloc</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" compoundref="dbus-message-private_8h" startline="69">DBusMessageLoader::max_message_unix_fds</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga2bf4dd7eda1a539454486e127b75d7c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_return_unix_fds</definition>
+        <argsstring>(DBusMessageLoader *loader, int *fds, unsigned n_fds)</argsstring>
+        <name>_dbus_message_loader_return_unix_fds</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>fds</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>n_fds</declname>
+        </param>
+        <briefdescription>
+<para>Returns a buffer obtained from <ref refid="group__DBusMessageInternals_1ga4ed7327f9dee98711ebd7c9e5b74dec0" kindref="member">_dbus_message_loader_get_unix_fds()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This works similar to <ref refid="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" kindref="member">_dbus_message_loader_return_buffer()</ref></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message loader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array fds were read into </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>how many fds were read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4051" column="1" bodyfile="dbus/dbus-message.c" bodystart="4051" bodyend="4068"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1351" endline="1376">_dbus_header_get_field_basic</references>
+        <references refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="970" endline="1187">_dbus_header_load</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</references>
+        <references refid="group__DBusList_1gad93f1fc853914144e94fc7a7dc0945aa" compoundref="dbus-list_8c" startline="446" endline="459">_dbus_list_remove_last</references>
+        <references refid="group__DBusInternalsUtils_1gaad95864dca5140b730bc143cb2d1b024" compoundref="dbus-internals_8c" startline="555" endline="567">_dbus_memdup</references>
+        <references refid="group__DBusString_1gac49ec5782ca606029c096124b5e43ffc" compoundref="dbus-string_8c" startline="389" endline="395">_dbus_string_compact</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="group__DBusMarshal_1gae997884ec8091aacb5492c2b5a7eaef9" compoundref="dbus-marshal-validate_8c" startline="703" endline="747">_dbus_validate_body_with_reason</references>
+        <references refid="group__DBusMarshal_1ga3926bb35edf78d114cf0c341fe3258e0" compoundref="dbus-marshal-basic_8c" startline="1360" endline="1388">_dbus_verbose_bytes_of_string</references>
+        <references refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" compoundref="dbus-message-private_8h" startline="105">DBusMessage::body</references>
+        <references refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" compoundref="dbus-message-private_8h" startline="73">DBusMessageLoader::corrupted</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusProtocol_1ga03b9c24acbfd1e3da19804c739612885" compoundref="dbus-protocol_8h" startline="302">DBUS_HEADER_FIELD_UNIX_FDS</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007ca08cf1e84457c1f41acaf082de2060a65" compoundref="dbus-marshal-validate_8h" startline="52">DBUS_VALIDITY_UNKNOWN_OOM_ERROR</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga2eda143c3757597dcf96a7d44f7c69f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t load_message</definition>
+        <argsstring>(DBusMessageLoader *loader, DBusMessage *message, int byte_order, int fields_array_len, int header_len, int body_len)</argsstring>
+        <name>load_message</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fields_array_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>header_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>body_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4097" column="1" bodyfile="dbus/dbus-message.c" bodystart="4097" bodyend="4285"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_loader_queue_messages</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_queue_messages</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Converts buffered data into messages, if we have enough data. </para>        </briefdescription>
+        <detaileddescription>
+<para>If we don&apos;t have enough data, does nothing.</para><para><xrefsect id="todo_1_todo000042"><xreftitle>Todo</xreftitle><xrefdescription><para>we need to check that the proper named header fields exist for each message type.</para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000043"><xreftitle>Todo</xreftitle><xrefdescription><para>If a message has unknown type, we should probably eat it right here rather than passing it out to applications. However it&apos;s not an error to see messages of unknown type.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we had enough memory to finish. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4302" column="1" bodyfile="dbus/dbus-message.c" bodystart="4302" bodyend="4355"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</references>
+        <references refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="472" endline="488">_dbus_list_find_last</references>
+        <references refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" compoundref="dbus-message-private_8h" startline="73">DBusMessageLoader::corrupted</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" compoundref="dbus-message-private_8h" startline="64">DBusMessageLoader::data</references>
+        <references refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</references>
+        <references refid="group__DBusProtocol_1gaf8c13dd883c21b5dea179d77d8ac12e3" compoundref="dbus-protocol_8h" startline="346">DBUS_MINIMUM_HEADER_SIZE</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" compoundref="dbus-message-private_8h" startline="68">DBusMessageLoader::max_message_size</references>
+        <references refid="structDBusMessageRealIter_1a552cb582c65645ed46d9d1ad38ece3c7" compoundref="dbus-message_8c" startline="128">DBusMessageRealIter::message</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga66674354acdd09ca6e11d600b34bdd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* _dbus_message_loader_peek_message</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_peek_message</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Peeks at first loaded message, returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no messages have been queued. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the next message, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4365" column="1" bodyfile="dbus/dbus-message.c" bodystart="4365" bodyend="4371"/>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga9e5e75716d7263d9908d45a60b1b6bdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* _dbus_message_loader_pop_message</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_pop_message</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Pops a loaded message (passing ownership of the message to the caller). </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no messages have been queued.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the next message, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4382" column="1" bodyfile="dbus/dbus-message.c" bodystart="4382" bodyend="4385"/>
+        <references refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="649" endline="662">_dbus_list_pop_first</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga6ec3c1ad57340f717a47d79092122d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* _dbus_message_loader_pop_message_link</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_pop_message_link</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Pops a loaded message inside a list link (passing ownership of the message and link to the caller). </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no messages have been loaded.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the next message link, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4396" column="1" bodyfile="dbus/dbus-message.c" bodystart="4396" bodyend="4399"/>
+        <references refid="group__DBusList_1gaab9a957eca9bf5466bbf377a23b4b25c" compoundref="dbus-list_8c" startline="628" endline="639">_dbus_list_pop_first_link</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga71b290eb470a55217971fcd6851fc40c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_putback_message_link</definition>
+        <argsstring>(DBusMessageLoader *loader, DBusList *link)</argsstring>
+        <name>_dbus_message_loader_putback_message_link</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Returns a popped message link, used to undo a pop. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the link with a message in it </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4408" column="1" bodyfile="dbus/dbus-message.c" bodystart="4408" bodyend="4412"/>
+        <references refid="group__DBusList_1gab3dd068e3bd8a319c0d12150785050a7" compoundref="dbus-list_8c" startline="333" endline="337">_dbus_list_prepend_link</references>
+        <references refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" compoundref="dbus-message-private_8h" startline="66">DBusMessageLoader::messages</references>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga38da52ac9344b00df530098bdd9a3842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_loader_get_is_corrupted</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_get_is_corrupted</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the loader is confused due to bad data. </para>        </briefdescription>
+        <detaileddescription>
+<para>If messages are received that are invalid, the loader gets confused and gives up permanently. This state is called &quot;corrupted.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the loader is hosed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4424" column="1" bodyfile="dbus/dbus-message.c" bodystart="4424" bodyend="4429"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" compoundref="dbus-message-private_8h" startline="73">DBusMessageLoader::corrupted</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1140" endline="1190">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gafb8c42ed5242274586607812ff6fba10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref></type>
+        <definition>DBusValidity _dbus_message_loader_get_corruption_reason</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_get_corruption_reason</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Checks what kind of bad data confused the loader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>why the loader is hosed, or DBUS_VALID if it isn&apos;t. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4438" column="1" bodyfile="dbus/dbus-message.c" bodystart="4438" bodyend="4444"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" compoundref="dbus-message-private_8h" startline="73">DBusMessageLoader::corrupted</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga031623c6235f98801cab3e53f0a5f757" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_set_max_message_size</definition>
+        <argsstring>(DBusMessageLoader *loader, long size)</argsstring>
+        <name>_dbus_message_loader_set_max_message_size</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Sets the maximum size message we allow. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the max message size in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4453" column="1" bodyfile="dbus/dbus-message.c" bodystart="4453" bodyend="4463"/>
+        <references refid="group__DBusProtocol_1ga2874c299e1c87fe745ef09bf231264e9" compoundref="dbus-protocol_8h" startline="210">DBUS_MAXIMUM_MESSAGE_LENGTH</references>
+        <references refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" compoundref="dbus-message-private_8h" startline="68">DBusMessageLoader::max_message_size</references>
+        <referencedby refid="group__DBusTransport_1ga03ea875260e71f59af708146cabf95ab" compoundref="dbus-transport_8c" startline="1199" endline="1203">_dbus_transport_set_max_message_size</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gadd76a4b7191465f2dcb8e6b56b717961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long _dbus_message_loader_get_max_message_size</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_get_max_message_size</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Gets the maximum allowed message size in bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>max size in bytes </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4472" column="1" bodyfile="dbus/dbus-message.c" bodystart="4472" bodyend="4475"/>
+        <references refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" compoundref="dbus-message-private_8h" startline="68">DBusMessageLoader::max_message_size</references>
+        <referencedby refid="group__DBusTransport_1gae36d2a90bad6ef13c0379fa9864ff68e" compoundref="dbus-transport_8c" startline="1225" endline="1228">_dbus_transport_get_max_message_size</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gadd6c0fa721b4340df936363fbde912dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_set_max_message_unix_fds</definition>
+        <argsstring>(DBusMessageLoader *loader, long n)</argsstring>
+        <name>_dbus_message_loader_set_max_message_unix_fds</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Sets the maximum unix fds per message we allow. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the max number of unix fds in a message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4484" column="1" bodyfile="dbus/dbus-message.c" bodystart="4484" bodyend="4494"/>
+        <references refid="group__DBusProtocol_1ga2735432928240c083c72a5f5d23ec6a1" compoundref="dbus-protocol_8h" startline="218">DBUS_MAXIMUM_MESSAGE_UNIX_FDS</references>
+        <references refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" compoundref="dbus-message-private_8h" startline="69">DBusMessageLoader::max_message_unix_fds</references>
+        <referencedby refid="group__DBusTransport_1gad005fffd646202e74a789765ae82a40f" compoundref="dbus-transport_8c" startline="1212" endline="1216">_dbus_transport_set_max_message_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gaf65867d15c7d8adb91f430c483c180be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long _dbus_message_loader_get_max_message_unix_fds</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_get_max_message_unix_fds</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Gets the maximum allowed number of unix fds per message. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>max unix fds </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4503" column="1" bodyfile="dbus/dbus-message.c" bodystart="4503" bodyend="4506"/>
+        <references refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" compoundref="dbus-message-private_8h" startline="69">DBusMessageLoader::max_message_unix_fds</references>
+        <referencedby refid="group__DBusTransport_1gaa28e8edd4d849108b158d95eb7da812d" compoundref="dbus-transport_8c" startline="1237" endline="1240">_dbus_transport_get_max_message_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga8e01aad6af940ec4051703f59330da37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_message_loader_get_pending_fds_count</definition>
+        <argsstring>(DBusMessageLoader *loader)</argsstring>
+        <name>_dbus_message_loader_get_pending_fds_count</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+<para>Return how many file descriptors are pending in the loader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4514" column="1" bodyfile="dbus/dbus-message.c" bodystart="4514" bodyend="4521"/>
+        <referencedby refid="group__DBusTransport_1ga3545c064545957f73f583bf63d07c40c" compoundref="dbus-transport_8c" startline="1521" endline="1524">_dbus_transport_get_pending_fds_count</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga658a91d8efc59934016fae6905bfc4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_message_loader_set_pending_fds_function</definition>
+        <argsstring>(DBusMessageLoader *loader, void(*callback)(void *), void *data)</argsstring>
+        <name>_dbus_message_loader_set_pending_fds_function</name>
+        <param>
+          <type><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref> *</type>
+          <declname>loader</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Register a function to be called whenever the number of pending file descriptors in the loader change. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the loader </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callback </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data for the callback </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4532" column="1" bodyfile="dbus/dbus-message.c" bodystart="4532" bodyend="4540"/>
+        <references refid="group__DBusInternalsUtils_1gade571435b55fae64217f5142aa78ee8d" compoundref="dbus-internals_8h" startline="328">_DBUS_LOCK_NAME</references>
+        <referencedby refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga537b3456202fdd9f305666504bde98fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_message_allocate_data_slot</definition>
+        <argsstring>(dbus_int32_t *slot_p)</argsstring>
+        <name>dbus_message_allocate_data_slot</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref> *</type>
+          <declname>slot_p</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an integer ID to be used for storing application-specific data on any <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The allocated ID may then be used with <ref refid="group__DBusMessageInternals_1ga69d0bc701f9ca935e6de8a3f3e376c0a" kindref="member">dbus_message_set_data()</ref> and <ref refid="group__DBusMessageInternals_1ga62769bfaf8f1b2edc7922c579bc0649d" kindref="member">dbus_message_get_data()</ref>. The passed-in slot must be initialized to -1, and is filled in with the slot ID. If the passed-in slot is not -1, it&apos;s assumed to be already allocated, and its refcount is incremented.</para><para>The allocated slot is global, i.e. all <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> objects will have a slot with the given integer ID reserved.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of a global variable storing the slot </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure (no memory) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4560" column="1" bodyfile="dbus/dbus-message.c" bodystart="4560" bodyend="4564"/>
+        <references refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gac7a5ba135e1aec4ad8c7b43752af02e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dbus_message_free_data_slot</definition>
+        <argsstring>(dbus_int32_t *slot_p)</argsstring>
+        <name>dbus_message_free_data_slot</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref> *</type>
+          <declname>slot_p</declname>
+        </param>
+        <briefdescription>
+<para>Deallocates a global ID for message data slots. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusMessageInternals_1ga62769bfaf8f1b2edc7922c579bc0649d" kindref="member">dbus_message_get_data()</ref> and <ref refid="group__DBusMessageInternals_1ga69d0bc701f9ca935e6de8a3f3e376c0a" kindref="member">dbus_message_set_data()</ref> may no longer be used with this slot. Existing data stored on existing <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> objects will be freed when the message is finalized, but may not be retrieved (and may only be replaced if someone else reallocates the slot). When the refcount on the passed-in slot reaches 0, it is set to -1.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address storing the slot to deallocate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4578" column="1" bodyfile="dbus/dbus-message.c" bodystart="4578" bodyend="4583"/>
+        <references refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga69d0bc701f9ca935e6de8a3f3e376c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_message_set_data</definition>
+        <argsstring>(DBusMessage *message, dbus_int32_t slot, void *data, DBusFreeFunction free_data_func)</argsstring>
+        <name>dbus_message_set_data</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref></type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_func</declname>
+        </param>
+        <briefdescription>
+<para>Stores a pointer on a <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>, along with an optional function to be used for freeing the data when the data is set again, or when the message is finalized. </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot number must have been allocated with <ref refid="group__DBusMessageInternals_1ga537b3456202fdd9f305666504bde98fb" kindref="member">dbus_message_allocate_data_slot()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to store </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>finalizer function for the data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if there was enough memory to store the data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4599" column="1" bodyfile="dbus/dbus-message.c" bodystart="4599" bodyend="4624"/>
+        <references refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" compoundref="dbus-dataslot_8c" startline="221" endline="273">_dbus_data_slot_list_set</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessage_1a179c446523c6321e04f88a671363be19" compoundref="dbus-message-private_8h" startline="118">DBusMessage::slot_list</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga62769bfaf8f1b2edc7922c579bc0649d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* dbus_message_get_data</definition>
+        <argsstring>(DBusMessage *message, dbus_int32_t slot)</argsstring>
+        <name>dbus_message_get_data</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref></type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves data previously set with <ref refid="group__DBusMessageInternals_1ga69d0bc701f9ca935e6de8a3f3e376c0a" kindref="member">dbus_message_set_data()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot must still be allocated (must not have been freed).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot to get data from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the data, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4635" column="1" bodyfile="dbus/dbus-message.c" bodystart="4635" bodyend="4647"/>
+        <references refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" compoundref="dbus-dataslot_8c" startline="285" endline="308">_dbus_data_slot_list_get</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessage_1a179c446523c6321e04f88a671363be19" compoundref="dbus-message-private_8h" startline="118">DBusMessage::slot_list</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga40412bdfc6ba9cf9e167db4c23df0a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dbus_message_type_from_string</definition>
+        <argsstring>(const char *type_str)</argsstring>
+        <name>dbus_message_type_from_string</name>
+        <param>
+          <type>const char *</type>
+          <declname>type_str</declname>
+        </param>
+        <briefdescription>
+<para>Utility function to convert a machine-readable (not translated) string into a D-Bus message type. </para>        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">&quot;method_call&quot;<sp/><sp/><sp/><sp/>-&gt;<sp/>DBUS_MESSAGE_TYPE_METHOD_CALL</highlight></codeline>
+<codeline><highlight class="normal">&quot;method_return&quot;<sp/><sp/>-&gt;<sp/>DBUS_MESSAGE_TYPE_METHOD_RETURN</highlight></codeline>
+<codeline><highlight class="normal">&quot;signal&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>DBUS_MESSAGE_TYPE_SIGNAL</highlight></codeline>
+<codeline><highlight class="normal">&quot;error&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>DBUS_MESSAGE_TYPE_ERROR</highlight></codeline>
+<codeline><highlight class="normal">anything<sp/>else<sp/><sp/><sp/><sp/>-&gt;<sp/>DBUS_MESSAGE_TYPE_INVALID</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4663" column="1" bodyfile="dbus/dbus-message.c" bodystart="4663" bodyend="4675"/>
+        <references refid="group__DBusProtocol_1ga2b9423d95066313d73eeea8eeaf86812" compoundref="dbus-protocol_8h" startline="238">DBUS_MESSAGE_TYPE_ERROR</references>
+        <references refid="group__DBusProtocol_1gac975525a6ce258a7a70c583c9741b516" compoundref="dbus-protocol_8h" startline="232">DBUS_MESSAGE_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga09416afd76b65139eddd31e1085d9ebf" compoundref="dbus-protocol_8h" startline="234">DBUS_MESSAGE_TYPE_METHOD_CALL</references>
+        <references refid="group__DBusProtocol_1ga4a9012edd7f22342f845e98150aeb858" compoundref="dbus-protocol_8h" startline="236">DBUS_MESSAGE_TYPE_METHOD_RETURN</references>
+        <references refid="group__DBusProtocol_1ga728d893ff0c00e126517ba39835220a5" compoundref="dbus-protocol_8h" startline="240">DBUS_MESSAGE_TYPE_SIGNAL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga75bcb613a291eb7e427f77f2f3635b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* dbus_message_type_to_string</definition>
+        <argsstring>(int type)</argsstring>
+        <name>dbus_message_type_to_string</name>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Utility function to convert a D-Bus message type into a machine-readable string (not translated). </para>        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">DBUS_MESSAGE_TYPE_METHOD_CALL<sp/><sp/><sp/><sp/>-&gt;<sp/>&quot;method_call&quot;</highlight></codeline>
+<codeline><highlight class="normal">DBUS_MESSAGE_TYPE_METHOD_RETURN<sp/><sp/>-&gt;<sp/>&quot;method_return&quot;</highlight></codeline>
+<codeline><highlight class="normal">DBUS_MESSAGE_TYPE_SIGNAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>&quot;signal&quot;</highlight></codeline>
+<codeline><highlight class="normal">DBUS_MESSAGE_TYPE_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>&quot;error&quot;</highlight></codeline>
+<codeline><highlight class="normal">DBUS_MESSAGE_TYPE_INVALID<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>&quot;invalid&quot;</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4691" column="1" bodyfile="dbus/dbus-message.c" bodystart="4691" bodyend="4706"/>
+        <references refid="group__DBusProtocol_1ga2b9423d95066313d73eeea8eeaf86812" compoundref="dbus-protocol_8h" startline="238">DBUS_MESSAGE_TYPE_ERROR</references>
+        <references refid="group__DBusProtocol_1ga09416afd76b65139eddd31e1085d9ebf" compoundref="dbus-protocol_8h" startline="234">DBUS_MESSAGE_TYPE_METHOD_CALL</references>
+        <references refid="group__DBusProtocol_1ga4a9012edd7f22342f845e98150aeb858" compoundref="dbus-protocol_8h" startline="236">DBUS_MESSAGE_TYPE_METHOD_RETURN</references>
+        <references refid="group__DBusProtocol_1ga728d893ff0c00e126517ba39835220a5" compoundref="dbus-protocol_8h" startline="240">DBUS_MESSAGE_TYPE_SIGNAL</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gab93fd3666217ee339c4d2e8d4d33e63c" compoundref="dbus-connection_8c" startline="625" endline="667">_dbus_connection_message_sent_unlocked</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="480" endline="534">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4549" endline="4862">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1ga7125d747575b2f596aceaf7be53eae68" compoundref="dbus-connection_8c" startline="3935" endline="3967">dbus_connection_steal_borrowed_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gad85c737f9e7d03005d6028d6bbae7e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_message_marshal</definition>
+        <argsstring>(DBusMessage *msg, char **marshalled_data_p, int *len_p)</argsstring>
+        <name>dbus_message_marshal</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>marshalled_data_p</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>len_p</declname>
+        </param>
+        <briefdescription>
+<para>Turn a <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> into the marshalled form as described in the D-Bus specification. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generally, this function is only useful for encapsulating D-Bus messages in a different protocol.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>marshalled_data_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location to save the marshalled form to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location to save the length of the marshalled form to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if there was not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4721" column="1" bodyfile="dbus/dbus-message.c" bodystart="4721" bodyend="4768"/>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" compoundref="dbus-message-private_8h" startline="105">DBusMessage::body</references>
+        <references refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" compoundref="dbus-marshal-header_8h" startline="49">DBusHeader::data</references>
+        <references refid="group__DBusMessageInternals_1ga3ecc9c24381af05289161f477ad6a578" compoundref="dbus-message_8c" startline="384" endline="397">dbus_message_lock</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga776fe8b5cd935d642875efa1d13a31b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+        <definition>DBusMessage* dbus_message_demarshal</definition>
+        <argsstring>(const char *str, int len, DBusError *error)</argsstring>
+        <name>dbus_message_demarshal</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Demarshal a D-Bus message from the format described in the D-Bus specification. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generally, this function is only useful for encapsulating D-Bus messages in a different protocol.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the marshalled <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of str </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location to save errors to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if there was an error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4783" column="1" bodyfile="dbus/dbus-message.c" bodystart="4783" bodyend="4826"/>
+        <references refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" compoundref="dbus-message_8c" startline="3962" endline="3970">_dbus_message_loader_get_buffer</references>
+        <references refid="group__DBusMessageInternals_1ga38da52ac9344b00df530098bdd9a3842" compoundref="dbus-message_8c" startline="4424" endline="4429">_dbus_message_loader_get_is_corrupted</references>
+        <references refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</references>
+        <references refid="group__DBusMessageInternals_1ga9e5e75716d7263d9908d45a60b1b6bdc" compoundref="dbus-message_8c" startline="4382" endline="4385">_dbus_message_loader_pop_message</references>
+        <references refid="group__DBusMessageInternals_1gaf55885371a6d022ec94c79bd7138923f" compoundref="dbus-message_8c" startline="4302" endline="4355">_dbus_message_loader_queue_messages</references>
+        <references refid="group__DBusMessageInternals_1gaf5cb6398adb9fe39560fe6aef69ebb09" compoundref="dbus-message_8c" startline="3982" endline="3989">_dbus_message_loader_return_buffer</references>
+        <references refid="group__DBusMessageInternals_1ga51299aab1f5e0b2408ab858d3377b20c" compoundref="dbus-message_8c" startline="3925" endline="3941">_dbus_message_loader_unref</references>
+        <references refid="group__DBusString_1ga724656b7091b910965bd1af42d0b7bab" compoundref="dbus-string_8c" startline="1136" endline="1145">_dbus_string_append_len</references>
+        <references refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" compoundref="dbus-message-private_8h" startline="71">DBusMessageLoader::corruption_reason</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gab0f8d8a640413e7c9b6c8f154acfbd1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dbus_message_demarshal_bytes_needed</definition>
+        <argsstring>(const char *buf, int len)</argsstring>
+        <name>dbus_message_demarshal_bytes_needed</name>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of bytes required to be in the buffer to demarshal a D-Bus message. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generally, this function is only useful for encapsulating D-Bus messages in a different protocol.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to be marshalled </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of <computeroutput>buf</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 if there was no valid data to be demarshalled, 0 if there wasn&apos;t enough data to determine how much should be demarshalled. Otherwise returns the number of bytes to be demarshalled </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4841" column="1" bodyfile="dbus/dbus-message.c" bodystart="4841" bodyend="4877"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusProtocol_1ga2874c299e1c87fe745ef09bf231264e9" compoundref="dbus-protocol_8h" startline="210">DBUS_MAXIMUM_MESSAGE_LENGTH</references>
+        <references refid="group__DBusProtocol_1gaf8c13dd883c21b5dea179d77d8ac12e3" compoundref="dbus-protocol_8h" startline="346">DBUS_MINIMUM_HEADER_SIZE</references>
+        <references refid="group__DBusMarshal_1gga0c4521d30d6650a33673a4d7f9cc007cae68ac5067fe94cdcfb35e115f36298c8" compoundref="dbus-marshal-validate_8h" startline="56">DBUS_VALID</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga8955cc5a3fcc905230b9afc05e4b1470" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dbus_message_set_allow_interactive_authorization</definition>
+        <argsstring>(DBusMessage *message, dbus_bool_t allow)</argsstring>
+        <name>dbus_message_set_allow_interactive_authorization</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>allow</declname>
+        </param>
+        <briefdescription>
+<para>Sets a flag indicating that the caller of the method is prepared to wait for interactive authorization to take place (for instance via Polkit) before the actual method is processed. </para>        </briefdescription>
+        <detaileddescription>
+<para>The flag is <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> by default; that is, by default the other end is expected to make any authorization decisions non-interactively and promptly. It may use the error <ref refid="group__DBusProtocol_1gaf5ed34ef6339d3903d0c30c4a8221877" kindref="member">DBUS_ERROR_INTERACTIVE_AUTHORIZATION_REQUIRED</ref> to signal that authorization failed, but could have succeeded if this flag had been used.</para><para>For messages whose type is not <ref refid="group__DBusProtocol_1ga09416afd76b65139eddd31e1085d9ebf" kindref="member">DBUS_MESSAGE_TYPE_METHOD_CALL</ref>, this flag is meaningless and should not be set.</para><para>On the protocol level this toggles <ref refid="group__DBusProtocol_1ga9e3539506c57a085ce40ca4dc919015b" kindref="member">DBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if interactive authorization is acceptable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4901" column="1" bodyfile="dbus/dbus-message.c" bodystart="4901" bodyend="4910"/>
+        <references refid="group__DBusMarshal_1gad2073f8f2f2ba3b710aa929dced34cc3" compoundref="dbus-marshal-header_8c" startline="1457" endline="1469">_dbus_header_toggle_flag</references>
+        <references refid="group__DBusProtocol_1ga9e3539506c57a085ce40ca4dc919015b" compoundref="dbus-protocol_8h" startline="261">DBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" compoundref="dbus-message-private_8h" startline="107">DBusMessage::locked</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMessageInternals_1gafc4b23ac32a763afa783b2a07143731b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_message_get_allow_interactive_authorization</definition>
+        <argsstring>(DBusMessage *message)</argsstring>
+        <name>dbus_message_get_allow_interactive_authorization</name>
+        <param>
+          <type><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether the flag controlled by <ref refid="group__DBusMessageInternals_1ga8955cc5a3fcc905230b9afc05e4b1470" kindref="member">dbus_message_set_allow_interactive_authorization()</ref> has been set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="4919" column="1" bodyfile="dbus/dbus-message.c" bodystart="4919" bodyend="4925"/>
+        <references refid="group__DBusMarshal_1ga56619efed3088554b8760edd246b4157" compoundref="dbus-marshal-header_8c" startline="1479" endline="1487">_dbus_header_get_flag</references>
+        <references refid="group__DBusProtocol_1ga9e3539506c57a085ce40ca4dc919015b" compoundref="dbus-protocol_8h" startline="261">DBUS_HEADER_FLAG_ALLOW_INTERACTIVE_AUTHORIZATION</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" compoundref="dbus-message-private_8h" startline="103">DBusMessage::header</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusMessageInternals_1ga660989658f3be5e403da430f63afd0b7" prot="public" static="no">
+        <name>CHANGED_STAMP_BITS</name>
+        <initializer>21</initializer>
+        <briefdescription>
+<para>How many bits are in the changed_stamp used to validate iterators. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="90" column="9" bodyfile="dbus/dbus-message-private.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusMessageInternals_1gaea37a18258a4c9fd96f965e35cb13bef" prot="public" static="no">
+        <name>_dbus_enable_message_cache</name>
+        <param></param>
+        <initializer>(<ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="88" column="12" bodyfile="dbus/dbus-message.c" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusMessageInternals_1ga1dfae386ef0d4d808584abeafc44e8ca" prot="public" static="no">
+        <name>ensure_byte_order</name>
+        <param><defname>message</defname></param>
+        <initializer>_dbus_message_byteswap (message)</initializer>
+        <briefdescription>
+<para>byte-swap the message if it doesn&apos;t match our byte order. </para>        </briefdescription>
+        <detaileddescription>
+<para>Called only when we need the message in our own byte order, normally when reading arrays of integers or doubles. Otherwise should not be called since it would do needless work. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="195" column="9" bodyfile="dbus/dbus-message.c" bodystart="195" bodyend="-1"/>
+        <referencedby refid="group__DBusMessage_1gab0f9bbe4f3d26bc9b5cf4f243c268aaa" compoundref="dbus-message_8c" startline="2009" endline="2021">dbus_message_get_args_valist</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusMessageInternals_1ga2c5c6aef45dd0b5cc10c800f986a7ce7" prot="public" static="no">
+        <name>MAX_MESSAGE_SIZE_TO_CACHE</name>
+        <initializer>10 * _DBUS_ONE_KILOBYTE</initializer>
+        <briefdescription>
+<para>Avoid caching huge messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="505" column="9" bodyfile="dbus/dbus-message.c" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusMessageInternals_1gaeab2038ce58cd314dc1f23103abec5b0" prot="public" static="no">
+        <name>MAX_MESSAGE_CACHE_SIZE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+<para>Avoid caching too many messages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="508" column="9" bodyfile="dbus/dbus-message.c" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusMessageInternals_1gacbe0bfe7a9551ab0489a0ec9aba6e94e" prot="public" static="no">
+        <name>INITIAL_LOADER_DATA_LEN</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>The initial buffer size of the message loader. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000039"><xreftitle>Todo</xreftitle><xrefdescription><para>this should be based on min header size plus some average body size, or something. Or rather, the min header size only, if we want to try to read only the header, store that in a <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref>, then read only the body and store that, etc., depends on how we optimize <ref refid="group__DBusMessageInternals_1gae77f064b8034189a955d5be982d2fbdb" kindref="member">_dbus_message_loader_get_buffer()</ref> and what the exact message format is. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message.c" line="3854" column="9" bodyfile="dbus/dbus-message.c" bodystart="3854" bodyend="-1"/>
+        <referencedby refid="group__DBusMessageInternals_1ga66f1c10cf909ba09ed732bc125ff8671" compoundref="dbus-message_8c" startline="3863" endline="3902">_dbus_message_loader_new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> private implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>The guts of <ref refid="structDBusMessage" kindref="compound">DBusMessage</ref> and its methods. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,40 @@
+.TH "DBusDataSlotAllocator" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusDataSlotAllocator \- An allocator that tracks a set of slot IDs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-dataslot\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusAllocatedSlot\fP * \fBallocated_slots\fP"
+.br
+.RI "\fIAllocated slots\&. \fP"
+.ti -1c
+.RI "int \fBn_allocated_slots\fP"
+.br
+.RI "\fInumber of slots malloc'd \fP"
+.ti -1c
+.RI "int \fBn_used_slots\fP"
+.br
+.RI "\fInumber of slots used \fP"
+.ti -1c
+.RI "DBusGlobalLock \fBlock\fP"
+.br
+.RI "\fIindex of thread lock \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An allocator that tracks a set of slot IDs\&. 
+.PP
+Definition at line 55 of file dbus\-dataslot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusWatch" kind="group">
+    <compoundname>DBusWatch</compoundname>
+    <title>DBusWatch</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusWatch_1ga62d7e86fe386ed48fb90d443b3a2ce7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusMacros_1ga7b014fa99f6ef38c1aa5a9c02468e3a0" kindref="member">DBUS_DEPRECATED</ref> int</type>
+        <definition>int dbus_watch_get_fd</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_fd</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated former name of <ref refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" kindref="member">dbus_watch_get_unix_fd()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the file descriptor to watch. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="451" column="1" bodyfile="dbus/dbus-watch.c" bodystart="536" bodyend="541"/>
+        <references refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" compoundref="dbus-watch_8c" startline="557" endline="571">dbus_watch_get_unix_fd</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT int</type>
+        <definition>int dbus_watch_get_unix_fd</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_unix_fd</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Returns a UNIX file descriptor to be watched, which may be a pipe, socket, or other type of descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para>On UNIX this is preferred to <ref refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" kindref="member">dbus_watch_get_socket()</ref> since it works with more kinds of <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref>.</para><para>Always returns -1 on Windows. On Windows you use <ref refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" kindref="member">dbus_watch_get_socket()</ref> to get a Winsock socket to watch.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the file descriptor to watch. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="455" column="1" bodyfile="dbus/dbus-watch.c" bodystart="557" bodyend="571"/>
+        <references refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" compoundref="dbus-watch_8c" startline="586" endline="591">dbus_watch_get_socket</references>
+        <references refid="structDBusWatch_1ab4021cce958b50cbcda5eeabc6af2217" compoundref="dbus-watch_8c" startline="43">fd</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusWatch_1ga62d7e86fe386ed48fb90d443b3a2ce7a" compoundref="dbus-watch_8c" startline="536" endline="541">dbus_watch_get_fd</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT int</type>
+        <definition>int dbus_watch_get_socket</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_socket</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Returns a socket to be watched, on UNIX this will return -1 if our transport is not socket-based so <ref refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" kindref="member">dbus_watch_get_unix_fd()</ref> is preferred. </para>        </briefdescription>
+        <detaileddescription>
+<para>On Windows, <ref refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" kindref="member">dbus_watch_get_unix_fd()</ref> returns -1 but this function returns a Winsock socket (assuming the transport is socket-based, as it always is for now).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the socket to watch. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="457" column="1" bodyfile="dbus/dbus-watch.c" bodystart="586" bodyend="591"/>
+        <references refid="structDBusWatch_1ab4021cce958b50cbcda5eeabc6af2217" compoundref="dbus-watch_8c" startline="43">fd</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga5f467b14f0c2f667e46c4ba786808e5b" compoundref="dbus-spawn_8c" startline="813" endline="826">_dbus_babysitter_set_watch_functions</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4a010098fe079eb6f201ff034d15fdff" compoundref="dbus-transport_8c" startline="889" endline="915">_dbus_transport_handle_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gaec61655a4bd6186a6a1ec104771d8af5" compoundref="dbus-watch_8c" startline="376" endline="399">_dbus_watch_list_add_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga76894d297bc7d7d23cbacdc2b1778884" compoundref="dbus-watch_8c" startline="409" endline="425">_dbus_watch_list_remove_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga14bb50e8663a1d9d3960b4f73c09c097" compoundref="dbus-watch_8c" startline="436" endline="455">_dbus_watch_list_toggle_watch</referencedby>
+        <referencedby refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" compoundref="dbus-watch_8c" startline="557" endline="571">dbus_watch_get_unix_fd</referencedby>
+        <referencedby refid="group__DBusWatch_1ga5c75a65cf0680956cc0188d86a05cfae" compoundref="dbus-watch_8c" startline="642" endline="657">dbus_watch_set_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1gaf172a2b1d1f82333e67cec8d99c9204a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT unsigned int</type>
+        <definition>unsigned int dbus_watch_get_flags</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_flags</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Gets flags from DBusWatchFlags indicating what conditions should be monitored on the file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The flags returned will only contain DBUS_WATCH_READABLE and DBUS_WATCH_WRITABLE, never DBUS_WATCH_HANGUP or DBUS_WATCH_ERROR; all watches implicitly include a watch for hangups, errors, and other exceptional conditions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the conditions to watch. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="459" column="1" bodyfile="dbus/dbus-watch.c" bodystart="607" bodyend="613"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusWatch_1a7f1c2c609410f58a2328681c2893f70a" compoundref="dbus-watch_8c" startline="44">flags</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1ga8dcdbd07f15a56207af4a36cb005da77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT void *</type>
+        <definition>void * dbus_watch_get_data</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_data</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Gets data previously set with <ref refid="group__DBusWatch_1ga5c75a65cf0680956cc0188d86a05cfae" kindref="member">dbus_watch_set_data()</ref> or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if none. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>previously-set data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="461" column="1" bodyfile="dbus/dbus-watch.c" bodystart="623" bodyend="628"/>
+        <references refid="structDBusWatch_1a71877a39d8c2a7d533c0c6f280648d53" compoundref="dbus-watch_8c" startline="50">data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1ga5c75a65cf0680956cc0188d86a05cfae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT void</type>
+        <definition>void dbus_watch_set_data</definition>
+        <argsstring>(DBusWatch *watch, void *data, DBusFreeFunction free_data_function)</argsstring>
+        <name>dbus_watch_set_data</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_function</declname>
+        </param>
+        <briefdescription>
+<para>Sets data which can be retrieved with <ref refid="group__DBusWatch_1ga8dcdbd07f15a56207af4a36cb005da77" kindref="member">dbus_watch_get_data()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Intended for use by the DBusAddWatchFunction and DBusRemoveWatchFunction to store their own data. For example with Qt you might store the QSocketNotifier for this watch and with GLib you might store a GSource.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to be called to free the data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="463" column="1" bodyfile="dbus/dbus-watch.c" bodystart="642" bodyend="657"/>
+        <references refid="structDBusWatch_1a71877a39d8c2a7d533c0c6f280648d53" compoundref="dbus-watch_8c" startline="50">data</references>
+        <references refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" compoundref="dbus-watch_8c" startline="586" endline="591">dbus_watch_get_socket</references>
+        <references refid="structDBusWatch_1ad848cbd636518fd346039d0d771ba021" compoundref="dbus-watch_8c" startline="51">free_data_function</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_watch_handle</definition>
+        <argsstring>(DBusWatch *watch, unsigned int flags)</argsstring>
+        <name>dbus_watch_handle</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Called to notify the D-Bus library when a previously-added watch is ready for reading or writing, or has an exception such as a hangup. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this function returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>, then the file descriptor may still be ready for reading or writing, but more memory is needed in order to do the reading or writing. If you ignore the <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> return, your application may spin in a busy loop on the file descriptor until memory becomes available, but nothing more catastrophic should happen.</para><para><ref refid="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" kindref="member">dbus_watch_handle()</ref> cannot be called during the DBusAddWatchFunction, as the connection will not be ready to handle that watch yet.</para><para>It is not allowed to reference a <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> after it has been passed to remove_function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the poll condition using <ref refid="group__DBusConnection_1ga0556779e61aeb19eb9cf6b6466bd1b98" kindref="member">DBusWatchFlags</ref> values </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if there wasn&apos;t enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="467" column="1" bodyfile="dbus/dbus-watch.c" bodystart="698" bodyend="724"/>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusWatchInternals_1gab8f49926fe9ee56cb4ae7c1c8071cca3" compoundref="dbus-watch_8c" startline="185" endline="192">_dbus_watch_sanitize_condition</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusWatch_1ab4021cce958b50cbcda5eeabc6af2217" compoundref="dbus-watch_8c" startline="43">fd</references>
+        <references refid="structDBusWatch_1a7f1c2c609410f58a2328681c2893f70a" compoundref="dbus-watch_8c" startline="44">flags</references>
+        <references refid="structDBusWatch_1aad3fb97da0ad7e5897611930f7a1c3e9" compoundref="dbus-watch_8c" startline="46">handler</references>
+        <references refid="structDBusWatch_1ae906b28caa8a4323f85c882abe901e87" compoundref="dbus-watch_8c" startline="47">handler_data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusWatch_1gae7a91e6d4d1bc187419c47c522e33a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBUS_EXPORT <ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t dbus_watch_get_enabled</definition>
+        <argsstring>(DBusWatch *watch)</argsstring>
+        <name>dbus_watch_get_enabled</name>
+        <param>
+          <type><ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> *</type>
+          <declname>watch</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether a watch is enabled or not. </para>        </briefdescription>
+        <detaileddescription>
+<para>If not enabled, it should not be polled by the main loop.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>watch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref> object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the watch is enabled </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="470" column="1" bodyfile="dbus/dbus-watch.c" bodystart="667" bodyend="672"/>
+        <references refid="structDBusWatch_1a010564b43e0c7dd438b9ac4b0c1dbe64" compoundref="dbus-watch_8c" startline="52">enabled</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusWatch_1gaa5aa1734b328af3a18116d4a8a157721" prot="public" static="no">
+        <type>struct <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref></type>
+        <definition>DBusWatch</definition>
+        <argsstring></argsstring>
+        <name>DBusWatch</name>
+        <briefdescription>
+<para>Opaque object representing a file descriptor to be watched for changes in readability, writability, or hangup. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-connection.h" line="330" column="1" bodyfile="dbus/dbus-connection.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Object representing a file descriptor to be watched. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref>. A watch represents a file descriptor that the main loop needs to monitor, as in Qt&apos;s QSocketNotifier or GLib&apos;s g_io_add_watch().</para><para>Use <ref refid="group__DBusConnection_1gaebf031eb444b4f847606aa27daa3d8e6" kindref="member">dbus_connection_set_watch_functions()</ref> or <ref refid="group__DBusServer_1gaa5723810ea52e9f1815062fd91395892" kindref="member">dbus_server_set_watch_functions()</ref> to be notified when libdbus needs to add or remove watches. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

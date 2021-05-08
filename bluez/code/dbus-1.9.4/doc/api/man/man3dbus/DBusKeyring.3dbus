@@ -1,0 +1,52 @@
+.TH "DBusKeyring" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusKeyring \- Internals of \fBDBusKeyring\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBdirectory\fP"
+.br
+.RI "\fIDirectory the below two items are inside\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBfilename\fP"
+.br
+.RI "\fIKeyring filename\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBfilename_lock\fP"
+.br
+.RI "\fIName of lockfile\&. \fP"
+.ti -1c
+.RI "\fBDBusKey\fP * \fBkeys\fP"
+.br
+.RI "\fIKeys loaded from the file\&. \fP"
+.ti -1c
+.RI "int \fBn_keys\fP"
+.br
+.RI "\fINumber of keys\&. \fP"
+.ti -1c
+.RI "\fBDBusCredentials\fP * \fBcredentials\fP"
+.br
+.RI "\fICredentials containing user the keyring is for\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusKeyring\fP\&. 
+
+\fBDBusKeyring\fP internals\&. \fBDBusKeyring\fP is an opaque object, it must be used via accessor functions\&. 
+.PP
+Definition at line 111 of file dbus\-keyring\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

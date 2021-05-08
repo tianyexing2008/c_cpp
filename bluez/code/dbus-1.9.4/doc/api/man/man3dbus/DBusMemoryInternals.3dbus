@@ -1,0 +1,87 @@
+.TH "DBusMemoryInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMemoryInternals \- Memory allocation implementation details
+.PP
+internals of \fBdbus_malloc()\fP etc\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBShutdownClosure\fP"
+.br
+.RI "\fIThis struct represents a function to be called on shutdown\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBShutdownClosure\fP \fBShutdownClosure\fP"
+.br
+.RI "\fIRepresents a function to be called on shutdown\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_register_shutdown_func\fP (DBusShutdownFunction func, void *data)"
+.br
+.RI "\fIRegister a cleanup function to be called exactly once the next time \fBdbus_shutdown()\fP is called\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_register_shutdown_func_unlocked\fP (DBusShutdownFunction func, void *data)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fB_dbus_current_generation\fP = 1"
+.br
+.RI "\fI_dbus_current_generation is used to track each time that \fBdbus_shutdown()\fP is called, so we can reinit things after it's been called\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+internals of \fBdbus_malloc()\fP etc\&. 
+
+Implementation details related to allocating and releasing blocks of memory\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_register_shutdown_func (DBusShutdownFunction func, void * data)"
+
+.PP
+Register a cleanup function to be called exactly once the next time \fBdbus_shutdown()\fP is called\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfunc\fP the function 
+.br
+\fIdata\fP data to pass to the function 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 810 of file dbus\-memory\&.c\&.
+.PP
+References _DBUS_LOCK, _DBUS_UNLOCK, ShutdownClosure::data, dbus_new, FALSE, ShutdownClosure::func, ShutdownClosure::next, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), and _dbus_user_database_lookup()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int _dbus_current_generation = 1"
+
+.PP
+_dbus_current_generation is used to track each time that \fBdbus_shutdown()\fP is called, so we can reinit things after it's been called\&. It is simply incremented each time we shut down\&. 
+.PP
+Definition at line 781 of file dbus\-memory\&.c\&.
+.PP
+Referenced by _dbus_condvar_wake_one(), _dbus_connection_close_possibly_shared(), _dbus_connection_new_for_transport(), _dbus_connection_ref_unlocked(), _dbus_get_local_machine_uuid_encoded(), dbus_connection_close(), dbus_connection_ref(), dbus_connection_unref(), dbus_message_get_reply_serial(), dbus_message_ref(), dbus_message_unref(), and dbus_threads_init()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

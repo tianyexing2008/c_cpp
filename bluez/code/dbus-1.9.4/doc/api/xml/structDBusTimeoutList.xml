@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusTimeoutList" kind="struct" language="C++" prot="public">
+    <compoundname>DBusTimeoutList</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusTimeoutList::timeouts</definition>
+        <argsstring></argsstring>
+        <name>timeouts</name>
+        <briefdescription>
+<para>Timeout objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="178" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="178" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga1b399ef2d7f128e59bb32dbb5b590e1b" compoundref="dbus-timeout_8c" startline="211" endline="223">_dbus_timeout_list_free</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTimeoutList_1aab57481c712e47f9157d23bc6731972e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga91d796869e7fa9e96d843b2c0d480df1" kindref="member">DBusAddTimeoutFunction</ref></type>
+        <definition>DBusAddTimeoutFunction DBusTimeoutList::add_timeout_function</definition>
+        <argsstring></argsstring>
+        <name>add_timeout_function</name>
+        <briefdescription>
+<para>Callback for adding a timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="180" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="180" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTimeoutList_1a51d25b272b950c3f63b3b71926940a55" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga418f70c8dfaa15c45f1d51fb9569eab8" kindref="member">DBusRemoveTimeoutFunction</ref></type>
+        <definition>DBusRemoveTimeoutFunction DBusTimeoutList::remove_timeout_function</definition>
+        <argsstring></argsstring>
+        <name>remove_timeout_function</name>
+        <briefdescription>
+<para>Callback for removing a timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="181" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="181" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTimeoutList_1a198efba668450ebafa97e9d5197fcc2e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusConnection_1ga45c22fb4103827cd10f319cc90e286ae" kindref="member">DBusTimeoutToggledFunction</ref></type>
+        <definition>DBusTimeoutToggledFunction DBusTimeoutList::timeout_toggled_function</definition>
+        <argsstring></argsstring>
+        <name>timeout_toggled_function</name>
+        <briefdescription>
+<para>Callback when timeout is enabled/disabled or changes interval. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="182" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="182" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" compoundref="dbus-timeout_8c" startline="362" endline="376">_dbus_timeout_list_toggle_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusTimeoutList::timeout_data</definition>
+        <argsstring></argsstring>
+        <name>timeout_data</name>
+        <briefdescription>
+<para>Data for timeout callbacks. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="183" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="183" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga14955f061551ece122808b9e6ddc0757" compoundref="dbus-timeout_8c" startline="310" endline="330">_dbus_timeout_list_add_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1gaec0ffafdcac87f23878a2ddded044822" compoundref="dbus-timeout_8c" startline="340" endline="351">_dbus_timeout_list_remove_timeout</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga3d1ee0968a47651c5428ebf48711b217" compoundref="dbus-timeout_8c" startline="362" endline="376">_dbus_timeout_list_toggle_timeout</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusTimeoutList_1ac93efcdc11b6e68d19f1e57e0bff72f7" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusTimeoutList::timeout_free_data_function</definition>
+        <argsstring></argsstring>
+        <name>timeout_free_data_function</name>
+        <briefdescription>
+<para>Free function for timeout callback data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-timeout.c" line="184" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="184" bodyend="-1"/>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusTimeoutList" kindref="compound">DBusTimeoutList</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>All fields are private. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="498">
+        <label>DBusTimeoutList</label>
+        <link refid="structDBusTimeoutList"/>
+        <childnode refid="499" relation="usage">
+          <edgelabel>timeouts</edgelabel>
+        </childnode>
+        <childnode refid="500" relation="usage">
+          <edgelabel>add_timeout_function</edgelabel>
+          <edgelabel>timeout_toggled_function</edgelabel>
+          <edgelabel>remove_timeout_function</edgelabel>
+        </childnode>
+      </node>
+      <node id="500">
+        <label>DBusTimeout</label>
+        <link refid="structDBusTimeout"/>
+      </node>
+      <node id="499">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="499" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-timeout.c" line="177" column="1" bodyfile="dbus/dbus-timeout.c" bodystart="176" bodyend="185"/>
+    <listofallmembers>
+      <member refid="structDBusTimeoutList_1aab57481c712e47f9157d23bc6731972e" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>add_timeout_function</name></member>
+      <member refid="structDBusTimeoutList_1a51d25b272b950c3f63b3b71926940a55" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>remove_timeout_function</name></member>
+      <member refid="structDBusTimeoutList_1af26804f9320628b977e7afeeea3750eb" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>timeout_data</name></member>
+      <member refid="structDBusTimeoutList_1ac93efcdc11b6e68d19f1e57e0bff72f7" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>timeout_free_data_function</name></member>
+      <member refid="structDBusTimeoutList_1a198efba668450ebafa97e9d5197fcc2e" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>timeout_toggled_function</name></member>
+      <member refid="structDBusTimeoutList_1a56d9070375880b7d931f887564981f80" prot="public" virt="non-virtual"><scope>DBusTimeoutList</scope><name>timeouts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

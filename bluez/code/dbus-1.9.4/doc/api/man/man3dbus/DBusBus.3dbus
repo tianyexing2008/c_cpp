@@ -1,0 +1,515 @@
+.TH "DBusBus" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusBus \- Message bus APIs
+.PP
+Functions for communicating with the message bus\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusConnection\fP * \fBdbus_bus_get\fP (\fBDBusBusType\fP type, \fBDBusError\fP *error)"
+.br
+.RI "\fIConnects to a bus daemon and registers the client with it\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP * \fBdbus_bus_get_private\fP (\fBDBusBusType\fP type, \fBDBusError\fP *error)"
+.br
+.RI "\fIConnects to a bus daemon and registers the client with it as with \fBdbus_bus_register()\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_bus_register\fP (\fBDBusConnection\fP *connection, \fBDBusError\fP *error)"
+.br
+.RI "\fIRegisters a connection with the bus\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_bus_set_unique_name\fP (\fBDBusConnection\fP *connection, const char *unique_name)"
+.br
+.RI "\fISets the unique name of the connection, as assigned by the message bus\&. \fP"
+.ti -1c
+.RI "const char * \fBdbus_bus_get_unique_name\fP (\fBDBusConnection\fP *connection)"
+.br
+.RI "\fIGets the unique name of the connection as assigned by the message bus\&. \fP"
+.ti -1c
+.RI "unsigned long \fBdbus_bus_get_unix_user\fP (\fBDBusConnection\fP *connection, const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fIAsks the bus to return the UID the named connection authenticated as, if any\&. \fP"
+.ti -1c
+.RI "char * \fBdbus_bus_get_id\fP (\fBDBusConnection\fP *connection, \fBDBusError\fP *error)"
+.br
+.RI "\fIAsks the bus to return its globally unique ID, as described in the D-Bus specification\&. \fP"
+.ti -1c
+.RI "int \fBdbus_bus_request_name\fP (\fBDBusConnection\fP *connection, const char *name, unsigned int flags, \fBDBusError\fP *error)"
+.br
+.RI "\fIAsks the bus to assign the given name to this connection by invoking the RequestName method on the bus\&. \fP"
+.ti -1c
+.RI "int \fBdbus_bus_release_name\fP (\fBDBusConnection\fP *connection, const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fIAsks the bus to unassign the given name from this connection by invoking the ReleaseName method on the bus\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_bus_name_has_owner\fP (\fBDBusConnection\fP *connection, const char *name, \fBDBusError\fP *error)"
+.br
+.RI "\fIAsks the bus whether a certain name has an owner\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_bus_start_service_by_name\fP (\fBDBusConnection\fP *connection, const char *name, \fBdbus_uint32_t\fP flags, \fBdbus_uint32_t\fP *result, \fBDBusError\fP *error)"
+.br
+.RI "\fIStarts a service that will request ownership of the given name\&. \fP"
+.ti -1c
+.RI "void \fBdbus_bus_add_match\fP (\fBDBusConnection\fP *connection, const char *rule, \fBDBusError\fP *error)"
+.br
+.RI "\fIAdds a match rule to match messages going through the message bus\&. \fP"
+.ti -1c
+.RI "void \fBdbus_bus_remove_match\fP (\fBDBusConnection\fP *connection, const char *rule, \fBDBusError\fP *error)"
+.br
+.RI "\fIRemoves a previously-added match rule 'by value' (the most recently-added identical rule gets removed)\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions for communicating with the message bus\&. 
+
+\fBdbus_bus_get()\fP allows all modules and libraries in a given process to share the same connection to the bus daemon by storing the connection globally\&.
+.PP
+All other functions in this module are just convenience functions; most of them invoke methods on the bus daemon, by sending method call messages to \fBDBUS_SERVICE_DBUS\fP\&. These convenience functions often make blocking method calls\&. If you don't want to block, you can send the method call messages manually in the same way you would any other method call message\&.
+.PP
+This module is the only one in libdbus that's specific to communicating with the message bus daemon\&. The rest of the API can also be used for connecting to another application directly\&.
+.PP
+\fBTodo\fP
+.RS 4
+right now the default address of the system bus is hardcoded, so if you change it in the global config file suddenly you have to set DBUS_SYSTEM_BUS_ADDRESS env variable\&. Might be nice if the client lib somehow read the config file, or if the bus on startup somehow wrote out its address to a well-known spot, but might also not be worth it\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT void dbus_bus_add_match (\fBDBusConnection\fP * connection, const char * rule, \fBDBusError\fP * error)"
+
+.PP
+Adds a match rule to match messages going through the message bus\&. The 'rule' argument is the string form of a match rule\&.
+.PP
+If you pass \fBNULL\fP for the error, this function will not block; the match thus won't be added until you flush the connection, and if there's an error adding the match you won't find out about it\&. This is generally acceptable, since the possible errors (including a lack of resources in the bus, the connection having exceeded its quota of active match rules, or the match rule being unparseable) are generally unrecoverable\&.
+.PP
+If you pass non-\fBNULL\fP for the error this function will block until it gets a reply\&. This may be useful when using match rule keys introduced in recent versions of D-Bus, like 'arg0namespace', to allow the application to fall back to less efficient match rules supported by older versions of the daemon if the running version is not new enough; or when using user-supplied rules rather than rules hard-coded at compile time\&.
+.PP
+Normal API conventions would have the function return a boolean value indicating whether the error was set, but that would require blocking always to determine the return value\&.
+.PP
+The AddMatch method is fully documented in the D-Bus specification\&. For quick reference, the format of the match rules is discussed here, but the specification is the canonical version of this information\&.
+.PP
+Rules are specified as a string of comma separated key/value pairs\&. An example is "type='signal',sender='org\&.freedesktop\&.DBus', interface='org\&.freedesktop\&.DBus',member='Foo', path='/bar/foo',destination=':452345\&.34'"
+.PP
+Possible keys you can match on are type, sender, interface, member, path, destination and numbered keys to match message args (keys are 'arg0', 'arg1', etc\&.)\&. Omitting a key from the rule indicates a wildcard match\&. For instance omitting the member from a match rule but adding a sender would let all messages from that sender through regardless of the member\&.
+.PP
+Matches are inclusive not exclusive so as long as one rule matches the message will get through\&. It is important to note this because every time a message is received the application will be paged into memory to process it\&. This can cause performance problems such as draining batteries on embedded platforms\&.
+.PP
+If you match message args ('arg0', 'arg1', and so forth) only string arguments will match\&. That is, arg0='5' means match the string '5' not the integer 5\&.
+.PP
+Currently there is no way to match against non-string arguments\&.
+.PP
+A specialised form of wildcard matching on arguments is supported for path-like namespaces\&. If your argument match has a 'path' suffix (eg: 'arg0path='/some/path/'') then it is considered a match if the argument exactly matches the given string or if one of them ends in a '/' and is a prefix of the other\&.
+.PP
+Matching on interface is tricky because method call messages only optionally specify the interface\&. If a message omits the interface, then it will NOT match if the rule specifies an interface name\&. This means match rules on method calls should not usually give an interface\&.
+.PP
+However, signal messages are required to include the interface so when matching signals usually you should specify the interface in the match rule\&.
+.PP
+For security reasons, you can match arguments only up to \fBDBUS_MAXIMUM_MATCH_RULE_ARG_NUMBER\fP\&.
+.PP
+Match rules have a maximum length of \fBDBUS_MAXIMUM_MATCH_RULE_LENGTH\fP bytes\&.
+.PP
+Both of these maximums are much higher than you're likely to need, they only exist because the D-Bus bus daemon has fixed limits on all resource usage\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP connection to the message bus 
+.br
+\fIrule\fP textual form of match rule 
+.br
+\fIerror\fP location to store any errors 
+.RE
+.PP
+
+.PP
+Definition at line 1526 of file dbus\-bus\&.c\&.
+.PP
+References DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, DBUS_TYPE_INVALID, DBUS_TYPE_STRING, and NULL\&.
+.SS "DBUS_EXPORT \fBDBusConnection\fP * dbus_bus_get (\fBDBusBusType\fP type, \fBDBusError\fP * error)"
+
+.PP
+Connects to a bus daemon and registers the client with it\&. If a connection to the bus already exists, then that connection is returned\&. The caller of this function owns a reference to the bus\&.
+.PP
+The caller may NOT call \fBdbus_connection_close()\fP on this connection; see \fBdbus_connection_open()\fP and \fBdbus_connection_close()\fP for details on that\&.
+.PP
+If this function obtains a new connection object never before returned from \fBdbus_bus_get()\fP, it will call \fBdbus_connection_set_exit_on_disconnect()\fP, so the application will exit if the connection closes\&. You can undo this by calling \fBdbus_connection_set_exit_on_disconnect()\fP yourself after you get the connection\&.
+.PP
+\fBdbus_bus_get()\fP calls \fBdbus_bus_register()\fP for you\&.
+.PP
+If returning a newly-created connection, this function will block until authentication and bus registration are complete\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP bus type 
+.br
+\fIerror\fP address where an error can be returned\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a \fBDBusConnection\fP with new ref or \fBNULL\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 558 of file dbus\-bus\&.c\&.
+.PP
+References FALSE\&.
+.SS "DBUS_EXPORT char * dbus_bus_get_id (\fBDBusConnection\fP * connection, \fBDBusError\fP * error)"
+
+.PP
+Asks the bus to return its globally unique ID, as described in the D-Bus specification\&. For the session bus, this is useful as a way to uniquely identify each user session\&. For the system bus, probably the bus ID is not useful; instead, use the machine ID since it's accessible without necessarily connecting to the bus and may be persistent beyond a single bus instance (across reboots for example)\&. See \fBdbus_get_local_machine_id()\fP\&.
+.PP
+In addition to an ID for each bus and an ID for each machine, there is an ID for each address that the bus is listening on; that can be retrieved with \fBdbus_connection_get_server_id()\fP, though it is probably not very useful\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIerror\fP location to store the error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the bus ID or \fBNULL\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 948 of file dbus\-bus\&.c\&.
+.PP
+References _dbus_strdup(), dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, and NULL\&.
+.SS "DBUS_EXPORT \fBDBusConnection\fP * dbus_bus_get_private (\fBDBusBusType\fP type, \fBDBusError\fP * error)"
+
+.PP
+Connects to a bus daemon and registers the client with it as with \fBdbus_bus_register()\fP\&. Unlike \fBdbus_bus_get()\fP, always creates a new connection\&. This connection will not be saved or recycled by libdbus\&. Caller owns a reference to the bus and must either close it or know it to be closed prior to releasing this reference\&.
+.PP
+See \fBdbus_connection_open_private()\fP for more details on when to close and unref this connection\&.
+.PP
+This function calls \fBdbus_connection_set_exit_on_disconnect()\fP on the new connection, so the application will exit if the connection closes\&. You can undo this by calling \fBdbus_connection_set_exit_on_disconnect()\fP yourself after you get the connection\&.
+.PP
+\fBdbus_bus_get_private()\fP calls \fBdbus_bus_register()\fP for you\&.
+.PP
+This function will block until authentication and bus registration are complete\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP bus type 
+.br
+\fIerror\fP address where an error can be returned\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a \fBDBusConnection\fP with new ref 
+.RE
+.PP
+
+.PP
+Definition at line 590 of file dbus\-bus\&.c\&.
+.PP
+References TRUE\&.
+.SS "DBUS_EXPORT const char * dbus_bus_get_unique_name (\fBDBusConnection\fP * connection)"
+
+.PP
+Gets the unique name of the connection as assigned by the message bus\&. Only possible after the connection has been registered with the message bus\&. All connections returned by \fBdbus_bus_get()\fP or \fBdbus_bus_get_private()\fP have been successfully registered\&.
+.PP
+The name remains valid until the connection is freed, and should not be freed by the caller\&.
+.PP
+Other than \fBdbus_bus_get()\fP, there are two ways to set the unique name; one is \fBdbus_bus_register()\fP, the other is \fBdbus_bus_set_unique_name()\fP\&. You are responsible for calling \fBdbus_bus_set_unique_name()\fP if you register by hand instead of using \fBdbus_bus_register()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the unique name or \fBNULL\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 815 of file dbus\-bus\&.c\&.
+.PP
+References _DBUS_LOCK, _DBUS_UNLOCK, NULL, and BusData::unique_name\&.
+.SS "DBUS_EXPORT unsigned long dbus_bus_get_unix_user (\fBDBusConnection\fP * connection, const char * name, \fBDBusError\fP * error)"
+
+.PP
+Asks the bus to return the UID the named connection authenticated as, if any\&. Only works on UNIX; only works for connections on the same machine as the bus\&. If you are not on the same machine as the bus, then calling this is probably a bad idea, since the UID will mean little to your application\&.
+.PP
+For the system message bus you're guaranteed to be on the same machine since it only listens on a UNIX domain socket (at least, as shipped by default)\&.
+.PP
+This function only works for connections that authenticated as a UNIX user, right now that includes all bus connections, but it's very possible to have connections with no associated UID\&. So check for errors and do something sensible if they happen\&.
+.PP
+This function will always return an error on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIname\fP a name owned by the connection 
+.br
+\fIerror\fP location to store the error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the unix user id, or ((unsigned)-1) if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 865 of file dbus\-bus\&.c\&.
+.PP
+References dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, DBUS_UID_UNSET, and NULL\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_bus_name_has_owner (\fBDBusConnection\fP * connection, const char * name, \fBDBusError\fP * error)"
+
+.PP
+Asks the bus whether a certain name has an owner\&. Using this can easily result in a race condition, since an owner can appear or disappear after you call this\&.
+.PP
+If you want to request a name, just request it; if you want to avoid replacing a current owner, don't specify \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP and you will get an error if there's already an owner\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIname\fP the name 
+.br
+\fIerror\fP location to store any errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the name exists, \fBFALSE\fP if not or on error 
+.RE
+.PP
+
+.PP
+Definition at line 1280 of file dbus\-bus\&.c\&.
+.PP
+References dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, DBUS_TYPE_BOOLEAN, DBUS_TYPE_INVALID, DBUS_TYPE_STRING, FALSE, and NULL\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_bus_register (\fBDBusConnection\fP * connection, \fBDBusError\fP * error)"
+
+.PP
+Registers a connection with the bus\&. This must be the first thing an application does when connecting to the message bus\&. If registration succeeds, the unique name will be set, and can be obtained using \fBdbus_bus_get_unique_name()\fP\&.
+.PP
+This function will block until registration is complete\&.
+.PP
+If the connection has already registered with the bus (determined by checking whether \fBdbus_bus_get_unique_name()\fP returns a non-\fBNULL\fP value), then this function does nothing\&.
+.PP
+If you use \fBdbus_bus_get()\fP or \fBdbus_bus_get_private()\fP this function will be called for you\&.
+.PP
+\fBNote:\fP
+.RS 4
+Just use \fBdbus_bus_get()\fP or \fBdbus_bus_get_private()\fP instead of \fBdbus_bus_register()\fP and save yourself some pain\&. Using \fBdbus_bus_register()\fP manually is only useful if you have your own custom message bus not found in \fBDBusBusType\fP\&.
+.RE
+.PP
+If you open a bus connection with \fBdbus_connection_open()\fP or \fBdbus_connection_open_private()\fP you will have to \fBdbus_bus_register()\fP yourself, or make the appropriate registration method calls yourself\&. If you send the method calls yourself, call \fBdbus_bus_set_unique_name()\fP with the unique bus name you get from the bus\&.
+.PP
+For shared connections (created with \fBdbus_connection_open()\fP) in a multithreaded application, you can't really make the registration calls yourself, because you don't know whether some other thread is also registering, and the bus will kick you off if you send two registration messages\&.
+.PP
+If you use \fBdbus_bus_register()\fP however, there is a lock that keeps both apps from registering at the same time\&.
+.PP
+The rule in a multithreaded app, then, is that \fBdbus_bus_register()\fP must be used to register, or you need to have your own locks that all threads in the app will respect\&.
+.PP
+In a single-threaded application you can register by hand instead of using \fBdbus_bus_register()\fP, as long as you check \fBdbus_bus_get_unique_name()\fP to see if a unique name has already been stored by another thread before you send the registration messages\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIerror\fP place to store errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 646 of file dbus\-bus\&.c\&.
+.PP
+References _DBUS_LOCK, _dbus_strdup(), _DBUS_UNLOCK, dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, FALSE, NULL, TRUE, and BusData::unique_name\&.
+.PP
+Referenced by _dbus_bus_notify_shared_connection_disconnected_unlocked()\&.
+.SS "DBUS_EXPORT int dbus_bus_release_name (\fBDBusConnection\fP * connection, const char * name, \fBDBusError\fP * error)"
+
+.PP
+Asks the bus to unassign the given name from this connection by invoking the ReleaseName method on the bus\&. The 'ReleaseName' method is canonically documented in the D-Bus specification\&.
+.PP
+Possible results are: \fBDBUS_RELEASE_NAME_REPLY_RELEASED\fP which means you owned the name or were in the queue to own it, and and now you don't own it and aren't in the queue\&. \fBDBUS_RELEASE_NAME_REPLY_NOT_OWNER\fP which means someone else owns the name so you can't release it\&. \fBDBUS_RELEASE_NAME_REPLY_NON_EXISTENT\fP which means nobody owned the name\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIname\fP the name to remove 
+.br
+\fIerror\fP location to store the error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a result code, -1 if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1198 of file dbus\-bus\&.c\&.
+.PP
+References dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, and NULL\&.
+.SS "DBUS_EXPORT void dbus_bus_remove_match (\fBDBusConnection\fP * connection, const char * rule, \fBDBusError\fP * error)"
+
+.PP
+Removes a previously-added match rule 'by value' (the most recently-added identical rule gets removed)\&. The 'rule' argument is the string form of a match rule\&.
+.PP
+The bus compares match rules semantically, not textually, so whitespace and ordering don't have to be identical to the rule you passed to \fBdbus_bus_add_match()\fP\&.
+.PP
+If you pass \fBNULL\fP for the error, this function will not block; otherwise it will\&. See detailed explanation in docs for \fBdbus_bus_add_match()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP connection to the message bus 
+.br
+\fIrule\fP textual form of match rule 
+.br
+\fIerror\fP location to store any errors 
+.RE
+.PP
+
+.PP
+Definition at line 1576 of file dbus\-bus\&.c\&.
+.PP
+References DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, DBUS_TYPE_INVALID, DBUS_TYPE_STRING, and NULL\&.
+.SS "DBUS_EXPORT int dbus_bus_request_name (\fBDBusConnection\fP * connection, const char * name, unsigned int flags, \fBDBusError\fP * error)"
+
+.PP
+Asks the bus to assign the given name to this connection by invoking the RequestName method on the bus\&. This method is fully documented in the D-Bus specification\&. For quick reference, the flags and result codes are discussed here, but the specification is the canonical version of this information\&.
+.PP
+First you should know that for each bus name, the bus stores a queue of connections that would like to own it\&. Only one owns it at a time - called the primary owner\&. If the primary owner releases the name or disconnects, then the next owner in the queue atomically takes over\&.
+.PP
+So for example if you have an application org\&.freedesktop\&.TextEditor and multiple instances of it can be run, you can have all of them sitting in the queue\&. The first one to start up will receive messages sent to org\&.freedesktop\&.TextEditor, but if that one exits another will become the primary owner and receive messages\&.
+.PP
+The queue means you don't need to manually watch for the current owner to disappear and then request the name again\&.
+.PP
+When requesting a name, you can specify several flags\&.
+.PP
+\fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP and \fBDBUS_NAME_FLAG_DO_NOT_QUEUE\fP are properties stored by the bus for this connection with respect to each requested bus name\&. These properties are stored even if the connection is queued and does not become the primary owner\&. You can update these flags by calling RequestName again (even if you already own the name)\&.
+.PP
+\fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP means that another requestor of the name can take it away from you by specifying \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP\&.
+.PP
+\fBDBUS_NAME_FLAG_DO_NOT_QUEUE\fP means that if you aren't the primary owner, you don't want to be queued up - you only care about being the primary owner\&.
+.PP
+Unlike the other two flags, \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP is a property of the individual RequestName call, i\&.e\&. the bus does not persistently associate it with the connection-name pair\&. If a RequestName call includes the \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP flag, and the current primary owner has \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP set, then the current primary owner will be kicked off\&.
+.PP
+If no flags are given, an application will receive the requested name only if the name is currently unowned; and it will NOT give up the name if another application asks to take it over using \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP\&.
+.PP
+This function returns a result code\&. The possible result codes are as follows\&.
+.PP
+\fBDBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER\fP means that the name had no existing owner, and the caller is now the primary owner; or that the name had an owner, and the caller specified \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP, and the current owner specified \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP\&.
+.PP
+\fBDBUS_REQUEST_NAME_REPLY_IN_QUEUE\fP happens only if the caller does NOT specify \fBDBUS_NAME_FLAG_DO_NOT_QUEUE\fP and either the current owner did NOT specify \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP or the caller did NOT specify \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP\&. In this case the caller ends up in a queue to own the name after the current owner gives it up\&.
+.PP
+\fBDBUS_REQUEST_NAME_REPLY_EXISTS\fP happens if the name has an owner already and the caller specifies \fBDBUS_NAME_FLAG_DO_NOT_QUEUE\fP and either the current owner has NOT specified \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP or the caller did NOT specify \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP\&.
+.PP
+\fBDBUS_REQUEST_NAME_REPLY_ALREADY_OWNER\fP happens if an application requests a name it already owns\&. (Re-requesting a name is useful if you want to change the \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP or \fBDBUS_NAME_FLAG_DO_NOT_QUEUE\fP settings\&.)
+.PP
+When a service represents an application, say 'text editor,' then it should specify \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP if it wants the last editor started to be the user's editor vs\&. the first one started\&. Then any editor that can be the user's editor should specify \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP to either take over (last-started-wins) or be queued up (first-started-wins) according to whether \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP was given\&.
+.PP
+Conventionally, single-instance applications often offer a command line option called --replace which means to replace the current instance\&. To implement this, always set \fBDBUS_NAME_FLAG_ALLOW_REPLACEMENT\fP when you request your application's bus name\&. When you lose ownership of your bus name, you need to exit\&. Look for the signal 'NameLost' from \fBDBUS_SERVICE_DBUS\fP and \fBDBUS_INTERFACE_DBUS\fP (the signal's first argument is the bus name that was lost)\&. If starting up without --replace, do not specify \fBDBUS_NAME_FLAG_REPLACE_EXISTING\fP, and exit if you fail to become the bus name owner\&. If --replace is given, ask to replace the old owner\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIname\fP the name to request 
+.br
+\fIflags\fP flags 
+.br
+\fIerror\fP location to store the error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a result code, -1 if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1112 of file dbus\-bus\&.c\&.
+.PP
+References dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, and NULL\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_bus_set_unique_name (\fBDBusConnection\fP * connection, const char * unique_name)"
+
+.PP
+Sets the unique name of the connection, as assigned by the message bus\&. Can only be used if you registered with the bus manually (i\&.e\&. if you did not call \fBdbus_bus_register()\fP)\&. Can only be called once per connection\&. After the unique name is set, you can get it with \fBdbus_bus_get_unique_name()\fP\&.
+.PP
+The only reason to use this function is to re-implement the equivalent of \fBdbus_bus_register()\fP yourself\&. One (probably unusual) reason to do that might be to do the bus registration call asynchronously instead of synchronously\&.
+.PP
+\fBNote:\fP
+.RS 4
+Just use \fBdbus_bus_get()\fP or \fBdbus_bus_get_private()\fP, or worst case \fBdbus_bus_register()\fP, instead of messing with this function\&. There's really no point creating pain for yourself by doing things manually\&.
+.RE
+.PP
+It's hard to use this function safely on shared connections (created by \fBdbus_connection_open()\fP) in a multithreaded application, because only one registration attempt can be sent to the bus\&. If two threads are both sending the registration message, there is no mechanism in libdbus itself to avoid sending it twice\&.
+.PP
+Thus, you need a way to coordinate which thread sends the registration attempt; which also means you know which thread will call \fBdbus_bus_set_unique_name()\fP\&. If you don't know about all threads in the app (for example, if some libraries you're using might start libdbus-using threads), then you need to avoid using this function on shared connections\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIunique_name\fP the unique name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 766 of file dbus\-bus\&.c\&.
+.PP
+References _dbus_assert, _DBUS_LOCK, _dbus_strdup(), _DBUS_UNLOCK, FALSE, NULL, and BusData::unique_name\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_bus_start_service_by_name (\fBDBusConnection\fP * connection, const char * name, \fBdbus_uint32_t\fP flags, \fBdbus_uint32_t\fP * result, \fBDBusError\fP * error)"
+
+.PP
+Starts a service that will request ownership of the given name\&. The returned result will be one of be one of \fBDBUS_START_REPLY_SUCCESS\fP or \fBDBUS_START_REPLY_ALREADY_RUNNING\fP if successful\&. Pass \fBNULL\fP if you don't care about the result\&.
+.PP
+The flags parameter is for future expansion, currently you should specify 0\&.
+.PP
+It's often easier to avoid explicitly starting services, and just send a method call to the service's bus name instead\&. Method calls start a service to handle them by default unless you call \fBdbus_message_set_auto_start()\fP to disable this behavior\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconnection\fP the connection 
+.br
+\fIname\fP the name we want the new service to request 
+.br
+\fIflags\fP the flags (should always be 0 for now) 
+.br
+\fIresult\fP a place to store the result or \fBNULL\fP 
+.br
+\fIerror\fP location to store any errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the activation succeeded, \fBFALSE\fP if not 
+.RE
+.PP
+
+.PP
+Definition at line 1356 of file dbus\-bus\&.c\&.
+.PP
+References dbus_connection_send(), dbus_connection_send_with_reply_and_block(), DBUS_INTERFACE_DBUS, dbus_message_append_args(), dbus_message_get_args(), dbus_message_new_method_call(), dbus_message_set_no_reply(), dbus_message_unref(), DBUS_PATH_DBUS, DBUS_SERVICE_DBUS, dbus_set_error_from_message(), DBUS_TYPE_INVALID, DBUS_TYPE_STRING, DBUS_TYPE_UINT32, FALSE, NULL, and TRUE\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

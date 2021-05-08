@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusMemoryInternals" kind="group">
+    <compoundname>DBusMemoryInternals</compoundname>
+    <title>Memory allocation implementation details</title>
+    <innerclass refid="structShutdownClosure" prot="public">ShutdownClosure</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusMemoryInternals_1ga719c469fe616ee7148e826e6ebf3c3e4" prot="public" static="no">
+        <type>struct <ref refid="structShutdownClosure" kindref="compound">ShutdownClosure</ref></type>
+        <definition>typedef struct ShutdownClosure ShutdownClosure</definition>
+        <argsstring></argsstring>
+        <name>ShutdownClosure</name>
+        <briefdescription>
+<para>Represents a function to be called on shutdown. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="781" column="1" bodyfile="dbus/dbus-memory.c" bodystart="786" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int _dbus_current_generation</definition>
+        <argsstring></argsstring>
+        <name>_dbus_current_generation</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>_dbus_current_generation is used to track each time that <ref refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" kindref="member">dbus_shutdown()</ref> is called, so we can reinit things after it&apos;s been called. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is simply incremented each time we shut down. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="781" column="1" bodyfile="dbus/dbus-memory.c" bodystart="781" bodyend="-1"/>
+        <referencedby refid="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" compoundref="dbus-threads_8c" startline="278" endline="284">_dbus_condvar_wake_one</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga7151f75b5d2308ec80cfe893aba72aa1" compoundref="dbus-connection_8c" startline="1419" endline="1433">_dbus_connection_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="854" endline="889">_dbus_get_local_machine_uuid_encoded</referencedby>
+        <referencedby refid="group__DBusConnection_1ga2522ac5075dfe0a1535471f6e045e1ee" compoundref="dbus-connection_8c" startline="2932" endline="2950">dbus_connection_close</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusMessage_1ga834035e4817acd64adc8ca584bdf3982" compoundref="dbus-message_8c" startline="1667" endline="1680">dbus_message_ref</referencedby>
+        <referencedby refid="group__DBusMessage_1gab69441efe683918f6a82469c8763f464" compoundref="dbus-message_8c" startline="1690" endline="1709">dbus_message_unref</referencedby>
+        <referencedby refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" compoundref="dbus-threads_8c" startline="391" endline="412">dbus_threads_init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusMemoryInternals_1gafd36a6d0a98c37cc15b0d83ff59bb54c" prot="public" static="yes" mutable="no">
+        <type><ref refid="structShutdownClosure" kindref="compound">ShutdownClosure</ref> *</type>
+        <definition>ShutdownClosure* registered_globals</definition>
+        <argsstring></argsstring>
+        <name>registered_globals</name>
+        <initializer>= <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="799" column="1" bodyfile="dbus/dbus-memory.c" bodystart="799" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMemoryInternals_1ga8dc6d5dd0a0e7901ab793da7403ee734" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_register_shutdown_func</definition>
+        <argsstring>(DBusShutdownFunction func, void *data)</argsstring>
+        <name>_dbus_register_shutdown_func</name>
+        <param>
+          <type>DBusShutdownFunction</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Register a cleanup function to be called exactly once the next time <ref refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" kindref="member">dbus_shutdown()</ref> is called. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="810" column="1" bodyfile="dbus/dbus-memory.c" bodystart="810" bodyend="821"/>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="structShutdownClosure_1ab6f70dacffc0aa2376a6c26e1fb17518" compoundref="dbus-memory_8c" startline="795">ShutdownClosure::data</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structShutdownClosure_1a8d8d4ad2e646f8643a8044de02cf823f" compoundref="dbus-memory_8c" startline="794">ShutdownClosure::func</references>
+        <references refid="structShutdownClosure_1a2152ea3eed35addda2f33eee5fbcdd26" compoundref="dbus-memory_8c" startline="793">ShutdownClosure::next</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMemoryInternals_1gade7c064966b2e3f9004099337b40b0f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_register_shutdown_func_unlocked</definition>
+        <argsstring>(DBusShutdownFunction func, void *data)</argsstring>
+        <name>_dbus_register_shutdown_func_unlocked</name>
+        <param>
+          <type>DBusShutdownFunction</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-memory.c" line="824" column="1" bodyfile="dbus/dbus-memory.c" bodystart="824" bodyend="841"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>internals of <ref refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" kindref="member">dbus_malloc()</ref> etc. </para>    </briefdescription>
+    <detaileddescription>
+<para>Implementation details related to allocating and releasing blocks of memory. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

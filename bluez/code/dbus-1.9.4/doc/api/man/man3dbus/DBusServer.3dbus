@@ -1,0 +1,148 @@
+.TH "DBusServer" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusServer \- Internals of \fBDBusServer\fP object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-server\-protected\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusAtomic\fP \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "const \fBDBusServerVTable\fP * \fBvtable\fP"
+.br
+.RI "\fIVirtual methods for this instance\&. \fP"
+.ti -1c
+.RI "\fBDBusRMutex\fP * \fBmutex\fP"
+.br
+.RI "\fILock on the server object\&. \fP"
+.ti -1c
+.RI "\fBDBusGUID\fP \fBguid\fP"
+.br
+.RI "\fIGlobally unique ID of server\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBguid_hex\fP"
+.br
+.RI "\fIHex-encoded version of GUID\&. \fP"
+.ti -1c
+.RI "\fBDBusWatchList\fP * \fBwatches\fP"
+.br
+.RI "\fIOur watches\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeoutList\fP * \fBtimeouts\fP"
+.br
+.RI "\fIOur timeouts\&. \fP"
+.ti -1c
+.RI "char * \fBaddress\fP"
+.br
+.RI "\fIAddress this server is listening on\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBpublished_address\fP"
+.br
+.RI "\fIflag which indicates that server has published its bus address\&. \fP"
+.ti -1c
+.RI "int \fBmax_connections\fP"
+.br
+.RI "\fIMax number of connections allowed at once\&. \fP"
+.ti -1c
+.RI "\fBDBusDataSlotList\fP \fBslot_list\fP"
+.br
+.RI "\fIData stored by allocated integer ID\&. \fP"
+.ti -1c
+.RI "\fBDBusNewConnectionFunction\fP \fBnew_connection_function\fP"
+.br
+.RI "\fICallback to invoke when a new connection is created\&. \fP"
+.ti -1c
+.RI "void * \fBnew_connection_data\fP"
+.br
+.RI "\fIData for new connection callback\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBnew_connection_free_data_function\fP"
+.br
+.RI "\fICallback to invoke to free new_connection_data when server is finalized or data is replaced\&. \fP"
+.ti -1c
+.RI "char ** \fBauth_mechanisms\fP"
+.br
+.RI "\fIArray of allowed authentication mechanisms\&. \fP"
+.ti -1c
+.RI "unsigned int \fBdisconnected\fP: 1"
+.br
+.RI "\fITRUE if we are disconnected\&. \fP"
+.ti -1c
+.RI "unsigned int \fBhave_server_lock\fP: 1"
+.br
+.RI "\fIDoes someone have the server mutex locked\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusServer\fP object\&. 
+.PP
+Definition at line 56 of file dbus\-server\-protected\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "char* DBusServer::address"
+
+.PP
+Address this server is listening on\&. 
+.PP
+Definition at line 69 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_finalize_base(), _dbus_server_init_base(), and dbus_server_get_address()\&.
+.SS "unsigned int DBusServer::disconnected"
+
+.PP
+TRUE if we are disconnected\&. 
+.PP
+Definition at line 87 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_finalize_base(), _dbus_server_unref_unlocked(), dbus_server_disconnect(), dbus_server_get_is_connected(), and dbus_server_unref()\&.
+.SS "int DBusServer::max_connections"
+
+.PP
+Max number of connections allowed at once\&. 
+.PP
+Definition at line 72 of file dbus\-server\-protected\&.h\&.
+.SS "\fBDBusNewConnectionFunction\fP DBusServer::new_connection_function"
+
+.PP
+Callback to invoke when a new connection is created\&. 
+.PP
+Definition at line 76 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by dbus_server_set_new_connection_function()\&.
+.SS "\fBdbus_bool_t\fP DBusServer::published_address"
+
+.PP
+flag which indicates that server has published its bus address\&. 
+.PP
+Definition at line 70 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_init_base()\&.
+.SS "\fBDBusAtomic\fP DBusServer::refcount"
+
+.PP
+Reference count\&. 
+.PP
+Definition at line 58 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_init_base(), _dbus_server_ref_unlocked(), _dbus_server_unref_unlocked(), dbus_server_ref(), and dbus_server_unref()\&.
+.SS "const \fBDBusServerVTable\fP* DBusServer::vtable"
+
+.PP
+Virtual methods for this instance\&. 
+.PP
+Definition at line 59 of file dbus\-server\-protected\&.h\&.
+.PP
+Referenced by _dbus_server_init_base(), _dbus_server_unref_unlocked(), dbus_server_disconnect(), and dbus_server_unref()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

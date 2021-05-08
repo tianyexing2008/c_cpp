@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusWatch" kind="struct" language="C++" prot="public">
+    <compoundname>DBusWatch</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusWatch_1a3984cbcb64ed76d2f0c1182c386f7978" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusWatch::refcount</definition>
+        <argsstring></argsstring>
+        <name>refcount</name>
+        <briefdescription>
+<para>Reference count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="42" column="1" bodyfile="dbus/dbus-watch.c" bodystart="42" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga0db8530cc53589589d67dfb35d03db61" compoundref="dbus-watch_8c" startline="124" endline="129">_dbus_watch_ref</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1ab4021cce958b50cbcda5eeabc6af2217" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DBusWatch::fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+<para>File descriptor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="43" column="1" bodyfile="dbus/dbus-watch.c" bodystart="43" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</referencedby>
+        <referencedby refid="group__DBusWatch_1ga91308f393d41b31babda17c83833517f" compoundref="dbus-watch_8c" startline="586" endline="591">dbus_watch_get_socket</referencedby>
+        <referencedby refid="group__DBusWatch_1ga15df7f6120ead3e09bec8a70d3c43c0d" compoundref="dbus-watch_8c" startline="557" endline="571">dbus_watch_get_unix_fd</referencedby>
+        <referencedby refid="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" compoundref="dbus-watch_8c" startline="698" endline="724">dbus_watch_handle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1a7f1c2c609410f58a2328681c2893f70a" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusWatch::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+<para>Conditions to watch. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="44" column="1" bodyfile="dbus/dbus-watch.c" bodystart="44" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gad8521d64123c1d1ae9a094bac8addd31" compoundref="dbus-watch_8c" startline="169" endline="173">_dbus_watch_invalidate</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gac3f75c0da2c8c51e8708f45dd27f9e2d" compoundref="dbus-watch_8c" startline="249" endline="260">_dbus_watch_list_free</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gab8f49926fe9ee56cb4ae7c1c8071cca3" compoundref="dbus-watch_8c" startline="185" endline="192">_dbus_watch_sanitize_condition</referencedby>
+        <referencedby refid="group__DBusWatch_1gaf172a2b1d1f82333e67cec8d99c9204a" compoundref="dbus-watch_8c" startline="607" endline="613">dbus_watch_get_flags</referencedby>
+        <referencedby refid="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" compoundref="dbus-watch_8c" startline="698" endline="724">dbus_watch_handle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1aad3fb97da0ad7e5897611930f7a1c3e9" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusWatchInternals_1ga7d5aec875c291514539abb3ebe012341" kindref="member">DBusWatchHandler</ref></type>
+        <definition>DBusWatchHandler DBusWatch::handler</definition>
+        <argsstring></argsstring>
+        <name>handler</name>
+        <briefdescription>
+<para>Watch handler. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="46" column="1" bodyfile="dbus/dbus-watch.c" bodystart="46" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga75620808f4d2245914012a41e3b82f3c" compoundref="dbus-watch_8c" startline="491" endline="502">_dbus_watch_set_handler</referencedby>
+        <referencedby refid="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" compoundref="dbus-watch_8c" startline="698" endline="724">dbus_watch_handle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1ae906b28caa8a4323f85c882abe901e87" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusWatch::handler_data</definition>
+        <argsstring></argsstring>
+        <name>handler_data</name>
+        <briefdescription>
+<para>Watch handler data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="47" column="1" bodyfile="dbus/dbus-watch.c" bodystart="47" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga75620808f4d2245914012a41e3b82f3c" compoundref="dbus-watch_8c" startline="491" endline="502">_dbus_watch_set_handler</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</referencedby>
+        <referencedby refid="group__DBusWatch_1gac2acdb1794450ac01a43ec4c3e07ebf7" compoundref="dbus-watch_8c" startline="698" endline="724">dbus_watch_handle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1a64eaf9b88cebfc640bc85d0fd37184c8" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusWatch::free_handler_data_function</definition>
+        <argsstring></argsstring>
+        <name>free_handler_data_function</name>
+        <briefdescription>
+<para>Free the watch handler data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="48" column="1" bodyfile="dbus/dbus-watch.c" bodystart="48" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga75620808f4d2245914012a41e3b82f3c" compoundref="dbus-watch_8c" startline="491" endline="502">_dbus_watch_set_handler</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga7d27dfc13a3ccfbaa99ceab331bb46f0" compoundref="dbus-watch_8c" startline="138" endline="156">_dbus_watch_unref</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1a71877a39d8c2a7d533c0c6f280648d53" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusWatch::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Application data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="50" column="1" bodyfile="dbus/dbus-watch.c" bodystart="50" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga75620808f4d2245914012a41e3b82f3c" compoundref="dbus-watch_8c" startline="491" endline="502">_dbus_watch_set_handler</referencedby>
+        <referencedby refid="group__DBusWatch_1ga8dcdbd07f15a56207af4a36cb005da77" compoundref="dbus-watch_8c" startline="623" endline="628">dbus_watch_get_data</referencedby>
+        <referencedby refid="group__DBusWatch_1ga5c75a65cf0680956cc0188d86a05cfae" compoundref="dbus-watch_8c" startline="642" endline="657">dbus_watch_set_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1ad848cbd636518fd346039d0d771ba021" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+        <definition>DBusFreeFunction DBusWatch::free_data_function</definition>
+        <argsstring></argsstring>
+        <name>free_data_function</name>
+        <briefdescription>
+<para>Free the application data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="51" column="1" bodyfile="dbus/dbus-watch.c" bodystart="51" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="296" endline="365">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga75620808f4d2245914012a41e3b82f3c" compoundref="dbus-watch_8c" startline="491" endline="502">_dbus_watch_set_handler</referencedby>
+        <referencedby refid="group__DBusWatch_1ga5c75a65cf0680956cc0188d86a05cfae" compoundref="dbus-watch_8c" startline="642" endline="657">dbus_watch_set_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1a010564b43e0c7dd438b9ac4b0c1dbe64" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusWatch::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Whether it&apos;s enabled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="52" column="1" bodyfile="dbus/dbus-watch.c" bodystart="52" bodyend="-1"/>
+        <referencedby refid="group__DBusWatchInternals_1ga14bb50e8663a1d9d3960b4f73c09c097" compoundref="dbus-watch_8c" startline="436" endline="455">_dbus_watch_list_toggle_watch</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1ga1f940e505b20e6429ae858a7b70b0541" compoundref="dbus-watch_8c" startline="88" endline="115">_dbus_watch_new</referencedby>
+        <referencedby refid="group__DBusWatch_1gae7a91e6d4d1bc187419c47c522e33a8f" compoundref="dbus-watch_8c" startline="667" endline="672">dbus_watch_get_enabled</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusWatch_1a1020150c9fd9764ac85919d2c48bb6e1" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DBusWatch::oom_last_time</definition>
+        <argsstring></argsstring>
+        <name>oom_last_time</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>Whether it was OOM last time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-watch.c" line="53" column="1" bodyfile="dbus/dbus-watch.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of <ref refid="structDBusWatch" kindref="compound">DBusWatch</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="584">
+        <label>DBusWatch</label>
+        <link refid="structDBusWatch"/>
+        <childnode refid="584" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-watch.c" line="41" column="1" bodyfile="dbus/dbus-watch.c" bodystart="40" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structDBusWatch_1a71877a39d8c2a7d533c0c6f280648d53" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>data</name></member>
+      <member refid="structDBusWatch_1a010564b43e0c7dd438b9ac4b0c1dbe64" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>enabled</name></member>
+      <member refid="structDBusWatch_1ab4021cce958b50cbcda5eeabc6af2217" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>fd</name></member>
+      <member refid="structDBusWatch_1a7f1c2c609410f58a2328681c2893f70a" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>flags</name></member>
+      <member refid="structDBusWatch_1ad848cbd636518fd346039d0d771ba021" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>free_data_function</name></member>
+      <member refid="structDBusWatch_1a64eaf9b88cebfc640bc85d0fd37184c8" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>free_handler_data_function</name></member>
+      <member refid="structDBusWatch_1aad3fb97da0ad7e5897611930f7a1c3e9" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>handler</name></member>
+      <member refid="structDBusWatch_1ae906b28caa8a4323f85c882abe901e87" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>handler_data</name></member>
+      <member refid="structDBusWatch_1a1020150c9fd9764ac85919d2c48bb6e1" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>oom_last_time</name></member>
+      <member refid="structDBusWatch_1a3984cbcb64ed76d2f0c1182c386f7978" prot="public" virt="non-virtual"><scope>DBusWatch</scope><name>refcount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

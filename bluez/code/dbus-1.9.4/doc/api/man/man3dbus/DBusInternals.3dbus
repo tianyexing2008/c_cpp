@@ -1,0 +1,192 @@
+.TH "DBusInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusInternals \- D-Bus secret internal implementation details
+.PP
+Documentation useful when developing or debugging D-Bus itself\&.  
+
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBAddress parsing\fP"
+.br
+.RI "\fIImplementation of parsing addresses of D-Bus servers\&. \fP"
+.ti -1c
+.RI "\fBAuthentication\fP"
+.br
+.RI "\fI\fBDBusAuth\fP object\&. \fP"
+.ti -1c
+.RI "\fBAuthentication implementation details\fP"
+.br
+.RI "\fI\fBDBusAuth\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBMessage bus APIs internals\fP"
+.br
+.RI "\fIInternals of functions for communicating with the message bus\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection implementation details\fP"
+.br
+.RI "\fIImplementation details of \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "\fBCredentials provable through authentication\fP"
+.br
+.RI "\fI\fBDBusCredentials\fP object\&. \fP"
+.ti -1c
+.RI "\fBCredentials implementation details\fP"
+.br
+.RI "\fI\fBDBusCredentials\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBData slots\fP"
+.br
+.RI "\fIStoring data by ID\&. \fP"
+.ti -1c
+.RI "\fBError reporting internals\fP"
+.br
+.RI "\fIError reporting internals\&. \fP"
+.ti -1c
+.RI "\fBHash table\fP"
+.br
+.RI "\fI\fBDBusHashTable\fP data structure\&. \fP"
+.ti -1c
+.RI "\fBHash table implementation details\fP"
+.br
+.RI "\fI\fBDBusHashTable\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBUtilities and portability\fP"
+.br
+.RI "\fIUtility functions (\fB_dbus_assert()\fP, \fB_dbus_warn()\fP, etc\&.) \fP"
+.ti -1c
+.RI "\fBkeyring class\fP"
+.br
+.RI "\fI\fBDBusKeyring\fP data structure\&. \fP"
+.ti -1c
+.RI "\fBDBusKeyring implementation details\fP"
+.br
+.RI "\fI\fBDBusKeyring\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBLinked list\fP"
+.br
+.RI "\fI\fBDBusList\fP data structure\&. \fP"
+.ti -1c
+.RI "\fBLinked list implementation details\fP"
+.br
+.RI "\fI\fBDBusList\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBmarshaling and unmarshaling\fP"
+.br
+.RI "\fIfunctions to marshal/unmarshal data from the wire \fP"
+.ti -1c
+.RI "\fBMemory allocation implementation details\fP"
+.br
+.RI "\fIinternals of \fBdbus_malloc()\fP etc\&. \fP"
+.ti -1c
+.RI "\fBmemory pools\fP"
+.br
+.RI "\fI\fBDBusMemPool\fP object\&. \fP"
+.ti -1c
+.RI "\fBMemory pool implementation details\fP"
+.br
+.RI "\fI\fBDBusMemPool\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBDBusMessage implementation details\fP"
+.br
+.RI "\fI\fBDBusMessage\fP private implementation details\&. \fP"
+.ti -1c
+.RI "\fBA hierarchy of objects with container\-contained relationship\fP"
+.br
+.RI "\fI\fBDBusObjectTree\fP is used by \fBDBusConnection\fP to track the object tree\&. \fP"
+.ti -1c
+.RI "\fBDBusPendingCall implementation details\fP"
+.br
+.RI "\fI\fBDBusPendingCall\fP private implementation details\&. \fP"
+.ti -1c
+.RI "\fBResource limits related code\fP"
+.br
+.RI "\fI\fBDBusCounter\fP and other stuff related to resource limits\&. \fP"
+.ti -1c
+.RI "\fBResource limits implementation details\fP"
+.br
+.RI "\fIResource limits implementation details\&. \fP"
+.ti -1c
+.RI "\fBDBusServer implementations for Launchd\fP"
+.br
+.RI "\fIImplementation details of \fBDBusServer\fP with Launchd support\&. \fP"
+.ti -1c
+.RI "\fBDBusServer implementations for SOCKET\fP"
+.br
+.RI "\fIImplementation details of \fBDBusServer\fP on SOCKET\&. \fP"
+.ti -1c
+.RI "\fBDBusServer implementations for UNIX\fP"
+.br
+.RI "\fIImplementation details of \fBDBusServer\fP on UNIX\&. \fP"
+.ti -1c
+.RI "\fBDBusServer implementations for Windows\fP"
+.br
+.RI "\fIImplementation details of \fBDBusServer\fP on Windows\&. \fP"
+.ti -1c
+.RI "\fBDBusServer implementation details\fP"
+.br
+.RI "\fIImplementation details of \fBDBusServer\fP\&. \fP"
+.ti -1c
+.RI "\fBSHA implementation\fP"
+.br
+.RI "\fISHA-1 hash\&. \fP"
+.ti -1c
+.RI "\fBSHA implementation details\fP"
+.br
+.RI "\fIInternals of SHA implementation\&. \fP"
+.ti -1c
+.RI "\fBDBusString implementation details\fP"
+.br
+.RI "\fI\fBDBusString\fP implementation details\&. \fP"
+.ti -1c
+.RI "\fBDBusString class\fP"
+.br
+.RI "\fI\fBDBusString\fP data structure for safer string handling\&. \fP"
+.ti -1c
+.RI "\fBUNIX\-specific internal API\fP"
+.br
+.RI "\fIInternal system-dependent API available on UNIX only\&. \fP"
+.ti -1c
+.RI "\fBInternal system\-dependent API\fP"
+.br
+.RI "\fIInternal system-dependent API available on UNIX and Windows\&. \fP"
+.ti -1c
+.RI "\fBThread functions\fP"
+.br
+.RI "\fI\fB_dbus_rmutex_lock()\fP, etc\&. \fP"
+.ti -1c
+.RI "\fBDBusTimeout implementation details\fP"
+.br
+.RI "\fIimplementation details for \fBDBusTimeout\fP \fP"
+.ti -1c
+.RI "\fBDBusTransport implementations for sockets\fP"
+.br
+.RI "\fIImplementation details of \fBDBusTransport\fP on sockets\&. \fP"
+.ti -1c
+.RI "\fBDBusTransport implementations for UNIX\fP"
+.br
+.RI "\fIImplementation details of \fBDBusTransport\fP on UNIX\&. \fP"
+.ti -1c
+.RI "\fBDBusTransport object\fP"
+.br
+.RI "\fI'Backend' for a \fBDBusConnection\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus\-uuidgen implementation\fP"
+.br
+.RI "\fIFunctions for dbus-uuidgen binary\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch implementation details\fP"
+.br
+.RI "\fIimplementation details for \fBDBusWatch\fP \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Documentation useful when developing or debugging D-Bus itself\&. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

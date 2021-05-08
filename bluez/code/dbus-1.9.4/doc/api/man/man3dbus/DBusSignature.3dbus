@@ -1,0 +1,351 @@
+.TH "DBusSignature" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSignature \- Type signature parsing
+.PP
+Parsing D-Bus type signatures\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusSignatureIter\fP"
+.br
+.RI "\fI\fBDBusSignatureIter\fP struct; contains no public fields\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdbus_signature_iter_init\fP (\fBDBusSignatureIter\fP *iter, const char *signature)"
+.br
+.RI "\fIInitializes a \fBDBusSignatureIter\fP for reading a type signature\&. \fP"
+.ti -1c
+.RI "int \fBdbus_signature_iter_get_current_type\fP (const \fBDBusSignatureIter\fP *iter)"
+.br
+.RI "\fIReturns the current type pointed to by the iterator\&. \fP"
+.ti -1c
+.RI "char * \fBdbus_signature_iter_get_signature\fP (const \fBDBusSignatureIter\fP *iter)"
+.br
+.RI "\fIReturns the signature of the single complete type starting at the given iterator\&. \fP"
+.ti -1c
+.RI "int \fBdbus_signature_iter_get_element_type\fP (const \fBDBusSignatureIter\fP *iter)"
+.br
+.RI "\fIConvenience function for returning the element type of an array; This function allows you to avoid initializing a sub-iterator and getting its current type\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_signature_iter_next\fP (\fBDBusSignatureIter\fP *iter)"
+.br
+.RI "\fISkip to the next value on this 'level'\&. \fP"
+.ti -1c
+.RI "void \fBdbus_signature_iter_recurse\fP (const \fBDBusSignatureIter\fP *iter, \fBDBusSignatureIter\fP *subiter)"
+.br
+.RI "\fIInitialize a new iterator pointing to the first type in the current container\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_signature_validate\fP (const char *signature, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck a type signature for validity\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_signature_validate_single\fP (const char *signature, \fBDBusError\fP *error)"
+.br
+.RI "\fICheck that a type signature is both valid and contains exactly one complete type\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_type_is_container\fP (int typecode)"
+.br
+.RI "\fIA 'container type' can contain basic types, or nested container types\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_type_is_basic\fP (int typecode)"
+.br
+.RI "\fIA 'basic type' is a somewhat arbitrary concept, but the intent is to include those types that are fully-specified by a single typecode, with no additional type information or nested values\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_type_is_fixed\fP (int typecode)"
+.br
+.RI "\fITells you whether values of this type can change length if you set them to some other value\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_type_is_valid\fP (int typecode)"
+.br
+.RI "\fIReturn \fBTRUE\fP if the argument is a valid typecode\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Parsing D-Bus type signatures\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT int dbus_signature_iter_get_current_type (const \fBDBusSignatureIter\fP * iter)"
+
+.PP
+Returns the current type pointed to by the iterator\&. If the iterator is pointing at a type code such as 's', then it will be returned directly\&.
+.PP
+However, when the parser encounters a container type start character such as '(' for a structure, the corresponding type for the container will be returned, e\&.g\&. DBUS_TYPE_STRUCT, not '('\&. In this case, you should initialize a sub-iterator with \fBdbus_signature_iter_recurse()\fP to parse the container type\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP pointer to an iterator 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+current type (e\&.g\&. \fBDBUS_TYPE_STRING\fP, \fBDBUS_TYPE_ARRAY\fP) 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_first_type_in_signature_c_str(), and DBusSignatureRealIter::pos\&.
+.PP
+Referenced by dbus_signature_iter_get_element_type(), dbus_signature_iter_recurse(), dbus_signature_validate_single(), and dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT int dbus_signature_iter_get_element_type (const \fBDBusSignatureIter\fP * iter)"
+
+.PP
+Convenience function for returning the element type of an array; This function allows you to avoid initializing a sub-iterator and getting its current type\&. Undefined behavior results if you invoke this function when the current type of the iterator is not \fBDBUS_TYPE_ARRAY\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP pointer to an iterator 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+current array element type 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_first_type_in_signature_c_str(), dbus_signature_iter_get_current_type(), DBUS_TYPE_ARRAY, DBUS_TYPE_INVALID, and DBusSignatureRealIter::pos\&.
+.PP
+Referenced by dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT char * dbus_signature_iter_get_signature (const \fBDBusSignatureIter\fP * iter)"
+
+.PP
+Returns the signature of the single complete type starting at the given iterator\&. For example, if the iterator is pointing at the start of '(ii)ii' (which is 'a struct of two ints, followed by an int, followed by an
+int'), then '(ii)' would be returned\&. If the iterator is pointing at one of the 'i' then just that 'i' would be returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP pointer to an iterator 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+current signature; or \fBNULL\fP if no memory\&. Should be freed with \fBdbus_free()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 112 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_string_append_len(), _dbus_string_free(), _dbus_string_init(), _dbus_string_steal_data(), _dbus_type_signature_next(), NULL, and DBusSignatureRealIter::pos\&.
+.SS "DBUS_EXPORT void dbus_signature_iter_init (\fBDBusSignatureIter\fP * iter, const char * signature)"
+
+.PP
+Initializes a \fBDBusSignatureIter\fP for reading a type signature\&. This function is not safe to use on invalid signatures; be sure to validate potentially invalid signatures with dbus_signature_validate before using this function\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP pointer to an iterator to initialize 
+.br
+\fIsignature\fP the type signature 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file dbus\-signature\&.c\&.
+.PP
+References FALSE, DBusSignatureRealIter::finished, DBusSignatureRealIter::in_array, and DBusSignatureRealIter::pos\&.
+.PP
+Referenced by dbus_signature_validate_single(), and dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_signature_iter_next (\fBDBusSignatureIter\fP * iter)"
+
+.PP
+Skip to the next value on this 'level'\&. e\&.g\&. the next field in a struct, the next value in an array\&. Returns \fBFALSE\fP at the end of the current container\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the iterator 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if nothing more to read at or below this level 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_type_signature_next(), DBUS_DICT_ENTRY_END_CHAR, DBUS_STRUCT_END_CHAR, DBUS_TYPE_INVALID, FALSE, DBusSignatureRealIter::finished, DBusSignatureRealIter::in_array, DBusSignatureRealIter::pos, and TRUE\&.
+.PP
+Referenced by dbus_signature_validate_single(), and dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT void dbus_signature_iter_recurse (const \fBDBusSignatureIter\fP * iter, \fBDBusSignatureIter\fP * subiter)"
+
+.PP
+Initialize a new iterator pointing to the first type in the current container\&. The results are undefined when calling this if the current type is a non-container (i\&.e\&. if \fBdbus_type_is_container()\fP returns \fBFALSE\fP for the result of \fBdbus_signature_iter_get_current_type()\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the current interator 
+.br
+\fIsubiter\fP an iterator to initialize pointing to the first child 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file dbus\-signature\&.c\&.
+.PP
+References dbus_signature_iter_get_current_type(), DBUS_TYPE_ARRAY, dbus_type_is_container(), FALSE, DBusSignatureRealIter::in_array, DBusSignatureRealIter::pos, and TRUE\&.
+.PP
+Referenced by dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_signature_validate (const char * signature, \fBDBusError\fP * error)"
+
+.PP
+Check a type signature for validity\&. Remember that \fBNULL\fP can always be passed instead of a DBusError*, if you don't care about having an error name and message\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsignature\fP a potentially invalid type signature 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if signature is valid or \fBFALSE\fP if an error is set 
+.RE
+.PP
+
+.PP
+Definition at line 233 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_string_init_const(), _dbus_validate_signature_with_reason(), DBUS_ERROR_INVALID_SIGNATURE, dbus_set_error(), DBUS_VALID, FALSE, and TRUE\&.
+.PP
+Referenced by dbus_signature_validate_single(), and dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_signature_validate_single (const char * signature, \fBDBusError\fP * error)"
+
+.PP
+Check that a type signature is both valid and contains exactly one complete type\&. 'One complete type' means a single basic type, array, struct, or dictionary, though the struct or array may be arbitrarily recursive and complex\&. More than one complete type would mean for example 'ii' or two integers in sequence\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsignature\fP a potentially invalid type signature 
+.br
+\fIerror\fP error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if signature is valid and has exactly one complete type 
+.RE
+.PP
+
+.PP
+Definition at line 264 of file dbus\-signature\&.c\&.
+.PP
+References DBUS_ERROR_INVALID_SIGNATURE, dbus_set_error(), dbus_signature_iter_get_current_type(), dbus_signature_iter_init(), dbus_signature_iter_next(), dbus_signature_validate(), DBUS_TYPE_INVALID, FALSE, and TRUE\&.
+.PP
+Referenced by dbus_type_is_valid()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_type_is_basic (int typecode)"
+
+.PP
+A 'basic type' is a somewhat arbitrary concept, but the intent is to include those types that are fully-specified by a single typecode, with no additional type information or nested values\&. So all numbers and strings are basic types and structs, arrays, and variants are not basic types\&. \fBDBUS_TYPE_INVALID\fP is not a basic type\&.
+.PP
+It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function\&. The valid type-codes are defined by \fBdbus-protocol\&.h\fP and can be checked with \fBdbus_type_is_valid()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP either a valid type-code or DBUS_TYPE_INVALID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if type is basic 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file dbus\-signature\&.c\&.
+.PP
+References DBUS_TYPE_INVALID, dbus_type_is_valid(), and FALSE\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_marshal_read_basic(), _dbus_marshal_write_basic(), _dbus_message_iter_get_args_valist(), _dbus_type_reader_set_basic(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), dbus_message_append_args_valist(), and dbus_message_iter_append_basic()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_type_is_container (int typecode)"
+
+.PP
+A 'container type' can contain basic types, or nested container types\&. \fBDBUS_TYPE_INVALID\fP is not a container type\&.
+.PP
+It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function\&. The valid type-codes are defined by \fBdbus-protocol\&.h\fP and can be checked with \fBdbus_type_is_valid()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP either a valid type-code or DBUS_TYPE_INVALID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if type is a container 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file dbus\-signature\&.c\&.
+.PP
+References DBUS_TYPE_INVALID, dbus_type_is_valid(), and FALSE\&.
+.PP
+Referenced by _dbus_type_writer_write_fixed_multi(), dbus_message_iter_open_container(), and dbus_signature_iter_recurse()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_type_is_fixed (int typecode)"
+
+.PP
+Tells you whether values of this type can change length if you set them to some other value\&. For this purpose, you assume that the first byte of the old and new value would be in the same location, so alignment padding is not a factor\&.
+.PP
+This function is useful to determine whether \fBdbus_message_iter_get_fixed_array()\fP may be used\&.
+.PP
+Some structs are fixed-size (if they contain only fixed-size types) but struct is not considered a fixed type for purposes of this function\&.
+.PP
+It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function\&. The valid type-codes are defined by \fBdbus-protocol\&.h\fP and can be checked with \fBdbus_type_is_valid()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP either a valid type-code or DBUS_TYPE_INVALID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the type can occupy different lengths 
+.RE
+.PP
+
+.PP
+Definition at line 349 of file dbus\-signature\&.c\&.
+.PP
+References DBUS_TYPE_BOOLEAN, DBUS_TYPE_BYTE, DBUS_TYPE_DOUBLE, DBUS_TYPE_INT16, DBUS_TYPE_INT32, DBUS_TYPE_INT64, DBUS_TYPE_INVALID, dbus_type_is_valid(), DBUS_TYPE_UINT16, DBUS_TYPE_UINT32, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_first_type_in_signature_c_str(), _dbus_marshal_write_fixed_multi(), _dbus_message_iter_get_args_valist(), _dbus_type_reader_read_fixed_multi(), _dbus_type_reader_set_basic(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), dbus_message_append_args_valist(), dbus_message_iter_append_fixed_array(), and dbus_message_iter_get_fixed_array()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_type_is_valid (int typecode)"
+
+.PP
+Return \fBTRUE\fP if the argument is a valid typecode\&. \fBDBUS_TYPE_INVALID\fP surprisingly enough is not considered valid, and random unknown bytes aren't either\&. This function is safe with untrusted data\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypecode\fP a potential type-code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if valid 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file dbus\-signature\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, DBUS_DICT_ENTRY_BEGIN_CHAR_AS_STRING, DBUS_DICT_ENTRY_END_CHAR_AS_STRING, dbus_signature_iter_get_current_type(), dbus_signature_iter_get_element_type(), dbus_signature_iter_init(), dbus_signature_iter_next(), dbus_signature_iter_recurse(), dbus_signature_validate(), dbus_signature_validate_single(), DBUS_STRUCT_BEGIN_CHAR_AS_STRING, DBUS_STRUCT_END_CHAR_AS_STRING, DBUS_TYPE_ARRAY, DBUS_TYPE_ARRAY_AS_STRING, DBUS_TYPE_BOOLEAN, DBUS_TYPE_BOOLEAN_AS_STRING, DBUS_TYPE_BYTE, DBUS_TYPE_BYTE_AS_STRING, DBUS_TYPE_DICT_ENTRY, DBUS_TYPE_DICT_ENTRY_AS_STRING, DBUS_TYPE_DOUBLE, DBUS_TYPE_DOUBLE_AS_STRING, DBUS_TYPE_INT16, DBUS_TYPE_INT16_AS_STRING, DBUS_TYPE_INT32, DBUS_TYPE_INT32_AS_STRING, DBUS_TYPE_INT64, DBUS_TYPE_INVALID, DBUS_TYPE_OBJECT_PATH, DBUS_TYPE_SIGNATURE, DBUS_TYPE_STRING, DBUS_TYPE_STRING_AS_STRING, DBUS_TYPE_STRUCT, DBUS_TYPE_UINT16, DBUS_TYPE_UINT16_AS_STRING, DBUS_TYPE_UINT32, DBUS_TYPE_UINT32_AS_STRING, DBUS_TYPE_UINT64, DBUS_TYPE_UNIX_FD, DBUS_TYPE_VARIANT, DBUS_TYPE_VARIANT_AS_STRING, FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_validate_signature_with_reason(), dbus_connection_can_send_type(), dbus_type_is_basic(), dbus_type_is_container(), and dbus_type_is_fixed()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

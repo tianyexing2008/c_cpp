@@ -1,0 +1,785 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-sysdeps-win_8h" kind="file" language="C++">
+    <compoundname>dbus-sysdeps-win.h</compoundname>
+    <includes refid="dbus-hash_8h" local="yes">dbus-hash.h</includes>
+    <includes refid="dbus-string_8h" local="yes">dbus-string.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes local="no">malloc.h</includes>
+    <includes local="no">windows.h</includes>
+    <includedby refid="dbus-file-win_8c" local="yes">dbus-file-win.c</includedby>
+    <includedby refid="dbus-spawn-win_8c" local="yes">dbus-spawn-win.c</includedby>
+    <includedby refid="dbus-sysdeps-thread-win_8c" local="yes">dbus-sysdeps-thread-win.c</includedby>
+    <includedby refid="dbus-sysdeps-util-win_8c" local="yes">dbus-sysdeps-util-win.c</includedby>
+    <includedby refid="dbus-sysdeps-win_8c" local="yes">dbus-sysdeps-win.c</includedby>
+    <includedby refid="dbus-sysdeps-wince-glue_8c" local="yes">dbus-sysdeps-wince-glue.c</includedby>
+    <includedby refid="dbus-transport-win_8c" local="yes">dbus-transport-win.c</includedby>
+    <incdepgraph>
+      <node id="3958">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3963">
+        <label>windows.h</label>
+      </node>
+      <node id="3955">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="3946">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="3952">
+        <label>stdint.h</label>
+      </node>
+      <node id="3960">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="3962">
+        <label>malloc.h</label>
+      </node>
+      <node id="3950">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="3951" relation="include">
+        </childnode>
+        <childnode refid="3952" relation="include">
+        </childnode>
+        <childnode refid="3953" relation="include">
+        </childnode>
+        <childnode refid="3954" relation="include">
+        </childnode>
+        <childnode refid="3956" relation="include">
+        </childnode>
+        <childnode refid="3957" relation="include">
+        </childnode>
+        <childnode refid="3959" relation="include">
+        </childnode>
+        <childnode refid="3958" relation="include">
+        </childnode>
+        <childnode refid="3960" relation="include">
+        </childnode>
+      </node>
+      <node id="3947">
+        <label>stddef.h</label>
+      </node>
+      <node id="3957">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="3946" relation="include">
+        </childnode>
+        <childnode refid="3948" relation="include">
+        </childnode>
+        <childnode refid="3945" relation="include">
+        </childnode>
+        <childnode refid="3958" relation="include">
+        </childnode>
+      </node>
+      <node id="3949">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="3946" relation="include">
+        </childnode>
+      </node>
+      <node id="3959">
+        <label>string.h</label>
+      </node>
+      <node id="3944">
+        <label>dbus-hash.h</label>
+        <link refid="dbus-hash_8h_source"/>
+        <childnode refid="3945" relation="include">
+        </childnode>
+        <childnode refid="3948" relation="include">
+        </childnode>
+        <childnode refid="3950" relation="include">
+        </childnode>
+      </node>
+      <node id="3961">
+        <label>ctype.h</label>
+      </node>
+      <node id="3951">
+        <label>config.h</label>
+      </node>
+      <node id="3943">
+        <label>dbus-sysdeps-win.h</label>
+        <link refid="dbus-sysdeps-win.h"/>
+        <childnode refid="3944" relation="include">
+        </childnode>
+        <childnode refid="3957" relation="include">
+        </childnode>
+        <childnode refid="3961" relation="include">
+        </childnode>
+        <childnode refid="3962" relation="include">
+        </childnode>
+        <childnode refid="3963" relation="include">
+        </childnode>
+      </node>
+      <node id="3956">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="3957" relation="include">
+        </childnode>
+        <childnode refid="3954" relation="include">
+        </childnode>
+      </node>
+      <node id="3954">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="3946" relation="include">
+        </childnode>
+        <childnode refid="3948" relation="include">
+        </childnode>
+        <childnode refid="3955" relation="include">
+        </childnode>
+      </node>
+      <node id="3948">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="3947" relation="include">
+        </childnode>
+        <childnode refid="3949" relation="include">
+        </childnode>
+      </node>
+      <node id="3953">
+        <label>inttypes.h</label>
+      </node>
+      <node id="3945">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="3946" relation="include">
+        </childnode>
+        <childnode refid="3947" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3968">
+        <label>dbus-sysdeps-util-win.c</label>
+        <link refid="dbus-sysdeps-util-win_8c_source"/>
+      </node>
+      <node id="3970">
+        <label>dbus-sysdeps-wince-glue.c</label>
+        <link refid="dbus-sysdeps-wince-glue_8c_source"/>
+      </node>
+      <node id="3971">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="3967">
+        <label>dbus-sysdeps-thread-win.c</label>
+        <link refid="dbus-sysdeps-thread-win_8c_source"/>
+      </node>
+      <node id="3965">
+        <label>dbus-file-win.c</label>
+        <link refid="dbus-file-win_8c_source"/>
+      </node>
+      <node id="3966">
+        <label>dbus-spawn-win.c</label>
+        <link refid="dbus-spawn-win_8c_source"/>
+      </node>
+      <node id="3969">
+        <label>dbus-sysdeps-win.c</label>
+        <link refid="dbus-sysdeps-win_8c_source"/>
+      </node>
+      <node id="3964">
+        <label>dbus-sysdeps-win.h</label>
+        <link refid="dbus-sysdeps-win.h"/>
+        <childnode refid="3965" relation="include">
+        </childnode>
+        <childnode refid="3966" relation="include">
+        </childnode>
+        <childnode refid="3967" relation="include">
+        </childnode>
+        <childnode refid="3968" relation="include">
+        </childnode>
+        <childnode refid="3969" relation="include">
+        </childnode>
+        <childnode refid="3970" relation="include">
+        </childnode>
+        <childnode refid="3971" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-sysdeps-win_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9" prot="public" static="no">
+        <name>WIN32_LEAN_AND_MEAN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="30" column="9" bodyfile="dbus/dbus-sysdeps-win.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-sysdeps-win_8h_1aa808ebc6b71b9d2f1b2fd78d92d11415" prot="public" static="no">
+        <name>DBUS_CONSOLE_DIR</name>
+        <initializer>&quot;/var/run/console/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="39" column="9" bodyfile="dbus/dbus-sysdeps-win.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a332468bb231e4606c20412abf819ad51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_win_get_dll_hmodule</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_win_get_dll_hmodule</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="29" column="1" bodyfile="dbus/dbus-sysdeps-thread-win.c" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a8ef1fd384c98a6efe79d16517654c8e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_win_set_errno</definition>
+        <argsstring>(int err)</argsstring>
+        <name>_dbus_win_set_errno</name>
+        <param>
+          <type>int</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="42" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="94" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a892c4e4b8d22ff6889ae8110b0c5c599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* _dbus_win_error_from_last_error</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_win_error_from_last_error</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="43" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="303" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a8299e08b9df7d6175a2162078f561d86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_win_startup_winsock</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_win_startup_winsock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="45" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="675" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a87a04c239a01c7a03c7cee0ac11bf5b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_win_warn_win_error</definition>
+        <argsstring>(const char *message, unsigned long code)</argsstring>
+        <name>_dbus_win_warn_win_error</name>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="46" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="3664" bodyend="3673"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a9d9742ac5c1dcc30544b8d079c75d00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* _dbus_win_error_string</definition>
+        <argsstring>(int error_number)</argsstring>
+        <name>_dbus_win_error_string</name>
+        <param>
+          <type>int</type>
+          <declname>error_number</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="49" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="334" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a11f94a2ee9846b087b51ce3d7d4c6d44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_win_free_error_string</definition>
+        <argsstring>(char *string)</argsstring>
+        <name>_dbus_win_free_error_string</name>
+        <param>
+          <type>char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="50" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="353" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a2dc9e1a47a78e62b5d4cb74a028da5ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* _dbus_lm_strerror</definition>
+        <argsstring>(int error_number)</argsstring>
+        <name>_dbus_lm_strerror</name>
+        <param>
+          <type>int</type>
+          <declname>error_number</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="52" column="1" bodyfile="dbus/dbus-sysdeps-util-win.c" bodystart="804" bodyend="1447"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a7e2ca5971bf81fa859bc3e9b558cc904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_win_account_to_sid</definition>
+        <argsstring>(const wchar_t *waccount, void **ppsid, DBusError *error)</argsstring>
+        <name>_dbus_win_account_to_sid</name>
+        <param>
+          <type>const wchar_t *</type>
+          <declname>waccount</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppsid</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="55" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="872" bodyend="932"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1ad3b2fa050c987d3f129277e7a9f11891" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_win32_sid_to_name_and_domain</definition>
+        <argsstring>(dbus_uid_t uid, wchar_t **wname, wchar_t **wdomain, DBusError *error)</argsstring>
+        <name>_dbus_win32_sid_to_name_and_domain</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type>wchar_t **</type>
+          <declname>wname</declname>
+        </param>
+        <param>
+          <type>wchar_t **</type>
+          <declname>wdomain</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a5ec4ebbea2c86b946519c70e7887e99f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wchar_t *</type>
+        <definition>wchar_t* _dbus_win_utf8_to_utf16</definition>
+        <argsstring>(const char *str, DBusError *error)</argsstring>
+        <name>_dbus_win_utf8_to_utf16</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Returns the UTF-16 form of a UTF-8 string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The result should be freed with <ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free()</ref> when no longer needed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the UTF-8 string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="68" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="780" bodyend="819"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a5b7e1f187c9758bbe98cf88355037c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* _dbus_win_utf16_to_utf8</definition>
+        <argsstring>(const wchar_t *str, DBusError *error)</argsstring>
+        <name>_dbus_win_utf16_to_utf8</name>
+        <param>
+          <type>const wchar_t *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Returns the UTF-8 form of a UTF-16 string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The result should be freed with <ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free()</ref> when no longer needed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the UTF-16 string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="70" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="829" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a89e62ddbb89c4ea6645eed45123483bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_win_set_error_from_win_error</definition>
+        <argsstring>(DBusError *error, int code)</argsstring>
+        <name>_dbus_win_set_error_from_win_error</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+<para>Assigns an error name and message corresponding to a Win32 error code to a <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if error is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Win32 error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="73" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="3638" bodyend="3661"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a3feeba2f7a2da93966a78dd98ab7ec5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_win_sid_to_name_and_domain</definition>
+        <argsstring>(dbus_uid_t uid, wchar_t **wname, wchar_t **wdomain, DBusError *error)</argsstring>
+        <name>_dbus_win_sid_to_name_and_domain</name>
+        <param>
+          <type><ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref></type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type>wchar_t **</type>
+          <declname>wname</declname>
+        </param>
+        <param>
+          <type>wchar_t **</type>
+          <declname>wdomain</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusInternalsUtils_1ga13a527e32c05b63e8b32a63d728e20e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_file_exists</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>_dbus_file_exists</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+<para>Checks if a file exists. </para>        </briefdescription>
+        <detaileddescription>
+<para>File interface.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>full path to the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if file exists </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="81" column="1" bodyfile="dbus/dbus-sysdeps-util-unix.c" bodystart="633" bodyend="636"/>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMemory_1gaf6e588659067a854c3cca7ebe8ae5084" compoundref="dbus-memory_8c" startline="461" endline="516">dbus_malloc</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <referencedby refid="group__DBusSysdeps_1ga31ec42cef2d15ca358e737bb5f19c5cf" compoundref="dbus-sysdeps-util-unix_8c" startline="645" endline="679">_dbus_user_at_console</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga1895e860a4a9993cea584ec7e30dd71d" compoundref="dbus-sysdeps-win_8c" startline="3259" endline="3262">_dbus_get_is_errno_eagain_or_ewouldblock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a3fca18052534ac1b1327b1f2c82fad3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_get_config_file_name</definition>
+        <argsstring>(DBusString *config_file, char *s)</argsstring>
+        <name>_dbus_get_config_file_name</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>config_file</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>find config file either from installation or build root according to the following path layout install-root/ bin/dbus-daemon[d].exe etc/&lt;config-file&gt;.conf <emphasis>or</emphasis> etc/dbus-1/&lt;config-file&gt;.conf (the former above is what dbus4win uses, the latter above is what a &quot;normal&quot; Unix-style &quot;make install&quot; uses) </para>        </briefdescription>
+        <detaileddescription>
+<para>build-root/ bin/dbus-daemon[d].exe bus/&lt;config-file&gt;.conf </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="83" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="3321" bodyend="3370"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1af4e86a3525ac8938d79bbd30683da2ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_get_install_root</definition>
+        <argsstring>(char *prefix, int len)</argsstring>
+        <name>_dbus_get_install_root</name>
+        <param>
+          <type>char *</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>return the absolute path of the dbus installation </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer for installation path </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="86" column="1" bodyfile="dbus/dbus-sysdeps-win.c" bodystart="3272" bodyend="3305"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1ac7185d28d09e21ad2ed9ba3beb221619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_threads_windows_init_global</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_threads_windows_init_global</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="88" column="1" bodyfile="dbus/dbus-sysdeps-thread-win.c" bodystart="38" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="dbus-sysdeps-win_8h_1a204cfa318eb4429db71624dd727b8542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_threads_windows_ensure_ctor_linked</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_threads_windows_ensure_ctor_linked</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sysdeps-win.h" line="89" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-sysdeps.c<sp/>Wrappers<sp/>around<sp/>system/libc<sp/>features<sp/>(internal<sp/>to<sp/>D-BUS<sp/>implementation)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005<sp/>Novell,<sp/>Inc.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_SYSDEPS_WIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_SYSDEPS_WIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_dbus_win_get_dll_hmodule<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-hash.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-string.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;malloc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_CONSOLE_DIR<sp/>&quot;/var/run/console/&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_dbus_win_set_errno<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>_dbus_win_error_from_last_error<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_win_startup_winsock<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_dbus_win_warn_win_error<sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*message,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>code);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>_dbus_win_error_string<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error_number);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_dbus_win_free_error_string<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>_dbus_lm_strerror<sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error_number);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_win_account_to_sid<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*waccount,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**ppsid,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">_dbus_win32_sid_to_name_and_domain<sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/><sp/>uid,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/><sp/>**wname,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/><sp/>**wdomain,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>define<sp/>DBUS_CONSOLE_DIR<sp/>on<sp/>Win32<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*_dbus_win_utf8_to_utf16<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*_dbus_win_utf16_to_utf8<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*str,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_win_set_error_from_win_error<sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">_dbus_win_sid_to_name_and_domain<sp/>(<ref refid="group__DBusSysdeps_1ga186e987b700f9ddc6cea8aa0db82b151" kindref="member">dbus_uid_t</ref><sp/>uid,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/>**wname,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/>**wdomain,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusInternalsUtils_1ga13a527e32c05b63e8b32a63d728e20e8" kindref="member">_dbus_file_exists</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_get_config_file_name(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*config_file,<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>_dbus_get_install_root(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_threads_windows_init_global<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_threads_windows_ensure_ctor_linked<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-sysdeps-win.h"/>
+  </compounddef>
+</doxygen>

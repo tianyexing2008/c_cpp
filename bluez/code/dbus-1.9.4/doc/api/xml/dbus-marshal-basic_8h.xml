@@ -1,0 +1,2025 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-marshal-basic_8h" kind="file" language="C++">
+    <compoundname>dbus-marshal-basic.h</compoundname>
+    <includes refid="dbus-protocol_8h" local="no">dbus/dbus-protocol.h</includes>
+    <includes refid="dbus-types_8h" local="no">dbus/dbus-types.h</includes>
+    <includes refid="dbus-arch-deps_8h" local="no">dbus/dbus-arch-deps.h</includes>
+    <includes refid="dbus-string_8h" local="no">dbus/dbus-string.h</includes>
+    <includedby refid="dbus-marshal-header_8h" local="no">dbus-marshal-header.h</includedby>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-internals_8c" local="yes">dbus-internals.c</includedby>
+    <includedby refid="dbus-marshal-basic_8c" local="yes">dbus-marshal-basic.c</includedby>
+    <includedby refid="dbus-marshal-byteswap_8c" local="yes">dbus-marshal-byteswap.c</includedby>
+    <includedby refid="dbus-marshal-recursive_8c" local="yes">dbus-marshal-recursive.c</includedby>
+    <includedby refid="dbus-marshal-validate_8c" local="yes">dbus-marshal-validate.c</includedby>
+    <includedby refid="dbus-sha_8c" local="yes">dbus-sha.c</includedby>
+    <includedby refid="dbus-signature_8c" local="yes">dbus-signature.c</includedby>
+    <includedby refid="dbus-string_8c" local="yes">dbus-string.c</includedby>
+    <incdepgraph>
+      <node id="1513">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1506">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1510">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="1505">
+        <label>dbus-marshal-basic.h</label>
+        <link refid="dbus-marshal-basic.h"/>
+        <childnode refid="1506" relation="include">
+        </childnode>
+        <childnode refid="1507" relation="include">
+        </childnode>
+        <childnode refid="1509" relation="include">
+        </childnode>
+        <childnode refid="1511" relation="include">
+        </childnode>
+      </node>
+      <node id="1508">
+        <label>stddef.h</label>
+      </node>
+      <node id="1511">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1510" relation="include">
+        </childnode>
+        <childnode refid="1507" relation="include">
+        </childnode>
+        <childnode refid="1512" relation="include">
+        </childnode>
+        <childnode refid="1513" relation="include">
+        </childnode>
+      </node>
+      <node id="1509">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1510" relation="include">
+        </childnode>
+      </node>
+      <node id="1507">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1508" relation="include">
+        </childnode>
+        <childnode refid="1509" relation="include">
+        </childnode>
+      </node>
+      <node id="1512">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1510" relation="include">
+        </childnode>
+        <childnode refid="1508" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1527">
+        <label>dbus-signature.c</label>
+        <link refid="dbus-signature_8c_source"/>
+      </node>
+      <node id="1518">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="1517">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="1522">
+        <label>dbus-marshal-basic.c</label>
+        <link refid="dbus-marshal-basic_8c_source"/>
+      </node>
+      <node id="1514">
+        <label>dbus-marshal-basic.h</label>
+        <link refid="dbus-marshal-basic.h"/>
+        <childnode refid="1515" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1521" relation="include">
+        </childnode>
+        <childnode refid="1522" relation="include">
+        </childnode>
+        <childnode refid="1523" relation="include">
+        </childnode>
+        <childnode refid="1524" relation="include">
+        </childnode>
+        <childnode refid="1525" relation="include">
+        </childnode>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1527" relation="include">
+        </childnode>
+        <childnode refid="1528" relation="include">
+        </childnode>
+      </node>
+      <node id="1521">
+        <label>dbus-internals.c</label>
+        <link refid="dbus-internals_8c_source"/>
+      </node>
+      <node id="1528">
+        <label>dbus-string.c</label>
+        <link refid="dbus-string_8c_source"/>
+      </node>
+      <node id="1520">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="1515">
+        <label>dbus-marshal-header.h</label>
+        <link refid="dbus-marshal-header_8h_source"/>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+      </node>
+      <node id="1525">
+        <label>dbus-marshal-validate.c</label>
+        <link refid="dbus-marshal-validate_8c_source"/>
+      </node>
+      <node id="1523">
+        <label>dbus-marshal-byteswap.c</label>
+        <link refid="dbus-marshal-byteswap_8c_source"/>
+      </node>
+      <node id="1519">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="1526">
+        <label>dbus-sha.c</label>
+        <link refid="dbus-sha_8c_source"/>
+      </node>
+      <node id="1524">
+        <label>dbus-marshal-recursive.c</label>
+        <link refid="dbus-marshal-recursive_8c_source"/>
+      </node>
+      <node id="1516">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ad09ab85205f4409567dcc4c626c36ff1" prot="public" static="no">
+        <name>DBUS_COMPILER_BYTE_ORDER</name>
+        <initializer><ref refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" kindref="member">DBUS_LITTLE_ENDIAN</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="40" column="10" bodyfile="dbus/dbus-marshal-basic.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1aa50b021bc41fd74b778437c3648ae81e" prot="public" static="no">
+        <name>DBUS_UINT16_SWAP_LE_BE_CONSTANT</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) (      \
+    (<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) ((<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) (val) &gt;&gt; 8) |                      \
+    (<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) ((<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) (val) &lt;&lt; 8)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="48" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a31d83dd940ba635897c5a8c3d3449d88" prot="public" static="no">
+        <name>DBUS_UINT32_SWAP_LE_BE_CONSTANT</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref>) (      \
+    (((<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref>) (val) &amp; (<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref>) 0x000000ffU) &lt;&lt; 24) |     \
+    (((dbus_uint32_t) (val) &amp; (dbus_uint32_t) 0x0000ff00U) &lt;&lt;  8) |     \
+    (((dbus_uint32_t) (val) &amp; (dbus_uint32_t) 0x00ff0000U) &gt;&gt;  8) |     \
+    (((dbus_uint32_t) (val) &amp; (dbus_uint32_t) 0xff000000U) &gt;&gt; 24)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="52" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a90120850d426fef715d960e9e5463780" prot="public" static="no">
+        <name>DBUS_UINT64_SWAP_LE_BE_CONSTANT</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" kindref="member">dbus_uint64_t</ref>) (              \
+      (((<ref refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" kindref="member">dbus_uint64_t</ref>) (val) &amp;                                                 \
+	(<ref refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" kindref="member">dbus_uint64_t</ref>) <ref refid="group__DBusTypes_1ga20f58889c3ab16344378449148264f6d" kindref="member">DBUS_UINT64_CONSTANT</ref> (0x00000000000000ff)) &lt;&lt; 56) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x000000000000ff00)) &lt;&lt; 40) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x0000000000ff0000)) &lt;&lt; 24) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x00000000ff000000)) &lt;&lt;  8) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x000000ff00000000)) &gt;&gt;  8) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x0000ff0000000000)) &gt;&gt; 24) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0x00ff000000000000)) &gt;&gt; 40) |    \
+      (((dbus_uint64_t) (val) &amp;                                                 \
+	(dbus_uint64_t) DBUS_UINT64_CONSTANT (0xff00000000000000)) &gt;&gt; 56)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="64" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a7c626305e29c5d445d0e133a34c493a2" prot="public" static="no">
+        <name>DBUS_UINT16_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT16_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="84" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a585f43d5fa1f2c4e3e4436d0330b4344" prot="public" static="no">
+        <name>DBUS_INT16_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga51307e24d7621aae4a19be8f3d3c7c23" kindref="member">dbus_int16_t</ref>)DBUS_UINT16_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="85" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ac088e2487d7d6cef02e7f7c02421fc69" prot="public" static="no">
+        <name>DBUS_UINT32_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT32_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="87" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ac4d72d8226feaeb47a968afbd3247224" prot="public" static="no">
+        <name>DBUS_INT32_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref>)DBUS_UINT32_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="88" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1abe078b28a192eca23a46c0ed6a2686d0" prot="public" static="no">
+        <name>DBUS_UINT64_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT64_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="90" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a1e809586a7c8cde5541dfcebfb3f2bdd" prot="public" static="no">
+        <name>DBUS_INT64_SWAP_LE_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab650989bbedae260527d7ca663a2ad9f" kindref="member">dbus_int64_t</ref>)DBUS_UINT64_SWAP_LE_BE_CONSTANT (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="91" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a041fad4cfd8f660281efdd6dba888c12" prot="public" static="no">
+        <name>DBUS_INT16_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga51307e24d7621aae4a19be8f3d3c7c23" kindref="member">dbus_int16_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="110" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a6211812a0cc8e973d4121925408ff077" prot="public" static="no">
+        <name>DBUS_UINT16_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="111" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a607d188f3685ad2746adee2661c79c5a" prot="public" static="no">
+        <name>DBUS_INT16_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga51307e24d7621aae4a19be8f3d3c7c23" kindref="member">dbus_int16_t</ref>) DBUS_UINT16_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="112" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a5ffc8e7ff63c885b7446a477b152df80" prot="public" static="no">
+        <name>DBUS_UINT16_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT16_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="113" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ae9cc321536d72d8241e6f0937827aa66" prot="public" static="no">
+        <name>DBUS_INT32_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="114" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a3f532796ad6befa86d7bb0a047f47f69" prot="public" static="no">
+        <name>DBUS_UINT32_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="115" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a1e717d06faf5d15a04a8539f78e28cb2" prot="public" static="no">
+        <name>DBUS_INT32_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref>) DBUS_UINT32_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="116" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a122c89dded1fd7206136610590252d95" prot="public" static="no">
+        <name>DBUS_UINT32_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT32_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="117" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a76e446797bab4c768099b9d00b61bc51" prot="public" static="no">
+        <name>DBUS_INT64_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab650989bbedae260527d7ca663a2ad9f" kindref="member">dbus_int64_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="118" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1acffec0fca92bacf2e74fc94eb09b1c77" prot="public" static="no">
+        <name>DBUS_UINT64_TO_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" kindref="member">dbus_uint64_t</ref>) (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="119" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a999a37bbf394e7423bf95e7e3eb7a88b" prot="public" static="no">
+        <name>DBUS_INT64_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>((<ref refid="group__DBusTypes_1gab650989bbedae260527d7ca663a2ad9f" kindref="member">dbus_int64_t</ref>) DBUS_UINT64_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="120" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a9377bf3c28600f51426ab783b2f51a6b" prot="public" static="no">
+        <name>DBUS_UINT64_TO_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT64_SWAP_LE_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="121" column="11" bodyfile="dbus/dbus-marshal-basic.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1aa4fbe942324b9a87ffc72418b09808fb" prot="public" static="no">
+        <name>DBUS_INT16_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT16_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="125" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1aad0b3cdc8bf1ada0ac375367d0ac69a5" prot="public" static="no">
+        <name>DBUS_UINT16_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT16_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="126" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ae8bd718aeb59e5e8a7c5e95b3fcf5efb" prot="public" static="no">
+        <name>DBUS_INT16_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT16_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="127" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1adf447d30c561f7293a1607a33f2de8d2" prot="public" static="no">
+        <name>DBUS_UINT16_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT16_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="128" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a0276dbd60c95ff0ccecbd833441599ba" prot="public" static="no">
+        <name>DBUS_INT32_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT32_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="129" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a8e43128b558cd370010fcdad21b1d299" prot="public" static="no">
+        <name>DBUS_UINT32_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT32_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="130" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a0f6e8789e7037cc8bfe45c97a1214e61" prot="public" static="no">
+        <name>DBUS_INT32_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT32_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="131" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a8064d6cff6d078e127bd46793117eaed" prot="public" static="no">
+        <name>DBUS_UINT32_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT32_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="132" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1ac27099913281a5b3898391c66dc98f23" prot="public" static="no">
+        <name>DBUS_INT64_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT64_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="133" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a4b2ec068bac6f9594782f0afdffa3b69" prot="public" static="no">
+        <name>DBUS_UINT64_FROM_LE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT64_TO_LE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="134" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1abbd2047467a76196d31093f4d3ab2342" prot="public" static="no">
+        <name>DBUS_INT64_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_INT64_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="135" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dbus-marshal-basic_8h_1a4a484555974dacb7b0305dc198fd1d23" prot="public" static="no">
+        <name>DBUS_UINT64_FROM_BE</name>
+        <param><defname>val</defname></param>
+        <initializer>(DBUS_UINT64_TO_BE (val))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="136" column="9" bodyfile="dbus/dbus-marshal-basic.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMarshal_1ga09651b41b9a5aca37b0e2ff269880d6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref></type>
+        <definition>dbus_uint16_t _dbus_unpack_uint16</definition>
+        <argsstring>(int byte_order, const unsigned char *data)</argsstring>
+        <name>_dbus_unpack_uint16</name>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Unpacks a 16 bit unsigned integer from a data pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte order to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data pointer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="151" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="161" bodyend="170"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga44e670d715bb678045f3d79b35920b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_pack_uint32</definition>
+        <argsstring>(dbus_uint32_t value, int byte_order, unsigned char *data)</argsstring>
+        <name>_dbus_pack_uint32</name>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Packs a 32 bit unsigned integer into a data pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data pointer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="155" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="135" bodyend="140"/>
+        <references refid="unionDBusBasicValue_1a675c1684b9f5bedbb5d445eee3594165" compoundref="dbus-types_8h" startline="146">DBusBasicValue::u64</references>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t _dbus_unpack_uint32</definition>
+        <argsstring>(int byte_order, const unsigned char *data)</argsstring>
+        <name>_dbus_unpack_uint32</name>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Unpacks a 32 bit unsigned integer from a data pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte order to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data pointer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="159" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="182" bodyend="191"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusString_1ga7a73fb373398606e6e1d0a86c4587a3c" compoundref="dbus-string_8c" startline="490" endline="501">_dbus_string_get_data_len</references>
+        <referencedby refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7f3320a0b0f7633cdf5c149588ae9bd9" compoundref="dbus-marshal-basic_8c" startline="1280" endline="1350">_dbus_verbose_bytes</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga854526bdf221a5e82b2e14581ac17d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_marshal_set_basic</definition>
+        <argsstring>(DBusString *str, int pos, int type, const void *value, int byte_order, int *old_end_pos, int *new_end_pos)</argsstring>
+        <name>_dbus_marshal_set_basic</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>old_end_pos</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>new_end_pos</declname>
+        </param>
+        <briefdescription>
+<para>Sets an existing basic type value to a new value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Arguments work the same way as _dbus_marshal_basic_type().</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location of the current value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the current and new values </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the new value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte order for marshaling </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>old_end_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store end position of the old value, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_end_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>location to store end position of the new value, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="163" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="370" bodyend="442"/>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="unionDBusBasicValue_1aa350d50ad1d1bffa5286f583f4c9d0ba" compoundref="dbus-types_8h" startline="149">DBusBasicValue::byt</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="unionDBusBasicValue_1a96bb883967d05d7c0acceb0d95821aa3" compoundref="dbus-types_8h" startline="141">DBusBasicValue::u16</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="unionDBusBasicValue_1a2501e54560ae240442d9d841b96b086b" compoundref="dbus-types_8h" startline="143">DBusBasicValue::u32</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="unionDBusBasicValue_1acbcb55156f8bee7eb0d88bd5ce46b3d5" compoundref="dbus-types_8h" startline="150">DBusBasicValue::str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga54323d48921de8c5bd04ae01548312bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_marshal_write_basic</definition>
+        <argsstring>(DBusString *str, int insert_at, int type, const void *value, int byte_order, int *pos_after)</argsstring>
+        <name>_dbus_marshal_write_basic</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>insert_at</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pos_after</declname>
+        </param>
+        <briefdescription>
+<para>Marshals a basic-typed value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;value&quot; pointer is always the address of a variable containing the basic type value. So for example for int32 it will be dbus_int32_t*, and for string it will be const char**. This is for symmetry with <ref refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" kindref="member">_dbus_marshal_read_basic()</ref> and to have a simple consistent rule.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to marshal to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>insert_at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to a variable containing the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos_after</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> or the position after the type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="170" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="794" bodyend="851"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusString_1gab0770800dce6df97e5d246105a44e7b4" compoundref="dbus-string_8c" startline="614" endline="628">_dbus_string_insert_byte</references>
+        <references refid="unionDBusBasicValue_1aa350d50ad1d1bffa5286f583f4c9d0ba" compoundref="dbus-types_8h" startline="149">DBusBasicValue::byt</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="unionDBusBasicValue_1a96bb883967d05d7c0acceb0d95821aa3" compoundref="dbus-types_8h" startline="141">DBusBasicValue::u16</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="unionDBusBasicValue_1a2501e54560ae240442d9d841b96b086b" compoundref="dbus-types_8h" startline="143">DBusBasicValue::u32</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="unionDBusBasicValue_1acbcb55156f8bee7eb0d88bd5ce46b3d5" compoundref="dbus-types_8h" startline="150">DBusBasicValue::str</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga990da87b984d8917da26b89a6470fdf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_marshal_write_fixed_multi</definition>
+        <argsstring>(DBusString *str, int insert_at, int element_type, const void *value, int n_elements, int byte_order, int *pos_after)</argsstring>
+        <name>_dbus_marshal_write_fixed_multi</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>insert_at</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>element_type</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_elements</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pos_after</declname>
+        </param>
+        <briefdescription>
+<para>Marshals a block of values of fixed-length type all at once, as an optimization. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" kindref="member">dbus_type_is_fixed()</ref> returns <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> for fixed-length types, which are the basic types minus the string-like types.</para><para>The value argument should be the adddress of an array, so e.g. &quot;const dbus_uint32_t**&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to marshal to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>insert_at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to insert the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>element_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of array elements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of an array to marshal </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements in the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos_after</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> or the position after the type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="176" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1020" bodyend="1064"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_marshal_read_basic</definition>
+        <argsstring>(const DBusString *str, int pos, int type, void *value, int byte_order, int *new_pos)</argsstring>
+        <name>_dbus_marshal_read_basic</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>new_pos</declname>
+        </param>
+        <briefdescription>
+<para>Demarshals a basic-typed value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;value&quot; pointer is always the address of a variable of the basic type. So e.g. if the basic type is &quot;double&quot; then the pointer is a double*, and if it&apos;s &quot;char*&quot; then the pointer is a &quot;char**&quot;.</para><para>A value of type <ref refid="unionDBusBasicValue" kindref="compound">DBusBasicValue</ref> is guaranteed to be large enough to hold any of the types that may be returned, which is handy if you are trying to do things generically. For example you can pass a DBusBasicValue* in to this function, and then pass the same DBusBasicValue* in to _dbus_marshal_basic_type() in order to move a value from one place to another.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in the string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of value to demarshal </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to return value data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to update with new position, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="183" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="492" bodyend="590"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" compoundref="dbus-arch-deps_8h" startline="37">dbus_uint64_t</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusInternalsUtils_1ga63f2f8a068454b781f214ba596e313b4" compoundref="dbus-internals_8c" startline="258" endline="277">_dbus_warn_check_failed</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusString_1gae7770fdabda32f3e8d9dd50b083dbf1e" compoundref="dbus-string_8c" startline="972" endline="984">_dbus_string_insert_2_aligned</references>
+        <references refid="group__DBusString_1gadd296cf1e6af18cb5bec438e9d353b4e" compoundref="dbus-string_8c" startline="996" endline="1008">_dbus_string_insert_4_aligned</references>
+        <references refid="group__DBusString_1ga108d7d64fb88fffca31e33181cefa232" compoundref="dbus-string_8c" startline="1020" endline="1034">_dbus_string_insert_8_aligned</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusProtocol_1ga28f099674760229e6de85a0e3c3e3e46" compoundref="dbus-protocol_8h" startline="181">DBUS_MAXIMUM_SIGNATURE_LENGTH</references>
+        <references refid="group__DBusString_1gab0770800dce6df97e5d246105a44e7b4" compoundref="dbus-string_8c" startline="614" endline="628">_dbus_string_insert_byte</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <references refid="group__DBusString_1ga2095c2a797ae245521a7588b32279110" compoundref="dbus-string_8c" startline="2103" endline="2141">_dbus_string_equal_substring</references>
+        <references refid="group__DBusMarshal_1ga3926bb35edf78d114cf0c341fe3258e0" compoundref="dbus-marshal-basic_8c" startline="1360" endline="1388">_dbus_verbose_bytes_of_string</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1351" endline="1376">_dbus_header_get_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dbus-marshal-basic_8h_1a010e735ccc28e2569d7f55292849db7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_marshal_read_fixed_multi</definition>
+        <argsstring>(const DBusString *str, int pos, int element_type, void *value, int n_elements, int byte_order, int *new_pos)</argsstring>
+        <name>_dbus_marshal_read_fixed_multi</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>element_type</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_elements</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>new_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gafd1ab7e9bd8e74cc41f03c76f4dce2dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_marshal_skip_basic</definition>
+        <argsstring>(const DBusString *str, int type, int byte_order, int *pos)</argsstring>
+        <name>_dbus_marshal_skip_basic</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Skips over a basic-typed value, reporting the following position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of value to read </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to position in the string, updated on return to new position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="196" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1077" bodyend="1133"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga8d9c5bcc039d9099df197a125a7259b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_marshal_skip_array</definition>
+        <argsstring>(const DBusString *str, int element_type, int byte_order, int *pos)</argsstring>
+        <name>_dbus_marshal_skip_array</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>element_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Skips an array, returning the next position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>element_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of array elements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to position in the string, updated on return to new position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="200" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1145" bodyend="1163"/>
+        <references refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" compoundref="dbus-marshal-basic_8c" startline="454" endline="468">_dbus_marshal_read_uint32</references>
+        <references refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" compoundref="dbus-marshal-basic_8c" startline="1173" endline="1210">_dbus_type_get_alignment</references>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_marshal_set_uint32</definition>
+        <argsstring>(DBusString *str, int pos, dbus_uint32_t value, int byte_order)</argsstring>
+        <name>_dbus_marshal_set_uint32</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <briefdescription>
+<para>Sets the 4 bytes at the given offset to a marshaled unsigned integer, replacing anything found there previously. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to write the marshalled int to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte offset where int should be written </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="204" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="253" bodyend="259"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" compoundref="dbus-marshal-basic_8c" startline="182" endline="191">_dbus_unpack_uint32</references>
+        <references refid="group__DBusString_1gafe7921a92467cdefaa0a7829d6cf260b" compoundref="dbus-string_8c" startline="1403" endline="1451">_dbus_string_replace_len</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="404" endline="418">_dbus_header_set_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1196" endline="1203">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t _dbus_marshal_read_uint32</definition>
+        <argsstring>(const DBusString *str, int pos, int byte_order, int *new_pos)</argsstring>
+        <name>_dbus_marshal_read_uint32</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>byte_order</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>new_pos</declname>
+        </param>
+        <briefdescription>
+<para>Convenience function to demarshal a 32 bit unsigned integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte order </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the position in the string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new position of the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the demarshaled integer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="208" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="454" bodyend="468"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" compoundref="dbus-marshal-basic_8c" startline="182" endline="191">_dbus_unpack_uint32</references>
+        <referencedby refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gafd1ab7e9bd8e74cc41f03c76f4dce2dd" compoundref="dbus-marshal-basic_8c" startline="1077" endline="1133">_dbus_marshal_skip_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga8d9c5bcc039d9099df197a125a7259b8" compoundref="dbus-marshal-basic_8c" startline="1145" endline="1163">_dbus_marshal_skip_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" compoundref="dbus-marshal-header_8c" startline="427" endline="433">_dbus_header_get_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga674d74081baf6e7531e0d4a286724210" compoundref="dbus-marshal-header_8c" startline="673" endline="750">_dbus_header_have_message_untrusted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_type_get_alignment</definition>
+        <argsstring>(int typecode)</argsstring>
+        <name>_dbus_type_get_alignment</name>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <briefdescription>
+<para>Gets the alignment requirement for the given type; will be 1, 4, or 8. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>typecode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>alignment of 1, 4, or 8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="212" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1173" bodyend="1210"/>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <referencedby refid="group__DBusMarshal_1ga8d9c5bcc039d9099df197a125a7259b8" compoundref="dbus-marshal-basic_8c" startline="1145" endline="1163">_dbus_marshal_skip_array</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessage_1ga6e2d1e936c3c61fe00d80a3f22fd5e76" compoundref="dbus-message_8c" startline="2791" endline="2825">dbus_message_iter_append_fixed_array</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* _dbus_type_to_string</definition>
+        <argsstring>(int typecode)</argsstring>
+        <name>_dbus_type_to_string</name>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string describing the given type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>typecode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type to describe </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a constant string describing the type </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="214" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1219" bodyend="1270"/>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusProtocol_1ga31cc59c99a6cbbfcef71756e1390dc4c" compoundref="dbus-protocol_8h" startline="106">DBUS_TYPE_OBJECT_PATH</references>
+        <references refid="group__DBusProtocol_1ga26ed6c20c3d9f0b50ea0a1cf80be3279" compoundref="dbus-protocol_8h" startline="110">DBUS_TYPE_SIGNATURE</references>
+        <references refid="group__DBusProtocol_1gae4b22a74b9edb0ec0ff6e0294794d3f9" compoundref="dbus-protocol_8h" startline="136">DBUS_TYPE_STRUCT</references>
+        <references refid="group__DBusProtocol_1gad2fc8e6c50e0ad927f4249fb9e53ca97" compoundref="dbus-protocol_8h" startline="143">DBUS_TYPE_DICT_ENTRY</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1ga4aa7a463ad2bce4e9aa95e3e397ddcf1" compoundref="dbus-protocol_8h" startline="124">DBUS_TYPE_VARIANT</references>
+        <references refid="group__DBusProtocol_1ga725657eca93175475e0694b858f51fd6" compoundref="dbus-protocol_8h" startline="156">DBUS_STRUCT_BEGIN_CHAR</references>
+        <references refid="group__DBusProtocol_1gaeab5ea0def3f587a0ed548b77d5c5cea" compoundref="dbus-protocol_8h" startline="160">DBUS_STRUCT_END_CHAR</references>
+        <references refid="group__DBusProtocol_1gad51b5f7a2e6d927295479dd371f6b353" compoundref="dbus-protocol_8h" startline="164">DBUS_DICT_ENTRY_BEGIN_CHAR</references>
+        <references refid="group__DBusProtocol_1ga29ad22c7342ead042ae9e55ae20b49f1" compoundref="dbus-protocol_8h" startline="168">DBUS_DICT_ENTRY_END_CHAR</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <referencedby refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga990da87b984d8917da26b89a6470fdf5" compoundref="dbus-marshal-basic_8c" startline="1020" endline="1064">_dbus_marshal_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1gafd1ab7e9bd8e74cc41f03c76f4dce2dd" compoundref="dbus-marshal-basic_8c" startline="1077" endline="1133">_dbus_marshal_skip_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1431" endline="1435">_dbus_first_type_in_signature_c_str</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1360" endline="1397">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacbe7eddf4f9c19da91b742087fcc111a" compoundref="dbus-marshal-recursive_8c" startline="2176" endline="2297">_dbus_type_writer_unrecurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2356" endline="2392">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga106e541001d6b884d1c3cea6044693ab" compoundref="dbus-message_8c" startline="1824" endline="1933">dbus_message_append_args_valist</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_first_type_in_signature</definition>
+        <argsstring>(const DBusString *str, int pos)</argsstring>
+        <name>_dbus_first_type_in_signature</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Get the first type in the signature. </para>        </briefdescription>
+        <detaileddescription>
+<para>The difference between this and just getting the first byte of the signature is that you won&apos;t get DBUS_STRUCT_BEGIN_CHAR, you&apos;ll get DBUS_TYPE_STRUCT instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string containing signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where the signature starts </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first type in the signature </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="216" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1416" bodyend="1420"/>
+        <referencedby refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="340" endline="421">_dbus_type_signature_next</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga1f101175ce6f33221fcb59f0b46349bd" compoundref="dbus-marshal-recursive_8c" startline="1581" endline="1593">_dbus_type_writer_init_values_only</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _dbus_first_type_in_signature_c_str</definition>
+        <argsstring>(const char *str, int pos)</argsstring>
+        <name>_dbus_first_type_in_signature_c_str</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" kindref="member">_dbus_first_type_in_signature</ref>, but operates on a C string buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a C string buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where the signature starts </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the first type in the signature </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="219" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="1431" bodyend="1435"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" compoundref="dbus-marshal-basic_8c" startline="1173" endline="1210">_dbus_type_get_alignment</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusTypes_1gab650989bbedae260527d7ca663a2ad9f" compoundref="dbus-arch-deps_8h" startline="36">dbus_int64_t</references>
+        <references refid="group__DBusTypes_1ga8deac39e1bf9fcca44854afeaaaf6199">DBUS_INT64_CONSTANT</references>
+        <references refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" compoundref="dbus-arch-deps_8h" startline="37">dbus_uint64_t</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusProtocol_1gaed8596f854e755344dfbc811a73b0757" compoundref="dbus-protocol_8h" startline="54">DBUS_BIG_ENDIAN</references>
+        <references refid="group__DBusSysdeps_1gac8269b795461ee42004b65734ce89e0b" compoundref="dbus-sysdeps_8h" startline="488">_DBUS_DOUBLES_BITWISE_EQUAL</references>
+        <references refid="group__DBusProtocol_1gaae5e00bf9091a457e5bb3f9a75d982ca" compoundref="dbus-protocol_8h" startline="53">DBUS_LITTLE_ENDIAN</references>
+        <references refid="group__DBusTypes_1ga20f58889c3ab16344378449148264f6d">DBUS_UINT64_CONSTANT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" compoundref="dbus-marshal-basic_8c" startline="253" endline="259">_dbus_marshal_set_uint32</references>
+        <references refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" compoundref="dbus-marshal-basic_8c" startline="182" endline="191">_dbus_unpack_uint32</references>
+        <references refid="group__DBusMarshal_1ga44e670d715bb678045f3d79b35920b0b" compoundref="dbus-marshal-basic_8c" startline="135" endline="140">_dbus_pack_uint32</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusMarshal_1ga854526bdf221a5e82b2e14581ac17d8f" compoundref="dbus-marshal-basic_8c" startline="370" endline="442">_dbus_marshal_set_basic</references>
+        <references refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" compoundref="dbus-protocol_8h" startline="102">DBUS_TYPE_STRING</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="492" endline="590">_dbus_marshal_read_basic</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <referencedby refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" compoundref="dbus-signature_8c" startline="92" endline="97">dbus_signature_iter_get_current_type</referencedby>
+        <referencedby refid="group__DBusSignature_1gaebb26dbc79dae5e11629f38b2c8277fd" compoundref="dbus-signature_8c" startline="146" endline="153">dbus_signature_iter_get_element_type</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusMarshal_1gaec86e8e1ae2f25b673ae6d900ab323c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_swap_array</definition>
+        <argsstring>(unsigned char *data, int n_elements, int alignment)</argsstring>
+        <name>_dbus_swap_array</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_elements</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+<para>Swaps the elements of an array to the opposite byte order. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alignment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of each element </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-marshal-basic.h" line="222" column="1" bodyfile="dbus/dbus-marshal-basic.c" bodystart="888" bodyend="929"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusTypes_1ga0a7c275002dbafa34536a76db079a950" compoundref="dbus-arch-deps_8h" startline="37">dbus_uint64_t</references>
+        <references refid="group__DBusMarshal_1gaec86e8e1ae2f25b673ae6d900ab323c7" compoundref="dbus-marshal-basic_8c" startline="888" endline="929">_dbus_swap_array</references>
+        <references refid="group__DBusProtocol_1ga5265afa08a4c8d9f31b287a57e8cb217" compoundref="dbus-protocol_8h" startline="203">DBUS_MAXIMUM_ARRAY_LENGTH</references>
+        <references refid="group__DBusString_1ga267217e412c74c74dc3a3e412da5c600" compoundref="dbus-string_8c" startline="1048" endline="1060">_dbus_string_insert_alignment</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1gaec86e8e1ae2f25b673ae6d900ab323c7" compoundref="dbus-marshal-basic_8c" startline="888" endline="929">_dbus_swap_array</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-marshal-basic.h<sp/><sp/>Marshalling<sp/>routines<sp/>for<sp/>basic<sp/>(primitive)<sp/>types</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002<sp/><sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004,<sp/>2005<sp/><sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MARSHAL_BASIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MARSHAL_BASIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_BYTESWAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;byteswap.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-protocol.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-arch-deps.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WORDS_BIGENDIAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_COMPILER_BYTE_ORDER<sp/>DBUS_BIG_ENDIAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_COMPILER_BYTE_ORDER<sp/>DBUS_LITTLE_ENDIAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_BYTESWAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT16_SWAP_LE_BE_CONSTANT(val)<sp/>bswap_16(val)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT32_SWAP_LE_BE_CONSTANT(val)<sp/>bswap_32(val)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>HAVE_BYTESWAP_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT16_SWAP_LE_BE_CONSTANT(val)<sp/><sp/><sp/><sp/>((dbus_uint16_t)<sp/>(<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(dbus_uint16_t)<sp/>((dbus_uint16_t)<sp/>(val)<sp/>&gt;&gt;<sp/>8)<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(dbus_uint16_t)<sp/>((dbus_uint16_t)<sp/>(val)<sp/>&lt;&lt;<sp/>8)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT32_SWAP_LE_BE_CONSTANT(val)<sp/><sp/><sp/><sp/>((dbus_uint32_t)<sp/>(<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dbus_uint32_t)<sp/>(val)<sp/>&amp;<sp/>(dbus_uint32_t)<sp/>0x000000ffU)<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dbus_uint32_t)<sp/>(val)<sp/>&amp;<sp/>(dbus_uint32_t)<sp/>0x0000ff00U)<sp/>&lt;&lt;<sp/><sp/>8)<sp/>|<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dbus_uint32_t)<sp/>(val)<sp/>&amp;<sp/>(dbus_uint32_t)<sp/>0x00ff0000U)<sp/>&gt;&gt;<sp/><sp/>8)<sp/>|<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dbus_uint32_t)<sp/>(val)<sp/>&amp;<sp/>(dbus_uint32_t)<sp/>0xff000000U)<sp/>&gt;&gt;<sp/>24)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HAVE_BYTESWAP_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_BYTESWAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT64_SWAP_LE_BE_CONSTANT(val)<sp/>bswap_64(val)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>HAVE_BYTESWAP_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT64_SWAP_LE_BE_CONSTANT(val)<sp/><sp/><sp/><sp/>((dbus_uint64_t)<sp/>(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x00000000000000ff))<sp/>&lt;&lt;<sp/>56)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x000000000000ff00))<sp/>&lt;&lt;<sp/>40)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x0000000000ff0000))<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x00000000ff000000))<sp/>&lt;&lt;<sp/><sp/>8)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x000000ff00000000))<sp/>&gt;&gt;<sp/><sp/>8)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x0000ff0000000000))<sp/>&gt;&gt;<sp/>24)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0x00ff000000000000))<sp/>&gt;&gt;<sp/>40)<sp/>|<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(((dbus_uint64_t)<sp/>(val)<sp/>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(dbus_uint64_t)<sp/>DBUS_UINT64_CONSTANT<sp/>(0xff00000000000000))<sp/>&gt;&gt;<sp/>56)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HAVE_BYTESWAP_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT16_SWAP_LE_BE(val)<sp/>(DBUS_UINT16_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT16_SWAP_LE_BE(val)<sp/><sp/>((dbus_int16_t)DBUS_UINT16_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT32_SWAP_LE_BE(val)<sp/>(DBUS_UINT32_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT32_SWAP_LE_BE(val)<sp/><sp/>((dbus_int32_t)DBUS_UINT32_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT64_SWAP_LE_BE(val)<sp/>(DBUS_UINT64_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT64_SWAP_LE_BE(val)<sp/><sp/>((dbus_int64_t)DBUS_UINT64_SWAP_LE_BE_CONSTANT<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WORDS_BIGENDIAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT16_TO_BE(val)<sp/>((dbus_int16_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT16_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint16_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT16_TO_LE(val)<sp/>(DBUS_INT16_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT16_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT16_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT32_TO_BE(val)<sp/>((dbus_int32_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT32_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint32_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT32_TO_LE(val)<sp/>(DBUS_INT32_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT32_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT32_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT64_TO_BE(val)<sp/>((dbus_int64_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT64_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint64_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT64_TO_LE(val)<sp/>(DBUS_INT64_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT64_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT64_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>WORDS_BIGENDIAN<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT16_TO_LE(val)<sp/>((dbus_int16_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT16_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint16_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT16_TO_BE(val)<sp/>((dbus_int16_t)<sp/>DBUS_UINT16_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT16_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT16_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT32_TO_LE(val)<sp/>((dbus_int32_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT32_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint32_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT32_TO_BE(val)<sp/>((dbus_int32_t)<sp/>DBUS_UINT32_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT32_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT32_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT64_TO_LE(val)<sp/>((dbus_int64_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT64_TO_LE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((dbus_uint64_t)<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_INT64_TO_BE(val)<sp/>((dbus_int64_t)<sp/>DBUS_UINT64_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DBUS_UINT64_TO_BE(val)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DBUS_UINT64_SWAP_LE_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>transformation<sp/>is<sp/>symmetric,<sp/>so<sp/>the<sp/>FROM<sp/>just<sp/>maps<sp/>to<sp/>the<sp/>TO.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT16_FROM_LE(val)<sp/><sp/>(DBUS_INT16_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT16_FROM_LE(val)<sp/>(DBUS_UINT16_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT16_FROM_BE(val)<sp/><sp/>(DBUS_INT16_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT16_FROM_BE(val)<sp/>(DBUS_UINT16_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT32_FROM_LE(val)<sp/><sp/>(DBUS_INT32_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT32_FROM_LE(val)<sp/>(DBUS_UINT32_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT32_FROM_BE(val)<sp/><sp/>(DBUS_INT32_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT32_FROM_BE(val)<sp/>(DBUS_UINT32_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT64_FROM_LE(val)<sp/><sp/>(DBUS_INT64_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT64_FROM_LE(val)<sp/>(DBUS_UINT64_TO_LE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_INT64_FROM_BE(val)<sp/><sp/>(DBUS_INT64_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_UINT64_FROM_BE(val)<sp/>(DBUS_UINT64_TO_BE<sp/>(val))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DBUS_DISABLE_ASSERT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_dbus_unpack_uint16(byte_order,<sp/>data)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"><sp/><sp/><sp/>(((byte_order)<sp/>==<sp/>DBUS_LITTLE_ENDIAN)<sp/>?<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>DBUS_UINT16_FROM_LE<sp/>(*(dbus_uint16_t*)(data))<sp/>:<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>DBUS_UINT16_FROM_BE<sp/>(*(dbus_uint16_t*)(data)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_dbus_unpack_uint32(byte_order,<sp/>data)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="145"><highlight class="preprocessor"><sp/><sp/><sp/>(((byte_order)<sp/>==<sp/>DBUS_LITTLE_ENDIAN)<sp/>?<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>DBUS_UINT32_FROM_LE<sp/>(*(dbus_uint32_t*)(data))<sp/>:<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>DBUS_UINT32_FROM_BE<sp/>(*(dbus_uint32_t*)(data)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_dbus_unpack_uint16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><ref refid="group__DBusTypes_1ga8132d71032da957f08ce4e0ec87f2063" kindref="member">dbus_uint16_t</ref><sp/><ref refid="group__DBusMarshal_1ga09651b41b9a5aca37b0e2ff269880d6a" kindref="member">_dbus_unpack_uint16</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga44e670d715bb678045f3d79b35920b0b" kindref="member">_dbus_pack_uint32</ref><sp/><sp/><sp/>(<ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_dbus_unpack_uint32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="group__DBusMarshal_1ga50a9187b315cfcd6b311ed1b36488c05" kindref="member">_dbus_unpack_uint32</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga854526bdf221a5e82b2e14581ac17d8f" kindref="member">_dbus_marshal_set_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*old_end_pos,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*new_end_pos);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga54323d48921de8c5bd04ae01548312bb" kindref="member">_dbus_marshal_write_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_at,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pos_after);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga990da87b984d8917da26b89a6470fdf5" kindref="member">_dbus_marshal_write_fixed_multi</ref><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_at,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>element_type,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_elements,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pos_after);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" kindref="member">_dbus_marshal_read_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*new_pos);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_marshal_read_fixed_multi<sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>element_type,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*value,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_elements,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*new_pos);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1gafd1ab7e9bd8e74cc41f03c76f4dce2dd" kindref="member">_dbus_marshal_skip_basic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pos);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga8d9c5bcc039d9099df197a125a7259b8" kindref="member">_dbus_marshal_skip_array</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>element_type,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pos);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga4bcfb6a664c7e46c7ffc31f96d532a02" kindref="member">_dbus_marshal_set_uint32</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><sp/><sp/><sp/><sp/>value,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/><ref refid="group__DBusMarshal_1ga6dd82a202c19758cbf76dbed2946615d" kindref="member">_dbus_marshal_read_uint32</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byte_order,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*new_pos);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" kindref="member">_dbus_type_get_alignment</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>typecode);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga2ba80f227880e442c140bc67653b0abd" kindref="member">_dbus_type_get_alignment</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>typecode);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" kindref="member">_dbus_type_to_string</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>typecode);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga5866a0fd058aed3396402d0456144fd2" kindref="member">_dbus_first_type_in_signature</ref><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>*str,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" kindref="member">_dbus_first_type_in_signature_c_str</ref><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__DBusMarshal_1gaec86e8e1ae2f25b673ae6d900ab323c7" kindref="member">_dbus_swap_array</ref><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_elements,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>alignment);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MARSHAL_BASIC_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-marshal-basic.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,170 @@
+.TH "DBusStringInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusStringInternals \- DBusString implementation details
+.PP
+\fBDBusString\fP implementation details\&.  
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_DBUS_STRING_MAX_LENGTH\fP   (\fB_DBUS_INT32_MAX\fP \- _DBUS_STRING_ALLOCATION_PADDING)"
+.br
+.RI "\fIThe maximum length of a \fBDBusString\fP\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_GENERIC_STRING_PREAMBLE\fP(real)"
+.br
+.RI "\fIChecks a bunch of assertions about a string object\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_STRING_PREAMBLE\fP(str)"
+.br
+.RI "\fIChecks assertions about a string object that needs to be modifiable - may not be locked or const\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_LOCKED_STRING_PREAMBLE\fP(str)"
+.br
+.RI "\fIChecks assertions about a string object that may be locked but can't be const\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_CONST_STRING_PREAMBLE\fP(str)"
+.br
+.RI "\fIChecks assertions about a string that may be const or locked\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_IS_ASCII_BLANK\fP(c)   ((c) == ' ' || (c) == '\\t')"
+.br
+.RI "\fIChecks for ASCII blank byte\&. \fP"
+.ti -1c
+.RI "#define \fBDBUS_IS_ASCII_WHITE\fP(c)   ((c) == ' ' || (c) == '\\t' || (c) == '\\n' || (c) == '\\r')"
+.br
+.RI "\fIChecks for ASCII whitespace byte\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusString\fP implementation details\&. 
+
+The guts of \fBDBusString\fP\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_CONST_STRING_PREAMBLE(str)"
+\fBValue:\fP
+.PP
+.nf
+const DBusRealString *real = (DBusRealString*) str; \\
+  DBUS_GENERIC_STRING_PREAMBLE (real)
+.fi
+.PP
+Checks assertions about a string that may be const or locked\&. Also declares the 'real' variable pointing to \fBDBusRealString\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_compact(), _dbus_string_copy_data(), _dbus_string_copy_to_buffer(), _dbus_string_copy_to_buffer_with_nul(), _dbus_string_find_blank(), _dbus_string_find_byte_backward(), _dbus_string_find_eol(), _dbus_string_find_to(), _dbus_string_get_data_len(), _dbus_string_skip_blank(), _dbus_string_skip_white(), _dbus_string_skip_white_reverse(), _dbus_string_validate_ascii(), _dbus_string_validate_nul(), and _dbus_string_validate_utf8()\&.
+.SS "#define DBUS_GENERIC_STRING_PREAMBLE(real)"
+\fBValue:\fP
+.PP
+.nf
+do { \
+      (void) real; /* might be unused unless asserting */ \\
+      _dbus_assert ((real) != NULL); \\
+      _dbus_assert (!(real)->invalid); \\
+      _dbus_assert ((real)->len >= 0); \\
+      _dbus_assert ((real)->allocated >= 0); \\
+      _dbus_assert ((real)->len <= ((real)->allocated - _DBUS_STRING_ALLOCATION_PADDING)); \\
+      _dbus_assert ((real)->len <= _DBUS_STRING_MAX_LENGTH); \
+  } while (0)
+.fi
+.PP
+Checks a bunch of assertions about a string object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreal\fP the \fBDBusRealString\fP 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_ends_with_c_str(), _dbus_string_equal(), _dbus_string_equal_c_str(), _dbus_string_equal_len(), _dbus_string_equal_substring(), _dbus_string_free(), and _dbus_string_starts_with_c_str()\&.
+.SS "#define DBUS_IS_ASCII_BLANK(c)   ((c) == ' ' || (c) == '\\t')"
+
+.PP
+Checks for ASCII blank byte\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP the byte 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_skip_blank()\&.
+.SS "#define DBUS_IS_ASCII_WHITE(c)   ((c) == ' ' || (c) == '\\t' || (c) == '\\n' || (c) == '\\r')"
+
+.PP
+Checks for ASCII whitespace byte\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP the byte 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_skip_blank(), _dbus_string_skip_white(), and _dbus_string_skip_white_reverse()\&.
+.SS "#define DBUS_LOCKED_STRING_PREAMBLE(str)"
+\fBValue:\fP
+.PP
+.nf
+DBusRealString *real = (DBusRealString*) str; \\
+  DBUS_GENERIC_STRING_PREAMBLE (real);                                                 \\
+  _dbus_assert (!(real)->constant)
+.fi
+.PP
+Checks assertions about a string object that may be locked but can't be const\&. i\&.e\&. a string object that we can free\&. Also declares the 'real' variable pointing to \fBDBusRealString\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_free()\&.
+.SS "#define DBUS_STRING_PREAMBLE(str)"
+\fBValue:\fP
+.PP
+.nf
+DBusRealString *real = (DBusRealString*) str; \\
+  DBUS_GENERIC_STRING_PREAMBLE (real);                                          \\
+  _dbus_assert (!(real)->constant);                                             \\
+  _dbus_assert (!(real)->locked)
+.fi
+.PP
+Checks assertions about a string object that needs to be modifiable - may not be locked or const\&. Also declares the 'real' variable pointing to \fBDBusRealString\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file dbus\-string\-private\&.h\&.
+.PP
+Referenced by _dbus_string_append(), _dbus_string_append_byte(), _dbus_string_append_len(), _dbus_string_append_printf_valist(), _dbus_string_compact(), _dbus_string_delete(), _dbus_string_get_data_len(), _dbus_string_insert_2_aligned(), _dbus_string_insert_4_aligned(), _dbus_string_insert_8_aligned(), _dbus_string_insert_alignment(), _dbus_string_insert_byte(), _dbus_string_insert_bytes(), _dbus_string_lengthen(), _dbus_string_set_length(), _dbus_string_shorten(), _dbus_string_steal_data(), _dbus_string_tolower_ascii(), _dbus_string_toupper_ascii(), and _dbus_string_zero()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

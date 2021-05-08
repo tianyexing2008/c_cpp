@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structDBusAuthStateData" kind="struct" language="C++" prot="public">
+    <compoundname>DBusAuthStateData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusAuthStateData_1ad5e3d100798e1f200c8b7b2277af46af" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* DBusAuthStateData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Name of the state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="146" column="1" bodyfile="dbus/dbus-auth.c" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusAuthStateData_1a5b22dcc2e9ccfae518d95c14893fa495" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusAuthInternals_1gacfb344c12cad609b6203c862c66cac3d" kindref="member">DBusAuthStateFunction</ref></type>
+        <definition>DBusAuthStateFunction DBusAuthStateData::handler</definition>
+        <argsstring></argsstring>
+        <name>handler</name>
+        <briefdescription>
+<para>State function for this state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.c" line="147" column="1" bodyfile="dbus/dbus-auth.c" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Information about a auth state. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="87">
+        <label>DBusAuthMechanismHandler</label>
+        <link refid="structDBusAuthMechanismHandler"/>
+        <childnode refid="86" relation="usage">
+          <edgelabel>client_decode_func</edgelabel>
+          <edgelabel>server_encode_func</edgelabel>
+          <edgelabel>client_encode_func</edgelabel>
+          <edgelabel>client_initial_response_func</edgelabel>
+          <edgelabel>server_data_func</edgelabel>
+          <edgelabel>client_data_func</edgelabel>
+          <edgelabel>server_shutdown_func</edgelabel>
+          <edgelabel>server_decode_func</edgelabel>
+          <edgelabel>client_shutdown_func</edgelabel>
+        </childnode>
+      </node>
+      <node id="85">
+        <label>DBusAuthStateData</label>
+        <link refid="structDBusAuthStateData"/>
+        <childnode refid="86" relation="usage">
+          <edgelabel>handler</edgelabel>
+        </childnode>
+      </node>
+      <node id="89">
+        <label>DBusCredentials</label>
+        <link refid="structDBusCredentials"/>
+      </node>
+      <node id="90">
+        <label>DBusKeyring</label>
+        <link refid="structDBusKeyring"/>
+        <childnode refid="88" relation="usage">
+          <edgelabel>directory</edgelabel>
+          <edgelabel>filename_lock</edgelabel>
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="91" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="89" relation="usage">
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>DBusKey</label>
+        <link refid="structDBusKey"/>
+        <childnode refid="88" relation="usage">
+          <edgelabel>secret</edgelabel>
+        </childnode>
+      </node>
+      <node id="88">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+      <node id="86">
+        <label>DBusAuth</label>
+        <link refid="structDBusAuth"/>
+        <childnode refid="87" relation="usage">
+          <edgelabel>mech</edgelabel>
+        </childnode>
+        <childnode refid="88" relation="usage">
+          <edgelabel>identity</edgelabel>
+          <edgelabel>context</edgelabel>
+          <edgelabel>challenge</edgelabel>
+          <edgelabel>outgoing</edgelabel>
+          <edgelabel>incoming</edgelabel>
+        </childnode>
+        <childnode refid="85" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="89" relation="usage">
+          <edgelabel>desired_identity</edgelabel>
+          <edgelabel>authorized_identity</edgelabel>
+          <edgelabel>credentials</edgelabel>
+        </childnode>
+        <childnode refid="90" relation="usage">
+          <edgelabel>keyring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="dbus/dbus-auth.c" line="145" column="1" bodyfile="dbus/dbus-auth.c" bodystart="144" bodyend="148"/>
+    <listofallmembers>
+      <member refid="structDBusAuthStateData_1a5b22dcc2e9ccfae518d95c14893fa495" prot="public" virt="non-virtual"><scope>DBusAuthStateData</scope><name>handler</name></member>
+      <member refid="structDBusAuthStateData_1ad5e3d100798e1f200c8b7b2277af46af" prot="public" virt="non-virtual"><scope>DBusAuthStateData</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

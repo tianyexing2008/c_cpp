@@ -1,0 +1,998 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-threads_8c" kind="file" language="C++">
+    <compoundname>dbus-threads.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-threads_8h" local="yes">dbus-threads.h</includes>
+    <includes refid="dbus-internals_8h" local="yes">dbus-internals.h</includes>
+    <includes refid="dbus-threads-internal_8h" local="yes">dbus-threads-internal.h</includes>
+    <includes refid="dbus-list_8h" local="yes">dbus-list.h</includes>
+    <incdepgraph>
+      <node id="4331">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4335">
+        <label>dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="4322" relation="include">
+        </childnode>
+        <childnode refid="4323" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4326" relation="include">
+        </childnode>
+      </node>
+      <node id="4325">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="4318">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="4327">
+        <label>stdint.h</label>
+      </node>
+      <node id="4333">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="4326">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="4316" relation="include">
+        </childnode>
+        <childnode refid="4327" relation="include">
+        </childnode>
+        <childnode refid="4328" relation="include">
+        </childnode>
+        <childnode refid="4324" relation="include">
+        </childnode>
+        <childnode refid="4329" relation="include">
+        </childnode>
+        <childnode refid="4330" relation="include">
+        </childnode>
+        <childnode refid="4332" relation="include">
+        </childnode>
+        <childnode refid="4331" relation="include">
+        </childnode>
+        <childnode refid="4333" relation="include">
+        </childnode>
+      </node>
+      <node id="4322">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="4323" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4324" relation="include">
+        </childnode>
+        <childnode refid="4326" relation="include">
+        </childnode>
+        <childnode refid="4334" relation="include">
+        </childnode>
+      </node>
+      <node id="4320">
+        <label>stddef.h</label>
+      </node>
+      <node id="4330">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4323" relation="include">
+        </childnode>
+        <childnode refid="4331" relation="include">
+        </childnode>
+      </node>
+      <node id="4321">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+      </node>
+      <node id="4332">
+        <label>string.h</label>
+      </node>
+      <node id="4315">
+        <label>dbus-threads.c</label>
+        <link refid="dbus-threads.c"/>
+        <childnode refid="4316" relation="include">
+        </childnode>
+        <childnode refid="4317" relation="include">
+        </childnode>
+        <childnode refid="4322" relation="include">
+        </childnode>
+        <childnode refid="4334" relation="include">
+        </childnode>
+        <childnode refid="4335" relation="include">
+        </childnode>
+      </node>
+      <node id="4317">
+        <label>dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+      </node>
+      <node id="4334">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4317" relation="include">
+        </childnode>
+      </node>
+      <node id="4316">
+        <label>config.h</label>
+      </node>
+      <node id="4329">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="4330" relation="include">
+        </childnode>
+        <childnode refid="4324" relation="include">
+        </childnode>
+      </node>
+      <node id="4324">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4325" relation="include">
+        </childnode>
+      </node>
+      <node id="4319">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="4320" relation="include">
+        </childnode>
+        <childnode refid="4321" relation="include">
+        </childnode>
+      </node>
+      <node id="4328">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4323">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4320" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dbus-threads_8c_1a6f05ae16a13ac3f782b4c7b9942978e6" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int thread_init_generation</definition>
+        <argsstring></argsstring>
+        <name>thread_init_generation</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="29" column="1" bodyfile="dbus/dbus-threads.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusThreadsInternals_1gac71f8e40420a15562b5ef35a922880b1" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+        <definition>DBusRMutex* global_locks[_DBUS_N_GLOBAL_LOCKS]</definition>
+        <argsstring>[_DBUS_N_GLOBAL_LOCKS]</argsstring>
+        <name>global_locks</name>
+        <initializer>= { <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="286" column="1" bodyfile="dbus/dbus-threads.c" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_new_at_location</definition>
+        <argsstring>(DBusRMutex **location_p)</argsstring>
+        <name>_dbus_rmutex_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new mutex or creates a no-op mutex if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para>If possible, the mutex returned by this function is recursive, to avoid deadlocks. However, that cannot be relied on.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location of the new mutex, can return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="53" column="1" bodyfile="dbus/dbus-threads.c" bodystart="53" bodyend="64"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_new_at_location</definition>
+        <argsstring>(DBusCMutex **location_p)</argsstring>
+        <name>_dbus_cmutex_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new mutex or creates a no-op mutex if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para>The returned mutex is suitable for use with condition variables.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location of the new mutex, can return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="77" column="1" bodyfile="dbus/dbus-threads.c" bodystart="77" bodyend="88"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_free_at_location</definition>
+        <argsstring>(DBusRMutex **location_p)</argsstring>
+        <name>_dbus_rmutex_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref>; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="94" column="1" bodyfile="dbus/dbus-threads.c" bodystart="94" bodyend="101"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga20ec8aeb88b1f65445a4d3c1c0bd0048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_free_at_location</definition>
+        <argsstring>(DBusCMutex **location_p)</argsstring>
+        <name>_dbus_cmutex_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref>; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="107" column="1" bodyfile="dbus/dbus-threads.c" bodystart="107" bodyend="114"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaeb20c411a096aaf067918eb574f121d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_lock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_rmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Locks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Locks may be recursive if threading implementation initialized recursive locks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="122" column="1" bodyfile="dbus/dbus-threads.c" bodystart="122" bodyend="128"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gabea1bdc19c155bca909839090c05eee2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_lock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_cmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Locks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Locks may be recursive if threading implementation initialized recursive locks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="136" column="1" bodyfile="dbus/dbus-threads.c" bodystart="136" bodyend="142"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga5946b9a5ea3e12a81a798b575b45c62f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_unlock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_rmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer.</para><para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="150" column="1" bodyfile="dbus/dbus-threads.c" bodystart="150" bodyend="156"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gad199edcd1bb88cfd2e9dcfb47cbc732f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_unlock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_cmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer.</para><para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="164" column="1" bodyfile="dbus/dbus-threads.c" bodystart="164" bodyend="170"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+        <definition>DBusCondVar* _dbus_condvar_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_condvar_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new condition variable using the function supplied to <ref refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" kindref="member">dbus_threads_init()</ref>, or creates a no-op condition variable if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para><simplesect kind="return"><para>new mutex or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="181" column="1" bodyfile="dbus/dbus-threads.c" bodystart="181" bodyend="187"/>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" compoundref="dbus-threads_8c" startline="199" endline="204">_dbus_condvar_new_at_location</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_new_at_location</definition>
+        <argsstring>(DBusCondVar **location_p)</argsstring>
+        <name>_dbus_condvar_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>This does the same thing as _dbus_condvar_new. </para>        </briefdescription>
+        <detaileddescription>
+<para>It however gives another level of indirection by allocating a pointer to point to the condvar location; this used to be useful.</para><para><simplesect kind="return"><para>the location of a new condvar or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="199" column="1" bodyfile="dbus/dbus-threads.c" bodystart="199" bodyend="204"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" compoundref="dbus-threads_8c" startline="181" endline="187">_dbus_condvar_new</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaff04b7377b6ab0cc22fee6a2811dde84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_free</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_condvar_free</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+<para>Frees a conditional variable created with dbus_condvar_new(); does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="212" column="1" bodyfile="dbus/dbus-threads.c" bodystart="212" bodyend="218"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga29444a34b569fca22fac48067832aacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_free_at_location</definition>
+        <argsstring>(DBusCondVar **location_p)</argsstring>
+        <name>_dbus_condvar_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a condition variable; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="224" column="1" bodyfile="dbus/dbus-threads.c" bodystart="224" bodyend="231"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga6938b8a4547ce48290615990f64bd3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_wait</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex)</argsstring>
+        <name>_dbus_condvar_wait</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Atomically unlocks the mutex and waits for the conditions variable to be signalled. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the mutex again before returning. Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="240" column="1" bodyfile="dbus/dbus-threads.c" bodystart="240" bodyend="247"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga918e53c2abc48ff496f3c75566ba8bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_condvar_wait_timeout</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex, int timeout_milliseconds)</argsstring>
+        <name>_dbus_condvar_wait_timeout</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <briefdescription>
+<para>Atomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the mutex again before returning. Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Return value is <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if we timed out, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> otherwise.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the condition variable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mutex </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_milliseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum time to wait </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the timeout occurred, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if not </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="261" column="1" bodyfile="dbus/dbus-threads.c" bodystart="261" bodyend="270"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_wake_one</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_condvar_wake_one</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+<para>If there are threads waiting on the condition variable, wake up exactly one. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="278" column="1" bodyfile="dbus/dbus-threads.c" bodystart="278" bodyend="284"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" compoundref="dbus-sysdeps-pthread_8c" startline="53">DBusCMutex::lock</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaf68ed2b9a5a7d09f0dfd2d71449cf85c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shutdown_global_locks</definition>
+        <argsstring>(void *nil)</argsstring>
+        <name>shutdown_global_locks</name>
+        <param>
+          <type>void *</type>
+          <declname>nil</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="289" column="1" bodyfile="dbus/dbus-threads.c" bodystart="289" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga1931616b664220a855bed4839be64b15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t init_global_locks</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_global_locks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="302" column="1" bodyfile="dbus/dbus-threads.c" bodystart="302" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga1703349138323e4dbb947ab2a73c943b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_lock</definition>
+        <argsstring>(DBusGlobalLock lock)</argsstring>
+        <name>_dbus_lock</name>
+        <param>
+          <type>DBusGlobalLock</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="337" column="1" bodyfile="dbus/dbus-threads.c" bodystart="337" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga82891a341a3b79f3228b8dd2dd1b0e30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_unlock</definition>
+        <argsstring>(DBusGlobalLock lock)</argsstring>
+        <name>_dbus_unlock</name>
+        <param>
+          <type>DBusGlobalLock</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="351" column="1" bodyfile="dbus/dbus-threads.c" bodystart="351" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_threads_init</definition>
+        <argsstring>(const DBusThreadFunctions *functions)</argsstring>
+        <name>dbus_threads_init</name>
+        <param>
+          <type>const <ref refid="structDBusThreadFunctions" kindref="compound">DBusThreadFunctions</ref> *</type>
+          <declname>functions</declname>
+        </param>
+        <briefdescription>
+<para>Initializes threads, like <ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version previously allowed user-specified threading primitives, but since D-Bus 1.6 it ignores them and behaves exactly like <ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>functions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ignored, formerly functions for using threads </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="391" column="1" bodyfile="dbus/dbus-threads.c" bodystart="391" bodyend="412"/>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" compoundref="dbus-sysdeps-pthread_8c" startline="278" endline="288">_dbus_threads_init_platform_specific</references>
+        <references refid="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" compoundref="dbus-sysdeps-pthread_8c" startline="293" endline="296">_dbus_threads_lock_platform_specific</references>
+        <references refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" compoundref="dbus-sysdeps-pthread_8c" startline="299" endline="302">_dbus_threads_unlock_platform_specific</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_threads_init_default</definition>
+        <argsstring>(void)</argsstring>
+        <name>dbus_threads_init_default</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes threads. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this function is not called, the D-Bus library will not lock any data structures. If it is called, D-Bus will do locking, at some cost in efficiency.</para><para>Since D-Bus 1.7 it is safe to call this function from any thread, any number of times (but it must be called before any other libdbus API is used).</para><para>In D-Bus 1.6 or older, this function must be called in the main thread before any other thread starts. As a result, it is not sufficient to call this function in a library or plugin, unless the library or plugin imposes a similar requirement on its callers.</para><para><ref refid="group__DBusMemory_1ga01912903e39428872920d861ef565bac" kindref="member">dbus_shutdown()</ref> reverses the effects of this function when it resets all global state in libdbus.</para><para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="438" column="1" bodyfile="dbus/dbus-threads.c" bodystart="438" bodyend="441"/>
+        <references refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" compoundref="dbus-threads_8c" startline="391" endline="412">dbus_threads_init</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" compoundref="dbus-threads_8c" startline="77" endline="88">_dbus_cmutex_new_at_location</referencedby>
+        <referencedby refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" compoundref="dbus-threads_8c" startline="181" endline="187">_dbus_condvar_new</referencedby>
+        <referencedby refid="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" compoundref="dbus-threads_8c" startline="278" endline="284">_dbus_condvar_wake_one</referencedby>
+        <referencedby refid="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" compoundref="dbus-threads_8c" startline="53" endline="64">_dbus_rmutex_new_at_location</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-threads.h<sp/><sp/>D-Bus<sp/>threads<sp/>handling</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003,<sp/>2006<sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-threads.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-internals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-threads-internal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-list.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>thread_init_generation<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" kindref="member">_dbus_rmutex_new_at_location</ref><sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default</ref><sp/>())</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*location_p<sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>*location_p<sp/>=<sp/>_dbus_platform_rmutex_new<sp/>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" kindref="member">_dbus_cmutex_new_at_location</ref><sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default</ref><sp/>())</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*location_p<sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>*location_p<sp/>=<sp/>_dbus_platform_cmutex_new<sp/>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" kindref="member">_dbus_rmutex_free_at_location</ref><sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(location_p<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>_dbus_platform_rmutex_free<sp/>(*location_p);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="group__DBusThreadsInternals_1ga20ec8aeb88b1f65445a4d3c1c0bd0048" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga20ec8aeb88b1f65445a4d3c1c0bd0048" kindref="member">_dbus_cmutex_free_at_location</ref><sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(location_p<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>_dbus_platform_cmutex_free<sp/>(*location_p);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="group__DBusThreadsInternals_1gaeb20c411a096aaf067918eb574f121d5" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1gaeb20c411a096aaf067918eb574f121d5" kindref="member">_dbus_rmutex_lock</ref><sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_lock<sp/>(mutex);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="group__DBusThreadsInternals_1gabea1bdc19c155bca909839090c05eee2" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1gabea1bdc19c155bca909839090c05eee2" kindref="member">_dbus_cmutex_lock</ref><sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>_dbus_platform_cmutex_lock<sp/>(mutex);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="group__DBusThreadsInternals_1ga5946b9a5ea3e12a81a798b575b45c62f" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga5946b9a5ea3e12a81a798b575b45c62f" kindref="member">_dbus_rmutex_unlock</ref><sp/>(<ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_unlock<sp/>(mutex);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="group__DBusThreadsInternals_1gad199edcd1bb88cfd2e9dcfb47cbc732f" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1gad199edcd1bb88cfd2e9dcfb47cbc732f" kindref="member">_dbus_cmutex_unlock</ref><sp/>(<ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/>*mutex)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>_dbus_platform_cmutex_unlock<sp/>(mutex);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*</highlight></codeline>
+<codeline lineno="181" refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" kindref="member">_dbus_condvar_new</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default</ref><sp/>())</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_dbus_platform_condvar_new<sp/>();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="199" refid="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" kindref="member">_dbus_condvar_new_at_location</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>*location_p<sp/>=<sp/><ref refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" kindref="member">_dbus_condvar_new</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="group__DBusThreadsInternals_1gaff04b7377b6ab0cc22fee6a2811dde84" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1gaff04b7377b6ab0cc22fee6a2811dde84" kindref="member">_dbus_condvar_free</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cond<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>_dbus_platform_condvar_free<sp/>(cond);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="group__DBusThreadsInternals_1ga29444a34b569fca22fac48067832aacd" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga29444a34b569fca22fac48067832aacd" kindref="member">_dbus_condvar_free_at_location</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>**location_p)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(location_p<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*location_p<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>_dbus_platform_condvar_free<sp/>(*location_p);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="group__DBusThreadsInternals_1ga6938b8a4547ce48290615990f64bd3bb" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga6938b8a4547ce48290615990f64bd3bb" kindref="member">_dbus_condvar_wait</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/><sp/>*mutex)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cond<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>||<sp/>mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>_dbus_platform_condvar_wait<sp/>(cond,<sp/>mutex);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="261" refid="group__DBusThreadsInternals_1ga918e53c2abc48ff496f3c75566ba8bd3" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga918e53c2abc48ff496f3c75566ba8bd3" kindref="member">_dbus_condvar_wait_timeout</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*cond,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*mutex,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_milliseconds)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cond<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>||<sp/>mutex<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_dbus_platform_condvar_wait_timeout<sp/>(cond,<sp/>mutex,</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeout_milliseconds);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278" refid="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" refkind="member"><highlight class="normal"><ref refid="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" kindref="member">_dbus_condvar_wake_one</ref><sp/>(<ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref><sp/>*cond)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cond<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>_dbus_platform_condvar_wake_one<sp/>(cond);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref><sp/>*global_locks[_DBUS_N_GLOBAL_LOCKS]<sp/>=<sp/>{<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>};</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal">shutdown_global_locks<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*nil)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>_DBUS_N_GLOBAL_LOCKS;<sp/>i++)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(global_locks[i]<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_platform_rmutex_free<sp/>(global_locks[i]);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>global_locks[i]<sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="302"><highlight class="normal">init_global_locks<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>ok;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>_DBUS_N_GLOBAL_LOCKS;<sp/>i++)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(global_locks[i]<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>global_locks[i]<sp/>=<sp/>_dbus_platform_rmutex_new<sp/>();</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_locks[i]<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>failed;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_lock<sp/>(global_locks[_DBUS_LOCK_shutdown_funcs]);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>ok<sp/>=<sp/>_dbus_register_shutdown_func_unlocked<sp/>(shutdown_global_locks,<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_unlock<sp/>(global_locks[_DBUS_LOCK_shutdown_funcs]);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ok)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>failed;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/>failed:</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>i<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_dbus_platform_rmutex_free<sp/>(global_locks[i]);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>global_locks[i]<sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="337"><highlight class="normal">_dbus_lock<sp/>(DBusGlobalLock<sp/><ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(lock<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(lock<sp/>&lt;<sp/>_DBUS_N_GLOBAL_LOCKS);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(thread_init_generation<sp/>!=<sp/><ref refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" kindref="member">_dbus_current_generation</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!<ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default</ref><sp/>())</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_lock<sp/>(global_locks[lock]);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal">_dbus_unlock<sp/>(DBusGlobalLock<sp/><ref refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" kindref="member">lock</ref>)</highlight></codeline>
+<codeline lineno="352"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(lock<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(lock<sp/>&lt;<sp/>_DBUS_N_GLOBAL_LOCKS);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/>_dbus_platform_rmutex_unlock<sp/>(global_locks[lock]);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>internals<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="391" refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" refkind="member"><highlight class="normal"><ref refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" kindref="member">dbus_threads_init</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusThreadFunctions" kindref="compound">DBusThreadFunctions</ref><sp/>*functions)</highlight></codeline>
+<codeline lineno="392"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga65d32daf6d876dd39b7410f3fa35b591" kindref="member">_dbus_threads_lock_platform_specific</ref><sp/>();</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(thread_init_generation<sp/>==<sp/><ref refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" kindref="member">_dbus_current_generation</ref>)</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" kindref="member">_dbus_threads_unlock_platform_specific</ref><sp/>();</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusSysdeps_1gae7be34dbffb6458578e86c59a26d4fad" kindref="member">_dbus_threads_init_platform_specific</ref>()<sp/>||</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!init_global_locks<sp/>())</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" kindref="member">_dbus_threads_unlock_platform_specific</ref><sp/>();</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/>thread_init_generation<sp/>=<sp/><ref refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" kindref="member">_dbus_current_generation</ref>;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><ref refid="group__DBusSysdeps_1ga99c22b80d17ef18fa0a11f3a2a415403" kindref="member">_dbus_threads_unlock_platform_specific</ref><sp/>();</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Default<sp/>thread<sp/>implemenation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="438" refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" refkind="member"><highlight class="normal"><ref refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" kindref="member">dbus_threads_init_default</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="439"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" kindref="member">dbus_threads_init</ref><sp/>(<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="441"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="preprocessor">#ifdef<sp/>DBUS_ENABLE_EMBEDDED_TESTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="449"><highlight class="normal">_dbus_threads_init_debug<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="450"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" kindref="member">dbus_threads_init</ref><sp/>(<ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_ENABLE_EMBEDDED_TESTS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-threads.c"/>
+  </compounddef>
+</doxygen>

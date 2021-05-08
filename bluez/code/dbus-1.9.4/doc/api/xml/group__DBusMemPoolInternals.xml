@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusMemPoolInternals" kind="group">
+    <compoundname>DBusMemPoolInternals</compoundname>
+    <title>Memory pool implementation details</title>
+    <innerclass refid="structDBusFreedElement" prot="public">DBusFreedElement</innerclass>
+    <innerclass refid="structDBusMemBlock" prot="public">DBusMemBlock</innerclass>
+    <innerclass refid="structDBusMemPool" prot="public">DBusMemPool</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusMemPoolInternals_1ga4210a89e140e1cccaba27cfabd254eb1" prot="public" static="no">
+        <type>struct <ref refid="structDBusFreedElement" kindref="compound">DBusFreedElement</ref></type>
+        <definition>typedef struct DBusFreedElement DBusFreedElement</definition>
+        <argsstring></argsstring>
+        <name>DBusFreedElement</name>
+        <briefdescription>
+<para>typedef so <ref refid="structDBusFreedElement" kindref="compound">DBusFreedElement</ref> struct can refer to itself. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="67" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusMemPoolInternals_1gadc586003d38772dd8336c4e103844a12" prot="public" static="no">
+        <type>struct <ref refid="structDBusMemBlock" kindref="compound">DBusMemBlock</ref></type>
+        <definition>typedef struct DBusMemBlock DBusMemBlock</definition>
+        <argsstring></argsstring>
+        <name>DBusMemBlock</name>
+        <briefdescription>
+<para>Typedef for <ref refid="structDBusMemBlock" kindref="compound">DBusMemBlock</ref> so the struct can recursively point to itself. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="67" column="1" bodyfile="dbus/dbus-mempool.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusMemPoolInternals_1ga412163ea9cb4effae42afc1147d8b9b8" prot="public" static="no">
+        <name>ELEMENT_PADDING</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>The dummy size of the variable-length &quot;elements&quot; field in <ref refid="structDBusMemBlock" kindref="compound">DBusMemBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-mempool.c" line="70" column="9" bodyfile="dbus/dbus-mempool.c" bodystart="70" bodyend="-1"/>
+        <referencedby refid="group__DBusMemPool_1ga0946d54f767b4f55238f5a39c8543df1" compoundref="dbus-mempool_8c" startline="214" endline="336">_dbus_mem_pool_alloc</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>The guts of <ref refid="structDBusMemPool" kindref="compound">DBusMemPool</ref>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

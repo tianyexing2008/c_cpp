@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusStringInternals" kind="group">
+    <compoundname>DBusStringInternals</compoundname>
+    <title>DBusString implementation details</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusStringInternals_1ga1e3535c07f25485129d9d17194e303af" prot="public" static="no">
+        <name>_DBUS_STRING_MAX_LENGTH</name>
+        <initializer>(<ref refid="group__DBusInternalsUtils_1gafe869e3145b7e32c4fb6a6741c9fc78e" kindref="member">_DBUS_INT32_MAX</ref> - _DBUS_STRING_ALLOCATION_PADDING)</initializer>
+        <briefdescription>
+<para>The maximum length of a <ref refid="structDBusString" kindref="compound">DBusString</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="69" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</referencedby>
+        <referencedby refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</referencedby>
+        <referencedby refid="group__DBusString_1gac49ec5782ca606029c096124b5e43ffc" compoundref="dbus-string_8c" startline="389" endline="395">_dbus_string_compact</referencedby>
+        <referencedby refid="group__DBusString_1ga8f13997d90ceed2f437706e6b7804d9b" compoundref="dbus-string_8c" startline="760" endline="771">_dbus_string_lengthen</referencedby>
+        <referencedby refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</referencedby>
+        <referencedby refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1ga862cb88a139179981e1fcd5643165b56" prot="public" static="no">
+        <name>DBUS_GENERIC_STRING_PREAMBLE</name>
+        <param><defname>real</defname></param>
+        <initializer>do { \
+      (void) real; /* might be unused unless asserting */ \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> ((real) != <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>); \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> (!(real)-&gt;invalid); \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> ((real)-&gt;len &gt;= 0); \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> ((real)-&gt;allocated &gt;= 0); \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> ((real)-&gt;len &lt;= ((real)-&gt;allocated - _DBUS_STRING_ALLOCATION_PADDING)); \
+      <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> ((real)-&gt;len &lt;= <ref refid="group__DBusStringInternals_1ga1e3535c07f25485129d9d17194e303af" kindref="member">_DBUS_STRING_MAX_LENGTH</ref>); \
+  } while (0)</initializer>
+        <briefdescription>
+<para>Checks a bunch of assertions about a string object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>real</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusRealString" kindref="compound">DBusRealString</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="76" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga4701fa3fabccad3ba64b7bf17c4ae14c" compoundref="dbus-string-util_8c" startline="46" endline="77">_dbus_string_ends_with_c_str</referencedby>
+        <referencedby refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" compoundref="dbus-string_8c" startline="2012" endline="2039">_dbus_string_equal</referencedby>
+        <referencedby refid="group__DBusString_1ga84f39f1bf398697920637d2982248c72" compoundref="dbus-string_8c" startline="2151" endline="2177">_dbus_string_equal_c_str</referencedby>
+        <referencedby refid="group__DBusString_1gacf39727ae9eb411b0c4cb3b891588fb0" compoundref="dbus-string_8c" startline="2055" endline="2084">_dbus_string_equal_len</referencedby>
+        <referencedby refid="group__DBusString_1ga2095c2a797ae245521a7588b32279110" compoundref="dbus-string_8c" startline="2103" endline="2141">_dbus_string_equal_substring</referencedby>
+        <referencedby refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</referencedby>
+        <referencedby refid="group__DBusString_1ga4763d06a65cca36986bff030b404c90d" compoundref="dbus-string_8c" startline="2187" endline="2213">_dbus_string_starts_with_c_str</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1ga376570af2af3ebb7e59d45b49b9582b3" prot="public" static="no">
+        <name>DBUS_STRING_PREAMBLE</name>
+        <param><defname>str</defname></param>
+        <initializer><ref refid="structDBusRealString" kindref="compound">DBusRealString</ref> *real = (<ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>*) str; \
+  <ref refid="group__DBusStringInternals_1ga862cb88a139179981e1fcd5643165b56" kindref="member">DBUS_GENERIC_STRING_PREAMBLE</ref> (real);                                          \
+  <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> (!(real)-&gt;constant);                                             \
+  <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> (!(real)-&gt;locked)</initializer>
+        <briefdescription>
+<para>Checks assertions about a string object that needs to be modifiable - may not be locked or const. </para>        </briefdescription>
+        <detaileddescription>
+<para>Also declares the &quot;real&quot; variable pointing to <ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="93" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</referencedby>
+        <referencedby refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</referencedby>
+        <referencedby refid="group__DBusString_1ga724656b7091b910965bd1af42d0b7bab" compoundref="dbus-string_8c" startline="1136" endline="1145">_dbus_string_append_len</referencedby>
+        <referencedby refid="group__DBusString_1ga8d794f292831d1a7edeb971b13a2c641" compoundref="dbus-string_8c" startline="1072" endline="1102">_dbus_string_append_printf_valist</referencedby>
+        <referencedby refid="group__DBusString_1gac49ec5782ca606029c096124b5e43ffc" compoundref="dbus-string_8c" startline="389" endline="395">_dbus_string_compact</referencedby>
+        <referencedby refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</referencedby>
+        <referencedby refid="group__DBusString_1ga7a73fb373398606e6e1d0a86c4587a3c" compoundref="dbus-string_8c" startline="490" endline="501">_dbus_string_get_data_len</referencedby>
+        <referencedby refid="group__DBusString_1gae7770fdabda32f3e8d9dd50b083dbf1e" compoundref="dbus-string_8c" startline="972" endline="984">_dbus_string_insert_2_aligned</referencedby>
+        <referencedby refid="group__DBusString_1gadd296cf1e6af18cb5bec438e9d353b4e" compoundref="dbus-string_8c" startline="996" endline="1008">_dbus_string_insert_4_aligned</referencedby>
+        <referencedby refid="group__DBusString_1ga108d7d64fb88fffca31e33181cefa232" compoundref="dbus-string_8c" startline="1020" endline="1034">_dbus_string_insert_8_aligned</referencedby>
+        <referencedby refid="group__DBusString_1ga267217e412c74c74dc3a3e412da5c600" compoundref="dbus-string_8c" startline="1048" endline="1060">_dbus_string_insert_alignment</referencedby>
+        <referencedby refid="group__DBusString_1gab0770800dce6df97e5d246105a44e7b4" compoundref="dbus-string_8c" startline="614" endline="628">_dbus_string_insert_byte</referencedby>
+        <referencedby refid="group__DBusString_1gaa0964d662ad17c58eb044c1b153017a6" compoundref="dbus-string_8c" startline="584" endline="603">_dbus_string_insert_bytes</referencedby>
+        <referencedby refid="group__DBusString_1ga8f13997d90ceed2f437706e6b7804d9b" compoundref="dbus-string_8c" startline="760" endline="771">_dbus_string_lengthen</referencedby>
+        <referencedby refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</referencedby>
+        <referencedby refid="group__DBusString_1ga7af1cbfa905f26d972ab644d890548b8" compoundref="dbus-string_8c" startline="780" endline="789">_dbus_string_shorten</referencedby>
+        <referencedby refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</referencedby>
+        <referencedby refid="group__DBusString_1ga698f4b0299e6c6a707fd7e9c14915f00" compoundref="dbus-string_8c" startline="2484" endline="2505">_dbus_string_tolower_ascii</referencedby>
+        <referencedby refid="group__DBusString_1ga9c959f7d18ff21c5ae51846c6ba065f1" compoundref="dbus-string_8c" startline="2515" endline="2536">_dbus_string_toupper_ascii</referencedby>
+        <referencedby refid="group__DBusString_1ga9385fd0de31b3f5f4f8baa96bad3fac6" compoundref="dbus-string_8c" startline="2684" endline="2689">_dbus_string_zero</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1gad9f957c4027c34a5c330822aa98b9307" prot="public" static="no">
+        <name>DBUS_LOCKED_STRING_PREAMBLE</name>
+        <param><defname>str</defname></param>
+        <initializer><ref refid="structDBusRealString" kindref="compound">DBusRealString</ref> *real = (<ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>*) str; \
+  <ref refid="group__DBusStringInternals_1ga862cb88a139179981e1fcd5643165b56" kindref="member">DBUS_GENERIC_STRING_PREAMBLE</ref> (real);                                                 \
+  <ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref> (!(real)-&gt;constant)</initializer>
+        <briefdescription>
+<para>Checks assertions about a string object that may be locked but can&apos;t be const. </para>        </briefdescription>
+        <detaileddescription>
+<para>i.e. a string object that we can free. Also declares the &quot;real&quot; variable pointing to <ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="105" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1ga5cf5f12f6d8f839e9a7c3ad790a83316" prot="public" static="no">
+        <name>DBUS_CONST_STRING_PREAMBLE</name>
+        <param><defname>str</defname></param>
+        <initializer>const <ref refid="structDBusRealString" kindref="compound">DBusRealString</ref> *real = (<ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>*) str; \
+  <ref refid="group__DBusStringInternals_1ga862cb88a139179981e1fcd5643165b56" kindref="member">DBUS_GENERIC_STRING_PREAMBLE</ref> (real)</initializer>
+        <briefdescription>
+<para>Checks assertions about a string that may be const or locked. </para>        </briefdescription>
+        <detaileddescription>
+<para>Also declares the &quot;real&quot; variable pointing to <ref refid="structDBusRealString" kindref="compound">DBusRealString</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="114" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1gac49ec5782ca606029c096124b5e43ffc" compoundref="dbus-string_8c" startline="389" endline="395">_dbus_string_compact</referencedby>
+        <referencedby refid="group__DBusString_1ga7e509d4f959d19d96f83250e62287b06" compoundref="dbus-string_8c" startline="672" endline="685">_dbus_string_copy_data</referencedby>
+        <referencedby refid="group__DBusString_1gaf97b18e419678dbf967d9b9ad1112ca6" compoundref="dbus-string_8c" startline="697" endline="707">_dbus_string_copy_to_buffer</referencedby>
+        <referencedby refid="group__DBusString_1gac42891d26084a4da0f63038d93b63828" compoundref="dbus-string_8c" startline="719" endline="729">_dbus_string_copy_to_buffer_with_nul</referencedby>
+        <referencedby refid="group__DBusString_1ga677ddb4246c7e7f67ed3145dc3c1c96b" compoundref="dbus-string_8c" startline="1764" endline="1791">_dbus_string_find_blank</referencedby>
+        <referencedby refid="group__DBusString_1ga89d458f4f530ee82dbb45f9dcbc9c637" compoundref="dbus-string-util_8c" startline="90" endline="114">_dbus_string_find_byte_backward</referencedby>
+        <referencedby refid="group__DBusString_1ga3c98d1913e3ba4deb8eda60b2e262fdb" compoundref="dbus-string_8c" startline="1626" endline="1677">_dbus_string_find_eol</referencedby>
+        <referencedby refid="group__DBusString_1gaf2281731c3119f946726680242a5ae02" compoundref="dbus-string_8c" startline="1696" endline="1751">_dbus_string_find_to</referencedby>
+        <referencedby refid="group__DBusString_1ga7a73fb373398606e6e1d0a86c4587a3c" compoundref="dbus-string_8c" startline="490" endline="501">_dbus_string_get_data_len</referencedby>
+        <referencedby refid="group__DBusString_1ga5698b163289be0066cf10c0f1caf877a" compoundref="dbus-string_8c" startline="1802" endline="1824">_dbus_string_skip_blank</referencedby>
+        <referencedby refid="group__DBusString_1ga8600259d71a4adc14ab4558a9d2a0f7d" compoundref="dbus-string_8c" startline="1836" endline="1858">_dbus_string_skip_white</referencedby>
+        <referencedby refid="group__DBusString_1ga578bb88acec5520825f2ba792cad7938" compoundref="dbus-string_8c" startline="1869" endline="1890">_dbus_string_skip_white_reverse</referencedby>
+        <referencedby refid="group__DBusString_1gaa4324cd667e21beb31a5481cb0c12b6d" compoundref="dbus-string_8c" startline="2449" endline="2474">_dbus_string_validate_ascii</referencedby>
+        <referencedby refid="group__DBusString_1ga199d0fc00ee3cd0300a1b3870d7986a3" compoundref="dbus-string_8c" startline="2652" endline="2676">_dbus_string_validate_nul</referencedby>
+        <referencedby refid="group__DBusString_1ga65f0f04b7c9371406fc87343f691e8da" compoundref="dbus-string_8c" startline="2554" endline="2636">_dbus_string_validate_utf8</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1ga8f488964e430c0ae6a1a4204e0098dfe" prot="public" static="no">
+        <name>DBUS_IS_ASCII_BLANK</name>
+        <param><defname>c</defname></param>
+        <initializer>((c) == &apos; &apos; || (c) == &apos;\t&apos;)</initializer>
+        <briefdescription>
+<para>Checks for ASCII blank byte. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="121" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga5698b163289be0066cf10c0f1caf877a" compoundref="dbus-string_8c" startline="1802" endline="1824">_dbus_string_skip_blank</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group__DBusStringInternals_1ga9c88845804be152df28b81d7cad5673a" prot="public" static="no">
+        <name>DBUS_IS_ASCII_WHITE</name>
+        <param><defname>c</defname></param>
+        <initializer>((c) == &apos; &apos; || (c) == &apos;\t&apos; || (c) == &apos;\n&apos; || (c) == &apos;\r&apos;)</initializer>
+        <briefdescription>
+<para>Checks for ASCII whitespace byte. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-string-private.h" line="127" column="9" bodyfile="dbus/dbus-string-private.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="group__DBusString_1ga5698b163289be0066cf10c0f1caf877a" compoundref="dbus-string_8c" startline="1802" endline="1824">_dbus_string_skip_blank</referencedby>
+        <referencedby refid="group__DBusString_1ga8600259d71a4adc14ab4558a9d2a0f7d" compoundref="dbus-string_8c" startline="1836" endline="1858">_dbus_string_skip_white</referencedby>
+        <referencedby refid="group__DBusString_1ga578bb88acec5520825f2ba792cad7938" compoundref="dbus-string_8c" startline="1869" endline="1890">_dbus_string_skip_white_reverse</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusString" kindref="compound">DBusString</ref> implementation details. </para>    </briefdescription>
+    <detaileddescription>
+<para>The guts of <ref refid="structDBusString" kindref="compound">DBusString</ref>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

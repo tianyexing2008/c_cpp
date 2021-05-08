@@ -1,0 +1,20 @@
+abs_top_builddir=/disk4/liangshen/practice/bluetooth_arm/code/dbus-1.9.4
+abs_top_srcdir=/disk4/liangshen/practice/bluetooth_arm/code/dbus-1.9.4
+prefix=
+exec_prefix=
+bindir=${exec_prefix}/bin
+system_bus_default_address=unix:path=/disk4/liangshen/practice/bluez_outdir/var/run/dbus/system_bus_socket
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+sysconfdir=${prefix}/etc
+session_bus_services_dir=${datadir}/dbus-1/services
+system_bus_services_dir=${datadir}/dbus-1/system-services
+interfaces_dir=${datadir}/dbus-1/interfaces
+daemondir=$bindir
+
+Name: dbus
+Description: Free desktop message bus (uninstalled copy)
+Version: 1.9.4
+Libs: ${abs_top_builddir}/dbus/libdbus-1.la
+Libs.private: -lpthread    
+Cflags: -I${abs_top_srcdir} 

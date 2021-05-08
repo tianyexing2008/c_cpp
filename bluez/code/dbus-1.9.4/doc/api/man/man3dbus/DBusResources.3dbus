@@ -1,0 +1,231 @@
+.TH "DBusResources" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusResources \- Resource limits related code
+.PP
+\fBDBusCounter\fP and other stuff related to resource limits\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusCounter\fP * \fB_dbus_counter_new\fP (void)"
+.br
+.RI "\fICreates a new \fBDBusCounter\fP\&. \fP"
+.ti -1c
+.RI "\fBDBusCounter\fP * \fB_dbus_counter_ref\fP (\fBDBusCounter\fP *counter)"
+.br
+.RI "\fIIncrements refcount of the counter\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_counter_unref\fP (\fBDBusCounter\fP *counter)"
+.br
+.RI "\fIDecrements refcount of the counter and possibly finalizes the counter\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_counter_adjust_size\fP (\fBDBusCounter\fP *counter, long delta)"
+.br
+.RI "\fIAdjusts the value of the size counter by the given delta which may be positive or negative\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_counter_notify\fP (\fBDBusCounter\fP *counter)"
+.br
+.RI "\fICalls the notify function from \fB_dbus_counter_set_notify()\fP, if that function has been specified and the counter has crossed the guard value (in either direction) since the last call to this function\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_counter_adjust_unix_fd\fP (\fBDBusCounter\fP *counter, long delta)"
+.br
+.RI "\fIAdjusts the value of the unix fd counter by the given delta which may be positive or negative\&. \fP"
+.ti -1c
+.RI "long \fB_dbus_counter_get_size_value\fP (\fBDBusCounter\fP *counter)"
+.br
+.RI "\fIGets the current value of the size counter\&. \fP"
+.ti -1c
+.RI "long \fB_dbus_counter_get_unix_fd_value\fP (\fBDBusCounter\fP *counter)"
+.br
+.RI "\fIGets the current value of the unix fd counter\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_counter_set_notify\fP (\fBDBusCounter\fP *counter, long size_guard_value, long unix_fd_guard_value, DBusCounterNotifyFunction function, void *user_data)"
+.br
+.RI "\fISets the notify function for this counter; the notify function is called whenever the counter's values cross the guard values in either direction (moving up, or moving down)\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusCounter\fP and other stuff related to resource limits\&. 
+
+Types and functions related to tracking resource limits, such as the maximum amount of memory/unix fds a connection can use for messages, etc\&. 
+.SH "Function Documentation"
+.PP 
+.SS "void _dbus_counter_adjust_size (\fBDBusCounter\fP * counter, long delta)"
+
+.PP
+Adjusts the value of the size counter by the given delta which may be positive or negative\&. This function may be called with locks held\&. After calling it, when any relevant locks are no longer held you must call \fB_dbus_counter_notify()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.br
+\fIdelta\fP value to add to the size counter's current value 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file dbus\-resources\&.c\&.
+.PP
+References DBusCounter::notify_function, DBusCounter::notify_pending, DBusCounter::notify_size_guard_value, NULL, DBusCounter::size_value, and TRUE\&.
+.PP
+Referenced by _dbus_message_add_counter_link(), and _dbus_message_remove_counter()\&.
+.SS "void _dbus_counter_adjust_unix_fd (\fBDBusCounter\fP * counter, long delta)"
+
+.PP
+Adjusts the value of the unix fd counter by the given delta which may be positive or negative\&. This function may be called with locks held\&. After calling it, when any relevant locks are no longer held you must call \fB_dbus_counter_notify()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.br
+\fIdelta\fP value to add to the unix fds counter's current value 
+.RE
+.PP
+
+.PP
+Definition at line 202 of file dbus\-resources\&.c\&.
+.PP
+References DBusCounter::notify_function, DBusCounter::notify_pending, DBusCounter::notify_unix_fd_guard_value, NULL, TRUE, and DBusCounter::unix_fd_value\&.
+.PP
+Referenced by _dbus_message_add_counter_link(), and _dbus_message_remove_counter()\&.
+.SS "long _dbus_counter_get_size_value (\fBDBusCounter\fP * counter)"
+
+.PP
+Gets the current value of the size counter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+its current size value 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file dbus\-resources\&.c\&.
+.PP
+References DBusCounter::size_value\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status(), _dbus_transport_set_pending_fds_function(), and dbus_connection_get_outgoing_size()\&.
+.SS "long _dbus_counter_get_unix_fd_value (\fBDBusCounter\fP * counter)"
+
+.PP
+Gets the current value of the unix fd counter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+its current unix fd value 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file dbus\-resources\&.c\&.
+.PP
+References DBusCounter::unix_fd_value\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status(), _dbus_transport_set_pending_fds_function(), dbus_connection_get_outgoing_size(), and dbus_connection_get_outgoing_unix_fds()\&.
+.SS "\fBDBusCounter\fP* _dbus_counter_new (void)"
+
+.PP
+Creates a new \fBDBusCounter\fP\&. \fBDBusCounter\fP is used to count usage of some resource such as memory\&.
+.PP
+\fBReturns:\fP
+.RS 4
+new counter or \fBNULL\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file dbus\-resources\&.c\&.
+.PP
+References dbus_new0, NULL, and DBusCounter::refcount\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_transport_init_base()\&.
+.SS "void _dbus_counter_notify (\fBDBusCounter\fP * counter)"
+
+.PP
+Calls the notify function from \fB_dbus_counter_set_notify()\fP, if that function has been specified and the counter has crossed the guard value (in either direction) since the last call to this function\&. This function must not be called with locks held, since it can call out to user code\&. 
+.PP
+Definition at line 182 of file dbus\-resources\&.c\&.
+.PP
+References FALSE, DBusCounter::notify_data, DBusCounter::notify_function, and DBusCounter::notify_pending\&.
+.PP
+Referenced by _dbus_message_remove_counter()\&.
+.SS "\fBDBusCounter\fP* _dbus_counter_ref (\fBDBusCounter\fP * counter)"
+
+.PP
+Increments refcount of the counter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the counter 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file dbus\-resources\&.c\&.
+.PP
+References _dbus_assert, and DBusCounter::refcount\&.
+.PP
+Referenced by _dbus_connection_close_possibly_shared(), and _dbus_message_add_counter()\&.
+.SS "void _dbus_counter_set_notify (\fBDBusCounter\fP * counter, long size_guard_value, long unix_fd_guard_value, DBusCounterNotifyFunction function, void * user_data)"
+
+.PP
+Sets the notify function for this counter; the notify function is called whenever the counter's values cross the guard values in either direction (moving up, or moving down)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.br
+\fIsize_guard_value\fP the value we're notified if the size counter crosses 
+.br
+\fIunix_fd_guard_value\fP the value we're notified if the unix fd counter crosses 
+.br
+\fIfunction\fP function to call in order to notify 
+.br
+\fIuser_data\fP data to pass to the function 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file dbus\-resources\&.c\&.
+.PP
+References FALSE, DBusCounter::notify_data, DBusCounter::notify_function, DBusCounter::notify_pending, DBusCounter::notify_size_guard_value, and DBusCounter::notify_unix_fd_guard_value\&.
+.PP
+Referenced by _dbus_transport_finalize_base(), _dbus_transport_init_base(), _dbus_transport_set_max_received_size(), and _dbus_transport_set_max_received_unix_fds()\&.
+.SS "void _dbus_counter_unref (\fBDBusCounter\fP * counter)"
+
+.PP
+Decrements refcount of the counter and possibly finalizes the counter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcounter\fP the counter 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file dbus\-resources\&.c\&.
+.PP
+References _dbus_assert, dbus_free(), and DBusCounter::refcount\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), _dbus_message_remove_counter(), _dbus_transport_finalize_base(), _dbus_transport_init_base(), dbus_connection_free_preallocated_send(), and dbus_connection_ref()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

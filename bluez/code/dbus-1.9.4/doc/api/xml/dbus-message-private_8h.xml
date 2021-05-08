@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-message-private_8h" kind="file" language="C++">
+    <compoundname>dbus-message-private.h</compoundname>
+    <includes refid="dbus-message_8h" local="no">dbus/dbus-message.h</includes>
+    <includes refid="dbus-message-internal_8h" local="no">dbus/dbus-message-internal.h</includes>
+    <includes refid="dbus-string_8h" local="no">dbus/dbus-string.h</includes>
+    <includes refid="dbus-dataslot_8h" local="no">dbus/dbus-dataslot.h</includes>
+    <includes refid="dbus-marshal-header_8h" local="no">dbus/dbus-marshal-header.h</includes>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-message-util_8c" local="yes">dbus-message-util.c</includedby>
+    <includedby refid="dbus-message_8c" local="yes">dbus-message.c</includedby>
+    <incdepgraph>
+      <node id="2003">
+        <label>stdarg.h</label>
+      </node>
+      <node id="2009">
+        <label>dbus/dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="2011" relation="include">
+        </childnode>
+      </node>
+      <node id="2007">
+        <label>dbus/dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="2001" relation="include">
+        </childnode>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2002">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="1996">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="2013">
+        <label>stdint.h</label>
+      </node>
+      <node id="2008">
+        <label>dbus/dbus-shared.h</label>
+        <link refid="dbus-shared_8h_source"/>
+      </node>
+      <node id="2018">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="2023">
+        <label>dbus/dbus-marshal-basic.h</label>
+        <link refid="dbus-marshal-basic_8h_source"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="1999" relation="include">
+        </childnode>
+        <childnode refid="2016" relation="include">
+        </childnode>
+      </node>
+      <node id="2006">
+        <label>dbus/dbus-resources.h</label>
+        <link refid="dbus-resources_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+        <childnode refid="2007" relation="include">
+        </childnode>
+      </node>
+      <node id="2011">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="2012" relation="include">
+        </childnode>
+        <childnode refid="2013" relation="include">
+        </childnode>
+        <childnode refid="2014" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2016" relation="include">
+        </childnode>
+        <childnode refid="2017" relation="include">
+        </childnode>
+        <childnode refid="2003" relation="include">
+        </childnode>
+        <childnode refid="2018" relation="include">
+        </childnode>
+      </node>
+      <node id="2010">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+        <childnode refid="2011" relation="include">
+        </childnode>
+        <childnode refid="2019" relation="include">
+        </childnode>
+      </node>
+      <node id="1998">
+        <label>stddef.h</label>
+      </node>
+      <node id="2016">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="2003" relation="include">
+        </childnode>
+      </node>
+      <node id="2022">
+        <label>dbus/dbus-marshal-header.h</label>
+        <link refid="dbus-marshal-header_8h_source"/>
+        <childnode refid="2023" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="1999">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+      </node>
+      <node id="2017">
+        <label>string.h</label>
+      </node>
+      <node id="2020">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+      </node>
+      <node id="2005">
+        <label>dbus/dbus-marshal-validate.h</label>
+        <link refid="dbus-marshal-validate_8h_source"/>
+      </node>
+      <node id="2004">
+        <label>dbus/dbus-message-internal.h</label>
+        <link refid="dbus-message-internal_8h_source"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2009" relation="include">
+        </childnode>
+      </node>
+      <node id="1995">
+        <label>dbus/dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="1999" relation="include">
+        </childnode>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+        <childnode refid="2003" relation="include">
+        </childnode>
+      </node>
+      <node id="2021">
+        <label>dbus/dbus-dataslot.h</label>
+        <link refid="dbus-dataslot_8h_source"/>
+        <childnode refid="2010" relation="include">
+        </childnode>
+      </node>
+      <node id="2019">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="2020" relation="include">
+        </childnode>
+      </node>
+      <node id="2012">
+        <label>config.h</label>
+      </node>
+      <node id="2015">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="2016" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+      </node>
+      <node id="2001">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+      </node>
+      <node id="1997">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="1998" relation="include">
+        </childnode>
+        <childnode refid="1999" relation="include">
+        </childnode>
+      </node>
+      <node id="2014">
+        <label>inttypes.h</label>
+      </node>
+      <node id="1994">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private.h"/>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2016" relation="include">
+        </childnode>
+        <childnode refid="2021" relation="include">
+        </childnode>
+        <childnode refid="2022" relation="include">
+        </childnode>
+      </node>
+      <node id="2000">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1998" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2026">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="2025">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="2027">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="2024">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private.h"/>
+        <childnode refid="2025" relation="include">
+        </childnode>
+        <childnode refid="2026" relation="include">
+        </childnode>
+        <childnode refid="2027" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusMessageLoader" prot="public">DBusMessageLoader</innerclass>
+    <innerclass refid="structDBusMessage" prot="public">DBusMessage</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusMessageInternals_1ga660989658f3be5e403da430f63afd0b7" prot="public" static="no">
+        <name>CHANGED_STAMP_BITS</name>
+        <initializer>21</initializer>
+        <briefdescription>
+<para>How many bits are in the changed_stamp used to validate iterators. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="90" column="9" bodyfile="dbus/dbus-message-private.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_message_iter_get_args_valist</definition>
+        <argsstring>(DBusMessageIter *iter, DBusError *error, int first_arg_type, va_list var_args)</argsstring>
+        <name>_dbus_message_iter_get_args_valist</name>
+        <param>
+          <type><ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>first_arg_type</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>var_args</declname>
+        </param>
+        <briefdescription>
+<para>Implementation of the varargs arg-getting functions. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" kindref="member">dbus_message_get_args()</ref> is the place to go for complete documentation.</para><para><simplesect kind="see"><para><ref refid="group__DBusMessage_1gad8953f53ceea7de81cde792e3edd0230" kindref="member">dbus_message_get_args</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message iter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to be filled in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first_arg_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the first argument </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>var_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for first argument, followed by list of type/location pairs </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if error was set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-message-private.h" line="136" column="1" bodyfile="dbus/dbus-message.c" bodystart="796" bodyend="1066"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</references>
+        <references refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" compoundref="dbus-sysdeps-unix_8c" startline="3053" endline="3085">_dbus_dup</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusMarshal_1gab8e39cb8084247d54d7f272c51622a73" compoundref="dbus-marshal-recursive_8c" startline="785" endline="809">_dbus_type_reader_get_current_type</references>
+        <references refid="group__DBusMarshal_1ga6e5439f7ca5ee8a1ce943ddab7611d0d" compoundref="dbus-marshal-recursive_8c" startline="820" endline="830">_dbus_type_reader_get_element_type</references>
+        <references refid="group__DBusMarshal_1ga746c09512d4905f2d2fac7ed4c3c63c2" compoundref="dbus-marshal-recursive_8c" startline="1051" endline="1077">_dbus_type_reader_next</references>
+        <references refid="group__DBusMarshal_1gaa54355ee98d6721d7a29b5ae7d92eb9a" compoundref="dbus-marshal-recursive_8c" startline="869" endline="890">_dbus_type_reader_read_basic</references>
+        <references refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="923" endline="973">_dbus_type_reader_read_fixed_multi</references>
+        <references refid="group__DBusMarshal_1ga082b410820c74b2a6ca816a8e0c91803" compoundref="dbus-marshal-recursive_8c" startline="988" endline="1040">_dbus_type_reader_recurse</references>
+        <references refid="group__DBusMarshal_1ga48a595c2b26dce6e9c25ce040e5247e5" compoundref="dbus-marshal-basic_8c" startline="1219" endline="1270">_dbus_type_to_string</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusProtocol_1ga2a23b986cd4cef832b8823b6b0d1bcb1" compoundref="dbus-protocol_8h" startline="453">DBUS_ERROR_INCONSISTENT_MESSAGE</references>
+        <references refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" compoundref="dbus-protocol_8h" startline="391">DBUS_ERROR_INVALID_ARGS</references>
+        <references refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" compoundref="dbus-protocol_8h" startline="369">DBUS_ERROR_NOT_SUPPORTED</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="group__DBusMessage_1ga5aae3c882a75aed953d8b3d489e9b271" compoundref="dbus-message_8c" startline="2139" endline="2147">dbus_message_iter_get_arg_type</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" compoundref="dbus-signature_8c" startline="318" endline="326">dbus_type_is_basic</references>
+        <references refid="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" compoundref="dbus-signature_8c" startline="349" endline="371">dbus_type_is_fixed</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusMessageRealIter_1a552cb582c65645ed46d9d1ad38ece3c7" compoundref="dbus-message_8c" startline="128">DBusMessageRealIter::message</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusMessageRealIter_1ae5c4e45b0a5d6642850144f642d7db67" compoundref="dbus-message_8c" startline="135">DBusMessageRealIter::reader</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusMessageRealIter_1ac9c3ce5775bc9f5f0720b65093345ec6">DBusMessageRealIter::u</references>
+        <references refid="unionDBusBasicValue_1a2501e54560ae240442d9d841b96b086b" compoundref="dbus-types_8h" startline="143">DBusBasicValue::u32</references>
+        <referencedby refid="group__DBusMessage_1gab0f9bbe4f3d26bc9b5cf4f243c268aaa" compoundref="dbus-message_8c" startline="2009" endline="2021">dbus_message_get_args_valist</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-message-private.h<sp/>header<sp/>shared<sp/>between<sp/>dbus-message.c<sp/>and<sp/>dbus-message-util.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_MESSAGE_PRIVATE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_MESSAGE_PRIVATE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-message.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-message-internal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-dataslot.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-marshal-header.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structDBusMessageLoader" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusMessageLoader" kindref="compound">DBusMessageLoader</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62" refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusMessageLoader_1af3372b7d574dab49a7435d8f29ea2258" kindref="member">refcount</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><ref refid="structDBusMessageLoader_1a33c22d4f64a32a72faefb1df94fcfed1" kindref="member">data</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66" refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>*<ref refid="structDBusMessageLoader_1a5ad667f9a5b58d23f2089e7cea58f6cc" kindref="member">messages</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structDBusMessageLoader_1a174d67695b3aca6ee3bb8e1e5e033334" kindref="member">max_message_size</ref>;<sp/></highlight></codeline>
+<codeline lineno="69" refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structDBusMessageLoader_1a2134a617c0d631d946adee1f08443851" kindref="member">max_message_unix_fds</ref>;<sp/></highlight></codeline>
+<codeline lineno="71" refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMarshal_1ga0c4521d30d6650a33673a4d7f9cc007c" kindref="member">DBusValidity</ref><sp/><ref refid="structDBusMessageLoader_1ac6116f8620094b8ce348b103483c0035" kindref="member">corruption_reason</ref>;<sp/></highlight></codeline>
+<codeline lineno="73" refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusMessageLoader_1a7af27694794dc471ed3b251da8d7c62e" kindref="member">corrupted</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="75" refid="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusMessageLoader_1a7fe926ecd87e9ddb37e7481195bc3d67" kindref="member">buffer_outstanding</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor">#ifdef<sp/>HAVE_UNIX_FD_PASSING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unix_fds_outstanding<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*unix_fds;<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>n_unix_fds_allocated;<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>n_unix_fds;<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>void<sp/>(*<sp/>unix_fds_change)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*unix_fds_change_data;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group__DBusMessageInternals_1ga660989658f3be5e403da430f63afd0b7" refkind="member"><highlight class="preprocessor">#define<sp/>CHANGED_STAMP_BITS<sp/>21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="structDBusMessage" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusMessage" kindref="compound">DBusMessage</ref></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101" refid="structDBusMessage_1a324c5377e0be18dd84ac519ab2d23f0d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusAtomic" kindref="compound">DBusAtomic</ref><sp/><ref refid="structDBusMessage_1a324c5377e0be18dd84ac519ab2d23f0d" kindref="member">refcount</ref>;<sp/></highlight></codeline>
+<codeline lineno="103" refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusHeader" kindref="compound">DBusHeader</ref><sp/><ref refid="structDBusMessage_1a00cf6910d9f3bee5d5a82137c8c64a42" kindref="member">header</ref>;<sp/></highlight></codeline>
+<codeline lineno="105" refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><ref refid="structDBusMessage_1a0b9d14d6e0529f0ec2e3c0087fe62a9e" kindref="member">body</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="structDBusMessage_1ac926e7027f22608d75a6dfe18680b9e7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>locked<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor">#ifndef<sp/>DBUS_DISABLE_CHECKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="structDBusMessage_1ac71fa5534264093e6af8bc41f15237c8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in_cache<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusList" kindref="compound">DBusList</ref><sp/>*<ref refid="structDBusMessage_1ac6fc05ddffb11ac60b9da046abd2dc52" kindref="member">counters</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114" refid="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structDBusMessage_1ab8f43d40fa870f97f1126256568cec61" kindref="member">size_counter_delta</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="structDBusMessage_1a5d102e908f6ff96a5a0aa6a39b4963a8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref><sp/>changed_stamp<sp/>:<sp/><ref refid="group__DBusMessageInternals_1ga660989658f3be5e403da430f63afd0b7" kindref="member">CHANGED_STAMP_BITS</ref>;<sp/></highlight></codeline>
+<codeline lineno="118" refid="structDBusMessage_1a179c446523c6321e04f88a671363be19" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><ref refid="structDBusMessage_1a179c446523c6321e04f88a671363be19" kindref="member">slot_list</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor">#ifndef<sp/>DBUS_DISABLE_CHECKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="structDBusMessage_1a96263aa8a777c8c661d2596911c7d592" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusMessage_1a96263aa8a777c8c661d2596911c7d592" kindref="member">generation</ref>;<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_UNIX_FD_PASSING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*unix_fds;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>n_unix_fds;<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>n_unix_fds_allocated;<sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>unix_fd_counter_delta;<sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" kindref="member">_dbus_message_iter_get_args_valist</ref><sp/>(<ref refid="structDBusMessageIter" kindref="compound">DBusMessageIter</ref><sp/>*iter,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_arg_type,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>va_list<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_args);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_MESSAGE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-message-private.h"/>
+  </compounddef>
+</doxygen>

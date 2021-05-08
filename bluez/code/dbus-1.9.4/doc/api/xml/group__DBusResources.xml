@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusResources" kind="group">
+    <compoundname>DBusResources</compoundname>
+    <title>Resource limits related code</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusResources_1ga9911dd8fa020299a2b517251ea0be399" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+        <definition>DBusCounter* _dbus_counter_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_counter_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="structDBusCounter" kindref="compound">DBusCounter</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> is used to count usage of some resource such as memory.</para><para><simplesect kind="return"><para>new counter or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="88" column="1" bodyfile="dbus/dbus-resources.c" bodystart="88" bodyend="99"/>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusCounter_1a42ef245097a0b221b58bf200a0a187b0" compoundref="dbus-resources_8c" startline="56">DBusCounter::refcount</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1gae93240c77bfb66642453518c9bb90bc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+        <definition>DBusCounter* _dbus_counter_ref</definition>
+        <argsstring>(DBusCounter *counter)</argsstring>
+        <name>_dbus_counter_ref</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Increments refcount of the counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the counter </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="108" column="1" bodyfile="dbus/dbus-resources.c" bodystart="108" bodyend="115"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusCounter_1a42ef245097a0b221b58bf200a0a187b0" compoundref="dbus-resources_8c" startline="56">DBusCounter::refcount</references>
+        <referencedby refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gad009d79879d654a009c83627726435d8" compoundref="dbus-message_8c" startline="329" endline="342">_dbus_message_add_counter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1ga48d9b53d1a395ab3c4f1846ca569ef3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_counter_unref</definition>
+        <argsstring>(DBusCounter *counter)</argsstring>
+        <name>_dbus_counter_unref</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Decrements refcount of the counter and possibly finalizes the counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="124" column="1" bodyfile="dbus/dbus-resources.c" bodystart="124" bodyend="135"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusCounter_1a42ef245097a0b221b58bf200a0a187b0" compoundref="dbus-resources_8c" startline="56">DBusCounter::refcount</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusConnection_1gad0ea06307b418616711131ea7bdae8ac" compoundref="dbus-connection_8c" startline="3191" endline="3202">dbus_connection_free_preallocated_send</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1gae37410c196947675c2a222a7979e9dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_counter_adjust_size</definition>
+        <argsstring>(DBusCounter *counter, long delta)</argsstring>
+        <name>_dbus_counter_adjust_size</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the value of the size counter by the given delta which may be positive or negative. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function may be called with locks held. After calling it, when any relevant locks are no longer held you must call <ref refid="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" kindref="member">_dbus_counter_notify()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to add to the size counter&apos;s current value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="148" column="1" bodyfile="dbus/dbus-resources.c" bodystart="148" bodyend="171"/>
+        <references refid="structDBusCounter_1a626238ea91d2cf0c93a6eb958f7199b8" compoundref="dbus-resources_8c" startline="69">DBusCounter::notify_function</references>
+        <references refid="structDBusCounter_1a9c26dcd74f700959b0b920ec2bf1fd17" compoundref="dbus-resources_8c" startline="71">DBusCounter::notify_pending</references>
+        <references refid="structDBusCounter_1af73ade097f3dfad1035361867b9f7064" compoundref="dbus-resources_8c" startline="66">DBusCounter::notify_size_guard_value</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusCounter_1aadf8f12634aab55166d694320c545f8e" compoundref="dbus-resources_8c" startline="58">DBusCounter::size_value</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_counter_notify</definition>
+        <argsstring>(DBusCounter *counter)</argsstring>
+        <name>_dbus_counter_notify</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Calls the notify function from <ref refid="group__DBusResources_1ga240bddfe384b32a8703a328a638219e1" kindref="member">_dbus_counter_set_notify()</ref>, if that function has been specified and the counter has crossed the guard value (in either direction) since the last call to this function. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function must not be called with locks held, since it can call out to user code. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="182" column="1" bodyfile="dbus/dbus-resources.c" bodystart="182" bodyend="189"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusCounter_1a592288b6cf62431b3a26aaa6d7c3fb05" compoundref="dbus-resources_8c" startline="70">DBusCounter::notify_data</references>
+        <references refid="structDBusCounter_1a626238ea91d2cf0c93a6eb958f7199b8" compoundref="dbus-resources_8c" startline="69">DBusCounter::notify_function</references>
+        <references refid="structDBusCounter_1a9c26dcd74f700959b0b920ec2bf1fd17" compoundref="dbus-resources_8c" startline="71">DBusCounter::notify_pending</references>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1ga7d9411d27b337289ab5648beb148cde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_counter_adjust_unix_fd</definition>
+        <argsstring>(DBusCounter *counter, long delta)</argsstring>
+        <name>_dbus_counter_adjust_unix_fd</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the value of the unix fd counter by the given delta which may be positive or negative. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function may be called with locks held. After calling it, when any relevant locks are no longer held you must call <ref refid="group__DBusResources_1gab8c0e970e0c3b4696ba06723639d8239" kindref="member">_dbus_counter_notify()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to add to the unix fds counter&apos;s current value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="202" column="1" bodyfile="dbus/dbus-resources.c" bodystart="202" bodyend="225"/>
+        <references refid="structDBusCounter_1a626238ea91d2cf0c93a6eb958f7199b8" compoundref="dbus-resources_8c" startline="69">DBusCounter::notify_function</references>
+        <references refid="structDBusCounter_1a9c26dcd74f700959b0b920ec2bf1fd17" compoundref="dbus-resources_8c" startline="71">DBusCounter::notify_pending</references>
+        <references refid="structDBusCounter_1a85157c4d3c445e41f58dc6941b23814c" compoundref="dbus-resources_8c" startline="67">DBusCounter::notify_unix_fd_guard_value</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusCounter_1af23298e36b579cc511f00d03ce3ff823" compoundref="dbus-resources_8c" startline="59">DBusCounter::unix_fd_value</references>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="280" endline="312">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gac84be3fd98e49409c1245a87c7de6f7d" compoundref="dbus-message_8c" startline="352" endline="371">_dbus_message_remove_counter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1ga49de078fb626aff30f273933ad5c8b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long _dbus_counter_get_size_value</definition>
+        <argsstring>(DBusCounter *counter)</argsstring>
+        <name>_dbus_counter_get_size_value</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current value of the size counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>its current size value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="234" column="1" bodyfile="dbus/dbus-resources.c" bodystart="234" bodyend="237"/>
+        <references refid="structDBusCounter_1aadf8f12634aab55166d694320c545f8e" compoundref="dbus-resources_8c" startline="58">DBusCounter::size_value</references>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1ga25b2d12b9dc4d3525df2b8401f4ce56d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long _dbus_counter_get_unix_fd_value</definition>
+        <argsstring>(DBusCounter *counter)</argsstring>
+        <name>_dbus_counter_get_unix_fd_value</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current value of the unix fd counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>its current unix fd value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="246" column="1" bodyfile="dbus/dbus-resources.c" bodystart="246" bodyend="249"/>
+        <references refid="structDBusCounter_1af23298e36b579cc511f00d03ce3ff823" compoundref="dbus-resources_8c" startline="59">DBusCounter::unix_fd_value</references>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+        <referencedby refid="group__DBusTransport_1gad6dccbcdc149e3305101db4b2ebae6d6" compoundref="dbus-transport_8c" startline="1534" endline="1540">_dbus_transport_set_pending_fds_function</referencedby>
+        <referencedby refid="group__DBusConnection_1ga47aff801f586e7116f9c54532bb1baf9" compoundref="dbus-connection_8c" startline="6235" endline="6245">dbus_connection_get_outgoing_size</referencedby>
+        <referencedby refid="group__DBusConnection_1gad218838fdaa8d36c606723c63e96f453" compoundref="dbus-connection_8c" startline="6296" endline="6306">dbus_connection_get_outgoing_unix_fds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusResources_1ga240bddfe384b32a8703a328a638219e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_counter_set_notify</definition>
+        <argsstring>(DBusCounter *counter, long size_guard_value, long unix_fd_guard_value, DBusCounterNotifyFunction function, void *user_data)</argsstring>
+        <name>_dbus_counter_set_notify</name>
+        <param>
+          <type><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> *</type>
+          <declname>counter</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>size_guard_value</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>unix_fd_guard_value</declname>
+        </param>
+        <param>
+          <type>DBusCounterNotifyFunction</type>
+          <declname>function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Sets the notify function for this counter; the notify function is called whenever the counter&apos;s values cross the guard values in either direction (moving up, or moving down). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the counter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size_guard_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value we&apos;re notified if the size counter crosses </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unix_fd_guard_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value we&apos;re notified if the unix fd counter crosses </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to call in order to notify </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to pass to the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-resources.c" line="263" column="1" bodyfile="dbus/dbus-resources.c" bodystart="263" bodyend="274"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusCounter_1a592288b6cf62431b3a26aaa6d7c3fb05" compoundref="dbus-resources_8c" startline="70">DBusCounter::notify_data</references>
+        <references refid="structDBusCounter_1a626238ea91d2cf0c93a6eb958f7199b8" compoundref="dbus-resources_8c" startline="69">DBusCounter::notify_function</references>
+        <references refid="structDBusCounter_1a9c26dcd74f700959b0b920ec2bf1fd17" compoundref="dbus-resources_8c" startline="71">DBusCounter::notify_pending</references>
+        <references refid="structDBusCounter_1af73ade097f3dfad1035361867b9f7064" compoundref="dbus-resources_8c" startline="66">DBusCounter::notify_size_guard_value</references>
+        <references refid="structDBusCounter_1a85157c4d3c445e41f58dc6941b23814c" compoundref="dbus-resources_8c" startline="67">DBusCounter::notify_unix_fd_guard_value</references>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga08e0368732df5f4e58a2c838fe4484f6" compoundref="dbus-transport_8c" startline="1249" endline="1258">_dbus_transport_set_max_received_size</referencedby>
+        <referencedby refid="group__DBusTransport_1gaae297c86eb0b79b6cef4a1f7e4b50356" compoundref="dbus-transport_8c" startline="1267" endline="1276">_dbus_transport_set_max_received_unix_fds</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structDBusCounter" kindref="compound">DBusCounter</ref> and other stuff related to resource limits. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to tracking resource limits, such as the maximum amount of memory/unix fds a connection can use for messages, etc. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,238 @@
+.TH "DBusErrors" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusErrors \- Error reporting
+.PP
+Error reporting\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusError\fP"
+.br
+.RI "\fIObject representing an exception\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusError\fP \fBDBusError\fP"
+.br
+.RI "\fIMostly-opaque type representing an error that occurred\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdbus_error_init\fP (\fBDBusError\fP *error)"
+.br
+.RI "\fIInitializes a \fBDBusError\fP structure\&. \fP"
+.ti -1c
+.RI "void \fBdbus_error_free\fP (\fBDBusError\fP *error)"
+.br
+.RI "\fIFrees an error that's been set (or just initialized), then reinitializes the error as in \fBdbus_error_init()\fP\&. \fP"
+.ti -1c
+.RI "void \fBdbus_set_error_const\fP (\fBDBusError\fP *error, const char *name, const char *message)"
+.br
+.RI "\fIAssigns an error name and message to a \fBDBusError\fP\&. \fP"
+.ti -1c
+.RI "void \fBdbus_move_error\fP (\fBDBusError\fP *src, \fBDBusError\fP *dest)"
+.br
+.RI "\fIMoves an error src into dest, freeing src and overwriting dest\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_error_has_name\fP (const \fBDBusError\fP *error, const char *name)"
+.br
+.RI "\fIChecks whether the error is set and has the given name\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBdbus_error_is_set\fP (const \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks whether an error occurred (the error is set)\&. \fP"
+.ti -1c
+.RI "void \fBdbus_set_error\fP (\fBDBusError\fP *error, const char *name, const char *format,\&.\&.\&.)"
+.br
+.RI "\fIAssigns an error name and message to a \fBDBusError\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Error reporting\&. 
+
+Types and functions related to reporting errors\&.
+.PP
+In essence D-Bus error reporting works as follows:
+.PP
+.PP
+.nf
+DBusError error;
+dbus_error_init (&error);
+dbus_some_function (arg1, arg2, &error);
+if (dbus_error_is_set (&error))
+  {
+    fprintf (stderr, "an error occurred: %s\n", error\&.message);
+    dbus_error_free (&error);
+  }
+.fi
+.PP
+.PP
+By convention, all functions allow \fBNULL\fP instead of a DBusError*, so callers who don't care about the error can ignore it\&.
+.PP
+There are some rules\&. An error passed to a D-Bus function must always be unset; you can't pass in an error that's already set\&. If a function has a return code indicating whether an error occurred, and also a \fBDBusError\fP parameter, then the error will always be set if and only if the return code indicates an error occurred\&. i\&.e\&. the return code and the error are never going to disagree\&.
+.PP
+An error only needs to be freed if it's been set, not if it's merely been initialized\&.
+.PP
+You can check the specific error that occurred using \fBdbus_error_has_name()\fP\&.
+.PP
+Errors will not be set for programming errors, such as passing invalid arguments to the libdbus API\&. Instead, libdbus will print warnings, exit on a failed assertion, or even crash in those cases (in other words, incorrect use of the API results in undefined behavior, possibly accompanied by helpful debugging output if you're lucky)\&. 
+.SH "Function Documentation"
+.PP 
+.SS "DBUS_EXPORT void dbus_error_free (\fBDBusError\fP * error)"
+
+.PP
+Frees an error that's been set (or just initialized), then reinitializes the error as in \fBdbus_error_init()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP memory where the error is stored\&. 
+.RE
+.PP
+
+.PP
+Definition at line 211 of file dbus\-errors\&.c\&.
+.PP
+References DBusRealError::const_message, dbus_error_init(), dbus_free(), DBusRealError::message, DBusRealError::name, and NULL\&.
+.PP
+Referenced by _dbus_babysitter_unref(), _dbus_connection_handle_watch(), _dbus_file_exists(), _dbus_get_local_machine_uuid_encoded(), _dbus_groups_from_uid(), _dbus_keyring_get_hex_key(), _dbus_keyring_new_for_credentials(), _dbus_read_local_machine_uuid(), _dbus_read_uuid_file(), _dbus_sha_compute(), _dbus_spawn_async_with_babysitter(), _dbus_transport_open_platform_specific(), _dbus_user_database_lookup(), dbus_address_unescape_value(), dbus_connection_register_fallback(), dbus_connection_register_object_path(), dbus_move_error(), dbus_server_get_data(), and dbus_server_listen()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_error_has_name (const \fBDBusError\fP * error, const char * name)"
+
+.PP
+Checks whether the error is set and has the given name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the error 
+.br
+\fIname\fP the name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the given named error occurred 
+.RE
+.PP
+
+.PP
+Definition at line 302 of file dbus\-errors\&.c\&.
+.PP
+References _dbus_assert, _dbus_string_equal(), _dbus_string_init_const(), FALSE, DBusError::message, DBusError::name, and NULL\&.
+.PP
+Referenced by _dbus_read_uuid_file(), _dbus_spawn_async_with_babysitter(), _dbus_user_database_lookup(), dbus_connection_register_fallback(), and dbus_connection_register_object_path()\&.
+.SS "DBUS_EXPORT void dbus_error_init (\fBDBusError\fP * error)"
+
+.PP
+Initializes a \fBDBusError\fP structure\&. Does not allocate any memory; the error only needs to be freed if it is set at some point\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the \fBDBusError\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 188 of file dbus\-errors\&.c\&.
+.PP
+References DBusRealError::const_message, DBusRealError::message, DBusRealError::name, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_file_exists(), _dbus_groups_from_uid(), _dbus_keyring_get_hex_key(), _dbus_keyring_new_for_credentials(), _dbus_spawn_async_with_babysitter(), _dbus_transport_open_platform_specific(), dbus_error_free(), and dbus_move_error()\&.
+.SS "DBUS_EXPORT \fBdbus_bool_t\fP dbus_error_is_set (const \fBDBusError\fP * error)"
+
+.PP
+Checks whether an error occurred (the error is set)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if an error occurred 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file dbus\-errors\&.c\&.
+.PP
+References _dbus_assert, FALSE, DBusError::message, DBusError::name, and NULL\&.
+.PP
+Referenced by _dbus_lookup_launchd_socket(), _dbus_spawn_async_with_babysitter(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), _dbus_write_pid_to_file_and_pipe(), dbus_address_entry_get_value(), dbus_address_unescape_value(), dbus_parse_address(), and dbus_server_listen()\&.
+.SS "DBUS_EXPORT void dbus_move_error (\fBDBusError\fP * src, \fBDBusError\fP * dest)"
+
+.PP
+Moves an error src into dest, freeing src and overwriting dest\&. Both src and dest must be initialized\&. src is reinitialized to an empty error\&. dest may not contain an existing error\&. If the destination is \fBNULL\fP, just frees and reinits the source error\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP the source error 
+.br
+\fIdest\fP the destination error or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 279 of file dbus\-errors\&.c\&.
+.PP
+References dbus_error_free(), and dbus_error_init()\&.
+.PP
+Referenced by _dbus_connection_handle_watch(), _dbus_read_uuid_file(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), and dbus_server_listen()\&.
+.SS "DBUS_EXPORT void dbus_set_error (\fBDBusError\fP * error, const char * name, const char * format,  \&.\&.\&.)"
+
+.PP
+Assigns an error name and message to a \fBDBusError\fP\&. Does nothing if error is \fBNULL\fP\&.
+.PP
+The format may be \fBNULL\fP, which means a (pretty much useless) default message will be deduced from the name\&. This is not a good idea, just go ahead and provide a useful error message\&. It won't hurt you\&.
+.PP
+If no memory can be allocated for the error message, an out-of-memory error message will be set instead\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the error\&.or \fBNULL\fP 
+.br
+\fIname\fP the error name 
+.br
+\fIformat\fP printf-style format string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 354 of file dbus\-errors\&.c\&.
+.PP
+References _dbus_assert, _dbus_strdup(), _dbus_string_append(), _dbus_string_append_printf_valist(), _dbus_string_free(), _dbus_string_init(), _dbus_string_steal_data(), DBusRealError::const_message, dbus_free(), FALSE, DBusError::message, DBusRealError::message, DBusError::name, DBusRealError::name, and NULL\&.
+.PP
+Referenced by _dbus_append_address_from_socket(), _dbus_babysitter_set_child_exit_error(), _dbus_become_daemon(), _dbus_bus_notify_shared_connection_disconnected_unlocked(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_close(), _dbus_close_socket(), _dbus_command_for_pid(), _dbus_connect_exec(), _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_create_directory(), _dbus_create_file_exclusively(), _dbus_delete_directory(), _dbus_delete_file(), _dbus_directory_close(), _dbus_directory_get_next_file(), _dbus_directory_open(), _dbus_dup(), _dbus_file_exists(), _dbus_file_get_contents(), _dbus_full_duplex_pipe(), _dbus_get_tmpdir(), _dbus_is_console_user(), _dbus_keyring_new_for_credentials(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_lookup_launchd_socket(), _dbus_make_file_world_readable(), _dbus_message_iter_get_args_valist(), _dbus_object_tree_register(), _dbus_read_credentials_socket(), _dbus_read_local_machine_uuid(), _dbus_send_credentials_socket(), _dbus_server_listen_platform_specific(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_launchd(), _dbus_server_new_for_tcp_socket(), _dbus_set_bad_address(), _dbus_spawn_async_with_babysitter(), _dbus_stat(), _dbus_string_save_to_file(), _dbus_transport_finalize_base(), _dbus_transport_new_for_domain_socket(), _dbus_transport_new_for_tcp_socket(), _dbus_transport_open_platform_specific(), _dbus_unix_user_is_at_console(), _dbus_user_database_lookup(), _dbus_user_database_lookup_group(), _dbus_uuid_encode(), _dbus_write_pid_to_file_and_pipe(), dbus_address_entry_get_value(), dbus_connection_send_with_reply_and_block(), dbus_message_demarshal(), dbus_parse_address(), dbus_server_listen(), dbus_set_error_from_message(), dbus_signature_validate(), dbus_signature_validate_single(), dbus_validate_bus_name(), dbus_validate_error_name(), dbus_validate_interface(), dbus_validate_member(), dbus_validate_path(), and dbus_validate_utf8()\&.
+.SS "DBUS_EXPORT void dbus_set_error_const (\fBDBusError\fP * error, const char * name, const char * message)"
+
+.PP
+Assigns an error name and message to a \fBDBusError\fP\&. Does nothing if error is \fBNULL\fP\&. The message may be \fBNULL\fP, which means a default message will be deduced from the name\&. The default message will be totally useless, though, so using a \fBNULL\fP message is not recommended\&.
+.PP
+Because this function does not copy the error name or message, you must ensure the name and message are global data that won't be freed\&. You probably want \fBdbus_set_error()\fP instead, in most cases\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the error or \fBNULL\fP 
+.br
+\fIname\fP the error name (not copied!!!) 
+.br
+\fImessage\fP the error message (not copied!!!) 
+.RE
+.PP
+
+.PP
+Definition at line 243 of file dbus\-errors\&.c\&.
+.PP
+References _dbus_assert, DBusRealError::const_message, DBusError::message, DBusRealError::message, DBusError::name, DBusRealError::name, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_get_autolaunch_address(), _dbus_keyring_get_best_key(), _dbus_keyring_new_for_credentials(), _dbus_listen_systemd_sockets(), _dbus_lookup_launchd_socket(), _dbus_printf_string_upper_bound(), and _dbus_spawn_async_with_babysitter()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

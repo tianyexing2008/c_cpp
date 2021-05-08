@@ -1,0 +1,32 @@
+.TH "DBusGUID" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusGUID \- A globally unique ID ; we have one for each \fBDBusServer\fP, and also one for each machine with libdbus installed on it\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-internals\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBas_uint32s\fP [DBUS_UUID_LENGTH_WORDS]"
+.br
+.RI "\fIguid as four uint32 values \fP"
+.ti -1c
+.RI "char \fBas_bytes\fP [DBUS_UUID_LENGTH_BYTES]"
+.br
+.RI "\fIguid as 16 single-byte values \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A globally unique ID ; we have one for each \fBDBusServer\fP, and also one for each machine with libdbus installed on it\&. 
+.PP
+Definition at line 350 of file dbus\-internals\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

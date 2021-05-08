@@ -1,0 +1,1209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-auth_8h" kind="file" language="C++">
+    <compoundname>dbus-auth.h</compoundname>
+    <includes refid="dbus-macros_8h" local="no">dbus/dbus-macros.h</includes>
+    <includes refid="dbus-errors_8h" local="no">dbus/dbus-errors.h</includes>
+    <includes refid="dbus-string_8h" local="no">dbus/dbus-string.h</includes>
+    <includes refid="dbus-sysdeps_8h" local="no">dbus/dbus-sysdeps.h</includes>
+    <includedby refid="dbus-auth-util_8c" local="yes">dbus-auth-util.c</includedby>
+    <includedby refid="dbus-auth_8c" local="yes">dbus-auth.c</includedby>
+    <includedby refid="dbus-transport-protected_8h" local="no">dbus-transport-protected.h</includedby>
+    <includedby refid="dbus-transport_8c" local="yes">dbus-transport.c</includedby>
+    <incdepgraph>
+      <node id="322">
+        <label>stdarg.h</label>
+      </node>
+      <node id="319">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="314">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="325">
+        <label>stdint.h</label>
+      </node>
+      <node id="329">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="323">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="327" relation="include">
+        </childnode>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="322" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+      </node>
+      <node id="317">
+        <label>stddef.h</label>
+      </node>
+      <node id="320">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+        <childnode refid="322" relation="include">
+        </childnode>
+      </node>
+      <node id="318">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+      </node>
+      <node id="328">
+        <label>string.h</label>
+      </node>
+      <node id="324">
+        <label>config.h</label>
+      </node>
+      <node id="327">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="319" relation="include">
+        </childnode>
+      </node>
+      <node id="316">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="317" relation="include">
+        </childnode>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="326">
+        <label>inttypes.h</label>
+      </node>
+      <node id="313">
+        <label>dbus-auth.h</label>
+        <link refid="dbus-auth.h"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="323" relation="include">
+        </childnode>
+      </node>
+      <node id="321">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="331">
+        <label>dbus-auth-util.c</label>
+        <link refid="dbus-auth-util_8c_source"/>
+      </node>
+      <node id="340">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="333">
+        <label>dbus-transport-protected.h</label>
+        <link refid="dbus-transport-protected_8h_source"/>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+      </node>
+      <node id="337">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="341">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="339">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="338">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="336">
+        <label>dbus-transport-socket.h</label>
+        <link refid="dbus-transport-socket_8h_source"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+      </node>
+      <node id="335">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="334">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+      <node id="332">
+        <label>dbus-auth.c</label>
+        <link refid="dbus-auth_8c_source"/>
+      </node>
+      <node id="330">
+        <label>dbus-auth.h</label>
+        <link refid="dbus-auth.h"/>
+        <childnode refid="331" relation="include">
+        </childnode>
+        <childnode refid="332" relation="include">
+        </childnode>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afd" prot="public" static="no">
+        <name>DBusAuthState</name>
+        <enumvalue id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afda5f4645ccd618a6fea24d27c8bce276f8" prot="public">
+          <name>DBUS_AUTH_STATE_WAITING_FOR_INPUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afda3f6d777a462a30deba674430d45b1d24" prot="public">
+          <name>DBUS_AUTH_STATE_WAITING_FOR_MEMORY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afdaa002adf6f4c6d5d43fe9af4833d75a56" prot="public">
+          <name>DBUS_AUTH_STATE_HAVE_BYTES_TO_SEND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afdafa461f4f1a0e68bf7f635987ff885ebd" prot="public">
+          <name>DBUS_AUTH_STATE_NEED_DISCONNECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dbus-auth_8h_1a75cdde84c7ee45e2129c062612cd9afdae7f929225456d4e6b952fa1f7164821d" prot="public">
+          <name>DBUS_AUTH_STATE_AUTHENTICATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="36" column="1" bodyfile="dbus/dbus-auth.h" bodystart="35" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-auth_8h_1a72b5c8ed5ce1f1aa85b6c4d1aa32163e" prot="public" static="no">
+        <type>struct <ref refid="structDBusAuth" kindref="compound">DBusAuth</ref></type>
+        <definition>typedef struct DBusAuth DBusAuth</definition>
+        <argsstring></argsstring>
+        <name>DBusAuth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="2097" column="1" bodyfile="dbus/dbus-auth.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+        <definition>DBusAuth* _dbus_auth_server_new</definition>
+        <argsstring>(const DBusString *guid)</argsstring>
+        <name>_dbus_auth_server_new</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>guid</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new auth conversation object for the server side. </para>        </briefdescription>
+        <detaileddescription>
+<para>See <ulink url="http://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol">http://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol</ulink> for full details on what this object does.</para><para><simplesect kind="return"><para>the new object or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="44" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2247" bodyend="2283"/>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="structDBusAuth_1a8b930cb0d8a76c198914cf4a98192477" compoundref="dbus-auth_8c" startline="156">DBusAuth::side</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusAuthInternals_1ga3d476942b91b7b5825a914c2ae743717" compoundref="dbus-auth_8c" startline="328">DBUS_AUTH_SERVER</references>
+        <references refid="structDBusAuthServer_1a4e5f1bdf9bf827a0d6d370bbad73af1c" compoundref="dbus-auth_8c" startline="219">DBusAuthServer::guid</references>
+        <references refid="structDBusAuthServer_1ac73a6f0760eca6e1b7204b3c8e9c6127" compoundref="dbus-auth_8c" startline="216">DBusAuthServer::failures</references>
+        <references refid="structDBusAuthServer_1a0527732b2f979011cfeb501c8347fda0" compoundref="dbus-auth_8c" startline="217">DBusAuthServer::max_failures</references>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gaee76dbcdada8bcafe131f5a2de151ac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+        <definition>DBusAuth* _dbus_auth_client_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_auth_client_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new auth conversation object for the client side. </para>        </briefdescription>
+        <detaileddescription>
+<para>See <ulink url="http://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol">http://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol</ulink> for full details on what this object does.</para><para><simplesect kind="return"><para>the new object or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="45" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2293" bodyend="2322"/>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusAuthInternals_1ga6c2966c96fefbc8b40106d6b5235c854" compoundref="dbus-auth_8c" startline="323">DBUS_AUTH_CLIENT</references>
+        <references refid="structDBusAuth_1a8b930cb0d8a76c198914cf4a98192477" compoundref="dbus-auth_8c" startline="156">DBusAuth::side</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" compoundref="dbus-auth_8c" startline="2346" endline="2385">_dbus_auth_unref</references>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gaebe46c0887021bb3f6de3d283e0c66db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+        <definition>DBusAuth* _dbus_auth_ref</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_ref</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Increments the refcount of an auth object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the auth conversation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="46" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2331" bodyend="2338"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusAuth_1ab91763afd6a9d19f821dffd5930e69a6" compoundref="dbus-auth_8c" startline="155">DBusAuth::refcount</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_unref</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_unref</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Decrements the refcount of an auth object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="47" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2346" bodyend="2385"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusAuth_1ab91763afd6a9d19f821dffd5930e69a6" compoundref="dbus-auth_8c" startline="155">DBusAuth::refcount</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusAuthInternals_1ga6c2966c96fefbc8b40106d6b5235c854" compoundref="dbus-auth_8c" startline="323">DBUS_AUTH_CLIENT</references>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusAuthInternals_1ga4211a12320d0b32bb2fbf0b56d6752a1" compoundref="dbus-auth_8c" startline="313">DBUS_AUTH_IS_SERVER</references>
+        <references refid="group__DBusAuthInternals_1ga3d476942b91b7b5825a914c2ae743717" compoundref="dbus-auth_8c" startline="328">DBUS_AUTH_SERVER</references>
+        <references refid="structDBusAuth_1ae1048ad3a586619ce6f3730e99ae2db9" compoundref="dbus-auth_8c" startline="177">DBusAuth::keyring</references>
+        <references refid="group__DBusKeyring_1gadd42b029d08dc477b6847e91bdcb23ca" compoundref="dbus-keyring_8c" startline="681" endline="696">_dbus_keyring_unref</references>
+        <references refid="structDBusAuth_1aedf6904d461a6f6eba2ee21f12f89611" compoundref="dbus-auth_8c" startline="176">DBusAuth::context</references>
+        <references refid="structDBusAuth_1a4f2f7bfce0a53b41fb165a8854804443" compoundref="dbus-auth_8c" startline="179">DBusAuth::challenge</references>
+        <references refid="structDBusAuth_1a8e70b9e2cc090fe006e1214983d79eed" compoundref="dbus-auth_8c" startline="165">DBusAuth::identity</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <references refid="structDBusAuth_1ae57f6861636a989dc3bd7a24d6731085" compoundref="dbus-auth_8c" startline="159">DBusAuth::outgoing</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="structDBusAuth_1a234096e729cabc43efcc85ce5094a305" compoundref="dbus-auth_8c" startline="181">DBusAuth::allowed_mechs</references>
+        <references refid="group__DBusCredentials_1ga89913c830c3627cd006a50ca693af580" compoundref="dbus-credentials_8c" startline="128" endline="139">_dbus_credentials_unref</references>
+        <references refid="structDBusAuth_1aed82f21abc1ad5aa8c0db8a43f93bc22" compoundref="dbus-auth_8c" startline="169">DBusAuth::credentials</references>
+        <references refid="structDBusAuth_1afb4928fcc0f7af56d87fd6a512ad5a0a" compoundref="dbus-auth_8c" startline="172">DBusAuth::authorized_identity</references>
+        <references refid="structDBusAuth_1a6cfcba06657099d879b1e08aa886420f" compoundref="dbus-auth_8c" startline="174">DBusAuth::desired_identity</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <referencedby refid="group__DBusAuth_1gaee76dbcdada8bcafe131f5a2de151ac3" compoundref="dbus-auth_8c" startline="2293" endline="2322">_dbus_auth_client_new</referencedby>
+        <referencedby refid="group__DBusTransport_1gaa5ece78ea671fe9d9ed17fc6920c9d09" compoundref="dbus-transport_8c" startline="102" endline="207">_dbus_transport_init_base</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga9454e2c512b4e2ea54d47cff6acaa4db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_set_mechanisms</definition>
+        <argsstring>(DBusAuth *auth, const char **mechanisms)</argsstring>
+        <name>_dbus_auth_set_mechanisms</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>mechanisms</declname>
+        </param>
+        <briefdescription>
+<para>Sets an array of authentication mechanism names that we are willing to use. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mechanisms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated array of mechanism names </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="48" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2396" bodyend="2415"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusInternalsUtils_1ga53bbcbbd0b564c14c599813dde535443" compoundref="dbus-internals_8c" startline="578" endline="608">_dbus_dup_string_array</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMemory_1gac200b2dbc8b3f6ecac4d42426fb97b40" compoundref="dbus-memory_8c" startline="749" endline="764">dbus_free_string_array</references>
+        <references refid="structDBusAuth_1a234096e729cabc43efcc85ce5094a305" compoundref="dbus-auth_8c" startline="181">DBusAuth::allowed_mechs</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusTransport_1ga345827326824547201e8c517474af135" compoundref="dbus-transport_8c" startline="1496" endline="1500">_dbus_transport_set_auth_mechanisms</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga097c71f7f20b749275c6b31cd98623f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DBusAuthState</type>
+        <definition>DBusAuthState _dbus_auth_do_work</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_do_work</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Analyzes buffered input and moves the auth conversation forward, returning the new state of the auth conversation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new state </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="50" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2431" bodyend="2463"/>
+        <references refid="structDBusAuth_1a246a00c89875045268403243c76b5166" compoundref="dbus-auth_8c" startline="185">DBusAuth::needed_memory</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusAuth_1gaef3b2bcbcd611b935955eaf82ce238e2" compoundref="dbus-auth_8c" startline="2421">DBUS_AUTH_IN_END_STATE</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <references refid="structDBusAuth_1ae57f6861636a989dc3bd7a24d6731085" compoundref="dbus-auth_8c" startline="159">DBusAuth::outgoing</references>
+        <references refid="group__DBusAuthInternals_1ga533f0d915e592df54a97401b597441b8" compoundref="dbus-auth_8c" startline="335">DBUS_AUTH_NAME</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1ga32153a834758b5a88d7bde8f7a205c71" compoundref="dbus-transport_8c" startline="1101" endline="1129">_dbus_transport_get_dispatch_status</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga7befc68c815fe31d7fa556b699ef67de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_get_bytes_to_send</definition>
+        <argsstring>(DBusAuth *auth, const DBusString **str)</argsstring>
+        <name>_dbus_auth_get_bytes_to_send</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Gets bytes that need to be sent to the peer we&apos;re conversing with. </para>        </briefdescription>
+        <detaileddescription>
+<para>After writing some bytes, <ref refid="group__DBusAuth_1gaed9f7f1d3289a0ae2fea2204729ac01f" kindref="member">_dbus_auth_bytes_sent()</ref> must be called to notify the auth object that they were written.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for a ref to the buffer to send </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if nothing to send </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="51" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2475" bodyend="2489"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusAuth_1ae57f6861636a989dc3bd7a24d6731085" compoundref="dbus-auth_8c" startline="159">DBusAuth::outgoing</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gaed9f7f1d3289a0ae2fea2204729ac01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_bytes_sent</definition>
+        <argsstring>(DBusAuth *auth, int bytes_sent)</argsstring>
+        <name>_dbus_auth_bytes_sent</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bytes_sent</declname>
+        </param>
+        <briefdescription>
+<para>Notifies the auth conversation object that the given number of bytes of the outgoing buffer have been written out. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes_sent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of bytes written out </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="53" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2500" bodyend="2510"/>
+        <references refid="group__DBusAuthInternals_1ga533f0d915e592df54a97401b597441b8" compoundref="dbus-auth_8c" startline="335">DBUS_AUTH_NAME</references>
+        <references refid="structDBusAuth_1ae57f6861636a989dc3bd7a24d6731085" compoundref="dbus-auth_8c" startline="159">DBusAuth::outgoing</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gac0fc38d8d0d139e4d52787881a324c05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_get_buffer</definition>
+        <argsstring>(DBusAuth *auth, DBusString **buffer)</argsstring>
+        <name>_dbus_auth_get_buffer</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Get a buffer to be used for reading bytes from the peer we&apos;re conversing with. </para>        </briefdescription>
+        <detaileddescription>
+<para>Bytes should be appended to this buffer.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for buffer to append bytes to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="55" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2520" bodyend="2529"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusAuth_1af9809523776f243d5e8f5f631d24562b" compoundref="dbus-auth_8c" startline="190">DBusAuth::buffer_outstanding</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga842c246877d16cb9a75cc9828a5433c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_return_buffer</definition>
+        <argsstring>(DBusAuth *auth, DBusString *buffer)</argsstring>
+        <name>_dbus_auth_return_buffer</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Returns a buffer with new data read into it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer being returned </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="57" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2538" bodyend="2545"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <references refid="structDBusAuth_1af9809523776f243d5e8f5f631d24562b" compoundref="dbus-auth_8c" startline="190">DBusAuth::buffer_outstanding</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gaf9e2ab67f2ddd26eeb7deeb8b0af7817" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_get_unused_bytes</definition>
+        <argsstring>(DBusAuth *auth, const DBusString **str)</argsstring>
+        <name>_dbus_auth_get_unused_bytes</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> **</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Returns leftover bytes that were not used as part of the auth conversation. </para>        </briefdescription>
+        <detaileddescription>
+<para>These bytes will be part of the message stream instead. This function may not be called until authentication has succeeded.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for pointer to string of unused bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="59" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2557" bodyend="2564"/>
+        <references refid="group__DBusAuth_1gaef3b2bcbcd611b935955eaf82ce238e2" compoundref="dbus-auth_8c" startline="2421">DBUS_AUTH_IN_END_STATE</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gabbe8cf9e5958357c49a190ca259aa9b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_delete_unused_bytes</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_delete_unused_bytes</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Gets rid of unused bytes returned by <ref refid="group__DBusAuth_1gaf9e2ab67f2ddd26eeb7deeb8b0af7817" kindref="member">_dbus_auth_get_unused_bytes()</ref> after we&apos;ve gotten them and successfully moved them elsewhere. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="61" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2574" bodyend="2580"/>
+        <references refid="group__DBusAuth_1gaef3b2bcbcd611b935955eaf82ce238e2" compoundref="dbus-auth_8c" startline="2421">DBUS_AUTH_IN_END_STATE</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="structDBusAuth_1a986a475be9c96ecb9dd9ca5f86f60f10" compoundref="dbus-auth_8c" startline="158">DBusAuth::incoming</references>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_needs_encoding</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_needs_encoding</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Called post-authentication, indicates whether we need to encode the message stream with <ref refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" kindref="member">_dbus_auth_encode_data()</ref> prior to sending it to the peer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we need to encode the stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="62" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2591" bodyend="2605"/>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusAuth_1a1c284d7d38784b7ad81507199f33f848" compoundref="dbus-auth_8c" startline="163">DBusAuth::mech</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="structDBusAuthMechanismHandler_1ae72e69ef3b4513cbc5bdecae43dd380d" compoundref="dbus-auth_8c" startline="111">DBusAuthMechanismHandler::client_encode_func</references>
+        <references refid="structDBusAuthMechanismHandler_1a7aedf6828bf1f232edb2532616b9a1da" compoundref="dbus-auth_8c" startline="106">DBusAuthMechanismHandler::server_encode_func</references>
+        <referencedby refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" compoundref="dbus-auth_8c" startline="2618" endline="2639">_dbus_auth_encode_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_encode_data</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *plaintext, DBusString *encoded)</argsstring>
+        <name>_dbus_auth_encode_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>plaintext</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>encoded</declname>
+        </param>
+        <briefdescription>
+<para>Called post-authentication, encodes a block of bytes for sending to the peer. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no encoding was negotiated, just copies the bytes (you can avoid this by checking <ref refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" kindref="member">_dbus_auth_needs_encoding()</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plaintext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the plain text data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encoded</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initialized string to where encoded data is appended </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we had enough memory and successfully encoded </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="63" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2618" bodyend="2639"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" compoundref="dbus-auth_8c" startline="2591" endline="2605">_dbus_auth_needs_encoding</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="structDBusAuth_1a1c284d7d38784b7ad81507199f33f848" compoundref="dbus-auth_8c" startline="163">DBusAuth::mech</references>
+        <references refid="structDBusAuthMechanismHandler_1ae72e69ef3b4513cbc5bdecae43dd380d" compoundref="dbus-auth_8c" startline="111">DBusAuthMechanismHandler::client_encode_func</references>
+        <references refid="structDBusAuthMechanismHandler_1a7aedf6828bf1f232edb2532616b9a1da" compoundref="dbus-auth_8c" startline="106">DBusAuthMechanismHandler::server_encode_func</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_needs_decoding</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_needs_decoding</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Called post-authentication, indicates whether we need to decode the message stream with <ref refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" kindref="member">_dbus_auth_decode_data()</ref> after receiving it from the peer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we need to encode the stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="66" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2650" bodyend="2664"/>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusAuth_1a1c284d7d38784b7ad81507199f33f848" compoundref="dbus-auth_8c" startline="163">DBusAuth::mech</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="structDBusAuthMechanismHandler_1ab1d5c9a8cd146bb9f71f4237be1ca415" compoundref="dbus-auth_8c" startline="112">DBusAuthMechanismHandler::client_decode_func</references>
+        <references refid="structDBusAuthMechanismHandler_1ac6785768ff465be230d2f127d8099953" compoundref="dbus-auth_8c" startline="107">DBusAuthMechanismHandler::server_decode_func</references>
+        <referencedby refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" compoundref="dbus-auth_8c" startline="2681" endline="2702">_dbus_auth_decode_data</referencedby>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_decode_data</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *encoded, DBusString *plaintext)</argsstring>
+        <name>_dbus_auth_decode_data</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>encoded</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>plaintext</declname>
+        </param>
+        <briefdescription>
+<para>Called post-authentication, decodes a block of bytes received from the peer. </para>        </briefdescription>
+        <detaileddescription>
+<para>If no encoding was negotiated, just copies the bytes (you can avoid this by checking <ref refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" kindref="member">_dbus_auth_needs_decoding()</ref>).</para><para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>1.0? We need to be able to distinguish &quot;out of memory&quot; error from &quot;the data is hosed&quot; error.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encoded</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the encoded data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plaintext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initialized string where decoded data is appended </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if we had enough memory and successfully decoded </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="67" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2681" bodyend="2702"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" compoundref="dbus-auth_8c" startline="2650" endline="2664">_dbus_auth_needs_decoding</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="structDBusAuth_1a1c284d7d38784b7ad81507199f33f848" compoundref="dbus-auth_8c" startline="163">DBusAuth::mech</references>
+        <references refid="structDBusAuthMechanismHandler_1ab1d5c9a8cd146bb9f71f4237be1ca415" compoundref="dbus-auth_8c" startline="112">DBusAuthMechanismHandler::client_decode_func</references>
+        <references refid="structDBusAuthMechanismHandler_1ac6785768ff465be230d2f127d8099953" compoundref="dbus-auth_8c" startline="107">DBusAuthMechanismHandler::server_decode_func</references>
+        <references refid="group__DBusString_1ga3c10f0d1bcaa3b450025b9c6a8b901d7" compoundref="dbus-string_8c" startline="1282" endline="1293">_dbus_string_copy</references>
+        <referencedby refid="group__DBusTransport_1gac5e6d7a01debcf852b8d5a2fbc666fde" compoundref="dbus-transport_8c" startline="984" endline="1006">_dbus_transport_do_iteration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga2bb917d44b44b1a2813f60dec03731cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_set_credentials</definition>
+        <argsstring>(DBusAuth *auth, DBusCredentials *credentials)</argsstring>
+        <name>_dbus_auth_set_credentials</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+          <declname>credentials</declname>
+        </param>
+        <briefdescription>
+<para>Sets credentials received via reliable means from the operating system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credentials</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the credentials received </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> on OOM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="70" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2713" bodyend="2719"/>
+        <references refid="group__DBusCredentials_1ga40a5c7e37b10419e233a473dc7173f3c" compoundref="dbus-credentials_8c" startline="446" endline="455">_dbus_credentials_clear</references>
+        <references refid="structDBusAuth_1aed82f21abc1ad5aa8c0db8a43f93bc22" compoundref="dbus-auth_8c" startline="169">DBusAuth::credentials</references>
+        <references refid="group__DBusCredentials_1ga6b6cab83ecaa05e765967c188f62dd05" compoundref="dbus-credentials_8c" startline="377" endline="393">_dbus_credentials_add_credentials</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gabfa5450530b999bcb0fabf37c414a80e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref> *</type>
+        <definition>DBusCredentials* _dbus_auth_get_identity</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_get_identity</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Gets the identity we authorized the client as. </para>        </briefdescription>
+        <detaileddescription>
+<para>Apps may have different policies as to what identities they allow.</para><para>Returned credentials are not a copy and should not be modified</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the credentials we&apos;ve authorized BY REFERENCE do not modify </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="72" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2731" bodyend="2746"/>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="structDBusAuth_1afb4928fcc0f7af56d87fd6a512ad5a0a" compoundref="dbus-auth_8c" startline="172">DBusAuth::authorized_identity</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusCredentials_1ga9aea1a288097b0820d1cd05c2448501d" compoundref="dbus-credentials_8c" startline="345" endline="352">_dbus_credentials_are_empty</references>
+        <referencedby refid="group__DBusTransport_1gaceee4b098b0177870ad934daad90a9c6" compoundref="dbus-transport_8c" startline="527" endline="530">_dbus_transport_get_is_connected</referencedby>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf0588dd4a6d1c556dd885d4c67622399" compoundref="dbus-transport_8c" startline="821" endline="834">_dbus_transport_get_is_anonymous</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf3c4a47f73bd584a9fda1e5e7a825da9" compoundref="dbus-transport_8c" startline="1310" endline="1333">_dbus_transport_get_unix_user</referencedby>
+        <referencedby refid="group__DBusTransport_1gae66bc81abe904a4b3ab32d8920c8fe1e" compoundref="dbus-transport_8c" startline="1343" endline="1366">_dbus_transport_get_unix_process_id</referencedby>
+        <referencedby refid="group__DBusTransport_1ga36ccd8321491895ca632e744028eea42" compoundref="dbus-transport_8c" startline="1377" endline="1400">_dbus_transport_get_adt_audit_session_data</referencedby>
+        <referencedby refid="group__DBusTransport_1ga3f4f4ce9eaef18567fd21f5c6a1fde99" compoundref="dbus-transport_8c" startline="1436" endline="1458">_dbus_transport_get_windows_user</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gad6d64040b2cf1c91f808a1f31f7ff2f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_set_context</definition>
+        <argsstring>(DBusAuth *auth, const DBusString *context)</argsstring>
+        <name>_dbus_auth_set_context</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Sets the &quot;authentication context&quot; which scopes cookies with the DBUS_COOKIE_SHA1 auth mechanism for example. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the context </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="73" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2774" bodyend="2779"/>
+        <references refid="group__DBusString_1gafe7921a92467cdefaa0a7829d6cf260b" compoundref="dbus-string_8c" startline="1403" endline="1451">_dbus_string_replace_len</references>
+        <references refid="structDBusAuth_1aedf6904d461a6f6eba2ee21f12f89611" compoundref="dbus-auth_8c" startline="176">DBusAuth::context</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1gad0bf394093dd9ac43ebf71a5f35a4f3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* _dbus_auth_get_guid_from_server</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_get_guid_from_server</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Gets the GUID from the server if we&apos;ve authenticated; gets <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> otherwise. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the GUID in ASCII hex format </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="75" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2755" bodyend="2763"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusAuthInternals_1ga74120265335a7f6a84041541c19074c9" compoundref="dbus-auth_8c" startline="318">DBUS_AUTH_IS_CLIENT</references>
+        <references refid="structDBusAuth_1a44bd9f6e01ee93e58aae551bb1a9fb0f" compoundref="dbus-auth_8c" startline="161">DBusAuth::state</references>
+        <references refid="group__DBusAuthInternals_1ga6c2966c96fefbc8b40106d6b5235c854" compoundref="dbus-auth_8c" startline="323">DBUS_AUTH_CLIENT</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransport_1gabe774b134a4bf8c8fc09e6186470874f" compoundref="dbus-transport_8c" startline="724" endline="812">_dbus_transport_try_to_authenticate</referencedby>
+        <referencedby refid="group__DBusTransport_1ga920abde00e77a970330fa3fc552fe7ea" compoundref="dbus-transport_8c" startline="869" endline="877">_dbus_transport_get_server_id</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga831cbd78b6c7f382840e4094f02efdb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_auth_set_unix_fd_possible</definition>
+        <argsstring>(DBusAuth *auth, dbus_bool_t b)</argsstring>
+        <name>_dbus_auth_set_unix_fd_possible</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether unix fd passing is potentially on the transport and hence shall be negotiated. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TRUE when unix fd passing shall be negotiated, otherwise FALSE </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="77" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2789" bodyend="2792"/>
+        <references refid="structDBusAuth_1a7e5d15e7861774d7b49339c452e2829a" compoundref="dbus-auth_8c" startline="192">DBusAuth::unix_fd_possible</references>
+        <referencedby refid="group__DBusTransportSocket_1gac714eaa33ff4ab5c01be1304b23339a7" compoundref="dbus-transport-socket_8c" startline="1273" endline="1334">_dbus_transport_new_for_socket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAuth_1ga2d9119a45123f6b513a60391fb617d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_auth_get_unix_fd_negotiated</definition>
+        <argsstring>(DBusAuth *auth)</argsstring>
+        <name>_dbus_auth_get_unix_fd_negotiated</name>
+        <param>
+          <type><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref> *</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+<para>Queries whether unix fd passing was successfully negotiated. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>auth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the auth conversion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> when unix fd passing was negotiated. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-auth.h" line="78" column="1" bodyfile="dbus/dbus-auth.c" bodystart="2801" bodyend="2804"/>
+        <references refid="structDBusAuth_1af363f74ce5f14b2a63ea0ef71b3d3bd3" compoundref="dbus-auth_8c" startline="193">DBusAuth::unix_fd_negotiated</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-auth.h<sp/>Authentication</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_AUTH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_AUTH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-macros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-errors.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-sysdeps.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>DBUS_AUTH_STATE_WAITING_FOR_INPUT,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>DBUS_AUTH_STATE_WAITING_FOR_MEMORY,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>DBUS_AUTH_STATE_HAVE_BYTES_TO_SEND,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>DBUS_AUTH_STATE_NEED_DISCONNECT,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>DBUS_AUTH_STATE_AUTHENTICATED</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/>DBusAuthState;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref>*<sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga302e454600ae0e1aa27193d4b0a86385" kindref="member">_dbus_auth_server_new</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*guid);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref>*<sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gaee76dbcdada8bcafe131f5a2de151ac3" kindref="member">_dbus_auth_client_new</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="structDBusAuth" kindref="compound">DBusAuth</ref>*<sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gaebe46c0887021bb3f6de3d283e0c66db" kindref="member">_dbus_auth_ref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga7fb648be9d6d451917195a0e43eeece0" kindref="member">_dbus_auth_unref</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga9454e2c512b4e2ea54d47cff6acaa4db" kindref="member">_dbus_auth_set_mechanisms</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**mechanisms);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">DBusAuthState<sp/><ref refid="group__DBusAuth_1ga097c71f7f20b749275c6b31cd98623f5" kindref="member">_dbus_auth_do_work</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga7befc68c815fe31d7fa556b699ef67de" kindref="member">_dbus_auth_get_bytes_to_send</ref><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>**str);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gaed9f7f1d3289a0ae2fea2204729ac01f" kindref="member">_dbus_auth_bytes_sent</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes_sent);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gac0fc38d8d0d139e4d52787881a324c05" kindref="member">_dbus_auth_get_buffer</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**buffer);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga842c246877d16cb9a75cc9828a5433c2" kindref="member">_dbus_auth_return_buffer</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*buffer);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gaf9e2ab67f2ddd26eeb7deeb8b0af7817" kindref="member">_dbus_auth_get_unused_bytes</ref><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/>**str);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1gabbe8cf9e5958357c49a190ca259aa9b3" kindref="member">_dbus_auth_delete_unused_bytes</ref><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga22ddfb5e12cba3d047dc1d1302c23490" kindref="member">_dbus_auth_needs_encoding</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga0d59bcf62c098cdfb95f610cdfd12690" kindref="member">_dbus_auth_encode_data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*plaintext,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*encoded);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1gac6e9dc07335a6291842374d834e95ad2" kindref="member">_dbus_auth_needs_decoding</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga7eb40f71c0ede79f954bcb2c001c8502" kindref="member">_dbus_auth_decode_data</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*encoded,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*plaintext);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga2bb917d44b44b1a2813f60dec03731cd" kindref="member">_dbus_auth_set_credentials</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusAuth_1aed82f21abc1ad5aa8c0db8a43f93bc22" kindref="member">credentials</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="structDBusCredentials" kindref="compound">DBusCredentials</ref>*<sp/><ref refid="group__DBusAuth_1gabfa5450530b999bcb0fabf37c414a80e" kindref="member">_dbus_auth_get_identity</ref><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1gad6d64040b2cf1c91f808a1f31f7ff2f0" kindref="member">_dbus_auth_set_context</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusAuth_1aedf6904d461a6f6eba2ee21f12f89611" kindref="member">context</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><ref refid="group__DBusAuth_1gad0bf394093dd9ac43ebf71a5f35a4f3f" kindref="member">_dbus_auth_get_guid_from_server</ref>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga831cbd78b6c7f382840e4094f02efdb5" kindref="member">_dbus_auth_set_unix_fd_possible</ref>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth,<sp/><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/>b);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><sp/><sp/><ref refid="group__DBusAuth_1ga2d9119a45123f6b513a60391fb617d5c" kindref="member">_dbus_auth_get_unix_fd_negotiated</ref>(<ref refid="structDBusAuth" kindref="compound">DBusAuth</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auth);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_AUTH_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-auth.h"/>
+  </compounddef>
+</doxygen>

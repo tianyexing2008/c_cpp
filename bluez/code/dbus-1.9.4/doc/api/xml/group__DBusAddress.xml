@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusAddress" kind="group">
+    <compoundname>DBusAddress</compoundname>
+    <title>Address parsing</title>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusAddress_1ga6875129b8255f5d177335d117e30effd" prot="public" static="no">
+        <type>struct <ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref></type>
+        <definition>typedef struct DBusAddressEntry DBusAddressEntry</definition>
+        <argsstring></argsstring>
+        <name>DBusAddressEntry</name>
+        <briefdescription>
+<para>Opaque type representing one of the semicolon-separated items in an address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.h" line="48" column="1" bodyfile="dbus/dbus-address.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusAddress_1ga37a7009b07cf991ff07f3e86d71bf352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_address_entries_free</definition>
+        <argsstring>(DBusAddressEntry **entries)</argsstring>
+        <name>dbus_address_entries_free</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> **</type>
+          <declname>entries</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>-terminated array of address entries. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entries</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="189" column="1" bodyfile="dbus/dbus-address.c" bodystart="189" bodyend="196"/>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="structDBusAddressEntry_1a2d88ca4208738ec7024655013373505f" compoundref="dbus-address_8c" startline="45">DBusAddressEntry::method</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1gae92249a559a28d8c7a25504cad16e583" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+        <definition>static DBusAddressEntry* create_entry</definition>
+        <argsstring>(void)</argsstring>
+        <name>create_entry</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="199" column="1" bodyfile="dbus/dbus-address.c" bodystart="199" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1ga7e6b2572d6e637826acada01377b5487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>DBUS_EXPORT const char * dbus_address_entry_get_method</definition>
+        <argsstring>(DBusAddressEntry *entry)</argsstring>
+        <name>dbus_address_entry_get_method</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+<para>Returns the method string of an address entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>For example, given the address entry &quot;tcp:host=example.com&quot; it would return the string &quot;tcp&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the entry. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a string describing the method. This string must not be freed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="227" column="1" bodyfile="dbus/dbus-address.c" bodystart="227" bodyend="230"/>
+        <references refid="structDBusAddressEntry_1a2d88ca4208738ec7024655013373505f" compoundref="dbus-address_8c" startline="45">DBusAddressEntry::method</references>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" compoundref="dbus-server-socket_8c" startline="529" endline="570">_dbus_server_listen_socket</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga1bb28d9c6b0aa2b7efdf63f97116bb85" compoundref="dbus-transport-socket_8c" startline="1427" endline="1476">_dbus_transport_open_socket</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>DBUS_EXPORT const char * dbus_address_entry_get_value</definition>
+        <argsstring>(DBusAddressEntry *entry, const char *key)</argsstring>
+        <name>dbus_address_entry_get_value</name>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Returns a value from a key of an entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>For example, given the address &quot;tcp:host=example.com,port=8073&quot; if you asked for the key &quot;host&quot; you would get the value &quot;example.com&quot;</para><para>The returned value is already unescaped.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the entry. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the key value. This string must not be freed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="244" column="1" bodyfile="dbus/dbus-address.c" bodystart="244" bodyend="264"/>
+        <references refid="group__DBusAddressInternals_1ga0e46a8bc37d92810fe3d535019d3bad1" compoundref="dbus-address_8c" startline="84">_DBUS_ADDRESS_OPTIONALLY_ESCAPED_BYTE</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</references>
+        <references refid="group__DBusString_1ga84f39f1bf398697920637d2982248c72" compoundref="dbus-string_8c" startline="2151" endline="2177">_dbus_string_equal_c_str</references>
+        <references refid="group__DBusString_1ga0a8c20d855f9ddc05718b9e2ac0e33d8" compoundref="dbus-string_8c" startline="2308" endline="2433">_dbus_string_hex_decode</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusAddressEntry_1a62999fb785b591efa6356b7d97729846" compoundref="dbus-address_8c" startline="47">DBusAddressEntry::keys</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusAddressEntry_1a504d8c6e3d3b6f94a9be32a1d6ab54e8" compoundref="dbus-address_8c" startline="48">DBusAddressEntry::values</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga90a89943c15760592e5ddce31bf0e021" compoundref="dbus-server-socket_8c" startline="529" endline="570">_dbus_server_listen_socket</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga1bb28d9c6b0aa2b7efdf63f97116bb85" compoundref="dbus-transport-socket_8c" startline="1427" endline="1476">_dbus_transport_open_socket</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1gaa1eeb666c030d0ef56aaedf5ee9f0cba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t append_unescaped_value</definition>
+        <argsstring>(DBusString *unescaped, const DBusString *escaped, int escaped_start, int escaped_len, DBusError *error)</argsstring>
+        <name>append_unescaped_value</name>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>unescaped</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>escaped</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>escaped_start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>escaped_len</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="267" column="1" bodyfile="dbus/dbus-address.c" bodystart="267" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_parse_address</definition>
+        <argsstring>(const char *address, DBusAddressEntry ***entry, int *array_len, DBusError *error)</argsstring>
+        <name>dbus_parse_address</name>
+        <param>
+          <type>const char *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusAddressEntry" kindref="compound">DBusAddressEntry</ref> ***</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>array_len</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Parses an address string of the form: </para>        </briefdescription>
+        <detaileddescription>
+<para>method:key=value,key=value;method:key=value</para><para>See the D-Bus specification for complete docs on the format.</para><para>When connecting to an address, the first address entries in the semicolon-separated list should be tried first.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location to an array of entries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return location for array length. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where an error can be returned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success, <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="363" column="1" bodyfile="dbus/dbus-address.c" bodystart="363" bodyend="573"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="270" endline="280">_dbus_list_append</references>
+        <references refid="group__DBusList_1gaa36d13444a050a923941c53650b72f9d" compoundref="dbus-list_8c" startline="542" endline="557">_dbus_list_clear</references>
+        <references refid="group__DBusList_1ga1e26ce4fb4acb50593bd5ed2f4eeb3ae" compoundref="dbus-list_8c" startline="567" endline="570">_dbus_list_get_first_link</references>
+        <references refid="group__DBusList_1gaa2144a5489bb35b16b2b671488ad597c" compoundref="dbus-list_8c" startline="730" endline="746">_dbus_list_get_length</references>
+        <references refid="group__DBusList_1gaede4ace46d5ee497d75074bfec4490a2" compoundref="dbus-list_8h" startline="90">_dbus_list_get_next_link</references>
+        <references refid="group__DBusString_1gaf5f13bc7ac7a623516930d26ae2589bf" compoundref="dbus-string_8c" startline="1374" endline="1388">_dbus_string_copy_len</references>
+        <references refid="group__DBusString_1ga5fe47873b2838339107c3e1f03d1a703" compoundref="dbus-string_8c" startline="1603" endline="1611">_dbus_string_find</references>
+        <references refid="group__DBusString_1gaf2281731c3119f946726680242a5ae02" compoundref="dbus-string_8c" startline="1696" endline="1751">_dbus_string_find_to</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" compoundref="dbus-list_8h" startline="38">DBusList::data</references>
+        <references refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" compoundref="dbus-protocol_8h" startline="367">DBUS_ERROR_BAD_ADDRESS</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" compoundref="dbus-protocol_8h" startline="357">DBUS_ERROR_NO_MEMORY</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMemory_1ga54ccb556e7964112a825a7f46c156ca0" compoundref="dbus-memory_8h" startline="58">dbus_new</references>
+        <references refid="group__DBusMemory_1gaba9d823abda7f4cadbaf5177d3b8b793" compoundref="dbus-memory_8h" startline="59">dbus_new0</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusAddressEntry_1a62999fb785b591efa6356b7d97729846" compoundref="dbus-address_8c" startline="47">DBusAddressEntry::keys</references>
+        <references refid="structDBusAddressEntry_1a2d88ca4208738ec7024655013373505f" compoundref="dbus-address_8c" startline="45">DBusAddressEntry::method</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <references refid="structDBusAddressEntry_1a504d8c6e3d3b6f94a9be32a1d6ab54e8" compoundref="dbus-address_8c" startline="48">DBusAddressEntry::values</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1ga818e79423595cd2a306ec1b4dc1ab7f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_address_escape_value</definition>
+        <argsstring>(const char *value)</argsstring>
+        <name>dbus_address_escape_value</name>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Escapes the given string as a value in a key=value pair for a D-Bus address. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the unescaped value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>newly-allocated escaped value or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="583" column="1" bodyfile="dbus/dbus-address.c" bodystart="583" bodyend="605"/>
+        <references refid="group__DBusAddressInternals_1ga1ecc2f460303cd70c34e7667e8b12b37" compoundref="dbus-address_8c" startline="104" endline="141">_dbus_address_append_escaped</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_address_unescape_value</definition>
+        <argsstring>(const char *value, DBusError *error)</argsstring>
+        <name>dbus_address_unescape_value</name>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Unescapes the given string as a value in a key=value pair for a D-Bus address. </para>        </briefdescription>
+        <detaileddescription>
+<para>Note that <ref refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" kindref="member">dbus_address_entry_get_value()</ref> returns an already-unescaped value.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the escaped value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error to set if the unescaping fails </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>newly-allocated unescaped value or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-address.c" line="617" column="1" bodyfile="dbus/dbus-address.c" bodystart="617" bodyend="647"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1gac153abad46f4eb80999a2b340d29d1f0" compoundref="dbus-internals_8h" startline="174">_DBUS_N_ELEMENTS</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusAddress_1ga37a7009b07cf991ff07f3e86d71bf352" compoundref="dbus-address_8c" startline="189" endline="196">dbus_address_entries_free</references>
+        <references refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</references>
+        <references refid="group__DBusAddress_1ga818e79423595cd2a306ec1b4dc1ab7f5" compoundref="dbus-address_8c" startline="583" endline="605">dbus_address_escape_value</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" compoundref="dbus-errors_8c" startline="329" endline="335">dbus_error_is_set</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parsing addresses of D-Bus servers. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

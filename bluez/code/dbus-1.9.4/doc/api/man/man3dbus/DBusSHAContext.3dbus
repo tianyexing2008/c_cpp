@@ -1,0 +1,40 @@
+.TH "DBusSHAContext" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusSHAContext \- Struct storing state of the SHA algorithm\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-sha\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBdigest\fP [5]"
+.br
+.RI "\fIMessage digest\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBcount_lo\fP"
+.br
+.RI "\fI64-bit bit count \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBcount_hi\fP"
+.br
+.RI "\fINo clue\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBdata\fP [16]"
+.br
+.RI "\fISHA data buffer\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Struct storing state of the SHA algorithm\&. 
+.PP
+Definition at line 37 of file dbus\-sha\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

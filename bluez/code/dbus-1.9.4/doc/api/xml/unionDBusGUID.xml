@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="unionDBusGUID" kind="union" language="C++" prot="public">
+    <compoundname>DBusGUID</compoundname>
+    <includes refid="dbus-internals_8h" local="no">dbus-internals.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionDBusGUID_1a3db114d87644fab561564504a8653e72" prot="public" static="no" mutable="no">
+        <type><ref refid="group__DBusTypes_1gaf513803b030613a669cc7ef199f90a8b" kindref="member">dbus_uint32_t</ref></type>
+        <definition>dbus_uint32_t DBusGUID::as_uint32s[DBUS_UUID_LENGTH_WORDS]</definition>
+        <argsstring>[DBUS_UUID_LENGTH_WORDS]</argsstring>
+        <name>as_uint32s</name>
+        <briefdescription>
+<para>guid as four uint32 values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-internals.h" line="352" column="1" bodyfile="dbus/dbus-internals.h" bodystart="352" bodyend="-1"/>
+        <referencedby refid="group__DBusInternalsUtils_1ga08c2922335845e5c857e88399436b9ba" compoundref="dbus-internals_8c" startline="641" endline="653">_dbus_generate_uuid</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-win_8c" startline="2670" endline="2739">_dbus_read_local_machine_uuid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="unionDBusGUID_1af45818fb0ae65fdece11aba936af7f09" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DBusGUID::as_bytes[DBUS_UUID_LENGTH_BYTES]</definition>
+        <argsstring>[DBUS_UUID_LENGTH_BYTES]</argsstring>
+        <name>as_bytes</name>
+        <briefdescription>
+<para>guid as 16 single-byte values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-internals.h" line="353" column="1" bodyfile="dbus/dbus-internals.h" bodystart="353" bodyend="-1"/>
+        <referencedby refid="group__DBusInternalsUtils_1ga08c2922335845e5c857e88399436b9ba" compoundref="dbus-internals_8c" startline="641" endline="653">_dbus_generate_uuid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf08364813376bd2d8f455d435d85323e" compoundref="dbus-internals_8c" startline="663" endline="669">_dbus_uuid_encode</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A globally unique ID ; we have one for each <ref refid="structDBusServer" kindref="compound">DBusServer</ref>, and also one for each machine with libdbus installed on it. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dbus/dbus-internals.h" line="351" column="1" bodyfile="dbus/dbus-internals.h" bodystart="350" bodyend="354"/>
+    <listofallmembers>
+      <member refid="unionDBusGUID_1af45818fb0ae65fdece11aba936af7f09" prot="public" virt="non-virtual"><scope>DBusGUID</scope><name>as_bytes</name></member>
+      <member refid="unionDBusGUID_1a3db114d87644fab561564504a8653e72" prot="public" virt="non-virtual"><scope>DBusGUID</scope><name>as_uint32s</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

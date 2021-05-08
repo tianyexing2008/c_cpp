@@ -1,0 +1,38 @@
+.TH "DBusAtomic" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusAtomic \- An atomic integer safe to increment or decrement from multiple threads\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-sysdeps\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "volatile \fBdbus_int32_t\fP \fBvalue\fP"
+.br
+.RI "\fIValue of the atomic integer\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An atomic integer safe to increment or decrement from multiple threads\&. 
+.PP
+Definition at line 227 of file dbus\-sysdeps\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "volatile \fBdbus_int32_t\fP DBusAtomic::value"
+
+.PP
+Value of the atomic integer\&. 
+.PP
+Definition at line 232 of file dbus\-sysdeps\&.h\&.
+.PP
+Referenced by _dbus_atomic_dec(), _dbus_atomic_get(), and _dbus_atomic_inc()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

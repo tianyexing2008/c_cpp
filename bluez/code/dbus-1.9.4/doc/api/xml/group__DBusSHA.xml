@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusSHA" kind="group">
+    <compoundname>DBusSHA</compoundname>
+    <title>SHA implementation</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSHA_1gae7c1a8ad734655b70e67e9a1498465f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_sha_init</definition>
+        <argsstring>(DBusSHAContext *context)</argsstring>
+        <name>_dbus_sha_init</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the SHA context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an uninitialized context, typically on the stack. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="420" column="1" bodyfile="dbus/dbus-sha.c" bodystart="420" bodyend="423"/>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHA_1gae9c5e5cd39e2dc151ef1c54819aef3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_sha_update</definition>
+        <argsstring>(DBusSHAContext *context, const DBusString *data)</argsstring>
+        <name>_dbus_sha_update</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Feeds more data into an existing shasum computation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SHA context </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the additional data to hash </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="432" column="1" bodyfile="dbus/dbus-sha.c" bodystart="432" bodyend="442"/>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHA_1gaf685311db11cc2e6b38fc62d171311e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_sha_final</definition>
+        <argsstring>(DBusSHAContext *context, DBusString *results)</argsstring>
+        <name>_dbus_sha_final</name>
+        <param>
+          <type><ref refid="structDBusSHAContext" kindref="compound">DBusSHAContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>SHA finalization. </para>        </briefdescription>
+        <detaileddescription>
+<para>Ends an SHA message-digest operation, writing the the message digest and zeroing the context. The results are returned as a raw 20-byte digest, not as the ascii-hex-digits string form of the digest.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SHA context </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to append the 20-byte SHA digest to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory to append the digest </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="456" column="1" bodyfile="dbus/dbus-sha.c" bodystart="456" bodyend="472"/>
+        <references refid="group__DBusString_1ga724656b7091b910965bd1af42d0b7bab" compoundref="dbus-string_8c" startline="1136" endline="1145">_dbus_string_append_len</references>
+        <references refid="group__DBusInternalsUtils_1gaec42589166158b1385d5f5439318cda2" compoundref="dbus-internals_8h" startline="179">_DBUS_ZERO</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_sha_compute</definition>
+        <argsstring>(const DBusString *data, DBusString *ascii_output)</argsstring>
+        <name>_dbus_sha_compute</name>
+        <param>
+          <type>const <ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusString" kindref="compound">DBusString</ref> *</type>
+          <declname>ascii_output</declname>
+        </param>
+        <briefdescription>
+<para>Computes the ASCII hex-encoded shasum of the given data and appends it to the output string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input data to be hashed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ascii_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to append ASCII shasum to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if not enough memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-sha.c" line="483" column="1" bodyfile="dbus/dbus-sha.c" bodystart="483" bodyend="510"/>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusSysdeps_1gae3a3fdc0c6001e367584bb016aca495d" compoundref="dbus-sysdeps-unix_8c" startline="2825" endline="2852">_dbus_concat_dir_and_file</references>
+        <references refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" compoundref="dbus-file-unix_8c" startline="55" endline="151">_dbus_file_get_contents</references>
+        <references refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</references>
+        <references refid="group__DBusSHA_1gaf685311db11cc2e6b38fc62d171311e4" compoundref="dbus-sha_8c" startline="456" endline="472">_dbus_sha_final</references>
+        <references refid="group__DBusSHA_1gae7c1a8ad734655b70e67e9a1498465f7" compoundref="dbus-sha_8c" startline="420" endline="423">_dbus_sha_init</references>
+        <references refid="group__DBusSHA_1gae9c5e5cd39e2dc151ef1c54819aef3b6" compoundref="dbus-sha_8c" startline="432" endline="442">_dbus_sha_update</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1gaa6ecf36e70263659f921a4ef0335db12" compoundref="dbus-string_8c" startline="1156" endline="1167">_dbus_string_append_byte</references>
+        <references refid="group__DBusString_1ga7e0e164ad5bb094e5ccad9edc7ae4235" compoundref="dbus-string_8c" startline="1192" endline="1203">_dbus_string_delete</references>
+        <references refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" compoundref="dbus-string_8c" startline="2012" endline="2039">_dbus_string_equal</references>
+        <references refid="group__DBusString_1ga5fe47873b2838339107c3e1f03d1a703" compoundref="dbus-string_8c" startline="1603" endline="1611">_dbus_string_find</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1gaabb4873f436e015944a33cd1e3815cc9" compoundref="dbus-string_8c" startline="2258" endline="2295">_dbus_string_hex_encode</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusString_1ga6792a5c1725faa9d635d95f7a3b5bfae" compoundref="dbus-string_8c" startline="210" endline="234">_dbus_string_init_const_len</references>
+        <references refid="group__DBusString_1gad379fce8d4ef4f7e28f81f50b46ee4c9" compoundref="dbus-string_8c" startline="1258" endline="1269">_dbus_string_move</references>
+        <references refid="group__DBusString_1ga93e22894a5e2e0d65c179c7d36a8b1c8" compoundref="dbus-sysdeps_8c" startline="435" endline="459">_dbus_string_parse_int</references>
+        <references refid="group__DBusString_1ga8b7fc22e6738173e1b2cef4b91b9c3c1" compoundref="dbus-string_8c" startline="1908" endline="1943">_dbus_string_pop_line</references>
+        <references refid="group__DBusString_1ga08c423b93c28dd746dcb93e0461ab95c" compoundref="dbus-string_8c" startline="802" endline="809">_dbus_string_set_length</references>
+        <references refid="group__DBusString_1ga5698b163289be0066cf10c0f1caf877a" compoundref="dbus-string_8c" startline="1802" endline="1824">_dbus_string_skip_blank</references>
+        <references refid="group__DBusString_1ga4763d06a65cca36986bff030b404c90d" compoundref="dbus-string_8c" startline="2187" endline="2213">_dbus_string_starts_with_c_str</references>
+        <references refid="group__DBusInternalsUtils_1gabea2c16d6d3fe7c4eb5b9496fc877f84" compoundref="dbus-internals_8c" startline="230" endline="247">_dbus_warn</references>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" compoundref="dbus-errors_8h" startline="62">DBUS_ERROR_INIT</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-win_8c" startline="2670" endline="2739">_dbus_read_local_machine_uuid</referencedby>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SHA-1 hash. </para>    </briefdescription>
+    <detaileddescription>
+<para>Types and functions related to computing SHA-1 hash. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusErrorInternals" kind="group">
+    <compoundname>DBusErrorInternals</compoundname>
+    <title>Error reporting internals</title>
+    <innerclass refid="structDBusRealError" prot="public">DBusRealError</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusErrorInternals_1gaaf2f2b8a3ea393225441540870b9428e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_DBUS_STATIC_ASSERT</definition>
+        <argsstring>(sizeof(DBusRealError)==sizeof(DBusError))</argsstring>
+        <name>_DBUS_STATIC_ASSERT</name>
+        <param>
+          <type>sizeof(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref>)</type>
+          <defval>=sizeof(<ref refid="structDBusError" kindref="compound">DBusError</ref>)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrorInternals_1ga2f1312e91a88774f8a04c69eea708b65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>static const char* message_from_error</definition>
+        <argsstring>(const char *error)</argsstring>
+        <name>message_from_error</name>
+        <param>
+          <type>const char *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Returns a longer message describing an error name. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the error name is unknown, returns the name itself.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error to describe </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a constant string describing the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="92" column="1" bodyfile="dbus/dbus-errors.c" bodystart="92" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" prot="public" static="no">
+        <name>DBUS_ERROR_INIT</name>
+        <initializer>{ <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, 0, 0, 0, 0, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }</initializer>
+        <briefdescription>
+<para>Expands to a suitable initializer for a <ref refid="structDBusError" kindref="compound">DBusError</ref> on the stack. </para>        </briefdescription>
+        <detaileddescription>
+<para>Declaring a <ref refid="structDBusError" kindref="compound">DBusError</ref> with:</para><para><programlisting><codeline><highlight class="normal">DBusError<sp/>error<sp/>=<sp/>DBUS_ERROR_INIT;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">do_things_with<sp/>(&amp;error);</highlight></codeline>
+</programlisting></para><para>is a more concise form of:</para><para><programlisting><codeline><highlight class="normal">DBusError<sp/>error;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dbus_error_init<sp/>(&amp;error);</highlight></codeline>
+<codeline><highlight class="normal">do_things_with<sp/>(&amp;error);</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.h" line="62" column="9" bodyfile="dbus/dbus-errors.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" compoundref="dbus-spawn_8c" startline="324" endline="402">_dbus_babysitter_unref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="854" endline="889">_dbus_get_local_machine_uuid_encoded</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="806" endline="837">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn_8c" startline="1210" endline="1435">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5774" endline="5797">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5702" endline="5725">dbus_connection_register_object_path</referencedby>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Error reporting internals. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusBusInternals" kind="group">
+    <compoundname>DBusBusInternals</compoundname>
+    <title>Message bus APIs internals</title>
+    <innerclass refid="structBusData" prot="public">BusData</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusBusInternals_1ga9480a941ca9a4ed2ce2b15611d8759e9" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref></type>
+        <definition>dbus_int32_t bus_data_slot</definition>
+        <argsstring></argsstring>
+        <name>bus_data_slot</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>The slot we have reserved to store <ref refid="structBusData" kindref="compound">BusData</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="87" column="1" bodyfile="dbus/dbus-bus.c" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusBusInternals_1ga5dcc557ab4d7530bb00a8d6beba6f62d" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>DBusConnection* bus_connections[N_BUS_TYPES]</definition>
+        <argsstring>[N_BUS_TYPES]</argsstring>
+        <name>bus_connections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="92" column="1" bodyfile="dbus/dbus-bus.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusBusInternals_1ga150cd1a8abe69d3d5cef6b3fe6f5719b" prot="public" static="yes" mutable="no">
+        <type>char *</type>
+        <definition>char* bus_connection_addresses[N_BUS_TYPES]</definition>
+        <argsstring>[N_BUS_TYPES]</argsstring>
+        <name>bus_connection_addresses</name>
+        <initializer>= { <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="93" column="1" bodyfile="dbus/dbus-bus.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusBusInternals_1ga893e42cc39ee386af698effe6f32ce4a" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__DBusShared_1ga980320deb96476bee7555edcdebc3528" kindref="member">DBusBusType</ref></type>
+        <definition>DBusBusType activation_bus_type</definition>
+        <argsstring></argsstring>
+        <name>activation_bus_type</name>
+        <initializer>= <ref refid="group__DBusShared_1gga980320deb96476bee7555edcdebc3528a564d3ef2f14a3955e764614b95162ad5" kindref="member">DBUS_BUS_STARTER</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="95" column="1" bodyfile="dbus/dbus-bus.c" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__DBusBusInternals_1ga1b5d676973c317cea068472cc58cb00b" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <initializer>= <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="97" column="1" bodyfile="dbus/dbus-bus.c" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusBusInternals_1gae63adb62a9e26412b369fd53d33e72da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void addresses_shutdown_func</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>addresses_shutdown_func</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="100" column="1" bodyfile="dbus/dbus-bus.c" bodystart="100" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1gab3fd4eee196ad24b6656023d6c16b35e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t get_from_env</definition>
+        <argsstring>(char **connection_p, const char *env_var)</argsstring>
+        <name>get_from_env</name>
+        <param>
+          <type>char **</type>
+          <declname>connection_p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>env_var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="121" column="1" bodyfile="dbus/dbus-bus.c" bodystart="121" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1ga0f5638727cecb9115a6a0177a34a37c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t init_session_address</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_session_address</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="139" column="1" bodyfile="dbus/dbus-bus.c" bodystart="139" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1ga4d3ccf7eedaf68bb9fcecc0bdf30a443" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t init_connections_unlocked</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_connections_unlocked</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="196" column="1" bodyfile="dbus/dbus-bus.c" bodystart="196" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1gaa0101eec5a1e8e2a16f0cbf18dfe28f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bus_data_free</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>bus_data_free</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="308" column="1" bodyfile="dbus/dbus-bus.c" bodystart="308" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1gaef15e3999bb060586379d1e5df905f2f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structBusData" kindref="compound">BusData</ref> *</type>
+        <definition>static BusData* ensure_bus_data</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>ensure_bus_data</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="343" column="1" bodyfile="dbus/dbus-bus.c" bodystart="343" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_bus_notify_shared_connection_disconnected_unlocked</definition>
+        <argsstring>(DBusConnection *connection)</argsstring>
+        <name>_dbus_bus_notify_shared_connection_disconnected_unlocked</name>
+        <param>
+          <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+<para>Internal function that checks to see if this is a shared connection owned by the bus and if it is unref it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a connection that has been disconnected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="387" column="1" bodyfile="dbus/dbus-bus.c" bodystart="387" bodyend="413"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusConnectionInternals_1gadc46f7abfe925f9860fc8c64aeb29ad2" compoundref="dbus-connection_8c" startline="1948" endline="1955">_dbus_connection_close_possibly_shared</references>
+        <references refid="group__DBusInternalsUtils_1ga3b56fdb9df58277ee69d9f56a73bf383" compoundref="dbus-internals_8h" startline="329">_DBUS_LOCK</references>
+        <references refid="group__DBusInternalsUtils_1ga1b7db80a2ea11235768ec8aa698df0a5" compoundref="dbus-internals_8h" startline="330">_DBUS_UNLOCK</references>
+        <references refid="group__DBusBus_1ga0c21cf74d05c0bd8003846b56a588a4b" compoundref="dbus-bus_8c" startline="646" endline="728">dbus_bus_register</references>
+        <references refid="group__DBusShared_1gga980320deb96476bee7555edcdebc3528a564d3ef2f14a3955e764614b95162ad5" compoundref="dbus-shared_8h" startline="60">DBUS_BUS_STARTER</references>
+        <references refid="group__DBusConnection_1gacd32f819820266598c6b6847dfddaf9c" compoundref="dbus-connection_8c" startline="2616" endline="2629">dbus_connection_open</references>
+        <references refid="group__DBusConnection_1ga434e3fc7ee420fd30e2f05e57ff26b1d" compoundref="dbus-connection_8c" startline="2659" endline="2672">dbus_connection_open_private</references>
+        <references refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</references>
+        <references refid="group__DBusConnection_1ga19091beb74f1504b0e862a7ad10e71cd" compoundref="dbus-connection_8c" startline="3145" endline="3153">dbus_connection_set_exit_on_disconnect</references>
+        <references refid="group__DBusConnection_1ga6385ff09bc108238c4429e7c195dab25" compoundref="dbus-connection_8c" startline="2817" endline="2843">dbus_connection_unref</references>
+        <references refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" compoundref="dbus-protocol_8h" startline="355">DBUS_ERROR_FAILED</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="419">dbus_set_error</references>
+        <references refid="structBusData_1a0efe71943560d7c5f9eba63618852db2" compoundref="dbus-bus_8c" startline="82">BusData::is_well_known</references>
+        <references refid="group__DBusBusInternals_1ga2ae7ac6acf3f48e31fb3809cd038b598" compoundref="dbus-bus_8c" startline="90">N_BUS_TYPES</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusBusInternals_1ga8c1451988ab193fe2a8ab94730ce5038" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusConnection" kindref="compound">DBusConnection</ref> *</type>
+        <definition>static DBusConnection* internal_bus_get</definition>
+        <argsstring>(DBusBusType type, dbus_bool_t private, DBusError *error)</argsstring>
+        <name>internal_bus_get</name>
+        <param>
+          <type><ref refid="group__DBusShared_1ga980320deb96476bee7555edcdebc3528" kindref="member">DBusBusType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+          <declname>private</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="416" column="1" bodyfile="dbus/dbus-bus.c" bodystart="416" bodyend="522"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusBusInternals_1ga2ae7ac6acf3f48e31fb3809cd038b598" prot="public" static="no">
+        <name>N_BUS_TYPES</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>Number of bus types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-bus.c" line="90" column="9" bodyfile="dbus/dbus-bus.c" bodystart="90" bodyend="-1"/>
+        <referencedby refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" compoundref="dbus-bus_8c" startline="387" endline="413">_dbus_bus_notify_shared_connection_disconnected_unlocked</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of functions for communicating with the message bus. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

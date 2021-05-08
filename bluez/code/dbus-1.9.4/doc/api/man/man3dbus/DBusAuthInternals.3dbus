@@ -1,0 +1,218 @@
+.TH "DBusAuthInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusAuthInternals \- Authentication implementation details
+.PP
+\fBDBusAuth\fP implementation details\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusAuthMechanismHandler\fP"
+.br
+.RI "\fIVirtual table representing a particular auth mechanism\&. \fP"
+.ti -1c
+.RI "struct \fBDBusAuthStateData\fP"
+.br
+.RI "\fIInformation about a auth state\&. \fP"
+.ti -1c
+.RI "struct \fBDBusAuth\fP"
+.br
+.RI "\fIInternal members of \fBDBusAuth\fP\&. \fP"
+.ti -1c
+.RI "struct \fBDBusAuthClient\fP"
+.br
+.RI "\fI'Subclass' of \fBDBusAuth\fP for client side \fP"
+.ti -1c
+.RI "struct \fBDBusAuthServer\fP"
+.br
+.RI "\fI'Subclass' of \fBDBusAuth\fP for server side\&. \fP"
+.ti -1c
+.RI "struct \fBDBusAuthCommandName\fP"
+.br
+.RI "\fIMapping from command name to enum\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBUS_AUTH_IS_SERVER\fP(auth)   ((auth)\->side == auth_side_server)"
+.br
+.ti -1c
+.RI "#define \fBDBUS_AUTH_IS_CLIENT\fP(auth)   ((auth)\->side == auth_side_client)"
+.br
+.ti -1c
+.RI "#define \fBDBUS_AUTH_CLIENT\fP(auth)   ((\fBDBusAuthClient\fP*)(auth))"
+.br
+.ti -1c
+.RI "#define \fBDBUS_AUTH_SERVER\fP(auth)   ((\fBDBusAuthServer\fP*)(auth))"
+.br
+.ti -1c
+.RI "#define \fBDBUS_AUTH_NAME\fP(auth)   ((auth)\->side)"
+.br
+.RI "\fIThe name of the auth ('client' or 'server') \fP"
+.ti -1c
+.RI "#define \fBN_CHALLENGE_BYTES\fP   (128/8)"
+.br
+.RI "\fIhttp://www.ietf.org/rfc/rfc2831.txt suggests at least 64 bits of entropy, we use 128\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusInitialResponseFunction\fP) (\fBDBusAuth\fP *auth, \fBDBusString\fP *response)"
+.br
+.RI "\fIThis function appends an initial client response to the given string\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusAuthDataFunction\fP) (\fBDBusAuth\fP *auth, const \fBDBusString\fP *data)"
+.br
+.RI "\fIThis function processes a block of data received from the peer\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusAuthEncodeFunction\fP) (\fBDBusAuth\fP *auth, const \fBDBusString\fP *data, \fBDBusString\fP *encoded)"
+.br
+.RI "\fIThis function encodes a block of data from the peer\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusAuthDecodeFunction\fP) (\fBDBusAuth\fP *auth, const \fBDBusString\fP *data, \fBDBusString\fP *decoded)"
+.br
+.RI "\fIThis function decodes a block of data from the peer\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBDBusAuthShutdownFunction\fP) (\fBDBusAuth\fP *auth)"
+.br
+.RI "\fIThis function is called when the mechanism is abandoned\&. \fP"
+.ti -1c
+.RI "typedef \fBdbus_bool_t\fP(* \fBDBusAuthStateFunction\fP) (\fBDBusAuth\fP *auth, \fBDBusAuthCommand\fP command, const \fBDBusString\fP *args)"
+.br
+.RI "\fIAuth state function, determines the reaction to incoming events for a particular state\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDBusAuthCommand\fP { \fBDBUS_AUTH_COMMAND_AUTH\fP, \fBDBUS_AUTH_COMMAND_CANCEL\fP, \fBDBUS_AUTH_COMMAND_DATA\fP, \fBDBUS_AUTH_COMMAND_BEGIN\fP, \fBDBUS_AUTH_COMMAND_REJECTED\fP, \fBDBUS_AUTH_COMMAND_OK\fP, \fBDBUS_AUTH_COMMAND_ERROR\fP, \fBDBUS_AUTH_COMMAND_UNKNOWN\fP, \fBDBUS_AUTH_COMMAND_NEGOTIATE_UNIX_FD\fP, \fBDBUS_AUTH_COMMAND_AGREE_UNIX_FD\fP }
+.RI "\fIEnumeration for the known authentication commands\&. \fP""
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDBusAuth\fP implementation details\&. 
+
+Private details of authentication code\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DBUS_AUTH_CLIENT(auth)   ((\fBDBusAuthClient\fP*)(auth))"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIauth\fP the auth conversation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+auth cast to \fBDBusAuthClient\fP 
+.RE
+.PP
+
+.PP
+Definition at line 323 of file dbus\-auth\&.c\&.
+.PP
+Referenced by _dbus_auth_client_new(), _dbus_auth_get_guid_from_server(), and _dbus_auth_unref()\&.
+.SS "#define DBUS_AUTH_IS_CLIENT(auth)   ((auth)\->side == auth_side_client)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIauth\fP the auth conversation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the conversation is the client side 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file dbus\-auth\&.c\&.
+.PP
+Referenced by _dbus_auth_decode_data(), _dbus_auth_encode_data(), _dbus_auth_get_guid_from_server(), _dbus_auth_needs_decoding(), _dbus_auth_needs_encoding(), and _dbus_auth_unref()\&.
+.SS "#define DBUS_AUTH_IS_SERVER(auth)   ((auth)\->side == auth_side_server)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIauth\fP the auth conversation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the conversation is the server side 
+.RE
+.PP
+
+.PP
+Definition at line 313 of file dbus\-auth\&.c\&.
+.PP
+Referenced by _dbus_auth_unref()\&.
+.SS "#define DBUS_AUTH_NAME(auth)   ((auth)\->side)"
+
+.PP
+The name of the auth ('client' or 'server') 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIauth\fP the auth conversation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a string 
+.RE
+.PP
+
+.PP
+Definition at line 335 of file dbus\-auth\&.c\&.
+.PP
+Referenced by _dbus_auth_bytes_sent(), and _dbus_auth_do_work()\&.
+.SS "#define DBUS_AUTH_SERVER(auth)   ((\fBDBusAuthServer\fP*)(auth))"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIauth\fP the auth conversation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+auth cast to \fBDBusAuthServer\fP 
+.RE
+.PP
+
+.PP
+Definition at line 328 of file dbus\-auth\&.c\&.
+.PP
+Referenced by _dbus_auth_server_new(), and _dbus_auth_unref()\&.
+.SS "#define N_CHALLENGE_BYTES   (128/8)"
+
+.PP
+http://www.ietf.org/rfc/rfc2831.txt suggests at least 64 bits of entropy, we use 128\&. This is the number of bytes in the random challenge\&. 
+.PP
+Definition at line 516 of file dbus\-auth\&.c\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBdbus_bool_t\fP(*  DBusAuthDataFunction) (\fBDBusAuth\fP *auth, const \fBDBusString\fP *data)"
+
+.PP
+This function processes a block of data received from the peer\&. i\&.e\&. handles a DATA command\&. 
+.PP
+Definition at line 77 of file dbus\-auth\&.c\&.
+.SS "typedef \fBdbus_bool_t\fP(*  DBusAuthStateFunction) (\fBDBusAuth\fP *auth, \fBDBusAuthCommand\fP command, const \fBDBusString\fP *args)"
+
+.PP
+Auth state function, determines the reaction to incoming events for a particular state\&. Returns whether we had enough memory to complete the operation\&. 
+.PP
+Definition at line 137 of file dbus\-auth\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

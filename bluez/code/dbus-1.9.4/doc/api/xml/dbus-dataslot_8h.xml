@@ -1,0 +1,918 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-dataslot_8h" kind="file" language="C++">
+    <compoundname>dbus-dataslot.h</compoundname>
+    <includes refid="dbus-internals_8h" local="no">dbus/dbus-internals.h</includes>
+    <includedby refid="dbus-connection-internal_8h" local="no">dbus-connection-internal.h</includedby>
+    <includedby refid="dbus-message-private_8h" local="no">dbus-message-private.h</includedby>
+    <includedby refid="dbus-connection_8c" local="yes">dbus-connection.c</includedby>
+    <includedby refid="dbus-dataslot_8c" local="yes">dbus-dataslot.c</includedby>
+    <includedby refid="dbus-server-protected_8h" local="no">dbus-server-protected.h</includedby>
+    <incdepgraph>
+      <node id="648">
+        <label>stdarg.h</label>
+      </node>
+      <node id="641">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="636">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="644">
+        <label>stdint.h</label>
+      </node>
+      <node id="650">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="642">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="644" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="647" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+        <childnode refid="650" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>dbus/dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="651" relation="include">
+        </childnode>
+      </node>
+      <node id="637">
+        <label>stddef.h</label>
+      </node>
+      <node id="647">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+      </node>
+      <node id="639">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="649">
+        <label>string.h</label>
+      </node>
+      <node id="652">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+      </node>
+      <node id="633">
+        <label>dbus-dataslot.h</label>
+        <link refid="dbus-dataslot.h"/>
+        <childnode refid="634" relation="include">
+        </childnode>
+      </node>
+      <node id="651">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
+        </childnode>
+      </node>
+      <node id="643">
+        <label>config.h</label>
+      </node>
+      <node id="646">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="647" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+      </node>
+      <node id="640">
+        <label>dbus/dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+      </node>
+      <node id="638">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+      </node>
+      <node id="645">
+        <label>inttypes.h</label>
+      </node>
+      <node id="635">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="637" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="667">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="654">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal_8h_source"/>
+        <childnode refid="655" relation="include">
+        </childnode>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="660" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="662" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
+        </childnode>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+      </node>
+      <node id="675">
+        <label>dbus-server-win.c</label>
+        <link refid="dbus-server-win_8c_source"/>
+      </node>
+      <node id="678">
+        <label>dbus-server-win.h</label>
+        <link refid="dbus-server-win_8h_source"/>
+        <childnode refid="675" relation="include">
+        </childnode>
+      </node>
+      <node id="656">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="673">
+        <label>dbus-server-launchd.c</label>
+        <link refid="dbus-server-launchd_8c_source"/>
+      </node>
+      <node id="672">
+        <label>dbus-server-launchd.h</label>
+        <link refid="dbus-server-launchd_8h_source"/>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+      </node>
+      <node id="661">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="677">
+        <label>dbus-server-unix.h</label>
+        <link refid="dbus-server-unix_8h_source"/>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+      </node>
+      <node id="664">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="676">
+        <label>dbus-server.c</label>
+        <link refid="dbus-server_8c_source"/>
+      </node>
+      <node id="655">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="657">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="660">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="674">
+        <label>dbus-server-socket.h</label>
+        <link refid="dbus-server-socket_8h_source"/>
+        <childnode refid="660" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="665">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="669">
+        <label>dbus-dataslot.c</label>
+        <link refid="dbus-dataslot_8c_source"/>
+      </node>
+      <node id="653">
+        <label>dbus-dataslot.h</label>
+        <link refid="dbus-dataslot.h"/>
+        <childnode refid="654" relation="include">
+        </childnode>
+        <childnode refid="666" relation="include">
+        </childnode>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+      </node>
+      <node id="670">
+        <label>dbus-server-protected.h</label>
+        <link refid="dbus-server-protected_8h_source"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+      </node>
+      <node id="663">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="658">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="662">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="659">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="671">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="659" relation="include">
+        </childnode>
+      </node>
+      <node id="666">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="668" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusDataSlot" prot="public">DBusDataSlot</innerclass>
+    <innerclass refid="structDBusAllocatedSlot" prot="public">DBusAllocatedSlot</innerclass>
+    <innerclass refid="structDBusDataSlotAllocator" prot="public">DBusDataSlotAllocator</innerclass>
+    <innerclass refid="structDBusDataSlotList" prot="public">DBusDataSlotList</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dbus-dataslot_8h_1a0fc33b473d97e352af5d72d4fe50832f" prot="public" static="no">
+        <name>_DBUS_DATA_SLOT_ALLOCATOR_INIT</name>
+        <param><defname>x</defname></param>
+        <initializer>{ <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, 0, 0, x }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="63" column="9" bodyfile="dbus/dbus-dataslot.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dbus-dataslot_8h_1aa2f69cc3434e7db5459de0b33be27617" prot="public" static="no">
+        <type>struct <ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref></type>
+        <definition>typedef struct DBusDataSlotAllocator DBusDataSlotAllocator</definition>
+        <argsstring></argsstring>
+        <name>DBusDataSlotAllocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="340" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-dataslot_8h_1a35d63574f8c37c9fe73cb743dce5c27b" prot="public" static="no">
+        <type>struct <ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref></type>
+        <definition>typedef struct DBusDataSlotList DBusDataSlotList</definition>
+        <argsstring></argsstring>
+        <name>DBusDataSlotList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="340" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-dataslot_8h_1a4ecbfd4605d0cc624655d68277dda1cb" prot="public" static="no">
+        <type>struct <ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref></type>
+        <definition>typedef struct DBusDataSlot DBusDataSlot</definition>
+        <argsstring></argsstring>
+        <name>DBusDataSlot</name>
+        <briefdescription>
+<para>Opaque typedef for <ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="340" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dbus-dataslot_8h_1ad7932253fccb04fad4b0dc159000b541" prot="public" static="no">
+        <type>struct <ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref></type>
+        <definition>typedef struct DBusAllocatedSlot DBusAllocatedSlot</definition>
+        <argsstring></argsstring>
+        <name>DBusAllocatedSlot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="340" column="1" bodyfile="dbus/dbus-dataslot.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_data_slot_allocator_init</definition>
+        <argsstring>(DBusDataSlotAllocator *allocator, DBusGlobalLock lock)</argsstring>
+        <name>_dbus_data_slot_allocator_init</name>
+        <param>
+          <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref> *</type>
+          <declname>allocator</declname>
+        </param>
+        <param>
+          <type>DBusGlobalLock</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a data slot allocator object, used to assign integer IDs for data slots. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>allocator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the allocator to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="75" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="46" bodyend="55"/>
+        <references refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" compoundref="dbus-dataslot_8h" startline="57">DBusDataSlotAllocator::allocated_slots</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" compoundref="dbus-dataslot_8h" startline="58">DBusDataSlotAllocator::n_allocated_slots</references>
+        <references refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" compoundref="dbus-dataslot_8h" startline="59">DBusDataSlotAllocator::n_used_slots</references>
+        <references refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" compoundref="dbus-dataslot_8h" startline="60">DBusDataSlotAllocator::lock</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_data_slot_allocator_alloc</definition>
+        <argsstring>(DBusDataSlotAllocator *allocator, int *slot_id_p)</argsstring>
+        <name>_dbus_data_slot_allocator_alloc</name>
+        <param>
+          <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref> *</type>
+          <declname>allocator</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>slot_id_p</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an integer ID to be used for storing data in a <ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the value at *slot_id_p is not -1, this function just increments the refcount for the existing slot ID. If the value is -1, a new slot ID is allocated and stored at *slot_id_p.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>allocator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the allocator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot_id_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address to fill with the slot ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="77" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="69" bodyend="140"/>
+        <references refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" compoundref="dbus-dataslot_8h" startline="60">DBusDataSlotAllocator::lock</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" compoundref="dbus-dataslot_8h" startline="57">DBusDataSlotAllocator::allocated_slots</references>
+        <references refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" compoundref="dbus-dataslot_8h" startline="48">DBusAllocatedSlot::slot_id</references>
+        <references refid="structDBusAllocatedSlot_1a554eaffc3334a90a86f618eaa713410c" compoundref="dbus-dataslot_8h" startline="49">DBusAllocatedSlot::refcount</references>
+        <references refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" compoundref="dbus-dataslot_8h" startline="59">DBusDataSlotAllocator::n_used_slots</references>
+        <references refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" compoundref="dbus-dataslot_8h" startline="58">DBusDataSlotAllocator::n_allocated_slots</references>
+        <references refid="group__DBusMemory_1ga2d505f2960ccf343042d363170b27f9c" compoundref="dbus-memory_8c" startline="601" endline="692">dbus_realloc</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnection_1ga728b15c71a492ad244e5a480f1156088" compoundref="dbus-connection_8c" startline="5920" endline="5924">dbus_connection_allocate_data_slot</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1gafdde8db1152649d37c9f7e316ca59e56" compoundref="dbus-message_8c" startline="4560" endline="4564">dbus_message_allocate_data_slot</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga95614dad0ada70e3a20d9878339e3109" compoundref="dbus-pending-call_8c" startline="759" endline="765">dbus_pending_call_allocate_data_slot</referencedby>
+        <referencedby refid="group__DBusServer_1ga05d280cd92ea5bb0d49bbe5b1fb1d5c2" compoundref="dbus-server_8c" startline="1077" endline="1081">dbus_server_allocate_data_slot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_data_slot_allocator_free</definition>
+        <argsstring>(DBusDataSlotAllocator *allocator, int *slot_id_p)</argsstring>
+        <name>_dbus_data_slot_allocator_free</name>
+        <param>
+          <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref> *</type>
+          <declname>allocator</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>slot_id_p</declname>
+        </param>
+        <briefdescription>
+<para>Deallocates an ID previously allocated with <ref refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" kindref="member">_dbus_data_slot_allocator_alloc()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Existing data stored on existing <ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> objects with this ID will be freed when the data list is finalized, but may not be retrieved (and may only be replaced if someone else reallocates the slot). The slot value is reset to -1 if this is the last unref.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>allocator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the allocator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot_id_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address where we store the slot </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="79" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="154" bodyend="190"/>
+        <references refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" compoundref="dbus-dataslot_8h" startline="60">DBusDataSlotAllocator::lock</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" compoundref="dbus-dataslot_8h" startline="57">DBusDataSlotAllocator::allocated_slots</references>
+        <references refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" compoundref="dbus-dataslot_8h" startline="48">DBusAllocatedSlot::slot_id</references>
+        <references refid="structDBusAllocatedSlot_1a554eaffc3334a90a86f618eaa713410c" compoundref="dbus-dataslot_8h" startline="49">DBusAllocatedSlot::refcount</references>
+        <references refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" compoundref="dbus-dataslot_8h" startline="58">DBusDataSlotAllocator::n_allocated_slots</references>
+        <references refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" compoundref="dbus-dataslot_8h" startline="59">DBusDataSlotAllocator::n_used_slots</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnection_1ga7dc8c73d8c3e733f5410d52be84239a0" compoundref="dbus-connection_8c" startline="5938" endline="5943">dbus_connection_free_data_slot</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1ga23227ce2bd5c52d05581d3fe1232ae66" compoundref="dbus-message_8c" startline="4578" endline="4583">dbus_message_free_data_slot</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga1eb6f342bba71b01266629f80be84617" compoundref="dbus-pending-call_8c" startline="779" endline="785">dbus_pending_call_free_data_slot</referencedby>
+        <referencedby refid="group__DBusServer_1gac6ebc6105e32ab38ef0ac60dec6d5bc8" compoundref="dbus-server_8c" startline="1095" endline="1100">dbus_server_free_data_slot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1ga6de49b3a1210202215d40a5a19806992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_data_slot_list_init</definition>
+        <argsstring>(DBusDataSlotList *list)</argsstring>
+        <name>_dbus_data_slot_list_init</name>
+        <param>
+          <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a slot list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to initialize. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="81" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="197" bodyend="201"/>
+        <references refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" compoundref="dbus-dataslot_8h" startline="71">DBusDataSlotList::slots</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" compoundref="dbus-dataslot_8h" startline="72">DBusDataSlotList::n_slots</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga3f2300d7a768783bc2fae0991bcc55df" compoundref="dbus-pending-call_8c" startline="109" endline="161">_dbus_pending_call_new_unlocked</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_data_slot_list_set</definition>
+        <argsstring>(DBusDataSlotAllocator *allocator, DBusDataSlotList *list, int slot, void *data, DBusFreeFunction free_data_func, DBusFreeFunction *old_free_func, void **old_data)</argsstring>
+        <name>_dbus_data_slot_list_set</name>
+        <param>
+          <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref> *</type>
+          <declname>allocator</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref></type>
+          <declname>free_data_func</declname>
+        </param>
+        <param>
+          <type><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref> *</type>
+          <declname>old_free_func</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>old_data</declname>
+        </param>
+        <briefdescription>
+<para>Stores a pointer in the data slot list, along with an optional function to be used for freeing the data when the data is set again, or when the slot list is finalized. </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot number must have been allocated with <ref refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" kindref="member">_dbus_data_slot_allocator_alloc()</ref> for the same allocator passed in here. The same allocator has to be used with the slot list every time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>allocator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the allocator to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data slot list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to store </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_data_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>finalizer function for the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>old_free_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>free function for any previously-existing data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>old_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>previously-existing data, should be freed with old_free_func </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if there was enough memory to store the data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="82" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="221" bodyend="273"/>
+        <references refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" compoundref="dbus-dataslot_8h" startline="60">DBusDataSlotAllocator::lock</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" compoundref="dbus-dataslot_8h" startline="57">DBusDataSlotAllocator::allocated_slots</references>
+        <references refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" compoundref="dbus-dataslot_8h" startline="48">DBusAllocatedSlot::slot_id</references>
+        <references refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" compoundref="dbus-dataslot_8h" startline="72">DBusDataSlotList::n_slots</references>
+        <references refid="group__DBusMemory_1ga2d505f2960ccf343042d363170b27f9c" compoundref="dbus-memory_8c" startline="601" endline="692">dbus_realloc</references>
+        <references refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" compoundref="dbus-dataslot_8h" startline="71">DBusDataSlotList::slots</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" compoundref="dbus-dataslot_8h" startline="38">DBusDataSlot::data</references>
+        <references refid="structDBusDataSlot_1ab899f58869942556fb1b381ca3f3e2b2" compoundref="dbus-dataslot_8h" startline="39">DBusDataSlot::free_data_func</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1ga845b4942399f43dd4ac644de7cb9e3ff" compoundref="dbus-connection_8c" startline="5968" endline="5997">dbus_connection_set_data</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1ga29331c4e9c2d53cbe60382056f6495a1" compoundref="dbus-message_8c" startline="4599" endline="4624">dbus_message_set_data</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga7d4196ca35b8df842c05a02dbb71c269" compoundref="dbus-pending-call_8c" startline="502" endline="528">_dbus_pending_call_set_data_unlocked</referencedby>
+        <referencedby refid="group__DBusServer_1gab9ecb216dc9c40b0c7d370673fb9b269" compoundref="dbus-server_8c" startline="1116" endline="1145">dbus_server_set_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* _dbus_data_slot_list_get</definition>
+        <argsstring>(DBusDataSlotAllocator *allocator, DBusDataSlotList *list, int slot)</argsstring>
+        <name>_dbus_data_slot_list_get</name>
+        <param>
+          <type><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref> *</type>
+          <declname>allocator</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves data previously set with _dbus_data_slot_list_set_data(). </para>        </briefdescription>
+        <detaileddescription>
+<para>The slot must still be allocated (must not have been freed).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>allocator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the allocator slot was allocated from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data slot list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the slot to get data from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the data, or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="89" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="285" bodyend="308"/>
+        <references refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" compoundref="dbus-dataslot_8h" startline="60">DBusDataSlotAllocator::lock</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" compoundref="dbus-dataslot_8h" startline="57">DBusDataSlotAllocator::allocated_slots</references>
+        <references refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" compoundref="dbus-dataslot_8h" startline="48">DBusAllocatedSlot::slot_id</references>
+        <references refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" compoundref="dbus-dataslot_8h" startline="72">DBusDataSlotList::n_slots</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" compoundref="dbus-dataslot_8h" startline="71">DBusDataSlotList::slots</references>
+        <references refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" compoundref="dbus-dataslot_8h" startline="38">DBusDataSlot::data</references>
+        <referencedby refid="group__DBusConnection_1ga433fae9844a66d9d078d238e6c723b95" compoundref="dbus-connection_8c" startline="6017" endline="6034">dbus_connection_get_data</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1gabbde522fe2321618ee39df1a028a2ec6" compoundref="dbus-message_8c" startline="4635" endline="4647">dbus_message_get_data</referencedby>
+        <referencedby refid="group__DBusPendingCall_1ga5749f73b7ec7a8fe4f2e6a839e292806" compoundref="dbus-pending-call_8c" startline="827" endline="841">dbus_pending_call_get_data</referencedby>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1ga3c96d2ca263ba397b4da2956a49ae282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_data_slot_list_clear</definition>
+        <argsstring>(DBusDataSlotList *list)</argsstring>
+        <name>_dbus_data_slot_list_clear</name>
+        <param>
+          <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Frees all data slots contained in the list, calling application-provided free functions if they exist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to clear </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="92" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="317" bodyend="330"/>
+        <references refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" compoundref="dbus-dataslot_8h" startline="71">DBusDataSlotList::slots</references>
+        <references refid="structDBusDataSlot_1ab899f58869942556fb1b381ca3f3e2b2" compoundref="dbus-dataslot_8h" startline="39">DBusDataSlot::free_data_func</references>
+        <references refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" compoundref="dbus-dataslot_8h" startline="38">DBusDataSlot::data</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_data_slot_list_free</definition>
+        <argsstring>(DBusDataSlotList *list)</argsstring>
+        <name>_dbus_data_slot_list_free</name>
+        <param>
+          <type><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Frees the data slot list and all data slots contained in it, calling application-provided free functions if they exist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to free </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-dataslot.h" line="93" column="1" bodyfile="dbus/dbus-dataslot.c" bodystart="340" bodyend="347"/>
+        <references refid="group__DBusDataSlot_1ga3c96d2ca263ba397b4da2956a49ae282" compoundref="dbus-dataslot_8c" startline="317" endline="330">_dbus_data_slot_list_clear</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" compoundref="dbus-dataslot_8h" startline="71">DBusDataSlotList::slots</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" compoundref="dbus-dataslot_8h" startline="72">DBusDataSlotList::n_slots</references>
+        <references refid="group__DBusInternalsUtils_1gabbd3526a2ecd65da80b9f74ac286273d" compoundref="dbus-internals_8h" startline="176">_DBUS_POINTER_TO_INT</references>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" compoundref="dbus-dataslot_8c" startline="46" endline="55">_dbus_data_slot_allocator_init</references>
+        <references refid="group__DBusInternalsUtils_1ga0c4961ec784874f1b1f3aeccea8d3da1" compoundref="dbus-internals_8h" startline="145">_dbus_assert_not_reached</references>
+        <references refid="group__DBusDataSlot_1ga6de49b3a1210202215d40a5a19806992" compoundref="dbus-dataslot_8c" startline="197" endline="201">_dbus_data_slot_list_init</references>
+        <references refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" compoundref="dbus-dataslot_8c" startline="69" endline="140">_dbus_data_slot_allocator_alloc</references>
+        <references refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" compoundref="dbus-dataslot_8c" startline="221" endline="273">_dbus_data_slot_list_set</references>
+        <references refid="group__DBusInternalsUtils_1ga05e902d8504a8a0e0b183fd2e20e329f" compoundref="dbus-internals_8h" startline="177">_DBUS_INT_TO_POINTER</references>
+        <references refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" compoundref="dbus-dataslot_8c" startline="285" endline="308">_dbus_data_slot_list_get</references>
+        <references refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</references>
+        <references refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" compoundref="dbus-dataslot_8c" startline="154" endline="190">_dbus_data_slot_allocator_free</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" compoundref="dbus-dataslot_8c" startline="340" endline="347">_dbus_data_slot_list_free</referencedby>
+        <referencedby refid="group__DBusMessage_1ga94c43b2b237d842a6b91da6f94818d47" compoundref="dbus-message_8c" startline="1163" endline="1176">dbus_message_get_reply_serial</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga9d8987da3747604d370ffec2c5e1e10a" compoundref="dbus-pending-call_8c" startline="394" endline="403">_dbus_pending_call_ref_unlocked</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-dataslot.h<sp/><sp/>storing<sp/>data<sp/>on<sp/>objects</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_DATASLOT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_DATASLOT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-internals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref><sp/><ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref>;</highlight></codeline>
+<codeline lineno="36" refid="structDBusDataSlot" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38" refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" kindref="member">data</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="structDBusDataSlot_1ab899f58869942556fb1b381ca3f3e2b2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><ref refid="structDBusDataSlot_1ab899f58869942556fb1b381ca3f3e2b2" kindref="member">free_data_func</ref>;<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref><sp/><ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structDBusAllocatedSlot" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48" refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__DBusTypes_1gab18afa60e9b17b6e322735bda3d863d8" kindref="member">dbus_int32_t</ref><sp/><ref refid="structDBusAllocatedSlot_1a849e5f8d951d159c45172ce825fb3a1e" kindref="member">slot_id</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="structDBusAllocatedSlot_1a554eaffc3334a90a86f618eaa713410c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusAllocatedSlot_1a554eaffc3334a90a86f618eaa713410c" kindref="member">refcount</ref>;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structDBusDataSlotAllocator" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57" refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusAllocatedSlot" kindref="compound">DBusAllocatedSlot</ref><sp/>*<ref refid="structDBusDataSlotAllocator_1a290fc1a48efc181da4e54dae572306b5" kindref="member">allocated_slots</ref>;<sp/></highlight></codeline>
+<codeline lineno="58" refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structDBusDataSlotAllocator_1a57702eaf2d6558cc15f12205aca90dda" kindref="member">n_allocated_slots</ref>;<sp/></highlight></codeline>
+<codeline lineno="59" refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structDBusDataSlotAllocator_1ad68b0989a821eb266983052f8a402a4a" kindref="member">n_used_slots</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" refkind="member"><highlight class="normal"><sp/><sp/>DBusGlobalLock<sp/><ref refid="structDBusDataSlotAllocator_1a5908a6f2e17e5feec5b77a2cfbc81dbd" kindref="member">lock</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_DBUS_DATA_SLOT_ALLOCATOR_INIT(x)<sp/>{<sp/>NULL,<sp/>0,<sp/>0,<sp/>x<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="structDBusDataSlotList" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71" refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDBusDataSlot" kindref="compound">DBusDataSlot</ref><sp/>*<ref refid="structDBusDataSlotList_1a4dd0fc6cc10b9c48dd53f34335abd08e" kindref="member">slots</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72" refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusDataSlotList_1a2d6cb7670a940bc886c99cb892b44502" kindref="member">n_slots</ref>;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusDataSlot_1ga49236838eb414100f691a22ad5210cb5" kindref="member">_dbus_data_slot_allocator_init</ref><sp/><sp/>(<ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><sp/>*allocator,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DBusGlobalLock<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lock);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusDataSlot_1gaf61f2bd0148bace4f67a2d6d97b26ea9" kindref="member">_dbus_data_slot_allocator_alloc</ref><sp/>(<ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><sp/>*allocator,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slot_id_p);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusDataSlot_1ga059c50a24cd9fc984e918e6159841633" kindref="member">_dbus_data_slot_allocator_free</ref><sp/><sp/>(<ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><sp/>*allocator,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slot_id_p);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusDataSlot_1ga6de49b3a1210202215d40a5a19806992" kindref="member">_dbus_data_slot_list_init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*list);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref><sp/><ref refid="group__DBusDataSlot_1gad2952f9f686d96e7114fc49ab7452e1a" kindref="member">_dbus_data_slot_list_set</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><sp/>*allocator,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*list,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slot,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structDBusDataSlot_1a883c8c8946f13b6f5f3cf99f230159fd" kindref="member">data</ref>,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusDataSlot_1ab899f58869942556fb1b381ca3f3e2b2" kindref="member">free_data_func</ref>,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga061bcded226d76c7d7de35beaa165cb5" kindref="member">DBusFreeFunction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*old_free_func,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**old_data);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusDataSlot_1ga43f741229f0c38788442601e2750ec66" kindref="member">_dbus_data_slot_list_get</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusDataSlotAllocator" kindref="compound">DBusDataSlotAllocator</ref><sp/><sp/>*allocator,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*list,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slot);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusDataSlot_1ga3c96d2ca263ba397b4da2956a49ae282" kindref="member">_dbus_data_slot_list_clear</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*list);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusDataSlot_1gabc399733376c462c3010271a2d431e73" kindref="member">_dbus_data_slot_list_free</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusDataSlotList" kindref="compound">DBusDataSlotList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*list);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_DATASLOT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-dataslot.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,120 @@
+.TH "DBusBabysitter" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusBabysitter \- Babysitter implementation details\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "HANDLE \fBstart_sync_event\fP"
+.br
+.ti -1c
+.RI "char * \fBlog_name\fP"
+.br
+.RI "\fIthe name under which to log messages about this process being spawned \fP"
+.ti -1c
+.RI "DBusSpawnChildSetupFunc \fBchild_setup\fP"
+.br
+.ti -1c
+.RI "void * \fBuser_data\fP"
+.br
+.ti -1c
+.RI "int \fBargc\fP"
+.br
+.ti -1c
+.RI "char ** \fBargv\fP"
+.br
+.ti -1c
+.RI "char ** \fBenvp\fP"
+.br
+.ti -1c
+.RI "HANDLE \fBchild_handle\fP"
+.br
+.ti -1c
+.RI "int \fBsocket_to_babysitter\fP"
+.br
+.RI "\fIConnection to the babysitter process\&. \fP"
+.ti -1c
+.RI "int \fBsocket_to_main\fP"
+.br
+.ti -1c
+.RI "\fBDBusWatchList\fP * \fBwatches\fP"
+.br
+.RI "\fIWatches\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP * \fBsitter_watch\fP"
+.br
+.RI "\fISitter pipe watch\&. \fP"
+.ti -1c
+.RI "DBusBabysitterFinishedFunc \fBfinished_cb\fP"
+.br
+.ti -1c
+.RI "void * \fBfinished_data\fP"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBhave_spawn_errno\fP"
+.br
+.ti -1c
+.RI "int \fBspawn_errno\fP"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fBhave_child_status\fP"
+.br
+.ti -1c
+.RI "int \fBchild_status\fP"
+.br
+.ti -1c
+.RI "int \fBerror_pipe_from_child\fP"
+.br
+.RI "\fIConnection to the process that does the exec() \fP"
+.ti -1c
+.RI "pid_t \fBsitter_pid\fP"
+.br
+.RI "\fIPID Of the babysitter\&. \fP"
+.ti -1c
+.RI "pid_t \fBgrandchild_pid\fP"
+.br
+.RI "\fIPID of the grandchild\&. \fP"
+.ti -1c
+.RI "\fBDBusWatch\fP * \fBerror_watch\fP"
+.br
+.RI "\fIError pipe watch\&. \fP"
+.ti -1c
+.RI "int \fBerrnum\fP"
+.br
+.RI "\fIError number\&. \fP"
+.ti -1c
+.RI "int \fBstatus\fP"
+.br
+.RI "\fIExit status code\&. \fP"
+.ti -1c
+.RI "unsigned int \fBhave_child_status\fP: 1"
+.br
+.RI "\fITrue if child status has been reaped\&. \fP"
+.ti -1c
+.RI "unsigned int \fBhave_fork_errnum\fP: 1"
+.br
+.RI "\fITrue if we have an error code from fork() \fP"
+.ti -1c
+.RI "unsigned int \fBhave_exec_errnum\fP: 1"
+.br
+.RI "\fITrue if we have an error code from exec() \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Babysitter implementation details\&. 
+.PP
+Definition at line 61 of file dbus\-spawn\-win\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

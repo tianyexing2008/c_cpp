@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__DBusThreadsInternals" kind="group">
+    <compoundname>DBusThreadsInternals</compoundname>
+    <title>Thread functions</title>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusThreadsInternals_1ga5317a58c6ec622c81615dcf2d87aa92b" prot="public" static="no">
+        <type>struct <ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref></type>
+        <definition>typedef struct DBusRMutex DBusRMutex</definition>
+        <argsstring></argsstring>
+        <name>DBusRMutex</name>
+        <briefdescription>
+<para>A mutex which is recursive if possible, else non-recursive. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is typically recursive, but that cannot be relied upon. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads-internal.h" line="74" column="1" bodyfile="dbus/dbus-threads-internal.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__DBusThreadsInternals_1ga3ab2e6d6f2aa71121ee5d7913cc4c4e9" prot="public" static="no">
+        <type>struct <ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref></type>
+        <definition>typedef struct DBusCMutex DBusCMutex</definition>
+        <argsstring></argsstring>
+        <name>DBusCMutex</name>
+        <briefdescription>
+<para>A mutex suitable for use with condition variables. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is typically non-recursive. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads-internal.h" line="74" column="1" bodyfile="dbus/dbus-threads-internal.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__DBusThreadsInternals_1gac71f8e40420a15562b5ef35a922880b1" prot="public" static="yes" mutable="no">
+        <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+        <definition>DBusRMutex* global_locks[_DBUS_N_GLOBAL_LOCKS]</definition>
+        <argsstring>[_DBUS_N_GLOBAL_LOCKS]</argsstring>
+        <name>global_locks</name>
+        <initializer>= { <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="286" column="1" bodyfile="dbus/dbus-threads.c" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga191deedb97c76fae82bdbc8e1559a849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_new_at_location</definition>
+        <argsstring>(DBusRMutex **location_p)</argsstring>
+        <name>_dbus_rmutex_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new mutex or creates a no-op mutex if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para>If possible, the mutex returned by this function is recursive, to avoid deadlocks. However, that cannot be relied on.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location of the new mutex, can return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="53" column="1" bodyfile="dbus/dbus-threads.c" bodystart="53" bodyend="64"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga89495162caac2ace36c6b9c2031bc962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_new_at_location</definition>
+        <argsstring>(DBusCMutex **location_p)</argsstring>
+        <name>_dbus_cmutex_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new mutex or creates a no-op mutex if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para>The returned mutex is suitable for use with condition variables.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location of the new mutex, can return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="77" column="1" bodyfile="dbus/dbus-threads.c" bodystart="77" bodyend="88"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gae1c95a3f47bcc78d32fc0a5a8ed37c91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_free_at_location</definition>
+        <argsstring>(DBusRMutex **location_p)</argsstring>
+        <name>_dbus_rmutex_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref>; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="94" column="1" bodyfile="dbus/dbus-threads.c" bodystart="94" bodyend="101"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+        <referencedby refid="group__DBusServerInternals_1gaacfb3d29553f205b362c850cfda02fd9" compoundref="dbus-server_8c" startline="111" endline="184">_dbus_server_init_base</referencedby>
+        <referencedby refid="group__DBusServerInternals_1ga93b5bca90e69122d5acbbeef2b4ca03e" compoundref="dbus-server_8c" startline="193" endline="218">_dbus_server_finalize_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga20ec8aeb88b1f65445a4d3c1c0bd0048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_free_at_location</definition>
+        <argsstring>(DBusCMutex **location_p)</argsstring>
+        <name>_dbus_cmutex_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a <ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref>; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="107" column="1" bodyfile="dbus/dbus-threads.c" bodystart="107" bodyend="114"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaeb20c411a096aaf067918eb574f121d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_lock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_rmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Locks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Locks may be recursive if threading implementation initialized recursive locks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="122" column="1" bodyfile="dbus/dbus-threads.c" bodystart="122" bodyend="128"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gabea1bdc19c155bca909839090c05eee2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_lock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_cmutex_lock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Locks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Locks may be recursive if threading implementation initialized recursive locks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="136" column="1" bodyfile="dbus/dbus-threads.c" bodystart="136" bodyend="142"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga5946b9a5ea3e12a81a798b575b45c62f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_rmutex_unlock</definition>
+        <argsstring>(DBusRMutex *mutex)</argsstring>
+        <name>_dbus_rmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusRMutex" kindref="compound">DBusRMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer.</para><para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="150" column="1" bodyfile="dbus/dbus-threads.c" bodystart="150" bodyend="156"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga3db10d48ec16e485d5a638aacebd4ad2" compoundref="dbus-connection_8c" startline="399" endline="426">_dbus_connection_unlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gad199edcd1bb88cfd2e9dcfb47cbc732f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_cmutex_unlock</definition>
+        <argsstring>(DBusCMutex *mutex)</argsstring>
+        <name>_dbus_cmutex_unlock</name>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a mutex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer.</para><para><simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> on success </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="164" column="1" bodyfile="dbus/dbus-threads.c" bodystart="164" bodyend="170"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+        <definition>DBusCondVar* _dbus_condvar_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>_dbus_condvar_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates a new condition variable using the function supplied to <ref refid="group__DBusThreads_1gac7b8a7001befc3eaa8c6b043151008dc" kindref="member">dbus_threads_init()</ref>, or creates a no-op condition variable if threads are not initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para>May return <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> even if threads are initialized, indicating out-of-memory.</para><para><simplesect kind="return"><para>new mutex or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="181" column="1" bodyfile="dbus/dbus-threads.c" bodystart="181" bodyend="187"/>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" compoundref="dbus-threads_8c" startline="199" endline="204">_dbus_condvar_new_at_location</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga859c5830e3c212323c1d6dafee3858a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_new_at_location</definition>
+        <argsstring>(DBusCondVar **location_p)</argsstring>
+        <name>_dbus_condvar_new_at_location</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>This does the same thing as _dbus_condvar_new. </para>        </briefdescription>
+        <detaileddescription>
+<para>It however gives another level of indirection by allocating a pointer to point to the condvar location; this used to be useful.</para><para><simplesect kind="return"><para>the location of a new condvar or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> on OOM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="199" column="1" bodyfile="dbus/dbus-threads.c" bodystart="199" bodyend="204"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusThreadsInternals_1ga454b138bcbd419d38b3da6b707e46998" compoundref="dbus-threads_8c" startline="181" endline="187">_dbus_condvar_new</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaff04b7377b6ab0cc22fee6a2811dde84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_free</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_condvar_free</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+<para>Frees a conditional variable created with dbus_condvar_new(); does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="212" column="1" bodyfile="dbus/dbus-threads.c" bodystart="212" bodyend="218"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga29444a34b569fca22fac48067832aacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_free_at_location</definition>
+        <argsstring>(DBusCondVar **location_p)</argsstring>
+        <name>_dbus_condvar_free_at_location</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> **</type>
+          <declname>location_p</declname>
+        </param>
+        <briefdescription>
+<para>Frees a condition variable; does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="224" column="1" bodyfile="dbus/dbus-threads.c" bodystart="224" bodyend="231"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga2cdffe9215251b69cb39ff36b9f50e6c" compoundref="dbus-connection_8c" startline="1249" endline="1409">_dbus_connection_new_for_transport</referencedby>
+        <referencedby refid="group__DBusConnection_1gae34751e15f114217e5ad10c663e2ef2e" compoundref="dbus-connection_8c" startline="2681" endline="2692">dbus_connection_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga6938b8a4547ce48290615990f64bd3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_wait</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex)</argsstring>
+        <name>_dbus_condvar_wait</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+<para>Atomically unlocks the mutex and waits for the conditions variable to be signalled. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the mutex again before returning. Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="240" column="1" bodyfile="dbus/dbus-threads.c" bodystart="240" bodyend="247"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga918e53c2abc48ff496f3c75566ba8bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_condvar_wait_timeout</definition>
+        <argsstring>(DBusCondVar *cond, DBusCMutex *mutex, int timeout_milliseconds)</argsstring>
+        <name>_dbus_condvar_wait_timeout</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusCMutex" kindref="compound">DBusCMutex</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_milliseconds</declname>
+        </param>
+        <briefdescription>
+<para>Atomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the mutex again before returning. Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. Return value is <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if we timed out, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> otherwise.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the condition variable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mutex </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_milliseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum time to wait </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the timeout occurred, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if not </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="261" column="1" bodyfile="dbus/dbus-threads.c" bodystart="261" bodyend="270"/>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga8af2fd84773022e7e7ce1f21f0126203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_condvar_wake_one</definition>
+        <argsstring>(DBusCondVar *cond)</argsstring>
+        <name>_dbus_condvar_wake_one</name>
+        <param>
+          <type><ref refid="structDBusCondVar" kindref="compound">DBusCondVar</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <briefdescription>
+<para>If there are threads waiting on the condition variable, wake up exactly one. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if passed a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="278" column="1" bodyfile="dbus/dbus-threads.c" bodystart="278" bodyend="284"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMemoryInternals_1ga7c224d82013e2bdc181c1d85dcb6f295" compoundref="dbus-memory_8c" startline="781">_dbus_current_generation</references>
+        <references refid="group__DBusThreads_1ga33b6cf3b8f1e41bad5508f84758818a7" compoundref="dbus-threads_8c" startline="438" endline="441">dbus_threads_init_default</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusCMutex_1aee2330c4dab1d863fdb5c52fbcfc0944" compoundref="dbus-sysdeps-pthread_8c" startline="53">DBusCMutex::lock</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga968196bee49659e75c54b53d7c85fa51" compoundref="dbus-connection_8c" startline="1044" endline="1049">_dbus_connection_remove_pending_call</referencedby>
+        <referencedby refid="group__DBusConnection_1ga1e40d994ea162ce767e78de1c4988566" compoundref="dbus-connection_8c" startline="4091" endline="4119">dbus_connection_pop_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1gaf68ed2b9a5a7d09f0dfd2d71449cf85c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shutdown_global_locks</definition>
+        <argsstring>(void *nil)</argsstring>
+        <name>shutdown_global_locks</name>
+        <param>
+          <type>void *</type>
+          <declname>nil</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="289" column="1" bodyfile="dbus/dbus-threads.c" bodystart="289" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga1931616b664220a855bed4839be64b15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>static dbus_bool_t init_global_locks</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_global_locks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="302" column="1" bodyfile="dbus/dbus-threads.c" bodystart="302" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga1703349138323e4dbb947ab2a73c943b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>dbus_bool_t _dbus_lock</definition>
+        <argsstring>(DBusGlobalLock lock)</argsstring>
+        <name>_dbus_lock</name>
+        <param>
+          <type>DBusGlobalLock</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="337" column="1" bodyfile="dbus/dbus-threads.c" bodystart="337" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusThreadsInternals_1ga82891a341a3b79f3228b8dd2dd1b0e30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _dbus_unlock</definition>
+        <argsstring>(DBusGlobalLock lock)</argsstring>
+        <name>_dbus_unlock</name>
+        <param>
+          <type>DBusGlobalLock</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-threads.c" line="351" column="1" bodyfile="dbus/dbus-threads.c" bodystart="351" bodyend="357"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="group__DBusThreadsInternals_1gaeb20c411a096aaf067918eb574f121d5" kindref="member">_dbus_rmutex_lock()</ref>, etc. </para>    </briefdescription>
+    <detaileddescription>
+<para>Functions and macros related to threads and thread locks. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

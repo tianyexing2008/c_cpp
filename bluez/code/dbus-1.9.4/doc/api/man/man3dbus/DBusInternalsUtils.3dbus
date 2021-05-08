@@ -1,0 +1,2245 @@
+.TH "DBusInternalsUtils" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusInternalsUtils \- Utilities and portability
+.PP
+Utility functions (\fB_dbus_assert()\fP, \fB_dbus_warn()\fP, etc\&.)  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusBabysitter\fP"
+.br
+.RI "\fIBabysitter implementation details\&. \fP"
+.ti -1c
+.RI "struct \fBDBusDirIter\fP"
+.br
+.RI "\fIInternals of directory iterator\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_dbus_assert\fP(condition)   \fB_dbus_real_assert\fP ((condition) != 0, #condition, __FILE__, __LINE__, _DBUS_FUNCTION_NAME)"
+.br
+.RI "\fIAborts with an error message if the condition is false\&. \fP"
+.ti -1c
+.RI "#define \fB_dbus_assert_not_reached\fP(explanation)   \fB_dbus_real_assert_not_reached\fP (explanation, __FILE__, __LINE__)"
+.br
+.RI "\fIAborts with an error message if called\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_N_ELEMENTS\fP(array)   ((int) (sizeof ((array)) / sizeof ((array)[0])))"
+.br
+.RI "\fIComputes the number of elements in a fixed-size array using sizeof()\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_POINTER_TO_INT\fP(pointer)   ((intptr_t)(pointer))"
+.br
+.RI "\fISafely casts a void* to an integer; should only be used on void* that actually contain integers, for example one created with _DBUS_INT_TO_POINTER\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT_TO_POINTER\fP(integer)   ((void*)((intptr_t)(integer)))"
+.br
+.RI "\fISafely stuffs an integer into a pointer, to be extracted later with _DBUS_POINTER_TO_INT\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_ZERO\fP(object)   (memset (&(object), '\\0', sizeof ((object))))"
+.br
+.RI "\fISets all bits in an object to zero\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT16_MIN\fP   ((\fBdbus_int16_t\fP) 0x8000)"
+.br
+.RI "\fIMinimum value of type 'int16'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT16_MAX\fP   ((\fBdbus_int16_t\fP) 0x7fff)"
+.br
+.RI "\fIMaximum value of type 'int16'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_UINT16_MAX\fP   ((\fBdbus_uint16_t\fP)0xffff)"
+.br
+.RI "\fIMaximum value of type 'uint16'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT32_MIN\fP   ((\fBdbus_int32_t\fP) 0x80000000)"
+.br
+.RI "\fIMinimum value of type 'int32'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT32_MAX\fP   ((\fBdbus_int32_t\fP) 0x7fffffff)"
+.br
+.RI "\fIMaximum value of type 'int32'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_UINT32_MAX\fP   ((\fBdbus_uint32_t\fP)0xffffffff)"
+.br
+.RI "\fIMaximum value of type 'uint32'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT_MIN\fP   \fB_DBUS_INT32_MIN\fP"
+.br
+.RI "\fIMinimum value of type 'int'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_INT_MAX\fP   \fB_DBUS_INT32_MAX\fP"
+.br
+.RI "\fIMaximum value of type 'int'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_UINT_MAX\fP   \fB_DBUS_UINT32_MAX\fP"
+.br
+.RI "\fIMaximum value of type 'uint'\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_LOCK_NAME\fP(name)   _DBUS_LOCK_##name"
+.br
+.RI "\fIExpands to name of a global lock variable\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_LOCK\fP(name)   _dbus_lock   (_DBUS_LOCK_##name)"
+.br
+.RI "\fILocks a global lock, initializing it first if necessary\&. \fP"
+.ti -1c
+.RI "#define \fB_DBUS_UNLOCK\fP(name)   _dbus_unlock (_DBUS_LOCK_##name)"
+.br
+.RI "\fIUnlocks a global lock\&. \fP"
+.ti -1c
+.RI "#define \fBLIVE_CHILDREN\fP(sitter)   ((sitter)\->socket_to_babysitter >= 0 || (sitter)\->error_pipe_from_child >= 0)"
+.br
+.RI "\fIMacro returns \fBTRUE\fP if the babysitter still has live sockets open to the babysitter child or the grandchild\&. \fP"
+.ti -1c
+.RI "#define \fBREAD_END\fP   0"
+.br
+.RI "\fIHelps remember which end of the pipe is which\&. \fP"
+.ti -1c
+.RI "#define \fBWRITE_END\fP   1"
+.br
+.RI "\fIHelps remember which end of the pipe is which\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBDBusForeachFunction\fP) (void *element, void *data)"
+.br
+.RI "\fIUsed to iterate over each item in a collection, such as a \fBDBusList\fP\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBReadStatus\fP { \fBREAD_STATUS_OK\fP, \fBREAD_STATUS_ERROR\fP, \fBREAD_STATUS_EOF\fP }
+.RI "\fIEnumeration for status of a read() \fP""
+.br
+.ti -1c
+.RI "enum { \fBCHILD_EXITED\fP, \fBCHILD_FORK_FAILED\fP, \fBCHILD_EXEC_FAILED\fP, \fBCHILD_PID\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_warn\fP (const char *format,\&.\&.\&.)"
+.br
+.RI "\fIPrints a warning message to stderr\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_warn_check_failed\fP (const char *format,\&.\&.\&.)"
+.br
+.RI "\fIPrints a 'critical' warning to stderr when an assertion fails; differs from _dbus_warn primarily in that it prefixes the pid and defaults to fatal\&. \fP"
+.ti -1c
+.RI "char * \fB_dbus_strdup\fP (const char *str)"
+.br
+.RI "\fIDuplicates a string\&. \fP"
+.ti -1c
+.RI "void * \fB_dbus_memdup\fP (const void *mem, size_t n_bytes)"
+.br
+.RI "\fIDuplicates a block of memory\&. \fP"
+.ti -1c
+.RI "char ** \fB_dbus_dup_string_array\fP (const char **array)"
+.br
+.RI "\fIDuplicates a string array\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_string_array_contains\fP (const char **array, const char *str)"
+.br
+.RI "\fIChecks whether a string array contains the given string\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_generate_uuid\fP (\fBDBusGUID\fP *uuid)"
+.br
+.RI "\fIGenerates a new UUID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_uuid_encode\fP (const \fBDBusGUID\fP *uuid, \fBDBusString\fP *encoded)"
+.br
+.RI "\fIHex-encode a UUID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_write_uuid_file\fP (const \fBDBusString\fP *filename, const \fBDBusGUID\fP *uuid, \fBDBusError\fP *error)"
+.br
+.RI "\fIWrite the give UUID to a file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_read_uuid_file\fP (const \fBDBusString\fP *filename, \fBDBusGUID\fP *uuid, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP *error)"
+.br
+.RI "\fIReads (and optionally writes) a uuid to a file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_local_machine_uuid_encoded\fP (\fBDBusString\fP *uuid_str)"
+.br
+.RI "\fIGets the hex-encoded UUID of the machine this function is executed on\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_real_assert\fP (\fBdbus_bool_t\fP condition, const char *condition_text, const char *file, int line, const char *func)"
+.br
+.RI "\fIInternals of \fB_dbus_assert()\fP; it's a function rather than a macro with the inline code so that the assertion failure blocks don't show up in test suite coverage, and to shrink code size\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_real_assert_not_reached\fP (const char *explanation, const char *file, int line)"
+.br
+.RI "\fIInternals of \fB_dbus_assert_not_reached()\fP; it's a function rather than a macro with the inline code so that the assertion failure blocks don't show up in test suite coverage, and to shrink code size\&. \fP"
+.ti -1c
+.RI "\fBDBusBabysitter\fP * \fB_dbus_babysitter_ref\fP (\fBDBusBabysitter\fP *sitter)"
+.br
+.RI "\fIIncrement the reference count on the babysitter object\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_babysitter_unref\fP (\fBDBusBabysitter\fP *sitter)"
+.br
+.RI "\fIDecrement the reference count on the babysitter object\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_babysitter_kill_child\fP (\fBDBusBabysitter\fP *sitter)"
+.br
+.RI "\fIBlocks until the babysitter process gives us the PID of the spawned grandchild, then kills the spawned grandchild\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_babysitter_get_child_exited\fP (\fBDBusBabysitter\fP *sitter)"
+.br
+.RI "\fIChecks whether the child has exited, without blocking\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_babysitter_get_child_exit_status\fP (\fBDBusBabysitter\fP *sitter, int *status)"
+.br
+.RI "\fIGets the exit status of the child\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_babysitter_set_child_exit_error\fP (\fBDBusBabysitter\fP *sitter, \fBDBusError\fP *error)"
+.br
+.RI "\fISets the \fBDBusError\fP with an explanation of why the spawned child process exited (on a signal, or whatever)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_babysitter_set_watch_functions\fP (\fBDBusBabysitter\fP *sitter, \fBDBusAddWatchFunction\fP add_function, \fBDBusRemoveWatchFunction\fP remove_function, \fBDBusWatchToggledFunction\fP toggled_function, void *data, \fBDBusFreeFunction\fP free_data_function)"
+.br
+.RI "\fISets watch functions to notify us when the babysitter object needs to read/write file descriptors\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_spawn_async_with_babysitter\fP (\fBDBusBabysitter\fP **sitter_p, const char *log_name, char **argv, char **env, DBusSpawnChildSetupFunc child_setup, void *user_data, \fBDBusError\fP *error)"
+.br
+.RI "\fISpawns a new process\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_babysitter_set_result_function\fP (\fBDBusBabysitter\fP *sitter, DBusBabysitterFinishedFunc finished, void *user_data)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_become_daemon\fP (const \fBDBusString\fP *pidfile, \fBDBusPipe\fP *print_pid_pipe, \fBDBusError\fP *error, \fBdbus_bool_t\fP keep_umask)"
+.br
+.RI "\fIDoes the chdir, fork, setsid, etc\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_write_pid_to_file_and_pipe\fP (const \fBDBusString\fP *pidfile, \fBDBusPipe\fP *print_pid_pipe, \fBdbus_pid_t\fP pid_to_write, \fBDBusError\fP *error)"
+.br
+.RI "\fIWrites the given pid_to_write to a pidfile (if non-NULL) and/or to a pipe (if non-NULL)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_verify_daemon_user\fP (const char *user)"
+.br
+.RI "\fIVerify that after the fork we can successfully change to this user\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_change_to_daemon_user\fP (const char *user, \fBDBusError\fP *error)"
+.br
+.RI "\fIChanges the user and group the bus is running as\&. \fP"
+.ti -1c
+.RI "DBusRLimit * \fB_dbus_rlimit_save_fd_limit\fP (\fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_rlimit_raise_fd_limit_if_privileged\fP (unsigned int desired, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_rlimit_restore_fd_limit\fP (DBusRLimit *saved, \fBDBusError\fP *error)"
+.br
+.ti -1c
+.RI "void \fB_dbus_rlimit_free\fP (DBusRLimit *lim)"
+.br
+.ti -1c
+.RI "void \fB_dbus_init_system_log\fP (\fBdbus_bool_t\fP is_daemon)"
+.br
+.ti -1c
+.RI "void \fB_dbus_system_log\fP (DBusSystemLogSeverity severity, const char *msg,\&.\&.\&.)"
+.br
+.RI "\fILog a message to the system log file (e\&.g\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_system_logv\fP (DBusSystemLogSeverity severity, const char *msg, va_list args)"
+.br
+.RI "\fILog a message to the system log file (e\&.g\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_set_signal_handler\fP (int sig, \fBDBusSignalHandler\fP handler)"
+.br
+.RI "\fIInstalls a UNIX signal handler\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_file_exists\fP (const char *file)"
+.br
+.RI "\fIChecks if a file exists\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_at_console\fP (const char *username, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks if user is at the console\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_path_is_absolute\fP (const \fBDBusString\fP *filename)"
+.br
+.RI "\fIChecks whether the filename is an absolute path\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_stat\fP (const \fBDBusString\fP *filename, \fBDBusStat\fP *statbuf, \fBDBusError\fP *error)"
+.br
+.RI "\fIstat() wrapper\&. \fP"
+.ti -1c
+.RI "\fBDBusDirIter\fP * \fB_dbus_directory_open\fP (const \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIOpen a directory to iterate over\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_directory_get_next_file\fP (\fBDBusDirIter\fP *iter, \fBDBusString\fP *filename, \fBDBusError\fP *error)"
+.br
+.RI "\fIGet next file in the directory\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_directory_close\fP (\fBDBusDirIter\fP *iter)"
+.br
+.RI "\fICloses a directory iteration\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_group_info_fill\fP (\fBDBusGroupInfo\fP *info, const \fBDBusString\fP *groupname, \fBDBusError\fP *error)"
+.br
+.RI "\fIInitializes the given \fBDBusGroupInfo\fP struct with information about the given group name\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_group_info_fill_gid\fP (\fBDBusGroupInfo\fP *info, \fBdbus_gid_t\fP gid, \fBDBusError\fP *error)"
+.br
+.RI "\fIInitializes the given \fBDBusGroupInfo\fP struct with information about the given group ID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_parse_unix_user_from_config\fP (const \fBDBusString\fP *username, \fBdbus_uid_t\fP *uid_p)"
+.br
+.RI "\fIParse a UNIX user from the bus config file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_parse_unix_group_from_config\fP (const \fBDBusString\fP *groupname, \fBdbus_gid_t\fP *gid_p)"
+.br
+.RI "\fIParse a UNIX group from the bus config file\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_groups_from_uid\fP (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP **group_ids, int *n_group_ids)"
+.br
+.RI "\fIGets all groups corresponding to the given UNIX user ID\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_user_is_at_console\fP (\fBdbus_uid_t\fP uid, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks to see if the UNIX user ID is at the console\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_unix_user_is_process_owner\fP (\fBdbus_uid_t\fP uid)"
+.br
+.RI "\fIChecks to see if the UNIX user ID matches the UID of the process\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_windows_user_is_process_owner\fP (const char *windows_sid)"
+.br
+.RI "\fIChecks to see if the Windows user SID matches the owner of the process\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_generate_pseudorandom_bytes_buffer\fP (char *buffer, int n_bytes)"
+.br
+.RI "\fIRandom numbers\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_generate_random_bytes_buffer\fP (char *buffer, int n_bytes)"
+.br
+.RI "\fIFills n_bytes of the given buffer with random bytes\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_generate_random_ascii\fP (\fBDBusString\fP *str, int n_bytes)"
+.br
+.RI "\fIGenerates the given number of random bytes, where the bytes are chosen from the alphanumeric ASCII subset\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_error_from_errno\fP (int error_number)"
+.br
+.RI "\fIConverts a UNIX errno, or Windows errno or WinSock error value into a \fBDBusError\fP name\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_error_from_system_errno\fP (void)"
+.br
+.RI "\fIConverts the current system errno value into a \fBDBusError\fP name\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_set_errno_to_zero\fP (void)"
+.br
+.RI "\fIAssign 0 to the global errno variable\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_enomem\fP (int e)"
+.br
+.RI "\fISee if errno is ENOMEM\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_eintr\fP (int e)"
+.br
+.RI "\fISee if errno is EINTR\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_epipe\fP (int e)"
+.br
+.RI "\fISee if errno is EPIPE\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_is_errno_etoomanyrefs\fP (int e)"
+.br
+.RI "\fISee if errno is ETOOMANYREFS\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_strerror_from_errno\fP (void)"
+.br
+.RI "\fIGet error message from errno\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_is_console_user\fP (\fBdbus_uid_t\fP uid, \fBDBusError\fP *error)"
+.br
+.RI "\fIChecks to see if the UID sent in is the console user\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_user_id\fP (const \fBDBusString\fP *username, \fBdbus_uid_t\fP *uid)"
+.br
+.RI "\fIGets user ID given username\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_group_id\fP (const \fBDBusString\fP *groupname, \fBdbus_gid_t\fP *gid)"
+.br
+.RI "\fIGets group ID given groupname\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_get_user_id_and_primary_group\fP (const \fBDBusString\fP *username, \fBdbus_uid_t\fP *uid_p, \fBdbus_gid_t\fP *gid_p)"
+.br
+.RI "\fIGets user ID and primary group given username\&. \fP"
+.ti -1c
+.RI "\fBDBusGroupInfo\fP * \fB_dbus_user_database_lookup_group\fP (DBusUserDatabase *db, \fBdbus_gid_t\fP gid, const \fBDBusString\fP *groupname, \fBDBusError\fP *error)"
+.br
+.RI "\fILooks up a gid or group name in the user database\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_database_get_groupname\fP (DBusUserDatabase *db, const \fBDBusString\fP *groupname, const \fBDBusGroupInfo\fP **info, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets the user information for the given group name, returned group info should not be freed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_database_get_gid\fP (DBusUserDatabase *db, \fBdbus_gid_t\fP gid, const \fBDBusGroupInfo\fP **info, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets the user information for the given GID, returned group info should not be freed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_groups_from_uid\fP (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP **group_ids, int *n_group_ids)"
+.br
+.RI "\fIGets all groups corresponding to the given UID\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_info_free_allocated\fP (\fBDBusUserInfo\fP *info)"
+.br
+.RI "\fIFrees the given \fBDBusUserInfo\fP's members with \fB_dbus_user_info_free()\fP and also calls \fBdbus_free()\fP on the block itself\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_group_info_free_allocated\fP (\fBDBusGroupInfo\fP *info)"
+.br
+.RI "\fIFrees the given \fBDBusGroupInfo\fP's members with \fB_dbus_group_info_free()\fP and also calls \fBdbus_free()\fP on the block itself\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_info_free\fP (\fBDBusUserInfo\fP *info)"
+.br
+.RI "\fIFrees the members of info (but not info itself) \fP"
+.ti -1c
+.RI "void \fB_dbus_group_info_free\fP (\fBDBusGroupInfo\fP *info)"
+.br
+.RI "\fIFrees the members of info (but not info itself)\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_is_a_number\fP (const \fBDBusString\fP *str, unsigned long *num)"
+.br
+.RI "\fIChecks if a given string is actually a number and converts it if it is\&. \fP"
+.ti -1c
+.RI "\fBDBusUserInfo\fP * \fB_dbus_user_database_lookup\fP (DBusUserDatabase *db, \fBdbus_uid_t\fP uid, const \fBDBusString\fP *username, \fBDBusError\fP *error)"
+.br
+.RI "\fILooks up a uid or username in the user database\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_database_lock_system\fP (void)"
+.br
+.RI "\fILocks global system user database\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_database_unlock_system\fP (void)"
+.br
+.RI "\fIUnlocks global system user database\&. \fP"
+.ti -1c
+.RI "DBusUserDatabase * \fB_dbus_user_database_get_system\fP (void)"
+.br
+.RI "\fIGets the system global user database; must be called with lock held (\fB_dbus_user_database_lock_system()\fP)\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_database_flush_system\fP (void)"
+.br
+.RI "\fIFlushes the system global user database;\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_username_from_current_process\fP (const \fBDBusString\fP **username)"
+.br
+.RI "\fIGets username of user owning current process\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_homedir_from_current_process\fP (const \fBDBusString\fP **homedir)"
+.br
+.RI "\fIGets homedir of user owning current process\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_homedir_from_username\fP (const \fBDBusString\fP *username, \fBDBusString\fP *homedir)"
+.br
+.RI "\fIGets the home directory for the given user\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_homedir_from_uid\fP (\fBdbus_uid_t\fP uid, \fBDBusString\fP *homedir)"
+.br
+.RI "\fIGets the home directory for the given user\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_credentials_add_from_user\fP (\fBDBusCredentials\fP *credentials, const \fBDBusString\fP *username)"
+.br
+.RI "\fIAdds the credentials corresponding to the given username\&. \fP"
+.ti -1c
+.RI "DBusUserDatabase * \fB_dbus_user_database_new\fP (void)"
+.br
+.RI "\fICreates a new user database object used to look up and cache user information\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_database_flush\fP (DBusUserDatabase *db)"
+.br
+.RI "\fIFlush all information out of the user database\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_user_database_unref\fP (DBusUserDatabase *db)"
+.br
+.RI "\fIDecrements refcount of user database\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_database_get_uid\fP (DBusUserDatabase *db, \fBdbus_uid_t\fP uid, const \fBDBusUserInfo\fP **info, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets the user information for the given UID, returned user info should not be freed\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_user_database_get_username\fP (DBusUserDatabase *db, const \fBDBusString\fP *username, const \fBDBusUserInfo\fP **info, \fBDBusError\fP *error)"
+.br
+.RI "\fIGets the user information for the given username\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const char * \fB_dbus_no_memory_message\fP = 'Not enough memory'"
+.br
+.RI "\fIFixed 'out of memory' error message, just to avoid making up a different string every time and wasting space\&. \fP"
+.ti -1c
+.RI "const char * \fB_dbus_return_if_fail_warning_format\fP"
+.br
+.RI "\fIString used in _dbus_return_if_fail macro\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Utility functions (\fB_dbus_assert()\fP, \fB_dbus_warn()\fP, etc\&.) 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _dbus_assert(condition)   \fB_dbus_real_assert\fP ((condition) != 0, #condition, __FILE__, __LINE__, _DBUS_FUNCTION_NAME)"
+
+.PP
+Aborts with an error message if the condition is false\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcondition\fP condition which must be true\&. 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_append_keyring_directory_for_credentials(), _dbus_auth_decode_data(), _dbus_auth_encode_data(), _dbus_auth_get_buffer(), _dbus_auth_get_bytes_to_send(), _dbus_auth_get_guid_from_server(), _dbus_auth_get_identity(), _dbus_auth_ref(), _dbus_auth_return_buffer(), _dbus_auth_unref(), _dbus_babysitter_ref(), _dbus_babysitter_set_watch_functions(), _dbus_babysitter_unref(), _dbus_bus_notify_shared_connection_disconnected_unlocked(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_cmutex_new_at_location(), _dbus_condvar_new_at_location(), _dbus_condvar_wake_one(), _dbus_connection_block_pending_call(), _dbus_connection_close_if_only_one_ref(), _dbus_connection_close_possibly_shared(), _dbus_connection_handle_watch(), _dbus_connection_message_sent_unlocked(), _dbus_connection_queue_received_message_link(), _dbus_connection_ref_unlocked(), _dbus_connection_remove_pending_call(), _dbus_connection_send_and_unlock(), _dbus_connection_toggle_timeout_unlocked(), _dbus_connection_toggle_watch_unlocked(), _dbus_connection_unref_unlocked(), _dbus_counter_ref(), _dbus_counter_unref(), _dbus_credentials_ref(), _dbus_credentials_unref(), _dbus_data_slot_allocator_alloc(), _dbus_data_slot_allocator_free(), _dbus_data_slot_list_free(), _dbus_data_slot_list_get(), _dbus_data_slot_list_set(), _dbus_decompose_path(), _dbus_directory_close(), _dbus_first_type_in_signature_c_str(), _dbus_generate_random_ascii(), _dbus_get_autolaunch_address(), _dbus_get_environment(), _dbus_get_tmpdir(), _dbus_groups_from_uid(), _dbus_hash_iter_get_int_key(), _dbus_hash_iter_get_string_key(), _dbus_hash_iter_get_uintptr_key(), _dbus_hash_iter_get_value(), _dbus_hash_iter_lookup(), _dbus_hash_iter_next(), _dbus_hash_iter_remove_entry(), _dbus_hash_iter_set_value(), _dbus_hash_table_free_preallocated_entry(), _dbus_hash_table_get_n_entries(), _dbus_hash_table_insert_int(), _dbus_hash_table_insert_string(), _dbus_hash_table_insert_string_preallocated(), _dbus_hash_table_insert_uintptr(), _dbus_hash_table_lookup_int(), _dbus_hash_table_lookup_string(), _dbus_hash_table_lookup_uintptr(), _dbus_hash_table_new(), _dbus_hash_table_remove_all(), _dbus_hash_table_remove_int(), _dbus_hash_table_remove_string(), _dbus_hash_table_remove_uintptr(), _dbus_header_create(), _dbus_header_delete_field(), _dbus_header_get_byte_order(), _dbus_header_get_field_basic(), _dbus_header_get_message_type(), _dbus_header_have_message_untrusted(), _dbus_header_load(), _dbus_header_set_field_basic(), _dbus_header_set_serial(), _dbus_header_update_lengths(), _dbus_keyring_get_hex_key(), _dbus_keyring_new_for_credentials(), _dbus_list_copy(), _dbus_list_length_is_one(), _dbus_listen_tcp_socket(), _dbus_lookup_launchd_socket(), _dbus_marshal_byteswap(), _dbus_marshal_read_basic(), _dbus_marshal_read_uint32(), _dbus_marshal_set_basic(), _dbus_marshal_set_uint32(), _dbus_marshal_skip_basic(), _dbus_marshal_write_basic(), _dbus_marshal_write_fixed_multi(), _dbus_mem_pool_alloc(), _dbus_mem_pool_dealloc(), _dbus_mem_pool_new(), _dbus_message_get_network_data(), _dbus_message_get_unix_fds(), _dbus_message_iter_get_args_valist(), _dbus_message_loader_get_buffer(), _dbus_message_loader_get_corruption_reason(), _dbus_message_loader_get_is_corrupted(), _dbus_message_loader_get_unix_fds(), _dbus_message_loader_queue_messages(), _dbus_message_loader_return_buffer(), _dbus_message_loader_return_unix_fds(), _dbus_message_remove_counter(), _dbus_object_tree_free_all_unlocked(), _dbus_object_tree_get_user_data_unlocked(), _dbus_object_tree_ref(), _dbus_object_tree_register(), _dbus_object_tree_unref(), _dbus_object_tree_unregister_and_unlock(), _dbus_pending_call_complete(), _dbus_pending_call_get_connection_and_lock(), _dbus_pending_call_get_connection_unlocked(), _dbus_pending_call_get_reply_serial_unlocked(), _dbus_pending_call_get_timeout_unlocked(), _dbus_pending_call_is_timeout_added_unlocked(), _dbus_pending_call_new_unlocked(), _dbus_pending_call_queue_timeout_error_unlocked(), _dbus_pending_call_ref_unlocked(), _dbus_pending_call_set_reply_serial_unlocked(), _dbus_pending_call_set_reply_unlocked(), _dbus_pending_call_set_timeout_added_unlocked(), _dbus_pending_call_unref_and_unlock(), _dbus_read(), _dbus_read_local_machine_uuid(), _dbus_read_socket(), _dbus_read_socket_with_unix_fds(), _dbus_rmutex_new_at_location(), _dbus_send_credentials_socket(), _dbus_server_finalize_base(), _dbus_server_init_base(), _dbus_server_ref_unlocked(), _dbus_server_unref_unlocked(), _dbus_spawn_async_with_babysitter(), _dbus_string_append(), _dbus_string_append_len(), _dbus_string_copy_data(), _dbus_string_copy_len(), _dbus_string_copy_to_buffer(), _dbus_string_copy_to_buffer_with_nul(), _dbus_string_delete(), _dbus_string_ends_with_c_str(), _dbus_string_equal_c_str(), _dbus_string_equal_substring(), _dbus_string_find_blank(), _dbus_string_find_byte_backward(), _dbus_string_find_eol(), _dbus_string_find_to(), _dbus_string_free(), _dbus_string_get_data_len(), _dbus_string_get_dirname(), _dbus_string_hex_decode(), _dbus_string_hex_encode(), _dbus_string_init_const(), _dbus_string_init_const_len(), _dbus_string_init_preallocated(), _dbus_string_insert_8_aligned(), _dbus_string_insert_alignment(), _dbus_string_insert_byte(), _dbus_string_insert_bytes(), _dbus_string_lengthen(), _dbus_string_move(), _dbus_string_move_len(), _dbus_string_pop_line(), _dbus_string_replace_len(), _dbus_string_set_length(), _dbus_string_shorten(), _dbus_string_skip_blank(), _dbus_string_skip_white(), _dbus_string_skip_white_reverse(), _dbus_string_starts_with_c_str(), _dbus_string_steal_data(), _dbus_string_tolower_ascii(), _dbus_string_toupper_ascii(), _dbus_string_validate_ascii(), _dbus_string_validate_nul(), _dbus_string_validate_utf8(), _dbus_swap_array(), _dbus_threads_lock_platform_specific(), _dbus_threads_unlock_platform_specific(), _dbus_timeout_set_interval(), _dbus_timeout_unref(), _dbus_transport_disconnect(), _dbus_transport_do_iteration(), _dbus_transport_finalize_base(), _dbus_transport_get_is_connected(), _dbus_transport_handle_watch(), _dbus_transport_init_base(), _dbus_transport_open_platform_specific(), _dbus_transport_open_socket(), _dbus_transport_queue_messages(), _dbus_transport_ref(), _dbus_transport_set_connection(), _dbus_transport_try_to_authenticate(), _dbus_transport_unref(), _dbus_type_reader_delete(), _dbus_type_reader_get_array_length(), _dbus_type_reader_get_current_type(), _dbus_type_reader_get_element_type(), _dbus_type_reader_read_basic(), _dbus_type_reader_read_fixed_multi(), _dbus_type_reader_read_raw(), _dbus_type_reader_recurse(), _dbus_type_reader_set_basic(), _dbus_type_signature_next(), _dbus_type_writer_append_array(), _dbus_type_writer_init_values_only(), _dbus_type_writer_unrecurse(), _dbus_type_writer_write_fixed_multi(), _dbus_unpack_uint16(), _dbus_unpack_uint32(), _dbus_user_database_flush(), _dbus_user_database_get_system(), _dbus_user_database_lookup(), _dbus_user_database_unref(), _dbus_validate_body_with_reason(), _dbus_validate_interface(), _dbus_validate_member(), _dbus_validate_path(), _dbus_validate_signature(), _dbus_validate_signature_with_reason(), _dbus_verbose_bytes(), _dbus_verbose_bytes_of_string(), _dbus_warn_check_failed(), _dbus_watch_new(), _dbus_watch_unref(), _dbus_write_socket_two(), _dbus_write_two(), dbus_address_entry_get_value(), dbus_address_unescape_value(), dbus_bus_set_unique_name(), dbus_connection_borrow_message(), dbus_connection_get_unix_user(), dbus_connection_get_windows_user(), dbus_connection_pop_message(), dbus_connection_ref(), dbus_connection_return_message(), dbus_connection_send_preallocated(), dbus_connection_send_with_reply_and_block(), dbus_connection_steal_borrowed_message(), dbus_error_has_name(), dbus_error_is_set(), dbus_free(), dbus_get_version(), dbus_message_contains_unix_fds(), dbus_message_demarshal_bytes_needed(), dbus_message_get_reply_serial(), dbus_message_get_signature(), dbus_message_iter_init_append(), dbus_message_lock(), dbus_message_ref(), dbus_message_unref(), dbus_parse_address(), dbus_server_disconnect(), dbus_server_get_data(), dbus_server_listen(), dbus_server_unref(), dbus_set_error(), dbus_set_error_const(), dbus_setenv(), dbus_type_is_valid(), and dbus_watch_get_flags()\&.
+.SS "#define _dbus_assert_not_reached(explanation)   \fB_dbus_real_assert_not_reached\fP (explanation, __FILE__, __LINE__)"
+
+.PP
+Aborts with an error message if called\&. The given explanation will be printed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexplanation\fP explanation of what happened if the code was reached\&. 
+.RE
+.PP
+
+.PP
+Definition at line 145 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_babysitter_get_child_exit_status(), _dbus_become_daemon(), _dbus_bus_notify_shared_connection_disconnected_unlocked(), _dbus_connection_handle_watch(), _dbus_credentials_include(), _dbus_data_slot_allocator_free(), _dbus_data_slot_list_free(), _dbus_data_slot_list_get(), _dbus_data_slot_list_set(), _dbus_decompose_path(), _dbus_first_type_in_signature_c_str(), _dbus_get_environment(), _dbus_groups_from_uid(), _dbus_hash_table_get_n_entries(), _dbus_hash_table_new(), _dbus_header_get_byte_order(), _dbus_header_have_message_untrusted(), _dbus_header_set_field_basic(), _dbus_keyring_get_hex_key(), _dbus_list_length_is_one(), _dbus_marshal_read_basic(), _dbus_marshal_set_basic(), _dbus_marshal_skip_basic(), _dbus_marshal_write_basic(), _dbus_marshal_write_fixed_multi(), _dbus_mem_pool_dealloc(), _dbus_message_loader_get_unix_fds(), _dbus_message_loader_return_unix_fds(), _dbus_poll(), _dbus_sha_compute(), _dbus_spawn_async_with_babysitter(), _dbus_string_find_byte_backward(), _dbus_string_pop_line(), _dbus_timeout_list_remove_timeout(), _dbus_type_get_alignment(), _dbus_type_reader_recurse(), _dbus_type_writer_init_values_only(), _dbus_type_writer_write_basic(), _dbus_type_writer_write_fixed_multi(), _dbus_validate_signature_with_reason(), _dbus_watch_list_remove_watch(), _dbus_write_socket_two(), dbus_address_unescape_value(), dbus_connection_pop_message(), dbus_get_version(), dbus_server_get_data(), dbus_shutdown(), and dbus_type_is_valid()\&.
+.SS "#define _DBUS_INT_TO_POINTER(integer)   ((void*)((intptr_t)(integer)))"
+
+.PP
+Safely stuffs an integer into a pointer, to be extracted later with _DBUS_POINTER_TO_INT\&. Only guaranteed to preserve 32 bits\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinteger\fP the integer to stuff into a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_data_slot_list_free(), _dbus_hash_table_get_n_entries(), _dbus_hash_table_insert_int(), _dbus_hash_table_lookup_int(), _dbus_hash_table_remove_int(), _dbus_list_length_is_one(), and _dbus_validate_signature_with_reason()\&.
+.SS "#define _DBUS_LOCK(name)   _dbus_lock   (_DBUS_LOCK_##name)"
+
+.PP
+Locks a global lock, initializing it first if necessary\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if not enough memory 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_bus_notify_shared_connection_disconnected_unlocked(), _dbus_connection_handle_watch(), _dbus_get_local_machine_uuid_encoded(), _dbus_get_tmpdir(), _dbus_register_shutdown_func(), _dbus_user_database_lock_system(), _dbus_write_socket_two(), dbus_bus_get_unique_name(), dbus_bus_register(), and dbus_bus_set_unique_name()\&.
+.SS "#define _DBUS_N_ELEMENTS(array)   ((int) (sizeof ((array)) / sizeof ((array)[0])))"
+
+.PP
+Computes the number of elements in a fixed-size array using sizeof()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP the array to count elements in\&. 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_decompose_path(), _dbus_get_autolaunch_address(), _dbus_hash_table_new(), _dbus_lookup_launchd_socket(), _dbus_mem_pool_dealloc(), _dbus_string_find_byte_backward(), _dbus_transport_open(), dbus_address_unescape_value(), dbus_server_get_data(), and dbus_server_listen()\&.
+.SS "#define _DBUS_POINTER_TO_INT(pointer)   ((intptr_t)(pointer))"
+
+.PP
+Safely casts a void* to an integer; should only be used on void* that actually contain integers, for example one created with _DBUS_INT_TO_POINTER\&. Only guaranteed to preserve 32 bits\&. (i\&.e\&. it's used to store 32-bit ints in pointers, but can't be used to store 64-bit pointers in ints\&.)
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpointer\fP pointer to extract an integer from\&. 
+.RE
+.PP
+
+.PP
+Definition at line 176 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_data_slot_list_free(), _dbus_hash_iter_get_int_key(), _dbus_list_length_is_one(), and _dbus_validate_signature_with_reason()\&.
+.SS "#define _DBUS_ZERO(object)   (memset (&(object), '\\0', sizeof ((object))))"
+
+.PP
+Sets all bits in an object to zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP the object to be zeroed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 179 of file dbus\-internals\&.h\&.
+.PP
+Referenced by _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_delete_file(), _dbus_full_duplex_pipe(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_read_credentials_socket(), _dbus_read_socket_with_unix_fds(), _dbus_sha_final(), _dbus_socket_can_pass_unix_fd(), and _dbus_write_socket_two()\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBReadStatus\fP"
+
+.PP
+Enumeration for status of a read() 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIREAD_STATUS_OK \fP\fP
+Read succeeded\&. 
+.TP
+\fB\fIREAD_STATUS_ERROR \fP\fP
+Some kind of error\&. 
+.TP
+\fB\fIREAD_STATUS_EOF \fP\fP
+EOF returned\&. 
+.PP
+Definition at line 63 of file dbus\-spawn\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_babysitter_get_child_exit_status (\fBDBusBabysitter\fP * sitter, int * status)"
+
+.PP
+Gets the exit status of the child\&. We do this so implementation specific detail is not cluttering up dbus, for example the system launcher code\&. This can only be called if the child has exited, i\&.e\&. call \fB_dbus_babysitter_get_child_exited()\fP\&. It returns FALSE if the child did not return a status code, e\&.g\&. because the child was signaled or we failed to ever launch the child in the first place\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.br
+\fIstatus\fP the returned status code 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 731 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_assert_not_reached, _dbus_babysitter_get_child_exited(), FALSE, DBusBabysitter::status, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_babysitter_get_child_exited (\fBDBusBabysitter\fP * sitter)"
+
+.PP
+Checks whether the child has exited, without blocking\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.RE
+.PP
+
+.PP
+Definition at line 706 of file dbus\-spawn\&.c\&.
+.PP
+References FALSE, LIVE_CHILDREN, NULL, and DBusBabysitter::socket_to_babysitter\&.
+.PP
+Referenced by _dbus_babysitter_get_child_exit_status(), _dbus_babysitter_set_child_exit_error(), and _dbus_babysitter_set_watch_functions()\&.
+.SS "void _dbus_babysitter_kill_child (\fBDBusBabysitter\fP * sitter)"
+
+.PP
+Blocks until the babysitter process gives us the PID of the spawned grandchild, then kills the spawned grandchild\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter object 
+.RE
+.PP
+
+.PP
+Definition at line 684 of file dbus\-spawn\&.c\&.
+.PP
+References DBusBabysitter::grandchild_pid, LIVE_CHILDREN, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_spawn_async_with_babysitter()\&.
+.SS "\fBDBusBabysitter\fP* _dbus_babysitter_ref (\fBDBusBabysitter\fP * sitter)"
+
+.PP
+Increment the reference count on the babysitter object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the babysitter 
+.RE
+.PP
+
+.PP
+Definition at line 302 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_assert, _dbus_close_socket(), _dbus_watch_invalidate(), _dbus_watch_list_remove_watch(), _dbus_watch_unref(), NULL, DBusBabysitter::refcount, DBusBabysitter::sitter_watch, DBusBabysitter::socket_to_babysitter, and DBusBabysitter::watches\&.
+.PP
+Referenced by _dbus_babysitter_set_watch_functions()\&.
+.SS "void _dbus_babysitter_set_child_exit_error (\fBDBusBabysitter\fP * sitter, \fBDBusError\fP * error)"
+
+.PP
+Sets the \fBDBusError\fP with an explanation of why the spawned child process exited (on a signal, or whatever)\&. If the child process has not exited, does nothing (error will remain unset)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.br
+\fIerror\fP an error to fill in 
+.RE
+.PP
+
+.PP
+Definition at line 755 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_babysitter_get_child_exited(), DBUS_ERROR_FAILED, DBUS_ERROR_NO_MEMORY, DBUS_ERROR_SPAWN_CHILD_EXITED, DBUS_ERROR_SPAWN_CHILD_SIGNALED, DBUS_ERROR_SPAWN_EXEC_FAILED, dbus_set_error(), DBusBabysitter::errnum, DBusBabysitter::have_exec_errnum, DBusBabysitter::have_fork_errnum, DBusBabysitter::log_name, and DBusBabysitter::status\&.
+.PP
+Referenced by _dbus_spawn_async_with_babysitter()\&.
+.SS "\fBdbus_bool_t\fP _dbus_babysitter_set_watch_functions (\fBDBusBabysitter\fP * sitter, \fBDBusAddWatchFunction\fP add_function, \fBDBusRemoveWatchFunction\fP remove_function, \fBDBusWatchToggledFunction\fP toggled_function, void * data, \fBDBusFreeFunction\fP free_data_function)"
+
+.PP
+Sets watch functions to notify us when the babysitter object needs to read/write file descriptors\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.br
+\fIadd_function\fP function to begin monitoring a new descriptor\&. 
+.br
+\fIremove_function\fP function to stop monitoring a descriptor\&. 
+.br
+\fItoggled_function\fP function to notify when the watch is enabled/disabled 
+.br
+\fIdata\fP data to pass to add_function and remove_function\&. 
+.br
+\fIfree_data_function\fP function to be called to free the data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure (no memory) 
+.RE
+.PP
+
+.PP
+Definition at line 813 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_assert, _dbus_babysitter_get_child_exited(), _dbus_babysitter_ref(), _dbus_babysitter_unref(), _DBUS_POLLERR, _DBUS_POLLHUP, _DBUS_POLLIN, _dbus_watch_list_set_functions(), dbus_malloc(), DBUS_WATCH_ERROR, dbus_watch_get_socket(), DBUS_WATCH_HANGUP, DBUS_WATCH_READABLE, DBusBabysitter::error_pipe_from_child, DBusBabysitter::error_watch, FALSE, LIVE_CHILDREN, DBusBabysitter::log_name, NULL, DBusBabysitter::sitter_watch, DBusBabysitter::socket_to_babysitter, DBusBabysitter::status, TRUE, and DBusBabysitter::watches\&.
+.SS "void _dbus_babysitter_unref (\fBDBusBabysitter\fP * sitter)"
+
+.PP
+Decrement the reference count on the babysitter object\&. When the reference count of the babysitter object reaches zero, the babysitter is killed and the child that was being babysat gets emancipated\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter\fP the babysitter 
+.RE
+.PP
+
+.PP
+Definition at line 324 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_assert, _dbus_close_socket(), _dbus_poll(), _DBUS_POLLERR, _DBUS_POLLHUP, _DBUS_POLLIN, _dbus_warn(), _dbus_watch_invalidate(), _dbus_watch_list_free(), _dbus_watch_list_remove_watch(), _dbus_watch_unref(), dbus_error_free(), DBUS_ERROR_INIT, dbus_free(), DBusBabysitter::errnum, DBusBabysitter::error_pipe_from_child, DBusBabysitter::error_watch, DBusPollFD::events, FALSE, DBusPollFD::fd, DBusBabysitter::grandchild_pid, DBusBabysitter::have_exec_errnum, DBusBabysitter::have_fork_errnum, DBusBabysitter::log_name, DBusError::message, NULL, READ_STATUS_EOF, READ_STATUS_ERROR, READ_STATUS_OK, DBusBabysitter::refcount, DBusPollFD::revents, DBusBabysitter::sitter_pid, DBusBabysitter::sitter_watch, DBusBabysitter::socket_to_babysitter, DBusBabysitter::status, TRUE, and DBusBabysitter::watches\&.
+.PP
+Referenced by _dbus_babysitter_set_watch_functions(), and _dbus_spawn_async_with_babysitter()\&.
+.SS "\fBdbus_bool_t\fP _dbus_become_daemon (const \fBDBusString\fP * pidfile, \fBDBusPipe\fP * print_pid_pipe, \fBDBusError\fP * error, \fBdbus_bool_t\fP keep_umask)"
+
+.PP
+Does the chdir, fork, setsid, etc\&. to become a daemon process\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpidfile\fP \fBNULL\fP, or pidfile to create 
+.br
+\fIprint_pid_pipe\fP pipe to print daemon's pid to, or -1 for none 
+.br
+\fIerror\fP return location for errors 
+.br
+\fIkeep_umask\fP \fBTRUE\fP to keep the original umask 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_change_to_daemon_user (const char * user, \fBDBusError\fP * error)"
+
+.PP
+Changes the user and group the bus is running as\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuser\fP the user to become 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on failure 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_credentials_add_from_user (\fBDBusCredentials\fP * credentials, const \fBDBusString\fP * username)"
+
+.PP
+Adds the credentials corresponding to the given username\&. Used among other purposes to parses a desired identity provided from a client in the auth protocol\&. On UNIX this means parsing a UID, on Windows probably parsing an SID string\&.
+.PP
+\fBTodo\fP
+.RS 4
+this is broken because it treats OOM and parse error the same way\&. Needs a \fBDBusError\fP\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcredentials\fP credentials to fill in 
+.br
+\fIusername\fP the username 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the username existed and we got some credentials 
+.RE
+.PP
+
+.PP
+Definition at line 510 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_credentials_add_unix_uid(), _dbus_credentials_add_windows_sid(), _dbus_user_database_get_system(), _dbus_user_database_get_username(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, NULL, TRUE, and DBusUserInfo::uid\&.
+.SS "\fBdbus_bool_t\fP _dbus_directory_get_next_file (\fBDBusDirIter\fP * iter, \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Get next file in the directory\&. Will not return '\&.' or '\&.\&.' on UNIX\&. If an error occurs, the contents of 'filename' are undefined\&. The error is never set if the function succeeds\&.
+.PP
+This function is not re-entrant, and not necessarily thread-safe\&. Only use it for test code or single-threaded utilities\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiter\fP the iterator 
+.br
+\fIfilename\fP string to be set to the next file in the dir 
+.br
+\fIerror\fP return location for error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if filename was filled in with a new filename 
+.RE
+.PP
+
+.PP
+Definition at line 802 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBDBusDirIter\fP* _dbus_directory_open (const \fBDBusString\fP * filename, \fBDBusError\fP * error)"
+
+.PP
+Open a directory to iterate over\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the directory name 
+.br
+\fIerror\fP exception return object or \fBNULL\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+new iterator, or \fBNULL\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 754 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "char** _dbus_dup_string_array (const char ** array)"
+
+.PP
+Duplicates a string array\&. Result may be freed with \fBdbus_free_string_array()\fP\&. Returns \fBNULL\fP if memory allocation fails\&. If the array to be duplicated is \fBNULL\fP, returns \fBNULL\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP array to duplicate\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+newly-allocated copy\&. 
+.RE
+.PP
+
+.PP
+Definition at line 578 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_strdup(), dbus_free_string_array(), dbus_new0, and NULL\&.
+.PP
+Referenced by _dbus_auth_set_mechanisms(), and dbus_server_set_auth_mechanisms()\&.
+.SS "const char* _dbus_error_from_errno (int error_number)"
+
+.PP
+Converts a UNIX errno, or Windows errno or WinSock error value into a \fBDBusError\fP name\&. 
+.PP
+\fBTodo\fP
+.RS 4
+should cover more errnos, specifically those from open()\&.
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror_number\fP the errno\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+an error name 
+.RE
+.PP
+
+.PP
+Definition at line 614 of file dbus\-sysdeps\&.c\&.
+.PP
+References DBUS_ERROR_ACCESS_DENIED, DBUS_ERROR_ADDRESS_IN_USE, DBUS_ERROR_FAILED, DBUS_ERROR_FILE_EXISTS, DBUS_ERROR_FILE_NOT_FOUND, DBUS_ERROR_LIMITS_EXCEEDED, DBUS_ERROR_NO_MEMORY, DBUS_ERROR_NO_NETWORK, DBUS_ERROR_NO_SERVER, DBUS_ERROR_NOT_SUPPORTED, and DBUS_ERROR_TIMEOUT\&.
+.PP
+Referenced by _dbus_append_address_from_socket(), _dbus_become_daemon(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_close(), _dbus_close_socket(), _dbus_command_for_pid(), _dbus_connect_exec(), _dbus_connect_tcp_socket(), _dbus_connect_unix_socket(), _dbus_directory_close(), _dbus_directory_get_next_file(), _dbus_directory_open(), _dbus_dup(), _dbus_error_from_system_errno(), _dbus_file_get_contents(), _dbus_full_duplex_pipe(), _dbus_get_tmpdir(), _dbus_is_console_user(), _dbus_listen_systemd_sockets(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_read_credentials_socket(), _dbus_send_credentials_socket(), _dbus_stat(), and _dbus_string_save_to_file()\&.
+.SS "const char* _dbus_error_from_system_errno (void)"
+
+.PP
+Converts the current system errno value into a \fBDBusError\fP name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+an error name 
+.RE
+.PP
+
+.PP
+Definition at line 706 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_error_from_errno()\&.
+.PP
+Referenced by _dbus_become_daemon()\&.
+.SS "\fBdbus_bool_t\fP _dbus_file_exists (const char * file)"
+
+.PP
+Checks if a file exists\&. File interface\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP full path to the file 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if file exists 
+.RE
+.PP
+
+.PP
+Definition at line 633 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+Referenced by _dbus_user_at_console()\&.
+.SS "\fBdbus_bool_t\fP _dbus_generate_random_ascii (\fBDBusString\fP * str, int n_bytes)"
+
+.PP
+Generates the given number of random bytes, where the bytes are chosen from the alphanumeric ASCII subset\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string 
+.br
+\fIn_bytes\fP the number of random ASCII bytes to append to string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if no memory or other failure 
+.RE
+.PP
+
+.PP
+Definition at line 575 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_assert, _dbus_generate_random_bytes(), _dbus_string_validate_ascii(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific(), and _dbus_string_save_to_file()\&.
+.SS "void _dbus_generate_random_bytes_buffer (char * buffer, int n_bytes)"
+
+.PP
+Fills n_bytes of the given buffer with random bytes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP an allocated buffer 
+.br
+\fIn_bytes\fP the number of bytes in buffer to write to 
+.RE
+.PP
+
+.PP
+Definition at line 543 of file dbus\-sysdeps\&.c\&.
+.PP
+References _dbus_generate_pseudorandom_bytes_buffer(), _dbus_generate_random_bytes(), _dbus_string_copy_to_buffer(), _dbus_string_free(), and _dbus_string_init()\&.
+.PP
+Referenced by _dbus_generate_uuid()\&.
+.SS "void _dbus_generate_uuid (\fBDBusGUID\fP * uuid)"
+
+.PP
+Generates a new UUID\&. If you change how this is done, there's some text about it in the spec that should also change\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuuid\fP the uuid to initialize 
+.RE
+.PP
+
+.PP
+Definition at line 641 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_generate_random_bytes_buffer(), _dbus_get_real_time(), DBusGUID::as_bytes, DBusGUID::as_uint32s, and NULL\&.
+.PP
+Referenced by _dbus_get_local_machine_uuid_encoded(), _dbus_read_local_machine_uuid(), _dbus_read_uuid_file(), _dbus_server_init_base(), and dbus_internal_do_not_use_create_uuid()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_group_id (const \fBDBusString\fP * groupname, \fBdbus_gid_t\fP * gid)"
+
+.PP
+Gets group ID given groupname\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgroupname\fP the groupname 
+.br
+\fIgid\fP return location for GID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if group name existed and we got the GID 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_user_database_get_groupname(), _dbus_user_database_get_system(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, DBusGroupInfo::gid, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_parse_unix_group_from_config()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_eintr (int e)"
+
+.PP
+See if errno is EINTR\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if e == EINTR 
+.RE
+.PP
+
+.PP
+Definition at line 739 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_enomem (int e)"
+
+.PP
+See if errno is ENOMEM\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if e == ENOMEM 
+.RE
+.PP
+
+.PP
+Definition at line 729 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_epipe (int e)"
+
+.PP
+See if errno is EPIPE\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if errno == EPIPE 
+.RE
+.PP
+
+.PP
+Definition at line 749 of file dbus\-sysdeps\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_is_errno_etoomanyrefs (int e)"
+
+.PP
+See if errno is ETOOMANYREFS\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if errno == ETOOMANYREFS 
+.RE
+.PP
+
+.PP
+Definition at line 759 of file dbus\-sysdeps\&.c\&.
+.PP
+References FALSE\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_local_machine_uuid_encoded (\fBDBusString\fP * uuid_str)"
+
+.PP
+Gets the hex-encoded UUID of the machine this function is executed on\&. This UUID is guaranteed to be the same for a given machine at least until it next reboots, though it also makes some effort to be the same forever, it may change if the machine is reconfigured or its hardware is modified\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuuid_str\fP string to append hex-encoded machine uuid to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 854 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_current_generation, _dbus_generate_uuid(), _DBUS_LOCK, _dbus_read_local_machine_uuid(), _DBUS_UNLOCK, _dbus_uuid_encode(), _dbus_warn_check_failed(), dbus_error_free(), DBUS_ERROR_INIT, FALSE, and DBusError::message\&.
+.PP
+Referenced by _dbus_get_autolaunch_address(), dbus_connection_get_dispatch_status(), and dbus_get_local_machine_id()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_user_id (const \fBDBusString\fP * username, \fBdbus_uid_t\fP * uid)"
+
+.PP
+Gets user ID given username\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP the username 
+.br
+\fIuid\fP return location for UID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if username existed and we got the UID 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_get_user_id_and_primary_group(), and NULL\&.
+.PP
+Referenced by _dbus_groups_from_uid(), and _dbus_parse_unix_user_from_config()\&.
+.SS "\fBdbus_bool_t\fP _dbus_get_user_id_and_primary_group (const \fBDBusString\fP * username, \fBdbus_uid_t\fP * uid_p, \fBdbus_gid_t\fP * gid_p)"
+
+.PP
+Gets user ID and primary group given username\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP the username 
+.br
+\fIuid_p\fP return location for UID 
+.br
+\fIgid_p\fP return location for GID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if username existed and we got the UID and GID 
+.RE
+.PP
+
+.PP
+Definition at line 199 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_user_database_get_system(), _dbus_user_database_get_username(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, NULL, DBusUserInfo::primary_gid, TRUE, and DBusUserInfo::uid\&.
+.PP
+Referenced by _dbus_change_to_daemon_user(), _dbus_get_user_id(), and _dbus_verify_daemon_user()\&.
+.SS "\fBdbus_bool_t\fP _dbus_group_info_fill (\fBDBusGroupInfo\fP * info, const \fBDBusString\fP * groupname, \fBDBusError\fP * error)"
+
+.PP
+Initializes the given \fBDBusGroupInfo\fP struct with information about the given group name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info struct 
+.br
+\fIgroupname\fP name of group 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1000 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References DBUS_GID_UNSET\&.
+.PP
+Referenced by _dbus_user_database_lookup_group()\&.
+.SS "\fBdbus_bool_t\fP _dbus_group_info_fill_gid (\fBDBusGroupInfo\fP * info, \fBdbus_gid_t\fP gid, \fBDBusError\fP * error)"
+
+.PP
+Initializes the given \fBDBusGroupInfo\fP struct with information about the given group ID\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info struct 
+.br
+\fIgid\fP group ID 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 1019 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup_group()\&.
+.SS "void _dbus_group_info_free (\fBDBusGroupInfo\fP * info)"
+
+.PP
+Frees the members of info (but not info itself)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the group info 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file dbus\-userdb\&.c\&.
+.PP
+References dbus_free(), and DBusGroupInfo::groupname\&.
+.PP
+Referenced by _dbus_group_info_free_allocated()\&.
+.SS "void _dbus_group_info_free_allocated (\fBDBusGroupInfo\fP * info)"
+
+.PP
+Frees the given \fBDBusGroupInfo\fP's members with \fB_dbus_group_info_free()\fP and also calls \fBdbus_free()\fP on the block itself\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the info 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_group_info_free(), dbus_free(), and NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup_group(), and _dbus_user_database_new()\&.
+.SS "\fBdbus_bool_t\fP _dbus_groups_from_uid (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP ** group_ids, int * n_group_ids)"
+
+.PP
+Gets all groups corresponding to the given UID\&. Returns \fBFALSE\fP if no memory, or user isn't known, but always initializes group_ids to a NULL array\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the UID 
+.br
+\fIgroup_ids\fP return location for array of group IDs 
+.br
+\fIn_group_ids\fP return location for length of returned array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID existed and we got some credentials 
+.RE
+.PP
+
+.PP
+Definition at line 388 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_get_user_id(), _dbus_groups_from_uid(), _dbus_homedir_from_current_process(), _dbus_is_console_user(), _dbus_user_database_get_system(), _dbus_user_database_get_uid(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), _dbus_username_from_current_process(), dbus_error_free(), dbus_error_init(), dbus_free(), dbus_new, FALSE, DBusUserInfo::group_ids, DBusError::message, DBusUserInfo::n_group_ids, NULL, TRUE, and DBusUserInfo::uid\&.
+.PP
+Referenced by _dbus_groups_from_uid(), and _dbus_unix_groups_from_uid()\&.
+.SS "\fBdbus_bool_t\fP _dbus_homedir_from_current_process (const \fBDBusString\fP ** homedir)"
+
+.PP
+Gets homedir of user owning current process\&. The returned string is valid until \fBdbus_shutdown()\fP is called\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhomedir\fP place to store pointer to homedir 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 395 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_get_standard_session_servicedirs(), and _dbus_groups_from_uid()\&.
+.SS "\fBdbus_bool_t\fP _dbus_homedir_from_uid (\fBdbus_uid_t\fP uid, \fBDBusString\fP * homedir)"
+
+.PP
+Gets the home directory for the given user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the uid 
+.br
+\fIhomedir\fP string to append home directory to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if user existed and we appended their homedir 
+.RE
+.PP
+
+.PP
+Definition at line 461 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_string_append(), _dbus_user_database_get_system(), _dbus_user_database_get_uid(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, DBusUserInfo::homedir, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_append_keyring_directory_for_credentials()\&.
+.SS "\fBdbus_bool_t\fP _dbus_homedir_from_username (const \fBDBusString\fP * username, \fBDBusString\fP * homedir)"
+
+.PP
+Gets the home directory for the given user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP the username 
+.br
+\fIhomedir\fP string to append home directory to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if user existed and we appended their homedir 
+.RE
+.PP
+
+.PP
+Definition at line 419 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_string_append(), _dbus_user_database_get_system(), _dbus_user_database_get_username(), _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, DBusUserInfo::homedir, NULL, and TRUE\&.
+.SS "\fBdbus_bool_t\fP _dbus_is_a_number (const \fBDBusString\fP * str, unsigned long * num)"
+
+.PP
+Checks if a given string is actually a number and converts it if it is\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP the string to check 
+.br
+\fInum\fP the memory location of the unsigned long to fill in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if str is a number and num is filled in 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_string_parse_uint(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_user_database_lookup(), and _dbus_user_database_lookup_group()\&.
+.SS "\fBdbus_bool_t\fP _dbus_is_console_user (\fBdbus_uid_t\fP uid, \fBDBusError\fP * error)"
+
+.PP
+Checks to see if the UID sent in is the console user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP UID of person to check 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID is the same as the console user and there are no errors 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_error_from_errno(), _dbus_stat(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_user_at_console(), _dbus_user_database_get_system(), _dbus_user_database_lock_system(), _dbus_user_database_lookup(), _dbus_user_database_unlock_system(), DBUS_ERROR_FAILED, dbus_set_error(), DBUS_UID_FORMAT, FALSE, NULL, TRUE, DBusStat::uid, and DBusUserInfo::username\&.
+.PP
+Referenced by _dbus_groups_from_uid(), and _dbus_unix_user_is_at_console()\&.
+.SS "void* _dbus_memdup (const void * mem, size_t n_bytes)"
+
+.PP
+Duplicates a block of memory\&. Returns \fBNULL\fP on failure\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImem\fP memory to copy 
+.br
+\fIn_bytes\fP number of bytes to copy 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the copy 
+.RE
+.PP
+
+.PP
+Definition at line 555 of file dbus\-internals\&.c\&.
+.PP
+References dbus_malloc(), and NULL\&.
+.PP
+Referenced by _dbus_credentials_add_adt_audit_data(), _dbus_decompose_path(), and _dbus_message_loader_return_unix_fds()\&.
+.SS "\fBdbus_bool_t\fP _dbus_parse_unix_group_from_config (const \fBDBusString\fP * groupname, \fBdbus_gid_t\fP * gid_p)"
+
+.PP
+Parse a UNIX group from the bus config file\&. On Windows, this should simply always fail (just return \fBFALSE\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgroupname\fP the groupname text 
+.br
+\fIgid_p\fP place to return the gid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1051 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_parse_unix_user_from_config (const \fBDBusString\fP * username, \fBdbus_uid_t\fP * uid_p)"
+
+.PP
+Parse a UNIX user from the bus config file\&. On Windows, this should simply always fail (just return \fBFALSE\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP the username text 
+.br
+\fIuid_p\fP place to return the uid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 1035 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_path_is_absolute (const \fBDBusString\fP * filename)"
+
+.PP
+Checks whether the filename is an absolute path\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if an absolute path 
+.RE
+.PP
+
+.PP
+Definition at line 689 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+Referenced by _dbus_get_environment(), and _dbus_get_standard_session_servicedirs()\&.
+.SS "\fBdbus_bool_t\fP _dbus_read_uuid_file (const \fBDBusString\fP * filename, \fBDBusGUID\fP * uuid, \fBdbus_bool_t\fP create_if_not_found, \fBDBusError\fP * error)"
+
+.PP
+Reads (and optionally writes) a uuid to a file\&. Initializes the uuid unless an error is returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the name of the file 
+.br
+\fIuuid\fP uuid to be initialized with the loaded uuid 
+.br
+\fIcreate_if_not_found\fP \fBTRUE\fP to create a new uuid and save it if the file doesn't exist 
+.br
+\fIerror\fP the error return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the error is set 
+.RE
+.PP
+
+.PP
+Definition at line 806 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_generate_uuid(), _dbus_write_uuid_file(), dbus_error_free(), dbus_error_has_name(), DBUS_ERROR_INIT, DBUS_ERROR_INVALID_FILE_CONTENT, dbus_move_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_read_local_machine_uuid(), and dbus_internal_do_not_use_get_uuid()\&.
+.SS "void _dbus_real_assert (\fBdbus_bool_t\fP condition, const char * condition_text, const char * file, int line, const char * func)"
+
+.PP
+Internals of \fB_dbus_assert()\fP; it's a function rather than a macro with the inline code so that the assertion failure blocks don't show up in test suite coverage, and to shrink code size\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcondition\fP TRUE if assertion succeeded 
+.br
+\fIcondition_text\fP condition as a string 
+.br
+\fIfile\fP file the assertion is in 
+.br
+\fIline\fP line the assertion is in 
+.br
+\fIfunc\fP function the assertion is in 
+.RE
+.PP
+
+.PP
+Definition at line 912 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_abort(), _dbus_pid_for_log(), and _dbus_warn()\&.
+.SS "void _dbus_real_assert_not_reached (const char * explanation, const char * file, int line)"
+
+.PP
+Internals of \fB_dbus_assert_not_reached()\fP; it's a function rather than a macro with the inline code so that the assertion failure blocks don't show up in test suite coverage, and to shrink code size\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexplanation\fP what was reached that shouldn't have been 
+.br
+\fIfile\fP file the assertion is in 
+.br
+\fIline\fP line the assertion is in 
+.RE
+.PP
+
+.PP
+Definition at line 937 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_abort(), _dbus_getenv(), _DBUS_INT_MAX, _dbus_pid_for_log(), _dbus_string_init_const(), _dbus_string_parse_int(), _dbus_warn(), FALSE, NULL, and TRUE\&.
+.SS "void _dbus_set_signal_handler (int sig, \fBDBusSignalHandler\fP handler)"
+
+.PP
+Installs a UNIX signal handler\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsig\fP the signal to handle 
+.br
+\fIhandler\fP the handler 
+.RE
+.PP
+
+.PP
+Definition at line 614 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_spawn_async_with_babysitter (\fBDBusBabysitter\fP ** sitter_p, const char * log_name, char ** argv, char ** env, DBusSpawnChildSetupFunc child_setup, void * user_data, \fBDBusError\fP * error)"
+
+.PP
+Spawns a new process\&. The child_setup function is passed the given user_data and is run in the child just before calling exec()\&.
+.PP
+Also creates a 'babysitter' which tracks the status of the child process, advising the parent if the child exits\&. If the spawn fails, no babysitter is created\&. If sitter_p is \fBNULL\fP, no babysitter is kept\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsitter_p\fP return location for babysitter or \fBNULL\fP 
+.br
+\fIlog_name\fP the name under which to log messages about this process being spawned 
+.br
+\fIargv\fP the executable and arguments 
+.br
+\fIenv\fP the environment, or \fBNULL\fP to copy the parent's 
+.br
+\fIchild_setup\fP function to call in child pre-exec() 
+.br
+\fIuser_data\fP user data for setup function 
+.br
+\fIerror\fP error object to be filled in if function fails 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success, \fBFALSE\fP if error is filled in 
+.RE
+.PP
+
+.PP
+Definition at line 1210 of file dbus\-spawn\&.c\&.
+.PP
+References _dbus_assert, _dbus_assert_not_reached, _dbus_babysitter_kill_child(), _dbus_babysitter_set_child_exit_error(), _dbus_babysitter_unref(), _dbus_full_duplex_pipe(), _dbus_getenv(), _dbus_spawn_async_with_babysitter(), _dbus_strdup(), _dbus_string_append_printf(), _dbus_string_free(), _dbus_string_init(), _dbus_warn(), _dbus_watch_invalidate(), _dbus_watch_list_add_watch(), _dbus_watch_new(), _dbus_watch_unref(), dbus_error_free(), dbus_error_has_name(), DBUS_ERROR_INIT, dbus_error_init(), dbus_error_is_set(), DBUS_ERROR_NO_MEMORY, DBUS_ERROR_SPAWN_CHILD_EXITED, DBUS_ERROR_SPAWN_CHILD_SIGNALED, DBUS_ERROR_SPAWN_EXEC_FAILED, DBUS_ERROR_SPAWN_FORK_FAILED, dbus_free_string_array(), dbus_set_error(), dbus_set_error_const(), DBUS_WATCH_READABLE, DBusBabysitter::error_pipe_from_child, DBusBabysitter::error_watch, FALSE, DBusBabysitter::grandchild_pid, LIVE_CHILDREN, DBusBabysitter::log_name, DBusError::message, DBusError::name, NULL, READ_END, DBusBabysitter::sitter_pid, DBusBabysitter::sitter_watch, DBusBabysitter::socket_to_babysitter, TRUE, DBusBabysitter::watches, and WRITE_END\&.
+.PP
+Referenced by _dbus_spawn_async_with_babysitter()\&.
+.SS "\fBdbus_bool_t\fP _dbus_stat (const \fBDBusString\fP * filename, \fBDBusStat\fP * statbuf, \fBDBusError\fP * error)"
+
+.PP
+stat() wrapper\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the filename to stat 
+.br
+\fIstatbuf\fP the stat info to fill in 
+.br
+\fIerror\fP return location for error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error was set 
+.RE
+.PP
+
+.PP
+Definition at line 706 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+Referenced by _dbus_is_console_user()\&.
+.SS "char* _dbus_strdup (const char * str)"
+
+.PP
+Duplicates a string\&. Result must be freed with \fBdbus_free()\fP\&. Returns \fBNULL\fP if memory allocation fails\&. If the string to be duplicated is \fBNULL\fP, returns \fBNULL\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to duplicate\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+newly-allocated copy\&. 
+.RE
+.PP
+
+.PP
+Definition at line 527 of file dbus\-internals\&.c\&.
+.PP
+References dbus_malloc(), and NULL\&.
+.PP
+Referenced by _dbus_check_dir_is_private_to_user(), _dbus_connection_handle_watch(), _dbus_credentials_add_windows_sid(), _dbus_directory_close(), _dbus_dup_string_array(), _dbus_get_environment(), _dbus_hash_table_get_n_entries(), _dbus_message_iter_get_args_valist(), _dbus_object_tree_free_all_unlocked(), _dbus_server_new_for_domain_socket(), _dbus_spawn_async_with_babysitter(), _dbus_transport_get_is_connected(), _dbus_transport_get_windows_user(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), dbus_bus_get_id(), dbus_bus_register(), dbus_bus_set_unique_name(), dbus_connection_get_server_id(), dbus_server_get_address(), and dbus_set_error()\&.
+.SS "const char* _dbus_strerror_from_errno (void)"
+
+.PP
+Get error message from errno\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+_dbus_strerror(errno) 
+.RE
+.PP
+
+.PP
+Definition at line 773 of file dbus\-sysdeps\&.c\&.
+.PP
+Referenced by _dbus_become_daemon(), _dbus_close_socket(), _dbus_connect_tcp_socket(), _dbus_create_directory(), _dbus_delete_file(), _dbus_full_duplex_pipe(), _dbus_listen_tcp_socket(), _dbus_poll(), _dbus_send_credentials_socket(), _dbus_write_socket(), and _dbus_write_socket_two()\&.
+.SS "\fBdbus_bool_t\fP _dbus_string_array_contains (const char ** array, const char * str)"
+
+.PP
+Checks whether a string array contains the given string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP array to search\&. 
+.br
+\fIstr\fP string to look for 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if array contains string 
+.RE
+.PP
+
+.PP
+Definition at line 618 of file dbus\-internals\&.c\&.
+.PP
+References FALSE, NULL, and TRUE\&.
+.SS "void _dbus_system_log (DBusSystemLogSeverity severity, const char * msg,  \&.\&.\&.)"
+
+.PP
+Log a message to the system log file (e\&.g\&. syslog on Unix)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIseverity\fP a severity value 
+.br
+\fImsg\fP a printf-style format string 
+.RE
+.PP
+
+.PP
+Definition at line 543 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "void _dbus_system_logv (DBusSystemLogSeverity severity, const char * msg, va_list args)"
+
+.PP
+Log a message to the system log file (e\&.g\&. syslog on Unix)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIseverity\fP a severity value 
+.br
+\fImsg\fP a printf-style format string 
+.br
+\fIargs\fP arguments for the format string
+.RE
+.PP
+If the FATAL severity is given, this function will terminate the program with an error code\&. 
+.PP
+Definition at line 565 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+Referenced by _dbus_system_log()\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_groups_from_uid (\fBdbus_uid_t\fP uid, \fBdbus_gid_t\fP ** group_ids, int * n_group_ids)"
+
+.PP
+Gets all groups corresponding to the given UNIX user ID\&. On UNIX, just calls \fB_dbus_groups_from_uid()\fP\&. On Windows, should always fail since we don't know any UNIX groups\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the UID 
+.br
+\fIgroup_ids\fP return location for array of group IDs 
+.br
+\fIn_group_ids\fP return location for length of returned array 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID existed and we got some credentials 
+.RE
+.PP
+
+.PP
+Definition at line 1068 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_user_is_at_console (\fBdbus_uid_t\fP uid, \fBDBusError\fP * error)"
+
+.PP
+Checks to see if the UNIX user ID is at the console\&. Should always fail on Windows (set the error to \fBDBUS_ERROR_NOT_SUPPORTED\fP)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP UID of person to check 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if the UID is the same as the console user and there are no errors 
+.RE
+.PP
+
+.PP
+Definition at line 1085 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_unix_user_is_process_owner (\fBdbus_uid_t\fP uid)"
+
+.PP
+Checks to see if the UNIX user ID matches the UID of the process\&. Should always return \fBFALSE\fP on Windows\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuid\fP the UNIX user ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if this uid owns the process\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1100 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_at_console (const char * username, \fBDBusError\fP * error)"
+
+.PP
+Checks if user is at the console\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP user to check 
+.br
+\fIerror\fP return location for errors 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP is the user is at the consolei and there are no errors 
+.RE
+.PP
+
+.PP
+Definition at line 645 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+References _dbus_concat_dir_and_file(), _dbus_file_exists(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_string_init_const(), and FALSE\&.
+.PP
+Referenced by _dbus_is_console_user()\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_database_get_gid (DBusUserDatabase * db, \fBdbus_gid_t\fP gid, const \fBDBusGroupInfo\fP ** info, \fBDBusError\fP * error)"
+
+.PP
+Gets the user information for the given GID, returned group info should not be freed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP user database 
+.br
+\fIgid\fP the group ID 
+.br
+\fIinfo\fP return location for const ref to group info 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 367 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_user_database_lookup_group(), and NULL\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_database_get_groupname (DBusUserDatabase * db, const \fBDBusString\fP * groupname, const \fBDBusGroupInfo\fP ** info, \fBDBusError\fP * error)"
+
+.PP
+Gets the user information for the given group name, returned group info should not be freed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP user database 
+.br
+\fIgroupname\fP the group name 
+.br
+\fIinfo\fP return location for const ref to group info 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 347 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_user_database_lookup_group(), DBUS_GID_UNSET, and NULL\&.
+.PP
+Referenced by _dbus_get_group_id()\&.
+.SS "DBusUserDatabase* _dbus_user_database_get_system (void)"
+
+.PP
+Gets the system global user database; must be called with lock held (\fB_dbus_user_database_lock_system()\fP)\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+the database or \fBNULL\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 336 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_assert\&.
+.PP
+Referenced by _dbus_credentials_add_from_user(), _dbus_get_group_id(), _dbus_get_user_id_and_primary_group(), _dbus_groups_from_uid(), _dbus_homedir_from_uid(), _dbus_homedir_from_username(), and _dbus_is_console_user()\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_database_get_uid (DBusUserDatabase * db, \fBdbus_uid_t\fP uid, const \fBDBusUserInfo\fP ** info, \fBDBusError\fP * error)"
+
+.PP
+Gets the user information for the given UID, returned user info should not be freed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP user database 
+.br
+\fIuid\fP the user ID 
+.br
+\fIinfo\fP return location for const ref to user info 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 657 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_user_database_lookup(), and NULL\&.
+.PP
+Referenced by _dbus_groups_from_uid(), _dbus_homedir_from_uid(), and _dbus_user_database_lookup()\&.
+.SS "\fBdbus_bool_t\fP _dbus_user_database_get_username (DBusUserDatabase * db, const \fBDBusString\fP * username, const \fBDBusUserInfo\fP ** info, \fBDBusError\fP * error)"
+
+.PP
+Gets the user information for the given username\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP user database 
+.br
+\fIusername\fP the user name 
+.br
+\fIinfo\fP return location for const ref to user info 
+.br
+\fIerror\fP error location 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 676 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_user_database_lookup(), DBUS_UID_UNSET, and NULL\&.
+.PP
+Referenced by _dbus_credentials_add_from_user(), _dbus_get_user_id_and_primary_group(), and _dbus_homedir_from_username()\&.
+.SS "\fBDBusUserInfo\fP* _dbus_user_database_lookup (DBusUserDatabase * db, \fBdbus_uid_t\fP uid, const \fBDBusString\fP * username, \fBDBusError\fP * error)"
+
+.PP
+Looks up a uid or username in the user database\&. Only one of name or UID can be provided\&. There are wrapper functions for this that are better to use, this one does no locking or anything on the database and otherwise sort of sucks\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP the database 
+.br
+\fIuid\fP the user ID or \fBDBUS_UID_UNSET\fP 
+.br
+\fIusername\fP username or \fBNULL\fP 
+.br
+\fIerror\fP error to fill in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the entry in the database 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_assert, _dbus_getuid(), _dbus_hash_table_insert_string(), _dbus_hash_table_insert_uintptr(), _dbus_hash_table_lookup_string(), _dbus_hash_table_lookup_uintptr(), _dbus_hash_table_remove_uintptr(), _dbus_is_a_number(), _dbus_register_shutdown_func(), _dbus_string_append(), _dbus_string_free(), _dbus_string_init(), _dbus_user_database_get_uid(), _dbus_user_database_new(), _dbus_user_database_unref(), _dbus_user_info_fill(), _dbus_user_info_fill_uid(), _dbus_user_info_free_allocated(), _dbus_warn(), dbus_error_free(), dbus_error_has_name(), DBUS_ERROR_INIT, DBUS_ERROR_NO_MEMORY, dbus_new0, dbus_set_error(), DBUS_UID_FORMAT, DBUS_UID_UNSET, FALSE, DBusUserInfo::homedir, DBusError::message, NULL, TRUE, DBusUserInfo::uid, and DBusUserInfo::username\&.
+.PP
+Referenced by _dbus_is_console_user(), _dbus_user_database_get_uid(), and _dbus_user_database_get_username()\&.
+.SS "\fBDBusGroupInfo\fP* _dbus_user_database_lookup_group (DBusUserDatabase * db, \fBdbus_gid_t\fP gid, const \fBDBusString\fP * groupname, \fBDBusError\fP * error)"
+
+.PP
+Looks up a gid or group name in the user database\&. Only one of name or GID can be provided\&. There are wrapper functions for this that are better to use, this one does no locking or anything on the database and otherwise sort of sucks\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP the database 
+.br
+\fIgid\fP the group ID or \fBDBUS_GID_UNSET\fP 
+.br
+\fIgroupname\fP group name or \fBNULL\fP 
+.br
+\fIerror\fP error to fill in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the entry in the database 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file dbus\-userdb\-util\&.c\&.
+.PP
+References _dbus_group_info_fill(), _dbus_group_info_fill_gid(), _dbus_group_info_free_allocated(), _dbus_hash_table_insert_string(), _dbus_hash_table_insert_uintptr(), _dbus_hash_table_lookup_string(), _dbus_hash_table_lookup_uintptr(), _dbus_hash_table_remove_uintptr(), _dbus_is_a_number(), DBUS_ERROR_NO_MEMORY, DBUS_GID_FORMAT, DBUS_GID_UNSET, dbus_new0, dbus_set_error(), DBUS_UID_UNSET, DBusGroupInfo::gid, DBusGroupInfo::groupname, and NULL\&.
+.PP
+Referenced by _dbus_user_database_get_gid(), and _dbus_user_database_get_groupname()\&.
+.SS "DBusUserDatabase* _dbus_user_database_new (void)"
+
+.PP
+Creates a new user database object used to look up and cache user information\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+new database, or \fBNULL\fP on out of memory 
+.RE
+.PP
+
+.PP
+Definition at line 550 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_group_info_free_allocated(), _dbus_hash_table_new(), _dbus_user_database_unref(), _dbus_user_info_free_allocated(), DBUS_HASH_STRING, DBUS_HASH_UINTPTR, dbus_new0, and NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup()\&.
+.SS "void _dbus_user_database_unref (DBusUserDatabase * db)"
+
+.PP
+Decrements refcount of user database\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP the database 
+.RE
+.PP
+
+.PP
+Definition at line 623 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_assert, _dbus_hash_table_unref(), and dbus_free()\&.
+.PP
+Referenced by _dbus_user_database_lookup(), and _dbus_user_database_new()\&.
+.SS "void _dbus_user_info_free (\fBDBusUserInfo\fP * info)"
+
+.PP
+Frees the members of info (but not info itself) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the user info struct 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file dbus\-userdb\&.c\&.
+.PP
+References dbus_free(), DBusUserInfo::group_ids, DBusUserInfo::homedir, and DBusUserInfo::username\&.
+.PP
+Referenced by _dbus_user_info_free_allocated()\&.
+.SS "void _dbus_user_info_free_allocated (\fBDBusUserInfo\fP * info)"
+
+.PP
+Frees the given \fBDBusUserInfo\fP's members with \fB_dbus_user_info_free()\fP and also calls \fBdbus_free()\fP on the block itself\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP the info 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_user_info_free(), dbus_free(), and NULL\&.
+.PP
+Referenced by _dbus_user_database_lookup(), and _dbus_user_database_new()\&.
+.SS "\fBdbus_bool_t\fP _dbus_username_from_current_process (const \fBDBusString\fP ** username)"
+
+.PP
+Gets username of user owning current process\&. The returned string is valid until \fBdbus_shutdown()\fP is called\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusername\fP place to store pointer to username 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 371 of file dbus\-userdb\&.c\&.
+.PP
+References _dbus_user_database_lock_system(), _dbus_user_database_unlock_system(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_groups_from_uid()\&.
+.SS "\fBdbus_bool_t\fP _dbus_uuid_encode (const \fBDBusGUID\fP * uuid, \fBDBusString\fP * encoded)"
+
+.PP
+Hex-encode a UUID\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuuid\fP the uuid 
+.br
+\fIencoded\fP string to append hex uuid to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 663 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_file_get_contents(), _dbus_string_chop_white(), _dbus_string_copy_to_buffer(), _dbus_string_free(), _dbus_string_hex_decode(), _dbus_string_hex_encode(), _dbus_string_init(), _dbus_string_init_const_len(), DBusGUID::as_bytes, DBUS_ERROR_INVALID_FILE_CONTENT, dbus_set_error(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_get_local_machine_uuid_encoded(), _dbus_server_init_base(), and _dbus_write_uuid_file()\&.
+.SS "\fBdbus_bool_t\fP _dbus_verify_daemon_user (const char * user)"
+
+.PP
+Verify that after the fork we can successfully change to this user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuser\fP the username given in the daemon configuration 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if username is valid 
+.RE
+.PP
+
+.PP
+Definition at line 312 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "void _dbus_warn (const char * format,  \&.\&.\&.)"
+
+.PP
+Prints a warning message to stderr\&. Can optionally be made to exit fatally by setting DBUS_FATAL_WARNINGS, but this is rarely used\&. This function should be considered pretty much equivalent to fprintf(stderr)\&. \fB_dbus_warn_check_failed()\fP on the other hand is suitable for use when a programming mistake has been made\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIformat\fP printf-style format string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 230 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_abort()\&.
+.PP
+Referenced by _dbus_append_keyring_directory_for_credentials(), _dbus_babysitter_unref(), _dbus_change_to_daemon_user(), _dbus_check_dir_is_private_to_user(), _dbus_decompose_path(), _dbus_file_exists(), _dbus_full_duplex_pipe(), _dbus_get_environment(), _dbus_get_tmpdir(), _dbus_listen_tcp_socket(), _dbus_listen_unix_socket(), _dbus_marshal_read_basic(), _dbus_marshal_skip_basic(), _dbus_message_iter_get_args_valist(), _dbus_object_tree_unregister_and_unlock(), _dbus_poll(), _dbus_real_assert(), _dbus_real_assert_not_reached(), _dbus_server_new_for_launchd(), _dbus_sha_compute(), _dbus_spawn_async_with_babysitter(), _dbus_user_database_lookup(), _dbus_warn_check_failed(), _dbus_watch_unref(), dbus_address_unescape_value(), dbus_connection_register_fallback(), dbus_connection_register_object_path(), dbus_malloc(), dbus_malloc0(), dbus_message_append_args_valist(), dbus_realloc(), and dbus_server_get_data()\&.
+.SS "void _dbus_warn_check_failed (const char * format,  \&.\&.\&.)"
+
+.PP
+Prints a 'critical' warning to stderr when an assertion fails; differs from _dbus_warn primarily in that it prefixes the pid and defaults to fatal\&. This should be used only when a programming error has been detected\&. (NOT for unavoidable errors that an app might handle - those should be returned as \fBDBusError\fP\&.) Calling this means 'there is a bug' 
+.PP
+Definition at line 258 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_abort(), _dbus_assert, _dbus_getenv(), _dbus_pid_for_log(), _dbus_warn(), FALSE, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_get_local_machine_uuid_encoded(), _dbus_marshal_read_basic(), _dbus_transport_handle_watch(), _dbus_type_reader_recurse(), _dbus_type_writer_init_values_only(), dbus_connection_close(), dbus_connection_remove_filter(), dbus_connection_unref(), dbus_message_iter_init_append(), dbus_server_ref(), dbus_server_set_timeout_functions(), dbus_server_set_watch_functions(), dbus_server_unref(), and dbus_watch_handle()\&.
+.SS "\fBdbus_bool_t\fP _dbus_windows_user_is_process_owner (const char * windows_sid)"
+
+.PP
+Checks to see if the Windows user SID matches the owner of the process\&. Should always return \fBFALSE\fP on UNIX\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwindows_sid\fP the Windows user SID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP if this user owns the process\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1113 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.SS "\fBdbus_bool_t\fP _dbus_write_pid_to_file_and_pipe (const \fBDBusString\fP * pidfile, \fBDBusPipe\fP * print_pid_pipe, \fBdbus_pid_t\fP pid_to_write, \fBDBusError\fP * error)"
+
+.PP
+Writes the given pid_to_write to a pidfile (if non-NULL) and/or to a pipe (if non-NULL)\&. Does nothing if pidfile and print_pid_pipe are both NULL\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpidfile\fP the file to write to or \fBNULL\fP 
+.br
+\fIprint_pid_pipe\fP the pipe to write to or \fBNULL\fP 
+.br
+\fIpid_to_write\fP the pid to write out 
+.br
+\fIerror\fP error on failure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if error is set 
+.RE
+.PP
+
+.PP
+Definition at line 238 of file dbus\-sysdeps\-util\-unix\&.c\&.
+.PP
+Referenced by _dbus_become_daemon()\&.
+.SS "\fBdbus_bool_t\fP _dbus_write_uuid_file (const \fBDBusString\fP * filename, const \fBDBusGUID\fP * uuid, \fBDBusError\fP * error)"
+
+.PP
+Write the give UUID to a file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the file to write 
+.br
+\fIuuid\fP the UUID to save 
+.br
+\fIerror\fP used to raise an error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 757 of file dbus\-internals\&.c\&.
+.PP
+References _dbus_string_append_byte(), _dbus_string_free(), _dbus_string_init(), _dbus_string_save_to_file(), _dbus_uuid_encode(), FALSE, and TRUE\&.
+.PP
+Referenced by _dbus_read_local_machine_uuid(), and _dbus_read_uuid_file()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const char* _dbus_return_if_fail_warning_format"
+\fBInitial value:\fP
+.PP
+.nf
+=
+"arguments to %s() were incorrect, assertion \"%s\" failed in file %s line %d\&.\n"
+"This is normally a bug in some application using the D-Bus library\&.\n"
+.fi
+.PP
+String used in _dbus_return_if_fail macro\&. 
+.PP
+Definition at line 893 of file dbus\-internals\&.c\&.
+.PP
+Referenced by dbus_server_ref(), and dbus_server_unref()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

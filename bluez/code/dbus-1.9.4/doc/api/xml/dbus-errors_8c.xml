@@ -1,0 +1,898 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dbus-errors_8c" kind="file" language="C++">
+    <compoundname>dbus-errors.c</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="dbus-errors_8h" local="yes">dbus-errors.h</includes>
+    <includes refid="dbus-internals_8h" local="yes">dbus-internals.h</includes>
+    <includes refid="dbus-string_8h" local="yes">dbus-string.h</includes>
+    <includes refid="dbus-protocol_8h" local="yes">dbus-protocol.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="694">
+        <label>stdarg.h</label>
+      </node>
+      <node id="686">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+      <node id="682">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="690">
+        <label>stdint.h</label>
+      </node>
+      <node id="696">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="689">
+        <label>dbus/dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+      </node>
+      <node id="687">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+      </node>
+      <node id="684">
+        <label>stddef.h</label>
+      </node>
+      <node id="693">
+        <label>dbus/dbus-string.h</label>
+        <link refid="dbus-string_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+      </node>
+      <node id="685">
+        <label>dbus/dbus-arch-deps.h</label>
+        <link refid="dbus-arch-deps_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+      </node>
+      <node id="695">
+        <label>string.h</label>
+      </node>
+      <node id="698">
+        <label>dbus/dbus-threads.h</label>
+        <link refid="dbus-threads_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+      </node>
+      <node id="697">
+        <label>dbus/dbus-threads-internal.h</label>
+        <link refid="dbus-threads-internal_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="698" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>config.h</label>
+      </node>
+      <node id="692">
+        <label>dbus/dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>dbus-errors.c</label>
+        <link refid="dbus-errors.c"/>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+      </node>
+      <node id="681">
+        <label>dbus-errors.h</label>
+        <link refid="dbus-errors_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+      </node>
+      <node id="683">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="684" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+      </node>
+      <node id="691">
+        <label>inttypes.h</label>
+      </node>
+      <node id="688">
+        <label>dbus/dbus-memory.h</label>
+        <link refid="dbus-memory_8h_source"/>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structDBusRealError" prot="public">DBusRealError</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusErrorInternals_1gaaf2f2b8a3ea393225441540870b9428e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_DBUS_STATIC_ASSERT</definition>
+        <argsstring>(sizeof(DBusRealError)==sizeof(DBusError))</argsstring>
+        <name>_DBUS_STATIC_ASSERT</name>
+        <param>
+          <type>sizeof(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref>)</type>
+          <defval>=sizeof(<ref refid="structDBusError" kindref="compound">DBusError</ref>)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrorInternals_1ga2f1312e91a88774f8a04c69eea708b65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>static const char* message_from_error</definition>
+        <argsstring>(const char *error)</argsstring>
+        <name>message_from_error</name>
+        <param>
+          <type>const char *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Returns a longer message describing an error name. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the error name is unknown, returns the name itself.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error to describe </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a constant string describing the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="92" column="1" bodyfile="dbus/dbus-errors.c" bodystart="92" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_error_init</definition>
+        <argsstring>(DBusError *error)</argsstring>
+        <name>dbus_error_init</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="structDBusError" kindref="compound">DBusError</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not allocate any memory; the error only needs to be freed if it is set at some point.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="188" column="1" bodyfile="dbus/dbus-errors.c" bodystart="188" bodyend="202"/>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" compoundref="dbus-sysdeps-win_8c" startline="3483" endline="3491">_dbus_file_exists</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</referencedby>
+        <referencedby refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_error_free</definition>
+        <argsstring>(DBusError *error)</argsstring>
+        <name>dbus_error_free</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Frees an error that&apos;s been set (or just initialized), then reinitializes the error as in <ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member">dbus_error_init()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>memory where the error is stored. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="211" column="1" bodyfile="dbus/dbus-errors.c" bodystart="211" bodyend="226"/>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga3205e9f8672271794aeb9d451e2fcc4a" compoundref="dbus-spawn_8c" startline="324" endline="402">_dbus_babysitter_unref</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" compoundref="dbus-sysdeps-win_8c" startline="3483" endline="3491">_dbus_file_exists</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="854" endline="889">_dbus_get_local_machine_uuid_encoded</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gae9408936869314101f8ea13dfa5ba968" compoundref="dbus-userdb-util_8c" startline="388" endline="433">_dbus_groups_from_uid</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6adfb998247ab4d0c1d5652f59c354e4" compoundref="dbus-keyring_8c" startline="1007" endline="1022">_dbus_keyring_get_hex_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-unix_8c" startline="3684" endline="3721">_dbus_read_local_machine_uuid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="806" endline="837">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusSHA_1ga4278fb9df967943834c4ad6332f2c28b" compoundref="dbus-sha_8c" startline="483" endline="510">_dbus_sha_compute</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5774" endline="5797">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5702" endline="5725">dbus_connection_register_object_path</referencedby>
+        <referencedby refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</referencedby>
+        <referencedby refid="group__DBusServer_1gac2bfa9f2e06c4347fefe537b233660d3" compoundref="dbus-server_8c" startline="1156" endline="1172">dbus_server_get_data</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_set_error_const</definition>
+        <argsstring>(DBusError *error, const char *name, const char *message)</argsstring>
+        <name>dbus_set_error_const</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Assigns an error name and message to a <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if error is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. The message may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, which means a default message will be deduced from the name. The default message will be totally useless, though, so using a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> message is not recommended.</para><para>Because this function does not copy the error name or message, you must ensure the name and message are global data that won&apos;t be freed. You probably want <ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error()</ref> instead, in most cases.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error name (not copied!!!) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error message (not copied!!!) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="243" column="1" bodyfile="dbus/dbus-errors.c" bodystart="243" bodyend="266"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1gabc4712c0db91f11854cdd933027355af" compoundref="dbus-sysdeps-unix_8c" startline="3574" endline="3663">_dbus_get_autolaunch_address</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga0daf16cfb75ab28d67d5dfa881f457a6" compoundref="dbus-keyring_8c" startline="949" endline="977">_dbus_keyring_get_best_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" compoundref="dbus-sysdeps-unix_8c" startline="1162" endline="1246">_dbus_listen_systemd_sockets</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaffaf8b5bb832c20a8ccb10f012920776" compoundref="dbus-sysdeps-win_8c" startline="737" endline="769">_dbus_printf_string_upper_bound</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_move_error</definition>
+        <argsstring>(DBusError *src, DBusError *dest)</argsstring>
+        <name>dbus_move_error</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Moves an error src into dest, freeing src and overwriting dest. </para>        </briefdescription>
+        <detaileddescription>
+<para>Both src and dest must be initialized. src is reinitialized to an empty error. dest may not contain an existing error. If the destination is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, just frees and reinits the source error.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source error </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination error or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="279" column="1" bodyfile="dbus/dbus-errors.c" bodystart="279" bodyend="292"/>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <referencedby refid="group__DBusConnectionInternals_1ga12756797bd5c1918aa065f9c37ed7bba" compoundref="dbus-connection_8c" startline="1486" endline="1525">_dbus_connection_handle_watch</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="806" endline="837">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga48515c580199514026542fe053ef1887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_error_has_name</definition>
+        <argsstring>(const DBusError *error, const char *name)</argsstring>
+        <name>dbus_error_has_name</name>
+        <param>
+          <type>const <ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the error is set and has the given name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the given named error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="302" column="1" bodyfile="dbus/dbus-errors.c" bodystart="302" bodyend="320"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" compoundref="dbus-string_8c" startline="2012" endline="2039">_dbus_string_equal</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="190" endline="197">_dbus_string_init_const</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="806" endline="837">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5774" endline="5797">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5702" endline="5725">dbus_connection_register_object_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_error_is_set</definition>
+        <argsstring>(const DBusError *error)</argsstring>
+        <name>dbus_error_is_set</name>
+        <param>
+          <type>const <ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether an error occurred (the error is set). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="329" column="1" bodyfile="dbus/dbus-errors.c" bodystart="329" bodyend="335"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn-win_8c" startline="644" endline="756">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="367" endline="451">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga123620ec5ce2b881786588121d6a03fd" compoundref="dbus-sysdeps-util-unix_8c" startline="238" endline="303">_dbus_write_pid_to_file_and_pipe</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_set_error</definition>
+        <argsstring>(DBusError *error, const char *name, const char *format,...)</argsstring>
+        <name>dbus_set_error</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Assigns an error name and message to a <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if error is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para>The format may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, which means a (pretty much useless) default message will be deduced from the name. This is not a good idea, just go ahead and provide a useful error message. It won&apos;t hurt you.</para><para>If no memory can be allocated for the error message, an out-of-memory error message will be set instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error.or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printf-style format string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dbus/dbus-errors.c" line="354" column="1" bodyfile="dbus/dbus-errors.c" bodystart="354" bodyend="419"/>
+        <references refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" compoundref="dbus-internals_8h" startline="135">_dbus_assert</references>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="527" endline="544">_dbus_strdup</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="935" endline="948">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga8d794f292831d1a7edeb971b13a2c641" compoundref="dbus-string_8c" startline="1072" endline="1102">_dbus_string_append_printf_valist</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="259" endline="277">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="175" endline="178">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="641" endline="662">_dbus_string_steal_data</references>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="701" endline="740">dbus_free</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusSysdepsUnix_1ga974b137fa165ce2e0ace041b20883fe6" compoundref="dbus-sysdeps-unix_8c" startline="4180" endline="4244">_dbus_append_address_from_socket</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" compoundref="dbus-spawn-win_8c" startline="327" endline="358">_dbus_babysitter_set_child_exit_error</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaca61af8681a48862835ea8cfd263f5ab" compoundref="dbus-sysdeps-util-unix_8c" startline="85" endline="165">_dbus_become_daemon</referencedby>
+        <referencedby refid="group__DBusBusInternals_1ga0e7fe5d0dcaca7ecb4b5a7ace23d6286" compoundref="dbus-bus_8c" startline="387" endline="413">_dbus_bus_notify_shared_connection_disconnected_unlocked</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga82c920a8c3b5958ba1ecf8e5f5d6373b" compoundref="dbus-sysdeps-util-unix_8c" startline="332" endline="380">_dbus_change_to_daemon_user</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga8e16f75e361d9fed43223f69baf0e2a5" compoundref="dbus-sysdeps-unix_8c" startline="2084" endline="2120">_dbus_check_dir_is_private_to_user</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="3025" endline="3042">_dbus_close</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-win_8c" startline="493" endline="514">_dbus_close_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3551d425aba3d92e652b8809fdfe9339" compoundref="dbus-sysdeps-util-unix_8c" startline="1208" endline="1273">_dbus_command_for_pid</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gab9a5fd9662ae1ee18598d1736def70ea" compoundref="dbus-sysdeps-unix_8c" startline="929" endline="1015">_dbus_connect_exec</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaa3adf90f6e47d30eeacf0a27d1a09ee5" compoundref="dbus-sysdeps-unix_8c" startline="1262" endline="1268">_dbus_connect_tcp_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" compoundref="dbus-sysdeps-unix_8c" startline="833" endline="914">_dbus_connect_unix_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaa47156dedbe573ee9b213d1fd3f7bb79" compoundref="dbus-sysdeps-unix_8c" startline="2791" endline="2812">_dbus_create_directory</referencedby>
+        <referencedby refid="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" compoundref="dbus-file-unix_8c" startline="353" endline="388">_dbus_create_file_exclusively</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3bc1512aef42cea17a2aaacc7d8e7211" compoundref="dbus-sysdeps-unix_8c" startline="4000" endline="4018">_dbus_delete_directory</referencedby>
+        <referencedby refid="group__DBusFile_1ga4d4936493cddac47b6e7e4ab3f390627" compoundref="dbus-file-unix_8c" startline="399" endline="417">_dbus_delete_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga1821b64302fe8e12278fa227eb11d393" compoundref="dbus-sysdeps-util-unix_8c" startline="850" endline="854">_dbus_directory_close</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gab9a2ddb130da035d6186f2d96bf37cb4" compoundref="dbus-sysdeps-util-unix_8c" startline="802" endline="844">_dbus_directory_get_next_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaaf6eb8179fb6ea2175ed9742a0c8be68" compoundref="dbus-sysdeps-util-unix_8c" startline="754" endline="786">_dbus_directory_open</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" compoundref="dbus-sysdeps-unix_8c" startline="3053" endline="3085">_dbus_dup</referencedby>
+        <referencedby refid="group__DBusFile_1ga13a527e32c05b63e8b32a63d728e20e8" compoundref="dbus-sysdeps-win_8c" startline="3483" endline="3491">_dbus_file_exists</referencedby>
+        <referencedby refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" compoundref="dbus-file-unix_8c" startline="55" endline="151">_dbus_file_get_contents</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae96a3f400324b065f78a865a86454d09" compoundref="dbus-sysdeps-unix_8c" startline="3175" endline="3239">_dbus_full_duplex_pipe</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3ecdae905f2d9e95fd35891b20f06532" compoundref="dbus-sysdeps-unix_8c" startline="3320" endline="3355">_dbus_get_tmpdir</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="49" endline="136">_dbus_is_console_user</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" compoundref="dbus-sysdeps-unix_8c" startline="1162" endline="1246">_dbus_listen_systemd_sockets</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gafdae31b3b61299dbaaccfcb1205a6f30" compoundref="dbus-sysdeps-unix_8c" startline="1386" endline="1582">_dbus_listen_tcp_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga2cd48fe3d7aa14d0d3c7813cdddb3f74" compoundref="dbus-sysdeps-unix_8c" startline="1035" endline="1149">_dbus_listen_unix_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3731" endline="3779">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" compoundref="dbus-file-unix_8c" startline="326" endline="344">_dbus_make_file_world_readable</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="796" endline="1066">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" compoundref="dbus-object-tree_8c" startline="391" endline="434">_dbus_object_tree_register</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9906c86bebb51358f0d8df6a42af30f6" compoundref="dbus-sysdeps-unix_8c" startline="1701" endline="1988">_dbus_read_credentials_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-win_8c" startline="2670" endline="2739">_dbus_read_local_machine_uuid</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga6cc9916aa1dde4d44072ee85b5691b5b" compoundref="dbus-sysdeps-win_8c" startline="1859" endline="1915">_dbus_send_credentials_socket</referencedby>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="226">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerUnix_1ga21ce093bda6ce6c7f94d1d894b6b4358" compoundref="dbus-server-unix_8c" startline="237" endline="310">_dbus_server_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" compoundref="dbus-server-launchd_8c" startline="66" endline="209">_dbus_server_new_for_launchd</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="391" endline="514">_dbus_server_new_for_tcp_socket</referencedby>
+        <referencedby refid="group__DBusAddressInternals_1ga5b6409826263c7d62570c56889f7ddb2" compoundref="dbus-address_8c" startline="65" endline="78">_dbus_set_bad_address</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaed0b5af565252185dedf99df5da8efc5" compoundref="dbus-spawn_8c" startline="1210" endline="1435">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga04e98ad0e3a181f0a5921a4cbc49cf08" compoundref="dbus-sysdeps-util-unix_8c" startline="706" endline="734">_dbus_stat</referencedby>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-unix_8c" startline="164" endline="317">_dbus_string_save_to_file</referencedby>
+        <referencedby refid="group__DBusTransport_1gaf27a2aceb062921f3915acb1491a646a" compoundref="dbus-transport_8c" startline="216" endline="236">_dbus_transport_finalize_base</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="58" endline="112">_dbus_transport_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" compoundref="dbus-transport-socket_8c" startline="1348" endline="1416">_dbus_transport_new_for_tcp_socket</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="225" endline="411">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusString_1gaed2e025454364fbe31cd9b6538c9a936" compoundref="dbus-sysdeps-util-win_8c" startline="730" endline="736">_dbus_unix_user_is_at_console</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="216">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="246" endline="333">_dbus_user_database_lookup_group</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf08364813376bd2d8f455d435d85323e" compoundref="dbus-internals_8c" startline="663" endline="669">_dbus_uuid_encode</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga123620ec5ce2b881786588121d6a03fd" compoundref="dbus-sysdeps-util-unix_8c" startline="238" endline="303">_dbus_write_pid_to_file_and_pipe</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3535" endline="3592">dbus_connection_send_with_reply_and_block</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4783" endline="4826">dbus_message_demarshal</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="549" endline="678">dbus_server_listen</referencedby>
+        <referencedby refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3796" endline="3816">dbus_set_error_from_message</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0f4b81be4f6193c7d8da0ee214772e02" compoundref="dbus-signature_8c" startline="233" endline="250">dbus_signature_validate</referencedby>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+        <referencedby refid="group__DBusSyntax_1gabedd6f4019fc30bc4bbcd144198f8444" compoundref="dbus-syntax_8c" startline="242" endline="272">dbus_validate_bus_name</referencedby>
+        <referencedby refid="group__DBusSyntax_1gad1c5b9b2dbdb9f9ade7e497b23cb835f" compoundref="dbus-syntax_8c" startline="195" endline="225">dbus_validate_error_name</referencedby>
+        <referencedby refid="group__DBusSyntax_1ga1023d9c1a44eb2fe05c2b82e23622f98" compoundref="dbus-syntax_8c" startline="101" endline="131">dbus_validate_interface</referencedby>
+        <referencedby refid="group__DBusSyntax_1gab8540880d62965990957f07630aba700" compoundref="dbus-syntax_8c" startline="148" endline="178">dbus_validate_member</referencedby>
+        <referencedby refid="group__DBusSyntax_1ga16a33f0ef4a9efd8f5e8f231dcf13d37" compoundref="dbus-syntax_8c" startline="54" endline="84">dbus_validate_path</referencedby>
+        <referencedby refid="group__DBusSyntax_1ga7d98d5d9af66ff78e74d5dd1d8cd3390" compoundref="dbus-syntax_8c" startline="289" endline="307">dbus_validate_utf8</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-errors.c<sp/>Error<sp/>reporting</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2004<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-errors.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-internals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-string.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dbus-protocol.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structDBusRealError" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67" refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref>;<sp/></highlight></codeline>
+<codeline lineno="68" refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref>;<sp/></highlight></codeline>
+<codeline lineno="70" refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>const_message<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="72" refid="structDBusRealError_1a1b4f15b6d9a85a37f3ab9e95fff179e1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dummy2<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="73" refid="structDBusRealError_1a72b752e63b30144ece9dc9a072d58995" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dummy3<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="74" refid="structDBusRealError_1a67d03b32ec168e2676a886dc260a08fa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dummy4<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="75" refid="structDBusRealError_1a5beec0e4c6f956795eebe49593878f31" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dummy5<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="77" refid="structDBusRealError_1aa0aaa5baa7ae43bb669e9b36ffd4a246" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structDBusRealError_1aa0aaa5baa7ae43bb669e9b36ffd4a246" kindref="member">padding1</ref>;<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/><ref refid="structDBusRealError" kindref="compound">DBusRealError</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">_DBUS_STATIC_ASSERT<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref>)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref>));</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">message_from_error<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*error)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gabb62fd6340d0787fbd56ff8dd2f326c7" kindref="member">DBUS_ERROR_FAILED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Unknown<sp/>error&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gac32eaf0b92f798307853cd4fe0cf11c2" kindref="member">DBUS_ERROR_NO_MEMORY</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Not<sp/>enough<sp/>memory<sp/>available&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga445d7ad73da94c796ef441df2dcc3cc8" kindref="member">DBUS_ERROR_IO_ERROR</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>reading<sp/>or<sp/>writing<sp/>data&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga3fa04eb600edda4afc2dd9fe2e0f8b02" kindref="member">DBUS_ERROR_BAD_ADDRESS</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>parse<sp/>address&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga33122bcaf8f5896ec222c755b6effb40" kindref="member">DBUS_ERROR_NOT_SUPPORTED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Feature<sp/>not<sp/>supported&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga7c96d165c4ebee51e939969934d18027" kindref="member">DBUS_ERROR_LIMITS_EXCEEDED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Resource<sp/>limits<sp/>exceeded&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga6d3940075c1fbd1bfe06626b59723a16" kindref="member">DBUS_ERROR_ACCESS_DENIED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Permission<sp/>denied&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga5a03c8e0e98131ee2a03d46d72c6ab49" kindref="member">DBUS_ERROR_AUTH_FAILED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>authenticate<sp/>to<sp/>server&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga72b375fab2486ee165e1cca2bd145695" kindref="member">DBUS_ERROR_NO_SERVER</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;No<sp/>server<sp/>available<sp/>at<sp/>address&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga0e4674c42373ee449ddf08aab8bce9ce" kindref="member">DBUS_ERROR_TIMEOUT</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Connection<sp/>timed<sp/>out&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gab18c0e4eee0936dc042319803730b62e" kindref="member">DBUS_ERROR_NO_NETWORK</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Network<sp/>unavailable&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga3d13424a19bb774cf3481216bf4ba366" kindref="member">DBUS_ERROR_ADDRESS_IN_USE</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Address<sp/>already<sp/>in<sp/>use&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gaef6443e0bd8cdcc1606d985a775d07a7" kindref="member">DBUS_ERROR_DISCONNECTED</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Disconnected.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gacf5321b161193ad66d5bdf5c910a9792" kindref="member">DBUS_ERROR_INVALID_ARGS</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>arguments.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gade2cb1c5a6adf47af18672865f233b6d" kindref="member">DBUS_ERROR_NO_REPLY</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Did<sp/>not<sp/>get<sp/>a<sp/>reply<sp/>message.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1gaf5ad9572cc5935d4655635003073c21a" kindref="member">DBUS_ERROR_FILE_NOT_FOUND</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;File<sp/>doesn&apos;t<sp/>exist.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(error,<sp/><ref refid="group__DBusProtocol_1ga6a4358a62f0cd68d637532772475e576" kindref="member">DBUS_ERROR_OBJECT_PATH_IN_USE</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Object<sp/>path<sp/>already<sp/>in<sp/>use&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>End<sp/>of<sp/>internals<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member">dbus_error_init</ref><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*real;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>_DBUS_STATIC_ASSERT<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref>)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref>));</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>_dbus_return_if_fail<sp/>(error<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>real<sp/>=<sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*)error;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref><sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref><sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" kindref="member">const_message</ref><sp/>=<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" kindref="member">dbus_error_free</ref><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*real;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>_dbus_return_if_fail<sp/>(error<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>real<sp/>=<sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*)error;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!real-&gt;<ref refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" kindref="member">const_message</ref>)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(real-&gt;<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member">dbus_error_init</ref><sp/>(error);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" kindref="member">dbus_set_error_const</ref><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/>*error,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*message)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*real;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>_dbus_return_if_error_is_set<sp/>(error);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>_dbus_return_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(message<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>message<sp/>=<sp/>message_from_error<sp/>(name);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>real<sp/>=<sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*)error;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>name;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)message;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" kindref="member">const_message</ref><sp/>=<sp/><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" kindref="member">dbus_move_error</ref><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*src,</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*dest)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>_dbus_return_if_error_is_set<sp/>(dest);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dest)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" kindref="member">dbus_error_free</ref><sp/>(dest);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*dest<sp/>=<sp/>*src;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member">dbus_error_init</ref><sp/>(src);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" kindref="member">dbus_error_free</ref><sp/>(src);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="302" refid="group__DBusErrors_1ga48515c580199514026542fe053ef1887" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1ga48515c580199514026542fe053ef1887" kindref="member">dbus_error_has_name</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error,</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*name)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(error<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>((error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>&amp;&amp;<sp/>error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>&amp;&amp;<sp/>error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>));</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str1,<sp/>str2;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str1,<sp/>error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" kindref="member">_dbus_string_init_const</ref><sp/>(&amp;str2,<sp/>name);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" kindref="member">_dbus_string_equal</ref><sp/>(&amp;str1,<sp/>&amp;str2);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></highlight></codeline>
+<codeline lineno="329" refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" kindref="member">dbus_error_is_set</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound">DBusError</ref><sp/>*error)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>_dbus_return_val_if_fail<sp/>(error<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>,<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);<sp/><sp/></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>((error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>&amp;&amp;<sp/>error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref><sp/>&amp;&amp;<sp/>error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>));</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" refkind="member"><highlight class="normal"><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error</ref><sp/>(<ref refid="structDBusError" kindref="compound">DBusError</ref><sp/><sp/>*error,</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...)</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*real;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><ref refid="structDBusString" kindref="compound">DBusString</ref><sp/>str;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>va_list<sp/>args;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>it&apos;s<sp/>a<sp/>bug<sp/>to<sp/>pile<sp/>up<sp/>errors<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/>_dbus_return_if_error_is_set<sp/>(error);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/>_dbus_return_if_fail<sp/>(name<sp/>!=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(error-&gt;<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member">name</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><ref refid="group__DBusInternalsUtils_1ga129c6c03f011cdc171934d5d386cc797" kindref="member">_dbus_assert</ref><sp/>(error-&gt;<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member">message</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" kindref="member">_dbus_string_init</ref><sp/>(&amp;str))</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nomem;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(format<sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" kindref="member">_dbus_string_append</ref><sp/>(&amp;str,</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message_from_error<sp/>(name)))</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" kindref="member">_dbus_string_free</ref><sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nomem;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>va_start<sp/>(args,<sp/>format);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga8d794f292831d1a7edeb971b13a2c641" kindref="member">_dbus_string_append_printf_valist</ref><sp/>(&amp;str,<sp/>format,<sp/>args))</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" kindref="member">_dbus_string_free</ref><sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>va_end<sp/>(args);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nomem;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>va_end<sp/>(args);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/>real<sp/>=<sp/>(<ref refid="structDBusRealError" kindref="compound">DBusRealError</ref><sp/>*)error;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" kindref="member">_dbus_string_steal_data</ref><sp/>(&amp;str,<sp/>&amp;real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref>))</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" kindref="member">_dbus_string_free</ref><sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nomem;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><ref refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" kindref="member">_dbus_string_free</ref><sp/>(&amp;str);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref><sp/>=<sp/><ref refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" kindref="member">_dbus_strdup</ref><sp/>(name);</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(real-&gt;<ref refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" kindref="member">name</ref><sp/>==<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free</ref><sp/>(real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref>);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" kindref="member">message</ref><sp/>=<sp/><ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nomem;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/>real-&gt;<ref refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" kindref="member">const_message</ref><sp/>=<sp/><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/>nomem:</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/>_DBUS_SET_OOM<sp/>(error);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>End<sp/>public<sp/>API<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="dbus/dbus-errors.c"/>
+  </compounddef>
+</doxygen>

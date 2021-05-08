@@ -1,0 +1,76 @@
+.TH "DBusMessageLoader" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMessageLoader \- Implementation details of \fBDBusMessageLoader\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-message\-private\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBdata\fP"
+.br
+.RI "\fIBuffered data\&. \fP"
+.ti -1c
+.RI "\fBDBusList\fP * \fBmessages\fP"
+.br
+.RI "\fIComplete messages\&. \fP"
+.ti -1c
+.RI "long \fBmax_message_size\fP"
+.br
+.RI "\fIMaximum size of a message\&. \fP"
+.ti -1c
+.RI "long \fBmax_message_unix_fds\fP"
+.br
+.RI "\fIMaximum unix fds in a message\&. \fP"
+.ti -1c
+.RI "\fBDBusValidity\fP \fBcorruption_reason\fP"
+.br
+.RI "\fIwhy we were corrupted \fP"
+.ti -1c
+.RI "unsigned int \fBcorrupted\fP: 1"
+.br
+.RI "\fIWe got broken data, and are no longer working\&. \fP"
+.ti -1c
+.RI "unsigned int \fBbuffer_outstanding\fP: 1"
+.br
+.RI "\fISomeone is using the buffer to read\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation details of \fBDBusMessageLoader\fP\&. 
+
+All members are private\&. 
+.PP
+Definition at line 60 of file dbus\-message\-private\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusList\fP* DBusMessageLoader::messages"
+
+.PP
+Complete messages\&. 
+.PP
+Definition at line 66 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_loader_peek_message(), _dbus_message_loader_pop_message(), _dbus_message_loader_pop_message_link(), _dbus_message_loader_putback_message_link(), _dbus_message_loader_queue_messages(), _dbus_message_loader_return_unix_fds(), and _dbus_message_loader_unref()\&.
+.SS "int DBusMessageLoader::refcount"
+
+.PP
+Reference count\&. 
+.PP
+Definition at line 62 of file dbus\-message\-private\&.h\&.
+.PP
+Referenced by _dbus_message_loader_new(), _dbus_message_loader_ref(), and _dbus_message_loader_unref()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

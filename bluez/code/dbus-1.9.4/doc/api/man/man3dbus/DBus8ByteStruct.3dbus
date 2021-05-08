@@ -1,0 +1,34 @@
+.TH "DBus8ByteStruct" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBus8ByteStruct \- An 8-byte struct you could use to access int64 without having int64 support\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-types\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBfirst32\fP"
+.br
+.RI "\fIfirst 32 bits in the 8 bytes (beware endian issues) \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBsecond32\fP"
+.br
+.RI "\fIsecond 32 bits in the 8 bytes (beware endian issues) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An 8-byte struct you could use to access int64 without having int64 support\&. 
+
+Use \fBdbus_int64_t\fP or \fBdbus_uint64_t\fP instead\&. 
+.PP
+Definition at line 121 of file dbus\-types\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

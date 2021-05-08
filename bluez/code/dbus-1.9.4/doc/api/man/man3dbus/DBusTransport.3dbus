@@ -1,0 +1,204 @@
+.TH "DBusTransport" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusTransport \- Object representing a transport such as a socket\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus\-transport\-protected\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "const \fBDBusTransportVTable\fP * \fBvtable\fP"
+.br
+.RI "\fIVirtual methods for this instance\&. \fP"
+.ti -1c
+.RI "\fBDBusConnection\fP * \fBconnection\fP"
+.br
+.RI "\fIConnection owning this transport\&. \fP"
+.ti -1c
+.RI "\fBDBusMessageLoader\fP * \fBloader\fP"
+.br
+.RI "\fIMessage-loading buffer\&. \fP"
+.ti -1c
+.RI "\fBDBusAuth\fP * \fBauth\fP"
+.br
+.RI "\fIAuthentication conversation\&. \fP"
+.ti -1c
+.RI "\fBDBusCredentials\fP * \fBcredentials\fP"
+.br
+.RI "\fICredentials of other end read from the socket\&. \fP"
+.ti -1c
+.RI "long \fBmax_live_messages_size\fP"
+.br
+.RI "\fIMax total size of received messages\&. \fP"
+.ti -1c
+.RI "long \fBmax_live_messages_unix_fds\fP"
+.br
+.RI "\fIMax total unix fds of received messages\&. \fP"
+.ti -1c
+.RI "\fBDBusCounter\fP * \fBlive_messages\fP"
+.br
+.RI "\fICounter for size/unix fds of all live messages\&. \fP"
+.ti -1c
+.RI "char * \fBaddress\fP"
+.br
+.RI "\fIAddress of the server we are connecting to (\fBNULL\fP for the server side of a transport) \fP"
+.ti -1c
+.RI "char * \fBexpected_guid\fP"
+.br
+.RI "\fIGUID we expect the server to have, \fBNULL\fP on server side or if we don't have an expectation\&. \fP"
+.ti -1c
+.RI "\fBDBusAllowUnixUserFunction\fP \fBunix_user_function\fP"
+.br
+.RI "\fIFunction for checking whether a user is authorized\&. \fP"
+.ti -1c
+.RI "void * \fBunix_user_data\fP"
+.br
+.RI "\fIData for unix_user_function\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_unix_user_data\fP"
+.br
+.RI "\fIFunction to free unix_user_data\&. \fP"
+.ti -1c
+.RI "\fBDBusAllowWindowsUserFunction\fP \fBwindows_user_function\fP"
+.br
+.RI "\fIFunction for checking whether a user is authorized\&. \fP"
+.ti -1c
+.RI "void * \fBwindows_user_data\fP"
+.br
+.RI "\fIData for windows_user_function\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_windows_user_data\fP"
+.br
+.RI "\fIFunction to free windows_user_data\&. \fP"
+.ti -1c
+.RI "unsigned int \fBdisconnected\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if we are disconnected\&. \fP"
+.ti -1c
+.RI "unsigned int \fBauthenticated\fP: 1"
+.br
+.RI "\fICache of auth state; use \fB_dbus_transport_peek_is_authenticated()\fP to query value\&. \fP"
+.ti -1c
+.RI "unsigned int \fBsend_credentials_pending\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if we need to send credentials \fP"
+.ti -1c
+.RI "unsigned int \fBreceive_credentials_pending\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if we need to receive credentials \fP"
+.ti -1c
+.RI "unsigned int \fBis_server\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if on the server side \fP"
+.ti -1c
+.RI "unsigned int \fBunused_bytes_recovered\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if we've recovered unused bytes from auth \fP"
+.ti -1c
+.RI "unsigned int \fBallow_anonymous\fP: 1"
+.br
+.RI "\fI\fBTRUE\fP if an anonymous client can connect \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Object representing a transport such as a socket\&. 
+
+A transport can shuttle messages from point A to point B, and is the backend for a \fBDBusConnection\fP\&. 
+.PP
+Definition at line 80 of file dbus\-transport\-protected\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBDBusConnection\fP* DBusTransport::connection"
+
+.PP
+Connection owning this transport\&. 
+.PP
+Definition at line 86 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_get_is_connected(), _dbus_transport_queue_messages(), _dbus_transport_set_connection(), and _dbus_transport_try_to_authenticate()\&.
+.SS "unsigned int DBusTransport::disconnected"
+
+.PP
+\fBTRUE\fP if we are disconnected\&. 
+.PP
+Definition at line 113 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_disconnect(), _dbus_transport_do_iteration(), _dbus_transport_finalize_base(), _dbus_transport_get_is_connected(), _dbus_transport_get_socket_fd(), _dbus_transport_handle_watch(), _dbus_transport_init_base(), and _dbus_transport_try_to_authenticate()\&.
+.SS "\fBDBusCounter\fP* DBusTransport::live_messages"
+
+.PP
+Counter for size/unix fds of all live messages\&. 
+.PP
+Definition at line 97 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_finalize_base(), _dbus_transport_get_dispatch_status(), _dbus_transport_init_base(), _dbus_transport_queue_messages(), _dbus_transport_set_max_received_size(), _dbus_transport_set_max_received_unix_fds(), and _dbus_transport_set_pending_fds_function()\&.
+.SS "\fBDBusMessageLoader\fP* DBusTransport::loader"
+
+.PP
+Message-loading buffer\&. 
+.PP
+Definition at line 88 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_do_iteration(), _dbus_transport_finalize_base(), _dbus_transport_get_dispatch_status(), _dbus_transport_get_max_message_size(), _dbus_transport_get_max_message_unix_fds(), _dbus_transport_get_pending_fds_count(), _dbus_transport_init_base(), _dbus_transport_queue_messages(), _dbus_transport_set_max_message_size(), _dbus_transport_set_max_message_unix_fds(), and _dbus_transport_set_pending_fds_function()\&.
+.SS "long DBusTransport::max_live_messages_size"
+
+.PP
+Max total size of received messages\&. 
+.PP
+Definition at line 94 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status(), _dbus_transport_get_max_received_size(), _dbus_transport_init_base(), _dbus_transport_set_max_received_size(), and _dbus_transport_set_max_received_unix_fds()\&.
+.SS "long DBusTransport::max_live_messages_unix_fds"
+
+.PP
+Max total unix fds of received messages\&. 
+.PP
+Definition at line 95 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_get_dispatch_status(), _dbus_transport_get_max_received_unix_fds(), _dbus_transport_init_base(), _dbus_transport_set_max_received_size(), and _dbus_transport_set_max_received_unix_fds()\&.
+.SS "int DBusTransport::refcount"
+
+.PP
+Reference count\&. 
+.PP
+Definition at line 82 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_init_base(), _dbus_transport_ref(), and _dbus_transport_unref()\&.
+.SS "\fBDBusAllowUnixUserFunction\fP DBusTransport::unix_user_function"
+
+.PP
+Function for checking whether a user is authorized\&. 
+.PP
+Definition at line 103 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_get_is_connected(), _dbus_transport_init_base(), _dbus_transport_set_unix_user_function(), and _dbus_transport_try_to_authenticate()\&.
+.SS "const \fBDBusTransportVTable\fP* DBusTransport::vtable"
+
+.PP
+Virtual methods for this instance\&. 
+.PP
+Definition at line 84 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_disconnect(), _dbus_transport_do_iteration(), _dbus_transport_get_socket_fd(), _dbus_transport_handle_watch(), _dbus_transport_init_base(), _dbus_transport_queue_messages(), _dbus_transport_set_connection(), and _dbus_transport_unref()\&.
+.SS "\fBDBusAllowWindowsUserFunction\fP DBusTransport::windows_user_function"
+
+.PP
+Function for checking whether a user is authorized\&. 
+.PP
+Definition at line 108 of file dbus\-transport\-protected\&.h\&.
+.PP
+Referenced by _dbus_transport_get_is_connected(), _dbus_transport_init_base(), _dbus_transport_set_windows_user_function(), and _dbus_transport_try_to_authenticate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

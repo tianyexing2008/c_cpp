@@ -1,0 +1,55 @@
+.TH "DBusMessageRealIter" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMessageRealIter \- Internals of \fBDBusMessageIter\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusMessage\fP * \fBmessage\fP"
+.br
+.RI "\fIMessage used\&. \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBchanged_stamp\fP: \fBCHANGED_STAMP_BITS\fP"
+.br
+.RI "\fIstamp to detect invalid iters \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBiter_type\fP: 3"
+.br
+.RI "\fIwhether this is a reader or writer iter \fP"
+.ti -1c
+.RI "\fBdbus_uint32_t\fP \fBsig_refcount\fP: 8"
+.br
+.RI "\fIdepth of open_signature() \fP"
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   \fBDBusTypeWriter\fP \fBwriter\fP"
+.br
+.RI "\fIwriter \fP"
+.ti -1c
+.RI "   \fBDBusTypeReader\fP \fBreader\fP"
+.br
+.RI "\fIreader \fP"
+.ti -1c
+.RI "} \fBu\fP"
+.br
+.RI "\fIthe type writer or reader that does all the work \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internals of \fBDBusMessageIter\fP\&. 
+
+Object representing a position in a message\&. All fields are internal\&. 
+.PP
+Definition at line 126 of file dbus\-message\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

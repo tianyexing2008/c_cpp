@@ -1,0 +1,115 @@
+.TH "DBusAddressInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusAddressInternals \- Address parsing
+.PP
+Implementation of parsing addresses of D-Bus servers\&.  
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDBusAddressEntry\fP"
+.br
+.RI "\fIInternals of \fBDBusAddressEntry\fP\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_DBUS_ADDRESS_OPTIONALLY_ESCAPED_BYTE\fP(b)"
+.br
+.RI "\fI\fBTRUE\fP if the byte need not be escaped when found in a dbus address\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_set_bad_address\fP (\fBDBusError\fP *error, const char *address_problem_type, const char *address_problem_field, const char *address_problem_other)"
+.br
+.RI "\fISets \fBDBUS_ERROR_BAD_ADDRESS\fP\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_address_append_escaped\fP (\fBDBusString\fP *escaped, const \fBDBusString\fP *unescaped)"
+.br
+.RI "\fIAppends an escaped version of one string to another string, using the D-Bus address escaping mechanism\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation of parsing addresses of D-Bus servers\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _DBUS_ADDRESS_OPTIONALLY_ESCAPED_BYTE(b)"
+\fBValue:\fP
+.PP
+.nf
+(((b) >= 'a' && (b) <= 'z') ||                 \
+          ((b) >= 'A' && (b) <= 'Z') ||                 \
+          ((b) >= '0' && (b) <= '9') ||                 \
+          (b) == '-' ||                                 \
+          (b) == '_' ||                                 \
+          (b) == '/' ||                                 \
+          (b) == '\\' ||                                \
+          (b) == '*' ||                                \
+          (b) == '\&.')
+.fi
+.PP
+\fBTRUE\fP if the byte need not be escaped when found in a dbus address\&. All other bytes are required to be escaped in a valid address\&. 
+.PP
+Definition at line 84 of file dbus\-address\&.c\&.
+.PP
+Referenced by _dbus_address_append_escaped(), and dbus_address_entry_get_value()\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBdbus_bool_t\fP _dbus_address_append_escaped (\fBDBusString\fP * escaped, const \fBDBusString\fP * unescaped)"
+
+.PP
+Appends an escaped version of one string to another string, using the D-Bus address escaping mechanism\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIescaped\fP the string to append to 
+.br
+\fIunescaped\fP the string to escape 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if no memory 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file dbus\-address\&.c\&.
+.PP
+References _DBUS_ADDRESS_OPTIONALLY_ESCAPED_BYTE, _dbus_list_clear(), _dbus_list_get_first_link(), _dbus_list_get_next_link, _dbus_string_append_byte(), _dbus_string_append_byte_as_hex(), _dbus_string_free(), _dbus_string_set_length(), DBusList::data, dbus_free(), FALSE, DBusAddressEntry::keys, DBusAddressEntry::method, NULL, TRUE, and DBusAddressEntry::values\&.
+.PP
+Referenced by _dbus_append_address_from_socket(), _dbus_server_new_for_domain_socket(), _dbus_server_new_for_tcp_socket(), and dbus_address_escape_value()\&.
+.SS "void _dbus_set_bad_address (\fBDBusError\fP * error, const char * address_problem_type, const char * address_problem_field, const char * address_problem_other)"
+
+.PP
+Sets \fBDBUS_ERROR_BAD_ADDRESS\fP\&. If address_problem_type and address_problem_field are not \fBNULL\fP, sets an error message about how the field is no good\&. Otherwise, sets address_problem_other as the error message\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerror\fP the error to set 
+.br
+\fIaddress_problem_type\fP the address type of the bad address or \fBNULL\fP 
+.br
+\fIaddress_problem_field\fP the missing field of the bad address or \fBNULL\fP 
+.br
+\fIaddress_problem_other\fP any other error message or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file dbus\-address\&.c\&.
+.PP
+References DBUS_ERROR_BAD_ADDRESS, dbus_set_error(), and NULL\&.
+.PP
+Referenced by _dbus_server_listen_platform_specific(), _dbus_transport_open(), _dbus_transport_open_platform_specific(), and _dbus_transport_open_socket()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

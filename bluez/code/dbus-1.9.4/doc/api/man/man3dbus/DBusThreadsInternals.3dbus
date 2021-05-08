@@ -1,0 +1,284 @@
+.TH "DBusThreadsInternals" 3dbus "Fri Mar 5 2021" "Version 1.9.4" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusThreadsInternals \- Thread functions
+.PP
+\fB_dbus_rmutex_lock()\fP, etc\&.  
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBDBusRMutex\fP \fBDBusRMutex\fP"
+.br
+.RI "\fIA mutex which is recursive if possible, else non-recursive\&. \fP"
+.ti -1c
+.RI "typedef struct \fBDBusCMutex\fP \fBDBusCMutex\fP"
+.br
+.RI "\fIA mutex suitable for use with condition variables\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_dbus_rmutex_new_at_location\fP (\fBDBusRMutex\fP **location_p)"
+.br
+.RI "\fICreates a new mutex or creates a no-op mutex if threads are not initialized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_cmutex_new_at_location\fP (\fBDBusCMutex\fP **location_p)"
+.br
+.RI "\fICreates a new mutex or creates a no-op mutex if threads are not initialized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_rmutex_free_at_location\fP (\fBDBusRMutex\fP **location_p)"
+.br
+.RI "\fIFrees a \fBDBusRMutex\fP; does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_cmutex_free_at_location\fP (\fBDBusCMutex\fP **location_p)"
+.br
+.RI "\fIFrees a \fBDBusCMutex\fP; does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_rmutex_lock\fP (\fBDBusRMutex\fP *mutex)"
+.br
+.RI "\fILocks a mutex\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_cmutex_lock\fP (\fBDBusCMutex\fP *mutex)"
+.br
+.RI "\fILocks a mutex\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_rmutex_unlock\fP (\fBDBusRMutex\fP *mutex)"
+.br
+.RI "\fIUnlocks a mutex\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_cmutex_unlock\fP (\fBDBusCMutex\fP *mutex)"
+.br
+.RI "\fIUnlocks a mutex\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVar\fP * \fB_dbus_condvar_new\fP (void)"
+.br
+.RI "\fICreates a new condition variable using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op condition variable if threads are not initialized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_new_at_location\fP (\fBDBusCondVar\fP **location_p)"
+.br
+.RI "\fIThis does the same thing as _dbus_condvar_new\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_free\fP (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIFrees a conditional variable created with dbus_condvar_new(); does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_free_at_location\fP (\fBDBusCondVar\fP **location_p)"
+.br
+.RI "\fIFrees a condition variable; does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_wait\fP (\fBDBusCondVar\fP *cond, \fBDBusCMutex\fP *mutex)"
+.br
+.RI "\fIAtomically unlocks the mutex and waits for the conditions variable to be signalled\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_condvar_wait_timeout\fP (\fBDBusCondVar\fP *cond, \fBDBusCMutex\fP *mutex, int timeout_milliseconds)"
+.br
+.RI "\fIAtomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_wake_one\fP (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIIf there are threads waiting on the condition variable, wake up exactly one\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_lock\fP (DBusGlobalLock lock)"
+.br
+.ti -1c
+.RI "void \fB_dbus_unlock\fP (DBusGlobalLock lock)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fB_dbus_rmutex_lock()\fP, etc\&. 
+
+Functions and macros related to threads and thread locks\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBDBusCMutex\fP \fBDBusCMutex\fP"
+
+.PP
+A mutex suitable for use with condition variables\&. This is typically non-recursive\&. 
+.PP
+Definition at line 45 of file dbus\-threads\-internal\&.h\&.
+.SS "typedef struct \fBDBusRMutex\fP \fBDBusRMutex\fP"
+
+.PP
+A mutex which is recursive if possible, else non-recursive\&. This is typically recursive, but that cannot be relied upon\&. 
+.PP
+Definition at line 39 of file dbus\-threads\-internal\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void _dbus_cmutex_lock (\fBDBusCMutex\fP * mutex)"
+
+.PP
+Locks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&. Locks may be recursive if threading implementation initialized recursive locks\&. 
+.PP
+Definition at line 136 of file dbus\-threads\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_connection_remove_pending_call(), and dbus_connection_pop_message()\&.
+.SS "void _dbus_cmutex_new_at_location (\fBDBusCMutex\fP ** location_p)"
+
+.PP
+Creates a new mutex or creates a no-op mutex if threads are not initialized\&. May return \fBNULL\fP even if threads are initialized, indicating out-of-memory\&.
+.PP
+The returned mutex is suitable for use with condition variables\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocation_p\fP the location of the new mutex, can return \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file dbus\-threads\&.c\&.
+.PP
+References _dbus_assert, dbus_threads_init_default(), and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport()\&.
+.SS "void _dbus_cmutex_unlock (\fBDBusCMutex\fP * mutex)"
+
+.PP
+Unlocks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file dbus\-threads\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_connection_remove_pending_call(), and dbus_connection_pop_message()\&.
+.SS "\fBDBusCondVar\fP* _dbus_condvar_new (void)"
+
+.PP
+Creates a new condition variable using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op condition variable if threads are not initialized\&. May return \fBNULL\fP even if threads are initialized, indicating out-of-memory\&.
+.PP
+\fBReturns:\fP
+.RS 4
+new mutex or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file dbus\-threads\&.c\&.
+.PP
+References dbus_threads_init_default(), and NULL\&.
+.PP
+Referenced by _dbus_condvar_new_at_location()\&.
+.SS "void _dbus_condvar_new_at_location (\fBDBusCondVar\fP ** location_p)"
+
+.PP
+This does the same thing as _dbus_condvar_new\&. It however gives another level of indirection by allocating a pointer to point to the condvar location; this used to be useful\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the location of a new condvar or \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 199 of file dbus\-threads\&.c\&.
+.PP
+References _dbus_assert, _dbus_condvar_new(), and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport()\&.
+.SS "void _dbus_condvar_wait (\fBDBusCondVar\fP * cond, \fBDBusCMutex\fP * mutex)"
+
+.PP
+Atomically unlocks the mutex and waits for the conditions variable to be signalled\&. Locks the mutex again before returning\&. Does nothing if passed a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 240 of file dbus\-threads\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_connection_remove_pending_call(), and dbus_connection_pop_message()\&.
+.SS "\fBdbus_bool_t\fP _dbus_condvar_wait_timeout (\fBDBusCondVar\fP * cond, \fBDBusCMutex\fP * mutex, int timeout_milliseconds)"
+
+.PP
+Atomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout\&. Locks the mutex again before returning\&. Does nothing if passed a \fBNULL\fP pointer\&. Return value is \fBFALSE\fP if we timed out, \fBTRUE\fP otherwise\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP the condition variable 
+.br
+\fImutex\fP the mutex 
+.br
+\fItimeout_milliseconds\fP the maximum time to wait 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the timeout occurred, \fBTRUE\fP if not 
+.RE
+.PP
+
+.PP
+Definition at line 261 of file dbus\-threads\&.c\&.
+.PP
+References NULL, and TRUE\&.
+.PP
+Referenced by _dbus_connection_remove_pending_call()\&.
+.SS "void _dbus_condvar_wake_one (\fBDBusCondVar\fP * cond)"
+
+.PP
+If there are threads waiting on the condition variable, wake up exactly one\&. Does nothing if passed a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 278 of file dbus\-threads\&.c\&.
+.PP
+References _dbus_assert, _dbus_current_generation, dbus_threads_init_default(), FALSE, DBusCMutex::lock, NULL, and TRUE\&.
+.PP
+Referenced by _dbus_connection_remove_pending_call(), and dbus_connection_pop_message()\&.
+.SS "void _dbus_rmutex_lock (\fBDBusRMutex\fP * mutex)"
+
+.PP
+Locks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&. Locks may be recursive if threading implementation initialized recursive locks\&. 
+.PP
+Definition at line 122 of file dbus\-threads\&.c\&.
+.PP
+References NULL\&.
+.SS "void _dbus_rmutex_new_at_location (\fBDBusRMutex\fP ** location_p)"
+
+.PP
+Creates a new mutex or creates a no-op mutex if threads are not initialized\&. May return \fBNULL\fP even if threads are initialized, indicating out-of-memory\&.
+.PP
+If possible, the mutex returned by this function is recursive, to avoid deadlocks\&. However, that cannot be relied on\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocation_p\fP the location of the new mutex, can return \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file dbus\-threads\&.c\&.
+.PP
+References _dbus_assert, dbus_threads_init_default(), and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_server_init_base()\&.
+.SS "void _dbus_rmutex_unlock (\fBDBusRMutex\fP * mutex)"
+
+.PP
+Unlocks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file dbus\-threads\&.c\&.
+.PP
+References NULL\&.
+.PP
+Referenced by _dbus_connection_unlock()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.
