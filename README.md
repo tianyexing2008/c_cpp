@@ -6,3 +6,4 @@
 4，logFormatPrt 格式打印
 5，encrypt 加密解密相关
 6，bluez linux下的蓝牙协议栈，目前交叉编译正常（arm-himix200-linux）。编译操作查看: bluez/README
+7, mqtt/practice mqtt使用示例代码
