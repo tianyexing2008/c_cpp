@@ -21,7 +21,8 @@ void postData()
     std::string recvData;
     Json::Value recvJson;
     CHttpClient httpClient;
-    int32_t ret = httpClient.postData(url, post_data, recvData);
+    std::string format("Content-Type: application/x-www-form-urlencoded");
+    int32_t ret = httpClient.postData(url, post_data, recvData, format);
     stringToJson(recvData, recvJson);
     // printf("postData, ret: %d, data: %s\n", ret, recvJson.toStyledString().c_str());
 }

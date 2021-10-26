@@ -63,7 +63,7 @@ static size_t httpResponseCallback(void *contents, size_t size, size_t nmemb, vo
     return realsize;
 }
 
-int32_t CHttpClient::postData(const std::string &url, const std::string &params, std::string &response, int32_t timeout)
+int32_t CHttpClient::postData(const std::string &url, const std::string &params, std::string &response, std::string &format, int32_t timeout)
 {
     MemoryStruct chunk;
     memset(&chunk, 0x00, sizeof(MemoryStruct));
@@ -80,7 +80,8 @@ int32_t CHttpClient::postData(const std::string &url, const std::string &params,
     }
 
     struct curl_slist* headers = nullptr;
-    headers = curl_slist_append(headers, "Content-Type: application/x-www-form-urlencoded");
+    // headers = curl_slist_append(headers, "Content-Type: application/x-www-form-urlencoded");
+    headers = curl_slist_append(headers, format.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
