@@ -18,10 +18,20 @@ void* addConnection(struct mg_connection *nc);
 void delConnection(void *usrData);
 bool isGiantFile(const char *fileName);
 void sendGiantFile(struct mg_connection *connection, const char *fileName);
+void fileUpload(mg_connection* nc, const int ev, void* data);
+bool validPath(const char *path);
 
 struct userData
 {
     int index;
+};
+
+struct FileInfo
+{
+    FILE *fp; //打开新文件的指针
+    char fileName[128]; //文件名，包含路径
+    char filePath[32]; //文件路径
+    size_t size; //文件大小，暂时没有用到
 };
 
 enum FILE_TYPE
@@ -65,6 +75,9 @@ int main(int argc, char *argv[])
  
     mg_set_protocol_http_websocket(con);
     infof("listen ip[%s], port[%d]....\n", inet_ntoa(con->sa.sin.sin_addr), port); 
+
+    //uri是/fileUpload 时调用函数fileUpload
+    mg_register_http_endpoint(con, "/fileUpload", fileUpload);
 
     while (1)
     {
@@ -236,4 +249,171 @@ void sendGiantFile(struct mg_connection *connection, const char *fileName)
     // std::string tail("0");
     // tail.append("\r\n");
     // mg_send(connection, tail.c_str(), tail.length());    
+}
+
+//触发的事件依次为：
+//#define MG_EV_HTTP_MULTIPART_REQUEST 121 /* struct http_message */
+//#define MG_EV_HTTP_PART_BEGIN 122        /* struct mg_http_multipart_part */
+//#define MG_EV_HTTP_PART_DATA 123         /* struct mg_http_multipart_part */
+//#define MG_EV_HTTP_PART_END 124          /* struct mg_http_multipart_part */
+/* struct mg_http_multipart_part */
+//#define MG_EV_HTTP_MULTIPART_REQUEST_END 125
+
+void fileUpload(mg_connection* nc, const int ev, void* data)
+{
+    //用户指针，用于保存文件大小，文件名
+    struct FileInfo *userData = nullptr;
+ 
+    //当事件ev是 MG_EV_HTTP_MULTIPART_REQUEST 时，data类型是http_message
+    struct http_message *httpMsg = nullptr;
+    if(MG_EV_HTTP_MULTIPART_REQUEST == ev)
+    {
+        httpMsg = (struct http_message*)data;
+        //初次请求时，申请内存
+        if(userData == nullptr)
+        {
+            userData = (struct FileInfo *)malloc(sizeof(struct FileInfo));
+            memset(userData, 0, sizeof(struct FileInfo));
+        }
+    }
+    else // 已经不是第一次请求了，nc->user_data 先前已经指向 userData，所以可以用了
+    {
+        userData = (struct FileInfo *)nc->user_data;
+    }
+ 
+    //当事件ev是 MG_EV_HTTP_PART_BEGIN/MG_EV_HTTP_PART_DATA/MG_EV_HTTP_PART_END 时，data类型是mg_http_multipart_part
+    struct mg_http_multipart_part *httpMulMsg = nullptr;
+    if(ev >= MG_EV_HTTP_PART_BEGIN && ev <= MG_EV_HTTP_PART_END)
+    {
+        httpMulMsg = (struct mg_http_multipart_part*)data;
+    }
+
+    switch(ev) 
+    {
+        case MG_EV_HTTP_MULTIPART_REQUEST:
+            {   
+                ///query_string为请求地址中的变量
+                char filePath[32] = {0};
+                std::string key("filePath"); 
+                //从请求地址里获取 key 对应的值，所以这个需要和请求地址里的 key 一样
+                //这里从地址中获取文件要上传到哪个路径
+                if(mg_get_http_var(&httpMsg->query_string, key.c_str(), filePath, sizeof(filePath)) > 0) 
+                {
+                    tracef("upload file request, %s = %s\n", key.c_str(), filePath); 
+                }
+
+                if(!validPath(filePath))
+                {
+                    tracef("no such directory of %s\n", filePath);
+                    std::string header;
+                    std::string body("no suce directory");
+                    header.append("HTTP/1.1 500 file fail").append("\r\n");
+                    header.append("Connection: close").append("\r\n");
+                    header.append("Content-Length: ").append(std::to_string(body.length())).append("\r\n").append("\r\n");
+                    header.append(body).append("\r\n");
+
+                    mg_send(nc, header.c_str(), header.length());
+                    nc->flags |= MG_F_SEND_AND_CLOSE;             
+                }
+
+                //保存路径，且 nc->user_data 指向该内存，下次请求就可以直接用了
+                if(userData != nullptr)
+                {
+                    snprintf(userData->filePath, sizeof(userData->filePath), "%s", filePath);
+                    nc->user_data = (void *)userData;                 
+                }
+            }
+ 
+            break;
+        case MG_EV_HTTP_PART_BEGIN:  ///这一步获取文件名
+            tracef("upload file begin!\n");
+            if(httpMulMsg->file_name != NULL && strlen(httpMulMsg->file_name) > 0)
+            {
+                tracef("input fileName = %s\n", httpMulMsg->file_name);
+                //保存文件名，且新建一个文件
+                if(userData != nullptr)
+                {
+                    snprintf(userData->fileName, sizeof(userData->fileName), "%s%s", userData->filePath, httpMulMsg->file_name);
+                    userData->fp = fopen(userData->fileName, "wb+");
+
+                    //创建文件失败，回复，释放内存
+                    if(userData->fp == NULL) 
+                    {
+                        mg_printf(nc, "%s", 
+                            "HTTP/1.1 500 file fail\r\n"
+                            "Content-Length: 25\r\n"
+                            "Connection: close\r\n\r\n"
+                            "Failed to open a file\r\n");
+
+                        // nc->flags |= MG_F_SEND_AND_CLOSE;
+                        free(userData);
+                        nc->user_data = nullptr;     
+                        return;
+                    }                    
+                }
+
+            }
+            break;
+        case MG_EV_HTTP_PART_DATA:
+            tracef("upload file chunk size = %lu\n", httpMulMsg->data.len);
+            if(userData != nullptr && userData->fp != NULL) 
+            {
+                size_t ret = fwrite(httpMulMsg->data.p, 1, httpMulMsg->data.len, userData->fp);
+                if(ret != httpMulMsg->data.len)
+                {
+                    mg_printf(nc, "%s",
+                    "HTTP/1.1 500 write fail\r\n"
+                    "Content-Length: 29\r\n\r\n"
+                    "Failed to write to a file\r\n");
+
+                    nc->flags |= MG_F_SEND_AND_CLOSE;
+                    return;
+                }     
+            }
+            break;
+        case MG_EV_HTTP_PART_END:
+            tracef("file transfer end!\n");
+            if(userData != NULL && userData->fp != NULL)
+            {
+                mg_printf(nc,
+                    "HTTP/1.1 200 OK\r\n"
+                    "Content-Type: text/plain\r\n"
+                    "Connection: close\r\n\r\n"
+                    "Written %ld of POST data to a file\n\n",
+                (long)ftell(userData->fp));
+
+                //设置标志，发送完成数据（如果有）并且关闭连接
+                nc->flags |= MG_F_SEND_AND_CLOSE;
+                
+                //关闭文件，释放内存
+                fclose(userData->fp);
+                tracef("upload file end, free userData(%p)\n", userData);
+                free(userData);
+                nc->user_data = NULL;       
+            } 
+            else
+            {
+                mg_printf(nc,
+                    "HTTP/1.1 200 OK\r\n"
+                    "Content-Type: text/plain\r\n"
+                    "Connection: close\r\n\r\n"
+                    "Written 0 of POST data to a file\n\n");                
+            }       
+            break;
+        case MG_EV_HTTP_MULTIPART_REQUEST_END:
+            tracef("http multipart request end!\n");
+            break;
+        default:
+            break;
+    }
+}
+
+bool validPath(const char *path)
+{
+    struct stat st;
+    if(lstat(path, &st) == 0)
+    {
+        return true;
+    }
+    return false;
 }
