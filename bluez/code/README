@@ -1,5 +1,9 @@
 1、修改Makefile中OUT_DIR路径
 2、将OUT_DIR权限改为777
-3、执行make
+3、make clean platofrm=dv300 或 make clean platofrm=x86
+4、执行make platform=dv300 或 make platform=x86
+
+若要编译x86版本的，需要手动安装libffi，可以用命令安装：yum install libffi-dev，同时把Makefile 中的 $(MAKE) -f ./libffi.mk 这一行注释掉，
+即不编译此目录下的 libffi，因为编译这个会有错误，不知怎么解决。这样之后如果还是编译有问题，那就直接下载 libffi 源码进行安装了。
 
 注意：OUT_DIR路径不仅为固件的输出路径，同时也是嵌入式linux中BlueZ的配置路径，该路径需要在嵌入式linux中同时存在，并将配置文件放到该路径下。

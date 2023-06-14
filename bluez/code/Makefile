@@ -1,5 +1,20 @@
+
+ifneq ($(platform),)
+ifeq ($(platform), dv300)
+export PLATFORM=DV300
 export LIB_CC=arm-himix200-linux-gcc
 export OUT_DIR=/home/tianyexing/Documents/code/github_src/c_cpp/bluez/build_out
+else ifeq ($(platform), x86)
+PLATFORM=x86
+export LIB_CC=gcc
+export OUT_DIR=/home/tianyexing/Documents/code/github_src/c_cpp/bluez/build_out_x86
+else
+$(error not suport platform=$(platform))
+endif
+
+else
+$(error Usage: make platform=dv300|x86))
+endif
 
 all:
 	$(MAKE) -f ./zlib.mk
