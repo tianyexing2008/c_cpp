@@ -1,5 +1,5 @@
 export LIB_CC=arm-himix200-linux-gcc
-export OUT_DIR=/disk4/liangshen/practice/bluez_outdir
+export OUT_DIR=/home/tianyexing/Documents/code/github_src/c_cpp/bluez/build_out
 
 all:
 	$(MAKE) -f ./zlib.mk
