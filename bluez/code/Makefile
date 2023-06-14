@@ -18,7 +18,9 @@ endif
 
 all:
 	$(MAKE) -f ./zlib.mk
+ifneq ($(platform), x86)
 	$(MAKE) -f ./libffi.mk
+endif
 	$(MAKE) -f ./glib.mk
 	$(MAKE) -f ./expat.mk
 	$(MAKE) -f ./dbus.mk
