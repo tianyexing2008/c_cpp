@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "observer_safe.h"
+
+configObserver::configObserver()
+{
+
+}
+
+configObserver::~configObserver()
+{
+
+}
+
+void configObserver::update()
+{
+	printf("derived configObserver\n");
+}
+
+void Observable::obRegister(std::shared_ptr<Observer> x)
+{
+	CGuard guard(mMtx);
+	mObserverVect.push_back(x);
+}
+
+void Observable::notifyObservers()
+{
+	CGuard guard(mMtx);
+	Iterator ite = mObserverVect.begin();
+	while (ite != mObserverVect.end())
+	{
+		printf("2, reference count: %u\n", ite->use_count());
+		(*ite)->update();
+		++ite;
+	}
+}
+
+int main()
+{
+	std::shared_ptr<configObserver> cfgOb(new configObserver);
+	Observable obMgr;
+	obMgr.obRegister(cfgOb);
+	printf("1, reference count: %u\n", cfgOb.use_count());
+	obMgr.notifyObservers();
+
+	return 0;
+}

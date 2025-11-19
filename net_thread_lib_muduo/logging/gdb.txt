@@ -1,0 +1,22 @@
+Reading symbols from ./bin/a.out...done.
+Starting program: /home/tianyexing/practice/muduo/logging/bin/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGABRT, Aborted.
+__GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+51	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff72627f1 in __GI_abort () at abort.c:79
+#2  0x00007ffff72523fa in __assert_fail_base (fmt=0x7ffff73d96c0 "%s%s%s:%u: %s%sAssertion `%s' failed.\n%n", 
+    assertion=assertion@entry=0x555555559904 "strlen(str) == len", file=file@entry=0x5555555598f8 "logging.cpp", 
+    line=line@entry=58, 
+    function=function@entry=0x555555559960 <T::T(char const*, unsigned int)::__PRETTY_FUNCTION__> "T::T(const char*, unsigned int)") at assert.c:92
+#3  0x00007ffff7252472 in __GI___assert_fail (assertion=0x555555559904 "strlen(str) == len", file=0x5555555598f8 "logging.cpp", 
+    line=58, function=0x555555559960 <T::T(char const*, unsigned int)::__PRETTY_FUNCTION__> "T::T(const char*, unsigned int)")
+    at assert.c:101
+#4  0x00005555555569b8 in T::T (this=0x7fffffffd320, str=0x5555555598e2 "INFO", len=6) at logging.cpp:58
+#5  0x00005555555562d8 in CLogger::CImpl::CImpl (this=0x7fffffffd3b0, level=CLogger::INFO, old_error=0, file=..., line=13)
+    at logging.cpp:104
+#6  0x0000555555556670 in CLogger::CLogger (this=0x7fffffffd3b0, file=..., line=13) at logging.cpp:139
+#7  0x00005555555559fb in main () at loggingTest.cpp:13
